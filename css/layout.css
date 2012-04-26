@@ -1,0 +1,4 @@
+/* словарик */
+dl { position: relative}
+dl dt { width: 13em; position:absolute;}
+dl dd { margin-left: 13em;}
