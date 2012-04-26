@@ -1,0 +1,88 @@
+<style>
+  #edit {
+    -webkit-appearance:textarea;
+    -moz-appearance:textarea;
+    -ie-appearance:textarea;
+    -o-appearance:textarea;
+    appearance:textarea;
+
+    width:640px;
+    height:480px;
+  }
+</style>
+
+<nav>
+  <select>
+    <option value="h1">Заголовок</option>
+    <option value="h2">Глава</option>
+    <option value="h3">Эпизод</option>
+    <option value="h4">Сцена</option>
+    <option value="p">Абзац</option>
+    <option value="pre">Код</option>
+    <option value="blockquote">Цитата</option>
+  </select>
+  <button value="strong" title="Важно">ℹ</button>
+  <button value="em" title="Не важно"><em>α</em></button>
+  <button value="ssup" title="Ошибка">✗</button>
+
+  <!--button value="a" title="Ссылка"/-->
+  <!--button value="img" title="Картинка"/-->
+  <!--button value="video" title="Видео"/-->
+  <!--button value="video" title="Видео"/-->
+  <button value="cite" title="Упоминание">❞</button>
+  <button value="dfn" title="Определение">!</button>
+  <button value="var" title="Значение">y</button>
+  &nbsp;
+  <button value="cean" title="Переработать">♻</button>
+</nav>
+
+
+<iframe id="edit"></iframe>
+
+<script src="js/hightlighter.js"></script>
+<script>
+var edit = document.getElementById('edit').contentWindow.document
+var otherhead = edit.getElementsByTagName("head")[0];
+var link = edit.createElement("link");
+link.setAttribute("rel", "stylesheet");
+link.setAttribute("type", "text/css");
+link.setAttribute("href", "css/code.css");
+otherhead.appendChild(link);
+function strip(html)
+{
+   var tmp = document.createElement("DIV");
+   tmp.innerHTML = html;
+   return tmp.textContent||tmp.innerText;
+}
+function hightlight(){
+//    var sel = this.getSelection();
+//    var r1 = sel.getRangeAt(0);
+    c = this.body.innerHTML//.replace(/<[^>]*>/,'')
+    c = strip(c);
+    console.log(c);
+//    e = eval(c);
+
+    s = '<pre>'+c.hightlight()
+      //.replace(' ','&nbsp;')
+      //.replace('>','&gt;')
+      //.replace('<','&lt;')
++'</pre>';
+
+    this.body.innerHTML = s;
+//    document.getElementById('result').innerHTML=
+//    '<h3>Result:</h3>'+(e+'').hightlight()
+
+//    var r2 = this.createRange();
+//    r2.setStart(sel.anchorNode,1);
+//    r2.setEnd(sel.anchorNode,1);
+//    sel.removeRange(r1)
+//    sel.addRange(r2);
+}
+edit.addEventListener('keyup', hightlight, false);
+//edit.addEventListener('mouseup', hightlight, false);
+//edit.addEventListener('mouseout', hightlight, false);
+//edit.addEventListener('keypress', hightlight, false);
+//edit.addEventListener('change', hightlight, false);
+edit.designMode = "On";
+//document.getElementById('edit').onchange = hightlight();
+</script>
