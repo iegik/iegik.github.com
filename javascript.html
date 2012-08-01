@@ -110,7 +110,7 @@
 
 <table>
   <thead>
-    <tr><td>Тип данных</td><td>Мои данные</td><td>Получ. тип и длинна</td><td>возвр. значение</td><td>По умолчанию</td><td>Результат</td></tr>
+    <tr><td>Мои данные</td><td>typeof</td><td>.valueOf()</td><td>.toString()</td><td>По умолчанию</td><td>Результат</td></tr>
   </thead>
   <tbody  id="result"/>
 </table>
@@ -135,12 +135,12 @@ function dumpProps(obj, parent) {
 }
 
 dumpProps(document);*/
-ss = "[{0:'0',1:'a'}, ['0','a'], 99, false, !1, Infinity, NaN, 3.14, 0x8f, 070, -0.5e9, 'a\\t', \"1\\t\", /$/]";
+ss = "[{}, {0:'0',1:'a'}, [], ['0','a'], 0, -0, .1, 0x8f, 070, -0.5e9, '', \"\", 'a\\tb', \"1\\t2\", /./, /(?:)/, false, !1, Infinity, 1/0, NaN, 1/3, 1/7, Math.PI, Number.MIN_VALUE, Number.MAX_VALUE]";
 tt = eval(ss)
 ss = ss.substr(1,ss.length-2).split(', ');
 //console.log(ss)
 //console.log(tt)
-out=''
+var out='', n = '';
 for(x in tt){
   e = tt[x]
   v = e.valueOf()
@@ -149,20 +149,17 @@ for(x in tt){
   //t - type of variable
   c = e.constructor
   t = typeof c()
-  n = c.name
+  
   lv = v.length
   ls = s.length
 
   //p - prototypes of variable
-  p = ''
-  i = 0
-  for (y in c){
-    p += c[y]+'; ';
-    i++
-  }
-
+  p = e.__proto__
+  
   //stringify all information
-  out+= '<tr><td class="code">'+n + '</td><td class="code">' + ss[x] + '</td><td class="code">' + t + '('+lv+'|'+ls+')</td><td class="code">' + s + '</td><td class="code">' + (new c) + '</td><td class="code">' + v + '</td></tr>'
+  n == (n = c.name) || (out+= '<tr><th class="code">' + n + '</th></tr>') && console.log(p);
+  out+= '<tr><td class="code">' + ss[x] + '</td><td class="code">' + t + '</td><td class="code">' + s + ' ('+lv+')' + '</td><td class="code">' + v + ' ('+ls+')' + '</td><td class="code">' + (new c) + '</td></tr>'
+  
 }
 document.getElementById('result').innerHTML = out;
 </script>
