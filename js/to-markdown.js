@@ -10,7 +10,7 @@ var toMarkdown = function(string) {
   
   var ELEMENTS = [
     {
-      patterns: 'p',
+      patterns: ['p','div'],
       replacement: function(str, attrs, innerHTML) {
         return innerHTML ? '\n\n' + innerHTML + '\n' : '';
       }
@@ -175,7 +175,7 @@ var toMarkdown = function(string) {
     string = string.replace(/\n{3,}/g, '\n\n'); // limit consecutive linebreaks to 2
     return string;
   }
-  
+
   return cleanUp(string);
 };
 
