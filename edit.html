@@ -1,88 +1,20 @@
-<style>
-  #edit {
-    -webkit-appearance:textarea;
-    -moz-appearance:textarea;
-    -ie-appearance:textarea;
-    -o-appearance:textarea;
-    appearance:textarea;
-
-    width:640px;
-    height:480px;
-  }
-</style>
-
-<nav>
-  <select>
-    <option value="h1">Заголовок</option>
-    <option value="h2">Глава</option>
-    <option value="h3">Эпизод</option>
-    <option value="h4">Сцена</option>
-    <option value="p">Абзац</option>
-    <option value="pre">Код</option>
-    <option value="blockquote">Цитата</option>
-  </select>
-  <button value="strong" title="Важно">ℹ</button>
-  <button value="em" title="Не важно"><em>α</em></button>
-  <button value="ssup" title="Ошибка">✗</button>
-
-  <!--button value="a" title="Ссылка"/-->
-  <!--button value="img" title="Картинка"/-->
-  <!--button value="video" title="Видео"/-->
-  <!--button value="video" title="Видео"/-->
-  <button value="cite" title="Упоминание">❞</button>
-  <button value="dfn" title="Определение">!</button>
-  <button value="var" title="Значение">y</button>
-  &nbsp;
-  <button value="cean" title="Переработать">♻</button>
-</nav>
-
-
-<iframe id="edit"></iframe>
-
-<script src="js/hightlighter.js"></script>
-<script>
-var edit = document.getElementById('edit').contentWindow.document
-var otherhead = edit.getElementsByTagName("head")[0];
-var link = edit.createElement("link");
-link.setAttribute("rel", "stylesheet");
-link.setAttribute("type", "text/css");
-link.setAttribute("href", "css/code.css");
-otherhead.appendChild(link);
-function strip(html)
-{
-   var tmp = document.createElement("DIV");
-   tmp.innerHTML = html;
-   return tmp.textContent||tmp.innerText;
+<!DOCTYPE html><!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"><![endif]--><!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]--><!--[if IE 8]><html class="no-js lt-ie9" lang="en"><![endif]--><!--[if gt IE 8]><html class="no-js" lang="en"><![endif]--><head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><!--link(rel="stylesheet", href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css")--><link rel="stylesheet" href="css/typography.css"><title><Markdown>Editor</Markdown></title><style>body, html, .main {
+  width:100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
-function hightlight(){
-//    var sel = this.getSelection();
-//    var r1 = sel.getRangeAt(0);
-    c = this.body.innerHTML//.replace(/<[^>]*>/,'')
-    c = strip(c);
-    console.log(c);
-//    e = eval(c);
-
-    s = '<pre>'+c.hightlight()
-      //.replace(' ','&nbsp;')
-      //.replace('>','&gt;')
-      //.replace('<','&lt;')
-+'</pre>';
-
-    this.body.innerHTML = s;
-//    document.getElementById('result').innerHTML=
-//    '<h3>Result:</h3>'+(e+'').hightlight()
-
-//    var r2 = this.createRange();
-//    r2.setStart(sel.anchorNode,1);
-//    r2.setEnd(sel.anchorNode,1);
-//    sel.removeRange(r1)
-//    sel.addRange(r2);
+.markdown, .editable{
+  width: calc(50% - 1em);
+  height: calc(100% - 1em);
+  padding: .5em;
+  border: 0;
 }
-edit.addEventListener('keyup', hightlight, false);
-//edit.addEventListener('mouseup', hightlight, false);
-//edit.addEventListener('mouseout', hightlight, false);
-//edit.addEventListener('keypress', hightlight, false);
-//edit.addEventListener('change', hightlight, false);
-edit.designMode = "On";
-//document.getElementById('edit').onchange = hightlight();
-</script>
+.editable {
+  float: right;
+  background: rgba(128,128,128,.5);
+}</style></head><body class="container"><!--[if lt IE 7]><p class="chromeframe">Your browser is<em>ancient!</em><a href="http://browsehappy.com/">Upgrade to a different browser</a>or<a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a>to experience this site.</p><![endif]--><div class="main"><div id="md1" onkeypress="javascript:document.getElementById(this.id+'-md').value = toMarkdown(this.innerHTML)" contentEditable="true" class="editable"></div><textarea id="md1-md" onkeyup="javascript:document.getElementById(this.id.replace('-md','')).innerHTML = marked(this.value);" class="markdown"></textarea></div><script src="//cdnjs.cloudflare.com/ajax/libs/marked/0.2.9/marked.min.js"></script><script src="js/tabsintextarea.js"></script><script src="js/to-markdown.js"></script><script>var _gaq=[['_setAccount','XX-88888888-8'],['_trackPageview']];
+(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+s.parentNode.insertBefore(g,s)}(document,'script'));</script></body></html>
