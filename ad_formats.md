@@ -1,0 +1,8 @@
+![ad0](./img/ad/adsense_adformat-display_120x600_en.jpg "ad0")
+![ad1](./img/ad/adsense_adformat-display_160x600_en.jpg "ad1")
+![ad2](./img/ad/adsense_adformat-display_200x200_en.jpg "ad2")
+![ad3](./img/ad/adsense_adformat-display_250x250_en.jpg "ad3")
+![ad4](./img/ad/adsense_adformat-display_300x250_en.jpg "ad4")
+![ad5](./img/ad/adsense_adformat-display_336x280_en.jpg "ad5")
+![ad6](./img/ad/adsense_adformat-display_468x60_en.jpg "ad6")
+![ad7](./img/ad/adsense_adformat-display_728x90_en.jpg "ad7")
