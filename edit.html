@@ -124,6 +124,13 @@ section#magazine{
   $('.editor').editor();
   $('.editor').drags();
 })(jQuery,document)
+
+marked.setOptions({
+  tables: true,
+  breaks: true,
+  sanitize: false,
+  smartypants: true
+});
 </script><script>var _gaq=[['_setAccount','XX-88888888-8'],['_trackPageview']];
 (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
 g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
