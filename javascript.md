@@ -1,15 +1,13 @@
 Variables
 =========
 
-Данная таблица требует обьяснений. *Да, она просто кричит об этом!*
-В этом документе выполняется скрипт, который передёт броузеру данные и получает информацию о том как эти данные понимает броузер.
-
-
+<!--Данная таблица требует обьяснений. *Да, она просто кричит об этом!*
+В этом документе выполняется скрипт, который передёт броузеру данные и получает информацию о том как эти данные понимает броузер.-->
 <table>
   <thead>
     <tr><td>Тип данных</td><td>Мои данные</td><td>Получ. тип и длинна</td><td>возвр. значение</td><td>По умолчанию</td><td>Результат</td></tr>
   </thead>
-  <tbody  id="result"/>
+  <tbody  id="javascript-table"/>
 </table>
 <script>
 /*
@@ -60,7 +58,8 @@ for(x in tt){
   //stringify all information
   out+= '<tr><td class="code">'+n + '</td><td class="code">' + ss[x] + '</td><td class="code">' + t + '('+lv+'|'+ls+')</td><td class="code">' + s + '</td><td class="code">' + (new c) + '</td><td class="code">' + v + '</td></tr>'
 }
-document.getElementById('result').innerHTML = out;
+document.getElementById('javascript-table').innerHTML = out;
+console.log('javascript-table loaded');
 </script>
 
 Object
@@ -204,8 +203,7 @@ Document
 Control Flow
 ============
 
-if
---
+## if
 
     if(a<=b || c>d && e!=f){}
     c=(typeof a!='undefined'&&a||b)+0x32/2-10*2.5; // $c=@$a?:$b;
@@ -233,69 +231,69 @@ while
 Reserved words
 ==============
 
-abstract (*)
-as (2)
-boolean
-break
-byte
-case
-catch
-char
-class (2)
-continue
-const (2)
-debugger (*)
-default
-delete
-do
-double
-else
-enum (*)
-export (2)
-extends (2)
-false
-final
-finally
-float
-for
-function
-goto (*)
-if
-implements (*)
-import (2)
-in
-instanceof
-int
-interface (2)
-is (2)
-long
-namespace (2)
-native (*)
-new
-null
-package (2)
-private (2)
-protected (*)
-public (2)
-return
-short
-static (2)
-super (2)
-switch
-synchronized (*)
-this
-throw
-throws (*)
-transient (*)
-true
-try
-typeof
-use (2)
-var
-void
-volatile (*)
-while
-with
+    abstract (*)
+    as (2)
+    boolean
+    break
+    byte
+    case
+    catch
+    char
+    class (2)
+    continue
+    const (2)
+    debugger (*)
+    default
+    delete
+    do
+    double
+    else
+    enum (*)
+    export (2)
+    extends (2)
+    false
+    final
+    finally
+    float
+    for
+    function
+    goto (*)
+    if
+    implements (*)
+    import (2)
+    in
+    instanceof
+    int
+    interface (2)
+    is (2)
+    long
+    namespace (2)
+    native (*)
+    new
+    null
+    package (2)
+    private (2)
+    protected (*)
+    public (2)
+    return
+    short
+    static (2)
+    super (2)
+    switch
+    synchronized (*)
+    this
+    throw
+    throws (*)
+    transient (*)
+    true
+    try
+    typeof
+    use (2)
+    var
+    void
+    volatile (*)
+    while
+    with
 
 JavaScript hacks
 ================

@@ -1,3 +1,8 @@
+
+* * *
+
+
+
 Привет!
 
 Меня зовут Артур. Здесь Ты сможешь найти то, что искал и узнать, что не знал.
@@ -12,3 +17,28 @@
 
 * [Генератор изображения (php-GD)](https://gist.github.com/2134248 "принемает параметры w, h и t - png.php/[width]*[height]*[text][-color][.png]")
 * [Динамический редактор JavaScript](run.html)
+
+
+
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="container-fluid">
+      <section id="main_content" class="inner">
+        <div class="jumbotron musthead">
+        </div>
+<div class="bs-docs-social">
+  <div class="container">
+    
+  </div>
+</div>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">This page maintained by <a href="https://github.com/iegik">iegik</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a> (with some improvements)</p>
+      </footer>
+    </div>
+

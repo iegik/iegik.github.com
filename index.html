@@ -6,64 +6,170 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
     <meta name="description" content="Woff fonts : " />
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/responsive-layout-v2.css">
+    <link id="bootstrap" rel="stylesheet" type="text/css" media="screen" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css">
+    <!--link rel="stylesheet" type="text/css" media="screen" href="stylesheets/responsive-layout-v2.css"-->
 
     <title>Artūrs Jansons</title>
-
+<style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
 </head>
 
   <body>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/iegik">Follow Me on GitHub</a>
-
-          <h1 id="project_title">Artūrs Jansons</h1>
-          <h2 id="project_tagline">Informāciju Sistēmu inženieris</h2>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <div class="jumbotron musthead">
-          <ul>
-            <li>Frontent development</li>
-            <li>Speed optimizations</li>
-            <li>UI design</li>
-            <li>Testing</li>
-          </ul>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#page-home" data-target="markdown" alt="page-home">Artūrs Jansons</a>
+          <div class="nav-collapse collapse">
+            <p class="navbar-text pull-right">
+              <!--Logged in as <a href="#" class="navbar-link">Username</a>-->
+            </p>
+            <ul class="nav">
+              <li class="active"><a href="#page-home" data-target="markdown" alt="page-home">Home</a></li>
+              <!--li><a href="blog.md" data-target="markdown" alt="page-blog">Blog</a></li-->
+              <li><a href="javascript.md" data-target="markdown" alt="page-javascript">JavaScript</a></li>
+              <!--li><a href="run.md" data-target="markdown" alt="page-run-javascript">JavaScript online</a></li-->
+              <!--li><a href="ad_formats.md" data-target="markdown" alt="page-ad-formats">Ad Formats</a></li-->
+              <!--li><a href="#about">About</a></li-->
+              <!--li><a href="#contact">Contact</a></li-->
+              <li><a href="test1.md" data-target="markdown" alt="page-bootstrap-starter">Starter template</a></li>
+              <li><a href="test2.md" data-target="markdown" alt="page-bootstrap-marketing">Basic marketing site</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
         </div>
-<div class="bs-docs-social">
-  <div class="container">
-    <ul class="bs-docs-social-buttons">
-      <!--li>
-        <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=iegik&repo=iegik&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
-      </li>
-      <li>
-        <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=iegik&repo=iegik&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="102px" height="20px"></iframe>
-      </li-->
-      <li class="follow-btn">
-        <iframe allowtransparency="true" frameborder="0" scrolling="no" src="http://platform.twitter.com/widgets/follow_button.1368146021.html#_=1369102698778&id=twitter-widget-1&lang=en&screen_name=iegik&show_count=true&show_screen_name=true&size=m" class="twitter-follow-button twitter-follow-button" title="Twitter Follow Button" data-twttr-rendered="true" style="width: 237px; height: 20px;"></iframe>
-      </li>
-      <li class="tweet-btn">
-        <iframe allowtransparency="true" frameborder="0" scrolling="no" src="http://platform.twitter.com/widgets/tweet_button.1368146021.html#_=1369102698768&count=horizontal&id=twitter-widget-0&lang=en&original_referer=http://iegik.github.io/related=mdo%3ACreator%20of%20Twitter%20Bootstrap&size=m&text=I recomend a real guru in his knowleges - &url=http%3A%2F%2Fiegik.github.com&via=iegik" class="twitter-share-button twitter-count-horizontal" title="Twitter Tweet Button" data-twttr-rendered="true" style="width: 109px; height: 20px;"></iframe>
-      </li>
-    </ul>
-  </div>
-</div>
-      </section>
+      </div>
     </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">This page maintained by <a href="https://github.com/iegik">iegik</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a> (with some improvements)</p>
-      </footer>
-    </div>
+    <section class="container-fluid">
+    <!--iframe src="index.md" onload="javascript:this.outerHTML = marked(this.contentWindow.document.body.innerText);"></iframe-->
+      <article id="page-home">
+        <div class="hero-unit">
+          <h1>Markdown editor</h1>
+          <p>Subpages of this page was written in pretty Markdown format. Markdown is same plain text as You can remember from 80`s - when there was no Reach-Text-Format and all documents formated with funny <code>=</code> or <code>-</code> strips and <code>*</code> bullets.</p>
+          <p style="text-align: center"><a href="edit.html" class="btn btn-primary btn-large">Try now for free</a></p>
+        </div>
+        <ul>
+          <li>Frontent development</li>
+          <li>Speed optimizations</li>
+          <li>UI design</li>
+          <li>Testing</li>
+        </ul>
+        <ul class="nav bs-docs-social-buttons">
+          <!--li>
+            <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=iegik&repo=iegik&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
+          </li>
+          <li>
+            <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=iegik&repo=iegik&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="102px" height="20px"></iframe>
+          </li-->
+          <li class="follow-btn">
+            <iframe allowtransparency="true" frameborder="0" scrolling="no" src="http://platform.twitter.com/widgets/follow_button.1368146021.html#_=1369102698778&id=twitter-widget-1&lang=en&screen_name=iegik&show_count=true&show_screen_name=true&size=m" class="twitter-follow-button twitter-follow-button" title="Twitter Follow Button" data-twttr-rendered="true" style="width: 237px; height: 20px;"></iframe>
+          </li>
+          <li class="tweet-btn">
+            <iframe allowtransparency="true" frameborder="0" scrolling="no" src="http://platform.twitter.com/widgets/tweet_button.1368146021.html#_=1369102698768&count=horizontal&id=twitter-widget-0&lang=en&original_referer=http://iegik.github.io/related=mdo%3ACreator%20of%20Twitter%20Bootstrap&size=m&text=I recomend a real guru in his knowleges - &url=http%3A%2F%2Fiegik.github.com&via=iegik" class="twitter-share-button twitter-count-horizontal" title="Twitter Tweet Button" data-twttr-rendered="true" style="width: 109px; height: 20px;"></iframe>
+          </li>
+        </ul>
+      </article><!--/span-->
+    </section><!--/.fluid-container-->
+    <footer class="container-fluid">
+      <p class="copyright">This page maintained by <a href="https://github.com/iegik">iegik</a></p>
+      <p>Published with <a href="http://pages.github.com">GitHub Pages</a> (with some improvements)</p>
+      <p id="try-styles">
+          Try styles:
+          <a href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/amelia/bootstrap.min.css">Amelia</a>
+          <a href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/cerulean/bootstrap.min.css">Cerulean</a>
+          <a href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/cosmo/bootstrap.min.css">Cosmo</a>
+          <a href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/cyborg/bootstrap.min.css">Cyborg</a>
+          <a href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/flatly/bootstrap.min.css">Flatly</a>
+          <a href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/journal/bootstrap.min.css">Journal</a>
+          <a href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/readable/bootstrap.min.css">Readable</a>
+          <a href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/simplex/bootstrap.min.css">Simplex</a>
+          <a href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/slate/bootstrap.min.css">Slate</a>
+          <a href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/spacelab/bootstrap.min.css">Spacelab</a>
+          <a href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/spruce/bootstrap.min.css">Spruce</a>
+          <a href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/superhero/bootstrap.min.css">Superhero</a>
+          <a href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/united/bootstrap.min.css">United</a>
+      </p>
+    </footer>
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/marked/0.2.9/marked.min.js"></script>
+    <script type="text/javascript" src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript">//<![CDATA[ 
+    $(function(){
+        $('a[data-target="markdown"]').each(function(){
+            $(this).click(function(e){
+                var article = 'article',
+                    section = 'section',
+                    p = document.createElement(article),
+                    a = document.createElement('iframe');
+                $(article).hide();
+                p.setAttribute('name', p.id = this.getAttribute('alt'));
+                if( this.href != document.location.origin+'/#'+p.id 
+                 && this.href != document.location.origin+'/' 
+                 && this.href != document.location.origin ){
+                    e.preventDefault();
+                    a.src = this.href;
+                    a.setAttribute('onload', 'javascript:this.outerHTML = marked(this.contentWindow.document.body.innerText);');
+                    p.appendChild(a);
+                    this.href = '#'+p.id;
+                    document.getElementsByTagName(section)[0].appendChild(p);
+                }else{
+                  $('#'+p.id).show();
+                }
+            })
+        });
+        $('a[data-target="jade"]').each(function(){
+            $(this).click(function(e){
+                var article = 'article',
+                    section = 'section',
+                    p = document.createElement(article),
+                    a = document.createElement('iframe');
+                $(article).hide();
+                p.setAttribute('name', p.id = this.getAttribute('alt'));
+                if( this.href != document.location.origin+'/#'+p.id 
+                 && this.href != document.location.origin+'/' 
+                 && this.href != document.location.origin ){
+                    e.preventDefault();
+                    a.src = this.href;
+                    a.setAttribute('onload', 'javascript:this.outerHTML = jade(this.contentWindow.document.body.innerText);');
+                    p.appendChild(a);
+                    this.href = '#'+p.id;
+                    document.getElementsByTagName(section)[0].appendChild(p);
+                }else{
+                  $('#'+p.id).show();
+                }
+            })
+        });
+
+        !document.location.hash || $('a[alt='+document.location.hash.replace('#','')+']')[0].click();
+
+        marked.setOptions({
+          tables: true,
+          breaks: true,
+          sanitize: false,
+          smartypants: true
+        });
+
+        $('#try-styles a').each(function(){
+           $(this).click(function(e){
+              e.preventDefault();
+              var s=document.getElementById('bootstrap');//document.createElement('link');
+              s.href=this.href;
+              s.rel='stylesheet';
+              s.type='text/css';
+              document.head.appendChild(s);
+           });
+        });
+    });
+    </script>
 
   </body>
 </html>

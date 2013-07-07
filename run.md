@@ -9,6 +9,7 @@ Hightlighted code
 
 <pre id="hightlighted"></pre>
 
+<script src="//iegik.github.io/js/hightlighter.min.js"></script>
 <script>
 (function(d,code,result,hightlighted){
   d.getElementById(code).onchange=function(){
@@ -19,5 +20,5 @@ Hightlighted code
       d.getElementById(hightlighted).innerHTML=c.hightlight();
     }
   }
-})(document,'code','result','hightlighted')
+})(document,'code','result','hightlighted');
 </script>
