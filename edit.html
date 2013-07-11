@@ -1,26 +1,28 @@
 <!DOCTYPE html><!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"><![endif]--><!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]--><!--[if IE 8]><html class="no-js lt-ie9" lang="en"><![endif]--><!--[if gt IE 8]><html class="no-js" lang="en"><![endif]--><head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Markdown Editor</title>
-<link id="bootstrap" rel="stylesheet" type="text/css" media="screen" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
-<style>body, html, .main, .container {
-  width:100%;
-  max-width:100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
+<link rel="stylesheet" type="text/css" media="screen" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
+<style>body, html, .main, .container-fluid, .container {
+    height: 100%;
+    overflow: hidden;
 }
-.markdown, .editable{
-  width: calc(50% - 1em);
-  height: calc(100% - 1em);
-  padding: .5em;
-  border: 0;
-  overflow: auto;
+.main {
+    height: calc(100% - 5em);
+    padding-top: calc(5em);
+}
+.markdown, .editable {
+    width: calc(50% - 1em);
+    height: calc(100% - 1em);
+    padding: .5em;
+    border: 0;
+    overflow: auto;
+}
+.markdown, .jade {
+    font-family: monospace;
 }
 .editable {
-  float: right;
-  background: rgba(128,128,128,.5);
+    float: right;
+    background: rgba(128, 128, 128, .5);
 }
-
-
+/*
 .editor{
   position: absolute;
   padding: .5em;
@@ -32,107 +34,235 @@
 .editor:hover{
   opacity:1;
 }
-
-.btn-sticker {
-  color: #888;
-  background: transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAAhCAYAAAARfqOAAAAABmJLR0QA/wD/AP+gvaeTAAAACXBI WXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3AcGDB82NZmXWwAAABl0RVh0Q29tbWVudABDcmVhdGVk IHdpdGggR0lNUFeBDhcAAAGcSURBVHja7ZvhboUgDIVPjQ+/Z/Q1tizZ5m7vH02MqdBW7jXqOQlR C4LSj8IPELSR4H2a21Ico6PafWlnZvJlhy1a9hXO0GS+BuqXHd+oRwBQepaKTZzlau+VYNAGnaSO +0heth59IXhhAExnDcMwgrqyPvrCqBT2z/XVGRGBANwQgBYLMuoCEYDOJwAUAaAIAEUAKAJAEQCK AFAEgCIAFAGgCABFACgCQBEAigBQBIA6ufoNu7Jr7qH1tmxP6pK2rtKO9T2R/4jmS/DZU9fecxHe /57PG5TKKoAHgB8AXwA+AXwDGCe7GQHW+9YtJz0qzvPYItcoABIoL446aveR/4icmcjAJQYAc9Kt KcA6waIblEmwA8XpIEmMgkx57/ci4Uxx2LwHZCRZx/I6A/A/JROCfjXylyCoo3Oz4U3RduOp7HxH gvnZSBABxDNVlmCZo/UvgL8tCHrH4q/krLMtFqVROWkUZTzH7KLT7Hq6Hqd1wDj5S/eOnKsvit9V nzSApxZRdAGBGQEIwDkgy0ScZZRWa/QTgHsBZU7XTxcLV7ceAX9FAAAAAElFTkSuQmCC') right no-repeat !important;
-  height: 33px;
-  min-width: 50px;
-  border: 0;
-  line-height: 28px;
+*/
+ .btn-sticker {
+    color: #888;
+    background: transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAAhCAYAAAARfqOAAAAABmJLR0QA/wD/AP+gvaeTAAAACXBI WXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3AcGDB82NZmXWwAAABl0RVh0Q29tbWVudABDcmVhdGVk IHdpdGggR0lNUFeBDhcAAAGcSURBVHja7ZvhboUgDIVPjQ+/Z/Q1tizZ5m7vH02MqdBW7jXqOQlR C4LSj8IPELSR4H2a21Ico6PafWlnZvJlhy1a9hXO0GS+BuqXHd+oRwBQepaKTZzlau+VYNAGnaSO +0heth59IXhhAExnDcMwgrqyPvrCqBT2z/XVGRGBANwQgBYLMuoCEYDOJwAUAaAIAEUAKAJAEQCK AFAEgCIAFAGgCABFACgCQBEAigBQBIA6ufoNu7Jr7qH1tmxP6pK2rtKO9T2R/4jmS/DZU9fecxHe /57PG5TKKoAHgB8AXwA+AXwDGCe7GQHW+9YtJz0qzvPYItcoABIoL446aveR/4icmcjAJQYAc9Kt KcA6waIblEmwA8XpIEmMgkx57/ci4Uxx2LwHZCRZx/I6A/A/JROCfjXylyCoo3Oz4U3RduOp7HxH gvnZSBABxDNVlmCZo/UvgL8tCHrH4q/krLMtFqVROWkUZTzH7KLT7Hq6Hqd1wDj5S/eOnKsvit9V nzSApxZRdAGBGQEIwDkgy0ScZZRWa/QTgHsBZU7XTxcLV7ceAX9FAAAAAElFTkSuQmCC') right no-repeat !important;
+    height: 33px;
+    min-width: 50px;
+    border: 0;
+    line-height: 28px;
 }
-.btn-square{
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
+.btn-square {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
 }
 .icon-num-list {
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOAgMAAABiJsVCAAAADFBMVEUAAAD///8ZGRkzMzPBdZZR AAAAAnRSTlMAQABPjKgAAAABYktHRAH/Ai3eAAAAK0lEQVQI12NggAOlVasaGIz//z/AIBga6sCg pAXi2oO4oli4SiCuMZALAgBh3xI6mW0ucgAAAABJRU5ErkJggg==');
-  background-position: 0 0;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOAgMAAABiJsVCAAAADFBMVEUAAAD///8ZGRkzMzPBdZZR AAAAAnRSTlMAQABPjKgAAAABYktHRAH/Ai3eAAAAK0lEQVQI12NggAOlVasaGIz//z/AIBga6sCg pAXi2oO4oli4SiCuMZALAgBh3xI6mW0ucgAAAABJRU5ErkJggg==');
+    background-position: 0 0;
 }
 .icon-quote {
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAQAgMAAACNX3zMAAAACVBMVEUAAGdxc3DAwr/r/PLdAAAA AXRSTlMAQObYZgAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfcBwYS CRIDukgnAAAAGXRFWHRDb21tZW50AENyZWF0ZWQgd2l0aCBHSU1QV4EOFwAAADlJREFUCNdjYMAE agwBQHIGowMDA1MCawMDA6ODGlCAc4EIiAwTBcpyhopGAMXDVIFsphDOBAZcAABD7AZ1suiqdwAA AABJRU5ErkJggg==');
-  background-position: 0 0;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAQAgMAAACNX3zMAAAACVBMVEUAAGdxc3DAwr/r/PLdAAAA AXRSTlMAQObYZgAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfcBwYS CRIDukgnAAAAGXRFWHRDb21tZW50AENyZWF0ZWQgd2l0aCBHSU1QV4EOFwAAADlJREFUCNdjYMAE agwBQHIGowMDA1MCawMDA6ODGlCAc4EIiAwTBcpyhopGAMXDVIFsphDOBAZcAABD7AZ1suiqdwAA AABJRU5ErkJggg==');
+    background-position: 0 0;
 }
 .icon-float-left {
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOAgMAAABiJsVCAAAADFBMVEUAAAD///8ZGRkzMzPBdZZR AAAAAnRSTlMAQABPjKgAAAABYktHRAH/Ai3eAAAAK0lEQVQI12NggAOtZasaGLSW/z/AoLU01AHC tf8O5IqGgrirQNz/mFwQAADS0hbS4xjzcwAAAABJRU5ErkJggg==');
-  background-position: 0 0;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOAgMAAABiJsVCAAAADFBMVEUAAAD///8ZGRkzMzPBdZZR AAAAAnRSTlMAQABPjKgAAAABYktHRAH/Ai3eAAAAK0lEQVQI12NggAOtZasaGLSW/z/AoLU01AHC tf8O5IqGgrirQNz/mFwQAADS0hbS4xjzcwAAAABJRU5ErkJggg==');
+    background-position: 0 0;
 }
 .icon-float-right {
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOAgMAAABiJsVCAAAADFBMVEUAAAD///8ZGRkzMzPBdZZR AAAAAnRSTlMAQABPjKgAAAABYktHRAH/Ai3eAAAAKUlEQVQI12NggAOtlasaGOz/AgnRUCAB5f4/ AOSGOjBorQJx/2NyQQAA1TMW5GxuY5oAAAAASUVORK5CYII=');
-  background-position: 0 0;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOAgMAAABiJsVCAAAADFBMVEUAAAD///8ZGRkzMzPBdZZR AAAAAnRSTlMAQABPjKgAAAABYktHRAH/Ai3eAAAAKUlEQVQI12NggAOtlasaGOz/AgnRUCAB5f4/ AOSGOjBorQJx/2NyQQAA1TMW5GxuY5oAAAAASUVORK5CYII=');
+    background-position: 0 0;
 }
 .btn-group > .btn:first-child {
-  margin-left: 1em;
+    margin-left: 1em;
 }
 p img {
-  display: block;
-  margin: 0 auto;
+    display: block;
+    margin: 0 auto;
 }
-section#magazine{
-  -webkit-column-count: 3; 
-  -webkit-column-rule: 1px solid #bbb;
-  -webkit-column-gap: 2em;
+section#magazine {
+    -webkit-column-count: 3;
+    -webkit-column-rule: 1px solid #bbb;
+    -webkit-column-gap: 2em;
 }
-.alignleft{
-  float:left;
-  margin-right: .5em;
+.alignleft {
+    float:left;
+    margin-right: .5em;
 }
-.alignright{
-  float:right;
-  margin-left: .5em;
-}</style></head><body class="container"><!--[if lt IE 7]><p class="chromeframe">Your browser is<em>ancient!</em><a href="http://browsehappy.com/">Upgrade to a different browser</a>or<a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a>to experience this site.</p><![endif]--><div data-toggle="editable" class="nav editor"><!--span.btn-group.btn-square<a data-target="new" href="#" title="Add new article after active article" disabled class="btn"><i class="icon-file"></i></a><a data-target="download" href="#" title="Download current article or page as separated html(/rtf/pdf) file" class="btn"><i class="icon-download-alt"></i></a><a data-target="print" href="#" title="Print article/page in A4 paper" disabled class="btn"><i class="icon-print"></i></a>--><span class="btn-group btn-square"><a data-target="strong" href="#" title="Make text bolder or stronger" style="font-weight:700;" class="btn"><!--i.icon-bold-->B</a><a data-target="ephasis" href="#" title="Make text less important" style="font-style:italic;" class="btn"><!--i.icon-italic-->I</a><a data-target="stroketrougth" href="#" title="Stroketrougth text, that no longer needed" style="text-decoration:line-through;" class="btn"><!-- i.icon-strikethrough-->T</a></span><span class="btn-group btn-square"><!--a(data-target="align-start",href="#",title="Left alignment of the text (in left-to-right text)").btn<i class="icon-align-right"></i>--><a data-target="align-center" href="#" title="By default text aligned to the left (in left-to-right text). So, let`s center it." class="btn"><i class="icon-align-center"></i></a><a data-target="align-end" href="#" title="Right alignment of the text (in left-to-right text)" class="btn"><i class="icon-align-right"></i></a><a data-target="align-justify" href="#" title="Lineup from both sides!" class="btn"><i class="icon-align-justify"></i></a></span><span class="btn-group btn-square"><a data-target="bullets" href="#" title="Unordered list - shout bullets in Your list" class="btn"><i class="icon-list"></i></a><a data-target="numbering" href="#" title="Let`s our list get numered" class="btn"><i class="icon-num-list"></i></a><!--a(data-target="push",href="#",title="Move list to the next level",disabled).btn<i class="icon-indent-left"></i>--><!--a(data-target="pull",href="#",title="Return list to the previews level",disabled).btn<i class="icon-indent-right"></i>--></span><!--span.btn-group.btn-square<span class="dropdown"><a data-target="paragraph" href="#" data-toggle="dropdown" title="Switch to other element" class="btn dropdown-toggle">¶<b class="caret"></b></a><ul class="dropdown-menu"><li><a data-target="heading1" href="#" title="First-level Heading"><h1>H1</h1></a></li><li><a data-target="heading2" href="#" title="First-level Heading"><h2>H2</h2></a></li><li><a data-target="heading3" href="#" title="First-level Heading"><h3>H3</h3></a></li><li><a data-target="heading4" href="#" title="First-level Heading"><h4>H4</h4></a></li><li><a data-target="heading5" href="#" title="First-level Heading"><h5>H5</h5></a></li><li><a data-target="heading6" href="#" title="First-level Heading"><h6>H6</h6></a></li><li><a data-target="quote" href="#" title="Blockquote"><i class="icon-quote"></i></a></li><li><a data-target="monospace" href="#" style="font-family: monospace" title="Some code snippet">{$}</a></li></ul></span>--><span class="btn-group btn-square"><!--a(data-target="image",href="#",title="Upload Image or take screenshot from the webcamera",disabled).btn<i class="icon-camera"></i>--><!--a(data-target="float-top",href="#",title="Float image to the top").btn<i class="icon-float-top"></i>--><a data-target="float-right" href="#" title="Float object to the right" class="btn"><i class="icon-float-right"></i></a><a data-target="float-left" href="#" title="Float object to the left" class="btn"><i class="icon-float-left"></i></a></span><!--span.label For other staff - just drop it--></div><div class="main"><div id="md1" onkeyup="javascript:document.getElementById(this.id+'-md').value = toMarkdown(this.innerHTML)" contentEditable="true" class="editable">HTML</div><textarea id="md1-md" onkeyup="javascript:document.getElementById(this.id.replace('-md','')).innerHTML = marked(this.value);" placeholder="Markdown" class="markdown"></textarea></div><script src="//cdnjs.cloudflare.com/ajax/libs/marked/0.2.9/marked.min.js"></script><script src="js/tabsintextarea.js"></script><script src="js/to-markdown.js"></script><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script><script src="js/bootstrap-editor.js"></script><script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-dropdown.js"></script><script>(function($,d){
+.alignright {
+    float:right;
+    margin-left: .5em;
+}</style></head><body class="container-fluid">
+    <!--[if lt IE 7]>
+        <p class="chromeframe">Your browser is<em>ancient!</em><a href="http://browsehappy.com/">Upgrade to a different browser</a>or<a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a>to experience this site.</p>
+    <![endif]-->
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="margin-bottom:0">
+        <div data-toggle="editable" class="navbar-inner editor">
+            <!--span.btn-group.btn-square<a data-target="new" href="#" title="Add new article after active article" disabled class="btn"><i class="icon-file"></i></a><a data-target="download" href="#" title="Download current article or page as separated html(/rtf/pdf) file" class="btn"><i class="icon-download-alt"></i></a><a data-target="print" href="#" title="Print article/page in A4 paper" disabled class="btn"><i class="icon-print"></i></a>--><span class="btn-group btn-square"><input id="md1-filename"  class="btn"/><a data-target="strong" href="#" title="Make text bolder or stronger" style="font-weight:700;" class="btn"><!--i.icon-bold-->B</a><a data-target="ephasis" href="#" title="Make text less important" style="font-style:italic;" class="btn"><!--i.icon-italic-->I</a><a data-target="stroketrougth" href="#" title="Stroketrougth text, that no longer needed" style="text-decoration:line-through;" class="btn"><!-- i.icon-strikethrough-->T</a></span><span class="btn-group btn-square"><!--a(data-target="align-start",href="#",title="Left alignment of the text (in left-to-right text)").btn<i class="icon-align-right"></i>--><a data-target="align-center" href="#" title="By default text aligned to the left (in left-to-right text). So, let`s center it." class="btn"><i class="icon-align-center"></i></a><a data-target="align-end" href="#" title="Right alignment of the text (in left-to-right text)" class="btn"><i class="icon-align-right"></i></a><a data-target="align-justify" href="#" title="Lineup from both sides!" class="btn"><i class="icon-align-justify"></i></a></span><span class="btn-group btn-square"><a data-target="bullets" href="#" title="Unordered list - shout bullets in Your list" class="btn"><i class="icon-list"></i></a><a data-target="numbering" href="#" title="Let`s our list get numered" class="btn"><i class="icon-num-list"></i></a><!--a(data-target="push",href="#",title="Move list to the next level",disabled).btn<i class="icon-indent-left"></i>--><!--a(data-target="pull",href="#",title="Return list to the previews level",disabled).btn<i class="icon-indent-right"></i>--></span>
+            <!--span.btn-group.btn-square<span class="dropdown"><a data-target="paragraph" href="#" data-toggle="dropdown" title="Switch to other element" class="btn dropdown-toggle">¶<b class="caret"></b></a><ul class="dropdown-menu"><li><a data-target="heading1" href="#" title="First-level Heading"><h1>H1</h1></a></li><li><a data-target="heading2" href="#" title="First-level Heading"><h2>H2</h2></a></li><li><a data-target="heading3" href="#" title="First-level Heading"><h3>H3</h3></a></li><li><a data-target="heading4" href="#" title="First-level Heading"><h4>H4</h4></a></li><li><a data-target="heading5" href="#" title="First-level Heading"><h5>H5</h5></a></li><li><a data-target="heading6" href="#" title="First-level Heading"><h6>H6</h6></a></li><li><a data-target="quote" href="#" title="Blockquote"><i class="icon-quote"></i></a></li><li><a data-target="monospace" href="#" style="font-family: monospace" title="Some code snippet">{$}</a></li></ul></span>--><span class="btn-group btn-square"><!--a(data-target="image",href="#",title="Upload Image or take screenshot from the webcamera",disabled).btn<i class="icon-camera"></i>--><!--a(data-target="float-top",href="#",title="Float image to the top").btn<i class="icon-float-top"></i>--><a data-target="float-right" href="#" title="Float object to the right" class="btn"><i class="icon-float-right"></i></a><a data-target="float-left" href="#" title="Float object to the left" class="btn"><i class="icon-float-left"></i></a></span>
+            <!--span.label For other staff - just drop it-->
+        </div>
+        <p id="try-styles"> <span class="label">Try styles:</span>
+ <a href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/amelia/bootstrap.min.css">Amelia</a>
+ <a href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/cerulean/bootstrap.min.css">Cerulean</a>
+ <a href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/cosmo/bootstrap.min.css">Cosmo</a>
+ <a href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/cyborg/bootstrap.min.css">Cyborg</a>
+ <a href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/flatly/bootstrap.min.css">Flatly</a>
+ <a href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/journal/bootstrap.min.css">Journal</a>
+ <a href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/readable/bootstrap.min.css">Readable</a>
+ <a href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/simplex/bootstrap.min.css">Simplex</a>
+ <a href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/slate/bootstrap.min.css">Slate</a>
+ <a href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/spacelab/bootstrap.min.css">Spacelab</a>
+ <a href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/spruce/bootstrap.min.css">Spruce</a>
+ <a href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/superhero/bootstrap.min.css">Superhero</a>
+ <a href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/united/bootstrap.min.css">United</a>
+        </p>
+    </nav>
+    <div class="main">
+        <div id="md1-result" contentEditable="true" class="editable">HTML</div>
+        <textarea id="md1-md" placeholder="Markdown" class="markdown"></textarea>
+    </div>
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/marked/0.2.9/marked.min.js"></script>
+<script src="//twitter.github.com/bootstrap/assets/js/bootstrap-dropdown.js"></script>
+<script src="js/to-markdown.js"></script>
+<script src="js/bootstrap-editor.js"></script>
+<script>
+String.prototype.cleanHTML = function(){return this.replace(/\s*((background|color|font|line|border|box|text)[^;]*;)\s*/gim,'').replace(/<(span|b|pre)[^>]+style=""[^>]*>([^<\/]*)<\/(span|b|pre)>/gim,'$2')};
+(function ($, d) {
+    marked.setOptions({breaks: true,sanitize: false});//,smartypants: true
+    // TODO: seporate following script, make universal function MarkdownToHTML().
+    // $('.markdown').each(function MarkdownToHTML(){-filename...-src/-tmp...-html...-jade...-md})
+    document.getElementById('md1-filename').onchange = function () {
+        var i = document.createElement('iframe');
+        i.src = this.value;
+        // Create temporary iframe to load source // TODO: ...or script to load jsonp
+        i.id = this.id.replace('-filename', '-src');
+        // Replace itself with converted Markdown code
+        i.onload = function () {
+            text = this.contentWindow.document.body.innerText == 'Not Found' 
+                ? localStorage.getItem(document.getElementById(this.id.replace('-src', '-filename')).value, this.value) 
+                : this.contentWindow.document.body.innerText;
+            document.getElementById(this.id.replace('-src', '-result')).innerHTML = marked(text);
+            document.getElementById(this.id.replace('-src', '-md')).value = text;
+        };
+        document.getElementById(this.id.replace('-filename', '-result')).appendChild(i)
+    };
+    document.getElementById('md1-result').onkeyup = function () {
+        document.getElementById(this.id.replace('-result', '-md')).value = toMarkdown((this.innerHTML+'').cleanHTML());
+    };
+    document.getElementById('md1-md').onkeyup = function () {
+        document.getElementById(this.id.replace('-md', '-result')).innerHTML = marked(this.value);
+        localStorage.setItem(document.getElementById(this.id.replace('-src', '-filename')).value, this.value);
+    };
 
-  $.fn.drags = function(opt) {
-  
-      opt = $.extend({handle:"",cursor:"move"}, opt);
-      
-      if(opt.handle === "") {
-          var $el = this;
-      } else {
-          var $el = this.find(opt.handle);
-      }
-      
-      return $el.css('cursor', opt.cursor).on("mousedown", function(e) {
-          if(opt.handle === "") {
-              var $drag = $(this).addClass('draggable');
-          } else {
-              var $drag = $(this).addClass('active-handle').parent().addClass('draggable');
-          }
-          var z_idx = $drag.css('z-index'),
-              drg_h = $drag.outerHeight(),
-              drg_w = $drag.outerWidth(),
-              pos_y = $drag.offset().top + drg_h - e.pageY,
-              pos_x = $drag.offset().left + drg_w - e.pageX;
-          $drag.css('z-index', 1000).parents().on("mousemove", function(e) {
-              $('.draggable').offset({
-                  top:e.pageY + pos_y - drg_h,
-                  left:e.pageX + pos_x - drg_w
-              }).on("mouseup", function() {
-                  $(this).removeClass('draggable').css('z-index', z_idx);
-              });
-          });
-          e.preventDefault(); // disable selection
-      }).on("mouseup", function() {
-          if(opt.handle === "") {
-              $(this).removeClass('draggable');
-          } else {
-              $(this).removeClass('active-handle').parent().removeClass('draggable');
-          }
-      });
-  }
-  
-  $('.dropdown-toggle').dropdown();
-  $('.editor').editor();
-  $('.editor').drags();
-})(jQuery,document)
+    /*$.fn.drags = function (opt) {
 
-marked.setOptions({
-  tables: true,
-  breaks: true,
-  sanitize: false,
-  smartypants: true
-});
+        opt = $.extend({
+            handle: "",
+            cursor: "move"
+        }, opt);
+
+        if (opt.handle === "") {
+            var $el = this;
+        } else {
+            var $el = this.find(opt.handle);
+        }
+
+        return $el.css('cursor', opt.cursor).on("mousedown", function (e) {
+            if (opt.handle === "") {
+                var $drag = $(this).addClass('draggable');
+            } else {
+                var $drag = $(this).addClass('active-handle').parent().addClass('draggable');
+            }
+            var z_idx = $drag.css('z-index'),
+                drg_h = $drag.outerHeight(),
+                drg_w = $drag.outerWidth(),
+                pos_y = $drag.offset().top + drg_h - e.pageY,
+                pos_x = $drag.offset().left + drg_w - e.pageX;
+            $drag.css('z-index', 1000).parents().on("mousemove", function (e) {
+                $('.draggable').offset({
+                    top: e.pageY + pos_y - drg_h,
+                    left: e.pageX + pos_x - drg_w
+                }).on("mouseup", function () {
+                    $(this).removeClass('draggable').css('z-index', z_idx);
+                });
+            });
+            e.preventDefault(); // disable selection
+        }).on("mouseup", function () {
+            if (opt.handle === "") {
+                $(this).removeClass('draggable');
+            } else {
+                $(this).removeClass('active-handle').parent().removeClass('draggable');
+            }
+        });
+    }
+    $('.editor').drags();*/
+
+    $('.dropdown-toggle').dropdown();
+    $('.editor').editor();
+    $('#try-styles a').each(function () {
+        $(this).click(function (e) {
+            e.preventDefault();
+            var s = $('link[href*=css]')[0];
+            s.href = this.href;
+            s.rel = 'stylesheet';
+            s.type = 'text/css';
+        });
+    });
+})(jQuery, document);
+
+
+HTMLTextAreaElement.prototype.getCaretPosition = function () { //return the caret position of the textarea
+    return this.selectionStart;
+};
+HTMLTextAreaElement.prototype.setCaretPosition = function (position) { //change the caret position of the textarea
+    this.selectionStart = position;
+    this.selectionEnd = position;
+    this.focus();
+};
+HTMLTextAreaElement.prototype.hasSelection = function () { //if the textarea has selection then return true
+    if (this.selectionStart == this.selectionEnd) {
+        return false;
+    } else {
+        return true;
+    }
+};
+HTMLTextAreaElement.prototype.getSelectedText = function () { //return the selection text
+    return this.value.substring(this.selectionStart, this.selectionEnd);
+};
+HTMLTextAreaElement.prototype.setSelection = function (start, end) { //change the selection area of the textarea
+    this.selectionStart = start;
+    this.selectionEnd = end;
+    this.focus();
+};
+
+var textarea = document.getElementsByTagName('textarea')[0]; 
+
+textarea.onkeydown = function(event) {
+    //support tab on textarea
+    if (event.keyCode == 9) { //tab was pressed
+        var newCaretPosition;
+        newCaretPosition = textarea.getCaretPosition() + "    ".length;
+        textarea.value = textarea.value.substring(0, textarea.getCaretPosition()) + "    " + textarea.value.substring(textarea.getCaretPosition(), textarea.value.length);
+        textarea.setCaretPosition(newCaretPosition);
+        return false;
+    }
+    if(event.keyCode == 8){ //backspace
+        if (textarea.value.substring(textarea.getCaretPosition() - 4, textarea.getCaretPosition()) == "    ") { //it's a tab space
+            var newCaretPosition;
+            newCaretPosition = textarea.getCaretPosition() - 3;
+            textarea.value = textarea.value.substring(0, textarea.getCaretPosition() - 3) + textarea.value.substring(textarea.getCaretPosition(), textarea.value.length);
+            textarea.setCaretPosition(newCaretPosition);
+        }
+    }
+    if(event.keyCode == 37){ //left arrow
+        var newCaretPosition;
+        if (textarea.value.substring(textarea.getCaretPosition() - 4, textarea.getCaretPosition()) == "    ") { //it's a tab space
+            newCaretPosition = textarea.getCaretPosition() - 3;
+            textarea.setCaretPosition(newCaretPosition);
+        }    
+    }
+    if(event.keyCode == 39){ //right arrow
+        var newCaretPosition;
+        if (textarea.value.substring(textarea.getCaretPosition() + 4, textarea.getCaretPosition()) == "    ") { //it's a tab space
+            newCaretPosition = textarea.getCaretPosition() + 3;
+            textarea.setCaretPosition(newCaretPosition);
+        }
+    } 
+}
 </script><script>var _gaq=[['_setAccount','XX-88888888-8'],['_trackPageview']];
 (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
 g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
