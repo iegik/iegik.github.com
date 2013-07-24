@@ -71,32 +71,20 @@ Cово<s>глупость</s><sup>купность</sup> слов, набран
 
 Подсвечиваемый код:
 
-    <script>
-    // Код
-    function Microtime(){
-      this.started = false;
-      this.stopped = false;
-      this.start = function(){
-        var d = new Date();
-        this.started = (d.getMilliseconds()/1000)+(d.getSeconds()+d.getMinutes()*60);
-        return this.started;
-      }
-      this.stop = function(){
-          var d = new Date();
-        this.stopped = (d.getMilliseconds()/1000)+(d.getSeconds()+d.getMinutes()*60);
-        return this.stopped - this.started;
-      }
-    }
-
-    mt = new Microtime();
-    mt.start();
-
-    console.log(mt.stop());
-    </script>
+        <p id="testCode">Please wait...</p>
+        <script>
+        // Comment
+        document.getElementById('testCode').onload = function (){
+            return this.innerText = 'Loaded';
+        };
+        </script>
 
 #### Фигуры ####
 
-    <figure><figcaption>a</figcaption>b</figure>
+    <figure>
+        <img src="image.jpg" width="1024px"/>
+        <figcaption>Some caption</figcaption>
+    </figure>
 
 <figure>
 <img src="/img/free_spirit_by_nyaa_n-d4tf51p.jpg" width="1024px"/>
