@@ -105,12 +105,15 @@ Cово<s>глупость</s><sup>купность</sup> слов, набран
 
 ---
 
-<figure>
-<video src="out.webm"  controls autobuffer>
-<p>You can <a  href="out.webm"> download the  video</a>.</p>
-</video>
-<figcaption>Видео.</figcaption>
-</figure>
+    <figure>
+        <video width="123" height="123" controls autobuffer >
+            <source  src="out.webm" type='video/webm; codecs="vp8, vorbis"'/>
+            <p>You can <a  href="out.webm"> download the  video</a>.</p>
+        </video>
+        <figcaption>Видео.</figcaption>
+    </figure>
+
+<figure><video width="123" height="123" controls autobuffer ><source  src="out.webm" type='video/webm; codecs="vp8, vorbis"'/><p>You can <a  href="out.webm"> download the  video</a>.</p></video><figcaption>Видео.</figcaption></figure>
 
 </section>
 
