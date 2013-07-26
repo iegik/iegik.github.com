@@ -3,7 +3,7 @@ Author: Artūrs Jansons
 License: MIT 
 v1.0 */
 a{color: inherit;}
-table {border-collapse: separate;}
+table {border-collapse: separate;width: 100%;}
 caption, figurecaption, th {
   font-weight: normal;
   text-align: left;
