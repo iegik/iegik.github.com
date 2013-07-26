@@ -79,6 +79,16 @@ Cово<s>глупость</s><sup>купность</sup> слов, набран
         };
         </script>
 
+#### Таблицы ####
+
+| № | Наименование | Количество | Цена | Сумма |
+|:-:| ------- |:----:| ----:| ----:|
+| 1 | Сахар | 0.75 | 1 | 0.00 |
+| 2 | Соль| 0.44 | 1 | 0.00 |
+| 3 | Хлеб | 0.54 | 2 | 0.00 |
+| 4 | Сыр | 4.38 | 0.21 | 0.00 |
+| 5 | Сливочное масло | 0.00 | 1 | 0.00 |
+
 #### Фигуры ####
 
     <figure>
@@ -86,10 +96,7 @@ Cово<s>глупость</s><sup>купность</sup> слов, набран
         <figcaption>Some caption</figcaption>
     </figure>
 
-<figure>
-<img src="/img/free_spirit_by_nyaa_n-d4tf51p.jpg" width="1024px"/>
-<figcaption>Обычно я вставляю какую-нибудь картинку с <a href="http://placekitten.com" alt="PlaceKitten.com">этого</a> сайта.</figcaption>
-</figure>
+<figure><img src="/img/free_spirit_by_nyaa_n-d4tf51p.jpg" width="1024px"/><figcaption>Обычно я вставляю какую-нибудь картинку с <a href="http://placekitten.com" alt="PlaceKitten.com">этого</a> сайта</figcaption></figure>
 
 ---
 
@@ -115,7 +122,4 @@ Cово<s>глупость</s><sup>купность</sup> слов, набран
 
     <data value="a">b</data>
 
-<figure>
-<data class="ean13" value="2HDJhjd*aaefeb*">Krievijas 45% Siers</data>Uzglabaš. temp.: +2 +6 ℃. Beztauku daļas mitrums 57%. Piens. sāls. cietināt. -㎉. hlorīds. ferments. dab. krāsv. piensk. bakt. ieraugs. Izpl: Baltic Trade Network SIA
-<figcaption></figcaption>
-</figure>
+<figure><data class="ean13" value="2HDJhjd*aaefeb*">Krievijas 45% Siers</data>Uzglabaš. temp.: +2 +6 ℃. Beztauku daļas mitrums 57%. Piens. sāls. cietināt. -㎉. hlorīds. ferments. dab. krāsv. piensk. bakt. ieraugs. Izpl: Baltic Trade Network SIA<figcaption></figcaption></figure>
