@@ -1,41 +1,26 @@
 <!DOCTYPE html><!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"><![endif]--><!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]--><!--[if IE 8]><html class="no-js lt-ie9" lang="en"><![endif]--><!--[if gt IE 8]><html class="no-js" lang="en"><![endif]--><head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Markdown Editor</title>
 <link rel="stylesheet" type="text/css" media="screen" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
-<style>body, html, .main, .container-fluid, .container {
+<link rel="stylesheet" type="text/css" media="screen" href="css/typography.css" />
+<style>
+body, html, section, article {
     height: 100%;
-    overflow: hidden;
 }
 .main {
     height: calc(100% - 5em);
     padding-top: calc(5em);
 }
-.markdown, .editable {
+.editable, .editable+textarea {
     width: calc(50% - 1em);
     height: calc(100% - 1em);
     padding: .5em;
     border: 0;
     overflow: auto;
 }
-.markdown, .jade {
-    font-family: monospace;
-}
 .editable {
     float: right;
-    background: rgba(128, 128, 128, .5);
 }
-/*
-.editor{
-  position: absolute;
-  padding: .5em;
-  border-radius: .5em;
-  margin: .5em;
-  background: rgba(128,128,128,.5);
-  opacity: .5;
-}
-.editor:hover{
-  opacity:1;
-}
-*/
- .btn-sticker {
+/* additional buttons */
+.btn-sticker {
     color: #888;
     background: transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAAhCAYAAAARfqOAAAAABmJLR0QA/wD/AP+gvaeTAAAACXBI WXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3AcGDB82NZmXWwAAABl0RVh0Q29tbWVudABDcmVhdGVk IHdpdGggR0lNUFeBDhcAAAGcSURBVHja7ZvhboUgDIVPjQ+/Z/Q1tizZ5m7vH02MqdBW7jXqOQlR C4LSj8IPELSR4H2a21Ico6PafWlnZvJlhy1a9hXO0GS+BuqXHd+oRwBQepaKTZzlau+VYNAGnaSO +0heth59IXhhAExnDcMwgrqyPvrCqBT2z/XVGRGBANwQgBYLMuoCEYDOJwAUAaAIAEUAKAJAEQCK AFAEgCIAFAGgCABFACgCQBEAigBQBIA6ufoNu7Jr7qH1tmxP6pK2rtKO9T2R/4jmS/DZU9fecxHe /57PG5TKKoAHgB8AXwA+AXwDGCe7GQHW+9YtJz0qzvPYItcoABIoL446aveR/4icmcjAJQYAc9Kt KcA6waIblEmwA8XpIEmMgkx57/ci4Uxx2LwHZCRZx/I6A/A/JROCfjXylyCoo3Oz4U3RduOp7HxH gvnZSBABxDNVlmCZo/UvgL8tCHrH4q/krLMtFqVROWkUZTzH7KLT7Hq6Hqd1wDj5S/eOnKsvit9V nzSApxZRdAGBGQEIwDkgy0ScZZRWa/QTgHsBZU7XTxcLV7ceAX9FAAAAAElFTkSuQmCC') right no-repeat !important;
     height: 33px;
@@ -67,23 +52,7 @@
 .btn-group > .btn:first-child {
     margin-left: 1em;
 }
-p img {
-    display: block;
-    margin: 0 auto;
-}
-section#magazine {
-    -webkit-column-count: 3;
-    -webkit-column-rule: 1px solid #bbb;
-    -webkit-column-gap: 2em;
-}
-.alignleft {
-    float:left;
-    margin-right: .5em;
-}
-.alignright {
-    float:right;
-    margin-left: .5em;
-}</style></head><body class="container-fluid">
+</style></head><body class="container-fluid">
     <!--[if lt IE 7]>
         <p class="chromeframe">Your browser is<em>ancient!</em><a href="http://browsehappy.com/">Upgrade to a different browser</a>or<a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a>to experience this site.</p>
     <![endif]-->
@@ -109,10 +78,10 @@ section#magazine {
  <a href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/united/bootstrap.min.css">United</a>
         </p>
     </nav>
-    <div class="main">
-        <div id="md1-result" contentEditable="true" class="editable">HTML</div>
+    <section class="main">
+        <article id="md1-result" contentEditable="true" class="editable">HTML</article>
         <textarea id="md1-md" placeholder="Markdown" class="markdown"></textarea>
-    </div>
+    </section>
 </body>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/marked/0.2.9/marked.min.js"></script>
