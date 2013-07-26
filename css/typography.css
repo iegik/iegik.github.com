@@ -127,6 +127,7 @@ ol {counter-reset: n;}
 ol li { counter-increment: n;}
 ol li:before{ content: counters(n, ".") ".";}
 
+p {max-width: 80em;}
 p:first-letter, blockquote, blockquote:before { margin-left:2.5em}
 s+sup { position:absolute; line-height:.1em;padding-bottom:3em;color:#a22;}
 
