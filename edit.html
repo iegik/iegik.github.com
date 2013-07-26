@@ -71,13 +71,17 @@ caption, figcaption, th {
 }
 figure{position:relative;}
 figcaption {
-position: absolute;
-bottom: 0;
-padding: 1em;
-background-color: rgba(128,128,128,.5);
-color: rgba(255,255,255,.5);
-width: -webkit-calc(100% - 2em);
-width: calc(100% - 2em);
+    display:none;
+    position: absolute;
+    top: 0;
+    padding: 1em;
+    background-color: rgba(128,128,128,.5);
+    color: rgba(255,255,255,.5);
+    width: -webkit-calc(100% - 2em);
+    width: calc(100% - 2em);
+}
+figure:hover figcaption{
+    display: block;
 }
 </style></head><body class="container-fluid">
     <!--[if lt IE 7]>
