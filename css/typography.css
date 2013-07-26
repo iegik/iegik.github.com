@@ -4,7 +4,7 @@ License: MIT
 v1.0 */
 a{color: inherit;}
 table {border-collapse: separate;}
-caption, figurecaption, th, td {
+caption, figurecaption, th {
   font-weight: normal;
   text-align: left;
   display: table-cell;
