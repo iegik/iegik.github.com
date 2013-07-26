@@ -1,5 +1,6 @@
 <!DOCTYPE html><!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"><![endif]--><!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]--><!--[if IE 8]><html class="no-js lt-ie9" lang="en"><![endif]--><!--[if gt IE 8]><html class="no-js" lang="en"><![endif]--><head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Markdown Editor</title>
 <link rel="stylesheet" type="text/css" media="screen" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap-fixes.css" />
 <link rel="stylesheet" type="text/css" media="screen" href="css/typography.css" />
 <style>
 body, html, section, article {
@@ -51,6 +52,16 @@ body, html, section, article {
 }
 .btn-group > .btn:first-child {
     margin-left: 1em;
+}
+/* Striped tables */
+article tr:nth-child(odd) {
+    background-color: rgba(128, 128, 128, .1);
+}
+article th:nth-child(odd), article tr:nth-child(odd) {
+    -webkit-filter: brightness(.5) brightness(1.5);
+    -moz-filter: brightness(.5) brightness(1.5);
+    -o-filter: brightness(.5) brightness(1.5);
+    filter: brightness(.5) brightness(1.5);
 }
 </style></head><body class="container-fluid">
     <!--[if lt IE 7]>
