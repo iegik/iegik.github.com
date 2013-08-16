@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html manifest="cache.manifest">
 
   <head>
     <meta charset='utf-8' />
@@ -8,11 +8,23 @@
 
     <link id="bootstrap" rel="stylesheet" type="text/css" media="screen" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css">
     <!--link rel="stylesheet" type="text/css" media="screen" href="stylesheets/responsive-layout-v2.css"-->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap-fixes.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/typography.css"/>
 
     <title>Artūrs Jansons</title>
 <style>
       body {
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+      div:hover {
+        -webkit-filter: sepia() hue-rotate(170deg) contrast(.8);
+        -webkit-transition: 2s;
+      }
+      dt {
+        float: left;
+        width: 10em;
+        text-align: right;
+        margin-right: .5em;
       }
     </style>
 </head>
@@ -40,8 +52,9 @@
               <!--li><a href="ad_formats.md" data-target="markdown" alt="page-ad-formats">Ad Formats</a></li-->
               <!--li><a href="#about">About</a></li-->
               <!--li><a href="#contact">Contact</a></li-->
-              <li><a href="test1.md" data-target="markdown" alt="page-bootstrap-starter">Starter template</a></li>
-              <li><a href="test2.md" data-target="markdown" alt="page-bootstrap-marketing">Basic marketing site</a></li>
+              <!--<li><a href="test1.md" data-target="markdown" alt="page-bootstrap-starter">Starter template</a></li>
+              <li><a href="test2.md" data-target="markdown" alt="page-bootstrap-marketing">Basic marketing site</a></li>-->
+              <li><a href="blog/plsql.md" data-target="markdown" alt="page-blog-plsql">PL/SQL</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -56,12 +69,41 @@
           <p>Subpages of this page was written in pretty Markdown format. Markdown is same plain text as You can remember from 80`s - when there was no Reach-Text-Format and all documents formated with funny <code>=</code> or <code>-</code> strips and <code>*</code> bullets.</p>
           <p style="text-align: center"><a href="edit.html" class="btn btn-primary btn-large">Try now for free</a></p>
         </div>
-        <ul>
-          <li>Frontent development</li>
-          <li>Speed optimizations</li>
-          <li>UI design</li>
-          <li>Testing</li>
-        </ul>
+        <p class="vcard">
+					<img src="http://a0.twimg.com/profile_images/691424418/apmyp.png" alt="Autoportrait" class="left">
+					<a class="fn org url" href="http://deatech.lv/index.php?do=feedback" title="Contact Information for DEA Technology/Artūrs"><span class="organization-name">DEA Technology</span>/<span class="organization-unit">Artūrs Jansons</span></a><br>
+					<span class="adr">
+						<a class="extended-address" href="http://arturs.jansons.net/#about">IT consultations, webpage development. Face-to-face.</a><br>
+						<span class="street-address">Ģertrūdes iela</span>/<span class="street-address">Avotu iela</span>, <span class="locality">Riga city</span>,<br>
+						<span class="region">Rīgas rajons</span> <span class="postal-code">LV-1010</span> <b class="country">Latvia</b><br>
+						<span class="tel">Telephone: <span class="value">+371 27145974</span></span><br>
+					</span>
+				</p>
+				<p>Hi, I`m <del>freelance</del> <strong>web developer</strong> since 2005, based in Riga, Latvia, involved in many <strong>web design</strong> and <strong>web application development</strong> projects for years.<br/>
+				Moustly focused on providing high quality services especially <strong>frontent development</strong> <em>and custom web application development (CMS, ecommerce, social networking etc.)</em> to exclusive and serious clients from world wide using proven web technology <abbr title="Personal Home Page Tools - Hypertext Preprocessor">PHP</abbr>, also able to work with <del>Flash/ActionScript projects,</del> AJAX, and SEO (search engine optimization) as soon as webpage <strong>speed optimizations</strong></p>
+				<p>I like make things easer and better, so practising in <strong>UI design</strong> using latest hacks and technics. Also don`t forgot about <strong>testing</strong> - moust important part of development process.</p>
+				<dl>
+					<dt>Main technology</dt>
+					<dd><abbr title="Linux + Apache + MySQL + PHP">LAMP</abbr>, H5BP/Jade, JavaScript, Bootstrap/Scss+Less, Markdown</dd>
+	
+					<dt>Planning to use</dt>
+					<dd>nodejs (server-side JS), WebGL, sockets, multi-threading</dd>
+	
+					<dt>Exception for me</dt>
+					<dd>Windows Server, Zend, Joomla, Magento, Java</dd>
+	
+					<dt>Frameworks</dt>
+					<dd>CodeIgniter (small projects), Symfony (<abbr title="Long-Term Support">LTS</abbr>), Wordpress (blogs), OpenCart (online shop), jQuery (JavaScript), <abbr title="Object-oriented Cascading Stylesheets">OOCSS</abbr>/SASS (CSS: Blueprint, <abbr title="960px Grid system">960gs</abbr>)</dd>
+	
+					<dt>Methodology</dt>
+					<dd>SCRUM/Agile</dd>
+					
+					<dt>Tools</dt>
+					<dd>Linux, Gedit (editor), some of Node.JS and Ruby opensource projects, Git (Revision Control), <abbr title="GNU Image Manipulation Program">GIMP</abbr> and/or Paint.NET-like image editor, <abbr title="OpenOffice.org">OOO</abbr>/LibreOffice (Office pack)</dd>
+	
+					<dt>Standarts and ideology</dt>
+					<dd>Semantic markup, DRY, clean code, <a href="http://coding.smashingmagazine.com/2011/04/21/css3-vs-css-a-speed-benchmark/">use new features if possible</a> (CSS3)</dd>
+				</dl>
         <ul class="nav bs-docs-social-buttons">
           <!--li>
             <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=iegik&repo=iegik&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>

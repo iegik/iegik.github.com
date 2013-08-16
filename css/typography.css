@@ -1,150 +1,31 @@
-html, body, div, span, applet, object, iframe, table, caption,
-tbody, tfoot, thead, tr, th, td, del, dfn, em, font, img, ins,
-kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr,
-acronym, address, big, cite, code, dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend {
-vertical-align: baseline;
-font-family: inherit;
-font-weight: inherit;
-font-style: inherit;
-font-size: 100%;
-outline: 0;
-padding: 0;
-margin: 0;
-border: 0;
-}
-:focus {
-outline: 0;
-}
-body {
-background: white;
-line-height: 1;
-color: black;
-}
-table {
-border-collapse: separate;
-border-spacing: 0;
-}
-caption, th, td {
-font-weight: normal;
-text-align: left;
-}
-ul, ol {list-style-type: none;}
-blockquote:before, blockquote:after, q:before, q:after {
-content: "";
-}
-blockquote, q {
-quotes: "" "";
-}
-img, object, video, embed { max-width: 100%;}
-
-
-@font-face {
-  font-family: 'Didact Gothic';
-  font-style: normal;
+/* http://arturs.jansons.id.lv
+Author: Artūrs Jansons
+License: MIT 
+v1.0 */
+a{color: inherit;}
+table {border-collapse: separate;width: 100%;}
+caption, figurecaption, th {
   font-weight: normal;
-  src: local('Didact Gothic'), local('DidactGothic'), url('http://themes.googleusercontent.com/static/fonts/didactgothic/v4/v8_72sD3DYMKyM0dn3LtWrBIwK9fI-wEnHgeOSrerqs.woff') format('woff');
+  text-align: left;
+  display: table-cell;
 }
-@font-face {
-  font-family: 'Bad Script';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Bad Script Regular'), local('BadScript-Regular'), url('http://themes.googleusercontent.com/static/fonts/badscript/v2/xvnrV3H3fZsc-fSw6fOJeBsxEYwM7FgeyaSgU71cLG0.woff') format('woff');
+/* Full-width resources */
+img, object, video, embed {
+  max-width: 100%;
 }
-@font-face {
-  font-family: 'Ruslan Display';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Ruslan Display'), local('RuslanDisplay'), url('http://themes.googleusercontent.com/static/fonts/ruslandisplay/v4/SREdhlyLNUfU1VssRBfs3nfn3bHKzcZUG_lDZfW_WhE.woff') format('woff');
+pre {
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
 }
-@font-face {
-  font-family : "ean13";
-  /*src: url('../fonts/woff/ean13.woff') format("woff");
-  * src: url("../fonts/ean13.eot");*/
-  src: url("../fonts/ean13.ttf") format("opentype");/**/
-}
-
-@font-face {
- font-family: "SpecialElite-Regular";
- src: local("SpecialElite-Regular"), url("../fonts/woff/SpecialElite-Regular.woff") format("woff");
-}
-
-body {
-  font-family: 'Didact Gothic';
-  width: 50em;
-  margin: 1em auto;
-  color: #123;
-  background: #fefdfc;
-}
-a {
-  color: #986;
-}
-data.ean13:after {
-  content: attr(value);
-  font-family: "ean13"; font-size: 4em ;
-  float:left;
-  padding: .1em;
-  border: #888 solid 1px;
-  margin-right: .1em;
-}
-
-pre, .pre {
- white-space: pre-wrap;       /* css-3 */
- white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
- white-space: -pre-wrap;      /* Opera 4-6 */
- white-space: -o-pre-wrap;    /* Opera 7 */
- word-wrap: break-word;       /* Internet Explorer 5.5+ */
- font-family: "SpecialElite-Regular", monospace;
-}
-
-
-h4:before { content: "§ "}
-
-h1 { font-size: 1.5em; font-weight: 700}
-h2 { font-size: 1.5em; text-align:center;}
-h3 { font-size: 1.2em; font-style: italic}
-h4 { font-size: 1.2em; }
-h5 { font-size: 1em; }
-h6 { font-size: 1em; }
-
-header { text-align: center;}
-header h1 { font-size: 2em; font-family: 'Ruslan Display'; border-top: #ccc double .1em;border-bottom: #ccc double .1em;margin:0 auto;display:inline-block;}
-header h1:before, header h1:after {content:"❉"; font-weight: 100;font-size:.85em;padding:0 .5em}
-header h2 {color: #888; font-variant:small-caps}
-
-
-blockquote, pre, hr, table, figure, p, li, dt, dd { margin: 1em 0 .5em; border-radius: .8em;}
-
-/* Нумерация списков */
-ul, ol {margin-left: 1.25em;}
-li:before { margin-right: .5em;}
-ul li:before { content: "❁"}
-ul li li:before { content: "❀"}
-ul li li li:before { content: "✿"}
-ul li li li li:before { content: "❃"}
+/* Red line */
+ul, ol, p:first-letter, blockquote, blockquote:before { margin-left:1.25em;list-style-type:none;}
 ol {counter-reset: n;}
 ol li { counter-increment: n;}
-ol li:before{ content: counters(n, ".") ".";}
-
-p:first-letter, blockquote, blockquote:before { margin-left:2.5em}
-s+sup { position:absolute; line-height:.1em;padding-bottom:3em;color:#a22;}
-
-figure { position: relative;}
-figcaption { position: absolute; top:0; color:#fefdfc;background:#123; -webkit-opacity: .7; font-weight: 700; font-size: 1.5em}
-
-hr { text-align: center;border:#ccc dotted .1em; height: .25em; position: relative}
-hr:after { height: 2em; line-height: 2em; font-size: 1.5em; content:"ග";top:-1em;position:absolute}
-
-blockquote, q {font-family: 'Bad Script', cursive;}
-blockquote { margin: 1em 3em 0 50%;position: relative; background: #efdebd; padding: .5em 1em;line-height: 1.2em;}
-blockquote p:before, blockquote p:after {color:#fefdfc; font-size: 4em; position:absolute;}
-blockquote p:before, q:before { content: "❝";top:.2em;left:-.1em}
-blockquote p:after, q:after { content: "❞";bottom:-.25em;right:-.1em}
-address { text-align:right; padding-right: 1em}
-address:before { content: "— "}
-
-footer { clear:both; width:100%;border-top:#888 solid 1px;margin-top:3em; color: #ccc; font-size: .8em}
-footer:before { font-size: 1.5em; content:"ඝ";top:-.7em;position:relative; text-align:center;left:50%;}
-
-td { border: #ccc dotted .1em}
+article li:before { margin-right: .5em;}
+article ol li:before{ content: counters(n, ".") ".";}
+article ul li:before { content: "*"}
+p {max-width: 80em;}
+s+sup { position:absolute; line-height:.1;padding-bottom:3em;}

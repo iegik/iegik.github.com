@@ -1,10 +1,11 @@
 CACHE MANIFEST
-# Cache manifest version 0.0.80
+# Cache manifest version 0.0.91
 /index.html
 /run.html
 /css/style.css
 
 /css/typography.css
+/css/bootstrap-fixes.css
 /css/layout.css
 /css/code.css
 /css/images.css
@@ -16,14 +17,5 @@ CACHE MANIFEST
 /js/hightlighter.min.js
 /js/script.js
 
-//apis.google.com/js/plusone.js
-//www.google-analytics.com/ga.js
 
 /fonts/woff/SpecialElite-Regular.woff
-/fonts/ean13.ttf
-//themes.googleusercontent.com/static/fonts/ruslandisplay/v4/SREdhlyLNUfU1VssRBfs3nfn3bHKzcZUG_lDZfW_WhE.woff
-//themes.googleusercontent.com/static/fonts/didactgothic/v4/v8_72sD3DYMKyM0dn3LtWrBIwK9fI-wEnHgeOSrerqs.woff
-//themes.googleusercontent.com/static/fonts/badscript/v2/xvnrV3H3fZsc-fSw6fOJeBsxEYwM7FgeyaSgU71cLG0.woff
-
-#http://www.google-analytics.com/__utm.gif?utmwv=5.2.7&utms=19&utmn=2036953178&utmhn=xn--artrs-nfb.jansons.id.lv&utmcs=UTF-8&utmsr=1024x768&utmvp=1009x379&utmsc=24-bit&utmul=ru&utmje=1&utmfl=11.1%20r102&utmdt=blog%3A%3Ajavascript&utmhid=938282443&utmr=0&utmp=%2Fblog%2Fjavascript.html&utmac=UA-1989060-6&utmcc=__utma%3D202237016.148381968.1333996829.1334033654.1334037386.3%3B%2B__utmz%3D202237016.1333996829.1.1.utmcsr%3D(direct)%7Cutmccn%3D(direct)%7Cutmcmd%3D(none)%3B&utmu=q~
-#https://apis.google.com/_/apps-static/_/js/gapi/gcm_ppb,googleapis_client,plusone/rt=j/ver=_loje1VsAmM.ru./sv=1/am=!JRw-TBD6dySIUpXdrg/d=1/rs=AItRSTNkS7RTUmVjjeN92iQRVzSPB5n4LA/cb=gapi.loaded0
