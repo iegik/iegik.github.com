@@ -1,67 +1,3 @@
-Variables
-=========
-
-<!--Данная таблица требует обьяснений. *Да, она просто кричит об этом!*
-В этом документе выполняется скрипт, который передёт броузеру данные и получает информацию о том как эти данные понимает броузер.-->
-<table>
-  <thead>
-    <tr><td>Тип данных</td><td>Мои данные</td><td>Получ. тип и длинна</td><td>возвр. значение</td><td>По умолчанию</td><td>Результат</td></tr>
-  </thead>
-  <tbody  id="javascript-table"/>
-</table>
-<script>
-/*
-function dumpProps(obj, parent) {
-   // Go through all the properties of the passed-in object
-   for (var i in obj) {
-      // if a parent (2nd parameter) was passed in, then use that to
-      // build the message. Message includes i (the object's property name)
-      // then the object's property value on a new line
-      if (parent) { var msg = parent + "." + i + " = " + obj[i]; } else { var msg = i + " = " + obj[i]; }
-      // Display the message. If the user clicks "OK", then continue. If they
-      // click "CANCEL" then quit this level of recursion
-      //console.log(msg)
-      // If this property (i) is an object, then recursively process the object
-      if (typeof obj[i] == "object" && !(/child/.exec(i))) {
-         if (parent) { dumpProps(obj[i], parent + "." + i); } else { dumpProps(obj[i], i); }
-      }
-   }
-}
-
-dumpProps(document);*/
-ss = "[{0:'0',1:'a'}, ['0','a'], 99, false, !1, Infinity, NaN, 3.14, 0x8f, 070, -0.5e9, 'a\\t', \"1\\t\", /$/]";
-tt = eval(ss)
-ss = ss.substr(1,ss.length-2).split(', ');
-//console.log(ss)
-//console.log(tt)
-out=''
-for(x in tt){
-  e = tt[x]
-  v = e.valueOf()
-  s = e.toString()
-  //console.log(v)
-  //t - type of variable
-  c = e.constructor
-  t = typeof c()
-  n = c.name
-  lv = v.length
-  ls = s.length
-
-  //p - prototypes of variable
-  p = ''
-  i = 0
-  for (y in c){
-    p += c[y]+'; ';
-    i++
-  }
-
-  //stringify all information
-  out+= '<tr><td class="code">'+n + '</td><td class="code">' + ss[x] + '</td><td class="code">' + t + '('+lv+'|'+ls+')</td><td class="code">' + s + '</td><td class="code">' + (new c) + '</td><td class="code">' + v + '</td></tr>'
-}
-document.getElementById('javascript-table').innerHTML = out;
-console.log('javascript-table loaded');
-</script>
-
 Object
 ------
 
@@ -658,3 +594,20 @@ Going over the top with chaining
         .mouseleave(mouseLeaveHandler)
       .end()
       .explode();
+
+
+<table class="table-striped"><tr><th>jQuery</th><th>JavaScript</th></tr><tr><td><pre><code lang="javascript">$(document).ready(function() {
+    // code…
+});</code></pre></td><td><pre><code lang="javascript">document.addEventListener("DOMContentLoaded", function() {
+  // code…
+});</code></pre></td></tr><tr><td><pre><code lang="javascript">var divs = $("div");</code></pre></td><td><pre><code lang="javascript">var divs = document.querySelectorAll("div");/code></pre></td></tr><tr><td><pre><code lang="javascript">var newDiv = $("<div/>");</code></pre></td><td><pre><code lang="javascript">var newDiv = document.createElement("div");</code></pre></td></tr><tr><td><pre><code lang="javascript">newDiv.addClass("foo");</code></pre></td><td><pre><code lang="javascript">newDiv.classList.add("foo");</code></pre></td></tr><tr><td><pre><code lang="javascript">newDiv.toggleClass("foo");</code></pre></td><td><pre><code lang="javascript">newDiv.classList.toggle("foo");</code></pre></td></tr><tr><td><pre><code lang="javascript">$("a").click(function() {
+  // code…
+})</code></pre></td><td><pre><code lang="javascript">[].forEach.call(document.querySelectorAll("a"), function(el) {
+  el.addEventListener("click", function() {
+    // code…
+  });
+});</code></pre></td></tr><tr><td><pre><code lang="javascript">$("body").append($("<p/>"));</code></pre></td><td><pre><code lang="javascript">document.body.appendChild(document.createElement("p"));</code></pre></td></tr><tr><td><pre><code lang="javascript">$("img").filter(":first").attr("alt", "My image");</code></pre></td><td><pre><code lang="javascript">document.querySelector("img").setAttribute("alt", "My image");</code></pre></td></tr><tr><td><pre><code lang="javascript">var parent = $("#about").parent();
+</code></pre></td><td><pre><code lang="javascript">var parent = document.getElementById("about").parentNode;</code></pre></td></tr><tr><td><pre><code lang="javascript">var clonedElement = $("#about").clone();</code></pre></td><td><pre><code lang="javascript">var clonedElement = document.getElementById("about").cloneNode(true);</code></pre></td></tr><tr><td><pre><code lang="javascript">$("#wrap").empty();</code></pre></td><td><pre><code lang="javascript">var wrap = document.getElementById("wrap");
+while(wrap.firstChild) wrap.removeChild(wrap.firstChild);</code></pre></td></tr><tr><td><pre><code lang="javascript">if($("#wrap").is(":empty"));</code></pre></td><td><pre><code lang="javascript">if(!document.getElementById("wrap").hasChildNodes())
+</code></pre></td></tr><tr><td><pre><code lang="javascript">var nextElement = $("#wrap").next();</code></pre></td><td><pre><code lang="javascript">var nextElement = document.getElementById("wrap").nextSibling;</code></pre></td></tr></table>
+

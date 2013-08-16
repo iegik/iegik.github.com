@@ -120,6 +120,23 @@
                     a.setAttribute('onload', 'javascript:this.outerHTML = marked(this.contentWindow.document.body.innerText);');
                     p.appendChild(a);
                     this.href = '#'+p.id;
+
+[].forEach.call(
+  document.querySelectorAll(',h1,h2,h3,h4,h5,h6'.split(',').join(',#'+p.id+' ').substring(1)),
+  function(el) {
+  
+    var a=document.createElement('a');
+    a.id=el.innerText;
+    el.appendChild(a);
+
+    var b=document.createElement('a');
+    b.href='#'+(b.innerText=el.innerText);
+    b.style.display = 'block';
+    b.style.paddingLeft = el.tagName.split('')[1]+'em';
+    p.appendChild(b);
+//console.log(p);
+  }
+);
                     document.getElementsByTagName(section)[0].appendChild(p);
                 }else{
                   $('#'+p.id).show();
