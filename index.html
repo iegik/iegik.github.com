@@ -149,6 +149,7 @@
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/marked/0.2.9/marked.min.js"></script>
     <script type="text/javascript" src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="//yandex.st/highlightjs/7.3/highlight.min.js"></script>
     <script type="text/javascript">//<![CDATA[ 
     $(function(){
         $('a[data-target="markdown"]').each(function(){
@@ -219,7 +220,10 @@
           tables: true,
           breaks: true,
           sanitize: false,
-          smartypants: true
+          smartypants: true,
+          highlight: function (code, lang) {
+    	    return hljs.highlightAuto(lang, code).value;
+  	  }
         });
 
         $('#try-styles a').each(function(){
