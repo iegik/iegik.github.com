@@ -1,12 +1,12 @@
 var gulp = require('gulp');
 var debug = require('gulp-debug');
 var size = require('gulp-size');
-var sourcemaps = require('gulp-sourcemaps');
 var errorHandler = require('./errorHandler');
 
-function endHelper(pipe, sourcemaps){
+function endHelper(pipe, config){
     return pipe
-    //        .pipe(sourcemaps.write('./'))
+        .pipe(config.sourcemaps.write('./'))
+        .pipe(gulp.dest(config.dst))
         .pipe(size())
         .pipe(debug());
 }
