@@ -18,7 +18,8 @@ function compile(config, watch) {
         });
 
         // Read
-        pipe = startHelper(pipe, sourcemaps);
+        config.sourcemaps = sourcemaps;
+        pipe = startHelper(pipe, config);
 
         // Babelify
         pipe = browserifyHelper(pipe, {
@@ -37,7 +38,10 @@ function compile(config, watch) {
         });
 
         // Write
-        pipe = endHelper(pipe, sourcemaps);
+        pipe = endHelper(pipe, {
+            sourcemaps: config.sourcemaps,
+            dst: config.dst + '/pages/'
+        });
 
         return pipe;
     }
