@@ -1,81 +1,59 @@
-AddType text/html .html .htm
-AddType text/plain .txt .md
-AddType text/richtext .rtx 
-AddType text/tab-separated-values .tsv 
-AddType text/x-setext .etx 
-AddType text/x-server-parsed-html .shtml .sht 
-AddType application/macbinhex-40 .hqx 
-AddType application/netalivelink .nel 
-AddType application/netalive .net 
-#AddType application/news-message-id 
-#AddType application/news-transmission 
-AddType application/octet-stream .bin .exe 
-AddType application/oda .oda 
-AddType application/pdf .pdf 
-AddType application/postscript .ai .eps .ps 
-#AddType application/remote-printing 
-AddType application/rtf .rtf 
-#AddType application/slate 
-AddType application/zip .zip 
-AddType application/x-mif .mif 
-#AddType application/wita 
-#AddType application/wordperfect5.1 
-AddType application/x-csh .csh 
-AddType application/x-dvi .dvi 
-AddType application/x-hdf .hdf 
-AddType application/x-latex .latex 
-AddType application/x-netcdf .nc .cdf 
-AddType application/x-sh .sh 
-AddType application/x-tcl .tcl 
-AddType application/x-tex .tex 
-AddType application/x-texinfo .texinfo .texi 
-AddType application/x-troff .t .tr .roff 
-AddType application/x-troff-man .man 
-AddType application/x-troff-me .me 
-AddType application/x-troff-ms .ms 
-AddType application/x-wais-source .src 
-AddType application/x-bcpio .bcpio 
-AddType application/x-cpio .cpio 
-AddType application/x-gtar .gtar 
-AddType application/x-shar .shar 
-AddType application/x-sv4cpio .sv4cpio 
-AddType application/x-sv4crc .sv4crc 
-AddType application/x-tar .tar 
-AddType application/x-ustar .ustar 
-AddType application/x-director .dcr 
-AddType application/x-director .dir 
-AddType application/x-director .dxr 
-AddType application/x-onlive .sds 
-AddType application/x-httpd-cgi .cgi 
-AddType image/gif .gif .GIF 
-AddType image/ief .ief 
-AddType image/jpeg .jpeg .jpg .jpe .JPG 
-AddType image/tiff .tiff .tif 
-AddType image/x-cmu-raster .ras 
-AddType image/x-portable-anymap .pnm 
-AddType image/x-portable-bitmap .pbm 
-AddType image/x-portable-graymap .pgm 
-AddType image/x-portable-pixmap .ppm 
-AddType image/x-rgb .rgb 
-AddType image/x-xbitmap .xbm 
-AddType image/x-xpixmap .xpm 
-AddType image/x-xwindowdump .xwd 
-AddType audio/basic .au .snd 
-AddType audio/x-aiff .aif .aiff .aifc 
-AddType audio/x-wav .wav 
-AddType audio/x-pn-realaudio .ram 
-AddType audio/x-midi .mid 
-AddType video/mpeg .mpeg .mpg .mpe 
-AddType video/quicktime .qt .mov 
-AddType video/x-msvideo .avi 
-AddType video/x-sgi-movie .movie 
-#AddType message/external-body 
-#AddType message/news 
-#AddType message/partial 
-#AddType message/rfc822 
-#AddType multipart/alternative 
-#AddType multipart/appledouble 
-#AddType multipart/digest 
-#AddType multipart/mixed 
-#AddType multipart/parallel 
-AddType x-world/x-vrml .wrlm
+ErrorDocument 404 /error.php
+ErrorDocument 403 /error.php
+ErrorDocument 401 /error.php
+ErrorDocument 400 /error.php
+ErrorDocument 500 /error.php
+
+Options All -Indexes
+
+
+<Files 403.shtml>
+order allow,deny
+allow from all
+</Files>
+
+deny from 173.242.125.206
+deny from 195.34.175.196/31
+deny from 94.23.52.33
+deny from 194.50.125.10
+deny from 69.59.21.23
+deny from 212.91.184.14
+deny from 72.52.136.25
+deny from 81.91.214.93
+deny from 180.242.60.84
+deny from 182.185.40.50
+deny from 188.165.248.204
+deny from 65.181.50.30
+deny from 72.26.194.138
+deny from 72.55.148.21
+deny from 80.82.152.30
+deny from 81.30.213.66
+deny from 69.90.139.201
+deny from 218.45.1.29
+deny from 90.156.232.168
+deny from 76.74.237.52
+deny from 8.12.34.245
+deny from 92.241.170.6
+deny from 212.34.154.95
+deny from 212.146.105.213
+deny from 72.232.238.123
+deny from 222.82.219.140
+deny from 202.46.116.6
+deny from 46.234.117.148
+deny from 61.47.47.55
+deny from 101.78.134.166
+deny from 83.170.66.8
+deny from 208.43.133.250
+deny from 206.183.111.103
+deny from 109.163.230.189
+deny from 173.48.37.68
+deny from 202.171.253.103
+deny from 41.158.128.190
+deny from 78.30.200.81
+deny from 176.196.169.71
+deny from 199.79.62.8
+deny from 94.23.193.165
+deny from 190.128.191.200
+deny from 175.42.95.109
+deny from 91.224.247.205
+deny from 112.122.11.3

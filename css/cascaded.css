@@ -1,0 +1,28 @@
+/* Cascaded Navigation Menu
+ * version: 2.0
+ * author: Arturs Jansons apmyp@inbox.lv
+ * shema:
+ * <ul id="nav" (class="horisontal")>
+ * 	<li><a></a></li>
+ * 	<li><a></a>
+ * 		<ul (class="horisontal")>
+ * 			<li><a></a></li>
+ * 			<li><a></a></li>
+ * 		</ul>
+ * 	</li>
+ * 	<li><a></a></li>
+ * </ul>
+ * problem: #nav ul>.horisontal != inline
+ */
+div#nav{position:relative}
+#nav li{display:inline}
+#nav a{display:block;position:relative}
+#nav li ul{position:absolute;visibility:hidden;/**/padding:0 0 0 1em/** /right:0/** /left:100% /*3 possable variants*/}
+#nav li:hover ul{visibility:visible/**/;position:relative/**/}
+.horisontal li{float:left;display:inline-block}
+.horisontal li ul{position:relative!important;left:0!important}
+/* fix inline * /
+ul.horisontal {display:inline-block}
+/* fixed item width * /
+#nav li{width:100px}
+/**/

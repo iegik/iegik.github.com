@@ -1,0 +1,166 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--//*
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>YUI Grids CSS </title>
+	<!-- Source File - ->
+	<link rel="stylesheet" type="text/css" href="reset-fonts-grids.css">
+</head>
+<body>
+	<div id="doc" class="yui-t4">
+	   <div id="hd" role="banner"><!-- Header - -></div>
+	   <div id="bd">
+	      <div id="yui-main">
+	         <div class="yui-b" role="main"><!-- Main content - -></div>
+	      </div>
+	      <div class="yui-b" role="complementary"><!-- Secondary content - -></div>
+	   </div>
+	   <div id="ft" role="contentinfo"><!-- Footer - -></div>
+	</div>
+</body>
+</html>
+*//-->
+	</head>
+	<body>
+		<div id="yui-main">
+			<div id="layouts" role="main" class="yui-b">
+				<h2><a href="#" title="Yahoo User Interface wizard">YUI wizard</a></h2>
+				<p>With this wizard you can cange this page layout:</p>
+				<div id="sidebars">
+					<h3>Sidebar</h3>
+					<a href="#Without sidebar" class="none"><img src="images/layout0.png"/></a>
+					<a href="#With sidebar on right" class="rightcol"><img src="images/layout1.png"/></a>
+					<a href="#With sidebar on left" class="leftcol"><img src="images/layout2.png"/></a>
+				</div>
+				<div id="columns">
+					<h3>Columns</h3>
+					<a href="#3" class="none"><img src="images/layout0.png"/></a>
+					<a href="#4" class="twocol"><img src="images/layout3.png"/></a>
+					<a href="#5" class="threecol"><img src="images/layout4.png"/></a>
+					<a href="#6" class="rightcol"><img src="images/layout5.png"/></a>
+					<a href="#7" class="leftcol"><img src="images/layout6.png"/></a>
+				</div>
+				<div id="screens">
+					<h3>Screens</h3>
+					<a href="#8" class="fullscreen"><img src="images/layout0.png"/></a>
+					<a href="#11" class="flatscreen"><img src="images/layout9.png"/></a>
+					<a href="#10" class="widescreen"><img src="images/layout8.png"/></a>
+					<a href="#9" class="plainscreen"><img src="images/layout7.png"/></a>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			//Sidebars
+			$('#layouts #sidebars a.none').click(function clearsidebar(){
+				//remove column align classes function
+				//function remove-t()
+				$('body > div').removeClass('yui-t1');
+				$('body > div').removeClass('yui-t2');
+				$('body > div').removeClass('yui-t3');
+				$('body > div').removeClass('yui-t4');
+				$('#sb').remove();
+
+			});
+			$('#layouts #sidebars a.rightcol').click(function(){
+
+				//function remove-t()
+				$('body > div').removeClass('yui-t1');
+				$('body > div').removeClass('yui-t2');
+				$('body > div').removeClass('yui-t3');
+				$('body > div').removeClass('yui-t4');
+				$('#sb').remove();
+
+				$('body > div').addClass('yui-t4');
+
+				//function addSidebar()
+				$('<div id="sb" class="yui-b"><h3>Sidebar</h3><ul><li><a href="#">link</a></li><li><a href="#">link</a></li><li><a href="#">link</a></li></div>').appendTo('#bd').slideDown('slow');
+			});
+			$('#layouts #sidebars a.leftcol').click(function(){
+
+				//function remove-t()
+				$('body > div').removeClass('yui-t1');
+				$('body > div').removeClass('yui-t2');
+				$('body > div').removeClass('yui-t3');
+				$('body > div').removeClass('yui-t4');
+				$('#sb').remove();
+
+				$('body > div').addClass('yui-t1');
+
+				//function addSidebar()
+				$('<div id="sb" class="yui-b"><h3>Sidebar</h3><ul><li><a href="#">link</a></li><li><a href="#">link</a></li><li><a href="#">link</a></li></div>').appendTo('#bd').slideDown('slow');
+			});
+
+			//Columns
+			$('#layouts #columns a.none').click(function(){
+				$('#grids').remove();
+			});
+			$('#layouts #columns a.leftcol').click(function(){
+
+				$('#grids').remove();
+				$('<div id="grids"></div>').prependTo('#yui-main > div');
+
+				$('#grids').addClass('yui-gd');
+
+				//addCol(2) => 2 columns in "yui-g/yui-gc/yui-gd" class, where first has class "first"
+				//otherise addCol(3) => 3 columns in "yui-gb" class, where first has class "first".
+				//addCol(N) => if( N div 2 = 0 ) => "yui-g/yui-gc/yui-gd", where first and next second column has class "first", else => "yui-gb", where first and next thrid columns has "first" class.
+				//function addCol(N)
+				$('<div id="firstcol" class="first"><h3>Column 1</h3><p>This is a first simple column.</p></div>').appendTo('#grids');
+				$('<div id="secondcol"><h3>Column 2</h3><p>This is a second simple column.</p></div>').appendTo('#grids');
+				$('#grids > div').addClass('yui-u');
+			});
+			$('#layouts #columns a.rightcol').click(function(){
+
+				$('#grids').remove();
+				$('<div id="grids"></div>').prependTo('#yui-main > div');
+
+				$('#grids').addClass('yui-gc');
+
+				//function addCol(N)
+				$('<div id="firstcol" class="first"><h3>Column 1</h3><p>This is a first simple column.</p></div>').appendTo('#grids');
+				$('<div id="secondcol"><h3>Column 2</h3><p>This is a second simple column.</p></div>').appendTo('#grids');
+				$('#grids > div').addClass('yui-u');
+			});
+			$('#layouts #columns a.twocol').click(function(){
+
+				$('#grids').remove();
+				$('<div id="grids"></div>').prependTo('#yui-main > div');
+
+				$('#grids').addClass('yui-g');
+
+				//function addCol(N)
+				$('<div id="firstcol" class="first"><h3>Column 1</h3><p>This is a first simple column.</p></div>').appendTo('#grids');
+				$('<div id="secondcol"><h3>Column 2</h3><p>This is a second simple column.</p></div>').appendTo('#grids');
+				$('#grids > div').addClass('yui-u');
+			});
+			$('#layouts #columns a.threecol').click(function(){
+
+				$('#grids').remove();
+				$('<div id="grids"></div>').prependTo('#yui-main > div');
+
+				$('#grids').addClass('yui-gb');
+
+				//function addCol(N)
+				$('<div id="firstcol" class="first"><h3>Column 1</h3><p>This is a first simple column.</p></div>').appendTo('#grids');
+				$('<div id="secondcol"><h3>Column 2</h3><p>This is a second simple column.</p></div>').appendTo('#grids');
+				$('<div id="thirdcol"><h3>Column 3</h3><p>This is a third simple column.</p></div>').appendTo('#grids');
+				$('#grids > div').addClass('yui-u');
+			});
+			$('#layouts #screens a.fullscreen').click(function(){
+				$('body > div').attr('id','doc3');
+			});
+			$('#layouts #screens a.plainscreen').click(function(){
+				$('body > div').attr('id','doc');
+			});
+			$('#layouts #screens a.widescreen').click(function(){
+				$('body > div').attr('id','doc2');
+			});
+			$('#layouts #screens a.flatscreen').click(function(){
+				$('body > div').attr('id','doc4');
+			});
+		</script>
+	</body>
+</html>

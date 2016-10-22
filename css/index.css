@@ -1,0 +1,27 @@
+body{ margin:0; padding:0; background:#888 url(../images/ting.png) no-repeat fixed; font:normal 12px/normal georgia; color:#666; text-align:center;}
+h1{ margin:25px 0 0 0}
+h1 a { text-decoration:none; color:#333; }
+h1 a:hover { color:#000; }
+#bd { background:#fff; margin:0px auto; padding:20px; text-align:left;-moz-border-radius-topright:4px;-webkit-border-top-right-radius:4px }
+#bd a { text-decoration:none; color:#999; }
+#bd a:hover { color:red; }
+#hd { margin:50px auto 0px auto; text-align:left }
+#hd ul { padding:0; margin:0}
+#hd ul li { display:inline; list-style:none; margin:0; padding:0; }
+#hd ul li a { padding:10px; background:#333; color:#999; text-decoration:none; display:inline-block;-moz-border-radius-topleft:4px;-webkit-border-top-left-radius:4px;-moz-border-radius-topright:4px;-webkit-border-top-right-radius:4px }
+#hd ul li a:hover{ color:black; background:#666!important }
+#hd ul li a.current{ color:black; background:white }
+#hd ul li a.hightlight{ color:black; background:red }
+#loading {position:absolute;left:0;top:0;padding:10px 15px;background:red;color:white;display:none;}
+#ft { background:#333; padding:10px; font:normal 11px/normal arial;-moz-border-radius-bottomleft:4px;-webkit-border-bottom-left-radius:4px;-moz-border-radius-bottomright:4px;-webkit-border-bottom-right-radius:4px}
+#ft a { text-decoration:none; color:#999;}
+#ft a:hover { color:#000; }
+blockquote{ font-style:italic; background:#FEFFF9; margin:0; padding:10px; border:dotted 1px #CCCC00; }
+#layouts a img { background: #333 url(../images/frame.png) no-repeat; padding: 20px 1px 1px 1px;}
+.right, .floatright { float:right;clear:both;text-align:right;position:relative;display:block; padding:0 0 0 10px}
+ .left, .floatleft { float:left;clear:both;text-align:left;position:relative;display:block; padding: 0 10px 0 0}
+span.clear { display:block; text-align:center; clear:both; color:#ccc}
+#twitter p {min-height:32px}
+.notice {display:block; background: #ffa; padding: .5em; border: #ff8 solid 2px}
+.error {display:block; background: #aff; padding: .5em; border: #8ff solid 2px}
+.success {display:block; background: #faf; padding: .5em; border: #f8f solid 2px}

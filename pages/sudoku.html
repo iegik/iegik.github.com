@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html> 
+  <head> 
+    <meta content="text/html; charset=UTF-8"/>
+    <title>Sudoku</title> 
+  </head> 
+  <body> 
+    <h1>Sudoku the game</h1> 
+<style>
+.sudoku { width: 250px;}
+.sudoku input[class*=a]:hover { background:#a4c}
+.sudoku input[class*=b]:hover { background:#4ac}
+.sudoku input[class*=c]:hover { background:#4ca}
+.sudoku input[class*=d]:hover { background:#c4a}
+.sudoku input[class*=e]:hover { background:#ca4}
+.sudoku input[class*=f]:hover { background:#ac4}
+.sudoku input[class*=g]:hover { background:#8ea}
+.sudoku input[class*=h]:hover { background:#8ae}
+.sudoku input[class*=i]:hover { background:#a8e}
+.sudoku input[class*=j]:hover { background:#ae8}
+.sudoku input[class*=k]:hover { background:#ea8}
+.sudoku input[class*=l]:hover { background:#ae8}
+.sudoku input[class*=m]:hover { background:#e8a}
+.sudoku input[class*=n]:hover { background:#48c}
+.sudoku input[class*=o]:hover { background:#4c8}
+.sudoku input[class*=p]:hover { background:#c48}
+.sudoku input[class*=q]:hover { background:#c84}
+.sudoku input[class*=r]:hover { background:#84c}
+
+.sudoku input[class*=u], .sudoku input[class*=x]{margin-right: 10px}
+.sudoku input[class*=c], .sudoku input[class*=f]{margin-bottom: 10px}
+
+.sudoku input { width:1.5em; padding:0; border:#888 solid 1px; text-align:center;}
+</style>
+<!--pre>
+abdefghijklmnopqrstuvwxyz-
+
+  s,t,u,v,w,x,y,z,-
+a[j,j,j,k,k,k,l,l,l]
+b[j,j,j,k,k,k,l,l,l]
+c[j,j,j,k,k,k,l,l,l]
+d[m,m,m,n,n,n,o,o,o]
+e[m,m,m,n,n,n,o,o,o]
+f[m,m,m,n,n,n,o,o,o]
+g[p,p,p,q,q,q,r,r,r]
+h[p,p,p,q,q,q,r,r,r]
+i[p,p,p,q,q,q,r,r,r]
+
+</pre-->
+<div class="sudoku">
+	<input pattern="[0-9]{1}" maxlength="1" class="sja"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="tja"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="uja"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="vka"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="wka"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="xka"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="yla"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="zla"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="-la"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="sjb"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="tjb"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="ujb"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="vkb"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="wkb"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="xkb"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="ylb"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="zlb"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="-lb"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="sjc"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="tjc"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="ujc"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="vkc"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="wkc"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="xkc"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="ylc"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="zlc"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="-lc"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="smd"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="tmd"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="umd"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="vnd"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="wnd"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="xnd"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="yod"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="zod"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="-od"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="sme"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="tme"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="ume"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="vne"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="wne"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="xne"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="yoe"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="zoe"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="-oe"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="smf"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="tmf"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="umf"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="vnf"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="wnf"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="xnf"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="yof"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="zof"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="-of"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="spg"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="tpg"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="upg"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="vqg"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="wqg"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="xqg"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="yrg"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="zrg"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="-rg"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="sph"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="tph"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="uph"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="vqh"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="wqh"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="xqh"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="yrh"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="zrh"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="-rh"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="spi"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="tpi"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="upi"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="vqi"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="wqi"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="xqi"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="yri"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="zri"/>
+	<input pattern="[0-9]{1}" maxlength="1" class="-ri"/>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+<script>!window.jQuery && document.write(unescape('%3Cscript src="js/libs/jquery-1.5.1.js"%3E%3C/script%3E'))</script>
+<script>
+$(document).ready(function(){
+
+	$.fn.check = function (){
+		return this.each(function(){
+			i = 0;
+			t = $(this);
+		
+			s = x = y = z = new Array();
+			c = t.attr('class').split("");
+			$('.sudoku input[class*='+c[0]+']').each(function(){
+				x.push($(this).val());
+				if($(this).val() == t.val())i++;
+			});
+			if(i>=2)t.val('');
+
+			i = 0;
+			$('.sudoku input[class*='+c[1]+']').each(function(){
+				y.push($(this).val());
+				if($(this).val() == t.val())i++;
+			});
+			if(i>=2)t.val('');
+
+			i = 0;
+			$('.sudoku input[class*='+c[2]+']').each(function(){
+				z.push($(this).val());
+				if($(this).val() == t.val())i++;
+			});
+			if(i>=2)t.val('');
+	
+		});
+	}
+
+	$('.sudoku input').live('change',function(){
+		$(this).check();
+	});
+
+	$('.sudoku input').each(function(){
+		r = Math.floor(Math.random()*9)+1;
+		r = Math.floor(Math.random()*r)+1;
+		r = Math.floor(Math.random()*r)+1;
+		r = Math.floor(Math.random()*r)+1;
+		$(this).val(r);
+		$(this).check();
+	});
+});
+</script>
+  </body> 
+</html>
