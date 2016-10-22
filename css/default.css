@@ -1,0 +1,49 @@
+/* Backgrounds */
+html{background:Window;color:WindowText}
+body{background:AppWorkspace}
+div#hd{background:ActiveCaption}
+div#bd{background:Window}
+div#ft{background:ButtonFace}
+#menu, #menu a{background:ButtonFace}
+#menu li a:hover{background:Highlight}
+#menu li a.active{background:ButtonHighlight}
+a{text-decoration:none}
+a:link span{color:Highlight}
+a:hover span,li:hover>a span{color:HighlightText}
+a:visited span{color:MenuText}
+.menu li{ background:ButtonFace}
+.menu li:hover{ background:Highlight}
+.left{float:left;margin-right:.5em}
+.right{float:right;margin-left:.5em}
+em,h1{ font-style:italic;font-family:Georgia,serif}
+/* headers */
+h1,h1+p{text-align:right}
+#ft{text-align:center}
+#bd p{ text-align:justify}
+h1{font-size:500%;color:CaptionText; position:relative}
+h1 + p{font-size:larger}
+h3{font-size:xx-large}
+h2{font-size:x-large}
+h4{font-size:large}
+h5{font-size:larger}
+/* links,bullets */
+a[rel~="copyright"]:after,p[rel~="copyright"]:after{content:" ©";font-size:smaller;vertical-align:super}
+a[rel~="trademark"]:after{content:" \2122";font-size:smaller;vertical-align:super}
+a[rel~="registred"]:after{content:" ®";font-size:smaller;vertical-align:super}
+a[href^="mail"]:before{content:"\2709 ";font-size:larger}
+a[href$=".pdf"]:before{content:"[pdf]";font-size:smaller;vertical-align:top}
+a[href$=".exe"]:before{content:"[exe]";font-size:smaller;vertical-align:top;color:#f00}
+a[href$=".zip"]:before{content:"[zip]";font-size:smaller;vertical-align:top}
+a[href$=".msi"]:before{content:"[msi]";font-size:smaller;vertical-align:top}
+a[href$=".rar"]:before{content:"[rar]";font-size:smaller;vertical-align:top}
+#hd li a:after,#hd li a span:after,.more:after{content:" »"}
+/* div sizes,paddings,margins */
+img,p {padding:4px}
+#menu li{-moz-border-radius-topleft:4px;-webkit-border-top-left-radius:4px;-moz-border-radius-topright:4px;-webkit-border-top-right-radius:4px}
+#menu li a{line-height:32px;height:32px;padding:0 .5em}
+#menu ul.horisontal{top:32px!important}
+div#bd>div p{ padding-right:1em}
+div#bd>div>div p+ul li{list-style:circle;margin-left:2em}
+div#bd>div>div p+ol li{list-style:lower-alpha;margin-left:2em}
+.notice {display:inline; background: #ffff99; padding: .5em}
+/* END */

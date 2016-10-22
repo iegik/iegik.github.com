@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="./portfolio-v2.xsl"?>
+<portfolio>
+    <project>
+        <name>jgf</name>
+        <client>"Jerusalem - Gate to the Future" (JGF)</client>
+        <url>http://jgf.co.il</url>
+        <images>
+            <picture src="jgf" />
+            <picture src="jgf1" />
+            <picture src="jgf2" />
+        </images>
+        <description lang="ru">JGF - это социальный фонд - вклад, направленный на духовное и культурное развитие Израиля. Сайт построен на CodeIgniter, стилизован используя Blueprint и SASS. На jQuery я впервые реализовал "one-touch AJAX", когда при перелистывании страницы информация не заменяется, а добавляется, тем самым избавляя сервер от лишних запросов. И возврат к уже просмотренной странице происходит моментально.</description>
+		<description lang="en">The JGF is a social foundation as investment, which is directed to the spiritual and cultural contribution in Israel development. The site is build with CodeIgniter Framework, styled with Blueprint CSS and SASS generator. This is a first time, when I use jQuery "one-touch AJAX" technics for page`s navigation. It make available return to the prewieus pages without sanding requests.</description>
+		<category>PHP HTML CSS JavaScript</category>
+	</project>
+    <project>
+        <name>dedukcija</name>
+        <client>SIA "Dedukcija"</client>
+        <url>http://www.dedukcija.lv</url>
+        <images>
+            <picture src="dd" />
+            <picture src="dd1" />
+            <picture src="dd2" />
+        </images>
+        <description lang="lv">Uzņēmums ir sapulcējis kompetentu, enerģisku un pieredzējušu speciālistu kolektīvu, lai piedāvātu jums ne tikai juridisko palīdzību, apsardzes un detektīvu pakalpojumus, bet arī konsultētu Jūs kompleksi par personiskās un biznesa drošības jautājumiem. Garantējam Jums individuālu pieeju, iesakot piemērotāko risinājumu atkarībā no Jūsu vēlmēm un iespējām. Kaut arī esam jauns uzņēmums, bet varam lepoties ar labiem panākumiem mūsu darbā un lieliskām atsauksmēm par mūsu līdzšinējo darbību. Uzņēmuma mērķis ir sniegt profesionālus un kvalitatīvus pakalpojumus drošības jomā, kā arī attīstīt veiksmīgu un konkurētspējīgu uzņēmumu. Uzņēmuma darbības pamatprincipi, ir kvalitāte un augsti profesionālu speciālistu iesaistīšana.</description>
+		<category>PHP HTML CSS CodeIgniter Blueprint</category>
+	</project>
+    <project>
+        <name>janiskuzins</name>
+        <client>Jānis Kuzins</client>
+        <url>http://www.janiskuzins.lv</url>
+        <images>
+            <picture src="jk1" />
+            <picture src="jk2" />
+            <picture src="jk3" />
+        </images>
+        <description lang="lv">Jānisa Kuzina - Jūrmalas deputāta mājaslapai vajadzēja sakopt tēmu un uztaisīt dāžas moduļus. Kā arī bija ideja savienot ar daudzām valodām katru rakstu.</description>
+		<category>PHP XHTML CSS</category>
+	</project>
+    <project>
+        <name>autonoma</name>
+        <client>SIA "Autonoma"</client>
+        <url>http://www.auto-noma.com</url>
+        <images>
+            <picture src="an1" />
+            <picture src="an2" />
+            <picture src="an3" />
+        </images>
+        <description lang="lv">Vieglas automašīnu nomas katalogs. Galvenā lapā var apskartīties populārakas auto, viegla navigācija un skaidrs saturs - viss pa plauktam.</description>
+		<category>PHP XHTML CSS</category>
+	</project>
+    <project>
+        <name>autokrava</name>
+        <client>SIA "Autokrava"</client>
+        <url>http://www.autokrava.lv</url>
+        <images>
+            <picture src="ak" />
+        </images>
+        <description lang="lv">Autokravas automašīnu nomas mājaslapa ar tīmekļa noformējumu.</description>
+		<category>XHTML CSS</category>
+    </project>
+    <project>
+        <name>raba</name>
+        <client>SIA "Raba"</client>
+        <url>http://www.raba.lv</url>
+        <images>
+            <picture src="raba1" />
+            <picture src="raba2" />
+        </images>
+        <description lang="lv">Labs piemērs kāvar izstrādat saite visādam veidam monitoriem - gan parastiem, gan Widescreen.</description>
+		<category>XHTML CSS</category>
+    </project>
+    <project>
+        <name>terrawinda</name>
+        <client>Terra Winda</client>
+        <url>http://chas.times.lv</url>
+        <images>
+            <picture src="tw1" />
+            <picture src="tw2" />
+            <picture src="tw3" />
+        </images>
+        <description lang="lv">3 nedēļas laika pirms irādes jau bija gatava HTML lapa, kur uzreiz ielikta visa informāsija par koncertu. Izmantoju efektus un viltīgas trikus lai ievietot mazā laukumā vairāk informācijas.</description>
+        <description lang="en">The Terra Winda Ventspils festival (12.7.2008). It was best times for me. My first big project for my friends. New innovations - <strong>Flash video</strong> on main page, some <strong>CSS</strong> tricks. But only one thing, that stay annoying - all this was on <em>one <strong>HTML</strong> page</em>. Too slow connection to the site, and so many peoples don`t want waist their time.<br/>I`m sorry, but real address do not exist now and I lost latest design for that site. it was like banner painted by two colors: yellow, red and black.</description>
+		<category>XHTML CSS</category>
+    </project>
+    <project>
+        <name>eremonts</name>
+        <client>e-Remonts</client>
+        <url>http://www.eremonts.lv</url>
+        <images>
+            <picture src="er1" />
+            <picture src="er2" />
+            <picture src="er3" />
+        </images>
+        <description lang="lv">Pilnīgi pats saprogrammēju kalkulatoru un tas saistību ar bankas lizinga kalkulatoru. Sakartoju lapas strukturu un iebuvēju SEO tehnologijas. Uz lapas uzreiz var izreķināt kopsummu un lizinga plānu par velāmo laiku.</description>
+		<description lang="en">
+			Page with <strong>calculator</strong> for calculating how much the renovation of your flat will cost. First calculator was written on <em>Flash</em>, but for many reasons was changed to <strong>JavaScript</strong>. Then, it was integrated with another calculator and may be used in something else.<br/>
+			All fields are tab-ordered. The calculations performs, when <u>at least one of data fields are changed</u>. The script checks data in fields and <u>removes unnecessary zeros</u>
+		</description>
+		<category>XHTML CSS ActionScript</category>
+    </project>
+
+</portfolio>

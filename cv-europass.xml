@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--?xml-stylesheet href="http://europass.cedefop.europa.eu/xml/cv_en_GB_V2.0.xsl" type="text/xsl"?-->
+<?xml-stylesheet href="about-v2.xsl" type="text/xsl"?>
+<europass locale="en_GB">
+<!--:learnerinfo xmlns:europass="http://europass.cedefop.europa.eu/Europass/V2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://europass.cedefop.europa.eu/Europass/V2.0 http://europass.cedefop.europa.eu/xml/EuropassSchema_V2.0.xsd"-->	<docinfo>
+		<issuedate>2008-12-01T12:39:49+02:00</issuedate>
+		<xsdversion>V2.0</xsdversion>
+		<comment>Automatically generated Europass CV</comment>
+	</docinfo>
+	<prefs>
+		<field name="step1.lastName" before="step1.firstName"/><field name="step1.addressInfo" keep="true"/><field name="step1.telephone" keep="true"/><field name="step1.mobile" keep="true"/><field name="step1.fax" keep="true"/><field name="step1.email" keep="true"/><field name="step1.nationality" keep="true"/><field name="step1.birthDate" keep="true" format=""/><field name="step1.gender" keep="true"/><field name="step1.photo" keep="false"/><field name="step1.application.label" keep="true"/><field name="step3List" keep="true" before="step4List"/><field name="step3List[0].period" format=""/><field name="step3List[0].position.label" keep="true"/><field name="step3List[0].activities" keep="true"/><field name="step3List[0].company.name" keep="true"/><field name="step3List[0].company.addressInfo" keep="true"/><field name="step3List[0].company.sector.label" keep="true"/><field name="step3List[1].period" format=""/><field name="step3List[1].position.label" keep="true"/><field name="step3List[1].activities" keep="true"/><field name="step3List[1].company.name" keep="true"/><field name="step3List[1].company.addressInfo" keep="true"/><field name="step3List[1].company.sector.label" keep="true"/><field name="step3List[2].period" format=""/><field name="step3List[2].position.label" keep="true"/><field name="step3List[2].activities" keep="true"/><field name="step3List[2].company.name" keep="true"/><field name="step3List[2].company.addressInfo" keep="true"/><field name="step3List[2].company.sector.label" keep="true"/><field name="step3List[3].period" format=""/><field name="step3List[3].position.label" keep="true"/><field name="step3List[3].activities" keep="true"/><field name="step3List[3].company.name" keep="true"/><field name="step3List[3].company.addressInfo" keep="true"/><field name="step3List[3].company.sector.label" keep="true"/><field name="step4List" keep="true"/><field name="step4List[0].period" format=""/><field name="step4List[0].title" keep="true"/><field name="step4List[0].skills" keep="false"/><field name="step4List[0].educationalOrg.name" keep="true"/><field name="step4List[0].educationalOrg.addressInfo" keep="true"/><field name="step4List[0].level.label" keep="false"/><field name="step5.motherLanguages" keep="true"/><field name="step5.foreignLanguageList" keep="true"/><field name="step5.foreignLanguageList[0]" keep="true"/><field name="step5.foreignLanguageList[1]" keep="true"/><field name="step6.socialSkills" keep="true"/><field name="step6.organisationalSkills" keep="false"/><field name="step6.technicalSkills" keep="false"/><field name="step6.computerSkills" keep="true"/><field name="step6.artisticSkills" keep="false"/><field name="step6.otherSkills" keep="false"/><field name="step6.drivingLicences" keep="true"/><field name="step7.additionalInfo" keep="true"/><field name="step7.annexes" keep="false"/><field name="grid" keep="false"/>
+	</prefs>
+	<identification>
+		<firstname>Artūrs</firstname>
+		<lastname>Jansons</lastname>
+		<contactinfo>
+			<address>
+				<addressLine></addressLine>
+				<municipality>Rīga</municipality>
+				<postalCode></postalCode>
+				<country>
+					<code>LV</code>
+					<label>Latvija</label>
+				</country>
+			</address>
+			<telephone></telephone>
+			<fax></fax>
+			<mobile>+371 27145974</mobile>
+			<email>a.jansons@gmail.com</email>
+		</contactinfo>
+		<demographics>
+			<birthdate>1984-12-05</birthdate>
+			<gender>M</gender>
+			<nationality>
+				<code>LV</code>
+				<label>Latvietis</label>
+			</nationality>
+		</demographics>
+	</identification>
+	<application>
+		<code>21320</code>
+		<label>Programmēšanas tehniķis</label>
+	</application>
+	<workexperiencelist>
+		<workexperience>
+			<period>
+				<from>
+					<year>2007</year>
+					<month>--06</month>
+					<day>---1</day>
+				</from>
+				<to>
+					<year>2010</year>
+					<month>--09</month>
+					<day>---1</day>
+				</to>
+			</period>
+			<position>
+				<code>21320</code>
+				<label>Programmētajs</label>
+			</position>
+			<activities>Mājaslapu programmēšana PHP valodā, dizains, datubāze, kontents.</activities>
+			<employer>
+				<name>Freelance</name>
+				<address>
+					<addressLine></addressLine>
+					<municipality>Rīga</municipality>
+					<postalCode></postalCode>
+					<country>
+						<code>LV</code>
+						<label>Latvija</label>
+					</country>
+				</address>
+				<sector>
+					<label>Web Programmēšana</label>
+				</sector>
+			</employer>
+		</workexperience>
+		<workexperience>
+			<period>
+				<from>
+					<year>2004</year>
+					<month>--05</month>
+					<day>---17</day>
+				</from>
+				<to>
+					<year>2004</year>
+					<month>--07</month>
+					<day>---28</day>
+				</to>
+			</period>
+			<position>
+				<code>21390</code>
+				<label>Datortīklu administrators</label>
+			</position>
+			<activities>IT sistēmu traucējumu novēršana un IT problēmu risināšana, tehniskas konsultācijas darbiniekiem. Windows 98, WinPrece, WinFus.</activities>
+			<employer>
+				<name>Efija-2 SIA</name>
+				<address>
+					<addressLine></addressLine>
+					<municipality>Rīga</municipality>
+					<postalCode></postalCode>
+					<country>
+						<code>LV</code>
+						<label>Latvija</label>
+					</country>
+				</address>
+				<sector>
+					<label>Transports un logistika</label>
+				</sector>
+			</employer>
+		</workexperience>
+		<workexperience>
+			<period>
+				<from>
+					<year>2005</year>
+					<month>--03</month>
+					<day>---22</day>
+				</from>
+				<to>
+					<year>2005</year>
+					<month>--04</month>
+					<day>---30</day>
+				</to>
+			</period>
+			<position>
+				<code>21390</code>
+				<label>Datortīklu administrators</label>
+			</position>
+			<activities>IT sistēmu traucējumu novēršana un IT problēmu risināšana, konsultācijas.</activities>
+			<employer>
+				<name>IN SITE SIA</name>
+				<address>
+					<addressLine></addressLine>
+					<municipality>Rīga</municipality>
+					<postalCode></postalCode>
+					<country>
+						<code>LV</code>
+						<label>Latvija</label>
+					</country>
+				</address>
+				<sector>
+					<code>N</code>
+					<label>Interneta klubs</label>
+				</sector>
+			</employer>
+		</workexperience>
+		<workexperience>
+			<period>
+				<from>
+					<year>2006</year>
+					<month>--09</month>
+					<day>---01</day>
+				</from>
+				<to>
+					<year>2006</year>
+					<month>--11</month>
+					<day>---30</day>
+				</to>
+			</period>
+			<position>
+				<code>21320</code>
+				<label>Programmētajs</label>
+			</position>
+			<activities>Windows Vista migrācija. Programmu iepakošana, testēšana, konfigurēšana.</activities>
+			<employer>
+				<name>TOPNORDIC SIA</name>
+				<address>
+					<addressLine></addressLine>
+					<municipality>Rīga</municipality>
+					<postalCode></postalCode>
+					<country>
+						<code>LV</code>
+						<label>Latvija</label>
+					</country>
+				</address>
+				<sector>
+					<code>N</code>
+					<label>Administratīvu un atbalstu serviss</label>
+				</sector>
+			</employer>
+		</workexperience>
+		<workexperience>
+			<period>
+				<from>
+					<year>2007</year>
+					<month>--04</month>
+					<day>---12</day>
+				</from>
+				<to>
+					<year>2007</year>
+					<month>--05</month>
+					<day>---31</day>
+				</to>
+			</period>
+			<position>
+				<code>21320</code>
+				<label>Programmētajs</label>
+			</position>
+			<activities>Sistēmu administrēšana, datortīklu atbalsts, konsultācijas.</activities>
+			<employer>
+				<name>RodexPRO SIA</name>
+				<address>
+					<addressLine></addressLine>
+					<municipality>Ogre</municipality>
+					<postalCode></postalCode>
+					<country>
+						<code>LV</code>
+						<label>Latvia</label>
+					</country>
+				</address>
+				<sector>
+					<code>N</code>
+					<label>Tekstila fabrika</label>
+				</sector>
+			</employer>
+		</workexperience>
+	</workexperiencelist>
+	<educationlist>
+		<education>
+			<period>
+				<from>
+					<year>2001</year>
+					<month>--09</month>
+					<day>---01</day>
+				</from>
+				<to>
+					<year>2005</year>
+					<month>--06</month>
+				</to>
+			</period>
+			<title>Informācijas tehnoloģijas</title>
+			<skills></skills>
+			<organisation>
+				<name>Rīgas Uzņēmējdarbības tehniskā skola</name>
+				<address>
+					<addressLine></addressLine>
+					<municipality>Rīga</municipality>
+					<postalCode></postalCode>
+					<country>
+						<code>LV</code>
+						<label>Latvija</label>
+					</country>
+				</address>
+				<type>Tehnikums</type>
+			</organisation>
+			<level>
+				<label></label>
+			</level>
+			<educationalfield>
+				<label></label>
+			</educationalfield>
+		</education>
+	</educationlist>
+	<languagelist>
+		<language type="mother">
+			<!--xsi:type="europass:mother"-->
+			<code>ru</code>
+			<label>Krievu</label>
+		</language>
+		<language type="foreign">
+			<!--xsi:type="europass:foreign"-->
+			<code>lv</code>
+			<label>Latviešu</label>
+			<level>
+				<listening>c2</listening>
+				<reading>c1</reading>
+				<spokeninteraction>b2</spokeninteraction>
+				<spokenproduction>b2</spokenproduction>
+				<writing>b2</writing>
+			</level>
+		</language>
+		<language type="foreign">
+			<!--xsi:type="europass:foreign"-->
+			<code>en</code>
+			<label>Angļu</label>
+			<level>
+				<listening>b1</listening>
+				<reading>c1</reading>
+				<spokeninteraction>a1</spokeninteraction>
+				<spokenproduction>a2</spokenproduction>
+				<writing>b2</writing>
+			</level>
+		</language>
+	</languagelist>
+	<skilllist>
+		<skill type="social">Spēja stradāt komandā</skill>
+		<skill type="organisational"></skill>
+		<skill type="technical"></skill>
+		<skill type="computer">Web development
+			Weblapas griešana, SEO, CMS un plugīnu programmēšana.
+			(HTML, CSS, PHP, JavaScript, XSLT, MySQL, Ruby)
+			Asterisk IP-PBX
+			Konfigurēšana jau esošas produktus, jaunie risinājumi un piemerošana tas ofisā. Programmēšana. (lamp, Asterisk, openPBX, c++, PHP) 
+			Latvijas Ubuntu Linux aktivitāte dažādas nozārēs, palidzība jauniem dalibniekam. 
+			LAMP (Linux, Apache, MySQL, PHP/Python) – Web-servera uzstadīšana un administrēšana uz Windows un Linux sistēmām.
+			(Liinux, Apache, PHP server, MySQL server)
+			Sistēmu atjaunošana no Windows XP SP2 līdz Windows Vista RC2 through SMS serveri.
+			P2V (Physical to Virtual). Pārvietošana vismaz 10 serverus no fiziska servera uz Virtuālu pamatu.
+			(VMware, ESX, Virtual PC, Qemu, Windows Installer, RIS, Active Directory)</skill>
+		<skill type="artistic"></skill>
+		<skill type="other"></skill>
+		<structured-skill type="driving">
+			<!--xsi:type="europass:driving"-->
+			<drivinglicence>B</drivinglicence>
+		</structured-skill>
+	</skilllist>
+	<misclist>
+		<misc type="additional">Transporta līdzekļa nav</misc>
+		<misc type="annexes"></misc>
+	</misclist>
+</europass>
+<!--:learnerinfo-->
