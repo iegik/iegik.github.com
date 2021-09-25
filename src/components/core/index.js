@@ -1,5 +1,6 @@
 ;(function(document){
     location.hash = location.hash || "#home";
+
     var x1, x2, x, y,
         k = 16,
         requestID,
@@ -17,14 +18,13 @@
     function calculate(){
         x1 -= .5;
         x2 -= 5;
-        backgroundPosition = width / 2 - 2762 - x / (5 * k) + "px " + (
-                height - 129 + (20 - y) / (10 * k)
-            ) + "px, " + (
-                (x1 - x) / (10 * k)
-            ) + "px 60%, " + (
-                (x2 - x) / k
-            ) + "px 40%";
+        backgroundPosition = width / 2 - 2762 - x / (5 * k) + "px "
+            + (height - 129 + (20 - y) / (10 * k)) + "px, "
+            + ((x1 - x) / (10 * k)) + "px 60%, "
+            + ((x2 - x) / k) + "px 40%";
     }
+
+    // FIXME: Replace with 360deg of seconds
     setInterval(function(){
         calculate();
     }, 25);

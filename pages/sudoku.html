@@ -7,7 +7,7 @@
   <body> 
     <h1>Sudoku the game</h1> 
 <style>
-.sudoku { width: 250px;}
+.sudoku { width: calc(17em + 18px); display: table; }
 .sudoku input[class*=a]:hover { background:#a4c}
 .sudoku input[class*=b]:hover { background:#4ac}
 .sudoku input[class*=c]:hover { background:#4ca}
@@ -27,10 +27,10 @@
 .sudoku input[class*=q]:hover { background:#c84}
 .sudoku input[class*=r]:hover { background:#84c}
 
-.sudoku input[class*=u], .sudoku input[class*=x]{margin-right: 10px}
-.sudoku input[class*=c], .sudoku input[class*=f]{margin-bottom: 10px}
+.sudoku input[class*=u], .sudoku input[class*=x]{margin-right: .25em}
+.sudoku input[class*=c], .sudoku input[class*=f]{margin-bottom: .5em}
 
-.sudoku input { width:1.5em; padding:0; border:#888 solid 1px; text-align:center;}
+.sudoku input { width:1.5em; padding:0; margin-left: .25em; margin-bottom: .25em; border:#888 solid 1px; text-align:center; font-size: inherit; }
 </style>
 <!--pre>
 abdefghijklmnopqrstuvwxyz-
@@ -130,7 +130,7 @@ i[p,p,p,q,q,q,r,r,r]
 	<input pattern="[0-9]{1}" maxlength="1" class="zri"/>
 	<input pattern="[0-9]{1}" maxlength="1" class="-ri"/>
 </div>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
 <script>!window.jQuery && document.write(unescape('%3Cscript src="js/libs/jquery-1.5.1.js"%3E%3C/script%3E'))</script>
 <script>
 $(document).ready(function(){
