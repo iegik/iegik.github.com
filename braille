@@ -1,0 +1,52 @@
+#!/usr/bin/env node
+"use strict"
+const { argv, argv0 } = require('process');
+const { readFileSync } = require('fs');
+
+const pgmToASCII = text => text
+  .split('\n')
+  .map(line => line
+    .split('')
+    .map(char => '⠿⠾⠽⠼⠻⠺⠹⠸⠷⠶⠵⠴⠳⠲⠱⠰⠯⠮⠭⠬⠫⠪⠩⠨⠧⠦⠥⠤⠣⠢⠡⠠⠟⠞⠝⠜⠛⠚⠙⠘⠗⠖⠕⠔⠓⠒⠑⠐⠏⠎⠍⠌⠋⠊⠉⠈⠇⠆⠅⠄⠃⠂⠁⠀'[
+      `=)Y#]W?_(7Z0\\4:;\&!X+$[%.V8U-<5*,QTN>GJD^R6O9H3E"PSM/FIC@L2K'B1A `
+        .indexOf(char)
+    ] || ' ')
+    .join('')
+  )
+  .join('\n')
+
+let filename = ''
+let toHTML = false
+
+for (const arg in argv) {
+  if (arg < 2) continue;
+  if (['--pre', '-p'].indexOf(argv[arg]) > -1) {
+    toHTML = true;
+    continue;
+  }
+  filename = argv[arg]
+  break;
+}
+
+let content = ''
+try {
+  content = readFileSync(filename, {encoding:'utf8', flag:'r'})
+} catch (e) {
+  console.error(`No such file: ${filename}`);
+}
+
+const braille = pgmToASCII(content)
+
+if (toHTML) {
+  console.log(`<pre style="
+      font-size: 10px;
+      font-family: system-ui;
+      letter-spacing: -0.3ex;
+      line-height: 1;
+      white-space: pre;
+      text-transform: uppercase;
+  ">${braille}</pre>`)
+  return;
+}
+
+console.log(braille)

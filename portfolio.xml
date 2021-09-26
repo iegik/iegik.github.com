@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="./portfolio-v2.xsl"?>
+<?xml-stylesheet type="text/xsl" href="stylesheet.xsl"?>
 <portfolio>
     <project>
         <name>jgf</name>
@@ -82,7 +82,7 @@
         </images>
         <description lang="lv">3 nedēļas laika pirms irādes jau bija gatava HTML lapa, kur uzreiz ielikta visa informāsija par koncertu. Izmantoju efektus un viltīgas trikus lai ievietot mazā laukumā vairāk informācijas.</description>
         <description lang="en">The Terra Winda Ventspils festival (12.7.2008). It was best times for me. My first big project for my friends. New innovations - <strong>Flash video</strong> on main page, some <strong>CSS</strong> tricks. But only one thing, that stay annoying - all this was on <em>one <strong>HTML</strong> page</em>. Too slow connection to the site, and so many peoples don`t want waist their time.<br/>I`m sorry, but real address do not exist now and I lost latest design for that site. it was like banner painted by two colors: yellow, red and black.</description>
-		<category>XHTML CSS</category>
+		<category>XHTML CSS Flash</category>
     </project>
     <project>
         <name>eremonts</name>
