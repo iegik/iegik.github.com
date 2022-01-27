@@ -6,7 +6,7 @@ import ga from '@assets/lib/ga.min.js';
 import clouds from '@assets/lib/clouds.min.js';
 
 const data = `<!DOCTYPE html>
-<html lang="en" manifest="manifest.appcache~">
+<html lang="en" manifest="manifest.appcache">
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
     <style>${style}</style>
