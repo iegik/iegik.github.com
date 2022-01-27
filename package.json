@@ -1,10 +1,22 @@
 {
   "name": "home",
-  "version": "2.1.1",
+  "version": "3.0.0",
   "description": "",
-  "main": "gulpfile.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "npm run build",
+    "build": "make build",
+    "start": "make start",
+    "test": "./node_modules/.bin/tsc -noEmit src/**/*.ts || exit 1",
+    "lint": "npm run lint:eslint && npm run lint:prettier && npm run lint:stylelint",
+    "lint:eslint": "eslint --fix --ext .ts src/",
+    "lint:stylelint": "stylelint --fix \"src/**/*.scss\"",
+    "lint:prettier": "prettier --write src/**/**/*.{ts,scss}"
+  },
+  "lint-staged": {
+    "src/**/*.{ts}": "eslint --cache --fix --ext .ts",
+    "src/**/*.scss": "stylelint --fix scss",
+    "*.{ts,css,md}": "prettier --write"
   },
   "repository": {
     "type": "git",
@@ -17,18 +29,18 @@
   },
   "homepage": "https://github.com/iegik/iegik.github.com#readme",
   "devDependencies": {
-    "browserify": "^13.1.1",
-    "gulp": "gulpjs/gulp#4.0",
-    "gulp-changed": "^1.3.2",
-    "gulp-concat": "^2.6.0",
-    "gulp-debug": "^2.1.2",
-    "gulp-rename": "^1.2.2",
-    "gulp-size": "^2.1.0",
-    "gulp-sourcemaps": "^2.1.1",
-    "gulp-uglify": "^2.0.0",
-    "gulp-util": "^3.0.7",
-    "lodash": "^4.16.4",
-    "through2": "^2.0.1",
-    "vinyl": "^2.0.0"
+    "@typescript-eslint/parser": "^4.11.1",
+    "esbuild": "^0.8.26",
+    "eslint": "^7.16.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^7.1.0",
+    "html-minifier": "^4.0.0",
+    "husky": "^4.3.6",
+    "lint-staged": "^10.5.3",
+    "prettier": "^2.2.1",
+    "sass": "^1.45.2",
+    "stylelint": "^14.2.0",
+    "stylelint-scss": "^3.21.0",
+    "typescript": "^4.1.3"
   }
 }

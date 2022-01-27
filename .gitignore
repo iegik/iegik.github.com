@@ -1,2 +1,13 @@
-build/
 node_modules/
+public/fonts/*.svg
+public/fonts/*.woff
+public/**/*.css
+public/**/*.css.map
+public/**/*.js
+public/**/*.js.map
+public/**/*-thumb.*
+public/**/*.webp
+public/**/*.ascii
+public/**/*.brf
+public/index.html
+scripts/index.js

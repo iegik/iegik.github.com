@@ -1,0 +1,12 @@
+R c #FF0000
+Y c #FFFF00
+G c #00FF00
+T c #88FF88
+L c #00FFFF
+B c #0000FF
+V c #FF00FF
+P c #FF0088
+  c None
+RYG
+V T
+PBL

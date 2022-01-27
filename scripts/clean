@@ -1,0 +1,13 @@
+#!/bin/sh
+rm -rf public/fonts/*.svg
+rm -rf public/fonts/*.woff
+rm -rf public/**/*.css
+rm -rf public/**/*.css.map
+rm -rf public/**/*.js
+rm -rf public/**/*.js.map
+rm -rf public/**/*-thumb.*
+rm -rf public/**/*.webp
+rm -rf public/**/*.ascii
+rm -rf public/**/*.brf
+rm -rf public/index.html
+rm -rf scripts/index.js
