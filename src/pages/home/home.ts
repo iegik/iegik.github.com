@@ -9,8 +9,8 @@ const Home = () => `
     <article lang="en">
       <section id="home" itemscope itemtype="http://schema.org/Person">
         <header>
-          <h2 itemprop="name"><span itemprop="givenName">Artūrs</span> <span itemprop="familyName">Jansons</span></h2>
-          <span itemprop="jobTitle">Full-stack web developer</span><br><span itemprop="address" itemscope
+          <h2 itemprop="name" class="h2"><span itemprop="givenName">Artūrs</span> <span itemprop="familyName">Jansons</span></h2>
+          <span itemprop="jobTitle" class="subtitle">Full-stack web developer</span><br><span itemprop="address" itemscope
             itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">St. Petersburg</span>,</span> <a
             href="callto:0079213900737"><span itemprop="telephone">+7-921-390-07-37</span></a> <a
             href="skype:jansons.a?info"><i class="fa fa-skype"></i></a> <a

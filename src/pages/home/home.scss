@@ -2,3 +2,16 @@ article, section, header {
   display: grid;
   place-items: center;
 }
+
+.h2 {
+  font-family: var(--font-fantasy);
+  font-size: var(--font-size-xxl);
+  color: var(--color-primary-dark);
+  font-weight: bold;
+}
+
+.subtitle {
+  text-transform: uppercase;
+  font-weight: 200;
+  text-shadow: 0 0 1rem rgb(127 127 127 / 50%);
+}
