@@ -60,4 +60,4 @@ clean:
 # 	&& git subtree rm --prefix public --cached  \
 # 	&& git subtree push --prefix public origin gh-pages
 publish:
-	@gh-pages -d public
+	@npx gh-pages -d public
