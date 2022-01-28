@@ -7,13 +7,13 @@
   overflow: hidden;
   box-shadow: 0 0 3rem 2rem var(--color-grayscale);
   padding: 1rem;
-  transform: rotate(357deg);
+  transform: perspective(1px) rotate(357deg);
   transition: transform 0.8s;
   transition-timing-function: ease-in-out;
   position: absolute;
 
   &:hover {
-    transform: rotate(355deg);
+    transform: perspective(1px) rotate(355deg);
   }
 
   picture {

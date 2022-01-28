@@ -1,7 +1,7 @@
 const mask = /.(png|jpg)$/
 
 export default (props) => {
-  const { src, width, height, loading = 'lazy', alt = '', itemprop  } = props;
+  const { src, width, height, loading, alt = '', itemprop  } = props;
 
   if (/.jpg$/.test(src)) {
     return `

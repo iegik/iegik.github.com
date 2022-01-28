@@ -7,13 +7,17 @@
     url(fonts/AlinaScript.woff) format('woff'),
     url(fonts/AlinaScript.ttf) format('truetype'),
     url(fonts/AlinaScript.svg#AlinaScript) format('svg');
+  font-display: swap;
 }
 
 :root {
+  font-size: 100%;
+
   --font-sans-serif: -apple-system, system-ui, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 
   --font-fantasy: "Alina Script", serif, fantasy;
+  --font-monospace: 'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace;
 
   --color-grayscale: rgba(127, 127, 127, 0.5);
   --color-primary-light: #EEEDE7d9;
@@ -47,7 +51,7 @@ picture {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-m);
   font-family: var(--font-sans-serif);
   line-height: 1.5;
   background-image: url('home/images/Riga_Piter.png');

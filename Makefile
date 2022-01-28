@@ -13,7 +13,7 @@ esbuild:
 html:
 	@npx esbuild src/index.html.ts --outdir=scripts ${HTML_CONFIG} && node scripts/index.html.js && rm scripts/index.html.js
 
-MIN_CONFIG=--collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --minify-css true --minify-js true
+MIN_CONFIG=--remove-comments --remove-redundant-attributes --remove-script-type-attributes --minify-css true --minify-js true
 minify: html
 	@npx html-minifier ${MIN_CONFIG} public/index.html -o public/index.html
 
@@ -49,7 +49,7 @@ braille: ascii
 	@scripts/braille public/images/artursjansons.ascii > public/images/artursjansons.brf
 
 # Entry point to start
-build: ttf2woff ttf2svg sass esbuild html ##	Build project
+build: ttf2woff ttf2svg sass esbuild html minify ##	Build project
 
 clean:
 	@grep -v node_modules .gitignore | awk '{print "rm -rf "$1}' | sh
