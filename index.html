@@ -1,59 +1,56 @@
 <!DOCTYPE html>
 <html lang="en" manifest="manifest.appcache">
   <head>
-    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
-    <style>.header{position:relative;height:24vh}.header__avatar{border-radius:3rem;overflow:hidden;box-shadow:0 0 3rem 2rem var(--color-grayscale);padding:1rem;transform:rotate(357deg);transition:transform .8s;transition-timing-function:ease-in-out;position:absolute}.header__avatar:hover{transform:rotate(355deg)}.header__avatar picture{border-radius:2rem;overflow:hidden;max-height:24vh;max-width:24vh;place-items:center}.header__avatar img{width:100%;height:100%}article,section,header{display:grid;place-items:center}.h2{font-family:var(--font-fantasy);font-size:var(--font-size-xxl);color:var(--color-primary-dark);font-weight:bold}.subtitle{text-transform:uppercase;font-weight:200;text-shadow:0 0 1rem rgba(127,127,127,.5)}@font-face{font-family:"Alina Script";src:local("Alina Script"),url(fonts/AlinaScript.woff) format("woff"),url(fonts/AlinaScript.ttf) format("truetype"),url(fonts/AlinaScript.svg#AlinaScript) format("svg")}:root{--font-sans-serif: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;--font-fantasy: "Alina Script", serif, fantasy;--color-grayscale: rgba(127, 127, 127, 0.5);--color-primary-light: #EEEDE7d9;--color-primary: #E7D2CCd9;--color-primary-dark: #868B8Ed9;--color-primary-contrast: #B9B7BDd9;--font-size-xs: 0.8rem;--font-size-s: 1rem;--font-size-m: 1.4rem;--font-size-l: 1.6rem;--font-size-xl: 2.4rem;--font-size-xxl: 3.6rem}html,body,#root{margin:0;padding:0;width:100vw;min-height:100vh;display:flex}picture{display:flex}#root{display:flex;flex-direction:column;justify-content:space-evenly;font-size:var(--font-size-xl);font-family:var(--font-sans-serif);line-height:1.5;background-image:url("home/images/Riga_Piter.png");background-repeat:no-repeat;background-position:50% calc(100% + 10px)}body{background-color:var(--color-primary-light);background-image:url("home/images/clouds.png"),url("home/images/clouds.png");background-repeat:no-repeat,no-repeat}a:link{color:var(--color-primary-dark)}/*# sourceMappingURL=styles.min.css.map */
-</style>
+    <link rel="preload" as="font" href="fonts/AlinaScript.woff" crossorigin>
+    <title>Artūrs Jansons :: Web Developer</title>
+    <meta name="description" content="Experienced web developer with a passion for innovation, automation and optimization">
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#E7D2CC">
+    <style>.header{position:relative;height:24vh}.header__avatar{border-radius:3rem;overflow:hidden;box-shadow:0 0 3rem 2rem var(--color-grayscale);padding:1rem;transform:perspective(1px) rotate(357deg);transition:transform .8s;transition-timing-function:ease-in-out;position:absolute}.header__avatar:hover{transform:perspective(1px) rotate(355deg)}.header__avatar picture{border-radius:2rem;overflow:hidden;max-height:24vh;max-width:24vh;place-items:center}.header__avatar img{width:100%;height:100%}article,header,section{display:grid;place-items:center;gap:1rem;width:100%}.h2{font-family:var(--font-fantasy);font-size:var(--font-size-xl);color:var(--color-primary-dark);font-weight:700}.subtitle{text-transform:uppercase;font-weight:200;text-shadow:0 0 1rem rgba(127,127,127,.5)}.network{font-size:var(--font-size-s);font-weight:200;display:grid;gap:1px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));place-items:center;width:100%}.network a{width:inherit;height:3rem;display:flex;align-items:center;justify-content:center;background-color:rgba(127,127,127,.1);opacity:1}.network a:not(:hover){filter:blur(1px);opacity:.5}@font-face{font-family:"Alina Script";src:local("Alina Script"),url(fonts/AlinaScript.woff) format("woff"),url(fonts/AlinaScript.ttf) format("truetype"),url(fonts/AlinaScript.svg#AlinaScript) format("svg");font-display:swap}:root{font-size:100%;--font-sans-serif:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;--font-fantasy:"Alina Script",serif,fantasy;--font-monospace:"SFMono-Regular","SF Mono","Ubuntu Mono",Consolas,"DejaVu Sans Mono",Menlo,monospace;--color-grayscale:rgba(127, 127, 127, 0.5);--color-primary-light:#EEEDE7d9;--color-primary:#E7D2CCd9;--color-primary-dark:#868B8Ed9;--color-primary-contrast:#B9B7BDd9;--font-size-xs:0.8rem;--font-size-s:1rem;--font-size-m:1.4rem;--font-size-l:1.6rem;--font-size-xl:2.4rem;--font-size-xxl:3.6rem}#root,body,html{margin:0;padding:0;width:100vw;min-height:100vh;display:flex}picture{display:flex}#root{display:flex;flex-direction:column;justify-content:space-evenly;font-size:var(--font-size-m);font-family:var(--font-sans-serif);line-height:1.5;background-image:url(home/images/Riga_Piter.png);background-repeat:no-repeat;background-position:50% calc(100% + 10px)}body{background-color:var(--color-primary-light);background-image:url(home/images/clouds.png),url(home/images/clouds.png);background-repeat:no-repeat,no-repeat}a:link{color:var(--color-primary-dark)}</style>
   </head>
   <body>
     <div id="root">Loading...</div>
-    <script>(()=>{var h=class{toString(){let e=Math.round(Math.random()*1e6).toString(36);return this.id=this.id||`ref-${e}`}get current(){if(!!window?.document)return document.querySelector(`[ref=${this.id}]`)}},f=()=>new h;var s=0,o=!1,n="\u{1F34F},\u{1F330},\u{1F34B},\u{1F345},\u{1F346},\u{1F347},\u{1F353},\u{1F349},\u{1F350},\u{1F352},\u{1F351},\u{1F951}".split(","),{floor:w,random:k}=Math,b=t=>t[w(k()*t.length)],p=()=>{if(o)return;let[t,e,r]=[n,n,n].flatMap(b);if(t==e&&e==r){o=!0;let i=`You won in ${s} tries`;setTimeout(()=>{alert(i),o=!1},100),s=0}else s++;return`${t} ${e} ${r}`},d=()=>{let t=f();return setTimeout(()=>{t.current?.addEventListener("click",()=>{t.current.innerHTML=p()}),!!window?.document&&document.addEventListener("keyup",e=>{e.isComposing||e.keyCode===229||e.which!==13&&e.which!==32||(t.current.innerHTML=p())})}),`<center ref="${t}">${p()}</center>`};var a=/.(png|jpg)$/,u=t=>{let{src:e,width:r,height:i,loading:c="lazy",alt:l="",itemprop:m}=t;if(/.jpg$/.test(e))return`
-      <picture>
-        <source type="image/webp" srcset="${e.replace(a,".webp")}" />
-        <source type="image/jpeg" srcset="${e.replace(a,".jpg")}" />
-        <img src="${e.replace(a,".png")}" width="${r}" height="${i}" loading="${c}" alt="${l}" itemprop="${m}" />
-      </picture>
-    `;if(/.png$/.test(e))return`
-      <picture>
-        <source type="image/webp" srcset="${e.replace(a,".webp")}" />
-        <img src="${e.replace(a,".png")}" width="${r}" height="${i}" loading="${c}" alt="${l}" itemprop="${m}" />
-      </picture>
-    `};var y=()=>`
+    <script>(()=>{var e=class{toString(){var e=Math.round(1e6*Math.random()).toString(36);return this.id=this.id||"ref-"+e}get current(){if(window?.document)return document.querySelector(`[ref=${this.id}]`)}},i=()=>new e,a=0,r=!1,s="🍏,🌰,🍋,🍅,🍆,🍇,🍓,🍉,🍐,🍒,🍑,🥑".split(","),{floor:t,random:o}=Math,n=e=>e[t(o()*e.length)],p=()=>{if(!r){var[e,t,i]=[s,s,s].flatMap(n);if(e==t&&t==i){r=!0;let e=`You won in ${a} tries`;setTimeout(()=>{alert(e),r=!1},100),a=0}else a++;return e+` ${t} `+i}},c=/.(png|jpg)$/,l=()=>`
     <header class="header">
-      <a href="#home" class="header__avatar">${u({itemprop:"photo",src:"home/images/artursjansons.jpg",width:511,height:511,alt:"[artursjansons]"})}</a>
+      <a href="#home" class="header__avatar">${(e=>{let{src:t,width:i,height:a,loading:r,alt:s="",itemprop:o}=e;return/.jpg$/.test(t)?`
+      <picture>
+        <source type="image/webp" srcset="${t.replace(c,".webp")}" />
+        <source type="image/jpeg" srcset="${t.replace(c,".jpg")}" />
+        <img src="${t.replace(c,".png")}" width="${i}" height="${a}" loading="${r}" alt="${s}" itemprop="${o}" />
+      </picture>
+    `:/.png$/.test(t)?`
+      <picture>
+        <source type="image/webp" srcset="${t.replace(c,".webp")}" />
+        <img src="${t.replace(c,".png")}" width="${i}" height="${a}" loading="${r}" alt="${s}" itemprop="${o}" />
+      </picture>
+    `:void 0})({itemprop:"photo",src:"home/images/artursjansons.jpg",width:511,height:511,alt:"[artursjansons]"})}</a>
     </header>
-  `,g=y;var $=()=>`
-    ${g()}
+  `,h=()=>`
+    ${l()}
     <article lang="en">
       <section id="home" itemscope itemtype="http://schema.org/Person">
         <header>
-          <h2 itemprop="name" class="h2"><span itemprop="givenName">Art\u016Brs</span> <span itemprop="familyName">Jansons</span></h2>
-          <span itemprop="jobTitle" class="subtitle">Full-stack web developer</span><br><span itemprop="address" itemscope
-            itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">St. Petersburg</span>,</span> <a
-            href="callto:0079213900737"><span itemprop="telephone">+7-921-390-07-37</span></a> <a
-            href="skype:jansons.a?info"><i class="fa fa-skype"></i></a> <a
-            href="mailto:a.jansons+github@gmail.com?title=iegik.github.io:contact" itemprop="email">a.jansons@gmail.com</a>
-          <div class="network"><a href="http://linkedin.com/in/iegik"><i class="fa fa-linkedin-square"></i></a> <a
-              href="http://github.com/iegik"><i class="fa fa-github-alt"></i></a> <a
-              href="http://jsfiddle.net/user/iegik"><i class="fa fa-jsfiddle"></i></a> <a
-              href="http://facebook.com/iegik"><i class="fa fa-facebook-square"></i></a> <a
-              href="http://stackoverflow.com/users/771471/iegik"><i class="fa fa-stack-overflow"></i></a> <a
-              href="http://winlinmac.tumblr.com/"><i class="fa fa-tumblr-square"></i></a>
+          <h2 itemprop="name" class="h2"><span itemprop="givenName">Artūrs</span> <span itemprop="familyName">Jansons</span></h2>
+          <span itemprop="jobTitle" class="subtitle">Full-stack web developer</span>
+            <br>
+            <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">St. Petersburg</span>,</span>
+            <a href="callto:0079213900737"><i class="fa fa-whatsapp"></i><span itemprop="telephone">+7-921-390-07-37</span></a>
+            <a href="mailto:a.jansons+github@gmail.com?title=iegik.github.io:contact" itemprop="email">a.jansons@gmail.com</a>
+          <div class="network">
+            <a href="http://linkedin.com/in/iegik"><i class="fa fa-linkedin-square"></i>linkedin.com</a>
+            <a href="http://github.com/iegik" title="GitHub"><i class="fa fa-github-alt"></i>github.com</a>
+            <a href="http://jsfiddle.net/user/iegik" title="JSFiddle"><i class="fa fa-jsfiddle"></i>jsfiddle.net</a>
+            <a href="http://stackoverflow.com/users/771471/iegik" title="Stack Overflow"><i class="fa fa-stack-overflow"></i>stackoverflow.com</a>
           </div>
         </header>
       </section>
     </article>
     <footer>
-      ${d()}
+      ${(()=>{let t=i();return setTimeout(()=>{t.current?.addEventListener("click",()=>{t.current.innerHTML=p()}),window?.document&&document.addEventListener("keyup",e=>{e.isComposing||229===e.keyCode||13!==e.which&&32!==e.which||(t.current.innerHTML=p())})}),`<center ref="${t}">${p()}</center>`})()}
     </footer>
-  `;window?.document&&(document.getElementById("root").innerHTML=$());var S=$;})();
-//# sourceMappingURL=home.min.js.map
-</script>
-    <script>(()=>{(function(e,c,o,s,t,n,a){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=c.createElement(o),a=c.getElementsByTagName(o)[0],n.async=1,n.src=s,a.parentNode.insertBefore(n,a)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create",/github/.test(location.host)?"UA-1989060-8":"UA-1989060-7","auto");ga("send","pageview");})();
-//# sourceMappingURL=ga.min.js.map
-</script>
-    <!--script>(()=>{(function(l){location.hash=location.hash||"#home";var n,a,e,h,o=16,c,s,i=l.body,t=l.documentElement,f=Math.max(i.scrollWidth,i.offsetWidth,t.clientWidth,t.scrollWidth,t.offsetWidth),r=Math.max(i.scrollHeight,i.offsetHeight,t.clientHeight,t.scrollHeight,t.offsetHeight);n=a=e=h=0,f>300&&addEventListener("mousemove",function(m){e=m.pageX,h=m.pageY});function u(){n-=.5,a-=5,s=`${f/2-2762-e/(5*o)}px ${r-129+(20-h)/(10*o)}px, ${(n-e)/(10*o)}px 60%, ${(a-e)/o}px 40%`}setInterval(function(){u()},25);function d(){i.style.backgroundPosition=s,c&&cancelAnimationFrame(c),c=requestAnimationFrame(d)}d()})(document);})();
-//# sourceMappingURL=clouds.min.js.map
-</script-->
+  `;window?.document&&(document.getElementById("root").innerHTML=h())})()</script>
+    <script>(()=>{var e,a,t,g;e=window,g=document,a="script",t="ga",e.GoogleAnalyticsObject=t,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=+new Date,t=g.createElement(a),g=g.getElementsByTagName(a)[0],t.async=1,t.src="https://www.google-analytics.com/analytics.js",g.parentNode.insertBefore(t,g),ga("create",/github/.test(location.host)?"UA-1989060-8":"UA-1989060-7","auto"),ga("send","pageview")})()</script>
+    
   </body>
 </html>
