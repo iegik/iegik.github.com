@@ -1,9 +1,12 @@
 const mask = /.(png|jpg)$/
+const jpg = /.jpg$/
+const png = /.png$/
 
 export default (props) => {
-  const { src, width, height, loading, alt = '', itemprop  } = props;
+  const { src, ratio, loading, alt = '', itemprop  } = props;
+  const [width, height] = ratio.split(':')
 
-  if (/.jpg$/.test(src)) {
+  if (jpg.test(src)) {
     return `
       <picture>
         <source type="image/webp" srcset="${src.replace(mask,'.webp')}" />
@@ -13,7 +16,7 @@ export default (props) => {
     `
   }
 
-  if (/.png$/.test(src)) {
+  if (png.test(src)) {
     return `
       <picture>
         <source type="image/webp" srcset="${src.replace(mask,'.webp')}" />
