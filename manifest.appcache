@@ -1,11 +1,14 @@
 CACHE MANIFEST
-# rev v3.0.0 - 2022-01-30T02:09:00.000Z
+# rev v3.0.0 - 2022-01-30T02:19:00.000Z
 
 CACHE:
 index.html
 home/images/Riga_Piter.webp
+home/images/Riga_Piter.png
 home/images/artursjansons.webp
+home/images/artursjansons_255.webp
 home/images/clouds.webp
+home/images/clouds.png
 fonts/AlinaScript.woff
 fonts/AlinaScript.ttf
 fonts/AlinaScript.svg
