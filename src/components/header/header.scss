@@ -15,8 +15,10 @@
   transition-timing-function: ease-in-out;
   position: absolute;
 
-  &:hover {
-    transform: perspective(1px) rotate(355deg);
+  @media (min-width: 768px) {
+    &:hover {
+      transform: perspective(1px) rotate(355deg);
+    }
   }
 
   picture {

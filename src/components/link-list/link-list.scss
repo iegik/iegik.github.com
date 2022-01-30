@@ -31,12 +31,14 @@
   color: var(--color-primary-dark);
   opacity: 1;
   overflow: hidden;
-  &:hover {
-    border-color: var(--color-primary-dark);
-  }
-  &:not(:hover) {
-    filter: blur(3px);
-    opacity: 0.5;
+  @media (min-width: 768px) {
+    &:hover {
+      border-color: var(--color-primary-dark);
+    }
+    &:not(:hover) {
+      filter: blur(3px);
+      opacity: 0.5;
+    }
   }
 }
 
