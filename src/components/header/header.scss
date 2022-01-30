@@ -12,6 +12,7 @@
   padding: 1rem;
   transform: perspective(1px) rotate(357deg);
   position: absolute;
+  text-decoration: none;
 
   @media (prefers-reduced-motion: no-preference) {
     transition: transform 0.8s;
