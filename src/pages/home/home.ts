@@ -22,6 +22,7 @@ const Home = () => `
     children: [
       `<a class="link-list__link" href="http://linkedin.com/in/iegik" title="LinkedIn">${Icon({ name: "linkedin-icon", className: 'link-list__icon' })}</a>`,
       `<a class="link-list__link" href="http://github.com/iegik" title="GitHub">${Icon({ name: "github-icon", className: 'link-list__icon' })}</a>`,
+      `<a class="link-list__link" href="http://profile.codersrank.io/user/iegik" title="Coders Rank">${Icon({ name: "codersrank-icon", className: 'link-list__icon' })}</a>`,
       `<a class="link-list__link" href="http://jsfiddle.net/user/iegik" title="JSFiddle">${Icon({ name: "jsfiddle-icon", className: 'link-list__icon' })}</a>`,
       `<a class="link-list__link" href="http://stackoverflow.com/users/771471/iegik" title="Stack Overflow">${Icon({ name: "stackoverflow-icon", className: 'link-list__icon' })}</a>`,
     ],

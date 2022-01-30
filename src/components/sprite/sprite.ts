@@ -6,6 +6,8 @@ import StackOverflowIcon from '@app/icons/stackoverflow-icon.svg';
 import StackOverflowLogo from '@app/icons/stackoverflow-logo.svg';
 import JsFiddleIcon from '@app/icons/jsfiddle-icon.svg';
 import JsFiddleLogo from '@app/icons/jsfiddle-logo.svg';
+import CodersRankIcon from '@app/icons/codersrank-icon.svg';
+import CodersRankLogo from '@app/icons/codersrank-logo.svg';
 
 const icons = {
   'linkedin-icon': LinkedinIcon,
@@ -16,6 +18,8 @@ const icons = {
   'stackoverflow-logo': StackOverflowLogo,
   'jsfiddle-icon': JsFiddleIcon,
   'jsfiddle-logo': JsFiddleLogo,
+  'codersrank-icon': CodersRankIcon,
+  'codersrank-logo': CodersRankLogo,
 }
 
 const Sprite = () => `
