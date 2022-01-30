@@ -18,7 +18,7 @@ const Image = (props) => {
   return `
     <picture class="${className}">
       ${Sources({ types, sizes, src })}
-      <img src="${src}" width="${width}" height="${height}" loading="${loading}" alt="${alt}" itemprop="${itemprop}" />
+      <img src="${types.includes('webp') ? src.replace(/\.*$/, '.webp') : src}" width="${width}" height="${height}" loading="${loading}" alt="${alt}" itemprop="${itemprop}" />
     </picture>
   `
 }
