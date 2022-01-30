@@ -16,7 +16,7 @@
       ${{types:r,sizes:o,src:c}=[{types:a,sizes:s,src:i}][0],Object.entries(k).filter(([e])=>r.includes(e)).flatMap(([e,i])=>`
     <source type="${e}" srcset="${o.split(",").map(e=>c.replace(new RegExp(`.(${r})$`),`_${e}.${i} ${e}w`))}" />
   `).join("")}
-      <img src="${i}" width="${m}" height="${h}" loading="${l}" alt="${n}" itemprop="${p}" />
+      <img src="${a.includes("webp")?i.replace(/\.*$/,".webp"):i}" width="${m}" height="${h}" loading="${l}" alt="${n}" itemprop="${p}" />
     </picture>
   `;var r,o,c},d=()=>`
     <header class="header">
