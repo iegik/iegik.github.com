@@ -35,6 +35,10 @@
     &:hover {
       border-color: var(--color-primary-dark);
     }
+  }
+
+  /* prefers-reduced-transparency not available yet */
+  @media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
     &:not(:hover) {
       filter: blur(3px);
       opacity: 0.5;

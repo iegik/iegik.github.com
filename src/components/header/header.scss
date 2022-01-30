@@ -11,9 +11,12 @@
   box-shadow: 0 0 3rem 2rem var(--color-grayscale);
   padding: 1rem;
   transform: perspective(1px) rotate(357deg);
-  transition: transform 0.8s;
-  transition-timing-function: ease-in-out;
   position: absolute;
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition: transform 0.8s;
+    transition-timing-function: ease-in-out;
+  }
 
   @media (min-width: 768px) {
     &:hover {

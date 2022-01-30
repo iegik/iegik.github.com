@@ -20,11 +20,11 @@
   --font-fantasy: "Alina Script", serif, fantasy;
   --font-monospace: 'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace;
 
-  --color-grayscale: rgba(127, 127, 127, 0.5);
-  --color-primary-light: #EEEDE7d9;
-  --color-primary: #E7D2CCd9;
-  --color-primary-dark: #868B8Ed9;
-  --color-primary-contrast: #B9B7BDd9;
+  --color-grayscale: #7f7f7f;
+  --color-primary-light: #EEEDE7;
+  --color-primary: #E7D2CC;
+  --color-primary-dark: #868B8E;
+  --color-primary-contrast: #B9B7BD;
 
   --font-size-xs: 0.8rem;
   --font-size-s: 1rem;
@@ -32,6 +32,15 @@
   --font-size-l: 1.6rem;
   --font-size-xl: 2.4rem;
   --font-size-xxl: 3.6rem;
+
+  /* prefers-reduced-transparency not available yet */
+  @media (prefers-reduced-motion: no-preference) {
+    --color-grayscale: rgba(127, 127, 127, 0.5);
+    --color-primary-light: #EEEDE7d9;
+    --color-primary: #E7D2CCd9;
+    --color-primary-dark: #868B8Ed9;
+    --color-primary-contrast: #B9B7BDd9;
+  }
 }
 
 html,
