@@ -13,10 +13,10 @@
     <div id="root">Loading...</div>
     <script>(()=>{var e=class{toString(){var e=Math.round(1e6*Math.random()).toString(36);return this.id=this.id||"ref-"+e}get current(){if(window?.document)return document.querySelector(`[ref=${this.id}]`)}},t=()=>new e,s=0,a=!1,l="🍏,🌰,🍋,🍅,🍆,🍇,🍓,🍉,🍐,🍒,🍑,🥑".split(","),{floor:i,random:n}=Math,r=e=>e[i(n()*e.length)],o=()=>{if(!a){var[e,i,t]=[l,l,l].flatMap(r);if(e==i&&i==t){a=!0;let e=`You won in ${s} tries`;setTimeout(()=>{alert(e),a=!1},100),s=0}else s++;return e+` ${i} `+t}},k={"image/webp":"webp","image/jpeg":"jpg","image/png":"png"},p=e=>{let{src:i,ratio:t,sizes:s,types:a="png|webp",loading:l,alt:n="",itemprop:p,className:d}=e,[m,h]=t.split(":");return`
     <picture class="${d}">
-      ${{types:r,sizes:o,src:c}=[{types:a,sizes:s,src:i}][0],Object.entries(k).filter(([e])=>r.includes(e)).flatMap(([e,i])=>`
+      ${{types:r,sizes:o,src:c}=[{types:a,sizes:s,src:i}][0],Object.entries(k).filter(([,e])=>r.includes(e)).flatMap(([e,i])=>`
     <source type="${e}" srcset="${o.split(",").map(e=>c.replace(new RegExp(`.(${r})$`),`_${e}.${i} ${e}w`))}" />
   `).join("")}
-      <img src="${a.includes("webp")?i.replace(/\.*$/,".webp"):i}" width="${m}" height="${h}" loading="${l}" alt="${n}" itemprop="${p}" />
+      <img src="${a.includes("webp")?i.replace(/\..*$/,".webp"):i}" width="${m}" height="${h}" loading="${l}" alt="${n}" itemprop="${p}" />
     </picture>
   `;var r,o,c},d=()=>`
     <header class="header">
