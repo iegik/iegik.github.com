@@ -4,6 +4,7 @@ import style from '@assets/styles.min.css';
 import app from '@assets/lib/home.min.js';
 import ga from '@assets/lib/ga.min.js';
 import clouds from '@assets/lib/clouds.min.js';
+import Sprite from '@app/components/sprite/sprite';
 
 const title = 'Artūrs Jansons :: Web Developer';
 const description = 'Experienced web developer with a passion for innovation, automation and optimization'
@@ -23,6 +24,7 @@ const data = `<!DOCTYPE html>
     <script>${app}</script>
     <script>${ga}</script>
     <!--script>${clouds}</script-->
+    ${Sprite()}
   </body>
 </html>
 `;
