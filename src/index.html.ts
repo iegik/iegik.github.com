@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 import * as fs from 'fs';
 import style from '@assets/styles.min.css';
-import app from '@assets/lib/home.min.js';
+import app from '@assets/lib/router.min.js';
 import ga from '@assets/lib/ga.min.js';
 import clouds from '@assets/lib/clouds.min.js';
-import Sprite from '@app/components/sprite/sprite';
+import Sprite from '@app/components/sprite';
 
 const title = 'Artūrs Jansons :: Web Developer';
 const description = 'Experienced web developer with a passion for innovation, automation and optimization'

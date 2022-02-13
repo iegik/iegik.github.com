@@ -10,7 +10,7 @@ FONTS=${DIST}/fonts
 JS_CONFIG=--bundle --platform=browser --sourcemap --minify  --out-extension:.js=.min.js --loader:.png=dataurl --loader:.svg=text --loader:.ppm=text --loader:.ascii=text --loader:.data=binary
 HTML_CONFIG=--bundle --platform=node --minify --loader:.js=text --loader:.css=text --loader:.html=text --loader:.png=dataurl --loader:.svg=text --loader:.data=binary
 esbuild:
-	@npx esbuild src/pages/home/*.ts --outdir=${DIST}/lib ${JS_CONFIG} \
+	@npx esbuild src/services/router.ts --outdir=${DIST}/lib ${JS_CONFIG} \
 	&& npx esbuild src/lib/*.ts --outdir=${DIST}/lib ${JS_CONFIG}
 
 html:

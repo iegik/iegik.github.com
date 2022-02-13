@@ -1,6 +1,7 @@
 article, section, header {
   display: grid;
   place-items: center;
+  align-items: start;
   gap: 1rem;
   width: 100%;
 }

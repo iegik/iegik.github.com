@@ -2,8 +2,9 @@
 // import '@app/lib/clouds';
 
 import slotmachine from '@app/components/core/slotmachine'
-import Header from '@app/components/header/header'
-import Icon from '@app/components/icon/icon'
+import Header from '@app/components/header'
+import Icon from '@app/components/icon'
+import Link from '@app/components/link'
 import LinkList from '@app/components/link-list/link-list'
 
 const Home = () => `
@@ -20,11 +21,11 @@ const Home = () => `
           ${LinkList({
     squire: true,
     children: [
-      `<a class="link-list__link" href="http://linkedin.com/in/iegik" title="LinkedIn">${Icon({ name: "linkedin-icon", className: 'link-list__icon' })}</a>`,
-      `<a class="link-list__link" href="http://github.com/iegik" title="GitHub">${Icon({ name: "github-icon", className: 'link-list__icon' })}</a>`,
-      `<a class="link-list__link" href="http://profile.codersrank.io/user/iegik" title="Coders Rank">${Icon({ name: "codersrank-icon", className: 'link-list__icon' })}</a>`,
-      `<a class="link-list__link" href="http://jsfiddle.net/user/iegik" title="JSFiddle">${Icon({ name: "jsfiddle-icon", className: 'link-list__icon' })}</a>`,
-      `<a class="link-list__link" href="http://stackoverflow.com/users/771471/iegik" title="Stack Overflow">${Icon({ name: "stackoverflow-icon", className: 'link-list__icon' })}</a>`,
+      Link({ className: 'link-list__link', to: 'http://linkedin.com/in/iegik', title: 'LinkedIn', children: [Icon({ name: "linkedin-icon", className: 'link-list__icon' })]}),
+      Link({ className: 'link-list__link', to: 'http://github.com/iegik', title: 'GitHub', children: [Icon({ name: "github-icon", className: 'link-list__icon' })]}),
+      Link({ className: 'link-list__link', to: 'http://profile.codersrank.io/user/iegik', title: 'Coders Rank', children: [Icon({ name: "codersrank-icon", className: 'link-list__icon' })]}),
+      Link({ className: 'link-list__link', to: 'http://jsfiddle.net/user/iegik', title: 'JSFiddle', children: [Icon({ name: "jsfiddle-icon", className: 'link-list__icon' })]}),
+      Link({ className: 'link-list__link', to: 'http://stackoverflow.com/users/771471/iegik', title: 'Stack Overflow', children: [Icon({ name: "stackoverflow-icon", className: 'link-list__icon' })]}),
     ],
   })}
           <div class="network">
@@ -36,8 +37,5 @@ const Home = () => `
       ${slotmachine()}
     </footer>
   `
-if (window?.document) {
-  document.getElementById('root').innerHTML = Home()
-}
 
 export default Home

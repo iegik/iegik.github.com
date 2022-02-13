@@ -1,6 +1,7 @@
 @import 'components/header/header.scss';
 @import 'components/link-list/link-list.scss';
 @import 'pages/home/home.scss';
+@import 'pages/login/login.scss';
 
 @font-face {
   font-family: 'Alina Script';
@@ -50,7 +51,6 @@ body,
   padding: 0;
   width: 100vw;
   min-height: 100vh;
-  display: flex;
 }
 
 picture {
@@ -58,9 +58,6 @@ picture {
 }
 
 #root {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
   font-size: var(--font-size-m);
   font-family: var(--font-sans-serif);
   line-height: 1.5;

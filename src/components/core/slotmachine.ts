@@ -6,7 +6,7 @@ const roll = '🍏,🌰,🍋,🍅,🍆,🍇,🍓,🍉,🍐,🍒,🍑,🥑'.split
 const { floor, random } = Math;
 const randomRoll = (what) => what[floor(random() * what.length)];
 
-const play = () => {
+const Reels:FC = () => {
   if (blocked) return;
   const [a, b, c] = [roll, roll, roll].flatMap(randomRoll);
 
@@ -24,26 +24,32 @@ const play = () => {
   return `${a} ${b} ${c}`;
 }
 
-export default () => {
+const SlotMachine:FC = () => {
   const ref = createRef();
 
   setTimeout(() => {
     ref.current?.addEventListener('click', () => {
-      ref.current.innerHTML = play()
+      ref.current.innerHTML = Reels()
     });
+
     if (!window?.document) return
+
     document.addEventListener('keyup', (event) => {
       // bug 354358
       if (event.isComposing || event.keyCode === 229) {
         return;
       }
+
       // Enter, Space
       if (event.which !== 13 && event.which !== 32) {
         return;
       }
-      ref.current.innerHTML = play();
+
+      ref.current.innerHTML = Reels();
     });
   })
 
-  return `<center ref="${ref}">${play()}</center>`;
+  return `<center ref="${ref}">${Reels()}</center>`;
 }
+
+export default SlotMachine
