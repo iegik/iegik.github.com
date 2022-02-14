@@ -4,7 +4,7 @@ class Ref {
     return (this.id = this.id || `ref-${id}`);
   }
   get current() {
-    if (!window?.document) return
+    if (typeof window === 'undefined') return
     return document.querySelector(`[ref=${this.id}]`);
   }
 }

@@ -1,5 +1,5 @@
-import Home from '@app/pages/home/home'
-import Login from '@app/pages/login/login'
+import Home from '@app/pages/home'
+import Login from '@app/pages/login'
 import Oauth from '@app/services/oauth'
 
 const route = (uri) => {

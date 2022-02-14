@@ -2,6 +2,7 @@
 @import 'components/link-list/link-list.scss';
 @import 'pages/home/home.scss';
 @import 'pages/login/login.scss';
+@import 'components/core/slot-machine.scss';
 
 @font-face {
   font-family: 'Alina Script';
@@ -21,10 +22,10 @@
   --font-fantasy: "Alina Script", serif, fantasy;
   --font-monospace: 'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace;
 
-  --color-grayscale: #7f7f7f;
-  --color-primary-light: #EEEDE7;
-  --color-primary: #E7D2CC;
-  --color-primary-dark: #868B8E;
+  --color-grayscale: #c1c1c1;
+  --color-primary-light: #3b94d4;
+  --color-primary: #fecb00;
+  --color-primary-dark: #054c7f;
   --color-primary-contrast: #B9B7BD;
 
   --font-size-xs: 0.8rem;
@@ -33,6 +34,12 @@
   --font-size-l: 1.6rem;
   --font-size-xl: 2.4rem;
   --font-size-xxl: 3.6rem;
+
+  @media (prefers-color-scheme: dark) {
+    --color-grayscale: #010101;
+    --color-primary-light: #054c7f;
+    --color-primary-dark: #3b94d4;
+  }
 
   /* prefers-reduced-transparency not available yet */
   @media (prefers-reduced-motion: no-preference) {
@@ -57,6 +64,18 @@ picture {
   display: flex;
 }
 
+noscript {
+  position: absolute;
+  text-align: center;
+  background: white;
+  width: 100%;
+  z-index: 1;
+  opacity: 0.8;
+  font-family: sans-serif;
+  height: 1.5rem;
+  line-height: 1.5rem;
+}
+
 #root {
   font-size: var(--font-size-m);
   font-family: var(--font-sans-serif);
@@ -64,11 +83,14 @@ picture {
   background-image: url('home/images/Riga_Piter.png');
   background-repeat: no-repeat;
   background-position: 50% calc(100% + 10px);
+  height: 150vh;
+  display: grid;
 }
 
 body {
   background-color: var(--color-primary-light);
-  background-image: url('home/images/clouds.png'), url('home/images/clouds.png');
+  background-image: none, url('home/images/clouds.png'), url('home/images/clouds.png');
+  background-position: 50% 50%, 50% 50%;
   background-repeat: no-repeat, no-repeat;
 }
 

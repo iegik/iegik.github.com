@@ -1,5 +1,5 @@
 const LinkList = (props): string => {
-  const { className, children, squire } = props
+  const { className = '', children, squire } = props
   let classList = `link-list`
   if (className) classList += ` ${className}`
   if (squire) classList += ' link-list--squire'

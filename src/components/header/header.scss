@@ -2,13 +2,13 @@
   position: relative;
   height: 60vw;
   @media (min-width: 768px) {
-    height: 24vh;
+    height: 30vh;
   }
 }
 .header__avatar {
   border-radius: 3rem;
   overflow: hidden;
-  box-shadow: 0 0 3rem 2rem var(--color-grayscale);
+  box-shadow: 0 0 3rem 0rem var(--color-grayscale);
   padding: 1rem;
   transform: perspective(1px) rotate(357deg);
   position: absolute;

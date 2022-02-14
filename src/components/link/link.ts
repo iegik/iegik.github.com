@@ -7,7 +7,7 @@ interface Props {
 }
 
 const Link:FC<Props> = (props) => {
-  const { className, children, tag = 'a', to = '#', title = ''} = props
+  const { className = '', children, tag = 'a', to = '#', title = ''} = props
 
   return `
       <${tag} class="${className} link" href="${to}" title="${title}">

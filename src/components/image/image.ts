@@ -12,7 +12,7 @@ const Sources = ({ types, sizes, src }) => Object.entries(typesMap)
   .join('')
 
 const Image = (props) => {
-  const { src, ratio, sizes, types = 'png|webp', loading, alt = '', itemprop, className  } = props;
+  const { src, ratio, sizes, types = 'png|webp', loading, alt = '', itemprop, className = ''  } = props;
   const [width, height] = ratio.split(':')
 
   return `

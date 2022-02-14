@@ -8,7 +8,7 @@ interface Props {
 }
 
 const Action:FC<Props> = (props) => {
-  const { className, children, tag = 'button', onClick } = props
+  const { className = '', children, tag = 'button', onClick } = props
   const ref = createRef();
 
   setTimeout(() => {

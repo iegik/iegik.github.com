@@ -10,12 +10,12 @@ article, section, header {
   font-family: var(--font-fantasy);
   font-size: var(--font-size-xl);
   color: var(--color-primary-dark);
-  font-weight: bold;
+  font-weight: 400;
 }
 
 .subtitle {
   text-transform: uppercase;
   font-weight: 200;
   text-shadow: 0 0 1rem var(--color-grayscale);
+  color: var(--color-primary);
 }
-

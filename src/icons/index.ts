@@ -8,6 +8,7 @@ import JsFiddleIcon from '@app/icons/jsfiddle-icon.svg';
 import JsFiddleLogo from '@app/icons/jsfiddle-logo.svg';
 import CodersRankIcon from '@app/icons/codersrank-icon.svg';
 import CodersRankLogo from '@app/icons/codersrank-logo.svg';
+import SlotMachineIcon from '@app/icons/slot-machine.svg';
 
 export default {
   'linkedin-icon': LinkedinIcon,
@@ -20,4 +21,5 @@ export default {
   'jsfiddle-logo': JsFiddleLogo,
   'codersrank-icon': CodersRankIcon,
   'codersrank-logo': CodersRankLogo,
+  'slot-machine-icon': SlotMachineIcon,
 }

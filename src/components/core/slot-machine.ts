@@ -1,3 +1,4 @@
+import Icon from '@app/components/icon'
 import { createRef } from '@app/components/core/view';
 
 let tries = 0;
@@ -32,7 +33,7 @@ const SlotMachine:FC = () => {
       ref.current.innerHTML = Reels()
     });
 
-    if (!window?.document) return
+    if (typeof window === 'undefined') return
 
     document.addEventListener('keyup', (event) => {
       // bug 354358
@@ -49,7 +50,12 @@ const SlotMachine:FC = () => {
     });
   })
 
-  return `<center ref="${ref}">${Reels()}</center>`;
+  return `
+    <center class="slot-machine">
+      ${Icon({ name: 'slot-machine-icon', className: 'slot-machine__icon'})}
+      <span class="slot-machine__reels" ref="${ref}">${Reels()}</span>
+    </center>
+  `;
 }
 
 export default SlotMachine

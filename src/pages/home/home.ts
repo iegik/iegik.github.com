@@ -1,7 +1,7 @@
 // import '@app/lib/ga';
 // import '@app/lib/clouds';
 
-import slotmachine from '@app/components/core/slotmachine'
+import SlotMachine from '@app/components/core/slot-machine'
 import Header from '@app/components/header'
 import Icon from '@app/components/icon'
 import Link from '@app/components/link'
@@ -15,7 +15,9 @@ const Home = () => `
           <h2 itemprop="name" class="h2"><span itemprop="givenName">Artūrs</span> <span itemprop="familyName">Jansons</span></h2>
           <span itemprop="jobTitle" class="subtitle">Full-stack web developer</span>
             <br>
-            <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">St. Petersburg</span>,</span>
+            <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+              <span itemprop="addressLocality">St. Petersburg</span>,
+            </span>
             <a href="callto:0079213900737"><i class="fa fa-whatsapp"></i><span itemprop="telephone">+7-921-390-07-37</span></a>
             <a href="mailto:a.jansons+github@gmail.com?title=iegik.github.io:contact" itemprop="email">a.jansons@gmail.com</a>
           ${LinkList({
@@ -34,7 +36,7 @@ const Home = () => `
       </section>
     </article>
     <footer>
-      ${slotmachine()}
+      ${SlotMachine()}
     </footer>
   `
 

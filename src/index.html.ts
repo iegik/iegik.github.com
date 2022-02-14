@@ -5,6 +5,7 @@ import app from '@assets/lib/router.min.js';
 import ga from '@assets/lib/ga.min.js';
 import clouds from '@assets/lib/clouds.min.js';
 import Sprite from '@app/components/sprite';
+import Home from '@app/pages/home'
 
 const title = 'Artūrs Jansons :: Web Developer';
 const description = 'Experienced web developer with a passion for innovation, automation and optimization'
@@ -20,10 +21,11 @@ const data = `<!DOCTYPE html>
     <style>${style}</style>
   </head>
   <body>
-    <div id="root">Loading...</div>
-    <script>${app}</script>
-    <script>${ga}</script>
-    <!--script>${clouds}</script-->
+    <noscript>This page uses JavaScript to play the slot machine game.</noscript>
+    <div id="root">${Home()}</div>
+    <script defer src="/lib/router.min.js"></script>
+    <script async src="/lib/ga.min.js"></script>
+    <script async src="/lib/clouds.min.js"></script>
     ${Sprite()}
   </body>
 </html>
