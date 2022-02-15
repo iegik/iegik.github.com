@@ -4,7 +4,7 @@
     <project>
         <name>jgf</name>
         <client>"Jerusalem - Gate to the Future" (JGF)</client>
-        <url>http://jgf.co.il</url>
+        <url>https://jgf.co.il</url>
         <images>
             <picture src="jgf" />
             <picture src="jgf1" />
@@ -17,7 +17,7 @@
     <project>
         <name>dedukcija</name>
         <client>SIA "Dedukcija"</client>
-        <url>http://www.dedukcija.lv</url>
+        <url>https://www.dedukcija.lv</url>
         <images>
             <picture src="dd" />
             <picture src="dd1" />
@@ -29,7 +29,7 @@
     <project>
         <name>janiskuzins</name>
         <client>Jānis Kuzins</client>
-        <url>http://www.janiskuzins.lv</url>
+        <url>https://www.janiskuzins.lv</url>
         <images>
             <picture src="jk1" />
             <picture src="jk2" />
@@ -41,7 +41,7 @@
     <project>
         <name>autonoma</name>
         <client>SIA "Autonoma"</client>
-        <url>http://www.auto-noma.com</url>
+        <url>https://www.auto-noma.com</url>
         <images>
             <picture src="an1" />
             <picture src="an2" />
@@ -53,7 +53,7 @@
     <project>
         <name>autokrava</name>
         <client>SIA "Autokrava"</client>
-        <url>http://www.autokrava.lv</url>
+        <url>https://www.autokrava.lv</url>
         <images>
             <picture src="ak" />
         </images>
@@ -63,7 +63,7 @@
     <project>
         <name>raba</name>
         <client>SIA "Raba"</client>
-        <url>http://www.raba.lv</url>
+        <url>https://www.raba.lv</url>
         <images>
             <picture src="raba1" />
             <picture src="raba2" />
@@ -74,7 +74,7 @@
     <project>
         <name>terrawinda</name>
         <client>Terra Winda</client>
-        <url>http://chas.times.lv</url>
+        <url>https://chas.times.lv</url>
         <images>
             <picture src="tw1" />
             <picture src="tw2" />
@@ -87,7 +87,7 @@
     <project>
         <name>eremonts</name>
         <client>e-Remonts</client>
-        <url>http://www.eremonts.lv</url>
+        <url>https://www.eremonts.lv</url>
         <images>
             <picture src="er1" />
             <picture src="er2" />

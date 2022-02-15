@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
 <xsl:stylesheet version="2.0"
-   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-   xmlns:xdt="http://www.w3.org/2005/02/xpath-datatypes"
-   xmlns:xs="http://www.w3.org/2001/XMLSchema"
-   xmlns:ex="http://exslt.org/dates-and-times" extension-element-prefixes="ex">
-   <xsl:output method="html" encoding="utf-8" doctype-public="-//W3C//DTD XHTML 1.1//EN" doctype-system="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd" />
+   xmlns:xsl="https://www.w3.org/1999/XSL/Transform"
+   xmlns:xdt="https://www.w3.org/2005/02/xpath-datatypes"
+   xmlns:xs="https://www.w3.org/2001/XMLSchema"
+   xmlns:ex="https://exslt.org/dates-and-times" extension-element-prefixes="ex">
+   <xsl:output method="html" encoding="utf-8" doctype-public="-//W3C//DTD XHTML 1.1//EN" doctype-system="https://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd" />
    <xsl:template match="/">
       <html lang="en" manifest="manifest.appcache">
          <head>
