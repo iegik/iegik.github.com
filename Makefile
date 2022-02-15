@@ -38,18 +38,18 @@ ppm: ## not used
 thumb: ## not used
 	@convert ${DIST}/home/images/artursjansons.jpg -resize 64x64 ${DIST}/favicon.ico \
 	&& convert ${DIST}/home/images/artursjansons.jpg -resize 64x64 ${DIST}/home/images/artursjansons_64.jpg \
-	&& convert ${DIST}/home/images/artursjansons.jpg -resize 255x255 ${DIST}/home/images/artursjansons_255.jpg \
+	&& convert ${DIST}/home/images/artursjansons.jpg -resize 432x432 ${DIST}/home/images/artursjansons_432.jpg \
 	&& convert ${DIST}/home/images/artursjansons.jpg -resize 128x128 ${DIST}/home/images/artursjansons_128.jpg \
 	&& convert ${DIST}/home/images/artursjansons.png -resize 64x64 ${DIST}/home/images/artursjansons_64.png \
-	&& convert ${DIST}/home/images/artursjansons.png -resize 255x255 ${DIST}/home/images/artursjansons_255.png \
+	&& convert ${DIST}/home/images/artursjansons.png -resize 432x432 ${DIST}/home/images/artursjansons_432.png \
 	&& convert ${DIST}/home/images/artursjansons.png -resize 128x128 ${DIST}/home/images/artursjansons_128.png \
 	&& cwebp ${DIST}/home/images/artursjansons.webp -resize 64 64 -o ${DIST}/home/images/artursjansons_64.webp \
-	&& cwebp ${DIST}/home/images/artursjansons.webp -resize 255 255 -o ${DIST}/home/images/artursjansons_255.webp \
+	&& cwebp ${DIST}/home/images/artursjansons.webp -resize 432 432 -o ${DIST}/home/images/artursjansons_432.webp \
 	&& cwebp ${DIST}/home/images/artursjansons.webp -resize 128 128 -o ${DIST}/home/images/artursjansons_128.webp
 
 ascii: ##	Convert avatar to ASCII
 	@jp2a public/home/images/artursjansons.jpg --output=${DIST}/home/images/artursjansons.ascii
-# @convert ${DIST}/home/images/artursjansons.jpg -resize 255x255 -grayscale Rec709luminance -compress none brf:- | awk NR\>3 > ${DIST}/home/images/artursjansons.ascii
+# @convert ${DIST}/home/images/artursjansons.jpg -resize 432x432 -grayscale Rec709luminance -compress none brf:- | awk NR\>3 > ${DIST}/home/images/artursjansons.ascii
 
 ttf2woff:
 	@npx ttf2woff ${FONTS}/AlinaScript.ttf ${FONTS}/AlinaScript.woff
