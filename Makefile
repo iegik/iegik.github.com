@@ -64,7 +64,7 @@ braille: ascii ## not used
 	@scripts/braille ${DIST}/home/images/artursjansons.ascii > ${DIST}/home/images/artursjansons.brf
 
 # Entry point to start
-build: ttf2woff ttf2svg ascii sass esbuild html minify ##	Build project
+build: ttf2woff ttf2svg ascii sass esbuild html minify thumb ##	Build project
 
 clean:
 	@grep -v node_modules .gitignore | awk '{print "rm -rf "$1}' | sh
