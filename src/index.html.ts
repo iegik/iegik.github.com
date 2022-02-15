@@ -8,12 +8,13 @@ import Sprite from '@app/components/sprite';
 import Home from '@app/pages/home'
 const nonce = btoa(Math.random(20)).slice(2,8) + btoa(Math.random(20)).slice(3,6)
 const csp = Object.entries({
-  'script-src': `'nonce-${nonce}' 'strict-dynamic' https://www.google-analytics.com https://ssl.google-analytics.com`,
+  'script-src': `'nonce-${nonce}' 'strict-dynamic' https://www.google-analytics.com https://ssl.google-analytics.com https://static.hotjar.com`,
   'img-src': `'self' https://www.google-analytics.com`,
-  'connect-src': `https://www.google-analytics.com`,
-  'style-src': `'nonce-${nonce}'`,
+  'connect-src': `https://www.google-analytics.com https://in.hotjar.com`,
+  'style-src': `'nonce-${nonce}' https://static.hotjar.com`,
   'object-src': `'none'`,
   'base-uri': `'none'`,
+  'frame-src': `https://vars.hotjar.com/`,
 }).reduce((acc, [key, val]) => `${acc};${key} ${val}`, `default-src 'self'`)
 
 const title = 'Artūrs Jansons :: Web Developer';
@@ -37,6 +38,17 @@ const html = `<!DOCTYPE html>
     <script async nonce="${nonce}" src="/lib/ga.min.js"></script>
     <script async nonce="${nonce}" src="/lib/clouds.min.js"></script>
     ${Sprite()}
+    <!-- Hotjar Tracking Code for https://iegik.github.io -->
+    <script async nonce="${nonce}">
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:2660383,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
   </body>
 </html>
 `;
