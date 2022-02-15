@@ -1,6 +1,6 @@
 import icons from '@app/icons'
 
-const xmlns = 'http://www.w3.org/2000/svg'
+const xmlns = 'https://www.w3.org/2000/svg'
 
 const Sprite = () => `
   <svg xmlns="${xmlns}" display="none">
