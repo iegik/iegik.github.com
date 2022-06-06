@@ -47,7 +47,7 @@ fs.writeFileSync('public/index.html', html, { encoding: 'utf8' });
 
 const manifest = `
 CACHE MANIFEST
-# rev v3.0.0 - ${(new Date).toJSON()}
+# rev v3.1.0 - ${(new Date).toJSON()}
 
 CACHE:
 index.html
