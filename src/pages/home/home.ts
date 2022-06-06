@@ -16,9 +16,9 @@ const Home = () => `
           <span itemprop="jobTitle" class="subtitle">Full-stack web developer</span>
             <br>
             <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-              <span itemprop="addressLocality">St. Petersburg</span>,
+              <span itemprop="addressLocality">Europe</span>
             </span>
-            <a href="callto:0079213900737"><i class="fa fa-whatsapp"></i><span itemprop="telephone">+7-921-390-07-37</span></a>
+            ${/* <a href="callto:0079213900737"><i class="fa fa-whatsapp"></i><span itemprop="telephone">+7-921-390-07-37</span></a> */ ''}
             <a href="mailto:a.jansons+github@gmail.com?title=iegik.github.io:contact" itemprop="email">a.jansons@gmail.com</a>
           ${LinkList({
     squire: true,
