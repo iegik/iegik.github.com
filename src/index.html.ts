@@ -63,6 +63,7 @@ fonts/AlinaScript.ttf
 fonts/AlinaScript.svg
 lib/router.min.js
 lib/ga.min.js
+EULA.md
 
 NETWORK:
 *
