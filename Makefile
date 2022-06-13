@@ -57,8 +57,13 @@ ttf2woff:
 ttf2svg:
 	@npx ttf2svg ${FONTS}/AlinaScript.ttf ${FONTS}/AlinaScript.svg
 
+# for f in ${DIST}/**/images/*.png; do; cwebp -q 80 ${f} -o $(f%%.png).webp; done;
 png2webp:
-	@for f in ${DIST}/**/images/*.png; do; cwebp -q 80 ${f} -o ${f%%.png}.webp; done;
+	@$(foreach f,${DIST}/**/images/*.png,cwebp -q 80 $(f) -o $(patsubst %.png,%.webp,$(f)));
+
+# for f in ${DIST}/**/images/*.jpg; do; convert ${f} $(f%%.jpg).png; done;
+jpg2png:
+	@$(foreach f,${DIST}/home/images/bg.jpg,convert $(f) $(patsubst %.jpg,%.png,$(f)));
 
 braille: ascii ## not used
 	@scripts/braille ${DIST}/home/images/artursjansons.ascii > ${DIST}/home/images/artursjansons.brf
@@ -81,7 +86,7 @@ privacy:
 
 
 # Entry point to start
-build: ttf2woff ttf2svg ascii sass esbuild html minify thumb eula privacy ##	Build project
+build: ttf2woff ttf2svg ascii sass esbuild html minify thumb jpg2png png2webp eula privacy ##	Build project
 
 clean:
 	@grep -v node_modules .gitignore | awk '{print "rm -rf "$1}' | sh

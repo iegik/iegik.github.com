@@ -1,11 +1,12 @@
 ;(function(document){
   location.hash = location.hash || "#home";
 
+  const isReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
   var x1, x2, x, y,
     k = 16,
     requestID,
     backgroundPosition,
-    body = document.body,
+    body = document.querySelector('#root'),
     html = document.documentElement,
     width = Math.max(body.scrollWidth, body.offsetWidth, html.clientWidth, html.scrollWidth, html.offsetWidth),
     height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
@@ -36,5 +37,5 @@
     }
     requestID = requestAnimationFrame(animate);
   }
-  animate();
+  !isReduced && animate();
 }(document));

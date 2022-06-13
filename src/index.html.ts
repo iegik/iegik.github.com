@@ -51,8 +51,8 @@ CACHE MANIFEST
 
 CACHE:
 index.html
-home/images/Riga_Piter.webp
-home/images/Riga_Piter.png
+home/images/bg.webp
+home/images/bg.png
 home/images/artursjansons.jpg
 home/images/artursjansons.webp
 home/images/artursjansons_432.webp

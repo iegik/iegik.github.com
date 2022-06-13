@@ -15,7 +15,7 @@ const Reels:FC = () => {
     blocked = true;
     let msg = `You won in ${tries} tries`;
     setTimeout(() => {
-      alert(msg);
+      typeof window !== 'undefined' && alert(msg);
       blocked = false;
     }, 100);
     tries = 0;

@@ -45,10 +45,10 @@
   /* prefers-reduced-transparency not available yet */
   @media (prefers-reduced-motion: no-preference) {
     --color-grayscale: rgba(127, 127, 127, 0.5);
-    --color-primary-light: #EEEDE7d9;
-    --color-primary: #E7D2CCd9;
-    --color-primary-dark: #868B8Ed9;
-    --color-primary-contrast: #B9B7BDd9;
+    --color-primary-light: #eeede7aa;
+    --color-primary: #E7D2CCaa;
+    --color-primary-dark: #868B8Eaa;
+    --color-primary-contrast: #B9B7BDaa;
   }
 }
 
@@ -81,18 +81,18 @@ noscript {
   font-size: var(--font-size-m);
   font-family: var(--font-sans-serif);
   line-height: 1.5;
-  background-image: url('home/images/Riga_Piter.png');
-  background-repeat: no-repeat;
-  background-position: 50% calc(100% + 10px);
-  height: 150vh;
-  display: grid;
-}
-
-body {
   background-color: var(--color-primary-light);
   background-image: none, url('home/images/clouds.png'), url('home/images/clouds.png');
   background-position: 50% 50%, 50% 50%;
   background-repeat: no-repeat, no-repeat;
+  display: grid;
+}
+
+body {
+  background-image: url('home/images/bg.png');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
 }
 
 a:link {
