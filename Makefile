@@ -63,8 +63,25 @@ png2webp:
 braille: ascii ## not used
 	@scripts/braille ${DIST}/home/images/artursjansons.ascii > ${DIST}/home/images/artursjansons.brf
 
+# OS X requires the extension to be explicitly specified
+eula:
+	@cp EULA.md ${DIST}/EULA.md \
+	&& sed -i '' 's/\[AUTHOR\]/Artūrs\ Jansons/g' ${DIST}/EULA.md \
+	&& sed -i '' 's/\[APPNAME\]/https:\/\/iegik.github.com/g' ${DIST}/EULA.md \
+	&& sed -i '' 's/\[SUPPORT_EMAIL\]/a.jansons+web@gmail.com/g' ${DIST}/EULA.md \
+	&& sed -i '' 's/\[PRIVACY_POLICY_URL\]/https:\/\/iegik.github.com\/PRIVACY.md/g' ${DIST}/EULA.md \
+
+
+privacy:
+	@cp EULA.md ${DIST}/EULA.md \
+	&& sed -i '' 's/\[AUTHOR\]/Artūrs\ Jansons/g' ${DIST}/EULA.md \
+	&& sed -i '' 's/\[APPNAME\]/https:\/\/iegik.github.com/g' ${DIST}/EULA.md \
+	&& sed -i '' 's/\[SUPPORT_EMAIL\]/a.jansons+web@gmail.com/g' ${DIST}/EULA.md \
+	&& sed -i '' 's/\[PRIVACY_POLICY_URL\]/https:\/\/iegik.github.com\/PRIVACY.md/g' ${DIST}/EULA.md \
+
+
 # Entry point to start
-build: ttf2woff ttf2svg ascii sass esbuild html minify thumb ##	Build project
+build: ttf2woff ttf2svg ascii sass esbuild html minify thumb eula privacy ##	Build project
 
 clean:
 	@grep -v node_modules .gitignore | awk '{print "rm -rf "$1}' | sh

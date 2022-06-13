@@ -9,5 +9,9 @@ public/**/*-thumb.*
 public/**/*.webp
 public/**/*.ascii
 public/**/*.brf
+public/favicon.ico
 public/index.html
+public/EULA.md
+public/PRIVACY.md
 scripts/index.js
+.env
