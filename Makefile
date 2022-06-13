@@ -73,11 +73,11 @@ eula:
 
 
 privacy:
-	@cp EULA.md ${DIST}/EULA.md \
-	&& sed -i '' 's/\[AUTHOR\]/Artūrs\ Jansons/g' ${DIST}/EULA.md \
-	&& sed -i '' 's/\[APPNAME\]/https:\/\/iegik.github.com/g' ${DIST}/EULA.md \
-	&& sed -i '' 's/\[SUPPORT_EMAIL\]/a.jansons+web@gmail.com/g' ${DIST}/EULA.md \
-	&& sed -i '' 's/\[PRIVACY_POLICY_URL\]/https:\/\/iegik.github.com\/PRIVACY.md/g' ${DIST}/EULA.md \
+	@cp PRIVACY.md ${DIST}/PRIVACY.md \
+	&& sed -i '' 's/\[AUTHOR\]/Artūrs\ Jansons/g' ${DIST}/PRIVACY.md \
+	&& sed -i '' 's/\[APPNAME\]/https:\/\/iegik.github.com/g' ${DIST}/PRIVACY.md \
+	&& sed -i '' 's/\[SUPPORT_EMAIL\]/a.jansons+web@gmail.com/g' ${DIST}/PRIVACY.md \
+	&& sed -i '' 's/\[PRIVACY_POLICY_URL\]/https:\/\/iegik.github.com\/PRIVACY.md/g' ${DIST}/PRIVACY.md \
 
 
 # Entry point to start
