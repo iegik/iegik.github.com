@@ -13,7 +13,7 @@ const UserInfo:FC = ({ avatar_url, login } = {}) => {
       console.debug('User data', { data })
       return data
     }
-    if (!login) fetchUser.then(() => { ref.current.innerHTML = UserInfo(data); })
+    if (!login) fetchUser().then(() => { ref.current.innerHTML = UserInfo(data); })
   })
 
   return `
