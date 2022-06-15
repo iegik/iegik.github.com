@@ -43,12 +43,18 @@
   }
 
   /* prefers-reduced-transparency not available yet */
-  @media (prefers-reduced-motion: no-preference) {
+  @media (prefers-reduced-motion: no-preference) and (prefers-color-scheme: light) {
     --color-grayscale: rgba(127, 127, 127, 0.5);
     --color-primary-light: #eeede7aa;
-    --color-primary: #E7D2CCaa;
+    --color-primary: #ffeb12d7;
     --color-primary-dark: #868B8Eaa;
     --color-primary-contrast: #B9B7BDaa;
+  }
+  @media (prefers-reduced-motion: no-preference) and (prefers-color-scheme: dark) {
+    --color-grayscale: #010101aa;
+    --color-primary: #E7D2CCaa;
+    --color-primary-light: #054c7faa;
+    --color-primary-dark: #3b94d4aa;
   }
 }
 
@@ -89,7 +95,7 @@ noscript {
 }
 
 body {
-  background-image: url('home/images/bg.png');
+  background-image: url('home/images/bg.jpg');
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover;

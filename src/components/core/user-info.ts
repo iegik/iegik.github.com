@@ -13,7 +13,9 @@ const UserInfo:FC = ({ avatar_url, login } = {}) => {
       console.debug('User data', { data })
       return data
     }
-    if (!login && access_token && token_type) fetchUser().then((data) => { ref.current.innerHTML = UserInfo(data); })
+    if (!login && access_token && token_type) fetchUser()
+      .then((data) => { ref.current.innerHTML = UserInfo(data); })
+      .catch((err) => { ref.current.innerHTML = JSON.stringify(err); })
   })
 
   return `

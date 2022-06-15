@@ -23,12 +23,8 @@
       (x2 - x) / k  }px 40%`;
   }
 
-  // FIXME: Replace with 360deg of seconds
-  setInterval(function(){
-    calculate();
-  }, 25);
-
   function animate() {
+    calculate();
     body.style.backgroundPosition = backgroundPosition;
     if(requestID){
       cancelAnimationFrame(requestID);
