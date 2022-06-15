@@ -4,16 +4,16 @@ const UserInfo:FC = ({ avatar_url, login } = {}) => {
   const ref = createRef();
 
   setTimeout(() => {
+    const access_token = sessionStorage.getItem('access_token')
+    const token_type = sessionStorage.getItem('token_type')
     const fetchUser = async () => {
       // Getting state
-      const access_token = sessionStorage.getItem('access_token')
-      const token_type = sessionStorage.getItem('token_type')
       console.debug('Requesting user', { access_token, token_type })
       const data = await fetch('https://api.github.com/user', { method: 'GET', headers: { 'Authorization': `${token_type} ${access_token}` } }).then((res) => res.json())
       console.debug('User data', { data })
       return data
     }
-    if (!login) fetchUser().then((data) => { ref.current.innerHTML = UserInfo(data); })
+    if (!login && access_token && token_type) fetchUser().then((data) => { ref.current.innerHTML = UserInfo(data); })
   })
 
   return `
