@@ -9,7 +9,7 @@ import Home from '@app/pages/home'
 const nonce = btoa(Math.random(20)).slice(2,8) + btoa(Math.random(20)).slice(3,6)
 const csp = Object.entries({
   'script-src': `'nonce-${nonce}' 'strict-dynamic' https://www.google-analytics.com https://ssl.google-analytics.com https://static.hotjar.com`,
-  'img-src': `'self' https://www.google-analytics.com`,
+  'img-src': `'self' https://www.google-analytics.com https://avatars.githubusercontent.com/`,
   'connect-src': `https://www.google-analytics.com https://in.hotjar.com https://github.com/login/oauth/access_token https://api.github.com/user https://qilg4ch66b3vpgtevzccb5meum0ttfcl.lambda-url.eu-north-1.on.aws/`,
   'style-src': `'nonce-${nonce}' https://static.hotjar.com`,
   'object-src': `'none'`,
