@@ -1,6 +1,4 @@
 ;(function(document){
-  location.hash = location.hash || "#home";
-
   const isReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
   var x1, x2, x, y,
     k = 16,

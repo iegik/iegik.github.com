@@ -1,11 +1,13 @@
 import Home from '@app/pages/home'
 import Login from '@app/pages/login'
 import Oauth from '@app/services/oauth'
+import Profile from '@app/pages/profile'
 
 const route = (uri) => {
   switch (true) {
     case /^\/login$/.test(uri): return Login
     case /^\/oauth$/.test(uri): return Oauth
+    case /^\/profile$/.test(uri): return Profile
     default: return Home
   }
 }
