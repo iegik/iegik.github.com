@@ -17,7 +17,7 @@ const Oauth = () => {
     const code = sessionStorage.getItem('code')
     console.debug('Checking GET params', { protocol, hash, search })
     const uri = new URLSearchParams(search)
-    if (uri.get('code') !== code) return history.go(-2);
+    if (uri.get('state') !== state) return history.go(-2);
     // if (uri.get('state') !== state) { console.warn('state not match', { search, state, history }); return; }
 
     getAccessToken(uri.get('code'));
