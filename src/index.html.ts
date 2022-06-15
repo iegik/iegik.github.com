@@ -33,12 +33,12 @@ const html = `<!DOCTYPE html>
   </head>
   <body>
     <noscript>This page uses JavaScript to play the slot machine game.</noscript>
+    ${Sprite()}
     <div id="root">${Home()}</div>
     <script defer nonce="${nonce}" src="/lib/router.min.js"></script>
     <script async nonce="${nonce}" src="/lib/ga.min.js"></script>
     <script async nonce="${nonce}" src="/lib/clouds.min.js"></script>
     <script async nonce="${nonce}" src="/lib/hot-jar.min.js"></script>
-    ${Sprite()}
   </body>
 </html>
 `;
