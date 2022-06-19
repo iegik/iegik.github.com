@@ -8,7 +8,7 @@ const Icon = ({ className, name }) => {
     if (typeof window === 'undefined') return;
 
     const viewBox = document.getElementById(`sprite-${name}`).getAttribute('viewBox')
-    ref.current.setAttribute('viewBox', viewBox)
+    ref.current?.setAttribute('viewBox', viewBox)
   })
 
   return `
