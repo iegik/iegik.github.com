@@ -15,7 +15,7 @@ const Oauth = () => {
     const { protocol, hash, search } = location
     const state = sessionStorage.getItem('state')
     const code = sessionStorage.getItem('code')
-    console.debug('Checking GET params', { protocol, hash, search })
+    console.debug('Checking GET params', { protocol, hash, search, state })
     const uri = new URLSearchParams(search)
     if (uri.get('state') !== state) return history.go(-2);
     // if (uri.get('state') !== state) { console.warn('state not match', { search, state, history }); return; }

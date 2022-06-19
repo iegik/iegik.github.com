@@ -12,9 +12,12 @@ const Home = () => `
     <article lang="en">
       <section id="home" itemscope itemtype="https://schema.org/Person">
         <header>
-          <h2 itemprop="name" class="h2"><span itemprop="givenName">Artūrs</span> <span itemprop="familyName">Jansons</span></h2>
+          <h2 itemprop="name" class="h2">
+            <span itemprop="givenName">Artūrs</span>
+            <span itemprop="familyName">Jansons</span>
+          </h2>
           <span itemprop="jobTitle" class="subtitle">Software Developer</span>
-            <br>
+          <br>
             <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
               <span itemprop="addressLocality">🇹🇷 Alanya, Turkey</span>
             </span>
@@ -31,6 +34,7 @@ const Home = () => `
     ],
   })}
           <div class="network">
+            ${Link({ to: '#/login', title: 'Login', children: ['🚪'] })}
           </div>
         </header>
       </section>
