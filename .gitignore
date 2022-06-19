@@ -9,6 +9,8 @@ public/**/*-thumb.*
 public/**/*.webp
 public/**/*.ascii
 public/**/*.brf
+public/**/*.png
+public/**/*.jpg
 public/favicon.ico
 public/index.html
 public/EULA.md
