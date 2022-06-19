@@ -12,9 +12,13 @@ const route = (uri) => {
   }
 }
 
-if (window?.document) {
-  const { protocol, hash } = document.location
-  // if (protocol !== 'https:') return
-  const path = hash.slice(1)
-  document.getElementById('root').innerHTML = route(path)()
+const main = (e) => {
+  if (window?.document) {
+    const { protocol, hash } = new URL(e?.destination?.url || document.location)
+    const path = hash.slice(1)
+    document.getElementById('root').innerHTML = route(path)()
+  }
 }
+
+navigation.addEventListener('navigate', main);
+main()
