@@ -9,9 +9,9 @@ const UserInfo:FC = ({ avatar_url, login } = {}) => {
     const token_type = sessionStorage.getItem('token_type')
     const fetchUser = async () => {
       // Getting state
-      console.debug('Requesting user', { access_token, token_type })
+      // console.debug('Requesting user', { access_token, token_type })
       const data = await fetch('https://api.github.com/user', { method: 'GET', headers: { 'Authorization': `${token_type} ${access_token}` } }).then((res) => res.json())
-      console.debug('User data', { data })
+      // console.debug('User data', { data })
       return data
     }
     if (!access_token) throw Error(ERROR_ACCESS_TOKEN)

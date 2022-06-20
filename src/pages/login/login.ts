@@ -22,7 +22,7 @@ const onClick = () => {
   const state = btoa(+new Date()).slice(10,18)
   sessionStorage.setItem('state', state)
   const url = `https://github.com/login/oauth/authorize?client_id=${client_id}&login=${encodeURIComponent(login)}&scope=${encodeURIComponent(scope)}&state=${state}`
-  console.info(`Navigated to ${url}`, { client_id, scope, state })
+  // console.info(`Navigated to ${url}`, { client_id, scope, state })
   document.location.href = url
 };
 
