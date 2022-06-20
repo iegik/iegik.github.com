@@ -8,7 +8,7 @@ interface Props {
 }
 
 const Action:FC<Props> = (props) => {
-  const { className = '', children, tag = 'button', onClick } = props
+  const { className = '', children, tag = 'button', onClick, type } = props
   const ref = createRef();
 
   setTimeout(() => {
@@ -16,7 +16,7 @@ const Action:FC<Props> = (props) => {
   });
 
   return `
-      <${tag} class="${className}" ref="${ref}">
+      <${tag} class="${className}" ref="${ref}" type="${type}">
         ${children?.join('')}
       </${tag}>
     `

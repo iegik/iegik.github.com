@@ -1,4 +1,5 @@
 import { createRef } from '@app/components/core/view';
+import { ERROR_ACCESS_TOKEN } from '@app/components/core/constants';
 
 const UserInfo:FC = ({ avatar_url, login } = {}) => {
   const ref = createRef();
@@ -13,7 +14,7 @@ const UserInfo:FC = ({ avatar_url, login } = {}) => {
       console.debug('User data', { data })
       return data
     }
-    if (!access_token) throw Error('Access token not provided')
+    if (!access_token) throw Error(ERROR_ACCESS_TOKEN)
     if (!login) fetchUser()
       .then((data) => { ref.current.innerHTML = UserInfo(data); })
   })

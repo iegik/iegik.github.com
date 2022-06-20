@@ -2,6 +2,9 @@ import Home from '@app/pages/home'
 import Login from '@app/pages/login'
 import Oauth from '@app/services/oauth'
 import Profile from '@app/pages/profile'
+import Link from '@app/components/link'
+
+import { ERROR_ACCESS_TOKEN } from '@app/components/core/constants';
 
 const route = (uri) => {
   switch (true) {
@@ -12,20 +15,48 @@ const route = (uri) => {
   }
 }
 
-const onError = (err: Error): void => {
-  if (err.code === 'ERR_BUFFER_OUT_OF_BOUNDS' ) {
+const ErrorPage = ({ message, children }) => `
+  <div style="display:grid;place-content:center;">
+    <div style="border-radius: 5px;color: var(--color-error);background: var(--color-primary);padding: 1rem;">
+      <p>⚠️ ${message}</p>
+    </div>
+    <nav style="display: inline-flex;">${children?.join('')}</nav>
+  </div>
+`
+
+const onError = ({ error }: ErrorEvent): void => {
+  if (error.code === 'ERR_BUFFER_OUT_OF_BOUNDS' ) {
     console.debug('Out of buffer bounds:')
-    console.error(err)
-    if (typeof process !== 'undefined') process.exit(1);
-    return;
-  } else if (err.code === 'ERR_ASSERTION' ) {
-    console.debug('Assert error:')
-    console.error(err)
+    console.error(error)
     if (typeof process !== 'undefined') process.exit(1);
     return;
   }
+  if (error.code === 'ERR_ASSERTION' ) {
+    console.debug('Assert error:')
+    console.error(error)
+    if (typeof process !== 'undefined') process.exit(1);
+    return;
+  }
+  if (error.message === ERROR_ACCESS_TOKEN) {
+    console.debug('Access token error handled:')
+    console.error(error)
+    document.getElementById('root').innerHTML = ErrorPage({
+      message: error.message,
+      children: [
+        Link({ to: '#/login', title: 'Go to login page', children: ['Log in'] }),
+      ],
+    })
+    return
+  }
   console.debug('Error handled:')
-  console.error(err)
+  console.error(error)
+  document.getElementById('root').innerHTML = ErrorPage({
+    message: error.message,
+    children: [
+      Link({ onClick: () => { location.reload(); }, title: 'Go to login page', children: ['Log in'] }),
+      Link({ onClick: () => { history.go(-1); }, title: 'Go back', children: ['Back'] }),
+    ],
+  })
 }
 
 const main = (e) => {
@@ -40,7 +71,7 @@ const main = (e) => {
 window.history.pushState = new Proxy(window.history.pushState, {
   apply: (target, thisArg, argArray) => {
     console.debug('pushState', { target })
-    // trigger here what you need
+    main()
     return target.apply(thisArg, argArray);
   },
 });
