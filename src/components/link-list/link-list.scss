@@ -1,18 +1,18 @@
 :root {
-  --box-width: 16rem;
-  --box-height: 9rem;
+  --box-width: 9rem;
+  --box-height: 2rem;
   --content-height: 3rem;
 }
 .link-list {
   font-size: var(--font-size-s);
   font-weight: 200;
-  display: flex;
+  display: inline-flex;
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
 }
 .link-list--squire {
-  --box-width: var(--box-height);
+  --box-height: var(--box-width);
 }
 
 .link-list__item {

@@ -2,27 +2,22 @@ import Home from '@app/pages/home'
 import Login from '@app/pages/login'
 import Oauth from '@app/services/oauth'
 import Profile from '@app/pages/profile'
-import Link from '@app/components/link'
+import Error403Page from '@app/pages/error/error-403'
+import Error404Page from '@app/pages/error/error-404'
+import Error500Page from '@app/pages/error/error-500'
 
 import { ERROR_ACCESS_TOKEN } from '@app/components/core/constants';
 
-const route = (uri) => {
+const route = (uri = '/') => {
+  console.info(`Loading ${uri}`)
   switch (true) {
     case /^\/login$/.test(uri): return Login
     case /^\/oauth$/.test(uri): return Oauth
     case /^\/profile$/.test(uri): return Profile
-    default: return Home
+    case uri === '/' || uri === '': return Home
+    default: return Error404Page
   }
 }
-
-const ErrorPage = ({ message, children }) => `
-  <div style="display:grid;place-content:center;">
-    <div style="border-radius: 5px;color: var(--color-error);background: var(--color-primary);padding: 1rem;">
-      <p>⚠️ ${message}</p>
-    </div>
-    <nav style="display: inline-flex;">${children?.join('')}</nav>
-  </div>
-`
 
 const onError = ({ error }: ErrorEvent): void => {
   if (error.code === 'ERR_BUFFER_OUT_OF_BOUNDS' ) {
@@ -40,23 +35,12 @@ const onError = ({ error }: ErrorEvent): void => {
   if (error.message === ERROR_ACCESS_TOKEN) {
     console.debug('Access token error handled:')
     console.error(error)
-    document.getElementById('root').innerHTML = ErrorPage({
-      message: error.message,
-      children: [
-        Link({ to: '#/login', title: 'Go to login page', children: ['Log in'] }),
-      ],
-    })
+    document.getElementById('root').innerHTML = Error403Page(error)
     return
   }
   console.debug('Error handled:')
   console.error(error)
-  document.getElementById('root').innerHTML = ErrorPage({
-    message: error.message,
-    children: [
-      Link({ onClick: () => { location.reload(); }, title: 'Go to login page', children: ['Log in'] }),
-      Link({ onClick: () => { history.go(-1); }, title: 'Go back', children: ['Back'] }),
-    ],
-  })
+  document.getElementById('root').innerHTML = Error500Page(error)
 }
 
 const main = (e) => {
