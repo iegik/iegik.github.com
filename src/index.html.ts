@@ -13,7 +13,7 @@ const csp = Object.entries({
     `'strict-dynamic'`,
     `https://www.google-analytics.com`,
     `https://ssl.google-analytics.com`,
-    // `https://static.hotjar.com`,
+    `https://static.hotjar.com`,
   ],
   'img-src': [
     `'self'`,
@@ -22,14 +22,14 @@ const csp = Object.entries({
   ],
   'connect-src': [
     `https://www.google-analytics.com`,
-    // `https://in.hotjar.com`,
+    `https://in.hotjar.com`,
     `https://github.com/login/oauth/access_token`,
     `https://api.github.com/user`,
     `https://qilg4ch66b3vpgtevzccb5meum0ttfcl.lambda-url.eu-north-1.on.aws/`,
   ],
   'style-src': [
     `'nonce-${nonce}'`,
-    // `https://static.hotjar.com`,
+    `https://static.hotjar.com`,
   ],
   'object-src': [`'none'`],
   'base-uri': [`'none'`],
@@ -57,7 +57,7 @@ const html = `<!DOCTYPE html>
     <script defer nonce="${nonce}" src="/lib/router.min.js"></script>
     <script async nonce="${nonce}" src="/lib/ga.min.js"></script>
     <script async nonce="${nonce}" src="/lib/clouds.min.js"></script>
-    ${/* <script async nonce="${nonce}" src="/lib/hot-jar.min.js"></script> */ ''}
+    <script async nonce="${nonce}" src="/lib/hot-jar.min.js"></script>
   </body>
 </html>
 `;
