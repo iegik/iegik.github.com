@@ -1,1 +1,1 @@
-export { default } from './icon'
+export { default } from '@app/components/icon/icon.ts'

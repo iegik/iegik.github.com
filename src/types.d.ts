@@ -1,3 +1,3 @@
-interface FC {
-  (): string
+interface FC<T> {
+  (props?:T): string
 }

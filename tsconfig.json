@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
+    "lib": ["esnext", "DOM"],
     "paths": {
       "@app/*": ["src/*"],
       "@assets/*": ["public/*"]

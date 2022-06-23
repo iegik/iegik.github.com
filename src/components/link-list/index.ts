@@ -1,1 +1,1 @@
-export { default } from './link-list';
+export { default } from '@app/components/link-list/link-list.ts';

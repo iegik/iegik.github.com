@@ -1,13 +1,14 @@
-import { createRef } from '@app/components/core/view';
+import { createRef } from '@app/components/core/view.ts';
 
 interface Props {
   className?: string;
   children?: string[];
   tag?: string;
+  type?: string;
   onClick?: (event: Event) => void;
 }
 
-const Action:FC<Props> = (props) => {
+const Action:FC<Props> = (props = {}) => {
   const { className = '', children, tag = 'button', onClick, type } = props
   const ref = createRef();
 

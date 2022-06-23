@@ -1,1 +1,1 @@
-export { default } from './profile'
+export { default } from '@app/components/profile/profile.ts'

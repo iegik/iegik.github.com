@@ -1,27 +1,32 @@
-import { createRef } from '@app/components/core/view';
-import { ERROR_ACCESS_TOKEN } from '@app/components/core/constants';
+import { createRef } from '@app/components/core/view.ts';
+import { ERROR_ACCESS_TOKEN } from '@app/components/core/constants.ts';
 
-const UserInfo:FC = ({ avatar_url, login } = {}) => {
+interface UserInfoProps {
+  avatarUrl?: string;
+  login?: string;
+}
+
+const UserInfo:FC<UserInfoProps> = ({ avatarUrl, login } = {}) => {
   const ref = createRef();
 
   setTimeout(() => {
-    const access_token = sessionStorage.getItem('access_token')
-    const token_type = sessionStorage.getItem('token_type')
+    const accessToken = window.sessionStorage?.getItem('access_token')
+    const tokenType = window.sessionStorage?.getItem('token_type')
     const fetchUser = async () => {
       // Getting state
       // console.debug('Requesting user', { access_token, token_type })
-      const data = await fetch('https://api.github.com/user', { method: 'GET', headers: { 'Authorization': `${token_type} ${access_token}` } }).then((res) => res.json())
+      const { avatar_url: avatarUrl, login } = await fetch('https://api.github.com/user', { method: 'GET', headers: { 'Authorization': `${tokenType} ${accessToken}` } }).then((res) => res.json())
       // console.debug('User data', { data })
-      return data
+      return { avatarUrl, login }
     }
-    if (!access_token) throw Error(ERROR_ACCESS_TOKEN)
+    if (!accessToken) throw Error(ERROR_ACCESS_TOKEN)
     if (!login) fetchUser()
-      .then((data) => { ref.current.innerHTML = UserInfo(data); })
+      .then((data) => { if (ref.current) ref.current.innerHTML = UserInfo(data); })
   })
 
   return `
     <div class="user-info" ref="${ref}">
-      ${avatar_url && `<img src="${avatar_url}" />`}
+      ${avatarUrl && `<img src="${avatarUrl}" />`}
       ${login && `<span>${login}</span>`}
     </div>
   `;

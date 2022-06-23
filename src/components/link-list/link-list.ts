@@ -1,4 +1,11 @@
-const LinkList = (props): string => {
+interface LinkListProps {
+  className?: string;
+  children?: string[];
+  tag?: string;
+  squire?: boolean;
+}
+
+const LinkList:FC<LinkListProps> = (props = {}) => {
   const { className = '', children, squire, tag = 'div' } = props
   let classList = `link-list`
   if (className) classList += ` ${className}`
@@ -6,7 +13,7 @@ const LinkList = (props): string => {
 
   return `
       <${tag} class="${classList}">
-        ${children?.map((link) => `<div class="link-list__item">${link}</div>`).join('')}
+        ${children?.map((link:string) => `<div class="link-list__item">${link}</div>`).join('')}
       </${tag}>
     `
 }

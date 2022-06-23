@@ -1,12 +1,10 @@
 #!/usr/bin/env node
-import * as fs from 'fs';
+// @deno-types='@app/types.d.ts'
+import fs from 'fs'
+import Sprite from '@app/components/sprite/sprite.ts';
+import Home from '@app/pages/home/home.ts'
 import style from '@assets/styles.min.css';
-import app from '@assets/lib/router.min.js';
-import ga from '@assets/lib/ga.min.js';
-import clouds from '@assets/lib/clouds.min.js';
-import Sprite from '@app/components/sprite';
-import Home from '@app/pages/home'
-const nonce = btoa(Math.random(20)).slice(2,8) + btoa(Math.random(20)).slice(3,6)
+const nonce = btoa(`${Math.random()}`).slice(2,8) + btoa(`${Math.random()}`).slice(3,6)
 const csp = Object.entries({
   'script-src': [
     `'nonce-${nonce}'`,
@@ -53,11 +51,11 @@ const html = `<!DOCTYPE html>
   <body>
     <noscript>This page uses JavaScript to play the slot machine game.</noscript>
     ${Sprite()}
-    <div id="root">${Home()}</div>
+    <div id="root">${/*Home()*/''}</div>
     <script defer nonce="${nonce}" src="/lib/router.min.js"></script>
     <script async nonce="${nonce}" src="/lib/ga.min.js"></script>
     <script async nonce="${nonce}" src="/lib/clouds.min.js"></script>
-    <script async nonce="${nonce}" src="/lib/hot-jar.min.js"></script>
+    ${/* <script async nonce="${nonce}" src="/lib/hot-jar.js"></script> */ ''}
   </body>
 </html>
 `;

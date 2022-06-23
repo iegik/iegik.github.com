@@ -1,5 +1,5 @@
-import ErrorPage from './error'
-import Link from '@app/components/link'
+import ErrorPage from './error.ts'
+import Link from '@app/components/link/link.ts'
 
 export default (error = { message: 'Page not found' }) => ErrorPage({
   message: error.message,

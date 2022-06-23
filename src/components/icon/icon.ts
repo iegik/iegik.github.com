@@ -1,13 +1,18 @@
-import { createRef } from '@app/components/core/view';
-import { spriteMap } from '@app/components/Sprite';
+import { createRef } from '@app/components/core/view.ts';
+import { spriteMap } from '@app/components/sprite/sprite.ts';
 
-const Icon = ({ className, name }) => {
+interface IconProps {
+  className?: string;
+  name: string;
+}
+
+const Icon:FC<IconProps> = ({ className, name } = { name: 'unknown' }) => {
   const ref = createRef();
 
   setTimeout(() => {
-    if (typeof window === 'undefined') return;
+    if (typeof window === 'undefined' || typeof document === 'undefined') return;
 
-    const viewBox = document.getElementById(`sprite-${name}`).getAttribute('viewBox')
+    const viewBox = document.getElementById(`sprite-${name}`)?.getAttribute('viewBox') || '0 0 0 0'
     ref.current?.setAttribute('viewBox', viewBox)
   })
 
