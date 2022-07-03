@@ -4,7 +4,9 @@ import fs from 'fs'
 import Sprite from '@app/components/sprite/sprite.ts';
 import Home from '@app/pages/home/home.ts'
 import style from '@assets/styles.min.css';
-const nonce = btoa(`${Math.random()}`).slice(2,8) + btoa(`${Math.random()}`).slice(3,6)
+const date = new Date();
+const release = `v3.1.0-${date.toJSON()}`
+const nonce = btoa(+date).slice(10,18)
 const csp = Object.entries({
   'script-src': [
     `'nonce-${nonce}'`,
@@ -12,6 +14,7 @@ const csp = Object.entries({
     `https://www.google-analytics.com`,
     `https://ssl.google-analytics.com`,
     `https://static.hotjar.com`,
+    `https://js.sentry-cdn.com`,
   ],
   'img-src': [
     `'self'`,
@@ -24,6 +27,7 @@ const csp = Object.entries({
     `https://github.com/login/oauth/access_token`,
     `https://api.github.com/user`,
     `https://qilg4ch66b3vpgtevzccb5meum0ttfcl.lambda-url.eu-north-1.on.aws/`,
+    `https://o171820.ingest.sentry.io/`,
   ],
   'style-src': [
     `'nonce-${nonce}'`,
@@ -32,7 +36,7 @@ const csp = Object.entries({
   'object-src': [`'none'`],
   'base-uri': [`'none'`],
   'frame-src': [`https://vars.hotjar.com/`],
-}).reduce((acc, [key, val]) => `${acc};${key} ${val.join(' ')}`, `default-src 'self'`)
+}).reduce((acc, [key, val]) => `${acc};${key} ${val.join(' ')}`, `default-src 'self'`);
 
 const title = 'Artūrs Jansons :: Web Developer';
 const description = 'Experienced web developer with a passion for innovation, automation and optimization'
@@ -56,6 +60,14 @@ const html = `<!DOCTYPE html>
     <script async nonce="${nonce}" src="/lib/ga.min.js"></script>
     <script async nonce="${nonce}" src="/lib/clouds.min.js"></script>
     <script async nonce="${nonce}" src="/lib/hot-jar.min.js"></script>
+    <script nonce="${nonce}" src="https://js.sentry-cdn.com/179618f1f04d4d9dac08acc750d5736c.min.js" crossorigin="anonymous"></script>
+    <script nonce="${nonce}">
+    Sentry.init({
+      dsn: "https://179618f1f04d4d9dac08acc750d5736c@o171820.ingest.sentry.io/1250596",
+      release: "1250596@${release}",
+      environment: "production",
+    });
+    </script>
   </body>
 </html>
 `;
@@ -64,7 +76,7 @@ fs.writeFileSync('public/index.html', html, { encoding: 'utf8' });
 
 const manifest = `
 CACHE MANIFEST
-# rev v3.1.0 - ${(new Date).toJSON()}
+# rev ${release}
 
 CACHE:
 index.html

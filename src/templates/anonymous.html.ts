@@ -4,7 +4,9 @@ import fs from 'fs'
 import Sprite from '@app/components/sprite/sprite.ts';
 import Login from '@app/pages/login/login.ts'
 import style from '@assets/styles.min.css';
-const nonce = btoa(`${Math.random()}`).slice(2,8) + btoa(`${Math.random()}`).slice(3,6)
+const date = new Date();
+const release = `v3.1.0-${date.toJSON()}`
+const nonce = btoa(+date).slice(10,18)
 const csp = Object.entries({
   'script-src': [
     `'nonce-${nonce}'`,
@@ -47,7 +49,7 @@ fs.writeFileSync('public/login/index.html', html, { encoding: 'utf8' });
 
 const manifest = `
 CACHE MANIFEST
-# rev v3.1.0 - ${(new Date).toJSON()}
+# rev ${release}
 
 CACHE:
 index.html

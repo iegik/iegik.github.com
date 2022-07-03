@@ -1,6 +1,7 @@
 import Icon from '@app/components/icon/icon.ts'
 import Action from '@app/components/action/action.ts'
 import { CLIENT_ID as clientId, SCOPE as scope } from '@app/components/core/constants.ts'
+import * as log from '@app/services/log.ts';
 
 const PATTERN_LOGIN = '^[\\d\\w\\-\\.]+$'
 const REGEX_LOGIN = new RegExp(PATTERN_LOGIN);
@@ -22,7 +23,7 @@ const onClick = () => {
   const state = btoa(`${+new Date()}`).slice(10,18)
   window.sessionStorage?.setItem('state', state)
   const url = `https://github.com/login/oauth/authorize?client_id=${clientId}&login=${encodeURIComponent(login)}&scope=${encodeURIComponent(scope)}&state=${state}`
-  // console.info(`Navigated to ${url}`, { client_id, scope, state })
+  log.info(`Navigated to ${url}`, { client_id, scope, state })
   document.location.href = url
 };
 

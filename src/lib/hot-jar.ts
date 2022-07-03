@@ -1,3 +1,4 @@
+import * as log from '@app/services/log.ts';
 window._hjSettings = {
   hjid: 2660383,
   hjsv: 6,
@@ -194,7 +195,7 @@ window.hjSiteSettings = window.hjSiteSettings || {
           i = window.navigator || { userAgent: 'unknown' },
           r = i.userAgent ? i.userAgent : 'unknown';
         if (a.test(r))
-          console.warn(
+          log.warn(
             'Hotjar not launching due to suspicious userAgent:',
             r,
           );
@@ -257,7 +258,7 @@ window.hjSiteSettings = window.hjSiteSettings || {
               (l.revision = 'b0148c0b8426'),
               (window.hjBootstrap = l));
           } else
-            console.warn(
+            log.warn(
               'For security reasons, Hotjar only works over HTTPS. Learn more: https://help.hotjar.com/hc/en-us/articles/115011624047',
             );
         }
