@@ -1,7 +1,6 @@
 window._hjSettings = {
   hjid: 2660383,
   hjsv: 6,
-  preview: true,
 };
 window.hj =
   window.hj ||
