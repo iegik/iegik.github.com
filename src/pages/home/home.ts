@@ -34,7 +34,7 @@ const Home = () => `
     ],
   })}
           <div class="network">
-            ${Link({ to: '#/login', title: 'Login', children: ['🚪'] })}
+            ${Link({ to: '/login/', title: 'Login', children: ['🚪'] })}
           </div>
         </header>
       </section>

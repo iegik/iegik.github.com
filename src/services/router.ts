@@ -13,9 +13,9 @@ import { ERROR_ACCESS_TOKEN } from '@app/components/core/constants.ts';
 const route = (uri = '/') => {
   // console.info(`Loading ${uri}`)
   switch (true) {
-    case /^\/login$/.test(uri): return Login
-    case /^\/oauth$/.test(uri): return Oauth
-    case /^\/profile$/.test(uri): return Profile
+    case /^\/login\/?$/.test(uri): return Login
+    case /^\/oauth\/?$/.test(uri): return Oauth
+    case /^\/profile\/?$/.test(uri): return Profile
     case uri === '/' || uri === '': return Home
     default: return Error404Page
   }
@@ -39,7 +39,7 @@ const onError = ({ error }: ErrorEvent): void => {
 const main = (e?: Event) => {
   if (window?.document) {
     const { protocol, hash, pathname } = new URL(`${e?.destination?.url || document.location}`)
-    const path = `${pathname.replace('/index.html', '')}${hash.slice(1)}`
+    const path = `${pathname.replace('/index.html', '')}${hash.slice(2)}` // /path1#/path2
     addEventListener('error', onError)
     const root = document.getElementById('root')
     if (root == null) return;
