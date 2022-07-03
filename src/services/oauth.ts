@@ -3,7 +3,7 @@ import * as log from '@app/services/log.ts';
 
 const getAccessToken = async (code?:string) => {
   if (!code) return
-  log.debug('Requesting access_token', { code, client_id })
+  log.debug('Requesting access_token', { code, clientId })
   const { access_token: accessToken, scope, token_type: tokenType } = await fetch(`https://qilg4ch66b3vpgtevzccb5meum0ttfcl.lambda-url.eu-north-1.on.aws/?code=${code}&client_id=${clientId}`).then((res) => res.json())
 
   window.sessionStorage?.setItem('access_token', accessToken)
