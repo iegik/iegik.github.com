@@ -2,36 +2,22 @@
 // @deno-types='@app/types.d.ts'
 import fs from 'fs'
 import Sprite from '@app/components/sprite/sprite.ts';
-import Home from '@app/pages/home/home.ts'
+import Login from '@app/pages/login/login.ts'
 import style from '@assets/styles.min.css';
 const nonce = btoa(`${Math.random()}`).slice(2,8) + btoa(`${Math.random()}`).slice(3,6)
 const csp = Object.entries({
   'script-src': [
     `'nonce-${nonce}'`,
     `'strict-dynamic'`,
-    `https://www.google-analytics.com`,
-    `https://ssl.google-analytics.com`,
-    `https://static.hotjar.com`,
   ],
-  'img-src': [
-    `'self'`,
-    `https://www.google-analytics.com`,
-    `https://avatars.githubusercontent.com/`,
-  ],
-  'connect-src': [
-    `https://www.google-analytics.com`,
-    `https://in.hotjar.com`,
-    `https://github.com/login/oauth/access_token`,
-    `https://api.github.com/user`,
-    `https://qilg4ch66b3vpgtevzccb5meum0ttfcl.lambda-url.eu-north-1.on.aws/`,
-  ],
+  // 'img-src': [],
+  // 'connect-src': [],
   'style-src': [
     `'nonce-${nonce}'`,
-    `https://static.hotjar.com`,
   ],
   'object-src': [`'none'`],
   'base-uri': [`'none'`],
-  'frame-src': [`https://vars.hotjar.com/`],
+  // 'frame-src': [],
 }).reduce((acc, [key, val]) => `${acc};${key} ${val.join(' ')}`, `default-src 'self'`)
 
 const title = 'Artūrs Jansons :: Web Developer';
@@ -40,7 +26,6 @@ const html = `<!DOCTYPE html>
 <html lang="en" manifest="manifest.appcache">
   <head>
     <meta http-equiv="Content-Security-Policy" content="${csp}">
-    <link rel="preload" as="font" href="/fonts/AlinaScript.woff" crossorigin>
     <title>${title}</title>
     <meta name="description" content="${description}" />
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
@@ -49,18 +34,16 @@ const html = `<!DOCTYPE html>
     <style nonce="${nonce}">${style}</style>
   </head>
   <body>
-    <noscript>This page uses JavaScript to play the slot machine game.</noscript>
+    <noscript>This page uses JavaScript to proper work.</noscript>
     ${Sprite()}
-    <div id="root">${/*Home()*/''}</div>
+    <div id="root">${Login()}</div>
     <script defer nonce="${nonce}" src="/lib/router.min.js"></script>
-    <script async nonce="${nonce}" src="/lib/ga.min.js"></script>
     <script async nonce="${nonce}" src="/lib/clouds.min.js"></script>
-    ${/* <script async nonce="${nonce}" src="/lib/hot-jar.js"></script> */ ''}
   </body>
 </html>
 `;
 
-fs.writeFileSync('public/index.html', html, { encoding: 'utf8' });
+fs.writeFileSync('public/login/index.html', html, { encoding: 'utf8' });
 
 const manifest = `
 CACHE MANIFEST
@@ -70,20 +53,12 @@ CACHE:
 index.html
 home/images/bg.webp
 home/images/bg.png
-home/images/artursjansons.jpg
-home/images/artursjansons.webp
-home/images/artursjansons_432.webp
 home/images/clouds.webp
 home/images/clouds.png
-fonts/AlinaScript.woff
-fonts/AlinaScript.ttf
-fonts/AlinaScript.svg
 lib/router.min.js
-lib/ga.min.js
-EULA.md
 
 NETWORK:
 *
 `
 
-fs.writeFileSync('public/manifest.appcache', manifest, { encoding: 'utf8' });
+fs.writeFileSync('public/login/manifest.appcache', manifest, { encoding: 'utf8' });

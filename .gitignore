@@ -12,8 +12,9 @@ public/**/*.brf
 public/**/*.png
 public/**/*.jpg
 public/favicon.ico
-public/index.html
+public/**/index.html
 public/EULA.md
 public/PRIVACY.md
+public/**/manifest.appcache
 scripts/index.js
 .env

@@ -38,8 +38,8 @@ const onError = ({ error }: ErrorEvent): void => {
 
 const main = (e?: Event) => {
   if (window?.document) {
-    const { protocol, hash } = new URL(`${e?.destination?.url || document.location}`)
-    const path = hash.slice(1)
+    const { protocol, hash, pathname } = new URL(`${e?.destination?.url || document.location}`)
+    const path = `${pathname.replace('/index.html', '')}${hash.slice(1)}`
     addEventListener('error', onError)
     const root = document.getElementById('root')
     if (root == null) return;

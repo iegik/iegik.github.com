@@ -11,17 +11,22 @@ esbuild:
 	@npx esbuild src/services/router.ts --outdir=public/lib ${JS_CONFIG} \
 	&& npx esbuild src/lib/*.ts --outdir=public/lib ${JS_CONFIG}
 
-html:
-	@npx esbuild src/index.html.ts --outdir=scripts ${HTML_CONFIG} && node scripts/index.html.js && rm scripts/index.html.js
+index:
+	@npx esbuild src/templates/seo.html.ts ${HTML_CONFIG} | node
+
+login:
+	@npx esbuild src/templates/anonymous.html.ts ${HTML_CONFIG} | node
 
 compile:
 	@deno bundle ${DENO_CONFIG} src/services/router.ts > public/lib/router.min.js; \
 	deno bundle ${DENO_CONFIG} src/lib/clouds.ts > public/lib/clouds.min.js; \
-	deno run --allow-write --allow-read ${DENO_CONFIG} src/index.html.ts
+	deno run --allow-write --allow-read ${DENO_CONFIG} src/templates/seo.html.ts \
+	deno run --allow-write --allow-read ${DENO_CONFIG} src/templates/anonymous.html.ts
 
 MIN_CONFIG=--remove-comments --remove-redundant-attributes --remove-script-type-attributes --minify-css true --minify-js true
-minify: html
-	@npx html-minifier ${MIN_CONFIG} public/index.html -o public/index.html
+minify: index login
+	@npx html-minifier ${MIN_CONFIG} public/index.html -o public/index.html && \
+	npx html-minifier ${MIN_CONFIG} public/login/index.html -o public/login/index.html
 
 compile\:watch:
 	@fswatch -o src/**/*.ts | xargs -n1 -I{} make compile
@@ -89,7 +94,7 @@ privacy:
 
 
 # Entry point to start
-build: ttf2woff ttf2svg ascii sass esbuild html minify thumb jpg2png png2webp eula privacy ##	Build project
+build: ttf2woff ttf2svg ascii sass esbuild minify thumb jpg2png png2webp eula privacy ##	Build project
 
 clean:
 	@grep -v node_modules .gitignore | awk '{print "rm -rf "$1}' | sh
