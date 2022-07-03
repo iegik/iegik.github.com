@@ -20,7 +20,11 @@ const route = (uri = '/') => {
 }
 
 
-const onError = ({ error }: ErrorEvent): void => log.error(error)
+const onError = (e: ErrorEvent): void => {
+  e.preventDefault();
+  const { error } = e;
+  log.error(error)
+}
 
 const main = (e?: Event) => {
   if (window?.document) {
