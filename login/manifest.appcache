@@ -1,0 +1,14 @@
+
+CACHE MANIFEST
+# rev v3.1.0 - 2022-07-03T09:00:14.133Z
+
+CACHE:
+index.html
+home/images/bg.webp
+home/images/bg.png
+home/images/clouds.webp
+home/images/clouds.png
+lib/router.min.js
+
+NETWORK:
+*
