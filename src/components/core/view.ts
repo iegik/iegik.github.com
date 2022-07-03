@@ -3,7 +3,7 @@
 class Ref {
   id = '';
   toString() {
-    const id = btoa(`${Math.round(Math.random() * 1000000)}`).slice(0,4);
+    const id = btoa(`${Math.round((Math.random() + 1) * 1000000)}`).slice(0,4);
     return (this.id = this.id || `ref-${id}`);
   }
   get current() {
