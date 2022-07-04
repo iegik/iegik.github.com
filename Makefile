@@ -4,8 +4,8 @@ help: ##		Show this help.
 	@echo "Usage: make [options] [target] ...\nTargets:"; \
 	fgrep -h "##" Makefile | sed 's/\([^ ]*\).*##\(.*\)/  \1\t\2/g' | fgrep -v 'fgrep'
 
-JS_CONFIG=--bundle --platform=browser --sourcemap --minify  --out-extension:.js=.min.js --loader:.png=dataurl --loader:.svg=text --loader:.ppm=text --loader:.ascii=text --loader:.data=binary
-HTML_CONFIG=--bundle --platform=node --minify --loader:.js=text --loader:.css=text --loader:.html=text --loader:.png=dataurl --loader:.svg=text --loader:.data=binary --loader:.ascii=text
+JS_CONFIG=--bundle --platform=browser --sourcemap --minify  --out-extension:.js=.min.js --loader:.png=dataurl --loader:.svg=text --loader:.ppm=text --loader:.ascii=text --loader:.graphql=text --loader:.data=binary
+HTML_CONFIG=--bundle --platform=node --minify --loader:.js=text --loader:.css=text --loader:.html=text --loader:.png=dataurl --loader:.svg=text --loader:.data=binary --loader:.ascii=text --loader:.graphql=text
 DENO_CONFIG=--import-map=import_map.json --config=deno.json
 esbuild:
 	@npx esbuild src/services/router.ts --outdir=public/lib ${JS_CONFIG} \

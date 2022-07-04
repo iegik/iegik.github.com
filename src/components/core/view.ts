@@ -1,5 +1,7 @@
 // deno-lint-ignore-file no-undef
 // global document
+import * as log from '@app/services/log.ts';
+
 class Ref {
   id = '';
   toString() {
@@ -17,11 +19,11 @@ export const createRef = () => new Ref();
 const View: ViewProps = ({ tag = 'div', className = '', children = [], services = [], ...rest }) => {
   const ref = createRef();
   setTimeout(() => {
-    Promise.all(services?.map((service) => service(ref)))
+    Promise.all(services?.map((service) => service(ref))).catch((error) => { log.error(error); })
   });
 
   return `
-    <${tag} class="${className}" ref="${ref}" ${rest?.reduce((acc, key, value) => `${acc} ${key}="${value}"`, '')}>
+    <${tag} class="${className}" ref="${ref}" ${rest?.reduce?.((acc, key, value) => `${acc} ${key}="${value}"`, '')}>
       ${children?.join?.('')}
     </${tag}>
   `;

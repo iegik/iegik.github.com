@@ -3,6 +3,7 @@
 import Home from '@app/pages/home/home.ts'
 import Login from '@app/pages/login/login.ts'
 import OauthService from '@app/services/oauth.ts'
+import EditorService from '@app/services/editor.ts'
 import View from '@app/components/core/view.ts'
 import * as log from '@app/services/log.ts';
 import Profile from '@app/pages/profile/profile.ts'
@@ -17,6 +18,7 @@ const route = (uri = '/') => {
     case /^\/login\/?$/.test(uri): return Login()
     case /^\/oauth\/?$/.test(uri): return Loading({ services: [OauthService]})
     case /^\/profile\/?$/.test(uri): return Profile()
+    case /^\/editor\/?$/.test(uri): return Loading({ services: [EditorService]})
     case uri === '/' || uri === '': return Home()
     default: throw Error(ERROR_NOT_FOUND)
   }
@@ -28,10 +30,15 @@ const onError = (e: ErrorEvent): void => {
   log.error(error)
 }
 
+export const getRoute = (e?: Event) => {
+  const { protocol, hash, pathname } = new URL(`${e?.destination?.url || document.location}`)
+  const path = `${pathname.replace('index.html', '')}${hash.slice(2)}` // /path1#/path2
+  return path
+}
+
 const main = (e?: Event) => {
+  const path = getRoute(e)
   if (window?.document) {
-    const { protocol, hash, pathname } = new URL(`${e?.destination?.url || document.location}`)
-    const path = `${pathname.replace('index.html', '')}${hash.slice(2)}` // /path1#/path2
     addEventListener('error', onError)
     const root = document.getElementById('root')
     if (root == null) return;

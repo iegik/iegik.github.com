@@ -6,6 +6,6 @@ export default (error = { message: ERROR_NOT_FOUND }) => ErrorPage({
   message: error.message,
   children: [
     Link({ to: '#', title: 'Go to home page', children: ['Home'] }),
-    Link({ onClick: () => history.go(-1), title: 'Go back', children: ['Back'] }),
+    Link({ onClick: () => { history.go(-1) }, title: 'Go back', children: ['Back'] }),
   ],
 })

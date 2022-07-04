@@ -16,5 +16,6 @@ public/**/index.html
 public/EULA.md
 public/PRIVACY.md
 public/**/manifest.appcache
+public/data/
 scripts/index.js
 .env
