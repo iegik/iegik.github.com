@@ -25,7 +25,7 @@ const csp = Object.entries({
     `https://www.google-analytics.com`,
     `https://in.hotjar.com`,
     `https://github.com/login/oauth/access_token`,
-    `https://graphql.github.com`,
+    `https://api.github.com/graphql`,
     `https://api.github.com/user`,
     `https://qilg4ch66b3vpgtevzccb5meum0ttfcl.lambda-url.eu-north-1.on.aws/`,
     `https://o171820.ingest.sentry.io/`,

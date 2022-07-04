@@ -3,12 +3,14 @@ import Error404Page from '@app/pages/error/error-404.ts'
 import Error500Page from '@app/pages/error/error-500.ts'
 import { ERROR_ACCESS_TOKEN, ERROR_NOT_FOUND } from '@app/components/core/constants.ts';
 
+const isProd = typeof window === 'undefined' ? false : window.process?.env?.NODE_ENV === 'production'
+
 export const error = (error) => {
   // console.error(error)
   if (typeof window === 'undefined') return;
 
   // Send logs to Sentry
-  if (window.Sentry) Sentry.captureException(error);
+  if (isProd && window.Sentry) Sentry.captureException(error);
 
   const root = document.getElementById('root')
   if (root == null) return;
@@ -23,8 +25,6 @@ export const error = (error) => {
   root.innerHTML = Error500Page(error)
   return;
 }
-
-const isProd = typeof window === 'undefined' ? false : window.process?.env?.NODE_ENV === 'production'
 
 // @eslint-disable-next-line no-console
 export const debug = isProd ? () => {} : (...args) => { console.debug(...args); }

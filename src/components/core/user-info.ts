@@ -15,14 +15,15 @@ const UserInfo:FC<UserInfoProps> = ({ avatarUrl, login } = {}) => {
     const tokenType = window.sessionStorage?.getItem('token_type')
     const fetchUser = async () => {
       // Getting state
-      log.debug('Requesting user', { access_token, token_type })
+      log.debug('Requesting user', { accessToken, tokenType })
       const { avatar_url: avatarUrl, login } = await fetch('https://api.github.com/user', { method: 'GET', headers: { 'Authorization': `${tokenType} ${accessToken}` } }).then((res) => res.json())
-      log.debug('User data', { data })
+      log.debug('User data', { avatarUrl, login })
       return { avatarUrl, login }
     }
+    log.debug({ accessToken, tokenType })
     if (!accessToken) throw Error(ERROR_ACCESS_TOKEN)
     if (!login) fetchUser()
-      .then((data) => { if (ref.current) ref.current.innerHTML = UserInfo(data); })
+      .then((data) => { if (ref.current && data.login) ref.current.innerHTML = UserInfo(data); })
   })
 
   return `
