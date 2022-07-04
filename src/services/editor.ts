@@ -18,7 +18,7 @@ const getFile = (path: string) => {
       variables: {
         repo_name: 'iegik.github.com',
         repo_owner: 'iegik',
-        object_path: `gh-pages:data${path}.json`,
+        object_path: `data:${path}.json`,
       },
     }),
   }).then((res) => res.json());
