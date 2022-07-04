@@ -12,19 +12,15 @@ const getAccessToken = async (code?:string) => {
   document.location.href = '/#/profile' // history.pushState({ access_token, scope, token_type }, 'User Info', '/#/profile')
 }
 
-const Oauth = () => {
-  setTimeout(() => {
-    const { protocol, hash, search } = location
-    const state = window.sessionStorage?.getItem('state')
-    const code = window.sessionStorage?.getItem('code')
-    log.debug('Checking GET params', { protocol, hash, search, state })
-    const uri = new URLSearchParams(search)
-    if (uri.get('state') !== state) return window.history?.go(-2);
+const OauthService = () => {
+  const { protocol, hash, search } = location
+  const state = window.sessionStorage?.getItem('state')
+  const code = window.sessionStorage?.getItem('code')
+  log.debug('Checking GET params', { protocol, hash, search, state })
+  const uri = new URLSearchParams(search)
+  if (uri.get('state') !== state) return window.history?.go(-2);
 
-    getAccessToken(uri.get('code') || undefined);
-  })
-
-  return `Loading...`
+  getAccessToken(uri.get('code') || undefined);
 }
 
-export default Oauth
+export default OauthService

@@ -3,7 +3,7 @@
 class Ref {
   id = '';
   toString() {
-    const id = btoa(`${Math.round((Math.random() + 1) * 1000000)}`).slice(0,4);
+    const id = btoa(`${Math.ceil(Math.random() * 1E+13) + +new Date}`).slice(10,18)
     return (this.id = this.id || `ref-${id}`);
   }
   get current() {
@@ -13,3 +13,18 @@ class Ref {
 }
 
 export const createRef = () => new Ref();
+
+const View: ViewProps = ({ tag = 'div', className = '', children = [], services = [], ...rest }) => {
+  const ref = createRef();
+  setTimeout(() => {
+    Promise.all(services?.map((service) => service(ref)))
+  });
+
+  return `
+    <${tag} class="${className}" ref="${ref}" ${rest?.reduce((acc, key, value) => `${acc} ${key}="${value}"`, '')}>
+      ${children?.join?.('')}
+    </${tag}>
+  `;
+}
+
+export default View;

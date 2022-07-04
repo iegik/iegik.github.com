@@ -23,6 +23,12 @@ export const error = (error) => {
   root.innerHTML = Error500Page(error)
   return;
 }
-export const debug = (...args) => {}; // console.debug(...args)
-export const warn = (...args) => {}; // console.warn(...args)
-export const info = (...args) => {}; // console.info(...args)
+
+const isProd = typeof window === 'undefined' ? false : window.process?.env?.NODE_ENV === 'production'
+
+// @eslint-disable-next-line no-console
+export const debug = isProd ? () => {} : (...args) => { console.debug(...args); }
+// @eslint-disable-next-line no-console
+export const warn = isProd ? () => {} : (...args) => { console.warn(...args); }
+// @eslint-disable-next-line no-console
+export const info = isProd ? () => {} : (...args) => { console.info(...args); }
