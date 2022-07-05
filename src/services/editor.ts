@@ -1,6 +1,7 @@
 import repoFile from '@app/graphql/github/repo_file.graphql';
 import View from '@app/components/core/view.ts'
 import { getRoute } from '@app/services/router.ts';
+import { ERROR_NOT_FOUND } from '@app/components/core/constants.ts';
 
 const getFile = (path: string) => {
   const accessToken = window.sessionStorage?.getItem('access_token')
@@ -33,11 +34,13 @@ const EditorService = async (ref: Ref) => {
 
   const route = getRoute()
 
-  const { data, errors } = await getFile(route)
+  const { data, errors } = await getFile(route.slice(1))
 
   if (errors) throw errors[0];
 
-  const { repository: { object: { object: { text } } } } = data;
+  const { repository: { object } } = data;
+  if (!object) throw Error(ERROR_NOT_FOUND)
+  const { text } = object
 
   editor.innerHTML = View(parse(text));
 };
