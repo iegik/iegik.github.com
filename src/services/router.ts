@@ -4,6 +4,7 @@ import Home from '@app/pages/home/home.ts'
 import Login from '@app/pages/login/login.ts'
 import OauthService from '@app/services/oauth.ts'
 import EditorService from '@app/services/editor.ts'
+import PreviewService from '@app/services/preview.ts'
 import View from '@app/components/core/view.ts'
 import * as log from '@app/services/log.ts';
 import Profile from '@app/pages/profile/profile.ts'
@@ -19,6 +20,7 @@ const route = (uri = '/') => {
     case /^\/oauth\/?$/.test(uri): return Loading({ services: [OauthService]})
     case /^\/profile\/?$/.test(uri): return Profile()
     case /^\/editor\/?$/.test(uri): return Loading({ services: [EditorService]})
+    case /^\/preview\/?$/.test(uri): return Loading({ services: [PreviewService]})
     case uri === '/' || uri === '': return Home()
     default: throw Error(ERROR_NOT_FOUND)
   }
