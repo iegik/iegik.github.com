@@ -10,7 +10,7 @@ class PublicApi {
   }
 
   async request(uri) {
-    const res  = await fetch(`https://${location.host}/data${uri}`, {
+    const res  = await fetch(`${location.protocol}//${location.host}/data${uri}`, {
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',

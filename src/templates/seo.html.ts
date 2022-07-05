@@ -19,6 +19,7 @@ const csp = Object.entries({
     `https://avatars.githubusercontent.com/`,
   ],
   'connect-src': [
+    `'self'`,
     `https://www.google-analytics.com`,
     `https://in.hotjar.com`,
     `https://github.com/login/oauth/access_token`,
