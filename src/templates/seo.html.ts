@@ -1,12 +1,9 @@
 #!/usr/bin/env node
 // @deno-types='@app/types.d.ts'
-import fs from 'fs'
+import { writeFileSync, readFileSync, release, nonce } from '@app/utils.ts';
 import Sprite from '@app/components/sprite/sprite.ts';
 import Home from '@app/pages/home/home.ts'
-import style from '@assets/styles.min.css';
-const date = new Date();
-const release = `v3.1.0-${date.toJSON()}`
-const nonce = btoa(+date).slice(10,18)
+const style = readFileSync('./public/styles.min.css');
 const csp = Object.entries({
   'script-src': [
     `'nonce-${nonce}'`,
@@ -73,7 +70,7 @@ const html = `<!DOCTYPE html>
 </html>
 `;
 
-fs.writeFileSync('public/index.html', html, { encoding: 'utf8' });
+writeFileSync('public/index.html', html);
 
 const manifest = `
 CACHE MANIFEST
@@ -99,4 +96,4 @@ NETWORK:
 *
 `
 
-fs.writeFileSync('public/manifest.appcache', manifest, { encoding: 'utf8' });
+writeFileSync('public/manifest.appcache', manifest);

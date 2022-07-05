@@ -1,0 +1,20 @@
+mutation Delete ($input: CreateCommitOnBranchInput!) {
+  createCommitOnBranch(input: $input) {
+    commit {
+      url
+    }
+  }
+}
+# {
+#   "input": {
+#     "branch": {
+#       "repositoryNameWithOwner": "iegik/iegik.github.com",
+#       "branchName": "gh-pages"
+#     },
+#     "message": {"headline": "Updates" },
+#     "fileChanges": {
+#       "deletions": [{ "path": "data/home.json" }]
+#     },
+#     "expectedHeadOid": "git rev-parse HEAD"
+#   }
+# }

@@ -7,24 +7,28 @@ help: ##		Show this help.
 JS_CONFIG=--bundle --platform=browser --sourcemap --minify  --out-extension:.js=.min.js --loader:.png=dataurl --loader:.svg=text --loader:.ppm=text --loader:.ascii=text --loader:.graphql=text --loader:.data=binary
 HTML_CONFIG=--bundle --platform=node --minify --loader:.js=text --loader:.css=text --loader:.html=text --loader:.png=dataurl --loader:.svg=text --loader:.data=binary --loader:.ascii=text --loader:.graphql=text
 DENO_CONFIG=--import-map=import_map.json --config=deno.json
-esbuild:
+lib_node:
 	@npx esbuild src/services/router.ts --outdir=public/lib ${JS_CONFIG} \
 	&& npx esbuild src/lib/*.ts --outdir=public/lib ${JS_CONFIG}
 
-index:
-	@npx esbuild src/templates/seo.html.ts ${HTML_CONFIG} | node
+templates_node:
+	@npx esbuild src/templates/seo.html.ts ${HTML_CONFIG} | node \
+	&& npx esbuild src/templates/anonymous.html.ts ${HTML_CONFIG} | node
 
-login:
-	@npx esbuild src/templates/anonymous.html.ts ${HTML_CONFIG} | node
-
-compile:
+# Depricated due to difficulties with using browser native functions. Use esbuild instead.
+# TODO: Improve asset import in header.ts and icons.ts.
+lib_deno:
 	@deno bundle ${DENO_CONFIG} src/services/router.ts > public/lib/router.min.js; \
-	deno bundle ${DENO_CONFIG} src/lib/clouds.ts > public/lib/clouds.min.js; \
-	deno run --allow-write --allow-read ${DENO_CONFIG} src/templates/seo.html.ts \
-	deno run --allow-write --allow-read ${DENO_CONFIG} src/templates/anonymous.html.ts
+	deno bundle ${DENO_CONFIG} src/lib/clouds.ts > public/lib/clouds.min.js;
+
+templates_deno:
+	@deno run --allow-write --allow-read --allow-env ${DENO_CONFIG} src/templates/seo.html.ts \
+	deno run --allow-write --allow-read --allow-env ${DENO_CONFIG} src/templates/anonymous.html.ts
+
+esbuild: lib_node templates_node
 
 MIN_CONFIG=--remove-comments --remove-redundant-attributes --remove-script-type-attributes --minify-css true --minify-js true
-minify: index login
+minify: esbuild
 	@npx html-minifier ${MIN_CONFIG} public/index.html -o public/index.html && \
 	npx html-minifier ${MIN_CONFIG} public/login/index.html -o public/login/index.html
 
@@ -94,7 +98,7 @@ privacy:
 
 
 # Entry point to start
-build: ttf2woff ttf2svg ascii sass esbuild minify thumb jpg2png png2webp eula privacy ##	Build project
+build: ttf2woff ttf2svg ascii sass minify thumb jpg2png png2webp eula privacy ##	Build project
 
 clean:
 	@grep -v node_modules .gitignore | awk '{print "rm -rf "$1}' | sh
@@ -105,4 +109,4 @@ clean:
 # 	&& git subtree rm --prefix public --cached  \
 # 	&& git subtree push --prefix public origin gh-pages
 publish:
-	@npx gh-pages -d public
+	@npx gh-pages -d public -a

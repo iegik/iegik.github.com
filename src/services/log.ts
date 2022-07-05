@@ -3,14 +3,13 @@ import Error404Page from '@app/pages/error/error-404.ts'
 import Error500Page from '@app/pages/error/error-500.ts'
 import { ERROR_ACCESS_TOKEN, ERROR_NOT_FOUND } from '@app/components/core/constants.ts';
 
-const isProd = typeof window === 'undefined' ? false : window.process?.env?.NODE_ENV === 'production'
-
-export const error = (error) => {
+const isProd = true
+export const error = (error: Error) => {
   // console.error(error)
   if (typeof window === 'undefined') return;
 
   // Send logs to Sentry
-  if (isProd && window.Sentry) Sentry.captureException(error);
+  if (isProd && typeof Sentry !== 'undefined') Sentry.captureException(error);
 
   const root = document.getElementById('root')
   if (root == null) return;
@@ -27,8 +26,8 @@ export const error = (error) => {
 }
 
 // @eslint-disable-next-line no-console
-export const debug = isProd ? () => {} : (...args) => { console.debug(...args); }
+export const debug = isProd ? () => {} : (...args:unknown[]) => { console.debug(...args); }
 // @eslint-disable-next-line no-console
-export const warn = isProd ? () => {} : (...args) => { console.warn(...args); }
+export const warn = isProd ? () => {} : (...args:unknown[]) => { console.warn(...args); }
 // @eslint-disable-next-line no-console
-export const info = isProd ? () => {} : (...args) => { console.info(...args); }
+export const info = isProd ? () => {} : (...args:unknown[]) => { console.info(...args); }

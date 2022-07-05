@@ -2,19 +2,20 @@ interface FC<T> {
   (props?:T): string
 }
 
-interface React {
-  ReactNode: FC<any>
-  Props: { [key: string]: any }
-}
+type ReactNode = FC<any>;
+type Props = { [key: string]: any };
+type Process = { [key: string]: any };
 
-type Service = () => Promise<any>
+type Service = (ref: import('./components/core/view.ts').Ref) => Promise<any>
 
-interface RouteComponentProps extends React.Props<any> {
+interface RouteComponentProps extends Props {
   services?: Service[];
 }
 
 interface ViewProps extends RouteComponentProps {
   tag?: string;
   className?: string;
-  children?: React.ReactNode
+  children?: ReactNode
 }
+
+declare const Sentry: { [key: string]: any };

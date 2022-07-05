@@ -1,0 +1,45 @@
+query GetRepository($repo_name:String!, $repo_owner:String!, $branch_name:String!, $ref_first: Int!) {
+  repository(name: $repo_name, owner: $repo_owner) {
+    id
+    nameWithOwner
+    description
+    descriptionHTML
+    url
+    ref(qualifiedName: $branch_name) {
+      target {
+        ... on Commit {
+          id
+          history(first: $ref_first) {
+            pageInfo {
+              hasNextPage
+            }
+            edges {
+              node {
+                messageHeadline
+                oid
+                message
+                author {
+                  name
+                  email
+                  date
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    resourcePath
+    pushedAt
+    licenseInfo {
+      id
+    }
+    homepageUrl
+  }
+}
+# {
+#   "repo_name": "iegik.github.com",
+#   "repo_owner": "iegik",
+# 	"ref_first": 1,
+#   "branch_name": "gh-pages",
+# }

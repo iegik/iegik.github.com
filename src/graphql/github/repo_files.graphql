@@ -1,0 +1,26 @@
+query RepoFiles($repo_owner: String!, $repo_name: String!, $object_path: String!) {
+  repository(owner: $repo_owner, name: $repo_name) {
+    object(expression: $object_path) {
+      ... on Tree {
+        entries {
+          name
+          type
+          mode
+
+          object {
+            ... on Blob {
+              byteSize
+              text
+              isBinary
+            }
+          }
+        }
+      }
+    }
+  }
+}
+# {
+#   "repo_name": "iegik.github.com",
+#   "repo_owner": "iegik",
+#   "object_path": "gh-pages: data"
+# }

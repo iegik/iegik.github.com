@@ -2,7 +2,7 @@
 // global document
 import * as log from '@app/services/log.ts';
 
-class Ref {
+export class Ref {
   id = '';
   toString() {
     const id = btoa(`${Math.ceil(Math.random() * 1E+13) + +new Date}`).slice(10,18)
@@ -19,11 +19,11 @@ export const createRef = () => new Ref();
 const View: ViewProps = ({ tag = 'div', className = '', children = [], services = [], ...rest }) => {
   const ref = createRef();
   setTimeout(() => {
-    Promise.all(services?.map((service) => service(ref))).catch((error) => { log.error(error); })
+    Promise.all((services as Service[])?.map((service) => service(ref))).catch((error) => { log.error(error); })
   });
 
   return `
-    <${tag} class="${className}" ref="${ref}" ${rest?.reduce?.((acc, key, value) => `${acc} ${key}="${value}"`, '')}>
+    <${tag} class="${className}" ref="${ref}" ${rest?.reduce?.((acc:string, key:string, value:string) => `${acc} ${key}="${value}"`, '')}>
       ${children?.join?.('')}
     </${tag}>
   `;

@@ -1,0 +1,23 @@
+mutation Create ($input: CreateCommitOnBranchInput!) {
+  createCommitOnBranch(input: $input) {
+    commit {
+      url
+    }
+  }
+}
+# {
+#   "input": {
+#     "branch": {
+#       "repositoryNameWithOwner": "iegik/iegik.github.com",
+#       "branchName": "gh-pages"
+#     },
+#     "message": {"headline": "Updates" },
+#     "fileChanges": {
+#       "additions": [{
+#           "path": "data/home.json",
+#           "contents": "`echo 'Hello, GraphQL!' | base64`"
+#       }]
+#     },
+#     "expectedHeadOid": "`git rev-parse gh-pages`"
+#   },
+# }
