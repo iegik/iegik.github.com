@@ -1,8 +1,8 @@
 import { ERROR_NOT_FOUND } from '@app/components/core/constants.ts';
 import repoFile from '@app/graphql/github/repo_file.graphql';
 
-const githubResponseMiddleware = (res) => {
-  const { data, errors } = res.json();
+const githubResponseMiddleware = async (res) => {
+  const { data, errors } = await res.json();
   if (errors) throw errors[0];
   return data;
 }
@@ -22,7 +22,7 @@ class GitHubApi {
     const accessToken = window.sessionStorage?.getItem('access_token');
     const tokenType = window.sessionStorage?.getItem('token_type');
 
-    const res  = await fetch('https://api.github.com/graphql', {
+    const res = await fetch('https://api.github.com/graphql', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -43,6 +43,7 @@ class GitHubApi {
       repo_owner: this.repoOwner,
       object_path: `${this.storeRoot}${path}.json`,
     }})
+    if (!data) throw Error(ERROR_REQUEST);
     const {
       repository: { object },
     } = data;
