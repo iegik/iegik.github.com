@@ -1,5 +1,5 @@
 // deno-lint-ignore-file no-undef no-extra-semi
-const isReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
+const isReduced = window.matchMedia?.(`(prefers-reduced-motion: reduce)`)?.matches === true;
 let x1:number;
 let x2:number;
 let x:number;
