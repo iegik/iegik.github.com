@@ -25,10 +25,10 @@
   --font-monospace: 'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace;
 
   --color-grayscale: #c1c1c1;
-  --color-primary-light: #3b94d4;
-  --color-primary: #fecb00;
-  --color-primary-dark: #054c7f;
-  --color-primary-contrast: #B9B7BD;
+  --color-primary-light: #ffffff;
+  --color-primary: #FECB00;
+  --color-primary-dark: #eeede7;
+  --color-primary-contrast: #054c7f;
   --color-error: rgb(163, 51, 51);
 
   --font-size-xs: 0.8rem;
@@ -38,30 +38,31 @@
   --font-size-xl: 2.4rem;
   --font-size-xxl: 3.6rem;
 
-  --text-color: var(--color-primary);
+  --text-color: var(--color-primary-dark);
 
   @media (prefers-color-scheme: dark) {
     --color-grayscale: #010101;
     --color-primary-light: #054c7f;
-    --color-primary-dark: #3b94d4;
-    --text-color: var(--color-primary);
+    --color-primary-dark: #eeede7;
+    --text-color: var(--color-primary-dark);
   }
 
   /* prefers-reduced-transparency not available yet */
   @media (prefers-reduced-motion: no-preference) and (prefers-color-scheme: light) {
     --color-grayscale: rgba(127, 127, 127, 0.5);
     --color-primary-light: #eeede7aa;
-    --color-primary: #ffeb12d7;
-    --color-primary-dark: #868B8Eaa;
+    --color-primary: #FECB00d7;
+    --color-primary-dark: #054c7faa;
     --color-primary-contrast: #B9B7BDaa;
-    --text-color: var(--color-primary);
+    --text-color: var(--color-primary-dark);
   }
   @media (prefers-reduced-motion: no-preference) and (prefers-color-scheme: dark) {
     --color-grayscale: #010101aa;
     --color-primary: #E7D2CCaa;
     --color-primary-light: #054c7faa;
-    --color-primary-dark: #3b94d4aa;
-    --text-color: var(--color-primary);
+    --color-primary-dark: #eeede7aa;
+    --color-primary-contrast: #054c7faa;
+    --text-color: var(--color-primary-dark);
   }
 }
 
