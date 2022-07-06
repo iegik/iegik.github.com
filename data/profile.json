@@ -1,0 +1,7 @@
+{
+  "component": "UserInfo",
+  "className": "user-info",
+  "services": [
+    "userInfo"
+  ]
+}
