@@ -1,1 +1,11 @@
-{"children": ["Hello, World!"]}
+{
+  "children": [
+    { "tag": "h1", "children": "Hello, World!"},
+    { "tag": "p", "children": "This is an example of a simple component."},
+    { "tag": "p", "children": "It's rendered on the page as a <div> element."},
+    { "tag": "p", "children": "It has a several childs, a <p> elements."},
+    { "tag": "p", "children": [{ "tag": "span", "children": "One of the <p> element has a single child," }, { "tag": "span", "children": "a <span> element." }]},
+    { "tag": "p", "children": "It's also has a <button> containing the text \"Click me\"."},
+    { "tag": "button", "children": "Click me"}
+  ]
+}
