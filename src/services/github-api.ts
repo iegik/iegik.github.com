@@ -1,5 +1,6 @@
 import { ERROR_NOT_FOUND, ERROR_REQUEST } from '@app/components/core/constants.ts';
 import repoFile from '@app/graphql/github/repo_file.graphql';
+import getUserQuery from '@app/graphql/github/get_user.graphql';
 
 const githubResponseMiddleware = async (res: Response) => {
   const { data, errors } = await res.json();
@@ -51,6 +52,12 @@ class GitHubApi {
     const { text } = object;
     return JSON.parse(text);
   };
+
+  async getUserInfo() {
+    const data = await this.request({ query: getUserQuery, variables: { login: this.repoOwner }})
+    if (!data) throw Error(ERROR_REQUEST);
+    return data;
+  }
 }
 
 export default GitHubApi;

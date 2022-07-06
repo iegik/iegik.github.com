@@ -16,7 +16,7 @@ const route = (uri = '/') => {
   switch (true) {
     case /^\/login\/?$/.test(uri): return Login()
     case /^\/oauth\/?$/.test(uri): return Loading({ services: ['oauth']})
-    case /^\/profile\/?$/.test(uri): return Profile()
+    case /^\/profile\/?$/.test(uri): return Loading({ component: 'UserInfo', className: 'user-info', services: ['userInfo']})
     case /^\/editor\/?$/.test(uri): return Loading({ services: ['editor']})
     case /^\/preview\/?$/.test(uri): return Loading({ services: ['preview']})
     case uri === '/' || uri === '': return Home()
@@ -25,7 +25,7 @@ const route = (uri = '/') => {
 }
 
 const onError = (e: ErrorEvent): void => {
-  e.preventDefault();
+  // e.preventDefault();
   const { error } = e;
   log.error(error)
 }
