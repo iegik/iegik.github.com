@@ -38,10 +38,13 @@
   --font-size-xl: 2.4rem;
   --font-size-xxl: 3.6rem;
 
+  --text-color: var(--color-primary);
+
   @media (prefers-color-scheme: dark) {
     --color-grayscale: #010101;
     --color-primary-light: #054c7f;
     --color-primary-dark: #3b94d4;
+    --text-color: var(--color-primary);
   }
 
   /* prefers-reduced-transparency not available yet */
@@ -51,12 +54,14 @@
     --color-primary: #ffeb12d7;
     --color-primary-dark: #868B8Eaa;
     --color-primary-contrast: #B9B7BDaa;
+    --text-color: var(--color-primary);
   }
   @media (prefers-reduced-motion: no-preference) and (prefers-color-scheme: dark) {
     --color-grayscale: #010101aa;
     --color-primary: #E7D2CCaa;
     --color-primary-light: #054c7faa;
     --color-primary-dark: #3b94d4aa;
+    --text-color: var(--color-primary);
   }
 }
 
@@ -101,8 +106,9 @@ body {
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover;
+  color: var(--text-color);
 }
 
 a:link {
-  color: var(--color-primary-dark);
+  color: var(--text-color);
 }

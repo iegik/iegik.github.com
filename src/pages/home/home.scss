@@ -9,7 +9,7 @@ article, section, header {
 .h2 {
   font-family: var(--font-fantasy);
   font-size: var(--font-size-xl);
-  color: var(--color-primary-dark);
+  color: var(--text-color);
   font-weight: 400;
 }
 
@@ -17,5 +17,5 @@ article, section, header {
   text-transform: uppercase;
   font-weight: 200;
   text-shadow: 0 0 1rem var(--color-grayscale);
-  color: var(--color-primary);
+  color: var(--text-color);
 }

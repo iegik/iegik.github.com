@@ -6,12 +6,12 @@
   border: 1px solid;
   margin: -0.5px; /* override border */
   border-color: transparent;
-  color: var(--color-primary-dark);
+  color: var(--text-color);
   opacity: 1;
   overflow: hidden;
   @media (min-width: 768px) {
     &:hover {
-      border-color: var(--color-primary-dark);
+      border-color: var(--text-color);
     }
   }
 
