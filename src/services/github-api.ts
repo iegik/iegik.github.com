@@ -1,7 +1,7 @@
-import { ERROR_NOT_FOUND } from '@app/components/core/constants.ts';
+import { ERROR_NOT_FOUND, ERROR_REQUEST } from '@app/components/core/constants.ts';
 import repoFile from '@app/graphql/github/repo_file.graphql';
 
-const githubResponseMiddleware = async (res) => {
+const githubResponseMiddleware = async (res: Response) => {
   const { data, errors } = await res.json();
   if (errors) throw errors[0];
   return data;
@@ -9,16 +9,16 @@ const githubResponseMiddleware = async (res) => {
 
 class GitHubApi {
   static instance = new GitHubApi();
-  private constructor() {
-    this.repoName = 'iegik.github.com';
-    this.repoOwner = 'iegik';
-    this.storeRoot = 'gh-pages:data';
-  }
+  repoName: string = 'iegik.github.com';
+  repoOwner: string = 'iegik';
+  storeRoot: string = 'gh-pages:data';
+  private constructor() {}
   static getInstance() {
     return this.instance;
   }
 
-  async request({ query, variables }) {
+  async request({ query, variables }: Record<string, any>) {
+    if (typeof window === 'undefined') return;
     const accessToken = window.sessionStorage?.getItem('access_token');
     const tokenType = window.sessionStorage?.getItem('token_type');
 

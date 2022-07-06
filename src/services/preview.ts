@@ -1,5 +1,5 @@
-import View from '@app/components/core/view.ts';
-import { getRoute } from '@app/services/router.ts';
+import View, { Ref } from '@app/components/core/view.ts';
+import { getRoute } from '@app/services/web-utils.ts';
 import PublicApi from '@app/services/public-api.ts';
 
 const PreviewService = async (ref: Ref) => {

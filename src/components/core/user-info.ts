@@ -11,6 +11,7 @@ const UserInfo:FC<UserInfoProps> = ({ avatarUrl, login } = {}) => {
   const ref = createRef();
 
   setTimeout(() => {
+    if (typeof window === 'undefined') return;
     const accessToken = window.sessionStorage?.getItem('access_token')
     const tokenType = window.sessionStorage?.getItem('token_type')
     const fetchUser = async () => {

@@ -12,8 +12,12 @@ lib_node:
 	&& npx esbuild src/lib/*.ts --outdir=public/lib ${JS_CONFIG}
 
 templates_node:
-	@npx esbuild src/templates/seo.html.ts ${HTML_CONFIG} | node \
-	&& npx esbuild src/templates/anonymous.html.ts ${HTML_CONFIG} | node
+	@npx esbuild src/templates/seo.html.ts ${HTML_CONFIG} | node --inspect \
+	&& npx esbuild src/templates/anonymous.html.ts ${HTML_CONFIG} | node --inspect
+
+templates_node_debug:
+	@npx esbuild src/templates/seo.html.ts ${HTML_CONFIG} --outdir=tmp | node --inspect tmp/seo.html.js && rm tmp/seo.html.js \
+	&& npx esbuild src/templates/anonymous.html.ts ${HTML_CONFIG}  --outdir=tmp | node --inspect tmp/anonymous.html.js && rm tmp/anonymous.html.js
 
 # Depricated due to difficulties with using browser native functions. Use esbuild instead.
 # TODO: Improve asset import in header.ts and icons.ts.

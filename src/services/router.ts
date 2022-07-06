@@ -2,25 +2,23 @@
 // @deno-types='@app/types.d.ts'
 import Home from '@app/pages/home/home.ts'
 import Login from '@app/pages/login/login.ts'
-import OauthService from '@app/services/oauth.ts'
-import EditorService from '@app/services/editor.ts'
-import PreviewService from '@app/services/preview.ts'
 import View from '@app/components/core/view.ts'
 import * as log from '@app/services/log.ts';
+import { getRoute } from '@app/services/web-utils.ts';
 import Profile from '@app/pages/profile/profile.ts'
 
 import { ERROR_NOT_FOUND } from '@app/components/core/constants.ts';
 
-const Loading = (props) =>  View({ children: ['Loading...'], ...props });
+const Loading = (props:ViewProps) => View({ children: ['Loading...'], ...props });
 
 const route = (uri = '/') => {
   log.info(`Loading ${uri}`)
   switch (true) {
     case /^\/login\/?$/.test(uri): return Login()
-    case /^\/oauth\/?$/.test(uri): return Loading({ services: [OauthService]})
+    case /^\/oauth\/?$/.test(uri): return Loading({ services: ['oauth']})
     case /^\/profile\/?$/.test(uri): return Profile()
-    case /^\/editor\/?$/.test(uri): return Loading({ services: [EditorService]})
-    case /^\/preview\/?$/.test(uri): return Loading({ services: [PreviewService]})
+    case /^\/editor\/?$/.test(uri): return Loading({ services: ['editor']})
+    case /^\/preview\/?$/.test(uri): return Loading({ services: ['preview']})
     case uri === '/' || uri === '': return Home()
     default: throw Error(ERROR_NOT_FOUND)
   }
@@ -32,14 +30,9 @@ const onError = (e: ErrorEvent): void => {
   log.error(error)
 }
 
-export const getRoute = (e?: Event) => {
-  const { protocol, hash, pathname } = new URL(`${e?.destination?.url || document.location}`)
-  const path = `${pathname.replace('index.html', '')}${hash.slice(2)}` // /path1#/path2
-  return path
-}
-
 const main = (e?: Event) => {
   const path = getRoute(e)
+  if (typeof window === 'undefined') return
   if (window?.document) {
     addEventListener('error', onError)
     const root = document.getElementById('root')

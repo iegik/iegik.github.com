@@ -1,5 +1,6 @@
 import { CLIENT_ID as clientId } from '@app/components/core/constants.ts'
 import * as log from '@app/services/log.ts';
+import { Ref } from '@app/components/core/view.ts';
 
 const getAccessToken = async (code?:string) => {
   if (!code) return
@@ -12,7 +13,7 @@ const getAccessToken = async (code?:string) => {
   document.location.href = '/#/profile' // history.pushState({ access_token, scope, token_type }, 'User Info', '/#/profile')
 }
 
-const OauthService = () => {
+const OauthService = async (ref: Ref) => {
   const { protocol, hash, search } = location
   const state = window.sessionStorage?.getItem('state')
   const code = window.sessionStorage?.getItem('code')

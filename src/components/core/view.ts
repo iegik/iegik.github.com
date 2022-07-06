@@ -1,6 +1,7 @@
 // deno-lint-ignore-file no-undef
 // global document
 import * as log from '@app/services/log.ts';
+import servicesMap from '@app/services/index.ts';
 
 export class Ref {
   id = '';
@@ -16,15 +17,15 @@ export class Ref {
 
 export const createRef = () => new Ref();
 
-const View: ViewProps = ({ tag = 'div', className = '', children = [], services = [], ...rest }) => {
+const View: FC<ViewProps> = ({ tag = 'div', className = '', children = [], services = [], ...rest } = {}) => {
   const ref = createRef();
   setTimeout(() => {
-    Promise.all((services as Service[])?.map((service) => service(ref))).catch((error) => { log.error(error); })
+    Promise.all(services?.map((serviceName:string) => servicesMap[serviceName]?.(ref))).catch((error) => { log.error(error); })
   });
 
   return `
-    <${tag} class="${className}" ref="${ref}" ${rest?.reduce?.((acc:string, key:string, value:string) => `${acc} ${key}="${value}"`, '')}>
-      ${children?.join?.('')}
+    <${tag} class="${className}" ref="${ref}" ${Object.entries(rest)?.reduce?.((acc:string, [key, value]:string[]) => `${acc} ${key}="${value}"`, '')}>
+      ${Array.isArray(children) ? children.map((childProps: ReactNode) => childProps instanceof Object ? View(<ViewProps>childProps) : `${childProps}`).join?.('') : children}
     </${tag}>
   `;
 }

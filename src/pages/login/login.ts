@@ -16,6 +16,7 @@ const assert = (expr:boolean, message:string) => !expr ? message : undefined
 
 const onClick = () => {
   if (typeof document === 'undefined') return;
+  if (typeof window === 'undefined') return;
   if (typeof window.sessionStorage === 'undefined') return;
   const loginField = <HTMLInputElement>document.querySelector('[name="login"]')
   if (loginField.validity.valid === false) return

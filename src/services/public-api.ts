@@ -1,6 +1,6 @@
 import { ERROR_NOT_FOUND } from '@app/components/core/constants.ts';
 
-const publicResponseMiddleware = (res) => res.json();
+const publicResponseMiddleware = (res: Response) => res.json();
 
 class PublicApi {
   static instance = new PublicApi();
@@ -9,7 +9,7 @@ class PublicApi {
     return this.instance;
   }
 
-  async request(uri) {
+  async request(uri: string) {
     const res  = await fetch(`${location.protocol}//${location.host}/data${uri}`, {
       headers: {
         'Content-Type': 'application/json',
