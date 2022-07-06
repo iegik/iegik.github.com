@@ -41,12 +41,12 @@ const main = (e?: Event) => {
   }
 }
 
-window.history.pushState = new Proxy(window.history.pushState, {
-  apply: (target, thisArg, argArray) => {
-    main()
-    return target.apply(thisArg, argArray);
-  },
-});
+// window.history.pushState = new Proxy(window.history.pushState, {
+//   apply: (target, thisArg, argArray) => {
+//     main()
+//     return target.apply(thisArg, argArray);
+//   },
+// });
 
-navigation?.addEventListener('navigate', main);
+// navigation?.addEventListener('navigate', main);
 main()
