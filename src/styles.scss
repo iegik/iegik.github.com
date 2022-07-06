@@ -96,14 +96,14 @@ noscript {
   font-family: var(--font-sans-serif);
   line-height: 1.5;
   background-color: var(--color-primary-light);
-  background-image: none, url('home/images/clouds.png'), url('home/images/clouds.png');
+  background-image: none, url('/home/images/clouds.png'), url('/home/images/clouds.png');
   background-position: 50% 50%, 50% 50%;
   background-repeat: no-repeat, no-repeat;
   display: grid;
 }
 
 body {
-  background-image: url('home/images/bg.jpg');
+  background-image: url('/home/images/bg.jpg');
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover;
