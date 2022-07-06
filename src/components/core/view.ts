@@ -1,6 +1,7 @@
 // deno-lint-ignore-file no-undef
 // global document
 import * as log from '@app/services/log.ts';
+import { escapeHTML } from '@app/services/web-utils.ts';
 import servicesMap from '@app/services/index.ts';
 
 export class Ref {
@@ -25,7 +26,7 @@ const View: FC<ViewProps> = ({ tag = 'div', className = '', children = [], servi
 
   return `
     <${tag} class="${className}" ref="${ref}" ${Object.entries(rest)?.reduce?.((acc:string, [key, value]:string[]) => `${acc} ${key}="${value}"`, '')}>
-      ${Array.isArray(children) ? children.map((childProps: ReactNode) => childProps instanceof Object ? View(<ViewProps>childProps) : `${childProps}`).join?.('') : children}
+      ${Array.isArray(children) ? children.map((childProps: ReactNode) => childProps instanceof Object ? View(<ViewProps>childProps) : `${childProps}`).join?.('') : escapeHTML(children)}
     </${tag}>
   `;
 }
