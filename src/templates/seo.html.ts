@@ -22,7 +22,7 @@ const csp = Object.entries({
   'connect-src': [
     `'self'`,
     `https://www.google-analytics.com`,
-    `https://in.hotjar.com`,
+    // `https://in.hotjar.com`,
     `https://github.com/login/oauth/access_token`,
     `https://api.github.com/graphql`,
     `https://api.github.com/user`,
@@ -59,7 +59,7 @@ const html = `<!DOCTYPE html>
     <script defer nonce="${nonce}" src="/lib/router.min.js"></script>
     <script async nonce="${nonce}" src="/lib/ga.min.js"></script>
     <script async nonce="${nonce}" src="/lib/clouds.min.js"></script>
-    <script async nonce="${nonce}" src="/lib/hot-jar.min.js"></script>
+    ${/*<script async nonce="${nonce}" src="/lib/hot-jar.min.js"></script>*/''}
     <script nonce="${nonce}" src="https://js.sentry-cdn.com/179618f1f04d4d9dac08acc750d5736c.min.js" crossorigin="anonymous"></script>
     <script nonce="${nonce}">
     Sentry.init({
