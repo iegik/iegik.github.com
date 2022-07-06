@@ -11,4 +11,4 @@ const UserInfoService = async (ref: Ref) => {
   if (!avatarUrl) fetchUser();
 }
 
-export default EditorService;
+export default UserInfoService;
