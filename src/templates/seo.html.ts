@@ -12,6 +12,7 @@ const csp = Object.entries({
     `https://ssl.google-analytics.com`,
     `https://static.hotjar.com`,
     `https://js.sentry-cdn.com`,
+    `'unsafe-inline'`, // (ignored by browsers supporting nonces/hashes) to be backward compatible with older browsers.
   ],
   'img-src': [
     `'self'`,
@@ -48,7 +49,7 @@ const html = `<!DOCTYPE html>
     <meta name="description" content="${description}" />
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#3b94d4"/>
+    <meta name="theme-color" content="var(--color-primary-light)" />
     <style nonce="${nonce}">${style}</style>
   </head>
   <body>

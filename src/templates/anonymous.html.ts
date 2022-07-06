@@ -29,7 +29,7 @@ const html = `<!DOCTYPE html>
     <meta name="description" content="${description}" />
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#3b94d4"/>
+    <meta name="theme-color" content="var(--color-primary-light)" />
     <style nonce="${nonce}">${style}</style>
   </head>
   <body>
