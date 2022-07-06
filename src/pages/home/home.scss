@@ -15,8 +15,9 @@ article, section, header {
 
 .subtitle {
   --text-color: var(--color-primary);
+  font-size: var(--font-size-l);
   text-transform: uppercase;
-  font-weight: 200;
+  font-weight: 600;
   text-shadow: 0 0 1rem var(--color-grayscale);
   color: var(--text-color);
 }
