@@ -56,9 +56,11 @@ thumb: ## not used
 	&& convert public/home/images/artursjansons.jpg -resize 64x64 public/home/images/artursjansons_64.jpg \
 	&& convert public/home/images/artursjansons.jpg -resize 432x432 public/home/images/artursjansons_432.jpg \
 	&& convert public/home/images/artursjansons.jpg -resize 128x128 public/home/images/artursjansons_128.jpg \
+	&& convert public/home/images/artursjansons.jpg public/home/images/artursjansons.png \
 	&& convert public/home/images/artursjansons.png -resize 64x64 public/home/images/artursjansons_64.png \
 	&& convert public/home/images/artursjansons.png -resize 432x432 public/home/images/artursjansons_432.png \
 	&& convert public/home/images/artursjansons.png -resize 128x128 public/home/images/artursjansons_128.png \
+	&& cwebp -q 80 public/home/images/artursjansons.png -o public/home/images/artursjansons.webp \
 	&& cwebp public/home/images/artursjansons.webp -resize 64 64 -o public/home/images/artursjansons_64.webp \
 	&& cwebp public/home/images/artursjansons.webp -resize 432 432 -o public/home/images/artursjansons_432.webp \
 	&& cwebp public/home/images/artursjansons.webp -resize 128 128 -o public/home/images/artursjansons_128.webp
