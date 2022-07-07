@@ -54,9 +54,9 @@ class GitHubApi {
   };
 
   async getUserInfo() {
-    const data = await this.request({ query: getUserQuery, variables: { login: this.repoOwner }})
-    if (!data) throw Error(ERROR_REQUEST);
-    return data;
+    const { user } = await this.request({ query: getUserQuery, variables: { login: this.repoOwner }})
+    if (!user) throw Error(ERROR_REQUEST);
+    return user;
   }
 }
 
