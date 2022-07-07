@@ -3,7 +3,7 @@ import Error404Page from '@app/pages/error/error-404.ts'
 import Error500Page from '@app/pages/error/error-500.ts'
 import { ERROR_ACCESS_TOKEN, ERROR_NOT_FOUND } from '@app/components/core/constants.ts';
 
-const isProd = true
+const isProd = false
 export const error = (error: Error) => {
   // console.error(error)
   if (typeof window === 'undefined') return;

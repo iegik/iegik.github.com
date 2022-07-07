@@ -26,6 +26,7 @@ const onClick = () => {
   const url = `https://github.com/login/oauth/authorize?client_id=${clientId}&login=${encodeURIComponent(login)}&scope=${encodeURIComponent(scope)}&state=${state}`
   log.info(`Navigated to ${url}`, { clientId, scope, state })
   document.location.href = url
+  // history.pushState({ clientId, scope, state }, '', url)
 };
 
 const Login = () => `
