@@ -25,9 +25,9 @@ export const error = (error: Error) => {
   return;
 }
 
-// @eslint-disable-next-line no-console
+// eslint-disable-next-line no-console
 export const debug = isProd ? () => {} : (...args:unknown[]) => { console.debug(...args); }
-// @eslint-disable-next-line no-console
+// eslint-disable-next-line no-console
 export const warn = isProd ? () => {} : (...args:unknown[]) => { console.warn(...args); }
-// @eslint-disable-next-line no-console
+// eslint-disable-next-line no-console
 export const info = isProd ? () => {} : (...args:unknown[]) => { console.info(...args); }
