@@ -6,6 +6,11 @@
     { "tag": "p", "children": "It has a several childs, a <p> elements."},
     { "tag": "p", "children": [{ "tag": "span", "children": "One of the <p> element has a single child," }, { "tag": "span", "children": "a <span> element." }]},
     { "tag": "p", "children": "It's also has a <button> containing the text \"Click me\"."},
-    { "tag": "button", "children": "Click me"}
+    { "tag": "button", "children": "Click me"},
+    { "children": [
+      { "tag": "p", "children": "We and selected third parties use cookies or similar technologies for technical purposes and, with your consent, for other purposes as specified in the cookie policy. Denying consent may make related features unavailable." },
+      { "tag": "p", "children": "You can consent to the use of such technologies by using the “Accept” button. By closing this notice, you continue without accepting." },
+      { "tag": "button", "children": "Accept" }
+    ], "className": "cookie-notice" }
   ]
 }
