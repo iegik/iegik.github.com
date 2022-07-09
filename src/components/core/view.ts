@@ -30,7 +30,7 @@ export const useState = (initialState) =>
   typeof history === 'undefined'
     ? []
     : [
-      initialState || history.state,
+      initialState || history.state || {},
       (state, title, url) =>
         history.pushState(
           { ...history.state, ...state },
@@ -52,6 +52,7 @@ const mutationCallback = (mutationList, observer) => {
 };
 
 const View: FC<ViewProps> = (props = {}) => {
+  log.debug({ props });
   const {
     tag = 'div',
     className = '',
@@ -61,14 +62,15 @@ const View: FC<ViewProps> = (props = {}) => {
   } = props;
   const ref = createRef();
   const [state, setState] = useState()
-  const popstate = (state) => {
-    log.info('popstate', { state });
-    // TODO: Call rendering here
+  const render = (eventType) => (navigationEvent) => {
+    log.debug(eventType, { navigationEvent });
+    if (ref?.current) ref.current.innerHTML = View(history.state || {});
   };
-  addEventListener('popstate', popstate);
+  addEventListener('popstate', render('popstate'));
+  navigation?.addEventListener('navigate', render('navigate'));
   setTimeout(async () => {
     const loadServices = async () => {
-      log.info('ref', { ref, state: history.state, services });
+      log.debug('ref', { ref, state: history.state, services });
 
       // To observe DOM changes
       const observer = new MutationObserver(mutationCallback);
@@ -78,6 +80,7 @@ const View: FC<ViewProps> = (props = {}) => {
       ref.current.addEventListener('DOMRemoved', () => {
         log.info('DOMRemoved');
         removeEventListener('popstate', popstate);
+        navigation?.removeEventListener('navigate', popstate);
         observer.disconnect();
       });
 
@@ -91,9 +94,6 @@ const View: FC<ViewProps> = (props = {}) => {
 
       // Keep history
       setState({ services: null })
-
-      // TODO: Move rendering to state listener
-      ref.current.innerHTML = View(state);
     }
 
     if (services?.length) loadServices();
@@ -103,7 +103,7 @@ const View: FC<ViewProps> = (props = {}) => {
     ? children
       .map((childProps: ReactNode) =>
         childProps instanceof Object
-          ? View(<ViewProps>childProps)
+          ? View(<ViewProps>childProps ?? {})
           : `${childProps}`,
       )
       .join?.('')
@@ -115,7 +115,7 @@ const View: FC<ViewProps> = (props = {}) => {
     '',
   );
 
-  log.info('Rendering', { content, restProps })
+  log.debug('Rendering', { content, restProps })
 
   return `
     <${tag} class="${className}" ref="${ref}" ${restProps}>

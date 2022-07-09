@@ -3,7 +3,7 @@ import Error404Page from '@app/pages/error/error-404.ts'
 import Error500Page from '@app/pages/error/error-500.ts'
 import { ERROR_ACCESS_TOKEN, ERROR_NOT_FOUND } from '@app/components/core/constants.ts';
 
-const isProd = false
+const isProd = true
 export const error = (error: Error) => {
   // console.error(error)
   if (typeof window === 'undefined') return;
@@ -31,3 +31,5 @@ export const debug = isProd ? () => {} : (...args:unknown[]) => { console.debug(
 export const warn = isProd ? () => {} : (...args:unknown[]) => { console.warn(...args); }
 // eslint-disable-next-line no-console
 export const info = isProd ? () => {} : (...args:unknown[]) => { console.info(...args); }
+// eslint-disable-next-line no-console
+export const log = isProd ? () => {} : (...args:unknown[]) => { console.log(...args); }
