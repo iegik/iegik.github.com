@@ -51,6 +51,38 @@ const mutationCallback = (mutationList, observer) => {
   }
 };
 
+const render = (ref, eventType) => (navigationEvent) => {
+  log.debug(eventType, { navigationEvent });
+  if (ref?.current) ref.current.innerHTML = View(history.state || {});
+};
+
+const loadEvents = async (ref, services, setState) => {
+  log.debug('ref', { ref, state: history.state, services });
+
+  // To observe DOM changes
+  const observer = new MutationObserver(mutationCallback);
+  observer.observe(ref.current, mutationConfig);
+
+  // Cleanup on unmount
+  ref.current.addEventListener('DOMRemoved', () => {
+    log.info('DOMRemoved');
+    // removeEventListener('popstate', popstate);
+    navigation?.removeEventListener('navigate', render(ref, 'navigate'));
+    observer.disconnect();
+  });
+
+  await Promise.all(
+    services?.map((serviceName: string) =>
+      servicesMap[serviceName]?.(ref),
+    ),
+  ).catch((error) => {
+    log.error(error);
+  });
+
+  // Keep history
+  setState({ services: null })
+}
+
 const View: FC<ViewProps> = (props = {}) => {
   log.debug({ props });
   const {
@@ -58,45 +90,18 @@ const View: FC<ViewProps> = (props = {}) => {
     className = '',
     children = [],
     services = [],
+    component = View,
     ...rest
   } = props;
   const ref = createRef();
   const [state, setState] = useState()
-  const render = (eventType) => (navigationEvent) => {
-    log.debug(eventType, { navigationEvent });
-    if (ref?.current) ref.current.innerHTML = View(history.state || {});
-  };
-  // addEventListener('popstate', render('popstate'));
-  navigation?.addEventListener('navigate', render('navigate'));
+  // addEventListener('popstate', render(ref, 'popstate'));
+  navigation?.addEventListener('navigate', render(ref, 'navigate'));
+
   setTimeout(async () => {
-    const loadServices = async () => {
-      log.debug('ref', { ref, state: history.state, services });
-
-      // To observe DOM changes
-      const observer = new MutationObserver(mutationCallback);
-      observer.observe(ref.current, mutationConfig);
-
-      // Cleanup on unmount
-      ref.current.addEventListener('DOMRemoved', () => {
-        log.info('DOMRemoved');
-        // removeEventListener('popstate', popstate);
-        navigation?.removeEventListener('navigate', popstate);
-        observer.disconnect();
-      });
-
-      await Promise.all(
-        services?.map((serviceName: string) =>
-          servicesMap[serviceName]?.(ref),
-        ),
-      ).catch((error) => {
-        log.error(error);
-      });
-
-      // Keep history
-      setState({ services: null })
-    }
-
-    if (services?.length) loadServices();
+    if (!ref.current) return;
+    if (services?.length) loadEvents(ref, services, setState);
+    if (!ref.current.View) ref.current.View = component || View
   });
 
   const content = Array.isArray(children)
