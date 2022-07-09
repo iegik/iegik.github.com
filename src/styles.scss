@@ -5,6 +5,7 @@
 @import 'pages/home/home.scss';
 @import 'pages/login/login.scss';
 @import 'pages/error/error.scss';
+@import 'cookie-notice.scss';
 
 @font-face {
   font-family: 'Alina Script';
@@ -31,6 +32,7 @@
   --color-primary-contrast: #054c7f;
   --color-error: rgb(163, 51, 51);
 
+  --font-size-xxs: 0.6rem;
   --font-size-xs: 0.8rem;
   --font-size-s: 1rem;
   --font-size-m: 1.4rem;
