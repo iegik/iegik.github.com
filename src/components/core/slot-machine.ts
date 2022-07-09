@@ -1,40 +1,64 @@
 import Icon from '@app/components/icon/icon.ts'
 import { createRef } from '@app/components/core/view.ts';
+import * as log from '@app/services/log.ts';
 
 let tries = 0;
 let blocked = false;
+let cache = '';
+const events = [];
 const roll = '🍏,🌰,🍋,🍅,🍆,🍇,🍓,🍉,🍐,🍒,🍑,🥑'.split(',');
 const { floor, random } = Math;
 const randomRoll = (what: string[]):string => what[floor(random() * what.length)];
 
 const Reels:FC<{}> = () => {
-  if (blocked) return '';
-  const [a, b, c] = [roll, roll, roll].flatMap(randomRoll);
+  if (blocked) return cache
+  const [a, b, c] = /*(tries === 3) ? ['🍏', '🍏', '🍏'] : */[roll, roll, roll].flatMap(randomRoll);
+  cache = `${a} ${b} ${c}`
+  log.debug('Reels', { a, b, c, tries });
 
   if (a == b && b == c) {
+    const msg = `
+            ${cache}
+    You won in ${tries} tries`
     blocked = true;
-    setTimeout(() => {
-      typeof window !== 'undefined' && alert(`You won in ${tries} tries`);
-      blocked = false;
-    }, 100);
+    events.push(() => {
+      setTimeout(() => {
+        log.info(msg);
+        alert(msg);
+        blocked = false
+      });
+    });
     tries = 0;
   } else {
     tries++;
   }
-  return `${a} ${b} ${c}`;
+  return cache;
 }
 
 const SlotMachine:FC<{}> = () => {
   const ref = createRef();
 
   setTimeout(() => {
+    if (typeof window === 'undefined') return;
+
+    // Mount/unmount
+    const observer = new MutationObserver((mutationList, observer) => {
+      for (const mutation of mutationList) {
+        if (mutation.type === 'childList') {
+          const event = events.pop()
+          if (event) event()
+        }
+      }
+    });
+    observer.observe(ref.current, { childList: true });
+
+    // Click
     ref.current?.addEventListener('click', () => {
       if (!ref.current) return;
       ref.current.innerHTML = Reels()
     });
 
-    if (typeof window === 'undefined' || typeof document === 'undefined') return
-
+    // Keyup
     document.addEventListener('keyup', (event: KeyboardEvent) => {
       // bug 354358
       if (event.isComposing || event.keyCode === 229) {

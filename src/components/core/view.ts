@@ -66,7 +66,7 @@ const View: FC<ViewProps> = (props = {}) => {
     log.debug(eventType, { navigationEvent });
     if (ref?.current) ref.current.innerHTML = View(history.state || {});
   };
-  addEventListener('popstate', render('popstate'));
+  // addEventListener('popstate', render('popstate'));
   navigation?.addEventListener('navigate', render('navigate'));
   setTimeout(async () => {
     const loadServices = async () => {
@@ -79,7 +79,7 @@ const View: FC<ViewProps> = (props = {}) => {
       // Cleanup on unmount
       ref.current.addEventListener('DOMRemoved', () => {
         log.info('DOMRemoved');
-        removeEventListener('popstate', popstate);
+        // removeEventListener('popstate', popstate);
         navigation?.removeEventListener('navigate', popstate);
         observer.disconnect();
       });
