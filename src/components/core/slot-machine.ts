@@ -58,8 +58,9 @@ const SlotMachine:FC<{}> = () => {
       ref.current.innerHTML = Reels()
     });
 
-    // Keyup
-    document.addEventListener('keyup', (event: KeyboardEvent) => {
+    // Keyboard events
+    // keydown for keeping reels spinning
+    document.addEventListener('keydown', (event: KeyboardEvent) => {
       // bug 354358
       if (event.isComposing || event.keyCode === 229) {
         return;
