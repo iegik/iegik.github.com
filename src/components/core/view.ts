@@ -3,6 +3,8 @@
 import * as log from '@app/services/log.ts';
 import { escapeHTML } from '@app/services/web-utils.ts';
 import servicesMap from '@app/services/index.ts';
+import * as componentsMap from '@app/components/index.ts';
+import { ERROR_NOT_FOUND } from '@app/components/core/constants.ts';
 
 export class Ref {
   id = null;
@@ -51,30 +53,46 @@ const mutationCallback = (mutationList, observer) => {
   }
 };
 
-const render = (ref, eventType) => (navigationEvent) => {
-  log.debug(eventType, { navigationEvent });
-  if (ref?.current) ref.current.innerHTML = View(history.state || {});
+const render = (ref, eventType, props = {}) => (navigationEvent) => {
+  const [state, setState] = useState()
+  const { component = 'View' } = props;
+  log.debug(eventType, state, props);
+  const Component = componentsMap[component || 'View' ];
+  if (!Component) throw Error(`Component ${component} not found`);
+  // FIXME: Fix this
+  // if (!history.state) throw Error(ERROR_NOT_FOUND)
+  if (ref?.current) ref.current.innerHTML = Component(state);
 };
 
-const loadEvents = async (ref, services, setState) => {
-  log.debug('ref', { ref, state: history.state, services });
+const attachEvents = async (ref, props) => {
+  log.debug('attachEvents', { ref, props });
 
   // To observe DOM changes
   const observer = new MutationObserver(mutationCallback);
   observer.observe(ref.current, mutationConfig);
 
+  // addEventListener('popstate', render(ref, 'popstate'));
+  navigation?.addEventListener('navigate', render(ref, 'navigate', props));
+
   // Cleanup on unmount
   ref.current.addEventListener('DOMRemoved', () => {
     log.info('DOMRemoved');
     // removeEventListener('popstate', popstate);
-    navigation?.removeEventListener('navigate', render(ref, 'navigate'));
+    navigation?.removeEventListener('navigate', render(ref, 'navigate', props));
     observer.disconnect();
   });
+}
 
+const runServices = async (ref, props) => {
+  log.debug('runServices', { ref, props });
+  const { services } = props;
+  const [state, setState] = useState()
   await Promise.all(
-    services?.map((serviceName: string) =>
-      servicesMap[serviceName]?.(ref),
-    ),
+    services?.map((serviceName: string) => {
+      const service = servicesMap[serviceName];
+      if (!service) throw Error(`Service ${serviceName} not found`);
+      service(ref);
+    }),
   ).catch((error) => {
     log.error(error);
   });
@@ -90,20 +108,19 @@ const View: FC<ViewProps> = (props = {}) => {
     className = '',
     children = [],
     services = [],
-    component = View,
+    component = 'View',
     ...rest
   } = props;
   const ref = createRef();
   const [state, setState] = useState()
-  // addEventListener('popstate', render(ref, 'popstate'));
-  navigation?.addEventListener('navigate', render(ref, 'navigate'));
 
   setTimeout(async () => {
     if (!ref.current) return;
-    if (services?.length) loadEvents(ref, services, setState);
-    if (!ref.current.View) ref.current.View = component || View
+    if (services?.length) attachEvents(ref, props);
+    if (services?.length) runServices(ref, props);
   });
 
+  // TODO: Replace with imperative
   const content = Array.isArray(children)
     ? children
       .map((childProps: ReactNode) =>
