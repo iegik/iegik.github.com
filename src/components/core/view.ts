@@ -42,22 +42,27 @@ export const useState = (initialState) =>
     ];
 
 const mutationConfig = { attributes: true, childList: true, subtree: true };
-const mutationCallback = (mutationList, observer) => {
-  for (const mutation of mutationList) {
-    if (mutation.type === 'childList') {
-      log.log('A child node has been added or removed.', { ref: mutation.target.getAttribute('ref') });
-    }
-    else if (mutation.type === 'attributes') {
-      log.log(`The ${  mutation.attributeName  } attribute was modified.`);
-    }
-  }
-};
 
-const render = (ref, eventType, props = {}) => (navigationEvent) => {
+const render = (ref, eventType, props = {}) => (event: MutationRecord[] | NavigateEvent) => {
   const [state, setState] = useState()
   const { component = 'View' } = props;
-  log.debug(eventType, state, props);
+  log.debug('render', { eventType, component, state, props, event, typeof: typeof event, isArray: Array.isArray(event) });
   const Component = componentsMap[component || 'View' ];
+  if (Array.isArray(event)) for (const mutation of event) {
+    switch (mutation.type){
+      case 'childList': {
+        log.log('A child node has been added or removed.', { ref: mutation.target.getAttribute('ref') });
+      }
+      case 'attributes': {
+        log.log(`The ${  mutation.attributeName  } attribute was modified.`, { mutation });
+        // ref.current.innerHTML = Component(state);
+      }
+      case 'subtree': {
+        log.log(`The children was modified.`, { mutation });
+      }
+      default: return;
+    }
+  }
   if (!Component) throw Error(`Component ${component} not found`);
   // FIXME: Fix this
   // if (!history.state) throw Error(ERROR_NOT_FOUND)
@@ -68,7 +73,7 @@ const attachEvents = async (ref, props) => {
   log.debug('attachEvents', { ref, props });
 
   // To observe DOM changes
-  const observer = new MutationObserver(mutationCallback);
+  const observer = new MutationObserver(render(ref, 'render', props));
   observer.observe(ref.current, mutationConfig);
 
   // addEventListener('popstate', render(ref, 'popstate'));
