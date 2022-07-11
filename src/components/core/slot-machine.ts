@@ -14,7 +14,7 @@ const Reels:FC<{}> = () => {
   if (blocked) return cache
   const [a, b, c] = /*(tries === 3) ? ['🍏', '🍏', '🍏'] : */[roll, roll, roll].flatMap(randomRoll);
   cache = `${a} ${b} ${c}`
-  log.debug('Reels', { a, b, c, tries });
+  log.debug(`${tries} ${cache}`);
 
   if (a == b && b == c) {
     const msg = `

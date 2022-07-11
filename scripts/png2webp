@@ -1,4 +1,2 @@
-#!/bin/sh
-# for f in $@ do; /usr/local/bin/cwebp -q 80 $f -o ${f%%.png}.webp; done;
-for f in public/**/images/*.png; do; cwebp -q 80 $f -o ${f%%.png}.webp; done;
-for f in public/**/images/*.jpg; do; convert $f ${f%%.jpg}.png; done;
+#!/bin/bash
+for f in public/images/*.png; do cwebp -quiet -q 80 $f -o ${f%%.png}.webp; done;

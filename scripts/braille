@@ -3,11 +3,11 @@
 const { argv, argv0 } = require('process');
 const { readFileSync } = require('fs');
 
-const pgmToASCII = text => text
+const pgmToASCII = (text) => text
   .split('\n')
-  .map(line => line
+  .map((line) => line
     .split('')
-    .map(char => '⠿⠾⠽⠼⠻⠺⠹⠸⠷⠶⠵⠴⠳⠲⠱⠰⠯⠮⠭⠬⠫⠪⠩⠨⠧⠦⠥⠤⠣⠢⠡⠠⠟⠞⠝⠜⠛⠚⠙⠘⠗⠖⠕⠔⠓⠒⠑⠐⠏⠎⠍⠌⠋⠊⠉⠈⠇⠆⠅⠄⠃⠂⠁⠀'[
+    .map((char) => '⠿⠾⠽⠼⠻⠺⠹⠸⠷⠶⠵⠴⠳⠲⠱⠰⠯⠮⠭⠬⠫⠪⠩⠨⠧⠦⠥⠤⠣⠢⠡⠠⠟⠞⠝⠜⠛⠚⠙⠘⠗⠖⠕⠔⠓⠒⠑⠐⠏⠎⠍⠌⠋⠊⠉⠈⠇⠆⠅⠄⠃⠂⠁⠀'[
       `=)Y#]W?_(7Z0\\4:;\&!X+$[%.V8U-<5*,QTN>GJD^R6O9H3E"PSM/FIC@L2K'B1A `
         .indexOf(char)
     ] || ' ')

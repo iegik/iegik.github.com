@@ -49,25 +49,17 @@ start: ##	Start server locally
 	@npx vite
 
 ppm: ## not used
-	@convert public/home/images/artursjansons.jpg -resize 64x64 -grayscale Rec709luminance -compress none pgm:- > public/home/images/artursjansons.ppm
+	@convert public/images/artursjansons.jpg -resize 64x64 -grayscale Rec709luminance -compress none pgm:- > public/images/artursjansons.ppm
 
 thumb: ## not used
-	@convert public/home/images/artursjansons.jpg -resize 64x64 public/favicon.ico \
-	&& convert public/home/images/artursjansons.jpg -resize 64x64 public/home/images/artursjansons_64.jpg \
-	&& convert public/home/images/artursjansons.jpg -resize 432x432 public/home/images/artursjansons_432.jpg \
-	&& convert public/home/images/artursjansons.jpg -resize 128x128 public/home/images/artursjansons_128.jpg \
-	&& convert public/home/images/artursjansons.jpg public/home/images/artursjansons.png \
-	&& convert public/home/images/artursjansons.png -resize 64x64 public/home/images/artursjansons_64.png \
-	&& convert public/home/images/artursjansons.png -resize 432x432 public/home/images/artursjansons_432.png \
-	&& convert public/home/images/artursjansons.png -resize 128x128 public/home/images/artursjansons_128.png \
-	&& cwebp -q 80 public/home/images/artursjansons.png -o public/home/images/artursjansons.webp \
-	&& cwebp public/home/images/artursjansons.webp -resize 64 64 -o public/home/images/artursjansons_64.webp \
-	&& cwebp public/home/images/artursjansons.webp -resize 432 432 -o public/home/images/artursjansons_432.webp \
-	&& cwebp public/home/images/artursjansons.webp -resize 128 128 -o public/home/images/artursjansons_128.webp
+	@convert public/images/artursjansons.jpg -resize 64x64 public/favicon.ico \
+	&& convert public/images/artursjansons.jpg -resize 64x64 public/images/artursjansons_64.jpg \
+	&& convert public/images/artursjansons.jpg -resize 432x432 public/images/artursjansons_432.jpg \
+	&& convert public/images/artursjansons.jpg -resize 128x128 public/images/artursjansons_128.jpg
 
 ascii: ##	Convert avatar to ASCII
-	@jp2a public/home/images/artursjansons.jpg --output=public/home/images/artursjansons.ascii
-# @convert public/home/images/artursjansons.jpg -resize 432x432 -grayscale Rec709luminance -compress none brf:- | awk NR\>3 > public/home/images/artursjansons.ascii
+	@jp2a public/images/artursjansons.jpg --output=public/images/artursjansons.ascii
+# @convert public/images/artursjansons.jpg -resize 432x432 -grayscale Rec709luminance -compress none brf:- | awk NR\>3 > public/images/artursjansons.ascii
 
 ttf2woff:
 	@npx ttf2woff public/fonts/AlinaScript.ttf public/fonts/AlinaScript.woff
@@ -75,16 +67,18 @@ ttf2woff:
 ttf2svg:
 	@npx ttf2svg public/fonts/AlinaScript.ttf public/fonts/AlinaScript.svg
 
-# for f in public/**/images/*.png; do; cwebp -q 80 ${f} -o $(f%%.png).webp; done;
+# for f in public/images/*.png; do; cwebp -quiet -q 80 ${f} -o $(f%%.png).webp; done;
 png2webp:
-	@$(foreach f,public/**/images/*.png,cwebp -q 80 $(f) -o $(patsubst %.png,%.webp,$(f)));
+	@scripts/png2webp
+#	@$(foreach f,$(wildcard public/images/*.png),cwebp -quiet -q 80 $(f) -o $(patsubst %.png,%.webp,$(f)));
 
-# for f in public/**/images/*.jpg; do; convert ${f} $(f%%.jpg).png; done;
+# for f in public/images/*.jpg; do; convert ${f} $(f%%.jpg).png; done;
 jpg2png:
-	@$(foreach f,public/home/images/bg.jpg,convert $(f) $(patsubst %.jpg,%.png,$(f)));
+	@scripts/jpg2png
+#	@$(foreach f,$(wildcard public/images/*.jpg),convert $(f) $(patsubst %.jpg,%.png,$(f)));
 
 braille: ascii ## not used
-	@scripts/braille public/home/images/artursjansons.ascii > public/home/images/artursjansons.brf
+	@scripts/braille public/images/artursjansons.ascii > public/images/artursjansons.brf
 
 # OS X requires the extension to be explicitly specified
 eula:

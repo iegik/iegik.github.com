@@ -1,0 +1,2 @@
+#!/bin/bash
+for f in public/images/*.jpg;do convert $f ${f%%.jpg}.png;done;

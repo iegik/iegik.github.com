@@ -50,10 +50,10 @@ CACHE MANIFEST
 
 CACHE:
 index.html
-home/images/bg.webp
-home/images/bg.png
-home/images/clouds.webp
-home/images/clouds.png
+images/bg.webp
+images/bg.png
+images/clouds.webp
+images/clouds.png
 lib/router.min.js
 
 NETWORK:

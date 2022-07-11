@@ -80,13 +80,13 @@ CACHE MANIFEST
 
 CACHE:
 index.html
-home/images/bg.webp
-home/images/bg.png
-home/images/artursjansons.jpg
-home/images/artursjansons.webp
-home/images/artursjansons_432.webp
-home/images/clouds.webp
-home/images/clouds.png
+images/bg.webp
+images/bg.png
+images/artursjansons.jpg
+images/artursjansons.webp
+images/artursjansons_432.webp
+images/clouds.webp
+images/clouds.png
 fonts/AlinaScript.woff
 fonts/AlinaScript.ttf
 fonts/AlinaScript.svg
