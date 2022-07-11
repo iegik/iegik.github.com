@@ -9,19 +9,17 @@ import Profile from '@app/pages/profile/profile.ts'
 
 import { ERROR_NOT_FOUND } from '@app/components/core/constants.ts';
 
-const Loading = (props:ViewProps) => View({ children: ['Loading...'], ...props });
-
 // TODO: Move route to services
 const route = (uri = '/') => {
   log.info(`Loading ${uri}`)
   switch (true) {
     case /^\/login\/?$/.test(uri): return Login()
-    case /^\/oauth\/?$/.test(uri): return Loading({ services: ['oauth']})
-    case /^\/profile\/?$/.test(uri): return Loading({ component: 'UserInfo', className: 'user-info', services: ['userInfo']})
-    case /^\/editor\/?$/.test(uri): return Loading({ services: ['editor']})
-    // case /^\/preview1\/?$/.test(uri): return Loading({ services: ['preview']})
-    case /^\/preview\/?$/.test(uri): return Loading({ services: ['preview']})
-    // case /^\/error\/?$/.test(uri): return Loading({ services: ['error']})
+    case /^\/oauth\/?$/.test(uri): return View({ children: ['Loading...'], services: ['oauth']})
+    case /^\/profile\/?$/.test(uri): return View({ children: ['Loading...'], component: 'UserInfo', className: 'user-info', services: ['userInfo']})
+    case /^\/editor\/?$/.test(uri): return View({ children: ['Loading...'], services: ['editor']})
+    // case /^\/preview1\/?$/.test(uri): return View({ children: ['Loading...'], services: ['preview']})
+    case /^\/preview\/?$/.test(uri): return View({ children: ['Loading...'], services: ['preview']})
+    // case /^\/error\/?$/.test(uri): return View({ children: ['Loading...'], services: ['error']})
     case uri === '/' || uri === '': return Home()
     default: throw Error(ERROR_NOT_FOUND)
   }
