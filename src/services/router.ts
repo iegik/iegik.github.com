@@ -11,6 +11,7 @@ import { ERROR_NOT_FOUND } from '@app/components/core/constants.ts';
 
 const Loading = (props:ViewProps) => View({ children: ['Loading...'], ...props });
 
+// TODO: Move route to services
 const route = (uri = '/') => {
   log.info(`Loading ${uri}`)
   switch (true) {
@@ -18,7 +19,9 @@ const route = (uri = '/') => {
     case /^\/oauth\/?$/.test(uri): return Loading({ services: ['oauth']})
     case /^\/profile\/?$/.test(uri): return Loading({ component: 'UserInfo', className: 'user-info', services: ['userInfo']})
     case /^\/editor\/?$/.test(uri): return Loading({ services: ['editor']})
+    // case /^\/preview1\/?$/.test(uri): return Loading({ services: ['preview']})
     case /^\/preview\/?$/.test(uri): return Loading({ services: ['preview']})
+    // case /^\/error\/?$/.test(uri): return Loading({ services: ['error']})
     case uri === '/' || uri === '': return Home()
     default: throw Error(ERROR_NOT_FOUND)
   }

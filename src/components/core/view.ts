@@ -43,26 +43,35 @@ export const useState = (initialState) =>
 
 const mutationConfig = { attributes: true, childList: true, subtree: true };
 
-const render = (ref, eventType, props = {}) => (event: MutationRecord[] | NavigateEvent) => {
+const render = (ref, eventType, props = {}) => (event: MutationRecord[] | MutationRecord | NavigateEvent | Error) => {
   const [state, setState] = useState()
   const { component = 'View' } = props;
   log.debug('render', { eventType, component, state, props, event, typeof: typeof event, isArray: Array.isArray(event) });
-  const Component = componentsMap[component || 'View' ];
-  if (Array.isArray(event)) for (const mutation of event) {
-    switch (mutation.type){
-      case 'childList': {
-        log.log('A child node has been added or removed.', { ref: mutation.target.getAttribute('ref') });
-      }
-      case 'attributes': {
-        log.log(`The ${  mutation.attributeName  } attribute was modified.`, { mutation });
-        // ref.current.innerHTML = Component(state);
-      }
-      case 'subtree': {
-        log.log(`The children was modified.`, { mutation });
-      }
-      default: return;
-    }
+  if (event instanceof Error) {
+    log.error(event);
+    return;
   }
+
+  const Component = componentsMap[component || 'View' ];
+  if (Array.isArray(event)) {
+    for (const mutation of event) render(ref, eventType, props)(mutation);
+    return
+  }
+
+  if (event instanceof MutationRecord && event.type === 'childList') {
+    log.log('A child node has been added or removed.', { ref: mutation.target.getAttribute('ref') });
+    return;
+  }
+  if (event instanceof MutationRecord && event.type === 'attributes') {
+    log.log(`The ${  mutation.attributeName  } attribute was modified.`, { mutation });
+    // ref.current.innerHTML = Component(state);
+    return;
+  }
+  if (event instanceof MutationRecord && event.type === 'subtree') {
+    log.log(`The children was modified.`, { mutation });
+    return;
+  }
+
   if (!Component) throw Error(`Component ${component} not found`);
   // FIXME: Fix this
   // if (!history.state) throw Error(ERROR_NOT_FOUND)
@@ -79,6 +88,9 @@ const attachEvents = async (ref, props) => {
   // addEventListener('popstate', render(ref, 'popstate'));
   navigation?.addEventListener('navigate', render(ref, 'navigate', props));
 
+  // TODO: Move here from main()
+  // document.addEventListener('error', render(ref, 'error', props))
+
   // Cleanup on unmount
   ref.current.addEventListener('DOMRemoved', () => {
     log.info('DOMRemoved');
@@ -92,15 +104,12 @@ const runServices = async (ref, props) => {
   log.debug('runServices', { ref, props });
   const { services } = props;
   const [state, setState] = useState()
-  await Promise.all(
-    services?.map((serviceName: string) => {
-      const service = servicesMap[serviceName];
-      if (!service) throw Error(`Service ${serviceName} not found`);
-      service(ref);
-    }),
-  ).catch((error) => {
-    log.error(error);
-  });
+
+  for (const serviceName of services) {
+    const service = servicesMap[serviceName];
+    if (!service) throw Error(`Service ${serviceName} not found`);
+    await service(ref);
+  }
 
   // Keep history
   setState({ services: null })
