@@ -62,10 +62,12 @@ const html = `<!DOCTYPE html>
     ${/*<script async nonce="${nonce}" src="/lib/hot-jar.min.js"></script>*/''}
     <script nonce="${nonce}" src="https://browser.sentry-cdn.com/7.7.0/bundle.min.js" integrity="sha384-lr/bDcE0vmUPBU6dhVBXfmhNYAEilrIepu1BRdVUJ8mZ0Hxhm17aIJ2bt4UfxC72" crossorigin="anonymous"></script>
     <script nonce="${nonce}">
-    Sentry.init({
-      dsn: "https://179618f1f04d4d9dac08acc750d5736c@o171820.ingest.sentry.io/1250596",
-      release: "1250596@${release}",
-      environment: "production",
+    document.addEventListener('DOMContentLoaded', () => {
+      Sentry.init({
+        dsn: "https://179618f1f04d4d9dac08acc750d5736c@o171820.ingest.sentry.io/1250596",
+        release: "1250596@${release}",
+        environment: "production",
+      });
     });
     </script>
   </body>
