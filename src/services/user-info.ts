@@ -1,6 +1,6 @@
-import { Ref } from '@app/components/core/view.ts';
-import { useState } from '@app/components/core/view.ts';
-import GitHubApi from '@app/services/github-api.ts';
+import { Ref } from '@app/components/core/view';
+import { useState } from '@app/components/core/view';
+import GitHubApi from '@app/services/github-api';
 
 const UserInfoService = async (ref: Ref) => {
   const [{ avatarUrl }, setUserInfo] = useState();

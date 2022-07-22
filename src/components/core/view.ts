@@ -1,10 +1,10 @@
 // deno-lint-ignore-file no-undef
 // global document
-import * as log from '@app/services/log.ts';
-import { escapeHTML } from '@app/services/web-utils.ts';
-import servicesMap from '@app/services/index.ts';
-import * as componentsMap from '@app/components/index.ts';
-import { ERROR_NOT_FOUND } from '@app/components/core/constants.ts';
+import * as log from '@app/services/log';
+import { escapeHTML } from '@app/services/web-utils';
+import servicesMap from '@app/services/index';
+import * as componentsMap from '@app/components/index';
+import { ERROR_NOT_FOUND } from '@app/components/core/constants';
 
 export class Ref {
   id = null;

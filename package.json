@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/iegik/iegik.github.com#readme",
   "devDependencies": {
+    "@types/node": "^18.0.6",
     "@typescript-eslint/parser": "^4.11.1",
     "esbuild": "^0.8.26",
     "eslint": "^7.16.0",

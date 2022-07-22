@@ -1,4 +1,4 @@
-import { ERROR_NOT_FOUND } from '@app/components/core/constants.ts';
+import { ERROR_NOT_FOUND } from '@app/components/core/constants';
 
 const publicResponseMiddleware = (res: Response) => res.json();
 

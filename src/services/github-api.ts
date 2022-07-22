@@ -1,4 +1,4 @@
-import { ERROR_NOT_FOUND, ERROR_REQUEST } from '@app/components/core/constants.ts';
+import { ERROR_NOT_FOUND, ERROR_REQUEST } from '@app/components/core/constants';
 import repoFile from '@app/graphql/github/repo_file.graphql';
 import getUserQuery from '@app/graphql/github/get_user.graphql';
 

@@ -1,11 +1,11 @@
 // import '@app/lib/ga';
 // import '@app/lib/clouds';
 
-import SlotMachine from '@app/components/core/slot-machine.ts'
-import Header from '@app/components/header/header.ts'
-import Icon from '@app/components/icon/icon.ts'
-import Link from '@app/components/link/link.ts'
-import LinkList from '@app/components/link-list/link-list.ts'
+import SlotMachine from '@app/components/core/slot-machine'
+import Header from '@app/components/header/header'
+import Icon from '@app/components/icon/icon'
+import Link from '@app/components/link/link'
+import LinkList from '@app/components/link-list/link-list'
 
 const Home = () => `
     ${Header()}

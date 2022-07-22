@@ -1,4 +1,4 @@
-// import { readFileSync } from '@app/utils.ts';
+// import { readFileSync } from '@app/utils';
 import LinkedinIcon from '@app/icons/linkedin-icon.svg';
 import LinkedinLogo from '@app/icons/linkedin-logo.svg';
 import GitHubIcon from '@app/icons/github-icon.svg';

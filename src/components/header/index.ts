@@ -1,1 +1,1 @@
-export { default } from '@app/components/header/header.ts'
+export { default } from '@app/components/header/header'

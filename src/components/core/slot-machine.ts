@@ -1,6 +1,6 @@
-import Icon from '@app/components/icon/icon.ts'
-import { createRef } from '@app/components/core/view.ts';
-import * as log from '@app/services/log.ts';
+import Icon from '@app/components/icon/icon'
+import { createRef } from '@app/components/core/view';
+import * as log from '@app/services/log';
 
 let tries = 0;
 let blocked = false;

@@ -1,5 +1,5 @@
-export * from './utils.node.ts';
-// export * from './utils.deno.ts';
+export * from './utils.node';
+// export * from './utils.deno';
 
 const timestamp = new Date();
 export const release = `v3.1.0-${timestamp.toJSON()}`

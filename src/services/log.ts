@@ -1,9 +1,20 @@
-import Error403Page from '@app/pages/error/error-403.ts'
-import Error404Page from '@app/pages/error/error-404.ts'
-import Error500Page from '@app/pages/error/error-500.ts'
-import { ERROR_ACCESS_TOKEN, ERROR_NOT_FOUND } from '@app/components/core/constants.ts';
+import Error403Page from '@app/pages/error/error-403'
+import Error404Page from '@app/pages/error/error-404'
+import Error500Page from '@app/pages/error/error-500'
+import { ERROR_ACCESS_TOKEN, ERROR_NOT_FOUND } from '@app/components/core/constants';
 
-const isProd = true
+const isProd = false
+
+const message = (...args: any[]): void => {
+  const { component } = args[0] || {}
+  const root = document.getElementById('root')
+  if (root !== null && componentMap[component] !== undefined) {
+    root.innerHTML = componentMap[component](...args)
+  };
+  if (isProd) return;
+  console[component](...args)
+}
+
 export const error = (error: Error) => {
   // console.error(error)
   if (typeof window === 'undefined') return;

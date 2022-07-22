@@ -1,1 +1,1 @@
-export { default } from '@app/components/link/link.ts'
+export { default } from '@app/components/link/link'

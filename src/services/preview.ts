@@ -1,8 +1,8 @@
-import { Ref } from '@app/components/core/view.ts';
-import { useState } from '@app/components/core/view.ts';
-import { getRoute } from '@app/services/web-utils.ts';
-import * as log from '@app/services/log.ts';
-import PublicApi from '@app/services/public-api.ts';
+import { Ref } from '@app/components/core/view';
+import { useState } from '@app/components/core/view';
+import { getRoute } from '@app/services/web-utils';
+import * as log from '@app/services/log';
+import PublicApi from '@app/services/public-api';
 
 const PreviewService = async (ref: Ref) => {
   const [state = {}, setUserInfo] = useState();

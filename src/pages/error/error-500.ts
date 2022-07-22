@@ -1,5 +1,5 @@
-import ErrorPage from './error.ts'
-import Link from '@app/components/link/link.ts'
+import ErrorPage from './error'
+import Link from '@app/components/link/link'
 
 export default (error: Error) => ErrorPage({
   message: error.message,

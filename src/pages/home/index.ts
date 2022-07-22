@@ -1,1 +1,1 @@
-export { default } from '@app/pages/home/home.ts'
+export { default } from '@app/pages/home/home'

@@ -1,1 +1,1 @@
-export { default, spriteMap } from '@app/components/sprite/sprite.ts'
+export { default, spriteMap } from '@app/components/sprite/sprite'

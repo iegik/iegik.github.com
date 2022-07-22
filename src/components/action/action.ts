@@ -1,4 +1,4 @@
-import { createRef } from '@app/components/core/view.ts';
+import { createRef } from '@app/components/core/view';
 
 interface Props {
   className?: string;

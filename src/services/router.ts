@@ -1,13 +1,13 @@
 /* global window, process, navigation */
-// @deno-types='@app/types.d.ts'
-import Home from '@app/pages/home/home.ts'
-import Login from '@app/pages/login/login.ts'
-import View from '@app/components/core/view.ts'
-import * as log from '@app/services/log.ts';
-import { getRoute } from '@app/services/web-utils.ts';
-import Profile from '@app/pages/profile/profile.ts'
+// @deno-types='@app/types.d'
+import Home from '@app/pages/home/home'
+import Login from '@app/pages/login/login'
+import View from '@app/components/core/view'
+import * as log from '@app/services/log';
+import { getRoute } from '@app/services/web-utils';
+import Profile from '@app/pages/profile/profile'
 
-import { ERROR_NOT_FOUND } from '@app/components/core/constants.ts';
+import { ERROR_NOT_FOUND } from '@app/components/core/constants';
 
 // TODO: Move route to services
 const route = (uri = '/') => {

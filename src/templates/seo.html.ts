@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-// @deno-types='@app/types.d.ts'
-import { writeFileSync, readFileSync, release, nonce } from '@app/utils.ts';
-import Sprite from '@app/components/sprite/sprite.ts';
-import Home from '@app/pages/home/home.ts'
+// @deno-types='@app/types.d'
+import { writeFileSync, readFileSync, release, nonce } from '@app/utils';
+import Sprite from '@app/components/sprite/sprite';
+import Home from '@app/pages/home/home'
 const style = readFileSync('./public/styles.min.css');
 const csp = Object.entries({
   'script-src': [

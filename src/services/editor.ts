@@ -1,7 +1,7 @@
-import { Ref } from '@app/components/core/view.ts';
-import { useState } from '@app/components/core/view.ts';
-import { getRoute } from '@app/services/web-utils.ts';
-import GitHubApi from '@app/services/github-api.ts';
+import { Ref } from '@app/components/core/view';
+import { useState } from '@app/components/core/view';
+import { getRoute } from '@app/services/web-utils';
+import GitHubApi from '@app/services/github-api';
 
 const EditorService = async (ref: Ref) => {
   const [{ isLoaded }, setUserInfo] = useState();

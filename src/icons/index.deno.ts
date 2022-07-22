@@ -1,4 +1,4 @@
-import { readFileSync } from '@app/utils.ts';
+import { readFileSync } from '@app/utils';
 const LinkedinIcon = readFileSync('@app/icons/linkedin-icon.svg');
 const LinkedinLogo = readFileSync('@app/icons/linkedin-logo.svg');
 const GitHubIcon = readFileSync('@app/icons/github-icon.svg');

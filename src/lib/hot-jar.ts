@@ -1,4 +1,4 @@
-import * as log from '@app/services/log.ts';
+import * as log from '@app/services/log';
 window._hjSettings = {
   hjid: 2660383,
   hjsv: 6,

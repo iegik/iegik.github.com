@@ -1,4 +1,4 @@
-import LinkList from '@app/components/link-list/link-list.ts'
+import LinkList from '@app/components/link-list/link-list'
 
 interface ErrorPageProps {
   message: string;

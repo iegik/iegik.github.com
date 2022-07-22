@@ -4,14 +4,8 @@
     "lib": ["esnext", "DOM"],
     "paths": {
       "@app/*": ["src/*"],
-      "@assets/*": ["public/*"]
-    },
-    "include": [
-      "src/**/*"
-    ],
-    "exclude": [
-      "node_modules",
-      "**/*.spec.ts"
-    ]
+      "@assets/*": ["public/*"],
+      "*.ts": ["*"],
+    }
   }
 }

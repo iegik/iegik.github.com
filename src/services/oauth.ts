@@ -1,6 +1,6 @@
-import { CLIENT_ID as clientId } from '@app/components/core/constants.ts'
-import * as log from '@app/services/log.ts';
-import { Ref } from '@app/components/core/view.ts';
+import { CLIENT_ID as clientId } from '@app/components/core/constants'
+import * as log from '@app/services/log';
+import { Ref } from '@app/components/core/view';
 
 const getAccessToken = async (code?:string) => {
   if (!code) return

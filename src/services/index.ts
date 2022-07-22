@@ -1,7 +1,7 @@
-import OauthService from '@app/services/oauth.ts'
-import EditorService from '@app/services/editor.ts'
-import PreviewService from '@app/services/preview.ts'
-import UserInfoService from '@app/services/user-info.ts'
+import OauthService from '@app/services/oauth'
+import EditorService from '@app/services/editor'
+import PreviewService from '@app/services/preview'
+import UserInfoService from '@app/services/user-info'
 
 const servicesMap:Record<string,Service> = {
   oauth: OauthService,

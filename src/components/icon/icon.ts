@@ -1,5 +1,5 @@
-import { createRef } from '@app/components/core/view.ts';
-import { spriteMap } from '@app/components/sprite/sprite.ts';
+import { createRef } from '@app/components/core/view';
+import { spriteMap } from '@app/components/sprite/sprite';
 
 interface IconProps {
   className?: string;

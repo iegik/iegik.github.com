@@ -1,4 +1,4 @@
-import icons from '@app/icons/index.ts';
+import icons from '@app/icons/index';
 
 const xmlns = 'https://www.w3.org/2000/svg'
 

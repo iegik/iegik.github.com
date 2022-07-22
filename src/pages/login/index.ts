@@ -1,1 +1,1 @@
-export { default } from '@app/pages/login/login.ts'
+export { default } from '@app/pages/login/login'
