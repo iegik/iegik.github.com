@@ -14,6 +14,7 @@ export class Ref {
     ).slice(10, 18);
     return (this.id = this.id || `ref-${id}`);
   }
+  // @ts-ignore
   get current() {
     if (
       typeof window === 'undefined' ||
@@ -28,7 +29,7 @@ export class Ref {
 
 export const createRef = () => new Ref();
 
-export const useState = (initialState) =>
+export const useState = (initialState = undefined) =>
   typeof history === 'undefined'
     ? []
     : [
@@ -37,13 +38,13 @@ export const useState = (initialState) =>
         history.pushState(
           { ...history.state, ...state },
           title || '',
-          // url || location.href,
+        // url || location.href,
         ),
     ];
 
 const mutationConfig = { attributes: true, childList: true, subtree: true };
 
-const render = (ref, eventType, props = {}) => (event: MutationRecord[] | MutationRecord | NavigateEvent | Error) => {
+const render = (ref, eventType, props = { component: 'View' }) => (event: MutationRecord[] | MutationRecord | Error) => {
   const [state, setState] = useState()
   const { component = 'View' } = props;
   log.debug('render', { eventType, component, state, props, event, typeof: typeof event, isArray: Array.isArray(event) });
@@ -59,18 +60,23 @@ const render = (ref, eventType, props = {}) => (event: MutationRecord[] | Mutati
   }
 
   if (event instanceof MutationRecord && event.type === 'childList') {
-    log.log('A child node has been added or removed.', { ref: mutation.target.getAttribute('ref') });
+    let refs = []
+    // for (let item of event.target) {
+    //   if (item instanceof HTMLElement) refs.push(item.getAattribute('ref'))
+    // }
+    log.log('A child node has been added or removed.', { target: event.target });
     return;
   }
   if (event instanceof MutationRecord && event.type === 'attributes') {
-    log.log(`The ${  mutation.attributeName  } attribute was modified.`, { mutation });
+    log.log(`The ${  event.attributeName  } attribute was modified.`, { event });
     // ref.current.innerHTML = Component(state);
     return;
   }
-  if (event instanceof MutationRecord && event.type === 'subtree') {
-    log.log(`The children was modified.`, { mutation });
-    return;
-  }
+  // options: { subtree: true } must be enabled on MutationObserver
+  // if (event instanceof MutationRecord && event.type === 'subtree') {
+  //   log.log(`The children was modified.`, { event });
+  //   return;
+  // }
 
   if (!Component) throw Error(`Component ${component} not found`);
   // FIXME: Fix this
@@ -83,10 +89,10 @@ const attachEvents = async (ref, props) => {
 
   // To observe DOM changes
   const observer = new MutationObserver(render(ref, 'render', props));
-  observer.observe(ref.current, mutationConfig);
+  ref.current && observer.observe(ref.current, mutationConfig);
 
   // addEventListener('popstate', render(ref, 'popstate'));
-  navigation?.addEventListener('navigate', render(ref, 'navigate', props));
+  globalThis.navigation?.addEventListener('navigate', render(ref, 'navigate', props));
 
   // TODO: Move here from main()
   // document.addEventListener('error', render(ref, 'error', props))
@@ -95,7 +101,7 @@ const attachEvents = async (ref, props) => {
   ref.current.addEventListener('DOMRemoved', () => {
     log.info('DOMRemoved');
     // removeEventListener('popstate', popstate);
-    navigation?.removeEventListener('navigate', render(ref, 'navigate', props));
+    globalThis.navigation?.removeEventListener('navigate', render(ref, 'navigate', props));
     observer.disconnect();
   });
 }
@@ -146,7 +152,7 @@ const View: FC<ViewProps> = (props = {}) => {
     : escapeHTML(children);
 
   const restProps = Object.entries(rest)?.reduce?.(
-    (acc: string, [key, value]: string[]) =>
+    (acc, [key, value = '']) =>
       `${acc} ${key}="${value}"`,
     '',
   );

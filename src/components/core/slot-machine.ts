@@ -50,7 +50,7 @@ const SlotMachine:FC<{}> = () => {
         }
       }
     });
-    observer.observe(ref.current, { childList: true });
+    ref.current && observer.observe(ref.current, { childList: true });
 
     // Click
     ref.current?.addEventListener('click', () => {

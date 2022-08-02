@@ -14,6 +14,7 @@ interface ViewProps {
   tag?: string;
   className?: string;
   children?: ReactNode
+  component?: string;
 }
 
 declare const Sentry: { [key: string]: any };
