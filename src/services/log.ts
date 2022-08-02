@@ -5,15 +5,15 @@ import { ERROR_ACCESS_TOKEN, ERROR_NOT_FOUND } from '@app/components/core/consta
 
 const isProd = false
 
-const message = (...args: any[]): void => {
-  const { component } = args[0] || {}
-  const root = document.getElementById('root')
-  if (root !== null && componentMap[component] !== undefined) {
-    root.innerHTML = componentMap[component](...args)
-  };
-  if (isProd) return;
-  console[component](...args)
-}
+// const message = (...args: any[]): void => {
+//   const { component } = args[0] || {}
+//   const root = document.getElementById('root')
+//   if (root !== null && componentMap[component] !== undefined) {
+//     root.innerHTML = componentMap[component](...args)
+//   };
+//   if (isProd) return;
+//   console[component](...args)
+// }
 
 export const error = (error: Error) => {
   // console.error(error)

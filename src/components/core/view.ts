@@ -62,7 +62,7 @@ const render = (ref, eventType, props = { component: 'View' }) => (event: Mutati
   if (event instanceof MutationRecord && event.type === 'childList') {
     let refs = []
     // for (let item of event.target) {
-    //   if (item instanceof HTMLElement) refs.push(item.getAattribute('ref'))
+    //   if (item instanceof HTMLElement) refs.push(item.getAttribute('ref'))
     // }
     log.log('A child node has been added or removed.', { target: event.target });
     return;

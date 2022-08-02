@@ -5,7 +5,6 @@ import Login from '@app/pages/login/login'
 import View from '@app/components/core/view'
 import * as log from '@app/services/log';
 import { getRoute } from '@app/services/web-utils';
-import Profile from '@app/pages/profile/profile'
 
 import { ERROR_NOT_FOUND } from '@app/components/core/constants';
 
@@ -31,8 +30,8 @@ const onError = (e: ErrorEvent): void => {
   log.error(error)
 }
 
-const main = (e?: Event) => {
-  const path = getRoute(e)
+const main = () => {
+  const path = getRoute()
   if (typeof window === 'undefined') return
   if (window?.document) {
     addEventListener('error', onError)

@@ -56,7 +56,7 @@ function postGraphQL(req) {
     headers: {
       'Content-Type': 'application/json',
       Accept: 'application/json',
-    },
+    } as Record<string, string>,
   };
   if (req.headers.authorization) options.headers.authorization = req.headers.authorization;
 
