@@ -4,6 +4,9 @@ help: ##		Show this help.
 	@echo "Usage: make [options] [target] ...\nTargets:"; \
 	fgrep -h "##" Makefile | sed 's/\([^ ]*\).*##\(.*\)/  \1\t\2/g' | fgrep -v 'fgrep'
 
+prebuild:
+	@npx solidarity
+
 JS_CONFIG=--bundle --platform=browser --sourcemap --minify  --out-extension:.js=.min.js --loader:.png=dataurl --loader:.svg=text --loader:.ppm=text --loader:.ascii=text --loader:.graphql=text --loader:.data=binary
 HTML_CONFIG=--bundle --platform=node --minify --loader:.js=text --loader:.css=text --loader:.html=text --loader:.png=dataurl --loader:.svg=text --loader:.data=binary --loader:.ascii=text --loader:.graphql=text
 DENO_CONFIG=--import-map=import_map.json --config=deno.json
@@ -32,7 +35,7 @@ templates_deno:
 esbuild: lib_node templates_node
 
 MIN_CONFIG=--remove-comments --remove-redundant-attributes --remove-script-type-attributes --minify-css true --minify-js true
-minify: esbuild
+compile: esbuild
 	@npx html-minifier ${MIN_CONFIG} public/index.html -o public/index.html && \
 	npx html-minifier ${MIN_CONFIG} public/login/index.html -o public/login/index.html
 
@@ -48,16 +51,16 @@ sass\:watch:
 start: ##	Start server locally
 	@npx vite
 
-ppm: ## not used
+ppm: # not used
 	@convert public/images/artursjansons.jpg -resize 64x64 -grayscale Rec709luminance -compress none pgm:- > public/images/artursjansons.ppm
 
-thumb: ## not used
+thumb: # not used
 	@convert public/images/artursjansons.jpg -resize 64x64 public/favicon.ico \
 	&& convert public/images/artursjansons.jpg -resize 64x64 public/images/artursjansons_64.jpg \
 	&& convert public/images/artursjansons.jpg -resize 432x432 public/images/artursjansons_432.jpg \
 	&& convert public/images/artursjansons.jpg -resize 128x128 public/images/artursjansons_128.jpg
 
-ascii: ##	Convert avatar to ASCII
+ascii: # Convert avatar to ASCII
 	@jp2a public/images/artursjansons.jpg --output=public/images/artursjansons.ascii
 # @convert public/images/artursjansons.jpg -resize 432x432 -grayscale Rec709luminance -compress none brf:- | awk NR\>3 > public/images/artursjansons.ascii
 
@@ -77,7 +80,7 @@ jpg2png:
 	@scripts/jpg2png
 #	@$(foreach f,$(wildcard public/images/*.jpg),convert $(f) $(patsubst %.jpg,%.png,$(f)));
 
-braille: ascii ## not used
+braille: ascii # not used
 	@scripts/braille public/images/artursjansons.ascii > public/images/artursjansons.brf
 
 # OS X requires the extension to be explicitly specified
@@ -98,7 +101,7 @@ privacy:
 
 
 # Entry point to start
-build: ttf2woff ttf2svg ascii sass minify thumb jpg2png png2webp eula privacy ##	Build project
+build: prebuild ttf2woff ttf2svg ascii sass compile thumb jpg2png png2webp eula privacy ##	Build project
 
 clean:
 	@grep -v node_modules .gitignore | awk '{print "rm -rf "$1}' | sh

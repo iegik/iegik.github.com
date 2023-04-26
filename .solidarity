@@ -40,6 +40,41 @@
         "error": "Please, run npm install"
       }
     ],
+    "WebP": [
+      {
+        "rule": "cli",
+        "binary": "cwebp",
+        "version": "-version",
+        "semver": "^1.3.0"
+      }
+    ],
+    "ImageMagick": [
+      {
+        "rule": "cli",
+        "binary": "convert",
+        "version": "-version",
+        "semver": "^7.1.0-61"
+      }
+    ],
+    "jp2a": [
+      {
+        "rule": "cli",
+        "binary": "jp2a",
+        "version": "--version",
+        "semver": "^1.0.6",
+        "matchIndex": 1,
+        "error": "You have jp2a@{{installedVersion}}, and need jp2a@{{wantedVersion}}. Fix with `brew install -g jp2a@{{wantedVersion}}` https://formulae.brew.sh/formula/jp2a"
+      }
+    ],
+    "Deno": [
+      {
+        "rule": "cli",
+        "binary": "deno",
+        "version": "--version",
+        "semver": "^1.8.2",
+        "error": "You have deno@{{installedVersion}}, and need deno@{{wantedVersion}}. Fix with `brew install -g deno@{{wantedVersion}}` https://deno.land/#installation"
+      }
+    ],
     "Bash": [
       {
         "rule": "shell",
