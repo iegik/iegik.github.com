@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json.schemastore.org/solidaritySchema",
+  "config": {
+    "output": "moderate"
+  },
+  "requirements": {
+    "ESBuild": [
+      {
+        "rule": "cli",
+        "binary": "esbuild",
+        "error": "You should install ESBuild\nhttps://esbuild.github.io/getting-started/#install-esbuild"
+      }
+    ],
+    "Environment variables": [
+      {
+        "rule": "env",
+        "variable": "HOST",
+        "error": "Please specify a host with .env or inline `HOST=localhost ...`"
+      },
+      {
+        "rule": "env",
+        "variable": "PORT",
+        "error": "Please specify a port with .env or inline `HOST=3000 ...`"
+      },
+      {
+        "rule": "file",
+        "location": ".env",
+        "error": "Copy the .env.example file to the .env, configure and try again"
+      }
+    ],
+    "NPM": [
+      {
+        "rule": "cli",
+        "binary": "npm",
+        "semver": "^8.5.5"
+      },
+      {
+        "rule": "dir",
+        "location": "node_modules",
+        "error": "Please, run npm install"
+      }
+    ],
+    "Bash": [
+      {
+        "rule": "shell",
+        "command": "bash --version | grep version | awk '{print $4}'",
+        "match": "^3.2.+",
+        "error": "You should install Git for Windows.\nGit for Windows provides a BASH emulation used to run Git from the command line: https://gitforwindows.org/"
+      }
+    ],
+    "Git author": [
+      {
+        "rule": "shell",
+        "command": "git config user.email",
+        "match": ".+@.+"
+      }
+    ]
+  }
+}
