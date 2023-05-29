@@ -1,41 +1,69 @@
 #!/usr/bin/env node
-"use strict"
+'use strict';
 const { argv, argv0 } = require('process');
 const { readFileSync } = require('fs');
 
-const pgmToASCII = (text) => text
-  .split('\n')
-  .map((line) => line
-    .split('')
-    .map((char) => '⠿⠾⠽⠼⠻⠺⠹⠸⠷⠶⠵⠴⠳⠲⠱⠰⠯⠮⠭⠬⠫⠪⠩⠨⠧⠦⠥⠤⠣⠢⠡⠠⠟⠞⠝⠜⠛⠚⠙⠘⠗⠖⠕⠔⠓⠒⠑⠐⠏⠎⠍⠌⠋⠊⠉⠈⠇⠆⠅⠄⠃⠂⠁⠀'[
-      `=)Y#]W?_(7Z0\\4:;\&!X+$[%.V8U-<5*,QTN>GJD^R6O9H3E"PSM/FIC@L2K'B1A `
-        .indexOf(char)
-    ] || ' ')
-    .join('')
-  )
-  .join('\n')
+const grayscale = (code, level) => +(parseInt(code) < 255 / level);
 
-let filename = ''
-let toHTML = false
+const mapToChar = ([[a, d], [b, e], [c, f]]) =>
+  String.fromCharCode(
+    10240 + parseInt(`${a}${b}${c}${d}${e}${f}`, 2),
+  );
 
-for (const arg in argv) {
+const pgmToASCII = (text, level) => {
+  let out = '';
+  let [v, dimensions, maxColors, ...lines] = text.split('\n');
+  let matrix = lines.map((line) => line.split(' '));
+
+  for (let y0 = 0; y0 < matrix.length; y0 += 3) {
+    for (let x0 = 0; x0 < matrix[y0].length; x0 += 2) {
+      let c = [
+        [
+          grayscale(matrix[y0 + 0]?.[x0 + 0] || '', level),
+          grayscale(matrix[y0 + 0]?.[x0 + 1] || '', level),
+        ],
+        [
+          grayscale(matrix[y0 + 1]?.[x0 + 0] || '', level),
+          grayscale(matrix[y0 + 1]?.[x0 + 1] || '', level),
+        ],
+        [
+          grayscale(matrix[y0 + 2]?.[x0 + 0] || '', level),
+          grayscale(matrix[y0 + 2]?.[x0 + 1] || '', level),
+        ],
+      ];
+      out += mapToChar(c);
+    }
+    out += '\n';
+  }
+  return out;
+};
+
+let filename = '';
+let toHTML = false;
+let level = 2;
+
+for (let arg = 0; arg <= argv.length; arg++) {
   if (arg < 2) continue;
   if (['--pre', '-p'].indexOf(argv[arg]) > -1) {
     toHTML = true;
     continue;
   }
-  filename = argv[arg]
+  if (['--level', '-l'].indexOf(argv[arg]) > -1) {
+    level = argv[++arg];
+    continue;
+  }
+  filename = argv[arg];
   break;
 }
 
-let content = ''
+let content = '';
 try {
-  content = readFileSync(filename, {encoding:'utf8', flag:'r'})
+  content = readFileSync(filename, { encoding: 'utf8', flag: 'r' });
 } catch (e) {
   console.error(`No such file: ${filename}`);
 }
 
-const braille = pgmToASCII(content)
+const braille = pgmToASCII(content, level);
 
 if (toHTML) {
   console.log(`<pre style="
@@ -45,8 +73,8 @@ if (toHTML) {
       line-height: 1;
       white-space: pre;
       text-transform: uppercase;
-  ">${braille}</pre>`)
+  ">${braille}</pre>`);
   return;
 }
 
-console.log(braille)
+console.log(braille);

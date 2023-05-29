@@ -1,4 +1,3 @@
-// import '@app/lib/ga';
 // import '@app/lib/clouds';
 
 import SlotMachine from '@app/components/core/slot-machine'
@@ -18,11 +17,9 @@ const Home = () => `
           </h2>
           <span itemprop="jobTitle" class="subtitle">Software Developer</span>
           <br>
-            <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-              <span itemprop="addressLocality">🇷🇺 St.Petersburg, Russia</span>
-            </span>
-            <a href="callto:+79213900737"><i class="fa fa-whatsapp"></i><span itemprop="telephone">+7-921-39-00-737</span></a>
-            <a href="mailto:artur.janson+github@yandex.ru?title=iegik.github.io:contact" itemprop="email">artur.janson@yandex.ru</a>
+            ${/*<span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="addressLocality">🏴 St.Petersburg, Russia</span></span>*/ ''}
+            ${/*<a href="callto:+79213900737"><i class="fa fa-whatsapp"></i><span itemprop="telephone">+7-921-39-00-737</span></a>*/ ''}
+            ${/*<a href="mailto:artur.janson+github@yandex.ru?title=iegik.github.io:contact" itemprop="email">artur.janson@yandex.ru</a>*/ ''}
           ${LinkList({
     squire: true,
     children: [

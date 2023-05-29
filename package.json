@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "preinstall": "npx solidarity",
     "postinstall": "npm run build",
     "build": "make build",
     "start": "make start",

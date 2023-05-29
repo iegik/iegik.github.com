@@ -1,3 +1,4 @@
+@import 'components/clouds/clouds.scss';
 @import 'components/header/header.scss';
 @import 'components/link/link.scss';
 @import 'components/link-list/link-list.scss';
@@ -22,13 +23,14 @@
   --font-sans-serif: -apple-system, system-ui, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 
-  --font-fantasy: "Alina Script", serif, fantasy;
-  --font-monospace: 'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace;
+  --font-fantasy: 'Alina Script', serif, fantasy;
+  --font-monospace: 'SFMono-Regular', 'SF Mono', 'Ubuntu Mono',
+    Consolas, 'DejaVu Sans Mono', Menlo, monospace;
 
   --color-grayscale: #c1c1c1;
-  --color-primary-light: #ffffff;
-  --color-primary: #FECB00;
-  --color-primary-dark: #eeede7;
+  --color-primary-light: #fff0b5;
+  --color-primary: #fecb00;
+  --color-primary-dark: #bc9600;
   --color-primary-contrast: #054c7f;
   --color-error: rgb(163, 51, 51);
 
@@ -53,14 +55,14 @@
   @media (prefers-reduced-motion: no-preference) and (prefers-color-scheme: light) {
     --color-grayscale: rgba(127, 127, 127, 0.5);
     --color-primary-light: #eeede7aa;
-    --color-primary: #FECB00d7;
+    --color-primary: #fecb00d7;
     --color-primary-dark: #054c7faa;
-    --color-primary-contrast: #B9B7BDaa;
+    --color-primary-contrast: #b9b7bdaa;
     --text-color: var(--color-primary-dark);
   }
   @media (prefers-reduced-motion: no-preference) and (prefers-color-scheme: dark) {
     --color-grayscale: #010101aa;
-    --color-primary: #E7D2CCaa;
+    --color-primary: #e7d2ccaa;
     --color-primary-light: #054c7faa;
     --color-primary-dark: #eeede7aa;
     --color-primary-contrast: #054c7faa;
@@ -98,9 +100,6 @@ noscript {
   font-family: var(--font-sans-serif);
   line-height: 1.5;
   background-color: var(--color-primary-light);
-  background-image: none, url('/images/clouds.png'), url('/images/clouds.png');
-  background-position: 50% 50%, 50% 50%;
-  background-repeat: no-repeat, no-repeat;
   display: grid;
 }
 

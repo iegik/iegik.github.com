@@ -1,0 +1,18 @@
+#!/bin/bash
+rsvg=`which rsvg-convert` || echo "rsvg-convert not found"
+qlmanage=`which qlmanage` || echo "qlmanage not found"
+convert=`which convert` || echo "convert not found"
+inkscape=`which /Applications/Inkscape.app/Contents/MacOS/inkscape` || echo "inkscape not found"
+svg2png() {
+  if [ -e "$rsvg" ] ; then $rsvg -w $1 $2 > $3; return 0; fi;
+  #if [ -e "$qlmanage" ] ; then $qlmanage -t -s $1 -o "`dirname $3`" "$2" &>/dev/null; mv "`dirname $3`/`basename $2`.png" "$3"; return 0; fi;
+  if [ -e "$convert" ] ; then $convert -background none -density 600 -resize "$1" RSVG:"$2" "$3"; return 0; fi;
+  if [ -e "$inkscape" ] ; then $inkscape --export-type png --export-filename $3 -w $1 $2; return 0; fi;
+  throw "Required software is not found
+    You can install it with following command:
+      brew install librsvg
+    or
+      brew install imagemagick
+    or
+      brew install inkscape";
+}

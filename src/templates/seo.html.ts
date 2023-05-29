@@ -57,7 +57,15 @@ const html = `<!DOCTYPE html>
     ${Sprite()}
     <div id="root">${Home()}</div>
     <script defer nonce="${nonce}" src="/lib/router.min.js"></script>
-    <script async nonce="${nonce}" src="/lib/ga.min.js"></script>
+    ${/* Google Analytics */''}
+    <script async nonce="${nonce}" src="https://www.googletagmanager.com/gtag/js?id=G-5ZY8Y6X2C4"></script>
+    <script nonce="${nonce}">
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-5ZY8Y6X2C4');
+    </script>
     <script async nonce="${nonce}" src="/lib/clouds.min.js"></script>
     ${/*<script async nonce="${nonce}" src="/lib/hot-jar.min.js"></script>*/''}
     <script nonce="${nonce}" src="https://browser.sentry-cdn.com/7.7.0/bundle.min.js" integrity="sha384-lr/bDcE0vmUPBU6dhVBXfmhNYAEilrIepu1BRdVUJ8mZ0Hxhm17aIJ2bt4UfxC72" crossorigin="anonymous"></script>
@@ -93,7 +101,6 @@ fonts/AlinaScript.woff
 fonts/AlinaScript.ttf
 fonts/AlinaScript.svg
 lib/router.min.js
-lib/ga.min.js
 EULA.md
 
 NETWORK:

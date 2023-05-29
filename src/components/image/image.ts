@@ -23,13 +23,17 @@ interface ImageProps {
   sizes:string;
   types:string;
   alt?:string;
+  ascii?:string;
   itemprop?:string;
 }
 
 const Image:FC<ImageProps> = (props) => {
   if (!props) return ''
   const { src, ratio, sizes, types = 'png|webp', alt = '', itemprop = ''  } = props;
-  const [width, height] = ratio.split(':')
+  const [rw, rh] = ratio.split(':')
+  const size0 = +sizes.split(',')[0];
+  const width = size0 * +rw;
+  const height = size0 * +rh;
 
   return `
     <picture>

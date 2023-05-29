@@ -30,8 +30,10 @@
     overflow: hidden;
     width: 60vw;
     place-items: center;
+    font-size: 1vw;
     @media (min-width: 768px) {
-      width: 24vh;
+      width: 24vw;
+      font-size: 2vw;
     }
   }
   img {
@@ -40,7 +42,6 @@
     background: black;
     color: green;
     font-family: var(--font-monospace);
-    font-size: 1rem;
     letter-spacing: -0.08rem;
     line-height: 1;
     white-space: pre;

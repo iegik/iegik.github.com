@@ -1,0 +1,28 @@
+#!/bin/bash
+USAGE=$(cat <<-EOM
+Usage: ${0##*/} [OPTION] [FILES]
+
+
+
+Options:
+EOM
+)
+
+trap "exit" INT
+set -e
+
+for i in "$@" ; do
+case "$i" in
+    -s|--size ) shift ; size=$1 ; shift ;; ## Set size of the image
+    -l|--level ) shift ; level=$1 ; shift ;; ## Set level of grayscale
+    -h ) echo "$USAGE" ; fgrep -h ')'' ' $0  | awk -F')'' | ##'' ' '{printf "%-40s %s\n", $1, $3}' ; exit 2; ## Show this help
+esac
+done
+
+source $(dirname $0)/modules/png2ppm
+source $(dirname $0)/modules/ppm2svg
+
+for f in $@; do
+  png2ppm $size "$f" "${f%%.png}.ppm";
+  ppm2svg $level "${f%%.png}.ppm" "${f%%.png}.ascii.svg";
+done;

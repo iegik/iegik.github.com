@@ -13,16 +13,6 @@
     ],
     "Environment variables": [
       {
-        "rule": "env",
-        "variable": "HOST",
-        "error": "Please specify a host with .env or inline `HOST=localhost ...`"
-      },
-      {
-        "rule": "env",
-        "variable": "PORT",
-        "error": "Please specify a port with .env or inline `HOST=3000 ...`"
-      },
-      {
         "rule": "file",
         "location": ".env",
         "error": "Copy the .env.example file to the .env, configure and try again"
