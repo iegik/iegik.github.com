@@ -29,7 +29,7 @@ const onClick = () => {
   // history.pushState({ clientId, scope, state }, '', url)
 };
 
-const Login = () => `
+export const Login = () => `
     <div class="login">
       <form>
         <input type="text" name="login" placeholder="username" pattern="${PATTERN_LOGIN}" />

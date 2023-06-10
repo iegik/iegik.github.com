@@ -11,7 +11,8 @@ export USAGE
 help: ##		Show this help.
 	@echo "$$USAGE" && fgrep -h "##" $(firstword $(MAKEFILE_LIST)) | sed 's/\([^ ]*\).*##\(.*\)/  \1\t\2/g' | fgrep -v 'fgrep'
 
-JS_CONFIG=--bundle \
+JS_CONFIG=\
+--bundle \
 --platform=browser \
 --sourcemap \
 --minify \
@@ -27,7 +28,8 @@ lib_node:
 	@npx esbuild src/services/*.ts --outdir=public/lib ${JS_CONFIG} && \
 	echo -e "\033[2K\r\033[0;32m✓ Task $@ completed\033[0m\n"
 
-HTML_CONFIG=--bundle \
+HTML_CONFIG=\
+--bundle \
 --platform=node \
 --minify --loader:.js=text \
 --loader:.css=text \
@@ -39,7 +41,9 @@ HTML_CONFIG=--bundle \
 --loader:.graphql=text
 
 templates_node:
-	@npx esbuild src/templates/*.html.ts --outdir=public/ ${HTML_CONFIG} | node --inspect && \
+	@npx esbuild src/templates/seo.html.ts --outdir=public/ ${HTML_CONFIG} && node --inspect public/seo.html.js && \
+	npx esbuild src/templates/anonymous.html.ts --outdir=public/ ${HTML_CONFIG} && node --inspect public/anonymous.html.js && \
+	npx esbuild src/templates/ui.html.ts --outdir=public/ ${HTML_CONFIG} && node --inspect public/ui.html.js && \
 	echo -e "\033[2K\r\033[0;32m✓ Task $@ completed\033[0m\n"
 
 templates_node_debug:
@@ -49,7 +53,8 @@ templates_node_debug:
 # Depricated due to difficulties with using browser native functions. Use esbuild instead.
 # TODO: Improve asset import in header.ts and icons.ts.
 
-DENO_CONFIG=--import-map=import_map.json \
+DENO_CONFIG=\
+--import-map=import_map.json \
 --config=deno.json
 
 lib_deno:
