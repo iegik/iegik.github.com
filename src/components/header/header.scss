@@ -1,8 +1,18 @@
+:root {
+  --size-header: 60vw;
+  --size-alt: 2.5vw;
+}
 .header {
   position: relative;
-  height: 60vw;
+  height: var(--size-header);
   @media (min-width: 768px) {
-    height: 30vh;
+    --size-header: 30vh;
+  }
+  @media (min-width: 1024px) {
+    --size-header: 17vw;
+  }
+  @media (min-width: 1440px) {
+    --size-header: 13vw;
   }
 }
 .header__avatar {
@@ -28,12 +38,17 @@
   picture {
     border-radius: 2rem;
     overflow: hidden;
-    width: 60vw;
+    width: calc(var(--size-header) - 2em);
     place-items: center;
-    font-size: 1vw;
+    font-size: var(--size-alt);
     @media (min-width: 768px) {
-      width: 24vw;
-      font-size: 2vw;
+      --size-alt: 1.2vw;
+    }
+    @media (min-width: 1024px) {
+      --size-alt: 0.8vw;
+    }
+    @media (min-width: 1440px) {
+      --size-alt: 0.6vw;
     }
   }
   img {
