@@ -20,7 +20,7 @@ dddd;,::;,............',,'...;loooolollllc
 oodl;:::cc:;,'''... .... ...,looddolllllll
 llcc:;:::::::;,,'''........:ooollooollllll
 ccccc;,:c::;,'''',,,'...,''loooolllooolllc
-`});var g=C1(require("fs")),x=(e,t)=>g.writeFileSync(e,t,{encoding:"utf8"}),A=e=>g.readFileSync(e,{encoding:"utf8"});var I=new Date,C=`v3.1.0-${I.toJSON()}`,s=btoa(`${Number(I)}`).slice(10,18);var N=`<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 14 14" enable-background="new 0 0 240 240" x="0px" y="0px" xml:space="preserve" fill="currentColor">
+`});var g=C1(require("fs")),x=(e,t)=>g.writeFileSync(e,t,{encoding:"utf8"}),I=e=>g.readFileSync(e,{encoding:"utf8"});var N=new Date,C=`v3.1.0-${N.toJSON()}`,s=btoa(`${Number(N)}`).slice(10,18);var A=`<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 14 14" enable-background="new 0 0 240 240" x="0px" y="0px" xml:space="preserve" fill="currentColor">
   <title>LinkedIn icon</title>
   <path d="m12.95 0h-11.9c-0.6 0-1 0.4-1 1v12c0 0.6 0.5 1 1 1h11.9c0.6 0 1-0.4 1-1v-12c0-0.6-0.4-1-1-1zm-8.8 11.9h-2.1v-6.7h2.1v6.7zm-1-7.6c-0.7 0-1.2-0.5-1.2-1.2s0.5-1.2 1.2-1.2 1.2 0.5 1.2 1.2-0.6 1.2-1.2 1.2zm8.8 7.6h-2.1v-3.2c0-0.8 0-1.8-1.1-1.8s-1.2 0.8-1.2 1.7v3.3h-2.1v-6.7h2v0.9c0.4-0.7 1.2-1.1 2-1.1 2.1 0 2.5 1.4 2.5 3.2v3.7z"></path>
 </svg>
@@ -105,7 +105,7 @@ ccccc;,:c::;,'''',,,'...,''loooolllooolllc
   <rect x="122" y="160" width="36" height="47" fill="#E5E5E5" fill-opacity="0.25"/>
   <rect x="140" y="160" width="18" height="47" fill="#E5E5E5" fill-opacity="0.5"/>
 </svg>
-`;var k={"linkedin-icon":N,"linkedin-logo":F,"github-icon":T,"github-logo":P,"stackoverflow-icon":H,"stackoverflow-logo":D,"jsfiddle-icon":U,"jsfiddle-logo":V,"codersrank-icon":z,"codersrank-logo":q,"slot-machine-icon":B};var K="https://www.w3.org/2000/svg",L=new Map,k1=()=>`
+`;var k={"linkedin-icon":A,"linkedin-logo":F,"github-icon":T,"github-logo":P,"stackoverflow-icon":H,"stackoverflow-logo":D,"jsfiddle-icon":U,"jsfiddle-logo":V,"codersrank-icon":z,"codersrank-logo":q,"slot-machine-icon":B};var K="https://www.w3.org/2000/svg",L=new Map,k1=()=>`
   <svg xmlns="${K}" display="none">
   ${Object.entries(k).map(([e,t])=>(L.set(e,{viewBox:t.match(/viewBox="([^"]+)"/i)?.[1]}),t.replace(`xmlns="${K}"`,`id="sprite-${e}"`).replaceAll(/\bsvg\b/g,"symbol"))).join("")}
   </svg>
@@ -148,11 +148,11 @@ ccccc;,:c::;,'''',,,'...,''loooolllooolllc
       ${a({name:"slot-machine-icon",className:"slot-machine__icon"})}
       <span class="slot-machine__reels" ref="${e}">${Z()}</span>
     </div>
-  `},R=j1;var A1={"image/webp":"webp","image/jpeg":"jpg","image/png":"png"},I1={types:"",sizes:"",src:""},N1=({types:e,sizes:t,src:o}=I1)=>Object.entries(A1).filter(([r,i])=>e.includes(i)).flatMap(([r,i])=>`
+  `},R=j1;var I1={"image/webp":"webp","image/jpeg":"jpg","image/png":"png"},N1={types:"",sizes:"",src:""},A1=({types:e,sizes:t,src:o}=N1)=>Object.entries(I1).filter(([r,i])=>e.includes(i)).flatMap(([r,i])=>`
     <source type="${r}" srcset="${t.split(",").map(n=>o.replace(new RegExp(`.(${e})$`),`_${n}.${i} ${n}w`))}" />
   `).join(""),F1=e=>{if(!e)return"";let{src:t,ratio:o,sizes:r,types:i="png|webp",alt:n="",itemprop:p=""}=e,[m,l1]=o.split(":"),j=+r.split(",")[0],p1=j*+m,d1=j*+l1;return`
     <picture>
-      ${N1({types:i,sizes:r,src:t})}
+      ${A1({types:i,sizes:r,src:t})}
       <img src="${i.includes("webp")?t.replace(/\..*$/,".webp"):t}" width="${p1}" height="${d1}" alt="${n}" itemprop="${p}" />
     </picture>
   `},r1=F1;var s1=n1(),T1=()=>(setTimeout(()=>{E(s1)}),`
@@ -183,7 +183,7 @@ ccccc;,:c::;,'''',,,'...,''loooolllooolllc
     <footer>
       ${R()}
     </footer>
-  `,a1=P1;var H1=A("./public/styles.min.css");console.log("AAA");var D1=Object.entries({"script-src":[`'nonce-${s}'`,"'strict-dynamic'","https://www.google-analytics.com","https://ssl.google-analytics.com","https://static.hotjar.com","https://js.sentry-cdn.com","'unsafe-inline'"],"img-src":["'self'","https://www.google-analytics.com","https://avatars.githubusercontent.com/"],"connect-src":["'self'","https://www.google-analytics.com","https://github.com/login/oauth/access_token","https://api.github.com/graphql","https://api.github.com/user","https://qilg4ch66b3vpgtevzccb5meum0ttfcl.lambda-url.eu-north-1.on.aws/","https://o171820.ingest.sentry.io/"],"style-src":[`'nonce-${s}'`,"https://static.hotjar.com"],"object-src":["'none'"],"base-uri":["'none'"],"frame-src":["https://vars.hotjar.com/"]}).reduce((e,[t,o])=>`${e};${t} ${o.join(" ")}`,"default-src 'self'"),U1="Art\u016Brs Jansons :: Web Developer",V1="Experienced web developer with a passion for innovation, automation and optimization",z1=`<!DOCTYPE html>
+  `,a1=P1;var H1=I("./public/styles.min.css"),D1=Object.entries({"script-src":[`'nonce-${s}'`,"'strict-dynamic'","https://www.google-analytics.com","https://ssl.google-analytics.com","https://static.hotjar.com","https://js.sentry-cdn.com","'unsafe-inline'"],"img-src":["'self'","https://www.google-analytics.com","https://avatars.githubusercontent.com/"],"connect-src":["'self'","https://www.google-analytics.com","https://github.com/login/oauth/access_token","https://api.github.com/graphql","https://api.github.com/user","https://qilg4ch66b3vpgtevzccb5meum0ttfcl.lambda-url.eu-north-1.on.aws/","https://o171820.ingest.sentry.io/"],"style-src":[`'nonce-${s}'`,"https://static.hotjar.com"],"object-src":["'none'"],"base-uri":["'none'"],"frame-src":["https://vars.hotjar.com/"]}).reduce((e,[t,o])=>`${e};${t} ${o.join(" ")}`,"default-src 'self'"),U1="Art\u016Brs Jansons :: Web Developer",V1="Experienced web developer with a passion for innovation, automation and optimization",z1=`<!DOCTYPE html>
 <html lang="en" manifest="manifest.appcache">
   <head>
     <meta http-equiv="Content-Security-Policy" content="${D1}">
