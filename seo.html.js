@@ -1,24 +1,26 @@
 #!/usr/bin/env node
-var m1=Object.create,v=Object.defineProperty,h1=Object.getPrototypeOf,g1=Object.prototype.hasOwnProperty,f1=Object.getOwnPropertyNames,u1=Object.getOwnPropertyDescriptor;var w1=e=>v(e,"__esModule",{value:!0});var v1=(e,t)=>()=>(t||(t={exports:{}},e(t.exports,t)),t.exports);var x1=(e,t,o)=>{if(t&&typeof t=="object"||typeof t=="function")for(let r of f1(t))!g1.call(e,r)&&r!=="default"&&v(e,r,{get:()=>t[r],enumerable:!(o=u1(t,r))||o.enumerable});return e},C1=e=>x1(w1(v(e!=null?m1(h1(e)):{},"default",e&&e.__esModule&&"default"in e?{get:()=>e.default,enumerable:!0}:{value:e,enumerable:!0})),e);var n1=v1((de,i1)=>{i1.exports=`Xkdddddddddoxxxxkxxdddxxxxkxdx0KKKxldo
-MOddddxxxxdoxkkkkkkkkdddddxxddKNNXkodo
-MkddddddxxddxkkkkxkOkkkkkxxdddOMMW0dod
-Nxddddddxddxkkkdolc,,:loxxddddxWMWKxld
-;;;:lddxooddlc,''.......''::loccclc:::
-dddxxxxl:'....................;oooooll
-xxxxxxo;........',;;:;;''......doollod
-kkkxkko...;cc:;',;:odl,'',:l,.:lllllc:
-xkkxxddc,;OOxdolooxO0OxoooxOxdolllllll
-dxxxxdddkd0KXK0kxkkxkkxkxOKX0dooolllll
-oooxxxdd0xO0Odcclc;,,;:lc:cxkkoooollll
-oooodxxdkkkOkl:,,:cllol;,,:dkddoolllcl
-oooooddddookko;cdxxxxxkkd:odoooollllcc
-oddllccclcc:lc:cdkxolokOdccllllllllllc
-ddd,...''...'..,:odc:lxo:,,cllllllllll
-ddd:;,,'........',',;;:''.'coloooolllc
-oddc,ccc:;,'''...........'cooddolllllc
-llcc:;::::::;,''........'looloooolllll
-cccc:,:c::;,''',,,'..''';oooollloolllc
-`});var g=C1(require("fs")),x=(e,t)=>g.writeFileSync(e,t,{encoding:"utf8"}),I=e=>g.readFileSync(e,{encoding:"utf8"});var A=new Date,C=`v3.1.0-${A.toJSON()}`,s=btoa(`${Number(A)}`).slice(10,18);var N=`<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 14 14" enable-background="new 0 0 240 240" x="0px" y="0px" xml:space="preserve" fill="currentColor">
+var m1=Object.create,v=Object.defineProperty,h1=Object.getPrototypeOf,g1=Object.prototype.hasOwnProperty,f1=Object.getOwnPropertyNames,u1=Object.getOwnPropertyDescriptor;var w1=e=>v(e,"__esModule",{value:!0});var v1=(e,t)=>()=>(t||(t={exports:{}},e(t.exports,t)),t.exports);var x1=(e,t,o)=>{if(t&&typeof t=="object"||typeof t=="function")for(let r of f1(t))!g1.call(e,r)&&r!=="default"&&v(e,r,{get:()=>t[r],enumerable:!(o=u1(t,r))||o.enumerable});return e},C1=e=>x1(w1(v(e!=null?m1(h1(e)):{},"default",e&&e.__esModule&&"default"in e?{get:()=>e.default,enumerable:!0}:{value:e,enumerable:!0})),e);var n1=v1((de,i1)=>{i1.exports=`XOddodddddddodxxxxxxxdddxxxxxkxxxOKKKOdloo
+M0ddodxxxxxdodkkkkkkkkkdddddxxxdd0NNNKxldo
+MOdxdddddxxddoxkkkkkkOkkkkkkxxdddkWMMXkodd
+MOddodxddxddxkkkxxkxoccldkkxxddodxNMMN0dlo
+olclcdddxdodkOxol:,'....'';ccldxxdk000kdod
+ccccoxxkdcc:;'''..............'.',;;;;;;;;
+xxdxxxxd:,........'',,,,,'........dxxxxddd
+kkkxxkkc'.....''''',;:c:;,'''''...llcc:ccl
+kxkxxkx:...:ol::'',;cdxd:,'';cd:.:lllllllc
+xxkxxddxl::O0kxdooddxOK0kxddxk0kdollllllll
+odxxxdddxko0KXXKOkxOkkkkkkxkOKXKdoooolllll
+ooodxxddx0xOK0kocclc;,,;:cl::oxOkoooolllll
+oooooxxxxOOkOkdc;;;::::cc:,,;cxkxdoollllcl
+ooooooddddooOkx:,:ldxOkOkxo:,lxdooolllllcc
+ooooooooddooldoccdkkxoooxkkoloolloollllllc
+dddl;,,,,;,'';,,;:okxlccxkdc;clllllllllllc
+ddd:.............':ccc:col:'.':llllloolllc
+dddd;,::;,............',,'...;loooolollllc
+oodl;:::cc:;,'''... .... ...,looddolllllll
+llcc:;:::::::;,,'''........:ooollooollllll
+ccccc;,:c::;,'''',,,'...,''loooolllooolllc
+`});var g=C1(require("fs")),x=(e,t)=>g.writeFileSync(e,t,{encoding:"utf8"}),A=e=>g.readFileSync(e,{encoding:"utf8"});var I=new Date,C=`v3.1.0-${I.toJSON()}`,s=btoa(`${Number(I)}`).slice(10,18);var N=`<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 14 14" enable-background="new 0 0 240 240" x="0px" y="0px" xml:space="preserve" fill="currentColor">
   <title>LinkedIn icon</title>
   <path d="m12.95 0h-11.9c-0.6 0-1 0.4-1 1v12c0 0.6 0.5 1 1 1h11.9c0.6 0 1-0.4 1-1v-12c0-0.6-0.4-1-1-1zm-8.8 11.9h-2.1v-6.7h2.1v6.7zm-1-7.6c-0.7 0-1.2-0.5-1.2-1.2s0.5-1.2 1.2-1.2 1.2 0.5 1.2 1.2-0.6 1.2-1.2 1.2zm8.8 7.6h-2.1v-3.2c0-0.8 0-1.8-1.1-1.8s-1.2 0.8-1.2 1.7v3.3h-2.1v-6.7h2v0.9c0.4-0.7 1.2-1.1 2-1.1 2.1 0 2.5 1.4 2.5 3.2v3.7z"></path>
 </svg>
@@ -103,19 +105,19 @@ cccc:,:c::;,''',,,'..''';oooollloolllc
   <rect x="122" y="160" width="36" height="47" fill="#E5E5E5" fill-opacity="0.25"/>
   <rect x="140" y="160" width="18" height="47" fill="#E5E5E5" fill-opacity="0.5"/>
 </svg>
-`;var L={"linkedin-icon":N,"linkedin-logo":F,"github-icon":T,"github-logo":P,"stackoverflow-icon":H,"stackoverflow-logo":D,"jsfiddle-icon":U,"jsfiddle-logo":V,"codersrank-icon":z,"codersrank-logo":q,"slot-machine-icon":B};var G="https://www.w3.org/2000/svg",k=new Map,L1=()=>`
-  <svg xmlns="${G}" display="none">
-  ${Object.entries(L).map(([e,t])=>(k.set(e,{viewBox:t.match(/viewBox="([^"]+)"/i)?.[1]}),t.replace(`xmlns="${G}"`,`id="sprite-${e}"`).replaceAll(/\bsvg\b/g,"symbol"))).join("")}
+`;var k={"linkedin-icon":N,"linkedin-logo":F,"github-icon":T,"github-logo":P,"stackoverflow-icon":H,"stackoverflow-logo":D,"jsfiddle-icon":U,"jsfiddle-logo":V,"codersrank-icon":z,"codersrank-logo":q,"slot-machine-icon":B};var K="https://www.w3.org/2000/svg",L=new Map,k1=()=>`
+  <svg xmlns="${K}" display="none">
+  ${Object.entries(k).map(([e,t])=>(L.set(e,{viewBox:t.match(/viewBox="([^"]+)"/i)?.[1]}),t.replace(`xmlns="${K}"`,`id="sprite-${e}"`).replaceAll(/\bsvg\b/g,"symbol"))).join("")}
   </svg>
-`,J=L1;var k1=(e={})=>{let{className:t="",children:o,squire:r,tag:i="div"}=e,n="link-list";return t&&(n+=` ${t}`),r&&(n+=" link-list--squire"),`
+`,G=k1;var L1=(e={})=>{let{className:t="",children:o,squire:r,tag:i="div"}=e,n="link-list";return t&&(n+=` ${t}`),r&&(n+=" link-list--squire"),`
       <${i} class="${n}">
         ${o?.map(p=>`<div class="link-list__item">${p}</div>`).join("")}
       </${i}>
-    `},y=k1;var y1=(e={})=>{let{className:t="link",children:o,tag:r="a",to:i="#",title:n="",onClick:p}=e,m=l();return setTimeout(()=>{p&&m.current&&m.current.addEventListener("click",p)}),`
+    `},y=L1;var y1=(e={})=>{let{className:t="link",children:o,tag:r="a",to:i="#",title:n="",onClick:p}=e,m=l();return setTimeout(()=>{p&&m.current&&m.current.addEventListener("click",p)}),`
       <${r} class="${t} link" href="${i}" title="${n}" ref="${m}">
         ${o?.join?.("")}
       </${r}>
-    `},c=y1;var d="Page not found",b="Wrong request";var $=!1;var f=$?()=>{}:(...e)=>{console.debug(...e)};var u=$?()=>{}:(...e)=>{console.info(...e)},E=$?()=>{}:(...e)=>{console.log(...e)};var Y=`query RepoFile($repo_owner: String!, $repo_name: String!, $object_path: String!) {
+    `},c=y1;var d="Page not found",b="Wrong request";var $=!1;var f=$?()=>{}:(...e)=>{console.debug(...e)};var u=$?()=>{}:(...e)=>{console.info(...e)},E=$?()=>{}:(...e)=>{console.log(...e)};var X=`query RepoFile($repo_owner: String!, $repo_name: String!, $object_path: String!) {
   repository(owner: $repo_owner, name: $repo_name) {
     object(expression: $object_path) {
       ... on Blob {
@@ -129,24 +131,24 @@ cccc:,:c::;,''',,,'..''';oooollloolllc
 #   "repo_name": "iegik.github.com",
 #   "repo_owner": "iegik",
 #   "object_path": "gh-pages: data/home.json"
-# }`;var X=`query GetUser($login:String!) {
+# }`;var Y=`query GetUser($login:String!) {
   user(login: $login) {
     avatarUrl
     login
   }
 }
-`;var b1=async e=>{let{data:t,errors:o}=await e.json();if(o)throw o[0];return t},M=class{constructor(){this.repoName="iegik.github.com";this.repoOwner="iegik";this.storeRoot="gh-pages:data"}static getInstance(){return this.instance}async request({query:t,variables:o}){if(typeof window=="undefined")return;let r=window.sessionStorage?.getItem("access_token"),i=window.sessionStorage?.getItem("token_type"),n=await fetch("https://api.github.com/graphql",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json",Authorization:`${i} ${r}`},body:JSON.stringify({query:t,variables:o})});return b1(n)}async getFile(t){let o=await this.request({query:Y,variables:{repo_name:this.repoName,repo_owner:this.repoOwner,object_path:`${this.storeRoot}${t}.json`}});if(!o)throw Error(b);let{repository:{object:r}}=o;if(!r)throw Error(d);let{text:i}=r;return JSON.parse(i)}async getUserInfo(){let{user:t}=await this.request({query:X,variables:{login:this.repoOwner}});if(!t)throw Error(b);return t}},W=M;W.instance=new M;var M1=e=>e.json(),S=class{constructor(){}static getInstance(){return this.instance}async request(t){let o=await fetch(`${location.protocol}//${location.host}/data${t}`,{headers:{"Content-Type":"application/json",Accept:"application/json"}});return M1(o)}async getFile(t){let o=await this.request(`${t}.json`);if(!o)throw Error(d);return o}},e1=S;e1.instance=new S;var t1=class{constructor(){this.id=null}toString(){let t=btoa(`${Math.ceil(Math.random()*1e13)+ +new Date}`).slice(10,18);return this.id=this.id||`ref-${t}`}get current(){return typeof window=="undefined"||typeof document=="undefined"?null:document.querySelector(`[ref=${this.id}]`)}},l=()=>new t1;var R1=({className:e,name:t}={name:"unknown"})=>{let o=l();return setTimeout(()=>{if(typeof window=="undefined"||typeof document=="undefined")return;let r=document.getElementById(`sprite-${t}`)?.getAttribute("viewBox")||"0 0 0 0";o.current?.setAttribute("viewBox",r)}),`
-    <svg class="${e}" preserveAspectRatio="xMidYMid meet" viewBox="${k.get(t)?.viewBox||"0 0 0 0"}" ref="${o}">
+`;var b1=async e=>{let{data:t,errors:o}=await e.json();if(o)throw o[0];return t},M=class{constructor(){this.repoName="iegik.github.com";this.repoOwner="iegik";this.storeRoot="gh-pages:data"}static getInstance(){return this.instance}async request({query:t,variables:o}){if(typeof window=="undefined")return;let r=window.sessionStorage?.getItem("access_token"),i=window.sessionStorage?.getItem("token_type"),n=await fetch("https://api.github.com/graphql",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json",Authorization:`${i} ${r}`},body:JSON.stringify({query:t,variables:o})});return b1(n)}async getFile(t){let o=await this.request({query:X,variables:{repo_name:this.repoName,repo_owner:this.repoOwner,object_path:`${this.storeRoot}${t}.json`}});if(!o)throw Error(b);let{repository:{object:r}}=o;if(!r)throw Error(d);let{text:i}=r;return JSON.parse(i)}async getUserInfo(){let{user:t}=await this.request({query:Y,variables:{login:this.repoOwner}});if(!t)throw Error(b);return t}},W=M;W.instance=new M;var M1=e=>e.json(),S=class{constructor(){}static getInstance(){return this.instance}async request(t){let o=await fetch(`${location.protocol}//${location.host}/data${t}`,{headers:{"Content-Type":"application/json",Accept:"application/json"}});return M1(o)}async getFile(t){let o=await this.request(`${t}.json`);if(!o)throw Error(d);return o}},e1=S;e1.instance=new S;var t1=class{constructor(){this.id=null}toString(){let t=btoa(`${Math.ceil(Math.random()*1e13)+ +new Date}`).slice(10,18);return this.id=this.id||`ref-${t}`}get current(){return typeof window=="undefined"||typeof document=="undefined"?null:document.querySelector(`[ref=${this.id}]`)}},l=()=>new t1;var R1=({className:e,name:t}={name:"unknown"})=>{let o=l();return setTimeout(()=>{if(typeof window=="undefined"||typeof document=="undefined")return;let r=document.getElementById(`sprite-${t}`)?.getAttribute("viewBox")||"0 0 0 0";o.current?.setAttribute("viewBox",r)}),`
+    <svg class="${e}" preserveAspectRatio="xMidYMid meet" viewBox="${L.get(t)?.viewBox||"0 0 0 0"}" ref="${o}">
       <use xlink:href="#sprite-${t}" />
     </svg>
-  `},a=R1;var w=0,_=!1,h="",o1=[],O="\u{1F34F},\u{1F330},\u{1F34B},\u{1F345},\u{1F346},\u{1F347},\u{1F353},\u{1F349},\u{1F350},\u{1F352},\u{1F351},\u{1F951}".split(","),{floor:_1,random:O1}=Math,Z1=e=>e[_1(O1()*e.length)],Z=()=>{if(_)return h;let[e,t,o]=[O,O,O].flatMap(Z1);if(h=`${e} ${t} ${o}`,f(`${w} ${h}`),e==t&&t==o){let r=`
+  `},a=R1;var w=0,O=!1,h="",o1=[],_="\u{1F34F},\u{1F330},\u{1F34B},\u{1F345},\u{1F346},\u{1F347},\u{1F353},\u{1F349},\u{1F350},\u{1F352},\u{1F351},\u{1F951}".split(","),{floor:O1,random:_1}=Math,Z1=e=>e[O1(_1()*e.length)],Z=()=>{if(O)return h;let[e,t,o]=[_,_,_].flatMap(Z1);if(h=`${e} ${t} ${o}`,f(`${w} ${h}`),e==t&&t==o){let r=`
             ${h}
-    You won in ${w} tries`;_=!0,o1.push(()=>{setTimeout(()=>{u(r),alert(r),_=!1})}),w=0}else w++;return h},j1=()=>{let e=l();return setTimeout(()=>{if(typeof window=="undefined")return;let t=new MutationObserver((o,r)=>{for(let i of o)if(i.type==="childList"){let n=o1.pop();n&&n()}});e.current&&t.observe(e.current,{childList:!0}),e.current?.addEventListener("click",()=>{!e.current||(e.current.innerHTML=Z())}),document.addEventListener("keydown",o=>{o.isComposing||o.keyCode===229||o.which!==13&&o.which!==32||!e.current||(e.current.innerHTML=Z())})}),`
+    You won in ${w} tries`;O=!0,o1.push(()=>{setTimeout(()=>{u(r),alert(r),O=!1})}),w=0}else w++;return h},j1=()=>{let e=l();return setTimeout(()=>{if(typeof window=="undefined")return;let t=new MutationObserver((o,r)=>{for(let i of o)if(i.type==="childList"){let n=o1.pop();n&&n()}});e.current&&t.observe(e.current,{childList:!0}),e.current?.addEventListener("click",()=>{!e.current||(e.current.innerHTML=Z())}),document.addEventListener("keydown",o=>{o.isComposing||o.keyCode===229||o.which!==13&&o.which!==32||!e.current||(e.current.innerHTML=Z())})}),`
     <div class="slot-machine">
       ${a({name:"slot-machine-icon",className:"slot-machine__icon"})}
       <span class="slot-machine__reels" ref="${e}">${Z()}</span>
     </div>
-  `},R=j1;var I1={"image/webp":"webp","image/jpeg":"jpg","image/png":"png"},A1={types:"",sizes:"",src:""},N1=({types:e,sizes:t,src:o}=A1)=>Object.entries(I1).filter(([r,i])=>e.includes(i)).flatMap(([r,i])=>`
+  `},R=j1;var A1={"image/webp":"webp","image/jpeg":"jpg","image/png":"png"},I1={types:"",sizes:"",src:""},N1=({types:e,sizes:t,src:o}=I1)=>Object.entries(A1).filter(([r,i])=>e.includes(i)).flatMap(([r,i])=>`
     <source type="${r}" srcset="${t.split(",").map(n=>o.replace(new RegExp(`.(${e})$`),`_${n}.${i} ${n}w`))}" />
   `).join(""),F1=e=>{if(!e)return"";let{src:t,ratio:o,sizes:r,types:i="png|webp",alt:n="",itemprop:p=""}=e,[m,l1]=o.split(":"),j=+r.split(",")[0],p1=j*+m,d1=j*+l1;return`
     <picture>
@@ -181,7 +183,7 @@ cccc:,:c::;,''',,,'..''';oooollloolllc
     <footer>
       ${R()}
     </footer>
-  `,a1=P1;var H1=I("./public/styles.min.css"),D1=Object.entries({"script-src":[`'nonce-${s}'`,"'strict-dynamic'","https://www.google-analytics.com","https://ssl.google-analytics.com","https://static.hotjar.com","https://js.sentry-cdn.com","'unsafe-inline'"],"img-src":["'self'","https://www.google-analytics.com","https://avatars.githubusercontent.com/"],"connect-src":["'self'","https://www.google-analytics.com","https://github.com/login/oauth/access_token","https://api.github.com/graphql","https://api.github.com/user","https://qilg4ch66b3vpgtevzccb5meum0ttfcl.lambda-url.eu-north-1.on.aws/","https://o171820.ingest.sentry.io/"],"style-src":[`'nonce-${s}'`,"https://static.hotjar.com"],"object-src":["'none'"],"base-uri":["'none'"],"frame-src":["https://vars.hotjar.com/"]}).reduce((e,[t,o])=>`${e};${t} ${o.join(" ")}`,"default-src 'self'"),U1="Art\u016Brs Jansons :: Web Developer",V1="Experienced web developer with a passion for innovation, automation and optimization",z1=`<!DOCTYPE html>
+  `,a1=P1;var H1=A("./public/styles.min.css");console.log("AAA");var D1=Object.entries({"script-src":[`'nonce-${s}'`,"'strict-dynamic'","https://www.google-analytics.com","https://ssl.google-analytics.com","https://static.hotjar.com","https://js.sentry-cdn.com","'unsafe-inline'"],"img-src":["'self'","https://www.google-analytics.com","https://avatars.githubusercontent.com/"],"connect-src":["'self'","https://www.google-analytics.com","https://github.com/login/oauth/access_token","https://api.github.com/graphql","https://api.github.com/user","https://qilg4ch66b3vpgtevzccb5meum0ttfcl.lambda-url.eu-north-1.on.aws/","https://o171820.ingest.sentry.io/"],"style-src":[`'nonce-${s}'`,"https://static.hotjar.com"],"object-src":["'none'"],"base-uri":["'none'"],"frame-src":["https://vars.hotjar.com/"]}).reduce((e,[t,o])=>`${e};${t} ${o.join(" ")}`,"default-src 'self'"),U1="Art\u016Brs Jansons :: Web Developer",V1="Experienced web developer with a passion for innovation, automation and optimization",z1=`<!DOCTYPE html>
 <html lang="en" manifest="manifest.appcache">
   <head>
     <meta http-equiv="Content-Security-Policy" content="${D1}">
@@ -195,7 +197,7 @@ cccc:,:c::;,''',,,'..''';oooollloolllc
   </head>
   <body>
     <noscript>This page uses JavaScript to play the slot machine game.</noscript>
-    ${J()}
+    ${G()}
     <div id="root">${a1()}</div>
     <script defer nonce="${s}" src="/lib/router.min.js"></script>
     
