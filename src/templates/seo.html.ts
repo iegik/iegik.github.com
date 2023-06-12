@@ -22,6 +22,7 @@ const csp = Object.entries({
   'connect-src': [
     `'self'`,
     `https://www.google-analytics.com`,
+    `https://region1.google-analytics.com`,
     // `https://in.hotjar.com`,
     `https://github.com/login/oauth/access_token`,
     `https://api.github.com/graphql`,
