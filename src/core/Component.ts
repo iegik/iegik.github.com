@@ -1,11 +1,11 @@
 import type { F } from './Component.d';
 
-export const displayNameToIs = (displayName) => `x-${displayName.toLowerCase()}`
+export const displayNameToIs = (displayName: string) => `x-${displayName.toLowerCase()}`
 
 export class Component extends HTMLElement {
   tag = 'div';
   root = document.body
-  ref = null;
+  ref: Element | null = null;
   private $$displayName = 'Component';
   get displayName() { return this.$$displayName || this.constructor.name }
   set displayName(displayName) { this.$$displayName = displayName }
@@ -14,18 +14,19 @@ export class Component extends HTMLElement {
     super();
     const { tag, ref, children } = props;
     this.tag = tag || this.tag;
-    this.ref = ref || this.ref;
 
-    if (this.ref) {
-      ref.outerHTML = this.toString();
-    } else {
+    if (this.ref == null && ref) {
+      this.ref = ref || this.ref;
+      this.ref.outerHTML = this.toString();
+    } else if (this.ref != null) {
       this.root.appendChild(this.ref);
       this.ref = this.root.lastElementChild;
     }
 
     if (children) {
       children.forEach((v) => {
-        ref.innerHTML += new Component(v)
+        if (!this.ref) return;
+        this.ref.innerHTML += new Component(v)
       });
     }
   }
