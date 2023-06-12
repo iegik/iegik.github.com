@@ -68,7 +68,6 @@ const html = `<!DOCTYPE html>
 
       gtag('config', 'G-5ZY8Y6X2C4');
     </script>
-    <script async nonce="${nonce}" src="/lib/clouds.min.js"></script>
     ${/*<script async nonce="${nonce}" src="/lib/hot-jar.min.js"></script>*/''}
     <script nonce="${nonce}" src="https://browser.sentry-cdn.com/7.54.0/bundle.min.js" integrity="sha384-EmlJLN9Q0yu0/2UUCIYnEM88jpQ7xUhtNI2ZeXb/ci3cwoAoIQl350N4PQPlMbP5" crossorigin="anonymous"></script>
     <script nonce="${nonce}">

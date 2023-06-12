@@ -37,7 +37,6 @@ const html = `<!DOCTYPE html>
     ${Sprite()}
     <div id="root">${Login()}</div>
     <script defer nonce="${nonce}" src="/lib/router.min.js"></script>
-    <script async nonce="${nonce}" src="/lib/clouds.min.js"></script>
   </body>
 </html>
 `;

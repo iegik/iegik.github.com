@@ -4,7 +4,7 @@ import { writeFileSync, readFileSync, release, nonce } from '@app/utils';
 import Sprite from '@app/components/sprite/sprite';
 import UI from '@app/pages/ui/ui'
 const style = readFileSync('./public/styles.min.css');
-const CSP = ({ nonce }) => `<meta http-equiv="Content-Security-Policy" content="${Object.entries({
+const CSP = ({ nonce }: { nonce: string }) => `<meta http-equiv="Content-Security-Policy" content="${Object.entries({
   'script-src': [
     `'nonce-${nonce}'`,
     `'strict-dynamic'`,
