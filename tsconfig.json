@@ -1,13 +1,33 @@
 {
+  "$schema": "https://schemastore.org/json/tsconfig",
   "compilerOptions": {
-    "baseUrl": ".",
-    "lib": ["esnext", "DOM"],
+    "allowJs": true,
+    "esModuleInterop": true,
+    "lib": ["DOM", "ESNext"],
+    "moduleResolution": "NodeNext",
+    "noEmit": true,
+    "skipLibCheck": true,
+    "module": "esnext",
+    "target": "es2015",
+    "strict": true,
+    "resolveJsonModule": true,
+    "typeRoots": ["node_modules/@types", "./types"],
+    "allowUnreachableCode": true,
+    "allowImportingTsExtensions": true,
+    "baseUrl": "./",
     "paths": {
       "@app/*": ["src/*"],
       "@assets/*": ["public/*"],
       "*.ts": ["*"]
-    },
-    "noEmit": true
+    }
   },
-  "files": ["globals.d.ts", "src/types.d.ts"]
+  "include": ["**/*.ts", "**/*.tsx", "**/**/*.ts", "**/**/*.tsx"],
+  "exclude": [
+    "**/__mocks__/*",
+    "**/__tests__/*",
+    "**/__stories__/*",
+    "babel.config.js",
+    "metro.config.js",
+    "jest.config.js"
+  ]
 }
