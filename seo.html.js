@@ -174,7 +174,7 @@ ccccc;,:c::;,'''',,,'...,''loooolllooolllc
     <footer>
       
     </footer>
-  `,e1=S1;var R1=$("./public/styles.min.css"),O1=Object.entries({"script-src":[`'nonce-${s}'`,"'strict-dynamic'","https://www.google-analytics.com","https://ssl.google-analytics.com","https://static.hotjar.com","https://js.sentry-cdn.com","'unsafe-inline'"],"img-src":["'self'","https://www.google-analytics.com","https://avatars.githubusercontent.com/"],"connect-src":["'self'","https://www.google-analytics.com","https://github.com/login/oauth/access_token","https://api.github.com/graphql","https://api.github.com/user","https://qilg4ch66b3vpgtevzccb5meum0ttfcl.lambda-url.eu-north-1.on.aws/","https://o171820.ingest.sentry.io/"],"style-src":[`'nonce-${s}'`,"https://static.hotjar.com"],"object-src":["'none'"],"base-uri":["'none'"],"frame-src":["https://vars.hotjar.com/"]}).reduce((t,[e,o])=>`${t};${e} ${o.join(" ")}`,"default-src 'self'"),_1="Art\u016Brs Jansons :: Web Developer",j1="Experienced web developer with a passion for innovation, automation and optimization",Z1=`<!DOCTYPE html>
+  `,e1=S1;var R1=$("./public/styles.min.css"),O1=Object.entries({"script-src":[`'nonce-${s}'`,"'strict-dynamic'","https://www.google-analytics.com","https://ssl.google-analytics.com","https://static.hotjar.com","https://js.sentry-cdn.com","'unsafe-inline'"],"img-src":["'self'","https://www.google-analytics.com","https://avatars.githubusercontent.com/","https://www.googletagmanager.com/"],"connect-src":["'self'","https://www.google-analytics.com","https://region1.google-analytics.com","https://github.com/login/oauth/access_token","https://api.github.com/graphql","https://api.github.com/user","https://qilg4ch66b3vpgtevzccb5meum0ttfcl.lambda-url.eu-north-1.on.aws/","https://o171820.ingest.sentry.io/"],"style-src":[`'nonce-${s}'`,"https://static.hotjar.com"],"object-src":["'none'"],"base-uri":["'none'"],"frame-src":["https://vars.hotjar.com/"]}).reduce((t,[e,o])=>`${t};${e} ${o.join(" ")}`,"default-src 'self'"),_1="Art\u016Brs Jansons :: Web Developer",j1="Experienced web developer with a passion for innovation, automation and optimization",Z1=`<!DOCTYPE html>
 <html lang="en" manifest="manifest.appcache">
   <head>
     <meta http-equiv="Content-Security-Policy" content="${O1}">
@@ -202,7 +202,7 @@ ccccc;,:c::;,'''',,,'...,''loooolllooolllc
     </script>
     <script async nonce="${s}" src="/lib/clouds.min.js"></script>
     
-    <script nonce="${s}" src="https://browser.sentry-cdn.com/7.7.0/bundle.min.js" integrity="sha384-EmlJLN9Q0yu0/2UUCIYnEM88jpQ7xUhtNI2ZeXb/ci3cwoAoIQl350N4PQPlMbP5" crossorigin="anonymous"></script>
+    <script nonce="${s}" src="https://browser.sentry-cdn.com/7.54.0/bundle.min.js" integrity="sha384-EmlJLN9Q0yu0/2UUCIYnEM88jpQ7xUhtNI2ZeXb/ci3cwoAoIQl350N4PQPlMbP5" crossorigin="anonymous"></script>
     <script nonce="${s}">
     document.addEventListener('DOMContentLoaded', () => {
       typeof Sentry !== 'undefined' && Sentry.init({
