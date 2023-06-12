@@ -1,9 +1,9 @@
 #!/usr/bin/env node
-var Q=Object.create,m=Object.defineProperty,W=Object.getPrototypeOf,Y=Object.prototype.hasOwnProperty,X=Object.getOwnPropertyNames,e1=Object.getOwnPropertyDescriptor;var t1=e=>m(e,"__esModule",{value:!0});var o1=(e,t,o)=>{if(t&&typeof t=="object"||typeof t=="function")for(let r of X(t))!Y.call(e,r)&&r!=="default"&&m(e,r,{get:()=>t[r],enumerable:!(o=e1(t,r))||o.enumerable});return e},r1=e=>o1(t1(m(e!=null?Q(W(e)):{},"default",e&&e.__esModule&&"default"in e?{get:()=>e.default,enumerable:!0}:{value:e,enumerable:!0})),e);var l=r1(require("fs")),g=(e,t)=>l.writeFileSync(e,t,{encoding:"utf8"}),b=e=>l.readFileSync(e,{encoding:"utf8"});var k=new Date,E=`v3.1.0-${k.toJSON()}`,c=btoa(`${Number(k)}`).slice(10,18);var $=`<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 14 14" enable-background="new 0 0 240 240" x="0px" y="0px" xml:space="preserve" fill="currentColor">
+var Y=Object.create,g=Object.defineProperty,Q=Object.getPrototypeOf,W=Object.prototype.hasOwnProperty,X=Object.getOwnPropertyNames,e1=Object.getOwnPropertyDescriptor;var t1=e=>g(e,"__esModule",{value:!0});var o1=(e,t,o)=>{if(t&&typeof t=="object"||typeof t=="function")for(let r of X(t))!W.call(e,r)&&r!=="default"&&g(e,r,{get:()=>t[r],enumerable:!(o=e1(t,r))||o.enumerable});return e},r1=e=>o1(t1(g(e!=null?Y(Q(e)):{},"default",e&&e.__esModule&&"default"in e?{get:()=>e.default,enumerable:!0}:{value:e,enumerable:!0})),e);var p=r1(require("fs")),f=(e,t)=>p.writeFileSync(e,t,{encoding:"utf8"}),b=e=>p.readFileSync(e,{encoding:"utf8"});var k=new Date,E=`v3.1.0-${k.toJSON()}`,a=btoa(`${Number(k)}`).slice(10,18);var $=`<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 14 14" enable-background="new 0 0 240 240" x="0px" y="0px" xml:space="preserve" fill="currentColor">
   <title>LinkedIn icon</title>
   <path d="m12.95 0h-11.9c-0.6 0-1 0.4-1 1v12c0 0.6 0.5 1 1 1h11.9c0.6 0 1-0.4 1-1v-12c0-0.6-0.4-1-1-1zm-8.8 11.9h-2.1v-6.7h2.1v6.7zm-1-7.6c-0.7 0-1.2-0.5-1.2-1.2s0.5-1.2 1.2-1.2 1.2 0.5 1.2 1.2-0.6 1.2-1.2 1.2zm8.8 7.6h-2.1v-3.2c0-0.8 0-1.8-1.1-1.8s-1.2 0.8-1.2 1.7v3.3h-2.1v-6.7h2v0.9c0.4-0.7 1.2-1.1 2-1.1 2.1 0 2.5 1.4 2.5 3.2v3.7z"></path>
 </svg>
-`;var M=`<svg xmlns="https://www.w3.org/2000/svg" enable-background="new 0 0 55.2 14" version="1.1" viewBox="0 0 55.2 14" xml:space="preserve"  fill="currentColor">
+`;var R=`<svg xmlns="https://www.w3.org/2000/svg" enable-background="new 0 0 55.2 14" version="1.1" viewBox="0 0 55.2 14" xml:space="preserve"  fill="currentColor">
   <title>LinkedIn logo</title>
   <polygon points="0 2.1 2.2 2.1 2.2 9.9 6.2 9.9 6.2 11.9 0 11.9"></polygon>
   <path d="m7.1 5.2h2.1v6.7h-2.1v-6.7zm1.1-3.3c0.7 0 1.2 0.5 1.2 1.2s-0.6 1.2-1.2 1.2-1.2-0.5-1.2-1.2 0.5-1.2 1.2-1.2"></path>
@@ -13,7 +13,7 @@ var Q=Object.create,m=Object.defineProperty,W=Object.getPrototypeOf,Y=Object.pro
   <path d="m35.6 6.9c-1 0-1.7 0.7-1.7 1.7s0.6 1.7 1.7 1.7 1.7-0.7 1.7-1.7-0.7-1.7-1.7-1.7m3.6 5h-1.9v-0.9c-0.5 0.7-1.2 1-2.1 1.1-2 0-3.3-1.4-3.3-3.5 0-1.9 1.1-3.6 3-3.6 0.9 0 1.7 0.2 2.1 0.9v-3.8h2.1l0.1 9.8z"></path>
   <path d="m54.2 0h-11.9c-0.6 0-1 0.4-1 1v12c0 0.6 0.5 1 1 1h11.9c0.6 0 1-0.4 1-1v-12c0-0.6-0.4-1-1-1zm-8.8 11.9h-2.1v-6.7h2.1v6.7zm-1-7.6c-0.7 0-1.2-0.5-1.2-1.2s0.5-1.2 1.2-1.2 1.2 0.5 1.2 1.2-0.6 1.2-1.2 1.2zm8.8 7.6h-2.1v-3.2c0-0.8 0-1.8-1.1-1.8s-1.2 0.8-1.2 1.7v3.3h-2.1v-6.7h2v0.9c0.4-0.7 1.2-1.1 2-1.1 2.1 0 2.5 1.4 2.5 3.2v3.7z"></path>
 </svg>
-`;var R=`<svg xmlns="https://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 16 16" data-view-component="true" fill="currentColor">
+`;var M=`<svg xmlns="https://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 16 16" data-view-component="true" fill="currentColor">
   <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
 </svg>
 `;var S=`<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 63 18">
@@ -32,12 +32,12 @@ var Q=Object.create,m=Object.defineProperty,W=Object.getPrototypeOf,Y=Object.pro
   <path d="M23.4888889,20.543316 C21.4404656,18.4187374 19.0750303,15.6666667 16.4832014,15.6666667 C13.8721947,15.6666667 11.7555556,17.6366138 11.7555556,20.0666667 C11.7555556,22.4967196 13.8721947,24.4666667 16.4832014,24.4666667 C18.8347252,24.4666667 19.9845474,23.0125628 20.6429148,22.312473" stroke-linecap="round"></path>
   <path d="M22.5111111,19.5900174 C24.5595344,21.7145959 26.9249697,24.4666667 29.5167986,24.4666667 C32.1278053,24.4666667 34.2444444,22.4967196 34.2444444,20.0666667 C34.2444444,17.6366138 32.1278053,15.6666667 29.5167986,15.6666667 C27.1652748,15.6666667 26.0154526,17.1207706 25.3570852,17.8208603" stroke-linecap="round"></path>
   <path d="M45,22.7331459 C45,19.1499462 42.7950446,16.079593 39.6628004,14.7835315 C39.6774469,14.5246474 39.7003932,14.2674038 39.7003932,14.0035978 C39.7003932,6.82243304 33.8412885,1 26.611593,1 C21.3985635,1 16.9102123,4.03409627 14.8051788,8.41527616 C13.7828502,7.62878013 12.503719,7.15547161 11.1134367,7.15547161 C7.77825654,7.15547161 5.07450503,9.84159999 5.07450503,13.1544315 C5.07450503,13.7760488 5.16938207,14.3779791 5.3477444,14.9418479 C2.74863428,16.4787471 1,19.2867709 1,22.5105187 C1,27.3287502 4.89630545,31.2367856 9.72803666,31.31094 L36.3341301,31.3109406 C41.1201312,31.3406346 45,27.4870665 45,22.7331459 L45,22.7331459 Z" stroke-linejoin="round"></path>
-</svg>`;var O=`<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 174 33" stroke-width="1.8" fill="none" fill-rule="evenodd" stroke="currentColor">
+</svg>`;var T=`<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 174 33" stroke-width="1.8" fill="none" fill-rule="evenodd" stroke="currentColor">
   <path d="M23.4888889,20.543316 C21.4404656,18.4187374 19.0750303,15.6666667 16.4832014,15.6666667 C13.8721947,15.6666667 11.7555556,17.6366138 11.7555556,20.0666667 C11.7555556,22.4967196 13.8721947,24.4666667 16.4832014,24.4666667 C18.8347252,24.4666667 19.9845474,23.0125628 20.6429148,22.312473" stroke-linecap="round"></path>
   <path d="M22.5111111,19.5900174 C24.5595344,21.7145959 26.9249697,24.4666667 29.5167986,24.4666667 C32.1278053,24.4666667 34.2444444,22.4967196 34.2444444,20.0666667 C34.2444444,17.6366138 32.1278053,15.6666667 29.5167986,15.6666667 C27.1652748,15.6666667 26.0154526,17.1207706 25.3570852,17.8208603" stroke-linecap="round"></path>
   <path d="M45,22.7331459 C45,19.1499462 42.7950446,16.079593 39.6628004,14.7835315 C39.6774469,14.5246474 39.7003932,14.2674038 39.7003932,14.0035978 C39.7003932,6.82243304 33.8412885,1 26.611593,1 C21.3985635,1 16.9102123,4.03409627 14.8051788,8.41527616 C13.7828502,7.62878013 12.503719,7.15547161 11.1134367,7.15547161 C7.77825654,7.15547161 5.07450503,9.84159999 5.07450503,13.1544315 C5.07450503,13.7760488 5.16938207,14.3779791 5.3477444,14.9418479 C2.74863428,16.4787471 1,19.2867709 1,22.5105187 C1,27.3287502 4.89630545,31.2367856 9.72803666,31.31094 L36.3341301,31.3109406 C41.1201312,31.3406346 45,27.4870665 45,22.7331459 L45,22.7331459 Z" stroke-linejoin="round"></path>
   <text x="50" y="28" font="bold 30px sans-serif" stroke="none" fill="currentColor">JSFiddle</text>
-</svg>`;var T=`<svg viewBox="0 0 62 39" fill="currentColor" xmlns="https://www.w3.org/2000/svg" class="main-header-logo">
+</svg>`;var O=`<svg viewBox="0 0 62 39" fill="currentColor" xmlns="https://www.w3.org/2000/svg" class="main-header-logo">
   <path d="M33.25.055 2.147 19.635c-1.465.886-2.18 1.878-2.146 2.977v2.98c.035 1.1.768 2.075 2.2 2.926l15.393 8.885a.726.726 0 0 0 1.047-.373l3.456-8.352-7.33-4.15a1.316 1.316 0 0 1-.697-.976 1.345 1.345 0 0 1 .644-1.365l13.457-8.247L33.721.428a.324.324 0 0 0-.104-.36.31.31 0 0 0-.369-.013h.002Z"/>
   <path d="M58.8 10.962 43.618 1.758a.726.726 0 0 0-1.047.32l-3.56 8.352 7.225 4.31c.208.113.381.282.502.488a1.347 1.347 0 0 1 0 1.363c-.12.205-.293.375-.502.49l-13.56 7.98-5.76 13.407a.323.323 0 0 0 .131.515.31.31 0 0 0 .34-.09l9.948-6.011 3.927 5.64a.945.945 0 0 0 .785.425h9.425a.932.932 0 0 0 .832-.506.97.97 0 0 0-.047-.984l-6.388-9.79 12.933-7.82c1.466-.887 2.2-1.88 2.2-2.98V13.94c0-1.1-.734-2.092-2.2-2.98H58.8Z"/>
 </svg>
@@ -84,11 +84,11 @@ var Q=Object.create,m=Object.defineProperty,W=Object.getPrototypeOf,Y=Object.pro
   <rect x="122" y="160" width="36" height="47" fill="#E5E5E5" fill-opacity="0.25"/>
   <rect x="140" y="160" width="18" height="47" fill="#E5E5E5" fill-opacity="0.5"/>
 </svg>
-`;var f={"linkedin-icon":$,"linkedin-logo":M,"github-icon":R,"github-logo":S,"stackoverflow-icon":_,"stackoverflow-logo":Z,"jsfiddle-icon":I,"jsfiddle-logo":O,"codersrank-icon":T,"codersrank-logo":N,"slot-machine-icon":A};var F="https://www.w3.org/2000/svg",u=new Map,j=()=>`
+`;var u={"linkedin-icon":$,"linkedin-logo":R,"github-icon":M,"github-logo":S,"stackoverflow-icon":_,"stackoverflow-logo":Z,"jsfiddle-icon":I,"jsfiddle-logo":T,"codersrank-icon":O,"codersrank-logo":N,"slot-machine-icon":A};var F="https://www.w3.org/2000/svg",v=new Map,j=()=>`
   <svg xmlns="${F}" display="none">
-  ${Object.entries(f).map(([e,t])=>(u.set(e,{viewBox:t.match(/viewBox="([^"]+)"/i)?.[1]}),t.replace(`xmlns="${F}"`,`id="sprite-${e}"`).replaceAll(/\bsvg\b/g,"symbol"))).join("")}
+  ${Object.entries(u).map(([e,t])=>(v.set(e,{viewBox:t.match(/viewBox="([^"]+)"/i)?.[1]}),t.replace(`xmlns="${F}"`,`id="sprite-${e}"`).replaceAll(/\bsvg\b/g,"symbol"))).join("")}
   </svg>
-`;var p="ae0dcffd947e0ca15a12",v="user repo";var s="Page not found",w="Wrong request";var n1=!1;var a=n1?()=>{}:(...e)=>{console.info(...e)};var U=`query RepoFile($repo_owner: String!, $repo_name: String!, $object_path: String!) {
+`;var s="ae0dcffd947e0ca15a12",h="user repo";var c="Page not found",w="Wrong request";var n1=!1;var l=n1?()=>{}:(...e)=>{console.info(...e)};var V=`query RepoFile($repo_owner: String!, $repo_name: String!, $object_path: String!) {
   repository(owner: $repo_owner, name: $repo_name) {
     object(expression: $object_path) {
       ... on Blob {
@@ -108,22 +108,22 @@ var Q=Object.create,m=Object.defineProperty,W=Object.getPrototypeOf,Y=Object.pro
     login
   }
 }
-`;var i1=async e=>{let{data:t,errors:o}=await e.json();if(o)throw o[0];return t},C=class{constructor(){this.repoName="iegik.github.com";this.repoOwner="iegik";this.storeRoot="gh-pages:data"}static getInstance(){return this.instance}async request({query:t,variables:o}){if(typeof window=="undefined")return;let r=window.sessionStorage?.getItem("access_token"),n=window.sessionStorage?.getItem("token_type"),d=await fetch("https://api.github.com/graphql",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json",Authorization:`${n} ${r}`},body:JSON.stringify({query:t,variables:o})});return i1(d)}async getFile(t){let o=await this.request({query:U,variables:{repo_name:this.repoName,repo_owner:this.repoOwner,object_path:`${this.storeRoot}${t}.json`}});if(!o)throw Error(w);let{repository:{object:r}}=o;if(!r)throw Error(s);let{text:n}=r;return JSON.parse(n)}async getUserInfo(){let{user:t}=await this.request({query:H,variables:{login:this.repoOwner}});if(!t)throw Error(w);return t}},q=C;q.instance=new C;var a1=e=>e.json(),L=class{constructor(){}static getInstance(){return this.instance}async request(t){let o=await fetch(`${location.protocol}//${location.host}/data${t}`,{headers:{"Content-Type":"application/json",Accept:"application/json"}});return a1(o)}async getFile(t){let o=await this.request(`${t}.json`);if(!o)throw Error(s);return o}},z=L;z.instance=new L;var l1=(e={})=>{let{className:t="",children:o,tag:r="button",onClick:n,type:d}=e,x=i();return setTimeout(()=>{n&&x.current?.addEventListener("click",n)}),`
-      <${r} class="${t}" ref="${x}" type="${d}">
+`;var i1=async e=>{let{data:t,errors:o}=await e.json();if(o)throw o[0];return t},C=class{constructor(){this.repoName="iegik.github.com";this.repoOwner="iegik";this.storeRoot="gh-pages:data"}static getInstance(){return this.instance}async request({query:t,variables:o}){if(typeof window=="undefined")return;let r=window.sessionStorage?.getItem("access_token"),n=window.sessionStorage?.getItem("token_type"),m=await fetch("https://api.github.com/graphql",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json",Authorization:`${n} ${r}`},body:JSON.stringify({query:t,variables:o})});return i1(m)}async getFile(t){let o=await this.request({query:V,variables:{repo_name:this.repoName,repo_owner:this.repoOwner,object_path:`${this.storeRoot}${t}.json`}});if(!o)throw Error(w);let{repository:{object:r}}=o;if(!r)throw Error(c);let{text:n}=r;return JSON.parse(n)}async getUserInfo(){let{user:t}=await this.request({query:H,variables:{login:this.repoOwner}});if(!t)throw Error(w);return t}},q=C;q.instance=new C;var a1=e=>e.json(),L=class{constructor(){}static getInstance(){return this.instance}async request(t){let o=await fetch(`${location.protocol}//${location.host}/data${t}`,{headers:{"Content-Type":"application/json",Accept:"application/json"}});return a1(o)}async getFile(t){let o=await this.request(`${t}.json`);if(!o)throw Error(c);return o}},z=L;z.instance=new L;var l1=(e={})=>{let{className:t="",children:o,tag:r="button",onClick:n,type:m}=e,x=i();return setTimeout(()=>{n&&x.current?.addEventListener("click",n)}),`
+      <${r} class="${t}" ref="${x}" type="${m}">
         ${o?.join("")}
       </${r}>
     `},y=l1;var y0="\u{1F34F},\u{1F330},\u{1F34B},\u{1F345},\u{1F346},\u{1F347},\u{1F353},\u{1F349},\u{1F350},\u{1F352},\u{1F351},\u{1F951}".split(",");var G=class{constructor(){this.id=null}toString(){let t=btoa(`${Math.ceil(Math.random()*1e13)+ +new Date}`).slice(10,18);return this.id=this.id||`ref-${t}`}get current(){return typeof window=="undefined"||typeof document=="undefined"?null:document.querySelector(`[ref=${this.id}]`)}},i=()=>new G;var h1=({className:e,name:t}={name:"unknown"})=>{let o=i();return setTimeout(()=>{if(typeof window=="undefined"||typeof document=="undefined")return;let r=document.getElementById(`sprite-${t}`)?.getAttribute("viewBox")||"0 0 0 0";o.current?.setAttribute("viewBox",r)}),`
-    <svg class="${e}" preserveAspectRatio="xMidYMid meet" viewBox="${u.get(t)?.viewBox||"0 0 0 0"}" ref="${o}">
+    <svg class="${e}" preserveAspectRatio="xMidYMid meet" viewBox="${v.get(t)?.viewBox||"0 0 0 0"}" ref="${o}">
       <use xlink:href="#sprite-${t}" />
     </svg>
-  `},h=h1;var J="^[\\d\\w\\-\\.]+$",q0=new RegExp(J);var d1=()=>{if(typeof document=="undefined"||typeof window=="undefined"||typeof window.sessionStorage=="undefined")return;let e=document.querySelector('[name="login"]');if(e.validity.valid===!1)return;let t=e?.value,o=btoa(`${+new Date}`).slice(10,18);window.sessionStorage?.setItem("state",o);let r=`https://github.com/login/oauth/authorize?client_id=${p}&login=${encodeURIComponent(t)}&scope=${encodeURIComponent(v)}&state=${o}`;a(`Navigated to ${r}`,{clientId:p,scope:v,state:o}),document.location.href=r},K=()=>`
+  `},d=h1;var J="^[\\d\\w\\-\\.]+$",q0=new RegExp(J);var d1=e=>{if(e.preventDefault(),typeof document=="undefined"||typeof window=="undefined"||typeof window.sessionStorage=="undefined")return;let t=document.querySelector('[name="login"]');if(t.validity.valid===!1)return;let o=t?.value,r=btoa(`${+new Date}`).slice(10,18);window.sessionStorage?.setItem("state",r);let n=`https://github.com/login/oauth/authorize?client_id=${s}&login=${encodeURIComponent(o)}&scope=${encodeURIComponent(h)}&state=${r}`;l(`Navigated to ${n}`,{clientId:s,scope:h,state:r}),window.location.href=n},K=e=>(setTimeout(async()=>{if(typeof document=="undefined")return;let t=new URLSearchParams(window.location.search).get("code"),n=(await(await fetch("https://github.com/login/oauth/access_token",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify({client_id:s,client_secret:"YOUR_CLIENT_SECRET",code:t,redirect_uri:e})})).json()).access_token;history.pushState({clientId:s,scope:h,accessToken:n},"",e)}),`
     <div class="login">
       <form>
         <input type="text" name="login" placeholder="username" pattern="${J}" />
-        ${y({className:"login__btn",children:["Login with ",h({name:"github-logo",className:"login__btn__icon"})],onClick:d1,type:"submit"})}
+        ${y({className:"login__btn",children:["Login with ",d({name:"github-logo",className:"login__btn__icon"})],onClick:d1,type:"submit"})}
       </form>
     </div>
-  `;var m1=b("./public/styles.min.css"),g1=Object.entries({"script-src":[`'nonce-${c}'`,"'strict-dynamic'"],"style-src":[`'nonce-${c}'`],"object-src":["'none'"],"base-uri":["'none'"]}).reduce((e,[t,o])=>`${e};${t} ${o.join(" ")}`,"default-src 'self'"),f1="Art\u016Brs Jansons :: Web Developer",u1="Experienced web developer with a passion for innovation, automation and optimization",v1=`<!DOCTYPE html>
+  `);var m1=b("./public/styles.min.css"),g1=Object.entries({"script-src":[`'nonce-${a}'`,"'strict-dynamic'"],"connect-src":["https://github.com/"],"style-src":[`'nonce-${a}'`],"object-src":["'none'"],"base-uri":["'none'"]}).reduce((e,[t,o])=>`${e};${t} ${o.join(" ")}`,"default-src 'self'"),f1="Art\u016Brs Jansons :: Web Developer",u1="Experienced web developer with a passion for innovation, automation and optimization",v1=`<!DOCTYPE html>
 <html lang="en" manifest="manifest.appcache">
   <head>
     <meta http-equiv="Content-Security-Policy" content="${g1}">
@@ -132,16 +132,16 @@ var Q=Object.create,m=Object.defineProperty,W=Object.getPrototypeOf,Y=Object.pro
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="var(--color-primary-light)" />
-    <style nonce="${c}">${m1}</style>
+    <style nonce="${a}">${m1}</style>
   </head>
   <body>
     <noscript>This page uses JavaScript to proper work.</noscript>
     ${j()}
     <div id="root">${K()}</div>
-    <script defer nonce="${c}" src="/lib/router.min.js"></script>
+    <script defer nonce="${a}" src="/lib/router.min.js"></script>
   </body>
 </html>
-`;g("public/login/index.html",v1);var w1=`
+`;f("public/login/index.html",v1);var w1=`
 CACHE MANIFEST
 # rev ${E}
 
@@ -155,4 +155,4 @@ lib/router.min.js
 
 NETWORK:
 *
-`;g("public/login/manifest.appcache",w1);
+`;f("public/login/manifest.appcache",w1);
