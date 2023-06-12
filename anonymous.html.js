@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-var Q=Object.create,m=Object.defineProperty,W=Object.getPrototypeOf,Y=Object.prototype.hasOwnProperty,X=Object.getOwnPropertyNames,e1=Object.getOwnPropertyDescriptor;var t1=e=>m(e,"__esModule",{value:!0});var o1=(e,t,o)=>{if(t&&typeof t=="object"||typeof t=="function")for(let r of X(t))!Y.call(e,r)&&r!=="default"&&m(e,r,{get:()=>t[r],enumerable:!(o=e1(t,r))||o.enumerable});return e},r1=e=>o1(t1(m(e!=null?Q(W(e)):{},"default",e&&e.__esModule&&"default"in e?{get:()=>e.default,enumerable:!0}:{value:e,enumerable:!0})),e);var l=r1(require("fs")),g=(e,t)=>l.writeFileSync(e,t,{encoding:"utf8"}),b=e=>l.readFileSync(e,{encoding:"utf8"});var k=new Date,E=`v3.1.0-${k.toJSON()}`,i=btoa(`${Number(k)}`).slice(10,18);var $=`<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 14 14" enable-background="new 0 0 240 240" x="0px" y="0px" xml:space="preserve" fill="currentColor">
+var Q=Object.create,m=Object.defineProperty,W=Object.getPrototypeOf,Y=Object.prototype.hasOwnProperty,X=Object.getOwnPropertyNames,e1=Object.getOwnPropertyDescriptor;var t1=e=>m(e,"__esModule",{value:!0});var o1=(e,t,o)=>{if(t&&typeof t=="object"||typeof t=="function")for(let r of X(t))!Y.call(e,r)&&r!=="default"&&m(e,r,{get:()=>t[r],enumerable:!(o=e1(t,r))||o.enumerable});return e},r1=e=>o1(t1(m(e!=null?Q(W(e)):{},"default",e&&e.__esModule&&"default"in e?{get:()=>e.default,enumerable:!0}:{value:e,enumerable:!0})),e);var l=r1(require("fs")),g=(e,t)=>l.writeFileSync(e,t,{encoding:"utf8"}),b=e=>l.readFileSync(e,{encoding:"utf8"});var k=new Date,E=`v3.1.0-${k.toJSON()}`,c=btoa(`${Number(k)}`).slice(10,18);var $=`<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 14 14" enable-background="new 0 0 240 240" x="0px" y="0px" xml:space="preserve" fill="currentColor">
   <title>LinkedIn icon</title>
   <path d="m12.95 0h-11.9c-0.6 0-1 0.4-1 1v12c0 0.6 0.5 1 1 1h11.9c0.6 0 1-0.4 1-1v-12c0-0.6-0.4-1-1-1zm-8.8 11.9h-2.1v-6.7h2.1v6.7zm-1-7.6c-0.7 0-1.2-0.5-1.2-1.2s0.5-1.2 1.2-1.2 1.2 0.5 1.2 1.2-0.6 1.2-1.2 1.2zm8.8 7.6h-2.1v-3.2c0-0.8 0-1.8-1.1-1.8s-1.2 0.8-1.2 1.7v3.3h-2.1v-6.7h2v0.9c0.4-0.7 1.2-1.1 2-1.1 2.1 0 2.5 1.4 2.5 3.2v3.7z"></path>
 </svg>
@@ -88,7 +88,7 @@ var Q=Object.create,m=Object.defineProperty,W=Object.getPrototypeOf,Y=Object.pro
   <svg xmlns="${F}" display="none">
   ${Object.entries(f).map(([e,t])=>(u.set(e,{viewBox:t.match(/viewBox="([^"]+)"/i)?.[1]}),t.replace(`xmlns="${F}"`,`id="sprite-${e}"`).replaceAll(/\bsvg\b/g,"symbol"))).join("")}
   </svg>
-`;var p="ae0dcffd947e0ca15a12",v="user repo";var c="Page not found",w="Wrong request";var n1=!1;var a=n1?()=>{}:(...e)=>{console.info(...e)};var U=`query RepoFile($repo_owner: String!, $repo_name: String!, $object_path: String!) {
+`;var p="ae0dcffd947e0ca15a12",v="user repo";var s="Page not found",w="Wrong request";var n1=!1;var a=n1?()=>{}:(...e)=>{console.info(...e)};var U=`query RepoFile($repo_owner: String!, $repo_name: String!, $object_path: String!) {
   repository(owner: $repo_owner, name: $repo_name) {
     object(expression: $object_path) {
       ... on Blob {
@@ -108,11 +108,11 @@ var Q=Object.create,m=Object.defineProperty,W=Object.getPrototypeOf,Y=Object.pro
     login
   }
 }
-`;var i1=async e=>{let{data:t,errors:o}=await e.json();if(o)throw o[0];return t},C=class{constructor(){this.repoName="iegik.github.com";this.repoOwner="iegik";this.storeRoot="gh-pages:data"}static getInstance(){return this.instance}async request({query:t,variables:o}){if(typeof window=="undefined")return;let r=window.sessionStorage?.getItem("access_token"),n=window.sessionStorage?.getItem("token_type"),d=await fetch("https://api.github.com/graphql",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json",Authorization:`${n} ${r}`},body:JSON.stringify({query:t,variables:o})});return i1(d)}async getFile(t){let o=await this.request({query:U,variables:{repo_name:this.repoName,repo_owner:this.repoOwner,object_path:`${this.storeRoot}${t}.json`}});if(!o)throw Error(w);let{repository:{object:r}}=o;if(!r)throw Error(c);let{text:n}=r;return JSON.parse(n)}async getUserInfo(){let{user:t}=await this.request({query:H,variables:{login:this.repoOwner}});if(!t)throw Error(w);return t}},q=C;q.instance=new C;var a1=e=>e.json(),L=class{constructor(){}static getInstance(){return this.instance}async request(t){let o=await fetch(`${location.protocol}//${location.host}/data${t}`,{headers:{"Content-Type":"application/json",Accept:"application/json"}});return a1(o)}async getFile(t){let o=await this.request(`${t}.json`);if(!o)throw Error(c);return o}},z=L;z.instance=new L;var l1=(e={})=>{let{className:t="",children:o,tag:r="button",onClick:n,type:d}=e,x=s();return setTimeout(()=>{n&&x.current?.addEventListener("click",n)}),`
+`;var i1=async e=>{let{data:t,errors:o}=await e.json();if(o)throw o[0];return t},C=class{constructor(){this.repoName="iegik.github.com";this.repoOwner="iegik";this.storeRoot="gh-pages:data"}static getInstance(){return this.instance}async request({query:t,variables:o}){if(typeof window=="undefined")return;let r=window.sessionStorage?.getItem("access_token"),n=window.sessionStorage?.getItem("token_type"),d=await fetch("https://api.github.com/graphql",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json",Authorization:`${n} ${r}`},body:JSON.stringify({query:t,variables:o})});return i1(d)}async getFile(t){let o=await this.request({query:U,variables:{repo_name:this.repoName,repo_owner:this.repoOwner,object_path:`${this.storeRoot}${t}.json`}});if(!o)throw Error(w);let{repository:{object:r}}=o;if(!r)throw Error(s);let{text:n}=r;return JSON.parse(n)}async getUserInfo(){let{user:t}=await this.request({query:H,variables:{login:this.repoOwner}});if(!t)throw Error(w);return t}},q=C;q.instance=new C;var a1=e=>e.json(),L=class{constructor(){}static getInstance(){return this.instance}async request(t){let o=await fetch(`${location.protocol}//${location.host}/data${t}`,{headers:{"Content-Type":"application/json",Accept:"application/json"}});return a1(o)}async getFile(t){let o=await this.request(`${t}.json`);if(!o)throw Error(s);return o}},z=L;z.instance=new L;var l1=(e={})=>{let{className:t="",children:o,tag:r="button",onClick:n,type:d}=e,x=i();return setTimeout(()=>{n&&x.current?.addEventListener("click",n)}),`
       <${r} class="${t}" ref="${x}" type="${d}">
         ${o?.join("")}
       </${r}>
-    `},y=l1;var y0="\u{1F34F},\u{1F330},\u{1F34B},\u{1F345},\u{1F346},\u{1F347},\u{1F353},\u{1F349},\u{1F350},\u{1F352},\u{1F351},\u{1F951}".split(",");var G=class{constructor(){this.id=null}toString(){let t=btoa(`${Math.ceil(Math.random()*1e13)+ +new Date}`).slice(10,18);return this.id=this.id||`ref-${t}`}get current(){return typeof window=="undefined"||typeof document=="undefined"?null:document.querySelector(`[ref=${this.id}]`)}},s=()=>new G;var h1=({className:e,name:t}={name:"unknown"})=>{let o=s();return setTimeout(()=>{if(typeof window=="undefined"||typeof document=="undefined")return;let r=document.getElementById(`sprite-${t}`)?.getAttribute("viewBox")||"0 0 0 0";o.current?.setAttribute("viewBox",r)}),`
+    `},y=l1;var y0="\u{1F34F},\u{1F330},\u{1F34B},\u{1F345},\u{1F346},\u{1F347},\u{1F353},\u{1F349},\u{1F350},\u{1F352},\u{1F351},\u{1F951}".split(",");var G=class{constructor(){this.id=null}toString(){let t=btoa(`${Math.ceil(Math.random()*1e13)+ +new Date}`).slice(10,18);return this.id=this.id||`ref-${t}`}get current(){return typeof window=="undefined"||typeof document=="undefined"?null:document.querySelector(`[ref=${this.id}]`)}},i=()=>new G;var h1=({className:e,name:t}={name:"unknown"})=>{let o=i();return setTimeout(()=>{if(typeof window=="undefined"||typeof document=="undefined")return;let r=document.getElementById(`sprite-${t}`)?.getAttribute("viewBox")||"0 0 0 0";o.current?.setAttribute("viewBox",r)}),`
     <svg class="${e}" preserveAspectRatio="xMidYMid meet" viewBox="${u.get(t)?.viewBox||"0 0 0 0"}" ref="${o}">
       <use xlink:href="#sprite-${t}" />
     </svg>
@@ -123,7 +123,7 @@ var Q=Object.create,m=Object.defineProperty,W=Object.getPrototypeOf,Y=Object.pro
         ${y({className:"login__btn",children:["Login with ",h({name:"github-logo",className:"login__btn__icon"})],onClick:d1,type:"submit"})}
       </form>
     </div>
-  `;var m1=b("./public/styles.min.css"),g1=Object.entries({"script-src":[`'nonce-${i}'`,"'strict-dynamic'"],"style-src":[`'nonce-${i}'`],"object-src":["'none'"],"base-uri":["'none'"]}).reduce((e,[t,o])=>`${e};${t} ${o.join(" ")}`,"default-src 'self'"),f1="Art\u016Brs Jansons :: Web Developer",u1="Experienced web developer with a passion for innovation, automation and optimization",v1=`<!DOCTYPE html>
+  `;var m1=b("./public/styles.min.css"),g1=Object.entries({"script-src":[`'nonce-${c}'`,"'strict-dynamic'"],"style-src":[`'nonce-${c}'`],"object-src":["'none'"],"base-uri":["'none'"]}).reduce((e,[t,o])=>`${e};${t} ${o.join(" ")}`,"default-src 'self'"),f1="Art\u016Brs Jansons :: Web Developer",u1="Experienced web developer with a passion for innovation, automation and optimization",v1=`<!DOCTYPE html>
 <html lang="en" manifest="manifest.appcache">
   <head>
     <meta http-equiv="Content-Security-Policy" content="${g1}">
@@ -132,14 +132,13 @@ var Q=Object.create,m=Object.defineProperty,W=Object.getPrototypeOf,Y=Object.pro
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="var(--color-primary-light)" />
-    <style nonce="${i}">${m1}</style>
+    <style nonce="${c}">${m1}</style>
   </head>
   <body>
     <noscript>This page uses JavaScript to proper work.</noscript>
     ${j()}
     <div id="root">${K()}</div>
-    <script defer nonce="${i}" src="/lib/router.min.js"></script>
-    <script async nonce="${i}" src="/lib/clouds.min.js"></script>
+    <script defer nonce="${c}" src="/lib/router.min.js"></script>
   </body>
 </html>
 `;g("public/login/index.html",v1);var w1=`
