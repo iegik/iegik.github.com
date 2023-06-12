@@ -68,7 +68,7 @@ const html = `<!DOCTYPE html>
     </script>
     <script async nonce="${nonce}" src="/lib/clouds.min.js"></script>
     ${/*<script async nonce="${nonce}" src="/lib/hot-jar.min.js"></script>*/''}
-    <script nonce="${nonce}" src="https://browser.sentry-cdn.com/7.7.0/bundle.min.js" integrity="sha384-lr/bDcE0vmUPBU6dhVBXfmhNYAEilrIepu1BRdVUJ8mZ0Hxhm17aIJ2bt4UfxC72" crossorigin="anonymous"></script>
+    <script nonce="${nonce}" src="https://browser.sentry-cdn.com/7.7.0/bundle.min.js" integrity="sha384-EmlJLN9Q0yu0/2UUCIYnEM88jpQ7xUhtNI2ZeXb/ci3cwoAoIQl350N4PQPlMbP5" crossorigin="anonymous"></script>
     <script nonce="${nonce}">
     document.addEventListener('DOMContentLoaded', () => {
       typeof Sentry !== 'undefined' && Sentry.init({

@@ -30,14 +30,14 @@ const Home = () => `
       Link({ to: 'https://stackoverflow.com/users/771471/iegik', title: 'Stack Overflow', children: [Icon({ name: "stackoverflow-icon", className: 'link-list__icon' })]}),
     ],
   })}
-          <div class="network">
+          ${/*<div class="network">
             ${Link({ to: '/login/', title: 'Login', children: ['🚪'] })}
-          </div>
+          </div>*/ ''}
         </header>
       </section>
     </article>
     <footer>
-      ${SlotMachine()}
+      ${/*SlotMachine()*/ ''}
     </footer>
   `
 
