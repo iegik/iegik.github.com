@@ -1,13 +1,12 @@
 // deno-lint-ignore-file no-undef
-// global document
+// global document, navigation
 import * as log from '@app/services/log';
 import { escapeHTML } from '@app/services/web-utils';
 import servicesMap from '@app/services/index';
 import * as componentsMap from '@app/components/index';
-import { ERROR_NOT_FOUND } from '@app/components/core/constants';
 
 export class Ref {
-  id = null;
+  id: string | null = null;
   toString() {
     const id = btoa(
       `${Math.ceil(Math.random() * 1e13) + +new Date()}`,
@@ -29,22 +28,27 @@ export class Ref {
 
 export const createRef = () => new Ref();
 
+export interface State extends ViewProps {
+  title?: string;
+  url?: string;
+}
+
 export const useState = (initialState = undefined) =>
   typeof history === 'undefined'
     ? []
     : [
       initialState || history.state || {},
-      (state, title, url) =>
+      (state: State, title: string, url: string) =>
         history.pushState(
           { ...history.state, ...state },
           title || '',
-        // url || location.href,
+          url || location.href,
         ),
     ];
 
 const mutationConfig = { attributes: true, childList: true, subtree: true };
 
-const render = (ref, eventType, props = { component: 'View' }) => (event: MutationRecord[] | MutationRecord | Error) => {
+const render = (ref: Ref, eventType: string, props:State = { component: 'View' }) => (event: MutationRecord[] | MutationRecord | Error) => {
   const [state, setState] = useState()
   const { component = 'View' } = props;
   log.debug('render', { eventType, component, state, props, event, typeof: typeof event, isArray: Array.isArray(event) });
@@ -53,7 +57,7 @@ const render = (ref, eventType, props = { component: 'View' }) => (event: Mutati
     return;
   }
 
-  const Component = componentsMap[component || 'View' ];
+  const Component = componentsMap[(component || 'View') as keyof typeof componentsMap];
   if (Array.isArray(event)) {
     for (const mutation of event) render(ref, eventType, props)(mutation);
     return
@@ -84,7 +88,7 @@ const render = (ref, eventType, props = { component: 'View' }) => (event: Mutati
   if (ref?.current) ref.current.innerHTML = Component(state);
 };
 
-const attachEvents = async (ref, props) => {
+const attachEvents = async (ref: Ref, props: State) => {
   log.debug('attachEvents', { ref, props });
 
   // To observe DOM changes
@@ -92,25 +96,27 @@ const attachEvents = async (ref, props) => {
   ref.current && observer.observe(ref.current, mutationConfig);
 
   // addEventListener('popstate', render(ref, 'popstate'));
-  globalThis.navigation?.addEventListener('navigate', render(ref, 'navigate', props));
+  navigation?.addEventListener('navigate', render(ref, 'navigate', props));
 
   // TODO: Move here from main()
   // document.addEventListener('error', render(ref, 'error', props))
 
   // Cleanup on unmount
-  ref.current.addEventListener('DOMRemoved', () => {
+  ref?.current?.addEventListener('DOMRemoved', () => {
+    if (!globalThis.hasOwnProperty('navigation')) return;
     log.info('DOMRemoved');
     // removeEventListener('popstate', popstate);
-    globalThis.navigation?.removeEventListener('navigate', render(ref, 'navigate', props));
+    navigation?.removeEventListener('navigate', render(ref, 'navigate', props));
     observer.disconnect();
   });
 }
 
-const runServices = async (ref, props) => {
+const runServices = async (ref: Ref, props: State) => {
   log.debug('runServices', { ref, props });
   const { services } = props;
   const [state, setState] = useState()
 
+  if (!services) return;
   for (const serviceName of services) {
     const service = servicesMap[serviceName];
     if (!service) throw Error(`Service ${serviceName} not found`);

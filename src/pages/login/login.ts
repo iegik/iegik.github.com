@@ -1,7 +1,8 @@
 import Icon from '@app/components/icon/icon'
 import Action from '@app/components/action/action'
-import { CLIENT_ID as clientId, SCOPE as scope } from '@app/components/core/constants'
+import { GITHUB_CLIENT_ID as clientId, SCOPE as scope } from '@app/components/core/constants'
 import * as log from '@app/services/log';
+import OauthService from '@app/services/oauth';
 
 const PATTERN_LOGIN = '^[\\d\\w\\-\\.]+$'
 const REGEX_LOGIN = new RegExp(PATTERN_LOGIN);
@@ -14,7 +15,8 @@ const assert = (expr:boolean, message:string) => !expr ? message : undefined
 //   || assert(ruleName === 'username' && value !== null && REGEX_LOGIN.test(value || ''), 'Value should contain only valid characters')
 // )
 
-const onClick = () => {
+const onClick = (e: { preventDefault: () => void; }) => {
+  e.preventDefault();
   if (typeof document === 'undefined') return;
   if (typeof window === 'undefined') return;
   if (typeof window.sessionStorage === 'undefined') return;
@@ -25,11 +27,14 @@ const onClick = () => {
   window.sessionStorage?.setItem('state', state)
   const url = `https://github.com/login/oauth/authorize?client_id=${clientId}&login=${encodeURIComponent(login)}&scope=${encodeURIComponent(scope)}&state=${state}`
   log.info(`Navigated to ${url}`, { clientId, scope, state })
-  document.location.href = url
   // history.pushState({ clientId, scope, state }, '', url)
+  window.location.href = url
 };
 
-export const Login = () => `
+export const Login = () => {
+  setTimeout(OauthService)
+
+  return `
     <div class="login">
       <form>
         <input type="text" name="login" placeholder="username" pattern="${PATTERN_LOGIN}" />
@@ -47,5 +52,6 @@ export const Login = () => `
       </form>
     </div>
   `
+}
 
 export default Login

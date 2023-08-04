@@ -3,12 +3,12 @@ import { useState } from '@app/components/core/view';
 import GitHubApi from '@app/services/github-api';
 
 const UserInfoService = async (ref: Ref) => {
-  const [{ avatarUrl }, setUserInfo] = useState();
+  const [{ variables }, setUserInfo] = useState();
   const fetchUser = async () => {
     const { avatarUrl, login } = await GitHubApi.getInstance().getUserInfo();
-    setUserInfo({ children: [{ tag: 'img', src: avatarUrl}, { tag: 'span', children: login}] });
+    setUserInfo({ children: [{ tag: 'img', src: avatarUrl }, { tag: 'span', children: login}], variables: { avatarUrl } });
   }
-  if (!avatarUrl) fetchUser();
+  if (!variables) fetchUser();
 }
 
 export default UserInfoService;

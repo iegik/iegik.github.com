@@ -5,7 +5,7 @@ import * as log from '@app/services/log';
 let tries = 0;
 let blocked = false;
 let cache = '';
-const events = [];
+const events:(() => void)[] = [];
 const roll = '🍏,🌰,🍋,🍅,🍆,🍇,🍓,🍉,🍐,🍒,🍑,🥑'.split(',');
 const { floor, random } = Math;
 const randomRoll = (what: string[]):string => what[floor(random() * what.length)];

@@ -1,4 +1,4 @@
-import { CLIENT_ID as clientId } from '@app/components/core/constants'
+import { GITHUB_CLIENT_ID as clientId } from '@app/components/core/constants'
 import * as log from '@app/services/log';
 import { Ref } from '@app/components/core/view';
 
@@ -14,7 +14,8 @@ const getAccessToken = async (code?:string) => {
 }
 
 const OauthService = async (ref: Ref) => {
-  const { protocol, hash, search } = location
+  if (typeof document === 'undefined') return;
+  const { protocol, hash, search } = document.location
   const state = window.sessionStorage?.getItem('state')
   const code = window.sessionStorage?.getItem('code')
   log.debug('Checking GET params', { protocol, hash, search, state })

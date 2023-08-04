@@ -9,9 +9,9 @@ type Process = { [key: string]: any };
 
 type Service = (ref: import('./components/core/view').Ref) => Promise<any>
 
-interface ViewProps {
+interface ViewProps extends {} {
   services?: string[];
-  tag?: string;
+  tag?: 'a' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'button' | 'div';
   className?: string;
   children?: ReactNode
   component?: string;

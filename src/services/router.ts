@@ -14,7 +14,7 @@ const route = (uri = '/') => {
   switch (true) {
     case /^\/login\/?$/.test(uri): return Login()
     case /^\/oauth\/?$/.test(uri): return View({ children: ['Loading...'], services: ['oauth']})
-    case /^\/profile\/?$/.test(uri): return View({ children: ['Loading...'], component: 'UserInfo', className: 'user-info', services: ['userInfo']})
+    case /^\/profile\/?$/.test(uri): return View({ children: ['Loading...'], component: 'View', className: 'user-info', services: ['userInfo']})
     case /^\/editor\/?$/.test(uri): return View({ children: ['Loading...'], services: ['editor']})
     // case /^\/preview1\/?$/.test(uri): return View({ children: ['Loading...'], services: ['preview']})
     case /^\/preview\/?$/.test(uri): return View({ children: ['Loading...'], services: ['preview']})

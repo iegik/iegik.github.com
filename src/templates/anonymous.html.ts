@@ -10,7 +10,9 @@ const csp = Object.entries({
     `'strict-dynamic'`,
   ],
   // 'img-src': [],
-  // 'connect-src': [],
+  'connect-src': [
+    `https://github.com/`,
+  ],
   'style-src': [
     `'nonce-${nonce}'`,
   ],

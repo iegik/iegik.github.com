@@ -1,5 +1,6 @@
 // import '@app/lib/clouds';
 
+import '@app/polyfills.ts'
 import SlotMachine from '@app/components/core/slot-machine.ts'
 import Header from '@app/components/header/header.ts'
 import Icon from '@app/components/icon/icon.ts'
@@ -19,9 +20,9 @@ const Home = () => `
           </h2>
           <span itemprop="jobTitle" class="subtitle">Software Developer</span>
           <br>
-            ${/*<span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="addressLocality">🏴 St.Petersburg, Russia</span></span>*/ ''}
-            ${/*<a href="callto:+79213900737"><i class="fa fa-whatsapp"></i><span itemprop="telephone">+7-921-39-00-737</span></a>*/ ''}
-            ${/*<a href="mailto:artur.janson+github@yandex.ru?title=iegik.github.io:contact" itemprop="email">artur.janson@yandex.ru</a>*/ ''}
+            <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="addressLocality">🇱🇻 Riga, Latvia</span></span>
+            <a href="callto:+37126262109"><i class="fa fa-whatsapp"></i><span itemprop="telephone">+371 26262109</span></a>
+            <a href="mailto:a.jansons+github@gmail.com?title=iegik.github.io:contact" itemprop="email">a.jansons@gmail.com</a>
           ${LinkList({
     squire: true,
     children: [
@@ -39,7 +40,7 @@ const Home = () => `
       </section>
     </article>
     <footer>
-      ${/*SlotMachine()*/ ''}
+      ${SlotMachine()}
     </footer>
   `
 
