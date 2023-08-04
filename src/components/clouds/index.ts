@@ -1,1 +1,1 @@
-export { default } from '@app/components/clouds/clouds'
+export { default } from '@app/components/clouds/clouds';

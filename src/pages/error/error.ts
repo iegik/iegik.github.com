@@ -1,20 +1,21 @@
-import LinkList from '@app/components/link-list/link-list'
+import LinkList from '@app/components/link-list/link-list';
 
 interface ErrorPageProps {
   message: string;
-  children?:string[]
+  children?: string[];
 }
 
-const ErrorPage:FC<ErrorPageProps> = ({ message, children } = { message: 'Unknown error' }) => `
+const ErrorPage: FC<ErrorPageProps> = (
+  { message, children } = { message: 'Unknown error' },
+) => `
   <div class="error">
     <div class="card error__card">
       <p>${message}</p>
       ${LinkList({
-    children,
-  })}
+        children,
+      })}
     </div>
   </div>
-`
+`;
 
-
-export default ErrorPage
+export default ErrorPage;

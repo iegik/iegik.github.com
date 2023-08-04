@@ -1,13 +1,17 @@
-import Icon from '@app/components/icon/icon'
-import Action from '@app/components/action/action'
-import { GITHUB_CLIENT_ID as clientId, SCOPE as scope } from '@app/components/core/constants'
+import Icon from '@app/components/icon/icon';
+import Action from '@app/components/action/action';
+import {
+  GITHUB_CLIENT_ID as clientId,
+  SCOPE as scope,
+} from '@app/components/core/constants';
 import * as log from '@app/services/log';
 import OauthService from '@app/services/oauth';
 
-const PATTERN_LOGIN = '^[\\d\\w\\-\\.]+$'
+const PATTERN_LOGIN = '^[\\d\\w\\-\\.]+$';
 const REGEX_LOGIN = new RegExp(PATTERN_LOGIN);
 
-const assert = (expr:boolean, message:string) => !expr ? message : undefined
+const assert = (expr: boolean, message: string) =>
+  !expr ? message : undefined;
 
 // const validate = (value?:string, rules?:string[]):string | boolean => rules?.reduce((prev, ruleName) => false
 //   || assert(ruleName === 'required' && value !== null, 'Field is required')
@@ -15,24 +19,28 @@ const assert = (expr:boolean, message:string) => !expr ? message : undefined
 //   || assert(ruleName === 'username' && value !== null && REGEX_LOGIN.test(value || ''), 'Value should contain only valid characters')
 // )
 
-const onClick = (e: { preventDefault: () => void; }) => {
+const onClick = (e: { preventDefault: () => void }) => {
   e.preventDefault();
   if (typeof document === 'undefined') return;
   if (typeof window === 'undefined') return;
   if (typeof window.sessionStorage === 'undefined') return;
-  const loginField = <HTMLInputElement>document.querySelector('[name="login"]')
-  if (loginField.validity.valid === false) return
-  const login = loginField?.value
-  const state = btoa(`${+new Date()}`).slice(10,18)
-  window.sessionStorage?.setItem('state', state)
-  const url = `https://github.com/login/oauth/authorize?client_id=${clientId}&login=${encodeURIComponent(login)}&scope=${encodeURIComponent(scope)}&state=${state}`
-  log.info(`Navigated to ${url}`, { clientId, scope, state })
+  const loginField = <HTMLInputElement>(
+    document.querySelector('[name="login"]')
+  );
+  if (loginField.validity.valid === false) return;
+  const login = loginField?.value;
+  const state = btoa(`${+new Date()}`).slice(10, 18);
+  window.sessionStorage?.setItem('state', state);
+  const url = `https://github.com/login/oauth/authorize?client_id=${clientId}&login=${encodeURIComponent(
+    login,
+  )}&scope=${encodeURIComponent(scope)}&state=${state}`;
+  log.info(`Navigated to ${url}`, { clientId, scope, state });
   // history.pushState({ clientId, scope, state }, '', url)
-  window.location.href = url
+  window.location.href = url;
 };
 
 export const Login = () => {
-  setTimeout(OauthService)
+  setTimeout(OauthService);
 
   return `
     <div class="login">
@@ -43,15 +51,16 @@ export const Login = () => {
     children: [
       'Login with ',
       Icon({
-        name: "github-logo",
+        name: 'github-logo',
         className: 'login__btn__icon',
-      })],
+      }),
+    ],
     onClick,
     type: 'submit',
   })}
       </form>
     </div>
-  `
-}
+  `;
+};
 
-export default Login
+export default Login;

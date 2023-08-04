@@ -46,47 +46,79 @@ export const useState = (initialState = undefined) =>
         ),
     ];
 
-const mutationConfig = { attributes: true, childList: true, subtree: true };
-
-const render = (ref: Ref, eventType: string, props:State = { component: 'View' }) => (event: MutationRecord[] | MutationRecord | Error) => {
-  const [state, setState] = useState()
-  const { component = 'View' } = props;
-  log.debug('render', { eventType, component, state, props, event, typeof: typeof event, isArray: Array.isArray(event) });
-  if (event instanceof Error) {
-    log.error(event);
-    return;
-  }
-
-  const Component = componentsMap[(component || 'View') as keyof typeof componentsMap];
-  if (Array.isArray(event)) {
-    for (const mutation of event) render(ref, eventType, props)(mutation);
-    return
-  }
-
-  if (event instanceof MutationRecord && event.type === 'childList') {
-    let refs = []
-    // for (let item of event.target) {
-    //   if (item instanceof HTMLElement) refs.push(item.getAttribute('ref'))
-    // }
-    log.log('A child node has been added or removed.', { target: event.target });
-    return;
-  }
-  if (event instanceof MutationRecord && event.type === 'attributes') {
-    log.log(`The ${  event.attributeName  } attribute was modified.`, { event });
-    // ref.current.innerHTML = Component(state);
-    return;
-  }
-  // options: { subtree: true } must be enabled on MutationObserver
-  // if (event instanceof MutationRecord && event.type === 'subtree') {
-  //   log.log(`The children was modified.`, { event });
-  //   return;
-  // }
-
-  if (!Component) throw Error(`Component ${component} not found`);
-  // FIXME: Fix this
-  // if (!history.state) throw Error(ERROR_NOT_FOUND)
-  if (ref?.current) ref.current.innerHTML = Component(state);
+const mutationConfig = {
+  attributes: true,
+  childList: true,
+  subtree: true,
 };
+
+const render =
+  (
+    ref: Ref,
+    eventType: string,
+    props: State = { component: 'View' },
+  ) =>
+    (event: MutationRecord[] | MutationRecord | Error) => {
+      const [state, setState] = useState();
+      const { component = 'View' } = props;
+      log.debug('render', {
+        eventType,
+        component,
+        state,
+        props,
+        event,
+        typeof: typeof event,
+        isArray: Array.isArray(event),
+      });
+      if (event instanceof Error) {
+        log.error(event);
+        return;
+      }
+
+      const Component =
+      componentsMap[
+        (component || 'View') as keyof typeof componentsMap
+      ];
+      if (Array.isArray(event)) {
+        for (const mutation of event)
+          render(ref, eventType, props)(mutation);
+        return;
+      }
+
+      if (
+        event instanceof MutationRecord &&
+      event.type === 'childList'
+      ) {
+        let refs = [];
+        // for (let item of event.target) {
+        //   if (item instanceof HTMLElement) refs.push(item.getAttribute('ref'))
+        // }
+        log.log('A child node has been added or removed.', {
+          target: event.target,
+        });
+        return;
+      }
+      if (
+        event instanceof MutationRecord &&
+      event.type === 'attributes'
+      ) {
+        log.log(`The ${event.attributeName} attribute was modified.`, {
+          event,
+        });
+        // ref.current.innerHTML = Component(state);
+        return;
+      }
+      // options: { subtree: true } must be enabled on MutationObserver
+      // if (event instanceof MutationRecord && event.type === 'subtree') {
+      //   log.log(`The children was modified.`, { event });
+      //   return;
+      // }
+
+      if (!Component) throw Error(`Component ${component} not found`);
+      // FIXME: Fix this
+      // if (!history.state) throw Error(ERROR_NOT_FOUND)
+      if (ref?.current) ref.current.innerHTML = Component(state);
+    };
 
 const attachEvents = async (ref: Ref, props: State) => {
   log.debug('attachEvents', { ref, props });
@@ -96,7 +128,11 @@ const attachEvents = async (ref: Ref, props: State) => {
   ref.current && observer.observe(ref.current, mutationConfig);
 
   // addEventListener('popstate', render(ref, 'popstate'));
-  navigation?.addEventListener('navigate', render(ref, 'navigate', props));
+  // @ts-ignore
+  navigation?.addEventListener(
+    'navigate',
+    render(ref, 'navigate', props),
+  );
 
   // TODO: Move here from main()
   // document.addEventListener('error', render(ref, 'error', props))
@@ -106,15 +142,19 @@ const attachEvents = async (ref: Ref, props: State) => {
     if (!globalThis.hasOwnProperty('navigation')) return;
     log.info('DOMRemoved');
     // removeEventListener('popstate', popstate);
-    navigation?.removeEventListener('navigate', render(ref, 'navigate', props));
+    // @ts-ignore
+    navigation?.removeEventListener(
+      'navigate',
+      render(ref, 'navigate', props),
+    );
     observer.disconnect();
   });
-}
+};
 
 const runServices = async (ref: Ref, props: State) => {
   log.debug('runServices', { ref, props });
   const { services } = props;
-  const [state, setState] = useState()
+  const [state, setState] = useState();
 
   if (!services) return;
   for (const serviceName of services) {
@@ -124,8 +164,8 @@ const runServices = async (ref: Ref, props: State) => {
   }
 
   // Keep history
-  setState({ services: null })
-}
+  setState({ services: null });
+};
 
 const View: FC<ViewProps> = (props = {}) => {
   log.debug({ props });
@@ -138,7 +178,7 @@ const View: FC<ViewProps> = (props = {}) => {
     ...rest
   } = props;
   const ref = createRef();
-  const [state, setState] = useState()
+  const [state, setState] = useState();
 
   setTimeout(async () => {
     if (!ref.current) return;
@@ -158,12 +198,11 @@ const View: FC<ViewProps> = (props = {}) => {
     : escapeHTML(children);
 
   const restProps = Object.entries(rest)?.reduce?.(
-    (acc, [key, value = '']) =>
-      `${acc} ${key}="${value}"`,
+    (acc, [key, value = '']) => `${acc} ${key}="${value}"`,
     '',
   );
 
-  log.debug('Rendering', { content, restProps })
+  log.debug('Rendering', { content, restProps });
 
   return `
     <${tag} class="${className}" ref="${ref}" ${restProps}>

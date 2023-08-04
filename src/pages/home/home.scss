@@ -1,4 +1,6 @@
-article, section, header {
+article,
+section,
+header {
   display: grid;
   place-items: center;
   align-items: start;
@@ -18,6 +20,10 @@ article, section, header {
   font-size: var(--font-size-l);
   text-transform: uppercase;
   font-weight: 600;
-  text-shadow: -0.01rem -0.01rem 0 var(--color-grayscale), 0.01rem -0.01rem 0 var(--color-grayscale), -0.01rem 0.01rem 0 var(--color-grayscale), 0.01rem 0.01rem 0 var(--color-grayscale), 0 0 1rem var(--color-grayscale);
+  text-shadow: -0.01rem -0.01rem 0 var(--color-grayscale),
+    0.01rem -0.01rem 0 var(--color-grayscale),
+    -0.01rem 0.01rem 0 var(--color-grayscale),
+    0.01rem 0.01rem 0 var(--color-grayscale),
+    0 0 1rem var(--color-grayscale);
   color: var(--text-color);
 }

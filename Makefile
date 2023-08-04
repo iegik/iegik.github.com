@@ -143,10 +143,15 @@ privacy:
 	sed -i '' 's/\[PRIVACY_POLICY_URL\]/https:\/\/iegik.github.com\/PRIVACY.md/g' public/PRIVACY.md && \
 	echo -e "\033[2K\r\033[0;32m✓ Task $@ completed\033[0m\n"
 
+check: ##		Check project
+	@npx solidarity && \
+	npm run lint && \
+	echo -e "\033[2K\r\033[0;32m✓ Task $@ completed\033[0m\n"
+
 # Entry point to start
 build: ttf2woff ttf2svg thumb jpg2png ascii png2webp sass compile eula privacy ##	Build project
 
-clean:
+clean: ##		Clean project
 	@grep -v node_modules .gitignore | awk '{print "rm -rf "$1}' | sh
 
 # publish:
@@ -154,5 +159,5 @@ clean:
 # 	&& git commit -m "BUMP" \
 # 	&& git subtree rm --prefix public --cached  \
 # 	&& git subtree push --prefix public origin gh-pages
-publish:
+publish: ## Publish project to GitHub Pages
 	@npx gh-pages -d public -a

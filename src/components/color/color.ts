@@ -1,99 +1,129 @@
-export const Color = function({r, g, b, a} = {r: 0, g: 0, b: 0, a: 0}) {
+export interface ColorProps { r?: number; g?: number; b?: number; a?: number; h?: number; s?: number; l?: number; }
+export const Color = function (
+  this: ColorProps,
+) {
   this.r = this.g = this.b = 0;
   this.h = this.s = this.l = 0;
   this.a = 1;
-
-  this.r = r || this.r;
-  this.g = g || this.g;
-  this.b = b || this.b;
-  this.a = a || this.a;
 };
 /** RGB */
-Color.prototype.cssRGB = function() {
-  return `rgb(${  this.r  },${  this.g  },${  this.b  })`;
+Color.prototype.cssRGB = function () {
+  return `rgb(${this.r},${this.g},${this.b})`;
 };
-Color.prototype.cssRGBA = function() {
-  return `rgba(${  this.r  },${  this.g  },${  this.b  },${  this.a  })`;
+Color.prototype.cssRGBA = function () {
+  return `rgba(${this.r},${this.g},${this.b},${this.a})`;
 };
-Color.prototype.red = function() {
+Color.prototype.red = function () {
   return this.r;
 };
-Color.prototype.green = function() {
+Color.prototype.green = function () {
   return this.g;
 };
-Color.prototype.blue = function() {
+Color.prototype.blue = function () {
   return this.b;
 };
 /** HSL */
-Color.prototype.cssHSL = function() {
-  return `hsl(${  Math.round(360 * this.h)  },${  Math.round(100 * this.s)  }%,${  Math.round(100 * this.l)  }%)`;
+Color.prototype.cssHSL = function () {
+  return `hsl(${Math.round(360 * this.h)},${Math.round(
+    100 * this.s,
+  )}%,${Math.round(100 * this.l)}%)`;
 };
-Color.prototype.cssHSLA = function() {
-  return `hsla(${  Math.round(360 * this.h)  },${  Math.round(100 * this.s)  }%,${  Math.round(100 * this.l)  }%,${  Math.round(this.a)  })`;
+Color.prototype.cssHSLA = function () {
+  return `hsla(${Math.round(360 * this.h)},${Math.round(
+    100 * this.s,
+  )}%,${Math.round(100 * this.l)}%,${Math.round(this.a)})`;
 };
-Color.prototype.hue = function() {
+Color.prototype.hue = function () {
   return this.h;
 };
-Color.prototype.saturation = function() {
+Color.prototype.saturation = function () {
   return this.s;
 };
-Color.prototype.lightness = function() {
+Color.prototype.lightness = function () {
   return this.l;
 };
 /** HEX */
-Color.prototype.cssHEX = function() {
-  return `#${  (`000${  (this.r * 0x10000 + this.g * 0x100 + this.b).toString(16)}`).substr(-6)}`;
-}
+Color.prototype.cssHEX = function () {
+  return `#${`000${(
+    this.r * 0x10000 +
+    this.g * 0x100 +
+    this.b
+  ).toString(16)}`.substr(-6)}`;
+};
 /** Transparency */
-Color.prototype.alpha = function() {
+Color.prototype.alpha = function () {
   return this.a;
 };
 /** Modifiers */
-Color.prototype.saturate = function(v) {
-  if ("string" == typeof v && v.indexOf("%") > -1 && !Number.isNaN(v = parseInt(v)))
+Color.prototype.saturate = function (v: string | number) {
+  if (
+    'string' == typeof v &&
+    v.indexOf('%') > -1 &&
+    !Number.isNaN((v = parseInt(v)))
+  )
     this.s += v / 100;
-  else if ("number" == typeof v) // range 255
+  else if ('number' == typeof v)
+    // range 255
     this.s += v / 255;
-  else throw new Error("error: bad modifier format (percent or number)");
+  else
+    throw new Error('error: bad modifier format (percent or number)');
   if (this.s > 1) this.s = 1;
   else if (this.s < 0) this.s = 0;
   Color.prototype.Convertor.HSLToRGB.apply(this);
 };
-Color.prototype.desaturate = function(v) {
-  this.saturate(`-${  v}`);
+Color.prototype.desaturate = function (v: string | number) {
+  this.saturate(`-${v}`);
 };
-Color.prototype.lighten = function(v) {
-  if ("string" == typeof v && v.indexOf("%") > -1 && !Number.isNaN(v = parseInt(v)))
+Color.prototype.lighten = function (v: string | number) {
+  if (
+    'string' == typeof v &&
+    v.indexOf('%') > -1 &&
+    !Number.isNaN((v = parseInt(v)))
+  )
     this.l += v / 100;
-  else if ("number" == typeof v) // range 255
+  else if ('number' == typeof v)
+    // range 255
     this.l += v / 255;
-  else throw new Error("error: bad modifier format (percent or number)");
+  else
+    throw new Error('error: bad modifier format (percent or number)');
   if (this.l > 1) this.l = 1;
   else if (this.l < 0) this.l = 0;
   Color.prototype.Convertor.HSLToRGB.apply(this);
 };
-Color.prototype.darken = function(v) {
-  this.ligthen(`-${  v}`);
+Color.prototype.darken = function (v: string | number) {
+  this.ligthen(`-${v}`);
 };
-Color.prototype.fadein = function(v) {
-  if ("string" == typeof v && v.indexOf("%") > -1 && !Number.isNaN(v = parseInt(v)))
+Color.prototype.fadein = function (v: string | number) {
+  if (
+    'string' == typeof v &&
+    v.indexOf('%') > -1 &&
+    !Number.isNaN((v = parseInt(v)))
+  )
     this.a += v / 100;
-  else if ("number" == typeof v) // range 255
+  else if ('number' == typeof v)
+    // range 255
     this.a += v / 255;
-  else throw new Error("error: bad modifier format (percent or number)");
+  else
+    throw new Error('error: bad modifier format (percent or number)');
   if (this.a > 1) this.a = 1;
   else if (this.a < 0) this.a = 0;
   Color.prototype.Convertor.HSLToRGB.apply(this);
 };
-Color.prototype.fadeout = function(v) {
-  this.fadein(`-${  v}`);
+Color.prototype.fadeout = function (v: string | number) {
+  this.fadein(`-${v}`);
 };
-Color.prototype.spin = function(v) {
-  if ("string" == typeof v && v.indexOf("%") > -1 && !Number.isNaN(v = parseInt(v)))
+Color.prototype.spin = function (v: string | number) {
+  if (
+    'string' == typeof v &&
+    v.indexOf('%') > -1 &&
+    !Number.isNaN((v = parseInt(v)))
+  )
     this.h += v / 100;
-  else if ("number" == typeof v) // range 360
+  else if ('number' == typeof v)
+    // range 360
     this.h += v / 360;
-  else throw new Error("error: bad modifier format (percent or number)");
+  else
+    throw new Error('error: bad modifier format (percent or number)');
   if (this.h > 1) this.h = 1;
   else if (this.h < 0) this.h = 0;
   Color.prototype.Convertor.HSLToRGB.apply(this);
@@ -103,12 +133,17 @@ Color.prototype.toString = function() {
   return "<span style=\"color: " + this.cssRGB() + "\">" + this.cssRGB() + "</span> / <span style=\"color: " + this.cssHSL() + "\">" + this.cssHSL() + "</span> / <span style=\"color: " + this.cssHEX() + "\">" + this.cssHEX() + "</span> / alpha: " + this.a + "";
 };*/
 
-Color.prototype.makeRGB = function() {
+Color.prototype.makeRGB = function () {
+  // @ts-ignore
   var c = new Color(),
     sanitized;
   if (arguments.length < 3 || arguments.length > 4)
-    throw new Error("error: 3 or 4 arguments");
-  sanitized = Color.prototype.Sanitizer.RGB(arguments[0], arguments[1], arguments[2]);
+    throw new Error('error: 3 or 4 arguments');
+  sanitized = Color.prototype.Sanitizer.RGB(
+    arguments[0],
+    arguments[1],
+    arguments[2],
+  );
   c.r = sanitized[0];
   c.g = sanitized[1];
   c.b = sanitized[2];
@@ -117,12 +152,17 @@ Color.prototype.makeRGB = function() {
   return c;
 };
 
-Color.prototype.makeHSL = function() {
+Color.prototype.makeHSL = function () {
+  // @ts-ignore
   var c = new Color(),
     sanitized;
   if (arguments.length < 3 || arguments.length > 4)
-    throw new Error("error: 3 or 4 arguments");
-  sanitized = Color.prototype.Sanitizer.HSL(arguments[0], arguments[1], arguments[2]);
+    throw new Error('error: 3 or 4 arguments');
+  sanitized = Color.prototype.Sanitizer.HSL(
+    arguments[0],
+    arguments[1],
+    arguments[2],
+  );
   c.h = sanitized[0];
   c.s = sanitized[1];
   c.l = sanitized[2];
@@ -131,7 +171,8 @@ Color.prototype.makeHSL = function() {
   return c;
 };
 
-Color.prototype.makeHEX = function(value) {
+Color.prototype.makeHEX = function (value: string) {
+  // @ts-ignore
   var c = new Color(),
     sanitized;
   Color.prototype.Validator.checkHEX(value);
@@ -139,22 +180,22 @@ Color.prototype.makeHEX = function(value) {
     sanitized = Color.prototype.Sanitizer.RGB(
       parseInt(value.substr(0, 1) + value.substr(0, 1), 16),
       parseInt(value.substr(1, 1) + value.substr(1, 1), 16),
-      parseInt(value.substr(2, 1) + value.substr(2, 1), 16)
+      parseInt(value.substr(2, 1) + value.substr(2, 1), 16),
     );
   } else if (value.length == 6) {
     sanitized = Color.prototype.Sanitizer.RGB(
       parseInt(value.substr(0, 2), 16),
       parseInt(value.substr(2, 2), 16),
-      parseInt(value.substr(4, 2), 16)
+      parseInt(value.substr(4, 2), 16),
     );
   } else if (value.length == 8) {
     sanitized = Color.prototype.Sanitizer.RGB(
       parseInt(value.substr(0, 2), 16),
       parseInt(value.substr(2, 2), 16),
       parseInt(value.substr(4, 2), 16),
-      parseInt(value.substr(4, 2), 16)
+      parseInt(value.substr(4, 2), 16),
     );
-  } else throw new Error("error: 3 or 6 arguments");
+  } else throw new Error('error: 3 or 6 arguments');
   c.r = sanitized[0];
   c.g = sanitized[1];
   c.b = sanitized[2];
@@ -164,79 +205,87 @@ Color.prototype.makeHEX = function(value) {
 };
 
 Color.prototype.Sanitizer = {
-  RGB: function() {
+  RGB: function () {
     var o = [];
     if (arguments.length == 0) return;
     for (var i = 0; i < arguments.length; i++) {
       var c = arguments[i];
-      if ("string" == typeof c && c.indexOf("%") > -1) {
-        if (Number.isNaN(c = parseInt(c)))
-          throw new Error("Bad format");
-        if (c < 0 || c > 100)
-          throw new Error("Bad format");
+      if ('string' == typeof c && c.indexOf('%') > -1) {
+        if (Number.isNaN((c = parseInt(c))))
+          throw new Error('Bad format');
+        if (c < 0 || c > 100) throw new Error('Bad format');
         o[i] = c / 100;
       } else {
-        if ("string" == typeof c && Number.isNaN(c = parseInt(c))) throw new Error("Bad format");
-        if (c < 0) throw new Error("Bad format");
+        if ('string' == typeof c && Number.isNaN((c = parseInt(c))))
+          throw new Error('Bad format');
+        if (c < 0) throw new Error('Bad format');
         else if (c >= 0 && c < 1) o[i] = c;
         else if (c >= 1 && c < 256) o[i] = c / 255;
-        else throw new Error("Bad format");
+        else throw new Error('Bad format');
       }
     }
     return o;
   },
-  HSL: function() {
-    if (arguments.length < 3 || arguments.length > 4) throw new Error("3 or 4 arguments required");
+  HSL: function () {
+    if (arguments.length < 3 || arguments.length > 4)
+      throw new Error('3 or 4 arguments required');
     var h = arguments[0],
       s = arguments[1],
       l = arguments[2];
-    if ("string" == typeof h && Number.isNaN(h = parseFloat(h))) throw new Error("Bad format for hue");
-    if (h < 0 || h > 360) throw new Error("Hue out of range (0..360)");
-    else if (((`${  h}`).indexOf(".") > -1 && h > 1) || (`${  h}`).indexOf(".") == -1) h /= 360;
-    if ("string" == typeof s && s.indexOf("%") > -1) {
-      if (Number.isNaN(s = parseInt(s)))
-        throw new Error("Bad format for saturation");
+    if ('string' == typeof h && Number.isNaN((h = parseFloat(h))))
+      throw new Error('Bad format for hue');
+    if (h < 0 || h > 360)
+      throw new Error('Hue out of range (0..360)');
+    else if (
+      (`${h}`.indexOf('.') > -1 && h > 1) ||
+      `${h}`.indexOf('.') == -1
+    )
+      h /= 360;
+    if ('string' == typeof s && s.indexOf('%') > -1) {
+      if (Number.isNaN((s = parseInt(s))))
+        throw new Error('Bad format for saturation');
       if (s < 0 || s > 100)
-        throw new Error("Bad format for saturation");
+        throw new Error('Bad format for saturation');
       s /= 100;
-    } else if (s < 0 || s > 1) throw new Error("Bad format for saturation");
-    if ("string" == typeof l && l.indexOf("%") > -1) {
-      if (Number.isNaN(l = parseInt(l)))
-        throw new Error("Bad format for lightness");
+    } else if (s < 0 || s > 1)
+      throw new Error('Bad format for saturation');
+    if ('string' == typeof l && l.indexOf('%') > -1) {
+      if (Number.isNaN((l = parseInt(l))))
+        throw new Error('Bad format for lightness');
       if (l < 0 || l > 100)
-        throw new Error("Bad format for lightness");
+        throw new Error('Bad format for lightness');
       l /= 100;
-    } else if (l < 0 || l > 1) throw new Error("Bad format for lightness");
+    } else if (l < 0 || l > 1)
+      throw new Error('Bad format for lightness');
     return [h, s, l];
   },
 };
 
 Color.prototype.Validator = {
-
   /**
    * Check a hexa color (without #)
    */
-  checkHEX: function(value) {
-    if (value.length != 6)
-      throw new Error("Hexa color: bad length");
+  checkHEX: function (value: any) {
+    if (value.length != 6) throw new Error('Hexa color: bad length');
     value = value.toLowerCase();
     for (let i in value) {
       var c = value.charCodeAt(i);
       if (!((c >= 48 && c <= 57) || (c >= 97 && c <= 102)))
-        throw new Error(`Hexa color: out of range for ${  value  } at position ${  i}`);
+        throw new Error(
+          `Hexa color: out of range for ${value} at position ${i}`,
+        );
     }
   },
 };
 
 Color.prototype.Convertor = {
-
   /**
    * Calculates HSL Color
    * RGB must be normalized
    * Must be executed in a Color object context
    * http://mjijackson.com/2008/02/rgb-to-hsl-and-rgb-to-hsv-color-model-conversion-algorithms-in-javascript
    */
-  RGBToHSL: function() {
+  RGBToHSL: function () {
     //
     var r = this.r,
       g = this.g,
@@ -265,16 +314,16 @@ Color.prototype.Convertor = {
   },
 
   /**
-   * Calculates RGB color (nomalized)
+   * Calculates RGB color (normalized)
    * HSL must be normalized
    * Must be executed in a Color object context
    * http://mjijackson.com/2008/02/rgb-to-hsl-and-rgb-to-hsv-color-model-conversion-algorithms-in-javascript
    */
-  HSLToRGB: function() {
+  HSLToRGB: function () {
     var h = this.h,
       s = this.s,
       l = this.l,
-      hue2rgb = function(p, q, t) {
+      hue2rgb = function (p: number, q: number, t: number) {
         if (t < 0) t += 1;
         if (t > 1) t -= 1;
         if (t < 1 / 6) return p + (q - p) * 6 * t;
@@ -293,7 +342,6 @@ Color.prototype.Convertor = {
     }
   },
 };
-
 
 // // HTMLInputElement
 // // HTMLInputColorElement

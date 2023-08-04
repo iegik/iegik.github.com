@@ -1,145 +1,149 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<link rel="stylesheet" type="text/css" href="./css/index.css" media="all" />
-		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.0r4/build/grids/grids-min.css">
-		<title>USB|Calc</title>
-    </head>
-    <body>
-		<div id="doc">
-			<div id="hd">
-				<h1>Universal Serial Bus</h1>
-			    <ul>
-			        <li>
-			            <a href="./" title="Welcome Home">home</a>
-			        </li>
-			        <li>
-			            <a href="portfolio.html" title="My Works">portfolio</a>
-			        </li>
-			        <li>
-			            <a href="twitter.html" title="Twitter">twitter</a>
-			        </li>
-			        <li>
-			            <a href="yui-wizard.html" title="Yahoo User Interfase wizard">YUI wizard</a>
-			        </li>
-			        <li>
-			            <a href="calc.html"  class="current" title="Currency online calculator">Currency</a>
-			        </li>
-			        <li>
-			            <a href="about.html" title="About Me">about</a>
-			        </li>
-			    </ul>
-			</div>
-		    <div id="bd">
-				<div id="calc" class="yui-b">
-		<h1>Currency converter</h1>
-		<form action="#none">
-			<p><label>input value:</label><input id="convI" type="text" disabled="disabled"/>
-			<p><label>from currency:</label>
-				<select id="currI" disabled="disabled">
-					<option value="1">LVL</option>
-					<option value="0.140000">AED</option>
-					<option value="0.471000">AUD</option>
-					<option value="0.359000">BGN</option>
-					<option value="0.000175">BYR</option>
-					<option value="0.502000">CAD</option>
-					<option value="0.481000">CHF</option>
-					<option value="0.075400">CNY</option>
-					<option value="0.027500">CZK</option>
-					<option value="0.094400">DKK</option>
-					<option value="0.044900">EEK</option>
-					<option value="0.094100">EGP</option>
-					<option value="0.702804">EUR</option>
-					<option value="0.771000">GBP</option>
-					<option value="0.066400">HKD</option>
-					<option value="0.096700">HRK</option>
-					<option value="0.002640">HUF</option>
-					<option value="0.138000">ILS</option>
-					<option value="0.011300">INR</option>
-					<option value="0.004030">ISK</option>
-					<option value="0.005700">JPI</option>
-					<option value="0.000454">KRW</option>
-					<option value="0.003500">KZT</option>
-					<option value="0.204000">LTL</option>
-					<option value="0.062700">MAD</option>
-					<option value="0.040800">MDL</option>
-					<option value="0.087600">NOK</option>
-					<option value="0.360000">NZD</option>
-					<option value="0.181000">PLN</option>
-					<option value="0.172000">RON</option>
-					<option value="0.017400">RUB</option>
-					<option value="0.072200">SEK</option>
-					<option value="0.368000">SGD</option>
-					<option value="0.371000">TND</option>
-					<option value="0.336000">TRI</option>
-					<option value="0.016200">TWD</option>
-					<option value="0.064200">UAH</option>
-					<option value="0.515000">USD</option>
-					<option value="0.000334">UZS</option>
-					<option value="571.1430">XAU</option>
-					<option value="0.787000">XDR</option>
-					<option value="0.069300">ZAR</option>
-				</select>
-			</p>
-			<p><label>output value:</label><input type="text" id="convO" disabled="disabled"></p>
-			<p><label>to currency:</label>
-				<select id="currO" disabled="disabled">
-					<option value="1">LVL</option>
-					<option value="0.140000">AED</option>
-					<option value="0.471000">AUD</option>
-					<option value="0.359000">BGN</option>
-					<option value="0.000175">BYR</option>
-					<option value="0.502000">CAD</option>
-					<option value="0.481000">CHF</option>
-					<option value="0.075400">CNY</option>
-					<option value="0.027500">CZK</option>
-					<option value="0.094400">DKK</option>
-					<option value="0.044900">EEK</option>
-					<option value="0.094100">EGP</option>
-					<option value="0.702804">EUR</option>
-					<option value="0.771000">GBP</option>
-					<option value="0.066400">HKD</option>
-					<option value="0.096700">HRK</option>
-					<option value="0.002640">HUF</option>
-					<option value="0.138000">ILS</option>
-					<option value="0.011300">INR</option>
-					<option value="0.004030">ISK</option>
-					<option value="0.005700">JPI</option>
-					<option value="0.000454">KRW</option>
-					<option value="0.003500">KZT</option>
-					<option value="0.204000">LTL</option>
-					<option value="0.062700">MAD</option>
-					<option value="0.040800">MDL</option>
-					<option value="0.087600">NOK</option>
-					<option value="0.360000">NZD</option>
-					<option value="0.181000">PLN</option>
-					<option value="0.172000">RON</option>
-					<option value="0.017400">RUB</option>
-					<option value="0.072200">SEK</option>
-					<option value="0.368000">SGD</option>
-					<option value="0.371000">TND</option>
-					<option value="0.336000">TRI</option>
-					<option value="0.016200">TWD</option>
-					<option value="0.064200">UAH</option>
-					<option value="0.515000">USD</option>
-					<option value="0.000334">UZS</option>
-					<option value="571.1430">XAU</option>
-					<option value="0.787000">XDR</option>
-					<option value="0.069300">ZAR</option>
-				</select>
-			</p>
-		</form>		
-		<p class="notice">Please enable JavaScript and return to <a href="./">main</a> page</p>
-				</div>
-		    </div>
-			<div id="ft">
-			    <p>
-			        <a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png" /></a>
-			    </p>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="./css/index.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.0r4/build/grids/grids-min.css">
+	<title>USB|Calc</title>
+</head>
+
+<body>
+	<div id="doc">
+		<div id="hd">
+			<h1>Universal Serial Bus</h1>
+			<ul>
+				<li>
+					<a href="./" title="Welcome Home">home</a>
+				</li>
+				<li>
+					<a href="portfolio.html" title="My Works">portfolio</a>
+				</li>
+				<li>
+					<a href="twitter.html" title="Twitter">twitter</a>
+				</li>
+				<li>
+					<a href="yui-wizard.html" title="Yahoo User Interface wizard">YUI wizard</a>
+				</li>
+				<li>
+					<a href="calc.html" class="current" title="Currency online calculator">Currency</a>
+				</li>
+				<li>
+					<a href="about.html" title="About Me">about</a>
+				</li>
+			</ul>
+		</div>
+		<div id="bd">
+			<div id="calc" class="yui-b">
+				<h1>Currency converter</h1>
+				<form action="#none">
+					<p><label>input value:</label><input id="convI" type="text" disabled="disabled" />
+					<p><label>from currency:</label>
+						<select id="currI" disabled="disabled">
+							<option value="1">LVL</option>
+							<option value="0.140000">AED</option>
+							<option value="0.471000">AUD</option>
+							<option value="0.359000">BGN</option>
+							<option value="0.000175">BYR</option>
+							<option value="0.502000">CAD</option>
+							<option value="0.481000">CHF</option>
+							<option value="0.075400">CNY</option>
+							<option value="0.027500">CZK</option>
+							<option value="0.094400">DKK</option>
+							<option value="0.044900">EEK</option>
+							<option value="0.094100">EGP</option>
+							<option value="0.702804">EUR</option>
+							<option value="0.771000">GBP</option>
+							<option value="0.066400">HKD</option>
+							<option value="0.096700">HRK</option>
+							<option value="0.002640">HUF</option>
+							<option value="0.138000">ILS</option>
+							<option value="0.011300">INR</option>
+							<option value="0.004030">ISK</option>
+							<option value="0.005700">JPI</option>
+							<option value="0.000454">KRW</option>
+							<option value="0.003500">KZT</option>
+							<option value="0.204000">LTL</option>
+							<option value="0.062700">MAD</option>
+							<option value="0.040800">MDL</option>
+							<option value="0.087600">NOK</option>
+							<option value="0.360000">NZD</option>
+							<option value="0.181000">PLN</option>
+							<option value="0.172000">RON</option>
+							<option value="0.017400">RUB</option>
+							<option value="0.072200">SEK</option>
+							<option value="0.368000">SGD</option>
+							<option value="0.371000">TND</option>
+							<option value="0.336000">TRI</option>
+							<option value="0.016200">TWD</option>
+							<option value="0.064200">UAH</option>
+							<option value="0.515000">USD</option>
+							<option value="0.000334">UZS</option>
+							<option value="571.1430">XAU</option>
+							<option value="0.787000">XDR</option>
+							<option value="0.069300">ZAR</option>
+						</select>
+					</p>
+					<p><label>output value:</label><input type="text" id="convO" disabled="disabled"></p>
+					<p><label>to currency:</label>
+						<select id="currO" disabled="disabled">
+							<option value="1">LVL</option>
+							<option value="0.140000">AED</option>
+							<option value="0.471000">AUD</option>
+							<option value="0.359000">BGN</option>
+							<option value="0.000175">BYR</option>
+							<option value="0.502000">CAD</option>
+							<option value="0.481000">CHF</option>
+							<option value="0.075400">CNY</option>
+							<option value="0.027500">CZK</option>
+							<option value="0.094400">DKK</option>
+							<option value="0.044900">EEK</option>
+							<option value="0.094100">EGP</option>
+							<option value="0.702804">EUR</option>
+							<option value="0.771000">GBP</option>
+							<option value="0.066400">HKD</option>
+							<option value="0.096700">HRK</option>
+							<option value="0.002640">HUF</option>
+							<option value="0.138000">ILS</option>
+							<option value="0.011300">INR</option>
+							<option value="0.004030">ISK</option>
+							<option value="0.005700">JPI</option>
+							<option value="0.000454">KRW</option>
+							<option value="0.003500">KZT</option>
+							<option value="0.204000">LTL</option>
+							<option value="0.062700">MAD</option>
+							<option value="0.040800">MDL</option>
+							<option value="0.087600">NOK</option>
+							<option value="0.360000">NZD</option>
+							<option value="0.181000">PLN</option>
+							<option value="0.172000">RON</option>
+							<option value="0.017400">RUB</option>
+							<option value="0.072200">SEK</option>
+							<option value="0.368000">SGD</option>
+							<option value="0.371000">TND</option>
+							<option value="0.336000">TRI</option>
+							<option value="0.016200">TWD</option>
+							<option value="0.064200">UAH</option>
+							<option value="0.515000">USD</option>
+							<option value="0.000334">UZS</option>
+							<option value="571.1430">XAU</option>
+							<option value="0.787000">XDR</option>
+							<option value="0.069300">ZAR</option>
+						</select>
+					</p>
+				</form>
+				<p class="notice">Please enable JavaScript and return to <a href="./">main</a> page</p>
 			</div>
 		</div>
-    </body>
+		<div id="ft">
+			<p>
+				<a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License"
+						style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png" /></a>
+			</p>
+		</div>
+	</div>
+</body>
+
 </html><!--
 copyright (c) 2009 Google inc.
 You are free to copy and use this sample.

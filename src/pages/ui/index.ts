@@ -1,1 +1,1 @@
-export { default } from '@app/pages/ui/ui'
+export { default } from '@app/pages/ui/ui';

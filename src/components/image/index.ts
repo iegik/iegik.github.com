@@ -1,1 +1,1 @@
-export { default } from '@app/components/image/image'
+export { default } from '@app/components/image/image';

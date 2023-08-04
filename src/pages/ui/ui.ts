@@ -1,5 +1,4 @@
-
 const UI = () => `
-  `
+  `;
 
-export default UI
+export default UI;

@@ -1,1 +1,1 @@
-export { default } from '@app/components/header/header'
+export { default } from '@app/components/header/header';
