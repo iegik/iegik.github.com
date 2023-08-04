@@ -22,7 +22,7 @@
       {
         "rule": "cli",
         "binary": "npm",
-        "semver": "^8.5.5"
+        "semver": "^9.5.1"
       },
       {
         "rule": "dir",
@@ -43,7 +43,7 @@
         "rule": "cli",
         "binary": "convert",
         "version": "-version",
-        "semver": "^7.1.0-61"
+        "semver": "^7.1.1-8"
       }
     ],
     "jp2a": [
