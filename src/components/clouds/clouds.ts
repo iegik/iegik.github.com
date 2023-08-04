@@ -5,7 +5,7 @@ export const clouds = (selector: string) => () => {
     typeof window === 'undefined'
       ? false
       : window.matchMedia?.(`(prefers-reduced-motion: reduce)`)
-        ?.matches === true;
+          ?.matches === true;
   let x1: number;
   let x2: number;
   let x: number;

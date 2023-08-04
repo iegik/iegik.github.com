@@ -37,14 +37,14 @@ export const useState = (initialState = undefined) =>
   typeof history === 'undefined'
     ? []
     : [
-      initialState || history.state || {},
-      (state: State, title: string, url: string) =>
-        history.pushState(
-          { ...history.state, ...state },
-          title || '',
-          url || location.href,
-        ),
-    ];
+        initialState || history.state || {},
+        (state: State, title: string, url: string) =>
+          history.pushState(
+            { ...history.state, ...state },
+            title || '',
+            url || location.href,
+          ),
+      ];
 
 const mutationConfig = {
   attributes: true,
@@ -58,67 +58,67 @@ const render =
     eventType: string,
     props: State = { component: 'View' },
   ) =>
-    (event: MutationRecord[] | MutationRecord | Error) => {
-      const [state, setState] = useState();
-      const { component = 'View' } = props;
-      log.debug('render', {
-        eventType,
-        component,
-        state,
-        props,
-        event,
-        typeof: typeof event,
-        isArray: Array.isArray(event),
-      });
-      if (event instanceof Error) {
-        log.error(event);
-        return;
-      }
+  (event: MutationRecord[] | MutationRecord | Error) => {
+    const [state, setState] = useState();
+    const { component = 'View' } = props;
+    log.debug('render', {
+      eventType,
+      component,
+      state,
+      props,
+      event,
+      typeof: typeof event,
+      isArray: Array.isArray(event),
+    });
+    if (event instanceof Error) {
+      log.error(event);
+      return;
+    }
 
-      const Component =
+    const Component =
       componentsMap[
         (component || 'View') as keyof typeof componentsMap
       ];
-      if (Array.isArray(event)) {
-        for (const mutation of event)
-          render(ref, eventType, props)(mutation);
-        return;
-      }
+    if (Array.isArray(event)) {
+      for (const mutation of event)
+        render(ref, eventType, props)(mutation);
+      return;
+    }
 
-      if (
-        event instanceof MutationRecord &&
+    if (
+      event instanceof MutationRecord &&
       event.type === 'childList'
-      ) {
-        let refs = [];
-        // for (let item of event.target) {
-        //   if (item instanceof HTMLElement) refs.push(item.getAttribute('ref'))
-        // }
-        log.log('A child node has been added or removed.', {
-          target: event.target,
-        });
-        return;
-      }
-      if (
-        event instanceof MutationRecord &&
-      event.type === 'attributes'
-      ) {
-        log.log(`The ${event.attributeName} attribute was modified.`, {
-          event,
-        });
-        // ref.current.innerHTML = Component(state);
-        return;
-      }
-      // options: { subtree: true } must be enabled on MutationObserver
-      // if (event instanceof MutationRecord && event.type === 'subtree') {
-      //   log.log(`The children was modified.`, { event });
-      //   return;
+    ) {
+      let refs = [];
+      // for (let item of event.target) {
+      //   if (item instanceof HTMLElement) refs.push(item.getAttribute('ref'))
       // }
+      log.log('A child node has been added or removed.', {
+        target: event.target,
+      });
+      return;
+    }
+    if (
+      event instanceof MutationRecord &&
+      event.type === 'attributes'
+    ) {
+      log.log(`The ${event.attributeName} attribute was modified.`, {
+        event,
+      });
+      // ref.current.innerHTML = Component(state);
+      return;
+    }
+    // options: { subtree: true } must be enabled on MutationObserver
+    // if (event instanceof MutationRecord && event.type === 'subtree') {
+    //   log.log(`The children was modified.`, { event });
+    //   return;
+    // }
 
-      if (!Component) throw Error(`Component ${component} not found`);
-      // FIXME: Fix this
-      // if (!history.state) throw Error(ERROR_NOT_FOUND)
-      if (ref?.current) ref.current.innerHTML = Component(state);
-    };
+    if (!Component) throw Error(`Component ${component} not found`);
+    // FIXME: Fix this
+    // if (!history.state) throw Error(ERROR_NOT_FOUND)
+    if (ref?.current) ref.current.innerHTML = Component(state);
+  };
 
 const attachEvents = async (ref: Ref, props: State) => {
   log.debug('attachEvents', { ref, props });
@@ -189,12 +189,12 @@ const View: FC<ViewProps> = (props = {}) => {
   // TODO: Replace with imperative
   const content = Array.isArray(children)
     ? children
-      .map((childProps: ReactNode) =>
-        childProps instanceof Object
-          ? View(<ViewProps>childProps ?? {})
-          : `${childProps}`,
-      )
-      .join?.('')
+        .map((childProps: ReactNode) =>
+          childProps instanceof Object
+            ? View(<ViewProps>childProps ?? {})
+            : `${childProps}`,
+        )
+        .join?.('')
     : escapeHTML(children);
 
   const restProps = Object.entries(rest)?.reduce?.(

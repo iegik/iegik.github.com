@@ -47,17 +47,17 @@ export const Login = () => {
       <form>
         <input type="text" name="login" placeholder="username" pattern="${PATTERN_LOGIN}" />
         ${Action({
-    className: 'login__btn',
-    children: [
-      'Login with ',
-      Icon({
-        name: 'github-logo',
-        className: 'login__btn__icon',
-      }),
-    ],
-    onClick,
-    type: 'submit',
-  })}
+          className: 'login__btn',
+          children: [
+            'Login with ',
+            Icon({
+              name: 'github-logo',
+              className: 'login__btn__icon',
+            }),
+          ],
+          onClick,
+          type: 'submit',
+        })}
       </form>
     </div>
   `;

@@ -27,8 +27,8 @@ const Icon: FC<IconProps> = (
 
   return `
     <svg class="${className}" preserveAspectRatio="xMidYMid meet" viewBox="${
-  spriteMap.get(name)?.viewBox || '0 0 0 0'
-}" ref="${ref}">
+    spriteMap.get(name)?.viewBox || '0 0 0 0'
+  }" ref="${ref}">
       <use xlink:href="#sprite-${name}" />
     </svg>
   `;

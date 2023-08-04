@@ -1,7 +1,13 @@
-export interface ColorProps { r?: number; g?: number; b?: number; a?: number; h?: number; s?: number; l?: number; }
-export const Color = function (
-  this: ColorProps,
-) {
+export interface ColorProps {
+  r?: number;
+  g?: number;
+  b?: number;
+  a?: number;
+  h?: number;
+  s?: number;
+  l?: number;
+}
+export const Color = function (this: ColorProps) {
   this.r = this.g = this.b = 0;
   this.h = this.s = this.l = 0;
   this.a = 1;

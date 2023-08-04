@@ -86,9 +86,9 @@ const SlotMachine: FC<{}> = () => {
   return `
     <div class="slot-machine">
       ${Icon({
-    name: 'slot-machine-icon',
-    className: 'slot-machine__icon',
-  })}
+        name: 'slot-machine-icon',
+        className: 'slot-machine__icon',
+      })}
       <span class="slot-machine__reels" ref="${ref}">${Reels()}</span>
     </div>
   `;

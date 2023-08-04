@@ -20,13 +20,13 @@ const Sources: FC<SourcesProps> = ({
     .flatMap(
       ([type, ext]) => `
     <source type="${type}" srcset="${sizes
-  .split(',')
-  .map((w: string) =>
-    src.replace(
-      new RegExp(`.(${types})$`),
-      `_${w}.${ext} ${w}w`,
-    ),
-  )}" />
+        .split(',')
+        .map((w: string) =>
+          src.replace(
+            new RegExp(`.(${types})$`),
+            `_${w}.${ext} ${w}w`,
+          ),
+        )}" />
   `,
     )
     .join('');
@@ -60,8 +60,8 @@ const Image: FC<ImageProps> = (props) => {
     <picture>
       ${Sources({ types, sizes, src })}
       <img src="${
-  types.includes('webp') ? src.replace(/\..*$/, '.webp') : src
-}" width="${width}" height="${height}" alt="${alt}" itemprop="${itemprop}" />
+        types.includes('webp') ? src.replace(/\..*$/, '.webp') : src
+      }" width="${width}" height="${height}" alt="${alt}" itemprop="${itemprop}" />
     </picture>
   `;
 };
