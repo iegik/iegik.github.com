@@ -11,6 +11,8 @@ public/**/*.ascii
 public/**/*.brf
 public/**/*.png
 public/**/*.jpg
+!public/images/artursjansons.jpg
+!public/images/bg.jpg
 public/favicon.ico
 public/**/index.html
 public/EULA.md

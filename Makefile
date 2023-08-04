@@ -144,7 +144,7 @@ privacy:
 	echo -e "\033[2K\r\033[0;32m✓ Task $@ completed\033[0m\n"
 
 # Entry point to start
-build: ttf2woff ttf2svg sass compile thumb jpg2png ascii png2webp eula privacy ##	Build project
+build: ttf2woff ttf2svg thumb jpg2png ascii png2webp sass compile eula privacy ##	Build project
 
 clean:
 	@grep -v node_modules .gitignore | awk '{print "rm -rf "$1}' | sh
