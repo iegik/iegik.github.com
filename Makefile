@@ -89,12 +89,17 @@ start: ##	Start server locally
 	@npx vite
 
 ppm: # not used
-	@scripts/png2asciisvg -s 64 -l 8 public/images/artursjansons.jpg && \
+	@scripts/png2asciisvg -s 64 -l 8 public/images/artursjansons.png && \
 	echo -e "\033[2K\r\033[0;32m✓ Task $@ completed\033[0m\n"
 
-thumb: # not used
-	@convert public/images/artursjansons.jpg -resize 64 public/favicon.ico && \
-	convert public/images/artursjansons.jpg -resize 64 public/images/artursjansons_64.jpg && \
+crop:
+	@convert public/images/me.jpg -gravity center -crop 1:1+0+0 +repage -interlace Plane public/images/artursjansons.jpg \
+
+icon: crop
+	@convert public/images/artursjansons.jpg -resize 64 -resize 128 -resize 256 public/favicon.ico && \
+
+thumb: crop # not used
+	@convert public/images/artursjansons.jpg -resize 64 public/images/artursjansons_64.jpg && \
 	convert public/images/artursjansons.jpg -resize 432 public/images/artursjansons_432.jpg && \
 	convert public/images/artursjansons.jpg -resize 128 public/images/artursjansons_128.jpg && \
 	echo -e "\033[2K\r\033[0;32m✓ Task $@ completed\033[0m\n"
@@ -113,13 +118,13 @@ ttf2svg:
 	echo -e "\033[2K\r\033[0;32m✓ Task $@ completed\033[0m\n"
 
 # for f in public/images/*.png; do; cwebp -quiet -q 80 ${f} -o $(f%%.png).webp; done;
-png2webp:
+png2webp: jpg2png
 	@scripts/png2webp && \
 	echo -e "\033[2K\r\033[0;32m✓ Task $@ completed\033[0m\n"
 #	@$(foreach f,$(wildcard public/images/*.png),cwebp -quiet -q 80 $(f) -o $(patsubst %.png,%.webp,$(f)));
 
 # for f in public/images/*.jpg; do; convert ${f} $(f%%.jpg).png; done;
-jpg2png:
+jpg2png: thumb
 	@scripts/jpg2png
 #	@$(foreach f,$(wildcard public/images/*.jpg),convert $(f) $(patsubst %.jpg,%.png,$(f)));
 

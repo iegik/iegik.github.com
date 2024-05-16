@@ -24,7 +24,8 @@ const csp = Object.entries({
     `'self'`,
     `https://www.google-analytics.com`,
     `https://region1.google-analytics.com`,
-    // `https://in.hotjar.com`,
+    `https://in.hotjar.com`,
+    `https://static.hotjar.com`,
     `https://github.com/login/oauth/access_token`,
     `https://api.github.com/graphql`,
     `https://api.github.com/user`,
@@ -68,7 +69,17 @@ const html = `<!DOCTYPE html>
 
       gtag('config', 'G-5ZY8Y6X2C4');
     </script>
-    ${/*<script async nonce="${nonce}" src="/lib/hot-jar.min.js"></script>*/''}
+    <!-- Hotjar Tracking Code for https://iegik.github.io -->
+    <script nonce="${nonce}">
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:2660383,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
     <script nonce="${nonce}" src="https://browser.sentry-cdn.com/7.54.0/bundle.min.js" integrity="sha384-EmlJLN9Q0yu0/2UUCIYnEM88jpQ7xUhtNI2ZeXb/ci3cwoAoIQl350N4PQPlMbP5" crossorigin="anonymous"></script>
     <script nonce="${nonce}">
     document.addEventListener('DOMContentLoaded', () => {

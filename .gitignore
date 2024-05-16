@@ -21,3 +21,4 @@ public/**/manifest.appcache
 public/data/
 scripts/index.js
 .env
+archive/
