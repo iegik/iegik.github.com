@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE wml PUBLIC "-//WAPFORUM//DTD WML 1.3//EN" "http://www.wapforum.org/DTD/wml13.dtd">
+<wml>
+  <card id="main" title="Welcome">
+    <p>Welcome to our WAP site!</p>
+    <p>The Wireless Application Protocol (WAP‘) is a result of continuous work to define an industry wide specification for
+developing applications that operate over wireless communication networks.</p>
+    <p>Download specification: <a href="https://www.openmobilealliance.org/tech/affiliates/wap/wap-210-waparch-20010712-a.pdf">wap-210-waparch-20010712-a.pdf</a></p>
+    <p>Click <a href="#about">here</a> to learn more about us.</p>
+    <p>Manu:</p>
+    <p><a href="#motivation">Motivation</a></p>
+  </card>
+
+  <card id="motivation" title="Motivation">
+    <p>Mass-market, hand-held wireless devices present a more constrained computing environment compared to desktop computers</p>
+    <p>Similarly, wireless data networks present a more constrained communication environment compared to wired networks. </p>
+    <p>Click <a href="#main">here</a> to go back.</p>
+  </card>
+  <card id="about" title="About Us">
+    <p>We are a WAP-friendly website!</p>
+    <p>Thanks for visiting.</p>
+    <p>Click <a href="#main">here</a> to go back.</p>
+  </card>
+</wml>

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-var Y=Object.create,g=Object.defineProperty,X=Object.getPrototypeOf,e1=Object.prototype.hasOwnProperty,t1=Object.getOwnPropertyNames,o1=Object.getOwnPropertyDescriptor;var r1=e=>g(e,"__esModule",{value:!0});var n1=(e,t,o)=>{if(t&&typeof t=="object"||typeof t=="function")for(let r of t1(t))!e1.call(e,r)&&r!=="default"&&g(e,r,{get:()=>t[r],enumerable:!(o=o1(t,r))||o.enumerable});return e},i1=e=>n1(r1(g(e!=null?Y(X(e)):{},"default",e&&e.__esModule&&"default"in e?{get:()=>e.default,enumerable:!0}:{value:e,enumerable:!0})),e);var m=i1(require("fs")),u=(e,t)=>m.writeFileSync(e,t,{encoding:"utf8"}),E=e=>m.readFileSync(e,{encoding:"utf8"});var $=new Date,M=`v3.1.0-${$.toJSON()}`,l=btoa(`${Number($)}`).slice(10,18);var R=`<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 14 14" enable-background="new 0 0 240 240" x="0px" y="0px" xml:space="preserve" fill="currentColor">
+"use strict";var W=Object.create;var $=Object.defineProperty;var Y=Object.getOwnPropertyDescriptor;var X=Object.getOwnPropertyNames;var e1=Object.getPrototypeOf,t1=Object.prototype.hasOwnProperty;var o1=(e,t,o,r)=>{if(t&&typeof t=="object"||typeof t=="function")for(let i of X(t))!t1.call(e,i)&&i!==o&&$(e,i,{get:()=>t[i],enumerable:!(r=Y(t,i))||r.enumerable});return e};var r1=(e,t,o)=>(o=e!=null?W(e1(e)):{},o1(t||!e||!e.__esModule?$(o,"default",{value:e,enumerable:!0}):o,e));var m=r1(require("fs")),u=(e,t)=>m.writeFileSync(e,t,{encoding:"utf8"}),b=e=>m.readFileSync(e,{encoding:"utf8"});var k=new Date,M=`v3.1.0-${k.toJSON()}`,l=btoa(`${Number(k)}`).slice(10,18);var R=`<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 14 14" enable-background="new 0 0 240 240" x="0px" y="0px" xml:space="preserve" fill="currentColor">
   <title>LinkedIn icon</title>
   <path d="m12.95 0h-11.9c-0.6 0-1 0.4-1 1v12c0 0.6 0.5 1 1 1h11.9c0.6 0 1-0.4 1-1v-12c0-0.6-0.4-1-1-1zm-8.8 11.9h-2.1v-6.7h2.1v6.7zm-1-7.6c-0.7 0-1.2-0.5-1.2-1.2s0.5-1.2 1.2-1.2 1.2 0.5 1.2 1.2-0.6 1.2-1.2 1.2zm8.8 7.6h-2.1v-3.2c0-0.8 0-1.8-1.1-1.8s-1.2 0.8-1.2 1.7v3.3h-2.1v-6.7h2v0.9c0.4-0.7 1.2-1.1 2-1.1 2.1 0 2.5 1.4 2.5 3.2v3.7z"></path>
 </svg>
@@ -47,7 +47,7 @@ var Y=Object.create,g=Object.defineProperty,X=Object.getPrototypeOf,e1=Object.pr
   <path d="M33.25.055 2.147 19.635c-1.465.886-2.18 1.878-2.146 2.977v2.98c.035 1.1.768 2.075 2.2 2.926l15.393 8.885a.726.726 0 0 0 1.047-.373l3.456-8.352-7.33-4.15a1.316 1.316 0 0 1-.697-.976 1.345 1.345 0 0 1 .644-1.365l13.457-8.247L33.721.428a.324.324 0 0 0-.104-.36.31.31 0 0 0-.369-.013h.002Z"/>
   <path d="M58.8 10.962 43.618 1.758a.726.726 0 0 0-1.047.32l-3.56 8.352 7.225 4.31c.208.113.381.282.502.488a1.347 1.347 0 0 1-.502 1.853l-13.56 7.98-5.76 13.407a.323.323 0 0 0 .131.515.311.311 0 0 0 .34-.09l9.948-6.011 3.927 5.64a.947.947 0 0 0 .785.425h9.425a.932.932 0 0 0 .832-.506.97.97 0 0 0-.047-.984l-6.388-9.79 12.933-7.82c1.466-.887 2.2-1.88 2.2-2.98V13.94c0-1.1-.734-2.092-2.2-2.98H58.8Z"/>
 </svg>
-`;var j=`
+`;var P=`
 <svg width="370" height="370" viewBox="0 0 370 370" fill="none" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
   <circle cx="185" cy="185" r="185" fill="#FECB00"/>
   <rect x="295.566" y="253.652" width="27.0996" height="22.4023" fill="#D6332C"/>
@@ -84,11 +84,11 @@ var Y=Object.create,g=Object.defineProperty,X=Object.getPrototypeOf,e1=Object.pr
   <rect x="122" y="160" width="36" height="47" fill="#E5E5E5" fill-opacity="0.25"/>
   <rect x="140" y="160" width="18" height="47" fill="#E5E5E5" fill-opacity="0.5"/>
 </svg>
-`;var v={"linkedin-icon":R,"linkedin-logo":S,"github-icon":_,"github-logo":Z,"stackoverflow-icon":I,"stackoverflow-logo":T,"jsfiddle-icon":O,"jsfiddle-logo":A,"codersrank-icon":F,"codersrank-logo":N,"slot-machine-icon":j};var P="https://www.w3.org/2000/svg",w=new Map,H=()=>`
-  <svg xmlns="${P}" display="none">
-  ${Object.entries(v).map(([e,t])=>(w.set(e,{viewBox:t.match(/viewBox="([^"]+)"/i)?.[1]}),t.replace(`xmlns="${P}"`,`id="sprite-${e}"`).replaceAll(/\bsvg\b/g,"symbol"))).join("")}
+`;var w={"linkedin-icon":R,"linkedin-logo":S,"github-icon":_,"github-logo":Z,"stackoverflow-icon":I,"stackoverflow-logo":T,"jsfiddle-icon":O,"jsfiddle-logo":A,"codersrank-icon":F,"codersrank-logo":N,"slot-machine-icon":P};var j="https://www.w3.org/2000/svg",v=new Map,H=()=>`
+  <svg xmlns="${j}" display="none">
+  ${Object.entries(w).map(([e,t])=>(v.set(e,{viewBox:t.match(/viewBox="([^"]+)"/i)?.[1]}),t.replace(`xmlns="${j}"`,`id="sprite-${e}"`).replaceAll(/\bsvg\b/g,"symbol"))).join("")}
   </svg>
-`;var s="ae0dcffd947e0ca15a12",C="user repo";var c="Page not found",L="Wrong request";var D=!1;var p=D?()=>{}:(...e)=>{console.debug(...e)};var h=D?()=>{}:(...e)=>{console.info(...e)};var s1=async e=>{if(!e)return;p("Requesting access_token",{code:e,clientId:s});let{access_token:t,scope:o,token_type:r}=await fetch(`https://qilg4ch66b3vpgtevzccb5meum0ttfcl.lambda-url.eu-north-1.on.aws/?code=${e}&client_id=${s}`).then(n=>n.json());window.sessionStorage?.setItem("access_token",t),window.sessionStorage?.setItem("scope",o),window.sessionStorage?.setItem("token_type",r),document.location.href="/#/profile"},c1=async e=>{if(typeof document=="undefined")return;let{protocol:t,hash:o,search:r}=document.location,n=window.sessionStorage?.getItem("state"),d=window.sessionStorage?.getItem("code");p("Checking GET params",{protocol:t,hash:o,search:r,state:n});let a=new URLSearchParams(r);if(a.get("state")!==n)return window.history?.go(-2);s1(a.get("code")||void 0)},y=c1;var U=`query RepoFile($repo_owner: String!, $repo_name: String!, $object_path: String!) {
+`;var s="ae0dcffd947e0ca15a12",C="user repo";var c="Page not found",L="Wrong request";var D=!1;var p=D?()=>{}:(...e)=>{console.debug(...e)};var h=D?()=>{}:(...e)=>{console.info(...e)};var g1=async e=>{if(!e)return;p("Requesting access_token",{code:e,clientId:s});let{access_token:t,scope:o,token_type:r}=await fetch(`https://qilg4ch66b3vpgtevzccb5meum0ttfcl.lambda-url.eu-north-1.on.aws/?code=${e}&client_id=${s}`).then(i=>i.json());window.sessionStorage?.setItem("access_token",t),window.sessionStorage?.setItem("scope",o),window.sessionStorage?.setItem("token_type",r),document.location.href="/#/profile"},u1=async e=>{if(typeof document>"u")return;let{protocol:t,hash:o,search:r}=document.location,i=window.sessionStorage?.getItem("state"),f=window.sessionStorage?.getItem("code");p("Checking GET params",{protocol:t,hash:o,search:r,state:i});let a=new URLSearchParams(r);if(a.get("state")!==i)return window.history?.go(-2);g1(a.get("code")||void 0)},y=u1;var U=`query RepoFile($repo_owner: String!, $repo_name: String!, $object_path: String!) {
   repository(owner: $repo_owner, name: $repo_name) {
     object(expression: $object_path) {
       ... on Blob {
@@ -102,46 +102,46 @@ var Y=Object.create,g=Object.defineProperty,X=Object.getPrototypeOf,e1=Object.pr
 #   "repo_name": "iegik.github.com",
 #   "repo_owner": "iegik",
 #   "object_path": "gh-pages: data/home.json"
-# }`;var q=`query GetUser($login:String!) {
+# }`;var z=`query GetUser($login:String!) {
   user(login: $login) {
     avatarUrl
     login
   }
 }
-`;var a1=async e=>{let{data:t,errors:o}=await e.json();if(o)throw o[0];return t},x=class{constructor(){this.repoName="iegik.github.com";this.repoOwner="iegik";this.storeRoot="gh-pages:data"}static getInstance(){return this.instance}async request({query:t,variables:o}){if(typeof window=="undefined")return;let r=window.sessionStorage?.getItem("access_token"),n=window.sessionStorage?.getItem("token_type"),d=await fetch("https://api.github.com/graphql",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json",Authorization:`${n} ${r}`},body:JSON.stringify({query:t,variables:o})});return a1(d)}async getFile(t){let o=await this.request({query:U,variables:{repo_name:this.repoName,repo_owner:this.repoOwner,object_path:`${this.storeRoot}${t}.json`}});if(!o)throw Error(L);let{repository:{object:r}}=o;if(!r)throw Error(c);let{text:n}=r;return JSON.parse(n)}async getUserInfo(){let{user:t}=await this.request({query:q,variables:{login:this.repoOwner}});if(!t)throw Error(L);return t}},z=x;z.instance=new x;var h1=e=>e.json(),b=class{constructor(){}static getInstance(){return this.instance}async request(t){let o=await fetch(`${location.protocol}//${location.host}/data${t}`,{headers:{"Content-Type":"application/json",Accept:"application/json"}});return h1(o)}async getFile(t){let o=await this.request(`${t}.json`);if(!o)throw Error(c);return o}},J=b;J.instance=new b;var d1=(e={})=>{let{className:t="",children:o,tag:r="button",onClick:n,type:d}=e,a=i();return setTimeout(()=>{n&&a.current?.addEventListener("click",n)}),`
-      <${r} class="${t}" ref="${a}" type="${d}">
+`;var C1=async e=>{let{data:t,errors:o}=await e.json();if(o)throw o[0];return t},q=class e{constructor(){this.repoName="iegik.github.com";this.repoOwner="iegik";this.storeRoot="gh-pages:data"}static{this.instance=new e}static getInstance(){return this.instance}async request({query:t,variables:o}){if(typeof window>"u")return;let r=window.sessionStorage?.getItem("access_token"),i=window.sessionStorage?.getItem("token_type"),f=await fetch("https://api.github.com/graphql",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json",Authorization:`${i} ${r}`},body:JSON.stringify({query:t,variables:o})});return C1(f)}async getFile(t){let o=await this.request({query:U,variables:{repo_name:this.repoName,repo_owner:this.repoOwner,object_path:`${this.storeRoot}${t}.json`}});if(!o)throw Error(L);let{repository:{object:r}}=o;if(!r)throw Error(c);let{text:i}=r;return JSON.parse(i)}async getUserInfo(){let{user:t}=await this.request({query:z,variables:{login:this.repoOwner}});if(!t)throw Error(L);return t}};var x1=e=>e.json(),J=class e{static{this.instance=new e}constructor(){}static getInstance(){return this.instance}async request(t){let o=await fetch(`${location.protocol}//${location.host}/data${t}`,{headers:{"Content-Type":"application/json",Accept:"application/json"}});return x1(o)}async getFile(t){let o=await this.request(`${t}.json`);if(!o)throw Error(c);return o}};var E1=(e={})=>{let{className:t="",children:o,tag:r="button",onClick:i,type:f}=e,a=n();return setTimeout(()=>{i&&a.current?.addEventListener("click",i)}),`
+      <${r} class="${t}" ref="${a}" type="${f}">
         ${o?.join("")}
       </${r}>
-    `},k=d1;var b0="\u{1F34F},\u{1F330},\u{1F34B},\u{1F345},\u{1F346},\u{1F347},\u{1F353},\u{1F349},\u{1F350},\u{1F352},\u{1F351},\u{1F951}".split(",");var K=class{constructor(){this.id=null}toString(){let t=btoa(`${Math.ceil(Math.random()*1e13)+ +new Date}`).slice(10,18);return this.id=this.id||`ref-${t}`}get current(){return typeof window=="undefined"||typeof document=="undefined"?null:document.querySelector(`[ref=${this.id}]`)}},i=()=>new K;var f1=({className:e,name:t}={name:"unknown"})=>{let o=i();return setTimeout(()=>{if(typeof window=="undefined"||typeof document=="undefined")return;let r=document.getElementById(`sprite-${t}`)?.getAttribute("viewBox")||"0 0 0 0";o.current?.setAttribute("viewBox",r)}),`
-    <svg class="${e}" preserveAspectRatio="xMidYMid meet" viewBox="${w.get(t)?.viewBox||"0 0 0 0"}" ref="${o}">
+    `},x=E1;var u0="\u{1F34F},\u{1F330},\u{1F34B},\u{1F345},\u{1F346},\u{1F347},\u{1F353},\u{1F349},\u{1F350},\u{1F352},\u{1F351},\u{1F951}".split(","),{floor:w0,random:v0}=Math;var E=class{constructor(){this.id=null}toString(){let t=btoa(`${Math.ceil(Math.random()*1e13)+ +new Date}`).slice(10,18);return this.id=this.id||`ref-${t}`}get current(){return typeof window>"u"||typeof document>"u"?null:document.querySelector(`[ref=${this.id}]`)}},n=()=>new E;var b1=({className:e,name:t}={name:"unknown"})=>{let o=n();return setTimeout(()=>{if(typeof window>"u"||typeof document>"u")return;let r=document.getElementById(`sprite-${t}`)?.getAttribute("viewBox")||"0 0 0 0";o.current?.setAttribute("viewBox",r)}),`
+    <svg class="${e}" preserveAspectRatio="xMidYMid meet" viewBox="${v.get(t)?.viewBox||"0 0 0 0"}" ref="${o}">
       <use xlink:href="#sprite-${t}" />
     </svg>
-  `},f=f1;var Q="^[\\d\\w\\-\\.]+$",G0=new RegExp(Q);var g1=e=>{if(e.preventDefault(),typeof document=="undefined"||typeof window=="undefined"||typeof window.sessionStorage=="undefined")return;let t=document.querySelector('[name="login"]');if(t.validity.valid===!1)return;let o=t?.value,r=btoa(`${+new Date}`).slice(10,18);window.sessionStorage?.setItem("state",r);let n=`https://github.com/login/oauth/authorize?client_id=${s}&login=${encodeURIComponent(o)}&scope=${encodeURIComponent(C)}&state=${r}`;h(`Navigated to ${n}`,{clientId:s,scope:C,state:r}),window.location.href=n},W=()=>(setTimeout(y),`
+  `},g=b1;var K="^[\\d\\w\\-\\.]+$",H0=new RegExp(K);var k1=e=>{if(e.preventDefault(),typeof document>"u"||typeof window>"u"||typeof window.sessionStorage>"u")return;let t=document.querySelector('[name="login"]');if(t.validity.valid===!1)return;let o=t?.value,r=btoa(`${+new Date}`).slice(10,18);window.sessionStorage?.setItem("state",r);let i=`https://github.com/login/oauth/authorize?client_id=${s}&login=${encodeURIComponent(o)}&scope=${encodeURIComponent(C)}&state=${r}`;h(`Navigated to ${i}`,{clientId:s,scope:C,state:r}),window.location.href=i},Q=()=>(setTimeout(y),`
     <div class="login">
       <form>
-        <input type="text" name="login" placeholder="username" pattern="${Q}" />
-        ${k({className:"login__btn",children:["Login with ",f({name:"github-logo",className:"login__btn__icon"})],onClick:g1,type:"submit"})}
+        <input type="text" name="login" placeholder="username" pattern="${K}" />
+        ${x({className:"login__btn",children:["Login with ",g({name:"github-logo",className:"login__btn__icon"})],onClick:k1,type:"submit"})}
       </form>
     </div>
-  `);var u1=E("./public/styles.min.css"),v1=Object.entries({"script-src":[`'nonce-${l}'`,"'strict-dynamic'"],"connect-src":["https://github.com/"],"style-src":[`'nonce-${l}'`],"object-src":["'none'"],"base-uri":["'none'"]}).reduce((e,[t,o])=>`${e};${t} ${o.join(" ")}`,"default-src 'self'"),w1="Art\u016Brs Jansons :: Web Developer",C1="Experienced web developer with a passion for innovation, automation and optimization",L1=`<!DOCTYPE html>
+  `);var M1=b("./public/styles.min.css"),R1=Object.entries({"script-src":[`'nonce-${l}'`,"'strict-dynamic'"],"connect-src":["https://github.com/"],"style-src":[`'nonce-${l}'`],"object-src":["'none'"],"base-uri":["'none'"]}).reduce((e,[t,o])=>`${e};${t} ${o.join(" ")}`,"default-src 'self'"),S1="Art\u016Brs Jansons :: Web Developer",_1="Experienced web developer with a passion for innovation, automation and optimization",Z1=`<!DOCTYPE html>
 <html lang="en" manifest="manifest.appcache">
   <head>
-    <meta http-equiv="Content-Security-Policy" content="${v1}">
-    <title>${w1}</title>
-    <meta name="description" content="${C1}" />
+    <meta http-equiv="Content-Security-Policy" content="${R1}">
+    <title>${S1}</title>
+    <meta name="description" content="${_1}" />
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="var(--color-primary-light)" />
-    <style nonce="${l}">${u1}</style>
+    <style nonce="${l}">${M1}</style>
   </head>
   <body>
     <noscript>This page uses JavaScript to proper work.</noscript>
     ${H()}
-    <div id="root">${W()}</div>
+    <div id="root">${Q()}</div>
     <script defer nonce="${l}" src="/lib/router.min.js"></script>
   </body>
 </html>
-`;u("public/login/index.html",L1);var y1=`
+`;u("public/login/index.html",Z1);var I1=`
 CACHE MANIFEST
 # rev ${M}
 
@@ -155,4 +155,4 @@ lib/router.min.js
 
 NETWORK:
 *
-`;u("public/login/manifest.appcache",y1);
+`;u("public/login/manifest.appcache",I1);
