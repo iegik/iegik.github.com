@@ -19,7 +19,7 @@ const route = (uri = '/') => {
     // case /^\/preview1\/?$/.test(uri): return View({ children: ['Loading...'], services: ['preview']})
     case /^\/preview\/?$/.test(uri): return View({ children: ['Loading...'], services: ['preview']})
     // case /^\/error\/?$/.test(uri): return View({ children: ['Loading...'], services: ['error']})
-    case uri === '/' || uri === '': return Home()
+    case uri === '/' || uri === '' || uri === '/home': return Home()
     default: throw Error(ERROR_NOT_FOUND)
   }
 }

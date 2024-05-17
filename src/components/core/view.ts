@@ -105,7 +105,7 @@ const render =
       log.log(`The ${event.attributeName} attribute was modified.`, {
         event,
       });
-      // ref.current.innerHTML = Component(state);
+      if (ref.current) ref.current.innerHTML = Component(state);
       return;
     }
     // options: { subtree: true } must be enabled on MutationObserver

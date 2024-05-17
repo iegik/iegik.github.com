@@ -9,7 +9,7 @@ const Header: FC<{}> = () => {
   });
   return `
     <header class="header">
-      <a href="#home" class="header__avatar" alt="avatar">${Image({
+      <a href="#/home" class="header__avatar" alt="avatar">${Image({
         itemprop: 'photo',
         src: '/images/artursjansons.jpg',
         ratio: '1:1',

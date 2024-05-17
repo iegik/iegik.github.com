@@ -86,7 +86,9 @@ compile\:watch:
 	@make templates\:watch sass\:watch
 
 start: ##	Start server locally
-	@npx vite
+	@npx vite public
+
+# npx serve public -p 5173
 
 ppm: # not used
 	@scripts/png2asciisvg -s 64 -l 8 public/images/artursjansons.png && \
