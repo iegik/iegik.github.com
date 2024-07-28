@@ -11,6 +11,8 @@ export USAGE
 help: ##		Show this help.
 	@echo "$$USAGE" && fgrep -h "##" $(firstword $(MAKEFILE_LIST)) | sed 's/\([^ ]*\).*##\(.*\)/  \1\t\2/g' | fgrep -v 'fgrep'
 
+PORT:=3000
+
 JS_CONFIG=\
 --bundle \
 --platform=browser \
@@ -86,7 +88,7 @@ compile\:watch:
 	@make templates\:watch sass\:watch
 
 start: ##	Start server locally
-	@npx vite public
+	@npx vite public --port $(PORT)
 
 # npx serve public -p 5173
 
