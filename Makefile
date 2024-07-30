@@ -103,7 +103,8 @@ icon: crop
 	@convert public/images/artursjansons.jpg -resize 64 -resize 128 -resize 256 public/favicon.ico && \
 
 thumb: crop # not used
-	@convert public/images/artursjansons.jpg -resize 64 public/images/artursjansons_64.jpg && \
+	@convert public/images/artursjansons.jpg -resize 32 public/images/artursjansons_32.jpg && \
+	convert public/images/artursjansons.jpg -resize 64 public/images/artursjansons_64.jpg && \
 	convert public/images/artursjansons.jpg -resize 432 public/images/artursjansons_432.jpg && \
 	convert public/images/artursjansons.jpg -resize 128 public/images/artursjansons_128.jpg && \
 	echo -e "\033[2K\r\033[0;32m✓ Task $@ completed\033[0m\n"

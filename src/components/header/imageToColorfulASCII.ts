@@ -10,9 +10,10 @@ export async function imageToColorfulASCII(imageUrl: string) {
 
   const offscreenCanvas = new OffscreenCanvas(width, height);
   const ctx = offscreenCanvas.getContext('2d');
-  ctx!.drawImage(img, 0, 0, width, height);
+  if (!ctx) return [];
+  ctx.drawImage(img, 0, 0, width, height);
 
-  const imageData = ctx!.getImageData(0, 0, width, height).data;
+  const imageData = ctx.getImageData(0, 0, width, height).data;
 
   const chars = "⠂⠂⠂⠂⠁⢀⢁⢁⢌⢌⢕⢕⢗⢗⢟⢟⢷⢷⢿⢿"
   const darknesses = [];
@@ -42,6 +43,6 @@ export async function imageToColorfulASCII(imageUrl: string) {
   // Log the results in the console
   return [
       darknesses.map(d => `%c${d}`).join(''),
-      ...colors.map(color => `color: ${color};`)
+      ...colors.map(color => `background-color: ${color};`)
   ]
 }

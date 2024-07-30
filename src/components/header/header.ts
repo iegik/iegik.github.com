@@ -6,7 +6,12 @@ const ascii = require('@assets/images/artursjansons.ascii');
 
 const Header: FC<{}> = () => {
   setTimeout(async () => {
-    const ascii = await imageToColorfulASCII('/images/artursjansons_64.jpg')
+    if (
+      typeof window === 'undefined' ||
+      typeof document === 'undefined'
+    )
+      return;
+    const ascii = await imageToColorfulASCII('images/artursjansons_32.jpg')
     log.log(...ascii);
   });
   return `
