@@ -1,11 +1,13 @@
 import Image from '@app/components/image/image';
 import * as log from '@app/services/log';
+import { imageToColorfulASCII } from '@app/components/header/imageToColorfulASCII';
 // import ascii from '@assets/images/artursjansons.ascii';
 const ascii = require('@assets/images/artursjansons.ascii');
 
 const Header: FC<{}> = () => {
-  setTimeout(() => {
-    log.log(ascii);
+  setTimeout(async () => {
+    const ascii = await imageToColorfulASCII('/images/artursjansons.jpg')
+    log.log(...ascii);
   });
   return `
     <header class="header">
