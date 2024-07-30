@@ -22,7 +22,7 @@
       {
         "rule": "cli",
         "binary": "npm",
-        "semver": "^9.5.1"
+        "semver": "^10.8.1"
       },
       {
         "rule": "dir",
