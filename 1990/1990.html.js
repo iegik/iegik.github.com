@@ -20,7 +20,7 @@
                                             <p>
                                                 ${t.links.map((e,o)=>`${o?" | ":""}${c(e)}`).join("")}
                                             ${t.comment?`<p><em><font color="gray">${t.comment}</font></em>`:""}`,C=()=>"<p>Time Zone: EEST</p>",E=()=>"<p>Work Time: 10:00 - 20:00</p>",L=()=>"<p>Current Location: Earth</p>",P=()=>`<font size="2">
-                                    <form align="left" method="get" action="./mailto.html" _enctype="multipart/form-data">
+                                    <form align="left" method="get" action="/1990/mailto/">
                                         <fieldset>
                                             <legend>Feedback</legend>
                                             <table align="left" border="0" cellpadding="0" cellspacing="8">
