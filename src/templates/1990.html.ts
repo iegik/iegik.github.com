@@ -157,7 +157,7 @@ const WorkTime = () => `<p>Work Time: 10:00 - 20:00</p>`
 const CurrentLocation = () => `<p>Current Location: Earth</p>`
 
 const ContactForm = () => `<font size="2">
-                                    <form align="left" method="get" action="./mailto.html" _enctype="multipart/form-data">
+                                    <form align="left" method="get" action="/1990/mailto/">
                                         <fieldset>
                                             <legend>Feedback</legend>
                                             <table align="left" border="0" cellpadding="0" cellspacing="8">
