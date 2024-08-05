@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-"use strict";var M=Object.create;var u=Object.defineProperty;var F=Object.getOwnPropertyDescriptor;var N=Object.getOwnPropertyNames;var D=Object.getPrototypeOf,A=Object.prototype.hasOwnProperty;var z=(t,e,o,$)=>{if(e&&typeof e=="object"||typeof e=="function")for(let r of N(e))!A.call(t,r)&&r!==o&&u(t,r,{get:()=>e[r],enumerable:!($=F(e,r))||$.enumerable});return t};var H=(t,e,o)=>(o=t!=null?M(D(t)):{},z(e||!t||!t.__esModule?u(o,"default",{value:t,enumerable:!0}):o,t));var l=H(require("fs")),p=(t,e)=>l.writeFileSync(t,e,{encoding:"utf8"}),g=t=>l.readFileSync(t,{encoding:"utf8"});var w=new Date,d=`v3.1.0-${w.toJSON()}`,n=btoa(`${Number(w)}`).slice(10,18);var q=g("./src/pages/1990/styles.css"),I=Object.entries({"script-src":[`'nonce-${n}'`,"'strict-dynamic'","https://www.google-analytics.com","https://ssl.google-analytics.com","https://static.hotjar.com","https://js.sentry-cdn.com","'unsafe-inline'"],"img-src":["'self'","https://www.google-analytics.com","https://avatars.githubusercontent.com/","https://www.googletagmanager.com/"],"connect-src":["'self'","https://www.google-analytics.com","https://region1.google-analytics.com","https://in.hotjar.com","https://static.hotjar.com","https://github.com/login/oauth/access_token","https://api.github.com/graphql","https://api.github.com/user","https://qilg4ch66b3vpgtevzccb5meum0ttfcl.lambda-url.eu-north-1.on.aws/","https://o171820.ingest.sentry.io/"],"style-src":[`'nonce-${n}'`,"https://static.hotjar.com"],"object-src":["'none'"],"base-uri":["'none'"],"frame-src":["https://vars.hotjar.com/"]}).reduce((t,[e,o])=>`${t};${e} ${o.join(" ")}`,"default-src 'self'"),c="Art&#363;rs Jansons",m="Full-stack Developer",f="10+ year exp.",Q=`${c} | ${m} [${f}]`,b="Mobile / Web Developer &amp; JavaScript Consultant",R="HTML, CSS, JavaScript, TypeScript, React, React Native, PHP, MySQL, Bash, Makefile, Docker, GraphQL, Next, Nest",k=()=>`<p>
+"use strict";var M=Object.create;var u=Object.defineProperty;var F=Object.getOwnPropertyDescriptor;var N=Object.getOwnPropertyNames;var z=Object.getPrototypeOf,D=Object.prototype.hasOwnProperty;var A=(t,e,o,$)=>{if(e&&typeof e=="object"||typeof e=="function")for(let r of N(e))!D.call(t,r)&&r!==o&&u(t,r,{get:()=>e[r],enumerable:!($=F(e,r))||$.enumerable});return t};var H=(t,e,o)=>(o=t!=null?M(z(t)):{},A(e||!t||!t.__esModule?u(o,"default",{value:t,enumerable:!0}):o,t));var l=H(require("fs")),p=(t,e)=>l.writeFileSync(t,e,{encoding:"utf8"}),g=t=>l.readFileSync(t,{encoding:"utf8"});var w=new Date,d=`v3.1.0-${w.toJSON()}`,n=btoa(`${Number(w)}`).slice(10,18);var q=g("./src/pages/1990/styles.css"),B=Object.entries({"script-src":[`'nonce-${n}'`,"'strict-dynamic'","https://www.google-analytics.com","https://ssl.google-analytics.com","https://static.hotjar.com","https://js.sentry-cdn.com","'unsafe-inline'"],"img-src":["'self'","https://www.google-analytics.com","https://avatars.githubusercontent.com/","https://www.googletagmanager.com/"],"connect-src":["'self'","https://www.google-analytics.com","https://region1.google-analytics.com","https://in.hotjar.com","https://static.hotjar.com","https://github.com/login/oauth/access_token","https://api.github.com/graphql","https://api.github.com/user","https://qilg4ch66b3vpgtevzccb5meum0ttfcl.lambda-url.eu-north-1.on.aws/","https://o171820.ingest.sentry.io/"],"style-src":[`'nonce-${n}'`,"https://static.hotjar.com"],"object-src":["'none'"],"base-uri":["'none'"],"frame-src":["https://vars.hotjar.com/"]}).reduce((t,[e,o])=>`${t};${e} ${o.join(" ")}`,"default-src 'self'"),c="Art&#363;rs Jansons",m="Full-stack Developer",f="10+ year exp.",I=`${c} | ${m} [${f}]`,b="Mobile / Web Developer &amp; JavaScript Consultant",Q="HTML, CSS, JavaScript, TypeScript, React, React Native, PHP, MySQL, Bash, Makefile, Docker, GraphQL, Next, Nest",k=()=>`<p>
                         1990 |
                         <!-- <a href="/2000/">2000</a> |
                         <a href="/2010/">2010</a> |
@@ -19,7 +19,13 @@
                                             <p>${t.description}
                                             <p>
                                                 ${t.links.map((e,o)=>`${o?" | ":""}${a(e)}`).join("")}
-                                            ${t.comment?`<p><em><font color="gray">${t.comment}</font></em>`:""}`,C=()=>"<p>Time Zone: EEST</p>",E=()=>"<p>Work Time: 10:00 - 20:00</p>",L=()=>"<p>Current Location: Earth</p>",P=()=>`${h({src:"./src/pages/1990/assets/javascript.ascii"})}`,B=()=>`<font face="${S}" size="3">
+                                            ${t.comment?`<p><em><font color="gray">${t.comment}</font></em>`:""}`,C=()=>"<p>Time Zone: EEST</p>",E=()=>"<p>Work Time: 10:00 - 20:00</p>",L=()=>"<p>Current Location: Earth</p>",P=()=>`<form align="left" method="get" action="/1990/mailto/">
+                                            <fieldset>
+                                                <legend>Bonus Code</legend>
+                                                ${h({src:"./src/pages/1990/assets/slotmachine.ascii"})}
+                                            </fieldset>
+                                        </form>
+                                    </font>`,R=()=>`<font face="${S}" size="3">
         <table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
             <tr align="center">
                 <td valign="top">
@@ -72,8 +78,10 @@
                                     ${E()}
                                     ${L()}
                                 </font>
-                            <td width="60%" align="right">
-                                ${P()}
+                            <td align="right">
+                                <font size="2">
+                                    ${P()}
+                                </font>
                     </table>
             <tr>
                 <td valign="bottom" align="center">
@@ -149,7 +157,9 @@
                         </tr>
                         <tr>
                             <td width="60%" align="right">
-                                ${P()}
+                                <font size="2">
+                                    ${P()}
+                                </font>
                     </table>
             <tr>
                 <td valign="bottom" align="center">
@@ -166,10 +176,10 @@
     "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Security-Policy" content="${I}">
-    <title>${Q}</title>
+    <meta http-equiv="Content-Security-Policy" content="${B}">
+    <title>${I}</title>
     <meta name="description" content="${b}" />
-    <meta name="keywords" content="${R}" />
+    <meta name="keywords" content="${Q}" />
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="var(--color-window)" />
@@ -207,7 +217,7 @@
       });
     });
     </script>
-`;p("public/1990/desktop/index.html",T(B()));p("public/1990/mobile/index.html",T(U()));var W=`
+`;p("public/1990/desktop/index.html",T(R()));p("public/1990/mobile/index.html",T(U()));var W=`
 CACHE MANIFEST
 # rev ${d}
 
