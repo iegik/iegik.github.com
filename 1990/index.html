@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loading...</title>
-    <meta http-equiv="REFRESH" content="0;URL=1990" />
+    <link rel="stylesheet" href="1990/style.css"></style>
 </head>
-<body>
+<body onload="url.href = window.innerWidth < 800 ? '/1990/mobile' : '/1990/desktop'; setTimeout(() => { if (!window.location.href.includes(url.href)) window.location.href = url.href; }, 3000);">
   <font face="'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace" size="3">
     <table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
         <tr align="center">
@@ -14,7 +14,6 @@
               <table border="0" cellpadding="0" cellspacing="8">
                 <tr>
                     <td>
-                      <h1></h1>
                       <table align="center" cellpadding="0" cellspacing="8">
                         <tr>
                           <td width="1px" valign="bottom"><font size="1"><marquee scrollamount="5" behavior="scroll"><pre>▁▁▃▃▅▅▆▆▇▇██</pre></marquee></font>
@@ -22,4 +21,4 @@
                         </tr>
                       </table>
                       <font size="1" color="lightgray">301 Redirect</font><br/>
-                      <font size="1" color="gray">You will be redirected to the new page shortly. If not, click <a id="url" href="1990">here</a>.</font>
+                      <font size="1" color="gray">You will be redirected to the new page shortly. If not, click <a id="url" href="#">here</a>.</font>

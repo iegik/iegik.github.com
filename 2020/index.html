@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Portfolio</title>
+    
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        function App() {
+            return (
+                <div className="max-w-4xl mx-auto p-6">
+                    <header className="text-center mb-12">
+                        <h1 className="text-4xl font-bold">John Doe</h1>
+                        <h2 className="text-2xl">Software Engineer</h2>
+                    </header>
+                    <section>
+                        <Summary />
+                        <TechStack />
+                        <Projects />
+                        <Contact />
+                        <SocialMedia />
+                    </section>
+                </div>
+            );
+        }
+
+        function Summary() {
+            return (
+                <div className="mb-8">
+                    <h3 className="text-xl font-semibold">Summary Description</h3>
+                    <p>Experienced software engineer with a passion for developing innovative programs.</p>
+                </div>
+            );
+        }
+
+        function TechStack() {
+            return (
+                <div className="mb-8">
+                    <h3 className="text-xl font-semibold">Tech Stack</h3>
+                    <p>HTML, CSS, JavaScript, React</p>
+                </div>
+            );
+        }
+
+        const projects = new Set([
+            1990,
+            2000,
+            2010,
+            // 2020,
+        ])
+        function Projects() {
+            return (
+                <div className="mb-8">
+                    <h3 className="text-xl font-semibold">Project Examples</h3>
+                    <ul className="list-disc list-inside">
+                        {[...projects.entries()].map(([key]) => (
+                            <li><a key={key} href={`../${key}/`} className="text-blue-500">{key}</a></li>
+                        ))}
+                    </ul>
+                </div>
+            );
+        }
+
+        function Contact() {
+            return (
+                <div className="mb-8">
+                    <h3 className="text-xl font-semibold">Contact</h3>
+                    <form className="space-y-4">
+                        <div>
+                            <label htmlFor="phone" className="block">Phone</label>
+                            <input type="text" id="phone" value="123-456-7890" readOnly className="border p-2 w-full"/>
+                        </div>
+                        <div>
+                            <label htmlFor="email" className="block">Email</label>
+                            <input type="email" id="email" value="johndoe@example.com" readOnly className="border p-2 w-full"/>
+                        </div>
+                    </form>
+                </div>
+            );
+        }
+
+        function SocialMedia() {
+            return (
+                <div className="mb-8">
+                    <h3 className="text-xl font-semibold">Social Media</h3>
+                    <a href="http://www.facebook.com" className="block text-blue-500">Facebook</a>
+                    <a href="http://www.twitter.com" className="block text-blue-500">Twitter</a>
+                </div>
+            );
+        }
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>

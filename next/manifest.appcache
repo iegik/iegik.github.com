@@ -1,0 +1,21 @@
+
+CACHE MANIFEST
+# rev v3.1.0-2024-08-05T21:28:24.684Z
+
+CACHE:
+index.html
+images/bg.webp
+images/bg.png
+images/artursjansons.jpg
+images/artursjansons.webp
+images/artursjansons_432.webp
+images/clouds.webp
+images/clouds.png
+fonts/AlinaScript.woff
+fonts/AlinaScript.ttf
+fonts/AlinaScript.svg
+lib/router.min.js
+EULA.md
+
+NETWORK:
+*

@@ -1,0 +1,1 @@
+<script>const importObject={imports:{generate_random_hex:t=>console.log(t)}};WebAssembly.instantiateStreaming(fetch("game.wasm"),importObject).then(t=>{t=t.instance.exports.generate_random_hex().toString(15);const e="🍏,🌰,🍋,🍅,🍆,🍇,🍓,🍉,🍐,🍒,🍑,🥑,🍍,🍌".split(",");t=t.padStart(3,"0").split("").map(t=>e[~~t]).join(""),document.body.write(t)})</script>
