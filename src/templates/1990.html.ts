@@ -156,7 +156,7 @@ const TimeZone = () => `<p>Time Zone: EEST</p>`
 const WorkTime = () => `<p>Work Time: 10:00 - 20:00</p>`
 const CurrentLocation = () => `<p>Current Location: Earth</p>`
 
-const ContactForm = () => `${Image({ src: './src/pages/1990/assets/javascript.ascii' })}`
+const ContactForm = () => `${Image({ src: './src/pages/1990/assets/slotmachine.ascii' })}`
 // const ContactForm = () => `<font size="2">
 //                                     <form align="left" method="get" action="/1990/mailto/">
 //                                         <fieldset>
