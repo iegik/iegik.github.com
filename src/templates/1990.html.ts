@@ -156,9 +156,15 @@ const TimeZone = () => `<p>Time Zone: EEST</p>`
 const WorkTime = () => `<p>Work Time: 10:00 - 20:00</p>`
 const CurrentLocation = () => `<p>Current Location: Earth</p>`
 
-const ContactForm = () => `${Image({ src: './src/pages/1990/assets/slotmachine.ascii' })}`
-// const ContactForm = () => `<font size="2">
-//                                     <form align="left" method="get" action="/1990/mailto/">
+const ContactForm = () => `<form align="left" method="get" action="/1990/mailto/">
+                                            <fieldset>
+                                                <legend>Bonus Code</legend>
+                                                ${Image({ src: './src/pages/1990/assets/slotmachine.ascii' })}
+                                            </fieldset>
+                                        </form>
+                                    </font>`
+
+// const ContactForm = () => `<form align="left" method="get" action="/1990/mailto/">
 //                                         <fieldset>
 //                                             <legend>Feedback</legend>
 //                                             <table align="left" border="0" cellpadding="0" cellspacing="8">
@@ -194,8 +200,7 @@ const ContactForm = () => `${Image({ src: './src/pages/1990/assets/slotmachine.a
 //                                                     </fieldset>
 //                                             </table>
 //                                         </fieldset>
-//                                     </form>
-//                                 </font>`
+//                                     </form>`
 
 
 const DesktopView = () => `<font face="${fontFamily}" size="3">
@@ -251,8 +256,10 @@ const DesktopView = () => `<font face="${fontFamily}" size="3">
                                     ${WorkTime()}
                                     ${CurrentLocation()}
                                 </font>
-                            <td width="60%" align="right">
-                                ${ContactForm()}
+                            <td align="right">
+                                <font size="2">
+                                    ${ContactForm()}
+                                </font>
                     </table>
             <tr>
                 <td valign="bottom" align="center">
@@ -330,7 +337,9 @@ const MobileView = () => `<font face="${fontFamily}" size="3">
                         </tr>
                         <tr>
                             <td width="60%" align="right">
-                                ${ContactForm()}
+                                <font size="2">
+                                    ${ContactForm()}
+                                </font>
                     </table>
             <tr>
                 <td valign="bottom" align="center">
