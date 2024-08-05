@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-"use strict";var M=Object.create;var $=Object.defineProperty;var F=Object.getOwnPropertyDescriptor;var N=Object.getOwnPropertyNames;var D=Object.getPrototypeOf,z=Object.prototype.hasOwnProperty;var A=(t,e,o,u)=>{if(e&&typeof e=="object"||typeof e=="function")for(let a of N(e))!z.call(t,a)&&a!==o&&$(t,a,{get:()=>e[a],enumerable:!(u=F(e,a))||u.enumerable});return t};var R=(t,e,o)=>(o=t!=null?M(D(t)):{},A(e||!t||!t.__esModule?$(o,"default",{value:t,enumerable:!0}):o,t));var l=R(require("fs")),p=(t,e)=>l.writeFileSync(t,e,{encoding:"utf8"}),h=t=>l.readFileSync(t,{encoding:"utf8"});var w=new Date,d=`v3.1.0-${w.toJSON()}`,n=btoa(`${Number(w)}`).slice(10,18);var B=h("./src/pages/1990/styles.css"),H=Object.entries({"script-src":[`'nonce-${n}'`,"'strict-dynamic'","https://www.google-analytics.com","https://ssl.google-analytics.com","https://static.hotjar.com","https://js.sentry-cdn.com","'unsafe-inline'"],"img-src":["'self'","https://www.google-analytics.com","https://avatars.githubusercontent.com/","https://www.googletagmanager.com/"],"connect-src":["'self'","https://www.google-analytics.com","https://region1.google-analytics.com","https://in.hotjar.com","https://static.hotjar.com","https://github.com/login/oauth/access_token","https://api.github.com/graphql","https://api.github.com/user","https://qilg4ch66b3vpgtevzccb5meum0ttfcl.lambda-url.eu-north-1.on.aws/","https://o171820.ingest.sentry.io/"],"style-src":[`'nonce-${n}'`,"https://static.hotjar.com"],"object-src":["'none'"],"base-uri":["'none'"],"frame-src":["https://vars.hotjar.com/"]}).reduce((t,[e,o])=>`${t};${e} ${o.join(" ")}`,"default-src 'self'"),r="Art&#363;rs Jansons",g="Full-stack Developer",m="10+ year exp.",W=`${r} | ${g} [${m}]`,f="Mobile / Web Developer &amp; JavaScript Consultant",q="HTML, CSS, JavaScript, TypeScript, React, React Native, PHP, MySQL, Bash, Makefile, Docker, GraphQL, Next, Nest",k=()=>`<p>
+"use strict";var M=Object.create;var u=Object.defineProperty;var F=Object.getOwnPropertyDescriptor;var N=Object.getOwnPropertyNames;var D=Object.getPrototypeOf,A=Object.prototype.hasOwnProperty;var z=(t,e,o,$)=>{if(e&&typeof e=="object"||typeof e=="function")for(let r of N(e))!A.call(t,r)&&r!==o&&u(t,r,{get:()=>e[r],enumerable:!($=F(e,r))||$.enumerable});return t};var H=(t,e,o)=>(o=t!=null?M(D(t)):{},z(e||!t||!t.__esModule?u(o,"default",{value:t,enumerable:!0}):o,t));var l=H(require("fs")),p=(t,e)=>l.writeFileSync(t,e,{encoding:"utf8"}),g=t=>l.readFileSync(t,{encoding:"utf8"});var w=new Date,d=`v3.1.0-${w.toJSON()}`,n=btoa(`${Number(w)}`).slice(10,18);var q=g("./src/pages/1990/styles.css"),I=Object.entries({"script-src":[`'nonce-${n}'`,"'strict-dynamic'","https://www.google-analytics.com","https://ssl.google-analytics.com","https://static.hotjar.com","https://js.sentry-cdn.com","'unsafe-inline'"],"img-src":["'self'","https://www.google-analytics.com","https://avatars.githubusercontent.com/","https://www.googletagmanager.com/"],"connect-src":["'self'","https://www.google-analytics.com","https://region1.google-analytics.com","https://in.hotjar.com","https://static.hotjar.com","https://github.com/login/oauth/access_token","https://api.github.com/graphql","https://api.github.com/user","https://qilg4ch66b3vpgtevzccb5meum0ttfcl.lambda-url.eu-north-1.on.aws/","https://o171820.ingest.sentry.io/"],"style-src":[`'nonce-${n}'`,"https://static.hotjar.com"],"object-src":["'none'"],"base-uri":["'none'"],"frame-src":["https://vars.hotjar.com/"]}).reduce((t,[e,o])=>`${t};${e} ${o.join(" ")}`,"default-src 'self'"),c="Art&#363;rs Jansons",m="Full-stack Developer",f="10+ year exp.",Q=`${c} | ${m} [${f}]`,b="Mobile / Web Developer &amp; JavaScript Consultant",R="HTML, CSS, JavaScript, TypeScript, React, React Native, PHP, MySQL, Bash, Makefile, Docker, GraphQL, Next, Nest",k=()=>`<p>
                         1990 |
                         <!-- <a href="/2000/">2000</a> |
                         <a href="/2010/">2010</a> |
@@ -15,49 +15,11 @@
                                         <font color="#008ddb">Docker</font>,
                                         <font color="#dd34a6">GraphQL</font>,
                                         <font>Next</font>,
-                                        <font color="#da214c">Nest</font>`,b=({src:t})=>`<pre><font size=1>${h(t)}</font></pre>`,c=t=>`<a ${/^http/.test(t.href)?' rel="noopener noreferrer"':""} href="${t.href}" title="${t.title}">${t.title}</a>`,i=[{image:{ascii:"./src/pages/1990/assets/website.ascii"},description:"Website development, including complex forms with custom field validation, popups and dialogs.",links:[{href:"https://wiam-front-test.vercel.app/",title:"Ex. 1"},{href:"https://mindmap-opal.vercel.app/",title:"Ex. 2"},{href:"https://codepen.io/iegik/full/ObZpqo",title:"Ex. 3"}]},{image:{ascii:"./src/pages/1990/assets/mobile.ascii"},description:"Mobile applications - developing, publishing or upgrading existing ones.",links:[{href:"https://github.com/iegik/inventarizacija/",title:"Ex. 1"},{href:"https://github.com/iegik/react_calc/",title:"Ex. 2"}],comment:"Unfortunately apps are not available in Google Play anymore"},{image:{ascii:"./src/pages/1990/assets/extensions.ascii"},description:"Browser extensions, custom scripts and other researches where I'm testing new approaches.",links:[{href:"https://github.com/iegik/clock-extension",title:"Ex. 1"},{href:"https://github.com/iegik/thunar-scripts",title:"Ex. 2"},{href:"https://hub.docker.com/repository/docker/iegik/docker-node/general",title:"Ex. 3"}]},{image:{ascii:"./src/pages/1990/assets/cms.ascii"},description:"CMS (Wordpress, Magento) configuration, plugin creation, RESTFul API on PHP, GraphQL and microservices",links:[{href:"https://github.com/WinLinMac/magento_themes",title:"Ex. 1"}]}],j=[{link:{href:"mailto:a.jansons@gmail.com",title:"a.jansons@gmail.com"}},{link:{href:"https://t.me/ajansons",title:"t.me/ajansons"}}],x=[{href:"https://linkedin.com/in/iegik",title:"LinkedIn"},{href:"https://github.com/iegik",title:"GitHub"},{href:"https://profile.codersrank.io/user/iegik",title:"CodersRank"},{href:"https://codepen.io/iegik/",title:"CodePen"},{href:"https://jsfiddle.net/user/iegik",title:"JSFiddle"},{href:"https://stackoverflow.com/users/771471/iegik",title:"StackOverflow"}],S="'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace",s=t=>`<center>${b({src:t.image.ascii})}</center>
+                                        <font color="#da214c">Nest</font>`,h=({src:t})=>`<pre><font size=1>${g(t)}</font></pre>`,a=t=>`<a ${/^http/.test(t.href)?' rel="noopener noreferrer"':""} href="${t.href}" title="${t.title}">${t.title}</a>`,i=[{image:{ascii:"./src/pages/1990/assets/website.ascii"},description:"Website development, including complex forms with custom field validation, popups and dialogs.",links:[{href:"https://wiam-front-test.vercel.app/",title:"Ex. 1"},{href:"https://mindmap-opal.vercel.app/",title:"Ex. 2"},{href:"https://codepen.io/iegik/full/ObZpqo",title:"Ex. 3"}]},{image:{ascii:"./src/pages/1990/assets/mobile.ascii"},description:"Mobile applications - developing, publishing or upgrading existing ones.",links:[{href:"https://github.com/iegik/inventarizacija/",title:"Ex. 1"},{href:"https://github.com/iegik/react_calc/",title:"Ex. 2"}],comment:"Unfortunately apps are not available in Google Play anymore"},{image:{ascii:"./src/pages/1990/assets/extensions.ascii"},description:"Browser extensions, custom scripts and other researches where I'm testing new approaches.",links:[{href:"https://github.com/iegik/clock-extension",title:"Ex. 1"},{href:"https://github.com/iegik/thunar-scripts",title:"Ex. 2"},{href:"https://hub.docker.com/repository/docker/iegik/docker-node/general",title:"Ex. 3"}]},{image:{ascii:"./src/pages/1990/assets/cms.ascii"},description:"CMS (Wordpress, Magento) configuration, plugin creation, RESTFul API on PHP, GraphQL and microservices",links:[{href:"https://github.com/WinLinMac/magento_themes",title:"Ex. 1"}]}],j=[{link:{href:"mailto:a.jansons@gmail.com",title:"a.jansons@gmail.com"}},{link:{href:"https://t.me/ajansons",title:"t.me/ajansons"}}],x=[{href:"https://linkedin.com/in/iegik",title:"LinkedIn"},{href:"https://github.com/iegik",title:"GitHub"},{href:"https://profile.codersrank.io/user/iegik",title:"CodersRank"},{href:"https://codepen.io/iegik/",title:"CodePen"},{href:"https://jsfiddle.net/user/iegik",title:"JSFiddle"},{href:"https://stackoverflow.com/users/771471/iegik",title:"StackOverflow"}],S="'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace",s=t=>`<center>${h({src:t.image.ascii})}</center>
                                             <p>${t.description}
                                             <p>
-                                                ${t.links.map((e,o)=>`${o?" | ":""}${c(e)}`).join("")}
-                                            ${t.comment?`<p><em><font color="gray">${t.comment}</font></em>`:""}`,C=()=>"<p>Time Zone: EEST</p>",E=()=>"<p>Work Time: 10:00 - 20:00</p>",L=()=>"<p>Current Location: Earth</p>",P=()=>`<font size="2">
-                                    <form align="left" method="get" action="/1990/mailto/">
-                                        <fieldset>
-                                            <legend>Feedback</legend>
-                                            <table align="left" border="0" cellpadding="0" cellspacing="8">
-                                                <tr>
-                                                    <td>
-                                                        <label for="from">Your email</label>
-                                                        <p>
-                                                            <input id="from" name="from" type="text" />
-                                                            <input type="hidden" name="to" value="a.jansons+web@gmail.com" />
-                                                    <td>
-                                                        <label for="subject">Subject</label>
-                                                        <p>
-                                                            <select id="subject" name="subject">
-                                                                <option>Subject</option>
-                                                                <option value="Feedback">Feedback</option>
-                                                                <option value="Work oppartunity">Work oppartunity</option>
-                                                                <option value="Consultation">Consultation</option>
-                                                                <option value="Bug Report">Bug Report</option>
-                                                            </select>
-                                                <tr>
-                                                    <td colspan="2">
-                                                        <br/>
-                                                            <label for="message">Content</label>
-                                                            <br/>
-                                                            <br/>
-                                                            <table>
-                                                                <tr>
-                                                                    <td>
-                                                                        <textarea id="message" name="message" rows="5" cols="42"></textarea>
-                                                            </table>
-                                                        <p align="right">
-                                                            <input type="submit" value="Send message" />
-                                                    </fieldset>
-                                            </table>
-                                        </fieldset>
-                                    </form>
-                                </font>`,I=()=>`<font face="${S}" size="3">
+                                                ${t.links.map((e,o)=>`${o?" | ":""}${a(e)}`).join("")}
+                                            ${t.comment?`<p><em><font color="gray">${t.comment}</font></em>`:""}`,C=()=>"<p>Time Zone: EEST</p>",E=()=>"<p>Work Time: 10:00 - 20:00</p>",L=()=>"<p>Current Location: Earth</p>",P=()=>`${h({src:"./src/pages/1990/assets/javascript.ascii"})}`,B=()=>`<font face="${S}" size="3">
         <table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
             <tr align="center">
                 <td valign="top">
@@ -66,11 +28,11 @@
                     <table border="0" cellpadding="0" cellspacing="8" width="800px">
                         <tr>
                             <td>
-                                ${b({src:"./src/pages/1990/assets/photo.ascii"})}
+                                ${h({src:"./src/pages/1990/assets/photo.ascii"})}
                             <td width="80%">
-                                <p>${r}
-                                <h1><font color="#ffff58" size="5"><b>${g}</b></font><font size="2">[${m}]</font></h1>
-                                <p><em>${f}</em></p>
+                                <p>${c}
+                                <h1><font color="#ffff58" size="5"><b>${m}</b></font><font size="2">[${f}]</font></h1>
+                                <p><em>${b}</em></p>
                                 <p>
                                     <b>Tech Stack:</b>
                                         ${y()}
@@ -103,7 +65,7 @@
                                 <font size="2">
                                     <h2>Contacts:</h2>
                                     <ul>
-                                        ${j.map(t=>`<li><p>${c(t.link)}${t.comment?` [${t.comment}]`:""}`).join("")}
+                                        ${j.map(t=>`<li><p>${a(t.link)}${t.comment?` [${t.comment}]`:""}`).join("")}
                                     </ul>
                                     <br/>
                                     ${C()}
@@ -111,7 +73,6 @@
                                     ${L()}
                                 </font>
                             <td width="60%" align="right">
-                                
                                 ${P()}
                     </table>
             <tr>
@@ -120,13 +81,13 @@
                     <table border="0" cellpadding="8" cellspacing="0" width="100%">
                         <tr>
                             <td align="center">
-                                <p>${x.map((t,e)=>`${e?" | ":""}${c(t)}`).join("")}</p>
+                                <p>${x.map((t,e)=>`${e?" | ":""}${a(t)}`).join("")}</p>
                                 <br/>
                                 <marquee>
-                                    <font color="gray">\xA9 2024 ${r} | All rights reserved</font>
+                                    <font color="gray">\xA9 2024 ${c} | All rights reserved</font>
                     </table>
         </table>
-    </font>`,Q=()=>`<font face="${S}" size="3">
+    </font>`,U=()=>`<font face="${S}" size="3">
         <table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
             <tr align="center">
                 <td valign="top">
@@ -135,13 +96,13 @@
                     <table border="0" cellpadding="0" cellspacing="8">
                         <tr>
                             <td align="center">
-                                ${b({src:"./src/pages/1990/assets/photo.ascii"})}
-                                <p>${r}
+                                ${h({src:"./src/pages/1990/assets/photo.ascii"})}
+                                <p>${c}
                                 <h1>
-                                    <font color="#ffff58" size="5"><b>${g}</b></font>
+                                    <font color="#ffff58" size="5"><b>${m}</b></font>
                                     <br/>
-                                    <font size="2">[${m}]</font></h1>
-                                <p><em>${f}</em></p>
+                                    <font size="2">[${f}]</font></h1>
+                                <p><em>${b}</em></p>
                                 <p>
                                     <b>Tech Stack:</b>
                                         ${y()}
@@ -178,7 +139,7 @@
                                 <font size="2">
                                     <h2>Contacts:</h2>
                                     <ul>
-                                        ${j.map(t=>`<li><p>${c(t.link)}${t.comment?` [${t.comment}]`:""}`).join("")}
+                                        ${j.map(t=>`<li><p>${a(t.link)}${t.comment?` [${t.comment}]`:""}`).join("")}
                                     </ul>
                                     <br/>
                                     ${C()}
@@ -188,7 +149,6 @@
                         </tr>
                         <tr>
                             <td width="60%" align="right">
-                                
                                 ${P()}
                     </table>
             <tr>
@@ -197,23 +157,23 @@
                     <table border="0" cellpadding="8" cellspacing="0" width="100%">
                         <tr>
                             <td align="center">
-                                <p>${x.map((t,e)=>`${e?" | ":""}${c(t)}`).join("")}</p>
+                                <p>${x.map((t,e)=>`${e?" | ":""}${a(t)}`).join("")}</p>
                                 <marquee>
-                                    <font color="gray">\xA9 2024 ${r} | All rights reserved</font>
+                                    <font color="gray">\xA9 2024 ${c} | All rights reserved</font>
                     </table>
         </table>
     </font>`,T=t=>`<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
     "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Security-Policy" content="${H}">
-    <title>${W}</title>
-    <meta name="description" content="${f}" />
-    <meta name="keywords" content="${q}" />
+    <meta http-equiv="Content-Security-Policy" content="${I}">
+    <title>${Q}</title>
+    <meta name="description" content="${b}" />
+    <meta name="keywords" content="${R}" />
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="var(--color-window)" />
-    <style nonce="${n}">${B}</style>
+    <style nonce="${n}">${q}</style>
 </head>
 <body>
     ${t}
@@ -247,7 +207,7 @@
       });
     });
     </script>
-`;p("public/1990/desktop/index.html",T(I()));p("public/1990/mobile/index.html",T(Q()));var U=`
+`;p("public/1990/desktop/index.html",T(B()));p("public/1990/mobile/index.html",T(U()));var W=`
 CACHE MANIFEST
 # rev ${d}
 
@@ -260,4 +220,4 @@ index.html
 
 NETWORK:
 *
-`;p("public/manifest.appcache",U);
+`;p("public/manifest.appcache",W);
