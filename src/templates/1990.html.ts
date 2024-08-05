@@ -156,45 +156,46 @@ const TimeZone = () => `<p>Time Zone: EEST</p>`
 const WorkTime = () => `<p>Work Time: 10:00 - 20:00</p>`
 const CurrentLocation = () => `<p>Current Location: Earth</p>`
 
-const ContactForm = () => `<font size="2">
-                                    <form align="left" method="get" action="/1990/mailto/">
-                                        <fieldset>
-                                            <legend>Feedback</legend>
-                                            <table align="left" border="0" cellpadding="0" cellspacing="8">
-                                                <tr>
-                                                    <td>
-                                                        <label for="from">Your email</label>
-                                                        <p>
-                                                            <input id="from" name="from" type="text" />
-                                                            <input type="hidden" name="to" value="a.jansons+web@gmail.com" />
-                                                    <td>
-                                                        <label for="subject">Subject</label>
-                                                        <p>
-                                                            <select id="subject" name="subject">
-                                                                <option>Subject</option>
-                                                                <option value="Feedback">Feedback</option>
-                                                                <option value="Work oppartunity">Work oppartunity</option>
-                                                                <option value="Consultation">Consultation</option>
-                                                                <option value="Bug Report">Bug Report</option>
-                                                            </select>
-                                                <tr>
-                                                    <td colspan="2">
-                                                        <br/>
-                                                            <label for="message">Content</label>
-                                                            <br/>
-                                                            <br/>
-                                                            <table>
-                                                                <tr>
-                                                                    <td>
-                                                                        <textarea id="message" name="message" rows="5" cols="42"></textarea>
-                                                            </table>
-                                                        <p align="right">
-                                                            <input type="submit" value="Send message" />
-                                                    </fieldset>
-                                            </table>
-                                        </fieldset>
-                                    </form>
-                                </font>`
+const ContactForm = () => `${Image({ src: './src/pages/1990/assets/javascript.ascii' })}`
+// const ContactForm = () => `<font size="2">
+//                                     <form align="left" method="get" action="/1990/mailto/">
+//                                         <fieldset>
+//                                             <legend>Feedback</legend>
+//                                             <table align="left" border="0" cellpadding="0" cellspacing="8">
+//                                                 <tr>
+//                                                     <td>
+//                                                         <label for="from">Your email</label>
+//                                                         <p>
+//                                                             <input id="from" name="from" type="text" />
+//                                                             <input type="hidden" name="to" value="a.jansons+web@gmail.com" />
+//                                                     <td>
+//                                                         <label for="subject">Subject</label>
+//                                                         <p>
+//                                                             <select id="subject" name="subject">
+//                                                                 <option>Subject</option>
+//                                                                 <option value="Feedback">Feedback</option>
+//                                                                 <option value="Work oppartunity">Work oppartunity</option>
+//                                                                 <option value="Consultation">Consultation</option>
+//                                                                 <option value="Bug Report">Bug Report</option>
+//                                                             </select>
+//                                                 <tr>
+//                                                     <td colspan="2">
+//                                                         <br/>
+//                                                             <label for="message">Content</label>
+//                                                             <br/>
+//                                                             <br/>
+//                                                             <table>
+//                                                                 <tr>
+//                                                                     <td>
+//                                                                         <textarea id="message" name="message" rows="5" cols="42"></textarea>
+//                                                             </table>
+//                                                         <p align="right">
+//                                                             <input type="submit" value="Send message" />
+//                                                     </fieldset>
+//                                             </table>
+//                                         </fieldset>
+//                                     </form>
+//                                 </font>`
 
 
 const DesktopView = () => `<font face="${fontFamily}" size="3">
@@ -251,7 +252,6 @@ const DesktopView = () => `<font face="${fontFamily}" size="3">
                                     ${CurrentLocation()}
                                 </font>
                             <td width="60%" align="right">
-                                ${/*BG()*/''}
                                 ${ContactForm()}
                     </table>
             <tr>
@@ -330,7 +330,6 @@ const MobileView = () => `<font face="${fontFamily}" size="3">
                         </tr>
                         <tr>
                             <td width="60%" align="right">
-                                ${/*BG()*/''}
                                 ${ContactForm()}
                     </table>
             <tr>
