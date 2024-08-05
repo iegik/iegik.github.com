@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sending...</title>
-    <link rel="stylesheet" href="style.css"></style>
+    <link rel="stylesheet" href="/1990/style.css"></style>
 </head>
 <body>
     <font face="'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace" size="3">
@@ -45,10 +45,10 @@
             params.set('subscribe', true)
         }
 
-        if (!params.has('subject')) return '';
-        if (!params.has('message')) return '';
-        if (!params.has('from')) return '';
-        if (!params.has('to')) return '';
+        if (!params.has('subject')) return '#';
+        if (!params.has('message')) return '#';
+        if (!params.has('from')) return '#';
+        if (!params.has('to')) return '#';
 
 
         var req = [...params.entries()].reduce(parse, Object.create(null))
