@@ -32,7 +32,7 @@ export const error = (error: Error) => {
     root.innerHTML = Error403Page(error)
     return;
   }
-  root.innerHTML = Error500Page(error)
+  // root.innerHTML = Error500Page(error)
   return;
 }
 

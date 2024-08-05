@@ -59,7 +59,7 @@ const html = `<!DOCTYPE html>
     <noscript>This page uses JavaScript to play the slot machine game.</noscript>
     ${Sprite()}
     <div id="root">${Home()}</div>
-    <script defer nonce="${nonce}" src="/lib/router.min.js"></script>
+    ${/*<script defer nonce="${nonce}" src="lib/router.min.js"></script>*/''}
     ${/* Google Analytics */''}
     <script async nonce="${nonce}" src="https://www.googletagmanager.com/gtag/js?id=G-5ZY8Y6X2C4"></script>
     <script nonce="${nonce}">

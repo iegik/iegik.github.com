@@ -11,15 +11,16 @@ import { ERROR_NOT_FOUND } from '@app/components/core/constants';
 // TODO: Move route to services
 const route = (uri = '/') => {
   log.info(`Loading ${uri}`)
+  console.log({uri})
   switch (true) {
-    case /^\/login\/?$/.test(uri): return Login()
-    case /^\/oauth\/?$/.test(uri): return View({ children: ['Loading...'], services: ['oauth']})
-    case /^\/profile\/?$/.test(uri): return View({ children: ['Loading...'], component: 'View', className: 'user-info', services: ['userInfo']})
-    case /^\/editor\/?$/.test(uri): return View({ children: ['Loading...'], services: ['editor']})
-    // case /^\/preview1\/?$/.test(uri): return View({ children: ['Loading...'], services: ['preview']})
-    case /^\/preview\/?$/.test(uri): return View({ children: ['Loading...'], services: ['preview']})
-    // case /^\/error\/?$/.test(uri): return View({ children: ['Loading...'], services: ['error']})
-    case uri === '/' || uri === '' || uri === '/home': return Home()
+    case /^\/next\/login\/?$/.test(uri): return Login()
+    case /^\/next\/oauth\/?$/.test(uri): return View({ children: ['Loading...'], services: ['oauth']})
+    case /^\/next\/profile\/?$/.test(uri): return View({ children: ['Loading...'], component: 'View', className: 'user-info', services: ['userInfo']})
+    case /^\/next\/editor\/?$/.test(uri): return View({ children: ['Loading...'], services: ['editor']})
+    // case /^\/next\/preview1\/?$/.test(uri): return View({ children: ['Loading...'], services: ['preview']})
+    case /^\/next\/preview\/?$/.test(uri): return View({ children: ['Loading...'], services: ['preview']})
+    // case /^\/next\/error\/?$/.test(uri): return View({ children: ['Loading...'], services: ['error']})
+    case uri === '/next/' || uri === '/next' || uri === '/next/home': return Home()
     default: throw Error(ERROR_NOT_FOUND)
   }
 }

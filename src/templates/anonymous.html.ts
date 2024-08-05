@@ -38,7 +38,7 @@ const html = `<!DOCTYPE html>
     <noscript>This page uses JavaScript to proper work.</noscript>
     ${Sprite()}
     <div id="root">${Login()}</div>
-    <script defer nonce="${nonce}" src="/lib/router.min.js"></script>
+    ${/*<script defer nonce="${nonce}" src="lib/router.min.js"></script>*/''}
   </body>
 </html>
 `;

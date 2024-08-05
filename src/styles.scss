@@ -11,9 +11,9 @@
 @font-face {
   font-family: 'Alina Script';
   src: local('Alina Script'),
-    url(fonts/AlinaScript.woff) format('woff'),
-    url(fonts/AlinaScript.ttf) format('truetype'),
-    url(fonts/AlinaScript.svg#AlinaScript) format('svg');
+    url(/fonts/AlinaScript.woff) format('woff'),
+    url(/fonts/AlinaScript.ttf) format('truetype'),
+    url(/fonts/AlinaScript.svg#AlinaScript) format('svg');
   font-display: swap;
 }
 
