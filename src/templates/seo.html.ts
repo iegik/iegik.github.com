@@ -3,7 +3,7 @@
 import { writeFileSync, readFileSync, release, nonce } from '@app/utils';
 import Sprite from '@app/components/sprite/sprite';
 import Home from '@app/pages/home/home'
-const style = readFileSync('./public/styles.min.css');
+const style = readFileSync('./public/next/styles.min.css');
 const csp = Object.entries({
   'script-src': [
     `'nonce-${nonce}'`,
@@ -94,7 +94,7 @@ const html = `<!DOCTYPE html>
 </html>
 `;
 
-writeFileSync('public/index.html', html);
+writeFileSync('public/next/index.html', html);
 
 const manifest = `
 CACHE MANIFEST
@@ -119,4 +119,4 @@ NETWORK:
 *
 `
 
-writeFileSync('public/manifest.appcache', manifest);
+writeFileSync('public/next/manifest.appcache', manifest);

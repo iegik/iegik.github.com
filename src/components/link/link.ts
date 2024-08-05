@@ -26,7 +26,7 @@ const Link: FC<LinkProps> = (props = {}) => {
   });
 
   return `
-      <${tag} class="${className} link" href="${to}" title="${title}" ref="${ref}">
+      <${tag} class="${className} link" href="${to}" title="${title}" ref="${ref}" ${/^http/.test(to) ? 'rel="noopener noreferrer"' : ''}>
         ${children?.join?.('')}
       </${tag}>
     `;

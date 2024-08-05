@@ -27,7 +27,7 @@ JS_CONFIG=\
 --loader:.data=binary
 
 lib_node:
-	@npx esbuild src/services/*.ts --outdir=public/lib ${JS_CONFIG} && \
+	@npx esbuild src/services/*.ts --outdir=public/next/lib ${JS_CONFIG} && \
 	echo -e "\033[2K\r\033[0;32m✓ Task $@ completed\033[0m\n"
 
 HTML_CONFIG=\
@@ -43,9 +43,9 @@ HTML_CONFIG=\
 --loader:.graphql=text
 
 templates_node:
-	@npx esbuild src/templates/seo.html.ts --outdir=public/ ${HTML_CONFIG} && node --inspect public/seo.html.js && \
-	npx esbuild src/templates/anonymous.html.ts --outdir=public/ ${HTML_CONFIG} && node --inspect public/anonymous.html.js && \
-	npx esbuild src/templates/ui.html.ts --outdir=public/ ${HTML_CONFIG} && node --inspect public/ui.html.js && \
+	@npx esbuild src/templates/seo.html.ts --outdir=public/next/ ${HTML_CONFIG} && node --inspect public/next/seo.html.js && \
+	npx esbuild src/templates/anonymous.html.ts --outdir=public/next/ ${HTML_CONFIG} && node --inspect public/next/anonymous.html.js && \
+	npx esbuild src/templates/ui.html.ts --outdir=public/next/ ${HTML_CONFIG} && node --inspect public/next/ui.html.js && \
 	echo -e "\033[2K\r\033[0;32m✓ Task $@ completed\033[0m\n"
 
 templates_node_debug:
@@ -60,8 +60,8 @@ DENO_CONFIG=\
 --config=deno.json
 
 lib_deno:
-	@deno bundle ${DENO_CONFIG} src/services/router.ts > public/lib/router.min.js; && \
-	deno bundle ${DENO_CONFIG} src/lib/clouds.ts > public/lib/clouds.min.js;
+	@deno bundle ${DENO_CONFIG} src/services/router.ts > public/next/lib/router.min.js; && \
+	deno bundle ${DENO_CONFIG} src/lib/clouds.ts > public/next/lib/clouds.min.js;
 
 templates_deno:
 	@deno run --allow-write --allow-read --allow-env ${DENO_CONFIG} src/templates/*.html.ts && \
@@ -76,11 +76,11 @@ templates\:watch:
 	@fswatch -o src/*.ts src/**/*.ts | xargs -n1 -I{} make templates
 
 sass:
-	@npx sass src/styles.scss public/styles.min.css --style compressed && \
+	@npx sass src/styles.scss public/next/styles.min.css --style compressed && \
 	echo -e "\033[2K\r\033[0;32m✓ Task $@ completed\033[0m\n"
 
 sass\:watch:
-	@npx sass src/styles.scss public/styles.min.css --style compressed -w
+	@npx sass src/styles.scss public/next/styles.min.css --style compressed -w
 
 compile: templates sass
 
@@ -90,7 +90,8 @@ compile\:watch:
 start: ##	Start server locally
 	@npx vite public --port $(PORT)
 
-# npx serve public -p 5173
+serve: ## Start static server
+	npx serve public -p $(PORT)
 
 ppm: # not used
 	@scripts/png2asciisvg -s 64 -l 8 public/images/artursjansons.png && \

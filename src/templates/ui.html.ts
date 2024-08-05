@@ -3,7 +3,7 @@
 import { writeFileSync, readFileSync, release, nonce } from '@app/utils';
 import Sprite from '@app/components/sprite/sprite';
 import UI from '@app/pages/ui/ui'
-const style = readFileSync('./public/styles.min.css');
+const style = readFileSync('./public/next/styles.min.css');
 const CSP = ({ nonce }: { nonce: string }) => `<meta http-equiv="Content-Security-Policy" content="${Object.entries({
   'script-src': [
     `'nonce-${nonce}'`,
@@ -40,7 +40,7 @@ const html = `<!DOCTYPE html>
 </html>
 `;
 
-writeFileSync('public/ui/index.html', html);
+writeFileSync('public/next/ui/index.html', html);
 
 const manifest = `
 CACHE MANIFEST
@@ -53,4 +53,4 @@ NETWORK:
 *
 `
 
-writeFileSync('public/ui/manifest.appcache', manifest);
+writeFileSync('public/next/ui/manifest.appcache', manifest);
