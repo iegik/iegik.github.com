@@ -46,11 +46,15 @@ templates_node:
 	@npx esbuild src/templates/seo.html.ts --outdir=public/next/ ${HTML_CONFIG} && node --inspect public/next/seo.html.js && \
 	npx esbuild src/templates/anonymous.html.ts --outdir=public/next/ ${HTML_CONFIG} && node --inspect public/next/anonymous.html.js && \
 	npx esbuild src/templates/ui.html.ts --outdir=public/next/ ${HTML_CONFIG} && node --inspect public/next/ui.html.js && \
+	npx esbuild src/templates/1990.html.ts --outdir=public/1990/ ${HTML_CONFIG} && node --inspect public/1990/1990.html.js && \
 	echo -e "\033[2K\r\033[0;32m✓ Task $@ completed\033[0m\n"
 
 templates_node_debug:
 	@npx esbuild src/templates/seo.html.ts ${HTML_CONFIG} --outdir=tmp | node --inspect tmp/seo.html.js && rm tmp/seo.html.js \
-	&& npx esbuild src/templates/anonymous.html.ts ${HTML_CONFIG}  --outdir=tmp | node --inspect tmp/anonymous.html.js && rm tmp/anonymous.html.js
+	&& npx esbuild src/templates/anonymous.html.ts ${HTML_CONFIG}  --outdir=tmp | node --inspect tmp/anonymous.html.js && rm tmp/anonymous.html.js \
+	&& npx esbuild src/templates/ui.html.ts ${HTML_CONFIG}  --outdir=tmp | node --inspect tmp/ui.html.js && rm tmp/ui.html.js \
+	&& npx esbuild src/templates/1990.html.ts ${HTML_CONFIG}  --outdir=tmp | node --inspect tmp/1990.html.js && rm tmp/1990.html.js \
+	echo -e "\033[2K\r\033[0;32m✓ Task $@ completed\033[0m\n"
 
 # Depricated due to difficulties with using browser native functions. Use esbuild instead.
 # TODO: Improve asset import in header.ts and icons.ts.
@@ -77,10 +81,13 @@ templates\:watch:
 
 sass:
 	@npx sass src/styles.scss public/next/styles.min.css --style compressed && \
+	npx sass src/pages/1990/styles.css public/1990/styles.min.css --style compressed && \
 	echo -e "\033[2K\r\033[0;32m✓ Task $@ completed\033[0m\n"
 
 sass\:watch:
-	@npx sass src/styles.scss public/next/styles.min.css --style compressed -w
+	@npx sass src/styles.scss public/next/styles.min.css --style compressed -w && \
+	npx sass src/pages/1990/styles.css public/1990/styles.min.css --style compressed -w && \
+	echo -e "\033[2K\r\033[0;32m✓ Task $@ completed\033[0m\n"
 
 compile: templates sass
 
