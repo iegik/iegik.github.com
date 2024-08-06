@@ -48,10 +48,11 @@ const keywords = 'HTML, CSS, JavaScript, TypeScript, React, React Native, PHP, M
 
 const TopNav = () => `<p>
                         1990 |
-                        <!-- <a href="/2000/">2000</a> |
+                        ${/*<a href="/2000/">2000</a> |
                         <a href="/2010/">2010</a> |
-                        <a href="/2020/">2020</a> | -->
-                        <a href="/next/">BETA</a>
+                        <a href="/2020/">2020</a> |*/''}
+                        <a href="/next/">BETA</a> |
+                        <a id="toggleDosStyle" href="#">DOS</a>
                     </p>`
 
 const TechStack = () => `<font color="orange">HTML</font>,
@@ -215,7 +216,7 @@ const DesktopView = () => `<font face="${fontFamily}" size="3">
                                 ${Image({ src: './src/pages/1990/assets/photo.ascii' })}
                             <td width="80%">
                                 <p>${fullName}
-                                <h1><font color="#ffff58" size="5"><b>${position}</b></font><font size="2">[${experience}]</font></h1>
+                                <h1><font size="5"><b>${position}</b></font><font size="2">[${experience}]</font></h1>
                                 <p><em>${description}</em></p>
                                 <p>
                                     <b>Tech Stack:</b>
@@ -287,7 +288,7 @@ const MobileView = () => `<font face="${fontFamily}" size="3">
                                 ${Image({ src: './src/pages/1990/assets/photo.ascii' })}
                                 <p>${fullName}
                                 <h1>
-                                    <font color="#ffff58" size="5"><b>${position}</b></font>
+                                    <font size="5"><b>${position}</b></font>
                                     <br/>
                                     <font size="2">[${experience}]</font></h1>
                                 <p><em>${description}</em></p>
@@ -365,7 +366,7 @@ const Layout = (content: string) => `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Ba
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="var(--color-window)" />
-    <link rel="stylesheet" nonce="${nonce}" href="/1990/styles.min.css" />
+    ${/*<link rel="stylesheet" nonce="${nonce}" href="/1990/styles.min.css" />*/''}
     ${/*<style nonce="${nonce}">${style}</style>*/''}
 </head>
 <body>
@@ -378,6 +379,24 @@ const Layout = (content: string) => `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Ba
       gtag('js', new Date());
 
       gtag('config', 'G-5ZY8Y6X2C4');
+    </script>
+    <!-- DOS Theme Code for https://iegik.github.io -->
+    <script nonce="${nonce}">
+        (function(m,s,d,o,s,_){
+            o.onclick=a;
+            function a(){
+                o.innerText=m;
+                o.onclick=r;
+                _=d.createElement('link');_.async=1;
+                _.rel='stylesheet';_.href=s;_.nonce='${nonce}';
+                d.head.appendChild(_);
+            };
+            function r(){
+                o.innerText=s;
+                o.onclick=a;
+                _.remove();
+            };
+        })('NO STYLE', 'DOS', document, toggleDosStyle,'/1990/styles.min.css');
     </script>
     <!-- Hotjar Tracking Code for https://iegik.github.io -->
     <script nonce="${nonce}">
