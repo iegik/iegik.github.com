@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-"use strict";var M=Object.create;var u=Object.defineProperty;var F=Object.getOwnPropertyDescriptor;var N=Object.getOwnPropertyNames;var z=Object.getPrototypeOf,D=Object.prototype.hasOwnProperty;var A=(t,e,o,$)=>{if(e&&typeof e=="object"||typeof e=="function")for(let r of N(e))!D.call(t,r)&&r!==o&&u(t,r,{get:()=>e[r],enumerable:!($=F(e,r))||$.enumerable});return t};var H=(t,e,o)=>(o=t!=null?M(z(t)):{},A(e||!t||!t.__esModule?u(o,"default",{value:t,enumerable:!0}):o,t));var l=H(require("fs")),p=(t,e)=>l.writeFileSync(t,e,{encoding:"utf8"}),g=t=>l.readFileSync(t,{encoding:"utf8"});var w=new Date,d=`v3.1.0-${w.toJSON()}`,n=btoa(`${Number(w)}`).slice(10,18);var q=g("./src/pages/1990/styles.css"),B=Object.entries({"script-src":[`'nonce-${n}'`,"'strict-dynamic'","https://www.google-analytics.com","https://ssl.google-analytics.com","https://static.hotjar.com","https://js.sentry-cdn.com","'unsafe-inline'"],"img-src":["'self'","https://www.google-analytics.com","https://avatars.githubusercontent.com/","https://www.googletagmanager.com/"],"connect-src":["'self'","https://www.google-analytics.com","https://region1.google-analytics.com","https://in.hotjar.com","https://static.hotjar.com","https://github.com/login/oauth/access_token","https://api.github.com/graphql","https://api.github.com/user","https://qilg4ch66b3vpgtevzccb5meum0ttfcl.lambda-url.eu-north-1.on.aws/","https://o171820.ingest.sentry.io/"],"style-src":[`'nonce-${n}'`,"https://static.hotjar.com"],"object-src":["'none'"],"base-uri":["'none'"],"frame-src":["https://vars.hotjar.com/"]}).reduce((t,[e,o])=>`${t};${e} ${o.join(" ")}`,"default-src 'self'"),c="Art&#363;rs Jansons",m="Full-stack Developer",f="10+ year exp.",I=`${c} | ${m} [${f}]`,b="Mobile / Web Developer &amp; JavaScript Consultant",Q="HTML, CSS, JavaScript, TypeScript, React, React Native, PHP, MySQL, Bash, Makefile, Docker, GraphQL, Next, Nest",k=()=>`<p>
+"use strict";var M=Object.create;var u=Object.defineProperty;var F=Object.getOwnPropertyDescriptor;var N=Object.getOwnPropertyNames;var z=Object.getPrototypeOf,D=Object.prototype.hasOwnProperty;var A=(t,e,o,$)=>{if(e&&typeof e=="object"||typeof e=="function")for(let r of N(e))!D.call(t,r)&&r!==o&&u(t,r,{get:()=>e[r],enumerable:!($=F(e,r))||$.enumerable});return t};var H=(t,e,o)=>(o=t!=null?M(z(t)):{},A(e||!t||!t.__esModule?u(o,"default",{value:t,enumerable:!0}):o,t));var l=H(require("fs")),p=(t,e)=>l.writeFileSync(t,e,{encoding:"utf8"}),g=t=>l.readFileSync(t,{encoding:"utf8"});var w=new Date,d=`v3.1.0-${w.toJSON()}`,n=btoa(`${Number(w)}`).slice(10,18);var Z=g("./src/pages/1990/styles.css"),q=Object.entries({"script-src":[`'nonce-${n}'`,"'strict-dynamic'","https://www.google-analytics.com","https://ssl.google-analytics.com","https://static.hotjar.com","https://js.sentry-cdn.com","'unsafe-inline'"],"img-src":["'self'","https://www.google-analytics.com","https://avatars.githubusercontent.com/","https://www.googletagmanager.com/"],"connect-src":["'self'","https://www.google-analytics.com","https://region1.google-analytics.com","https://in.hotjar.com","https://static.hotjar.com","https://github.com/login/oauth/access_token","https://api.github.com/graphql","https://api.github.com/user","https://qilg4ch66b3vpgtevzccb5meum0ttfcl.lambda-url.eu-north-1.on.aws/","https://o171820.ingest.sentry.io/"],"style-src":[`'nonce-${n}'`,"https://static.hotjar.com"],"object-src":["'none'"],"base-uri":["'none'"],"frame-src":["https://vars.hotjar.com/"]}).reduce((t,[e,o])=>`${t};${e} ${o.join(" ")}`,"default-src 'self'"),c="Art&#363;rs Jansons",m="Full-stack Developer",f="10+ year exp.",B=`${c} | ${m} [${f}]`,b="Mobile / Web Developer &amp; JavaScript Consultant",I="HTML, CSS, JavaScript, TypeScript, React, React Native, PHP, MySQL, Bash, Makefile, Docker, GraphQL, Next, Nest",k=()=>`<p>
                         1990 |
                         <!-- <a href="/2000/">2000</a> |
                         <a href="/2010/">2010</a> |
@@ -25,7 +25,7 @@
                                                 ${h({src:"./src/pages/1990/assets/slotmachine.ascii"})}
                                             </fieldset>
                                         </form>
-                                    </font>`,R=()=>`<font face="${S}" size="3">
+                                    </font>`,Q=()=>`<font face="${S}" size="3">
         <table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
             <tr align="center">
                 <td valign="top">
@@ -95,7 +95,7 @@
                                     <font color="gray">\xA9 2024 ${c} | All rights reserved</font>
                     </table>
         </table>
-    </font>`,U=()=>`<font face="${S}" size="3">
+    </font>`,R=()=>`<font face="${S}" size="3">
         <table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
             <tr align="center">
                 <td valign="top">
@@ -176,14 +176,15 @@
     "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Security-Policy" content="${B}">
-    <title>${I}</title>
+    <meta http-equiv="Content-Security-Policy" content="${q}">
+    <title>${B}</title>
     <meta name="description" content="${b}" />
-    <meta name="keywords" content="${Q}" />
+    <meta name="keywords" content="${I}" />
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="var(--color-window)" />
-    <style nonce="${n}">${q}</style>
+    <link rel="stylesheet" nonce="${n}" href="/1990/styles.min.css" />
+    
 </head>
 <body>
     ${t}
@@ -217,7 +218,7 @@
       });
     });
     </script>
-`;p("public/1990/desktop/index.html",T(R()));p("public/1990/mobile/index.html",T(U()));var W=`
+`;p("public/1990/desktop/index.html",T(Q()));p("public/1990/mobile/index.html",T(R()));var U=`
 CACHE MANIFEST
 # rev ${d}
 
@@ -230,4 +231,4 @@ index.html
 
 NETWORK:
 *
-`;p("public/manifest.appcache",W);
+`;p("public/manifest.appcache",U);
