@@ -78,6 +78,12 @@ body,
   width: 100vw;
   min-height: 100vh;
 }
+html {
+  font-size: 0;
+}
+body {
+  font-size: initial;
+}
 
 picture {
   display: flex;

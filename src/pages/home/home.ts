@@ -9,7 +9,7 @@ import LinkList from '@app/components/link-list/link-list.ts';
 import Clouds from '@app/components/clouds/clouds.ts';
 
 const Home = () => `
-    ${Clouds()}
+    ${/*Clouds()*/''}
     ${Header()}
     <article lang="en">
       <section id="home" itemscope itemtype="https://schema.org/Person">
@@ -87,7 +87,7 @@ const Home = () => `
       </section>
     </article>
     <footer>
-      ${SlotMachine()}
+      ${/*SlotMachine()*/''}
     </footer>
   `;
 

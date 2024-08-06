@@ -1,5 +1,5 @@
 :root {
-  --box-width: 9rem;
+  --box-width: 6rem;
   --box-height: 2rem;
   --content-height: 3rem;
 }
@@ -10,6 +10,18 @@
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
+  @media (min-width: 768px) {
+    --box-width: 7rem;
+    --content-height: 3.5rem;
+  }
+  @media (min-width: 1024px) {
+    --box-width: 9rem;
+    --content-height: 4rem;
+  }
+  @media (min-width: 1440px) {
+    --box-width: 16rem;
+    --content-height: 5rem;
+  }
 }
 .link-list--squire {
   --box-height: var(--box-width);
