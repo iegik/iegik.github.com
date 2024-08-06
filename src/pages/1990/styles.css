@@ -15,6 +15,7 @@ body, html {
   min-height: 100vh;
   margin: 0;
   padding: 0;
+  font-size: 0;
 }
 html {
   scrollbar-color: orange var(--color-activeWindow);
@@ -22,6 +23,7 @@ html {
 }
 body, input, select, textarea {
   font-family: 'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace;
+  font-size: 100%;
   letter-spacing: 1.5px;
   border: 0;
   background-color: var(--color-window);

@@ -365,7 +365,8 @@ const Layout = (content: string) => `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Ba
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="var(--color-window)" />
-    <style nonce="${nonce}">${style}</style>
+    <link rel="stylesheet" nonce="${nonce}" href="/1990/styles.min.css" />
+    ${/*<style nonce="${nonce}">${style}</style>*/''}
 </head>
 <body>
     ${content}
