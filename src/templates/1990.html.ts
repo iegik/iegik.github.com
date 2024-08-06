@@ -160,7 +160,7 @@ const CurrentLocation = () => `<p>Current Location: Earth</p>`
 const ContactForm = () => `<form align="left" method="get" action="/1990/mailto/">
                                             <fieldset>
                                                 <legend>Bonus Code</legend>
-                                                ${Image({ src: './src/pages/1990/assets/slotmachine.ascii' })}
+                                                <code>${Image({ src: './src/pages/1990/assets/slotmachine.ascii' })}</code>
                                             </fieldset>
                                         </form>
                                     </font>`
@@ -382,18 +382,18 @@ const Layout = (content: string) => `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Ba
     </script>
     <!-- DOS Theme Code for https://iegik.github.io -->
     <script nonce="${nonce}">
-        (function(m,s,d,o,s,_){
-            o.onclick=a;
+        (function(m,s,D,O,S,_){
+            O.onclick=a;
             function a(){
-                o.innerText=m;
-                o.onclick=r;
-                _=d.createElement('link');_.async=1;
-                _.rel='stylesheet';_.href=s;_.nonce='${nonce}';
-                d.head.appendChild(_);
+                O.innerText=m;
+                O.onclick=r;
+                _=D.createElement('link');_.async=1;
+                _.rel='stylesheet';_.href=S;_.nonce='${nonce}';
+                D.head.appendChild(_);
             };
             function r(){
-                o.innerText=s;
-                o.onclick=a;
+                O.innerText=s;
+                O.onclick=a;
                 _.remove();
             };
         })('NO STYLE', 'DOS', document, toggleDosStyle,'/1990/styles.min.css');
