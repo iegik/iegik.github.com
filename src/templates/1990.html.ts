@@ -383,7 +383,8 @@ const Layout = (content: string) => `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Ba
     <!-- DOS Theme Code for https://iegik.github.io -->
     <script nonce="${nonce}">
         (function(m,s,D,O,S,_){
-            O.onclick=a;
+            a();
+            O.onclick=r;
             function a(){
                 O.innerText=m;
                 O.onclick=r;
