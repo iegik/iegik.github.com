@@ -34,7 +34,7 @@
                         <tr>
                             <td>
                                 ${h({src:"./src/pages/1990/assets/photo.ascii"})}
-                            <td width="80%">
+                            <td width="80%" valign="bottom">
                                 <p>${r}
                                 <h1><font size="5"><b>${m}</b></font><font size="2">[${f}]</font></h1>
                                 <p><em>${b}</em></p>
@@ -112,10 +112,12 @@
                                 <p><em>${b}</em></p>
                                 <p>
                                     <b>Tech Stack:</b>
+                                        <br/>
                                         ${y()}
                                 </p>
                                 <p>
                                     <b>Also use:</b>
+                                        <br/>
                                         ${v()}
                                 </p>
                     </table>
