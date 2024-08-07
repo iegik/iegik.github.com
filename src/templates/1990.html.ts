@@ -131,7 +131,7 @@ type Contact = { link: LinkProps; comment?: string; }
 const contacts:Contact[] = [
     // { link: { href: "callto:0037126262109", title: "+371 26262109", }, comment: 'EU' },
     // { link: { href: "callto:0079213900737", title: "+7 921 3900737", }, comment: 'RU' },
-    { link: { href: "mailto:a.jansons@gmail.com", title: "a.jansons@gmail.com", } },
+    // { link: { href: "mailto:a.jansons@gmail.com", title: "a.jansons@gmail.com", } },
     { link: { href: "https://t.me/ajansons", title: "t.me/ajansons", } },
     // { link: { href: "https://discord.gg/iegik", title: "discord.gg/iegik", } },
 ]
@@ -157,13 +157,13 @@ const TimeZone = () => `<p>Time Zone: EEST</p>`
 const WorkTime = () => `<p>Work Time: 10:00 - 20:00</p>`
 const CurrentLocation = () => `<p>Current Location: Earth</p>`
 
-// const ContactForm = () => `<form align="left" method="get" action="/1990/mailto/">
-//                                             <fieldset>
-//                                                 <legend>Bonus Code</legend>
-//                                                 <code>${Image({ src: './src/pages/1990/assets/slotmachine.ascii' })}</code>
-//                                             </fieldset>
-//                                         </form>
-//                                     </font>`
+const Code = ({ src, title }: { src: string, title: string }) => `<form align="left" method="get" action="/1990/mailto/">
+                                            <fieldset>
+                                                <legend>${title}</legend>
+                                                <code>${Image({ src })}</code>
+                                            </fieldset>
+                                        </form>
+                                    </font>`
 
 const ContactFormDesktop = () => `<form align="left" method="POST" action="https://api.web3forms.com/submit">
                                         <fieldset>
@@ -196,10 +196,10 @@ const ContactFormDesktop = () => `<form align="left" method="POST" action="https
                                                             <table width="100%">
                                                                 <tr>
                                                                     <td>
-                                                                        <textarea id="message" name="message" rows="5" cols="74" required></textarea>
+                                                                        <textarea id="message" name="message" rows="5" cols="44" required></textarea>
                                                             </table>
                                                         <p align="right">
-                                                            <input type="submit" value="Send message" />&nbsp;
+                                                            <input type="submit" value="Send message" />
                                                     </fieldset>
                                             </table>
                                         </fieldset>
@@ -288,6 +288,15 @@ const DesktopView = () => `<font face="${fontFamily}" size="3">
                                             ${ProjectView(projects[3])}
                                     </tr>
                                 </table>
+                    </table>
+                    <table border="0" cellpadding="0" cellspacing="8">
+                        <tr>
+                            <td align="center" valign="top" width="100%">
+                                <font size="2">
+                                    ${ContactFormDesktop()}
+                                </font>
+                    </table>
+                    <table border="0" cellpadding="0" cellspacing="8" width="800px">
                         <tr>
                             <td valign="top">
                                 <font size="2">
@@ -300,10 +309,16 @@ const DesktopView = () => `<font face="${fontFamily}" size="3">
                                     ${WorkTime()}
                                     ${CurrentLocation()}
                                 </font>
-                            <td align="right">
-                                <font size="2">
-                                    ${ContactFormDesktop()}
-                                </font>
+                            <td valign="bottom" align="right">
+                                ${/*Image({ src: './src/pages/1990/assets/javascript.ascii'})*/''}
+                            <td valign="top" align="right">
+                                <table border="0" cellpadding="0" cellspacing="8">
+                                    <tr>
+                                        <td valign="top">
+                                            <font size="2">
+                                                ${Code({ src: './src/pages/1990/assets/slotmachine.ascii', title: 'Code of the day' })}
+                                            </font>
+                                </table>
                     </table>
             <tr>
                 <td valign="bottom" align="center">
@@ -369,6 +384,11 @@ const MobileView = () => `<font face="${fontFamily}" size="3">
                                     </tr>
                                 </table>
                         <tr>
+                            <td width="40%" align="right">
+                                <font size="2">
+                                    ${ContactFormMobile()}
+                                </font>
+                        <tr>
                             <td valign="top">
                                 <font size="2">
                                     <h2>Contacts:</h2>
@@ -380,11 +400,11 @@ const MobileView = () => `<font face="${fontFamily}" size="3">
                                     ${WorkTime()}
                                     ${CurrentLocation()}
                                 </font>
-                        </tr>
                         <tr>
-                            <td width="60%" align="right">
+                        <tr>
+                            <td width="30%" align="right">
                                 <font size="2">
-                                    ${ContactFormMobile()}
+                                    ${Code({ src: './src/pages/1990/assets/slotmachine.ascii', title: 'Code of the day' })}
                                 </font>
                     </table>
             <tr>
