@@ -1,14 +1,15 @@
 /* Styles used only for interpriate old interface */
 :root {
-  --color-window: #0000a8;
-  --color-text: #56ffff;
-  /* --color-buttonText: #a80000; */
+  --color-window: #0000A8;
+  --color-text: #56FFFF;
+  --color-danger: #A80000;
+  /* --color-danger: #FF5750; */
   --color-buttonText: black;
   --color-button: white;
-  --color-accent: #ffff58;
-  --color-activeWindow: #ababab;
-  --color-inactiveWindow: #05a8a8;
-  --color-menu: #05a8a8;
+  --color-accent: #FFFF58;
+  --color-activeWindow: #ABABAB;
+  --color-inactiveWindow: #05A8A8;
+  --color-menu: #05A8A8;
   --color-shadow: black;
 }
 body, html {
@@ -79,6 +80,10 @@ form input[type=submit]:active, form a:active {
 ::selection {
   color: var(--color-buttonText);
   background-color: var(--color-accent);
+}
+[bgcolor="red"] {
+  background-color: var(--color-danger);
+  color: var(--color-button)
 }
 @media (prefers-color-scheme: dark) {
   :root {

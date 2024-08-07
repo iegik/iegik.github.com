@@ -52,22 +52,22 @@ const TopNav = () => `<p>
                         <a href="/2010/">2010</a> |
                         <a href="/2020/">2020</a> |*/''}
                         <a href="/next/">BETA</a> |
-                        <a id="toggleDosStyle" href="#">DOS</a>
+                        <a id="toggleDosStyle" href="#" bgcolor="red">DOS</a>
                     </p>`
 
 const TechStack = () => `<font color="orange">HTML</font>,
                                         <font color="blue">CSS</font>,
                                         <font color="#F0DB4F">JavaScript</font>,
-                                        <font color="#2f74c0">TypeScript</font>,
-                                        <font color="#5fd3f3">React / React Native</font>`
+                                        <font color="#2F74C0">TypeScript</font>,
+                                        <font color="#5FD3F3">React / React Native</font>`
 
 const AlsoUse = () => `<font color="#7277ae">PHP</font>,
-                                        <font color="#2683cb">MySQL</font>,
+                                        <font color="#2683CB">MySQL</font>,
                                         <font>Bash/Makefile</font>,
-                                        <font color="#008ddb">Docker</font>,
-                                        <font color="#dd34a6">GraphQL</font>,
+                                        <font color="#008DDB">Docker</font>,
+                                        <font color="#DD34A6">GraphQL</font>,
                                         <font>Next</font>,
-                                        <font color="#da214c">Nest</font>`
+                                        <font color="#DA214C">Nest</font>`
 
 const Image = ({ src }: { src: string; }) => `<pre><font size=1>${readFileSync(src)}</font></pre>`
 
@@ -397,7 +397,7 @@ const Layout = (content: string) => `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Ba
                 O.onclick=a;
                 _.remove();
             };
-        })('NO STYLE', 'DOS', document, toggleDosStyle,'/1990/styles.min.css');
+        })('EXIT', 'DOS', document, toggleDosStyle,'/1990/styles.min.css');
     </script>
     <!-- Hotjar Tracking Code for https://iegik.github.io -->
     <script nonce="${nonce}">
