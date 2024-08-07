@@ -1,10 +1,10 @@
 #!/usr/bin/env node
-"use strict";var P=Object.create;var u=Object.defineProperty;var M=Object.getOwnPropertyDescriptor;var F=Object.getOwnPropertyNames;var N=Object.getPrototypeOf,O=Object.prototype.hasOwnProperty;var A=(t,e,n,$)=>{if(e&&typeof e=="object"||typeof e=="function")for(let c of F(e))!O.call(t,c)&&c!==n&&u(t,c,{get:()=>e[c],enumerable:!($=M(e,c))||$.enumerable});return t};var _=(t,e,n)=>(n=t!=null?P(N(t)):{},A(e||!t||!t.__esModule?u(n,"default",{value:t,enumerable:!0}):n,t));var l=_(require("fs")),p=(t,e)=>l.writeFileSync(t,e,{encoding:"utf8"}),g=t=>l.readFileSync(t,{encoding:"utf8"});var k=new Date,d=`v3.1.0-${k.toJSON()}`,o=btoa(`${Number(k)}`).slice(10,18);var Y=g("./src/pages/1990/styles.css"),z=Object.entries({"script-src":[`'nonce-${o}'`,"'strict-dynamic'","https://www.google-analytics.com","https://ssl.google-analytics.com","https://static.hotjar.com","https://js.sentry-cdn.com","'unsafe-inline'"],"img-src":["'self'","https://www.google-analytics.com","https://avatars.githubusercontent.com/","https://www.googletagmanager.com/"],"connect-src":["'self'","https://www.google-analytics.com","https://region1.google-analytics.com","https://in.hotjar.com","https://static.hotjar.com","https://github.com/login/oauth/access_token","https://api.github.com/graphql","https://api.github.com/user","https://qilg4ch66b3vpgtevzccb5meum0ttfcl.lambda-url.eu-north-1.on.aws/","https://o171820.ingest.sentry.io/"],"style-src":[`'nonce-${o}'`,"https://static.hotjar.com"],"object-src":["'none'"],"base-uri":["'none'"],"frame-src":["https://vars.hotjar.com/"]}).reduce((t,[e,n])=>`${t};${e} ${n.join(" ")}`,"default-src 'self'"),r="Art&#363;rs Jansons",m="Full-stack Developer",f="10+ year exp.",B=`${r} | ${m} [${f}]`,b="Mobile / Web Developer &amp; JavaScript Consultant",H="HTML, CSS, JavaScript, TypeScript, React, React Native, PHP, MySQL, Bash, Makefile, Docker, GraphQL, Next, Nest",w=()=>`<p>
+"use strict";var F=Object.create;var $=Object.defineProperty;var L=Object.getOwnPropertyDescriptor;var M=Object.getOwnPropertyNames;var O=Object.getPrototypeOf,N=Object.prototype.hasOwnProperty;var _=(t,e,n,u)=>{if(e&&typeof e=="object"||typeof e=="function")for(let s of M(e))!N.call(t,s)&&s!==n&&$(t,s,{get:()=>e[s],enumerable:!(u=L(e,s))||u.enumerable});return t};var z=(t,e,n)=>(n=t!=null?F(O(t)):{},_(e||!t||!t.__esModule?$(n,"default",{value:t,enumerable:!0}):n,t));var c=z(require("fs")),p=(t,e)=>c.writeFileSync(t,e,{encoding:"utf8"}),g=t=>c.readFileSync(t,{encoding:"utf8"});var y=new Date,h=`v3.1.0-${y.toJSON()}`,o=btoa(`${Number(y)}`).slice(10,18);var X=g("./src/pages/1990/styles.css"),A=Object.entries({"script-src":[`'nonce-${o}'`,"'strict-dynamic'","https://www.google-analytics.com","https://ssl.google-analytics.com","https://static.hotjar.com","https://js.sentry-cdn.com","'unsafe-inline'"],"img-src":["'self'","https://www.google-analytics.com","https://avatars.githubusercontent.com/","https://www.googletagmanager.com/"],"connect-src":["'self'","https://www.google-analytics.com","https://region1.google-analytics.com","https://in.hotjar.com","https://static.hotjar.com","https://github.com/login/oauth/access_token","https://api.github.com/graphql","https://api.github.com/user","https://qilg4ch66b3vpgtevzccb5meum0ttfcl.lambda-url.eu-north-1.on.aws/","https://o171820.ingest.sentry.io/"],"style-src":[`'nonce-${o}'`,"https://static.hotjar.com"],"object-src":["'none'"],"base-uri":["'none'"],"frame-src":["https://vars.hotjar.com/"]}).reduce((t,[e,n])=>`${t};${e} ${n.join(" ")}`,"default-src 'self'"),r="Art&#363;rs Jansons",m="Full-stack Developer",b="10+ year exp.",B=`${r} | ${m} [${b}]`,f="Mobile / Web Developer &amp; JavaScript Consultant",q="HTML, CSS, JavaScript, TypeScript, React, React Native, PHP, MySQL, Bash, Makefile, Docker, GraphQL, Next, Nest",w=()=>`<p>
                         1990 |
                         
                         <a href="/next/">BETA</a> |
                         <a id="toggleDosStyle" href="#" bgcolor="red">DOS</a>
-                    </p>`,y=()=>`<font color="orange">HTML</font>,
+                    </p>`,k=()=>`<font color="orange">HTML</font>,
                                         <font color="blue">CSS</font>,
                                         <font color="#F0DB4F">JavaScript</font>,
                                         <font color="#2F74C0">TypeScript</font>,
@@ -14,17 +14,94 @@
                                         <font color="#008DDB">Docker</font>,
                                         <font color="#DD34A6">GraphQL</font>,
                                         <font>Next</font>,
-                                        <font color="#DA214C">Nest</font>`,h=({src:t})=>`<pre><font size=1>${g(t)}</font></pre>`,a=t=>`<a ${/^http/.test(t.href)?' rel="noopener noreferrer"':""} href="${t.href}" title="${t.title}">${t.title}</a>`,i=[{image:{ascii:"./src/pages/1990/assets/website.ascii"},description:"Website development, including complex forms with custom field validation, popups and dialogs.",links:[{href:"https://wiam-front-test.vercel.app/",title:"Ex. 1"},{href:"https://mindmap-opal.vercel.app/",title:"Ex. 2"},{href:"https://codepen.io/iegik/full/ObZpqo",title:"Ex. 3"}]},{image:{ascii:"./src/pages/1990/assets/mobile.ascii"},description:"Mobile applications - developing, publishing or upgrading existing ones.",links:[{href:"https://github.com/iegik/inventarizacija/",title:"Ex. 1"},{href:"https://github.com/iegik/react_calc/",title:"Ex. 2"}],comment:"Unfortunately apps are not available in Google Play anymore"},{image:{ascii:"./src/pages/1990/assets/extensions.ascii"},description:"Browser extensions, custom scripts and other researches where I'm testing new approaches.",links:[{href:"https://github.com/iegik/clock-extension",title:"Ex. 1"},{href:"https://github.com/iegik/thunar-scripts",title:"Ex. 2"},{href:"https://hub.docker.com/repository/docker/iegik/docker-node/general",title:"Ex. 3"}]},{image:{ascii:"./src/pages/1990/assets/cms.ascii"},description:"CMS (Wordpress, Magento) configuration, plugin creation, RESTFul API on PHP, GraphQL and microservices",links:[{href:"https://github.com/WinLinMac/magento_themes",title:"Ex. 1"}]}],j=[{link:{href:"mailto:a.jansons@gmail.com",title:"a.jansons@gmail.com"}},{link:{href:"https://t.me/ajansons",title:"t.me/ajansons"}}],S=[{href:"https://linkedin.com/in/iegik",title:"LinkedIn"},{href:"https://github.com/iegik",title:"GitHub"},{href:"https://profile.codersrank.io/user/iegik",title:"CodersRank"},{href:"https://codepen.io/iegik/",title:"CodePen"},{href:"https://jsfiddle.net/user/iegik",title:"JSFiddle"},{href:"https://stackoverflow.com/users/771471/iegik",title:"StackOverflow"}],x="'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace",s=t=>`<center>${h({src:t.image.ascii})}</center>
+                                        <font color="#DA214C">Nest</font>`,d=({src:t})=>`<pre><font size=1>${g(t)}</font></pre>`,l=t=>`<a ${/^http/.test(t.href)?' rel="noopener noreferrer"':""} href="${t.href}" title="${t.title}">${t.title}</a>`,i=[{image:{ascii:"./src/pages/1990/assets/website.ascii"},description:"Website development, including complex forms with custom field validation, popups and dialogs.",links:[{href:"https://wiam-front-test.vercel.app/",title:"Ex. 1"},{href:"https://mindmap-opal.vercel.app/",title:"Ex. 2"},{href:"https://codepen.io/iegik/full/ObZpqo",title:"Ex. 3"}]},{image:{ascii:"./src/pages/1990/assets/mobile.ascii"},description:"Mobile applications - developing, publishing or upgrading existing ones.",links:[{href:"https://github.com/iegik/inventarizacija/",title:"Ex. 1"},{href:"https://github.com/iegik/react_calc/",title:"Ex. 2"}],comment:"Unfortunately apps are not available in Google Play anymore"},{image:{ascii:"./src/pages/1990/assets/extensions.ascii"},description:"Browser extensions, custom scripts and other researches where I'm testing new approaches.",links:[{href:"https://github.com/iegik/clock-extension",title:"Ex. 1"},{href:"https://github.com/iegik/thunar-scripts",title:"Ex. 2"},{href:"https://hub.docker.com/repository/docker/iegik/docker-node/general",title:"Ex. 3"}]},{image:{ascii:"./src/pages/1990/assets/cms.ascii"},description:"CMS (Wordpress, Magento) configuration, plugin creation, RESTFul API on PHP, GraphQL and microservices",links:[{href:"https://github.com/WinLinMac/magento_themes",title:"Ex. 1"}]}],j=[{link:{href:"https://t.me/ajansons",title:"t.me/ajansons"}}],S=[{href:"https://linkedin.com/in/iegik",title:"LinkedIn"},{href:"https://github.com/iegik",title:"GitHub"},{href:"https://profile.codersrank.io/user/iegik",title:"CodersRank"},{href:"https://codepen.io/iegik/",title:"CodePen"},{href:"https://jsfiddle.net/user/iegik",title:"JSFiddle"},{href:"https://stackoverflow.com/users/771471/iegik",title:"StackOverflow"}],x="'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace",a=t=>`<center>${d({src:t.image.ascii})}</center>
                                             <p>${t.description}
                                             <p>
-                                                ${t.links.map((e,n)=>`${n?" | ":""}${a(e)}`).join("")}
-                                            ${t.comment?`<p><em><font color="gray">${t.comment}</font></em>`:""}`,C=()=>"<p>Time Zone: EEST</p>",E=()=>"<p>Work Time: 10:00 - 20:00</p>",T=()=>"<p>Current Location: Earth</p>",D=()=>`<form align="left" method="get" action="/1990/mailto/">
+                                                ${t.links.map((e,n)=>`${n?" | ":""}${l(e)}`).join("")}
+                                            ${t.comment?`<p><em><font color="gray">${t.comment}</font></em>`:""}`,C=()=>"<p>Time Zone: EEST</p>",T=()=>"<p>Work Time: 10:00 - 20:00</p>",E=()=>"<p>Current Location: Earth</p>",D=({src:t,title:e})=>`<form align="left" method="get" action="/1990/mailto/">
                                             <fieldset>
-                                                <legend>Bonus Code</legend>
-                                                <code>${h({src:"./src/pages/1990/assets/slotmachine.ascii"})}</code>
+                                                <legend>${e}</legend>
+                                                <code>${d({src:t})}</code>
                                             </fieldset>
                                         </form>
-                                    </font>`,I=()=>`<font face="${x}" size="3">
+                                    </font>`,R=()=>`<form align="left" method="POST" action="https://api.web3forms.com/submit">
+                                        <fieldset>
+                                            <legend>Feedback</legend>
+                                            <table align="left" border="0" cellpadding="0" cellspacing="8" width="100%">
+                                                <tr>
+                                                    <td>
+                                                        <label for="email">Your email</label>
+                                                        <p>
+                                                            <input id="email" name="email" type="text" required />
+                                                            <input type="hidden" name="to" value="a.jansons+web@gmail.com" />
+                                                            <input type="hidden" name="access_key" value="c5540606-b7ca-4634-980a-13e2c50cd823" />
+                                                            <input type="hidden" name="redirect" value="/1990/sent" />
+                                                    <td width="100%">
+                                                        <label for="subject">Subject</label>
+                                                        <p>
+                                                            <select id="subject" name="subject">
+                                                                <option></option>
+                                                                <option value="Feedback">Feedback</option>
+                                                                <option value="Work opportunity">Work opportunity</option>
+                                                                <option value="Consultation">Consultation</option>
+                                                                <option value="Bug Report">Bug Report</option>
+                                                            </select>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <br/>
+                                                            <label for="message">Content</label>
+                                                            <br/>
+                                                            <br/>
+                                                            <table width="100%">
+                                                                <tr>
+                                                                    <td>
+                                                                        <textarea id="message" name="message" rows="5" cols="44" required></textarea>
+                                                            </table>
+                                                        <p align="right">
+                                                            <input type="submit" value="Send message" />
+                                                    </fieldset>
+                                            </table>
+                                        </fieldset>
+                                    </form>`,W=()=>`<form align="left" method="POST" action="https://api.web3forms.com/submit">
+                                        <fieldset>
+                                            <legend>Feedback</legend>
+                                            <table align="left" border="0" cellpadding="0" cellspacing="8" width="100%">
+                                                <tr>
+                                                    <td>
+                                                        <label for="email">Your email</label>
+                                                        <p>
+                                                            <input id="email" name="email" type="text" required />
+                                                            <input type="hidden" name="to" value="a.jansons+web@gmail.com" />
+                                                            <input type="hidden" name="access_key" value="c5540606-b7ca-4634-980a-13e2c50cd823" />
+                                                            <input type="hidden" name="redirect" value="/1990/sent" />
+                                                </tr>
+                                                <tr>
+                                                    <td width="100%">
+                                                        <label for="subject">Subject</label>
+                                                        <p>
+                                                            <select id="subject" name="subject">
+                                                                <option></option>
+                                                                <option value="Feedback">Feedback</option>
+                                                                <option value="Work opportunity">Work opportunity</option>
+                                                                <option value="Consultation">Consultation</option>
+                                                                <option value="Bug Report">Bug Report</option>
+                                                            </select>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <p>
+                                                            <label for="message">Content</label>
+                                                        <br/>
+                                                        <table width="100%">
+                                                            <tr>
+                                                                <td>
+                                                                    <textarea id="message" name="message" rows="5" cols="36" required></textarea>
+                                                        </table>
+                                                        <p align="left">
+                                                            <input type="submit" value="Send message" />
+                                                    </fieldset>
+                                            </table>
+                                        </fieldset>
+                                    </form>`,H=()=>`<font face="${x}" size="3">
         <table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
             <tr align="center">
                 <td valign="top">
@@ -33,14 +110,14 @@
                     <table border="0" cellpadding="0" cellspacing="8" width="800px">
                         <tr>
                             <td>
-                                ${h({src:"./src/pages/1990/assets/photo.ascii"})}
+                                ${d({src:"./src/pages/1990/assets/photo.ascii"})}
                             <td width="80%" valign="bottom">
                                 <p>${r}
-                                <h1><font size="5"><b>${m}</b></font><font size="2">[${f}]</font></h1>
-                                <p><em>${b}</em></p>
+                                <h1><font size="5"><b>${m}</b></font><font size="2">[${b}]</font></h1>
+                                <p><em>${f}</em></p>
                                 <p>
                                     <b>Tech Stack:</b>
-                                        ${y()}
+                                        ${k()}
                                 </p>
                                 <p>
                                     <b>Also use:</b>
@@ -54,33 +131,48 @@
                                 <table border="0" cellpadding="0" cellspacing="8" width="100%">
                                     <tr>
                                         <td valign="top">
-                                            ${s(i[0])}
+                                            ${a(i[0])}
                                         <td valign="top">
-                                            ${s(i[1])}
+                                            ${a(i[1])}
                                     </tr>
                                     <tr>
                                         <td valign="top">
-                                            ${s(i[2])}
+                                            ${a(i[2])}
                                         <td valign="top">
-                                            ${s(i[3])}
+                                            ${a(i[3])}
                                     </tr>
                                 </table>
+                    </table>
+                    <table border="0" cellpadding="0" cellspacing="8">
+                        <tr>
+                            <td align="center" valign="top" width="100%">
+                                <font size="2">
+                                    ${R()}
+                                </font>
+                    </table>
+                    <table border="0" cellpadding="0" cellspacing="8" width="800px">
                         <tr>
                             <td valign="top">
                                 <font size="2">
                                     <h2>Contacts:</h2>
                                     <ul>
-                                        ${j.map(t=>`<li><p>${a(t.link)}${t.comment?` [${t.comment}]`:""}`).join("")}
+                                        ${j.map(t=>`<li><p>${l(t.link)}${t.comment?` [${t.comment}]`:""}`).join("")}
                                     </ul>
                                     <br/>
                                     ${C()}
-                                    ${E()}
                                     ${T()}
+                                    ${E()}
                                 </font>
-                            <td align="right">
-                                <font size="2">
-                                    ${D()}
-                                </font>
+                            <td valign="bottom" align="right">
+                                
+                            <td valign="top" align="right">
+                                <table border="0" cellpadding="0" cellspacing="8">
+                                    <tr>
+                                        <td valign="top">
+                                            <font size="2">
+                                                ${D({src:"./src/pages/1990/assets/slotmachine.ascii",title:"Code of the day"})}
+                                            </font>
+                                </table>
                     </table>
             <tr>
                 <td valign="bottom" align="center">
@@ -88,13 +180,13 @@
                     <table border="0" cellpadding="8" cellspacing="0" width="100%">
                         <tr>
                             <td align="center">
-                                <p>${S.map((t,e)=>`${e?" | ":""}${a(t)}`).join("")}</p>
+                                <p>${S.map((t,e)=>`${e?" | ":""}${l(t)}`).join("")}</p>
                                 <br/>
                                 <marquee>
                                     <font color="gray">\xA9 2024 ${r} | All rights reserved</font>
                     </table>
         </table>
-    </font>`,q=()=>`<font face="${x}" size="3">
+    </font>`,I=()=>`<font face="${x}" size="3">
         <table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
             <tr align="center">
                 <td valign="top">
@@ -103,17 +195,17 @@
                     <table border="0" cellpadding="0" cellspacing="8">
                         <tr>
                             <td align="center">
-                                ${h({src:"./src/pages/1990/assets/photo.ascii"})}
+                                ${d({src:"./src/pages/1990/assets/photo.ascii"})}
                                 <p>${r}
                                 <h1>
                                     <font size="5"><b>${m}</b></font>
                                     <br/>
-                                    <font size="2">[${f}]</font></h1>
-                                <p><em>${b}</em></p>
+                                    <font size="2">[${b}]</font></h1>
+                                <p><em>${f}</em></p>
                                 <p>
                                     <b>Tech Stack:</b>
                                         <br/>
-                                        ${y()}
+                                        ${k()}
                                 </p>
                                 <p>
                                     <b>Also use:</b>
@@ -128,38 +220,43 @@
                                 <table border="0" cellpadding="0" cellspacing="8" width="100%">
                                     <tr>
                                         <td valign="top">
-                                            ${s(i[0])}
+                                            ${a(i[0])}
                                     </tr>
                                     <tr>
                                         <td valign="top">
-                                            ${s(i[1])}
+                                            ${a(i[1])}
                                     </tr>
                                     <tr>
                                         <td valign="top">
-                                            ${s(i[2])}
+                                            ${a(i[2])}
                                     </tr>
                                     <tr>
                                         <td valign="top">
-                                            ${s(i[3])}
+                                            ${a(i[3])}
                                     </tr>
                                 </table>
+                        <tr>
+                            <td width="40%" align="right">
+                                <font size="2">
+                                    ${W()}
+                                </font>
                         <tr>
                             <td valign="top">
                                 <font size="2">
                                     <h2>Contacts:</h2>
                                     <ul>
-                                        ${j.map(t=>`<li><p>${a(t.link)}${t.comment?` [${t.comment}]`:""}`).join("")}
+                                        ${j.map(t=>`<li><p>${l(t.link)}${t.comment?` [${t.comment}]`:""}`).join("")}
                                     </ul>
                                     <br/>
                                     ${C()}
-                                    ${E()}
                                     ${T()}
+                                    ${E()}
                                 </font>
-                        </tr>
                         <tr>
-                            <td width="60%" align="right">
+                        <tr>
+                            <td width="30%" align="right">
                                 <font size="2">
-                                    ${D()}
+                                    ${D({src:"./src/pages/1990/assets/slotmachine.ascii",title:"Code of the day"})}
                                 </font>
                     </table>
             <tr>
@@ -168,19 +265,19 @@
                     <table border="0" cellpadding="8" cellspacing="0" width="100%">
                         <tr>
                             <td align="center">
-                                <p>${S.map((t,e)=>`${e?" | ":""}${a(t)}`).join("")}</p>
+                                <p>${S.map((t,e)=>`${e?" | ":""}${l(t)}`).join("")}</p>
                                 <marquee>
                                     <font color="gray">\xA9 2024 ${r} | All rights reserved</font>
                     </table>
         </table>
-    </font>`,L=t=>`<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    </font>`,P=t=>`<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
     "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Security-Policy" content="${z}">
+    <meta http-equiv="Content-Security-Policy" content="${A}">
     <title>${B}</title>
-    <meta name="description" content="${b}" />
-    <meta name="keywords" content="${H}" />
+    <meta name="description" content="${f}" />
+    <meta name="keywords" content="${q}" />
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="var(--color-window)" />
@@ -233,14 +330,14 @@
     document.addEventListener('DOMContentLoaded', () => {
       typeof Sentry !== 'undefined' && Sentry.init({
         dsn: "https://179618f1f04d4d9dac08acc750d5736c@o171820.ingest.sentry.io/1250596",
-        release: "1250596@${d}",
+        release: "1250596@${h}",
         environment: "production",
       });
     });
     </script>
-`;p("public/1990/desktop/index.html",L(I()));p("public/1990/mobile/index.html",L(q()));var Q=`
+`;p("public/1990/desktop/index.html",P(H()));p("public/1990/mobile/index.html",P(I()));var Q=`
 CACHE MANIFEST
-# rev ${d}
+# rev ${h}
 
 CACHE:
 index.html
