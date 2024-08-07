@@ -214,7 +214,7 @@ const DesktopView = () => `<font face="${fontFamily}" size="3">
                         <tr>
                             <td>
                                 ${Image({ src: './src/pages/1990/assets/photo.ascii' })}
-                            <td width="80%">
+                            <td width="80%" valign="bottom">
                                 <p>${fullName}
                                 <h1><font size="5"><b>${position}</b></font><font size="2">[${experience}]</font></h1>
                                 <p><em>${description}</em></p>
@@ -294,10 +294,12 @@ const MobileView = () => `<font face="${fontFamily}" size="3">
                                 <p><em>${description}</em></p>
                                 <p>
                                     <b>Tech Stack:</b>
+                                        <br/>
                                         ${TechStack()}
                                 </p>
                                 <p>
                                     <b>Also use:</b>
+                                        <br/>
                                         ${AlsoUse()}
                                 </p>
                     </table>
