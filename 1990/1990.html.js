@@ -199,7 +199,8 @@
     <!-- DOS Theme Code for https://iegik.github.io -->
     <script nonce="${n}">
         (function(m,s,D,O,S,_){
-            O.onclick=a;
+            a();
+            O.onclick=r;
             function a(){
                 O.innerText=m;
                 O.onclick=r;
