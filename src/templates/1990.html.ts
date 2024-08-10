@@ -235,7 +235,7 @@ const Field = ({ name }: FieldProps) => {
 
 const FormField = withLabel()(Field)
 
-const Captcha = ({ name }: FieldProps) => `<input id="bot" name="${name}" nonce="${nonce}" placeholder="Type 'true' here" /><p><a id="${name}" href="#bot">[_] ${l10n(name)}</a></p><script nonce="${nonce}">bot.style.display='none';${name}.addEventListener("click", () => {${name}.innerText=${name}.innerText.slice(0,1)+(bot.value==='true' ? '_' : 'x')+${name}.innerText.slice(2);bot.value=bot.value === 'true' ? false : true;});</script>`
+const Captcha = ({ name }: FieldProps) => `<input id="bot" name="${name}" nonce="${nonce}" value="Type 'true' here" /><p><a id="${name}" href="#bot">[_] ${l10n(name)}</a></p><script nonce="${nonce}">bot.style.display='none';${name}.addEventListener("click", () => {${name}.innerText=${name}.innerText.slice(0,1)+(bot.value==='true' ? '_' : 'x')+${name}.innerText.slice(2);bot.value=bot.value === 'true' ? false : true;});</script>`
 
 const ContactFormDesktop = () => `<form align="left" method="POST" action="https://api.web3forms.com/submit">
                                         <fieldset>
