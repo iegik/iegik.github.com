@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-"use strict";var R=Object.create;var x=Object.defineProperty;var B=Object.getOwnPropertyDescriptor;var I=Object.getOwnPropertyNames;var H=Object.getPrototypeOf,Q=Object.prototype.hasOwnProperty;var W=(t,e,o,r)=>{if(e&&typeof e=="object"||typeof e=="function")for(let s of I(e))!Q.call(t,s)&&s!==o&&x(t,s,{get:()=>e[s],enumerable:!(r=B(e,s))||r.enumerable});return t};var U=(t,e,o)=>(o=t!=null?R(H(t)):{},W(e||!t||!t.__esModule?x(o,"default",{value:t,enumerable:!0}):o,t));var d=U(require("fs")),h=(t,e)=>d.writeFileSync(t,e,{encoding:"utf8"}),b=t=>d.readFileSync(t,{encoding:"utf8"});var S=new Date,f=`v3.1.0-${S.toJSON()}`,i=btoa(`${Number(S)}`).slice(10,18);var lt=b("./src/pages/1990/styles.css"),G=Object.entries({"script-src":[`'nonce-${i}'`,"'strict-dynamic'","https://www.google-analytics.com","https://ssl.google-analytics.com","https://static.hotjar.com","https://js.sentry-cdn.com"],"img-src":["'self'","https://www.google-analytics.com","https://avatars.githubusercontent.com/","https://www.googletagmanager.com/"],"connect-src":["'self'","https://www.google-analytics.com","https://region1.google-analytics.com","https://in.hotjar.com","https://static.hotjar.com","https://github.com/login/oauth/access_token","https://api.github.com/graphql","https://api.github.com/user","https://qilg4ch66b3vpgtevzccb5meum0ttfcl.lambda-url.eu-north-1.on.aws/","https://o171820.ingest.sentry.io/"],"style-src":[`'nonce-${i}'`,"https://static.hotjar.com"],"object-src":["'none'"],"base-uri":["'none'"],"frame-src":["https://vars.hotjar.com/"]}).reduce((t,[e,o])=>`${t};${e} ${o.join(" ")}`,"default-src 'self'"),l="Art&#363;rs Jansons",$="Full-stack Developer",u="10+ year exp.",J=`${l} | ${$} [${u}]`,k="Mobile / Web Developer &amp; JavaScript Consultant",Y="HTML, CSS, JavaScript, TypeScript, React, React Native, PHP, MySQL, Bash, Makefile, Docker, GraphQL, Next, Nest",C=()=>`<p>
+"use strict";var R=Object.create;var x=Object.defineProperty;var B=Object.getOwnPropertyDescriptor;var I=Object.getOwnPropertyNames;var H=Object.getPrototypeOf,Q=Object.prototype.hasOwnProperty;var W=(t,e,o,r)=>{if(e&&typeof e=="object"||typeof e=="function")for(let s of I(e))!Q.call(t,s)&&s!==o&&x(t,s,{get:()=>e[s],enumerable:!(r=B(e,s))||r.enumerable});return t};var U=(t,e,o)=>(o=t!=null?R(H(t)):{},W(e||!t||!t.__esModule?x(o,"default",{value:t,enumerable:!0}):o,t));var d=U(require("fs")),h=(t,e)=>d.writeFileSync(t,e,{encoding:"utf8"}),f=t=>d.readFileSync(t,{encoding:"utf8"});var S=new Date,$=`v3.1.0-${S.toJSON()}`,i=btoa(`${Number(S)}`).slice(10,18);var lt=f("./src/pages/1990/styles.css"),G=Object.entries({"script-src":[`'nonce-${i}'`,"'strict-dynamic'","https://www.google-analytics.com","https://ssl.google-analytics.com","https://static.hotjar.com","https://js.sentry-cdn.com"],"img-src":["'self'","https://www.google-analytics.com","https://avatars.githubusercontent.com/","https://www.googletagmanager.com/"],"connect-src":["'self'","https://www.google-analytics.com","https://region1.google-analytics.com","https://in.hotjar.com","https://static.hotjar.com","https://github.com/login/oauth/access_token","https://api.github.com/graphql","https://api.github.com/user","https://qilg4ch66b3vpgtevzccb5meum0ttfcl.lambda-url.eu-north-1.on.aws/","https://o171820.ingest.sentry.io/"],"style-src":[`'nonce-${i}'`,"https://static.hotjar.com"],"object-src":["'none'"],"base-uri":["'none'"],"frame-src":["https://vars.hotjar.com/"]}).reduce((t,[e,o])=>`${t};${e} ${o.join(" ")}`,"default-src 'self'"),l="Art&#363;rs Jansons",u="Full-stack Developer",k="10+ year exp.",J=`${l} | ${u} [${k}]`,y="Mobile / Web Developer &amp; JavaScript Consultant",Y="HTML, CSS, JavaScript, TypeScript, React, React Native, PHP, MySQL, Bash, Makefile, Docker, GraphQL, Next, Nest",C=()=>`<p>
                         1990 |
                         
                         <a href="/next/">BETA</a> |
@@ -8,34 +8,34 @@
                                         <font color="blue">CSS</font>,
                                         <font color="#F0DB4F">JavaScript</font>,
                                         <font color="#2F74C0">TypeScript</font>,
-                                        <font color="#5FD3F3">React / React Native</font>`,P=()=>`<font color="#7277ae">PHP</font>,
+                                        <font color="#5FD3F3">React / React Native</font>`,F=()=>`<font color="#7277ae">PHP</font>,
                                         <font color="#2683CB">MySQL</font>,
                                         <font>Bash/Makefile</font>,
                                         <font color="#008DDB">Docker</font>,
                                         <font color="#DD34A6">GraphQL</font>,
                                         <font>Next</font>,
-                                        <font color="#DA214C">Nest</font>`,g=({src:t})=>`<pre><font size=1>${b(t)}</font></pre>`,p=t=>`<a ${/^http/.test(t.href)?' rel="noopener noreferrer"':""} href="${t.href}" title="${t.title}">${t.title}</a>`,a=[{image:{ascii:"./src/pages/1990/assets/website.ascii"},description:"Website development, including complex forms with custom field validation, popups and dialogs.",links:[{href:"https://wiam-front-test.vercel.app/",title:"Ex. 1"},{href:"https://mindmap-opal.vercel.app/",title:"Ex. 2"},{href:"https://codepen.io/iegik/full/ObZpqo",title:"Ex. 3"}]},{image:{ascii:"./src/pages/1990/assets/mobile.ascii"},description:"Mobile applications - developing, publishing or upgrading existing ones.",links:[{href:"https://github.com/iegik/inventarizacija/",title:"Ex. 1"},{href:"https://github.com/iegik/react_calc/",title:"Ex. 2"}],comment:"Unfortunately apps are not available in Google Play anymore"},{image:{ascii:"./src/pages/1990/assets/extensions.ascii"},description:"Browser extensions, custom scripts and other researches where I'm testing new approaches.",links:[{href:"https://github.com/iegik/clock-extension",title:"Ex. 1"},{href:"https://github.com/iegik/thunar-scripts",title:"Ex. 2"},{href:"https://hub.docker.com/repository/docker/iegik/docker-node/general",title:"Ex. 3"}]},{image:{ascii:"./src/pages/1990/assets/cms.ascii"},description:"CMS (Wordpress, Magento) configuration, plugin creation, RESTFul API on PHP, GraphQL and microservices",links:[{href:"https://github.com/WinLinMac/magento_themes",title:"Ex. 1"}]}],F=[{link:{href:"https://t.me/ajansons",title:"t.me/ajansons"}}],E=[{href:"https://linkedin.com/in/iegik",title:"LinkedIn"},{href:"https://github.com/iegik",title:"GitHub"},{href:"https://profile.codersrank.io/user/iegik",title:"CodersRank"},{href:"https://codepen.io/iegik/",title:"CodePen"},{href:"https://jsfiddle.net/user/iegik",title:"JSFiddle"},{href:"https://stackoverflow.com/users/771471/iegik",title:"StackOverflow"}],D="'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace",c=t=>`<center>${g({src:t.image.ascii})}</center>
+                                        <font color="#DA214C">Nest</font>`,m=({src:t})=>`<pre><font size=1>${f(t)}</font></pre>`,p=t=>`<a ${/^http/.test(t.href)?' rel="noopener noreferrer"':""} href="${t.href}" title="${t.title}">${t.title}</a>`,a=[{image:{ascii:"./src/pages/1990/assets/website.ascii"},description:"Website development, including complex forms with custom field validation, popups and dialogs.",links:[{href:"https://wiam-front-test.vercel.app/",title:"Ex. 1"},{href:"https://mindmap-opal.vercel.app/",title:"Ex. 2"},{href:"https://codepen.io/iegik/full/ObZpqo",title:"Ex. 3"}]},{image:{ascii:"./src/pages/1990/assets/mobile.ascii"},description:"Mobile applications - developing, publishing or upgrading existing ones.",links:[{href:"https://github.com/iegik/inventarizacija/",title:"Ex. 1"},{href:"https://github.com/iegik/react_calc/",title:"Ex. 2"}],comment:"Unfortunately apps are not available in Google Play anymore"},{image:{ascii:"./src/pages/1990/assets/extensions.ascii"},description:"Browser extensions, custom scripts and other researches where I'm testing new approaches.",links:[{href:"https://github.com/iegik/clock-extension",title:"Ex. 1"},{href:"https://github.com/iegik/thunar-scripts",title:"Ex. 2"},{href:"https://hub.docker.com/repository/docker/iegik/docker-node/general",title:"Ex. 3"}]},{image:{ascii:"./src/pages/1990/assets/cms.ascii"},description:"CMS (Wordpress, Magento) configuration, plugin creation, RESTFul API on PHP, GraphQL and microservices",links:[{href:"https://github.com/WinLinMac/magento_themes",title:"Ex. 1"}]}],P=[{link:{href:"https://t.me/ajansons",title:"t.me/ajansons"}}],E=[{href:"https://linkedin.com/in/iegik",title:"LinkedIn"},{href:"https://github.com/iegik",title:"GitHub"},{href:"https://profile.codersrank.io/user/iegik",title:"CodersRank"},{href:"https://codepen.io/iegik/",title:"CodePen"},{href:"https://jsfiddle.net/user/iegik",title:"JSFiddle"},{href:"https://stackoverflow.com/users/771471/iegik",title:"StackOverflow"}],D="'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace",c=t=>`<center>${m({src:t.image.ascii})}</center>
                                             <p>${t.description}
                                             <p>
                                                 ${t.links.map((e,o)=>`${o?" | ":""}${p(e)}`).join("")}
                                             ${t.comment?`<p><em><font color="gray">${t.comment}</font></em>`:""}`,L=()=>"<p>Time Zone: EEST</p>",M=()=>"<p>Work Time: 10:00 - 20:00</p>",_=()=>"<p>Current Location: Earth</p>",O=({src:t,title:e})=>`<form align="left" method="get" action="/1990/mailto/">
                                             <fieldset>
                                                 <legend>${e}</legend>
-                                                <code>${g({src:t})}</code>
+                                                <code>${m({src:t})}</code>
                                             </fieldset>
                                         </form>
-                                    </font>`,N={email:{kind:"vertical",required:!0},to:{type:"hidden",value:"a.jansons+web@gmail.com"},access_key:{type:"hidden",value:"c5540606-b7ca-4634-980a-13e2c50cd823"},redirect:{type:"hidden",value:"/1990/sent"},subject:{kind:"vertical",required:!0,data:["feedback","work","consultation","issue"]},message:{kind:"vertical",required:!0,rows:5,cols:44},send:{type:"submit"}},Z={email:"Your email",subject:"Subject",message:"Content",send:"Send message",feedback:"Feedback",work:"Work opportunity",consultation:"Consultation",issue:"Bug Report",botcheck:"I' m not a robot"},y=t=>Z[t]||t,X=()=>t=>({name:e})=>{let{kind:o,type:r}=N[e]||{};if(r==="hidden")return t({name:e});if(r==="submit")return t({name:e});let s=y(e);return o==="vertical"?`<label for="${e}">${s}</label>
+                                    </font>`,N={email:{kind:"vertical",required:!0},to:{type:"hidden",value:"a.jansons+web@gmail.com"},access_key:{type:"hidden",value:"c5540606-b7ca-4634-980a-13e2c50cd823"},redirect:{type:"hidden",value:"/1990/sent"},subject:{kind:"vertical",required:!0,data:["feedback","work","consultation","issue"]},message:{kind:"vertical",required:!0,rows:5,cols:44},send:{type:"submit"}},Z={email:"Your email",subject:"Subject",message:"Content",send:"Send message",feedback:"Feedback",work:"Work opportunity",consultation:"Consultation",issue:"Bug Report",botcheck:"I' m not a robot"},g=t=>Z[t]||t,X=()=>t=>({name:e})=>{let{kind:o,type:r}=N[e]||{};if(r==="hidden")return t({name:e});if(r==="submit")return`<input type="submit" name="${e}" value="${g(e)}" />`;let s=g(e);return o==="vertical"?`<label for="${e}">${s}</label>
                                                         <br/>
                                                         <br/>
-                                                        ${t({name:e})}`:`<label for="${e}">${s}</label>&nbsp;${t({name:e})}`},V=({name:t})=>{let{data:e,type:o,rows:r,cols:s,value:w="",required:A}=N[t]||{},v=t,m=A?"required":"";return e?`<select id="${v}" name="${t}" ${m}>
+                                                        ${t({name:e})}`:`<label for="${e}">${s}</label>&nbsp;${t({name:e})}`},V=({name:t})=>{let{data:e,type:o,rows:r,cols:s,value:w="",required:A}=N[t]||{},v=t,b=A?"required":"";return e?`<select id="${v}" name="${t}" ${b}>
                                                                 <option></option>
-                                                                ${e.map(j=>`<option value="${j}">${y(j)}</option>`).join(`
+                                                                ${e.map(j=>`<option value="${j}">${g(j)}</option>`).join(`
 `)}
                                                             </select>`:r||s?`<table width="100%">
                                                             <tr>
                                                                 <td>
-                                                                    <textarea id="${v}" name="${t}" rows="${r}" cols="${s}" ${m}>${w}</textarea>
-                                                        </table>`:`<input type="${o||"text"}" name="${t}" value="${w}" ${m} />`},n=X()(V),q=({name:t})=>`<input id="bot" name="${t}" nonce="${i}" placeholder="Type 'true' here" /><p><a id="${t}" href="#bot">[_] ${y(t)}</a></p><script nonce="${i}">bot.style.display='none';${t}.addEventListener("click", () => {${t}.innerText=${t}.innerText.slice(0,1)+(bot.value==='true' ? '_' : 'x')+${t}.innerText.slice(2);bot.value=bot.value === 'true' ? false : true;});</script>`,K=()=>`<form align="left" method="POST" action="https://api.web3forms.com/submit">
+                                                                    <textarea id="${v}" name="${t}" rows="${r}" cols="${s}" ${b}>${w}</textarea>
+                                                        </table>`:`<input type="${o||"text"}" name="${t}" value="${w}" ${b} />`},n=X()(V),q=({name:t})=>`<input id="bot" name="${t}" nonce="${i}" placeholder="Type 'true' here" /><p><a id="${t}" href="#bot">[_] ${g(t)}</a></p><script nonce="${i}">bot.style.display='none';${t}.addEventListener("click", () => {${t}.innerText=${t}.innerText.slice(0,1)+(bot.value==='true' ? '_' : 'x')+${t}.innerText.slice(2);bot.value=bot.value === 'true' ? false : true;});</script>`,K=()=>`<form align="left" method="POST" action="https://api.web3forms.com/submit">
                                         <fieldset>
                                             <legend>Feedback</legend>
                                             <table align="left" border="0" cellpadding="0" cellspacing="8" width="100%">
@@ -87,18 +87,18 @@
                     <table border="0" cellpadding="0" cellspacing="8" width="800px">
                         <tr>
                             <td>
-                                ${g({src:"./src/pages/1990/assets/photo.ascii"})}
+                                ${m({src:"./src/pages/1990/assets/photo.ascii"})}
                             <td width="80%" valign="bottom">
                                 <p>${l}
-                                <h1><font size="5"><b>${$}</b></font><font size="2">[${u}]</font></h1>
-                                <p><em>${k}</em></p>
+                                <h1><font size="5"><b>${u}</b></font><font size="2">[${k}]</font></h1>
+                                <p><em>${y}</em></p>
                                 <p>
                                     <b>Tech Stack:</b>
                                         ${T()}
                                 </p>
                                 <p>
                                     <b>Also use:</b>
-                                        ${P()}
+                                        ${F()}
                                 </p>
                     </table>
                     <table border="0" cellpadding="0" cellspacing="8" width="800px">
@@ -133,7 +133,7 @@
                                 <font size="2">
                                     <h2>Contacts:</h2>
                                     <ul>
-                                        ${F.map(t=>`<li><p>${p(t.link)}${t.comment?` [${t.comment}]`:""}`).join("")}
+                                        ${P.map(t=>`<li><p>${p(t.link)}${t.comment?` [${t.comment}]`:""}`).join("")}
                                     </ul>
                                     <br/>
                                     ${L()}
@@ -172,13 +172,13 @@
                     <table border="0" cellpadding="0" cellspacing="8">
                         <tr>
                             <td align="center">
-                                ${g({src:"./src/pages/1990/assets/photo.ascii"})}
+                                ${m({src:"./src/pages/1990/assets/photo.ascii"})}
                                 <p>${l}
                                 <h1>
-                                    <font size="5"><b>${$}</b></font>
+                                    <font size="5"><b>${u}</b></font>
                                     <br/>
-                                    <font size="2">[${u}]</font></h1>
-                                <p><em>${k}</em></p>
+                                    <font size="2">[${k}]</font></h1>
+                                <p><em>${y}</em></p>
                                 <p>
                                     <b>Tech Stack:</b>
                                         <br/>
@@ -187,7 +187,7 @@
                                 <p>
                                     <b>Also use:</b>
                                         <br/>
-                                        ${P()}
+                                        ${F()}
                                 </p>
                     </table>
                     <table border="0" cellpadding="0" cellspacing="8">
@@ -222,7 +222,7 @@
                                 <font size="2">
                                     <h2>Contacts:</h2>
                                     <ul>
-                                        ${F.map(t=>`<li><p>${p(t.link)}${t.comment?` [${t.comment}]`:""}`).join("")}
+                                        ${P.map(t=>`<li><p>${p(t.link)}${t.comment?` [${t.comment}]`:""}`).join("")}
                                     </ul>
                                     <br/>
                                     ${L()}
@@ -253,7 +253,7 @@
 <head>
     <meta http-equiv="Content-Security-Policy" content="${G}">
     <title>${J}</title>
-    <meta name="description" content="${k}" />
+    <meta name="description" content="${y}" />
     <meta name="keywords" content="${Y}" />
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -307,14 +307,14 @@
     document.addEventListener('DOMContentLoaded', () => {
       typeof Sentry !== 'undefined' && Sentry.init({
         dsn: "https://179618f1f04d4d9dac08acc750d5736c@o171820.ingest.sentry.io/1250596",
-        release: "1250596@${f}",
+        release: "1250596@${$}",
         environment: "production",
       });
     });
     </script>
 `;h("public/1990/desktop/index.html",z(et()));h("public/1990/mobile/index.html",z(nt()));var ot=`
 CACHE MANIFEST
-# rev ${f}
+# rev ${$}
 
 CACHE:
 index.html
