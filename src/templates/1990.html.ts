@@ -206,7 +206,7 @@ const withLabel = () => (Field: (x: FieldProps) => string) => ({ name }: { name:
     const { kind, type: fieldType } = fields[name] || {}
 
     if (fieldType === 'hidden') return Field({ name })
-    if (fieldType === 'submit') return Field({ name })
+    if (fieldType === 'submit') return `<input type="submit" name="${name}" value="${l10n(name)}" />`
     const label = l10n(name)
 
     return kind === 'vertical'
