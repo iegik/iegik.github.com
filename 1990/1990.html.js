@@ -35,7 +35,7 @@
                                                             <tr>
                                                                 <td>
                                                                     <textarea id="${v}" name="${t}" rows="${r}" cols="${s}" ${b}>${w}</textarea>
-                                                        </table>`:`<input type="${i||"text"}" name="${t}" value="${w}" ${b} />`},n=X()(V),q=({name:t})=>`<input id="bot" name="${t}" nonce="${o}" value="Type 'true' here" /><p><a id="${t}" href="#bot">[_] ${g(t)}</a></p><script nonce="${o}">bot.style.display='none';${t}.addEventListener("click", () => {${t}.innerText=${t}.innerText.slice(0,1)+(bot.value==='true' ? '_' : 'x')+${t}.innerText.slice(2);bot.value=bot.value === 'true' ? false : true;});</script>`,K=()=>`<form align="left" method="POST" action="https://api.web3forms.com/submit">
+                                                        </table>`:`<input type="${i||"text"}" name="${t}" value="${w}" ${b} />`},n=X()(V),q=({name:t})=>`<input id="bot" name="${t}" nonce="${o}" value="This shouldn't be here" /><p><a id="${t}" href="#bot">[_] ${g(t)}</a></p><script nonce="${o}">bot.style.display='none';${t}.addEventListener("click", () => {${t}.innerText=${t}.innerText.slice(0,1)+(bot.value==='true' ? '_' : 'x')+${t}.innerText.slice(2);bot.disabled=true;bot.value=bot.value === 'true' ? false : true;});</script>`,K=()=>`<form align="left" method="POST" action="https://api.web3forms.com/submit">
                                         <fieldset>
                                             <legend>Feedback</legend>
                                             <table align="left" border="0" cellpadding="0" cellspacing="8" width="100%">
