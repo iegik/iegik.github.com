@@ -165,42 +165,92 @@ const Code = ({ src, title }: { src: string, title: string }) => `<form align="l
                                         </form>
                                     </font>`
 
+type FieldProps = { name: string }
+
+type FormFieldProps = {
+    kind?: 'horizontal' | 'vertical';
+    data?: any[];
+    rows?: number;
+    cols?: number;
+    type?: 'hidden' | 'text' | 'memo' | 'checkbox' | 'radio' | 'email' | 'select' | 'submit';
+    value?: string;
+    required?: boolean;
+}
+
+const fields: Record<string, FormFieldProps> = {
+    email: { kind: 'vertical', required: true },
+    to: { type: 'hidden', value: 'a.jansons+web@gmail.com' },
+    access_key: { type: 'hidden', value: 'c5540606-b7ca-4634-980a-13e2c50cd823' },
+    redirect: { type: 'hidden', value: '/1990/sent' },
+    subject: { kind: 'vertical', required: true, data: ['feedback', 'work', 'consultation', 'issue'] },
+    message: { kind: 'vertical', required: true, rows: 5, cols: 44 },
+    send: { type: 'submit' },
+}
+
+const dict: Record<string, string>= {
+    email: 'Your email',
+    subject: 'Subject',
+    message: 'Content',
+    send: 'Send message',
+    feedback: 'Feedback',
+    work: 'Work opportunity',
+    consultation: 'Consultation',
+    issue: 'Bug Report',
+}
+
+const l10n = (slug: string) => dict[slug] || slug;
+
+const withLabel = () => (Field: (x: FieldProps) => string) => ({ name }: { name: string}) => {
+    const { kind, type: fieldType } = fields[name] || {}
+
+    if (fieldType === 'hidden') return Field({ name })
+    if (fieldType === 'submit') return Field({ name })
+    const label = l10n(name)
+
+    return kind === 'vertical'
+    ? `<label for="${name}">${label}</label>
+                                                        <br/>
+                                                        <br/>
+                                                        ${Field({ name })}`
+    : `<label for="${name}">${label}</label>&nbsp;${Field({ name })}`
+}
+
+const Field = ({ name }: FieldProps) => {
+    const { data, type: fieldType, rows, cols, value = '', required }: FormFieldProps = fields[name] || {}
+    const id = name;
+    const isRequired = required ? `required` : ''
+    if (data) return `<select id="${id}" name="${name}" ${isRequired}>
+                                                                <option></option>
+                                                                ${data.map((key) => `<option value="${key}">${l10n(key)}</option>`).join('\n')}
+                                                            </select>`
+    if (!!rows || !!cols) return `<table width="100%">
+                                                            <tr>
+                                                                <td>
+                                                                    <textarea id="${id}" name="${name}" rows="${rows}" cols="${cols}" ${isRequired}>${value}</textarea>
+                                                        </table>`
+    return `<input type="${fieldType || 'text'}" name="${name} value="${value}" ${isRequired} />`
+}
+
+const FormField = withLabel()(Field)
+
 const ContactFormDesktop = () => `<form align="left" method="POST" action="https://api.web3forms.com/submit">
                                         <fieldset>
                                             <legend>Feedback</legend>
                                             <table align="left" border="0" cellpadding="0" cellspacing="8" width="100%">
                                                 <tr>
                                                     <td>
-                                                        <label for="email">Your email</label>
-                                                        <p>
-                                                            <input id="email" name="email" type="text" required />
-                                                            <input type="hidden" name="to" value="a.jansons+web@gmail.com" />
-                                                            <input type="hidden" name="access_key" value="c5540606-b7ca-4634-980a-13e2c50cd823" />
-                                                            <input type="hidden" name="redirect" value="/1990/sent" />
+                                                        ${FormField({ name: 'email' })}
+                                                        ${FormField({ name: 'to' })}
+                                                        ${FormField({ name: 'access_key' })}
+                                                        ${FormField({ name: 'redirect' })}
                                                     <td width="100%">
-                                                        <label for="subject">Subject</label>
-                                                        <p>
-                                                            <select id="subject" name="subject">
-                                                                <option></option>
-                                                                <option value="Feedback">Feedback</option>
-                                                                <option value="Work opportunity">Work opportunity</option>
-                                                                <option value="Consultation">Consultation</option>
-                                                                <option value="Bug Report">Bug Report</option>
-                                                            </select>
+                                                        ${FormField({ name: 'subject' })}
                                                 <tr>
                                                     <td colspan="2">
                                                         <br/>
-                                                            <label for="message">Content</label>
-                                                            <br/>
-                                                            <br/>
-                                                            <table width="100%">
-                                                                <tr>
-                                                                    <td>
-                                                                        <textarea id="message" name="message" rows="5" cols="44" required></textarea>
-                                                            </table>
+                                                        ${FormField({ name: 'message' })}
                                                         <p align="right">
-                                                            <input type="submit" value="Send message" />
-                                                    </fieldset>
+                                                            ${FormField({ name: 'send' })}
                                             </table>
                                         </fieldset>
                                     </form>`
@@ -211,37 +261,19 @@ const ContactFormMobile = () => `<form align="left" method="POST" action="https:
                                             <table align="left" border="0" cellpadding="0" cellspacing="8" width="100%">
                                                 <tr>
                                                     <td>
-                                                        <label for="email">Your email</label>
-                                                        <p>
-                                                            <input id="email" name="email" type="text" required />
-                                                            <input type="hidden" name="to" value="a.jansons+web@gmail.com" />
-                                                            <input type="hidden" name="access_key" value="c5540606-b7ca-4634-980a-13e2c50cd823" />
-                                                            <input type="hidden" name="redirect" value="/1990/sent" />
+                                                        ${FormField({ name: 'email' })}
+                                                        ${FormField({ name: 'to' })}
+                                                        ${FormField({ name: 'access_key' })}
+                                                        ${FormField({ name: 'redirect' })}
                                                 </tr>
                                                 <tr>
                                                     <td width="100%">
-                                                        <label for="subject">Subject</label>
-                                                        <p>
-                                                            <select id="subject" name="subject">
-                                                                <option></option>
-                                                                <option value="Feedback">Feedback</option>
-                                                                <option value="Work opportunity">Work opportunity</option>
-                                                                <option value="Consultation">Consultation</option>
-                                                                <option value="Bug Report">Bug Report</option>
-                                                            </select>
+                                                        ${FormField({ name: 'subject' })}
                                                 <tr>
                                                     <td colspan="2">
-                                                        <p>
-                                                            <label for="message">Content</label>
-                                                        <br/>
-                                                        <table width="100%">
-                                                            <tr>
-                                                                <td>
-                                                                    <textarea id="message" name="message" rows="5" cols="36" required></textarea>
-                                                        </table>
+                                                        ${FormField({ name: 'message' })}
                                                         <p align="left">
-                                                            <input type="submit" value="Send message" />
-                                                    </fieldset>
+                                                            ${FormField({ name: 'send' })}
                                             </table>
                                         </fieldset>
                                     </form>`
