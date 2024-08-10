@@ -10,7 +10,7 @@ const csp = Object.entries({
     `https://ssl.google-analytics.com`,
     `https://static.hotjar.com`,
     `https://js.sentry-cdn.com`,
-    `'unsafe-inline'`, // (ignored by browsers supporting nonces/hashes) to be backward compatible with older browsers.
+    // `'unsafe-inline'`, // (ignored by browsers supporting nonces/hashes) to be backward compatible with older browsers.
   ],
   'img-src': [
     `'self'`,
@@ -33,6 +33,7 @@ const csp = Object.entries({
   'style-src': [
     `'nonce-${nonce}'`,
     `https://static.hotjar.com`,
+    // `'unsafe-inline'`,
   ],
   'object-src': [`'none'`],
   'base-uri': [`'none'`],
@@ -196,6 +197,7 @@ const dict: Record<string, string>= {
     work: 'Work opportunity',
     consultation: 'Consultation',
     issue: 'Bug Report',
+    botcheck: "I' m not a robot",
 }
 
 const l10n = (slug: string) => dict[slug] || slug;
@@ -233,6 +235,8 @@ const Field = ({ name }: FieldProps) => {
 
 const FormField = withLabel()(Field)
 
+const Captcha = ({ name }: FieldProps) => `<input id="bot" name="${name}" nonce="${nonce}" placeholder="Type 'true' here" /><p><a id="${name}" href="#bot">[_] ${l10n(name)}</a></p><script nonce="${nonce}">bot.style.display='none';${name}.addEventListener("click", () => {${name}.innerText=${name}.innerText.slice(0,1)+(bot.value==='true' ? '_' : 'x')+${name}.innerText.slice(2);bot.value=bot.value === 'true' ? false : true;});</script>`
+
 const ContactFormDesktop = () => `<form align="left" method="POST" action="https://api.web3forms.com/submit">
                                         <fieldset>
                                             <legend>Feedback</legend>
@@ -249,6 +253,7 @@ const ContactFormDesktop = () => `<form align="left" method="POST" action="https
                                                     <td colspan="2">
                                                         <br/>
                                                         ${FormField({ name: 'message' })}
+                                                        ${Captcha({ name: 'botcheck' })}
                                                         <p align="right">
                                                             ${FormField({ name: 'send' })}
                                             </table>
@@ -272,6 +277,7 @@ const ContactFormMobile = () => `<form align="left" method="POST" action="https:
                                                 <tr>
                                                     <td colspan="2">
                                                         ${FormField({ name: 'message' })}
+                                                        ${Captcha({ name: 'botcheck' })}
                                                         <p align="left">
                                                             ${FormField({ name: 'send' })}
                                             </table>
@@ -486,7 +492,7 @@ const Layout = (content: string) => `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Ba
                 O.innerText=m;
                 O.onclick=r;
                 _=D.createElement('link');_.async=1;
-                _.rel='stylesheet';_.href=S;_.nonce='${nonce}';
+                _.rel='stylesheet';_.href=S;_.setAttribute('nonce', '${nonce}');
                 D.head.appendChild(_);
             };
             function r(){
