@@ -230,7 +230,7 @@ const Field = ({ name }: FieldProps) => {
                                                                 <td>
                                                                     <textarea id="${id}" name="${name}" rows="${rows}" cols="${cols}" ${isRequired}>${value}</textarea>
                                                         </table>`
-    return `<input type="${fieldType || 'text'}" name="${name} value="${value}" ${isRequired} />`
+    return `<input type="${fieldType || 'text'}" name="${name}" value="${value}" ${isRequired} />`
 }
 
 const FormField = withLabel()(Field)
