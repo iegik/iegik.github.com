@@ -108,6 +108,17 @@ form input:active, form select:active, form textarea:active, form a:active {
   color: var(--color-buttonText);
   background-color: var(--color-accent);
 }
+input:hover::selection, select:hover::selection, textarea:hover::selection, a:hover::selection,
+input:focus::selection, select:focus::selection, textarea:focus::selection, a:focus::selection,
+input:active::selection, select:active::selection, textarea:active::selection, a:active::selection,
+input:checked::selection, select:checked::selection, textarea:checked::selection, a:checked::selection,
+form input:hover::selection, form select:hover::selection, form textarea:hover::selection, form a:hover::selection,
+form input:focus::selection, form select:focus::selection, form textarea:focus::selection, form a:focus::selection,
+form input:checked::selection, form select:checked::selection, form textarea:checked::selection, form a:checked::selection,
+form input:active::selection, form select:active::selection, form textarea:active::selection, form a:active::selection {
+  color: var(--color-accent);
+  background-color: var(--color-window);
+}
 @media (prefers-color-scheme: dark) {
   :root {
       --color-window: black;
