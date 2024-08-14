@@ -93,6 +93,7 @@ const projects:Project[] = [
             { href: "https://wiam-front-test.vercel.app/", title: "Ex. 1", },
             { href: "https://mindmap-opal.vercel.app/", title: "Ex. 2", },
             { href: "https://codepen.io/iegik/full/ObZpqo", title: "Ex. 3", },
+            { href: "https://test-kanvajs.vercel.app/", title: "Ex. 4", },
         ]
     },
     {
