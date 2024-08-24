@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Sending...</title>
-    <link rel="stylesheet" href="/1990/styles.min.css"></style>
+    <link rel="stylesheet" href="/1990/styles.min.css">
 </head>
 <body>
     <font face="'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace" size="3">
@@ -17,45 +17,12 @@
                           <table align="center" cellpadding="0" cellspacing="8">
                             <tr>
                               <td width="1px" valign="bottom"><font size="1"><marquee scrollamount="5" behavior="scroll"><pre>▁▁▃▃▅▅▆▆▇▇██</pre></marquee></font>
-                              <td><font size="3" weight="bold">Sending...</font>
-                            </tr>
+                              </td><td><font size="3" weight="bold">Sending...</font>
+                            </td></tr>
                           </table>
-                          <font size="1" color="lightgray">301 Redirect</font><br/>
+                          <font size="1" color="lightgray">301 Redirect</font><br>
                           <font size="1" color="gray">You will be redirected to the new page shortly. If not, click <a id="url" href="#">here</a>.</font>
                     <tr>
                         <td>
                           <font size="1" color="lightgray"><em>If not work, go <a id="url" href="javascript:history.back();"><font size="1" color="lightgray">back</font></a> and mail me manually.</em></font>
-<script>
-    var r1 = /^[\w\[\'\]]+$/,
-    r2 = /(\w+)\['?([^\'\]]+)'\]/,
-    r3 = /\[/, tmp
-    const parse = (prev, [key, value]) => r1.test(key) ? ({
-        ...prev,
-        ...(r3.test(key)
-            ? (tmp = key.match(r2),({
-                [tmp[1]]: parse(prev[tmp[1]], [tmp[2], value])
-            }))
-            : { [key]: value }
-        )
-    }) : prev;
-
-    const getParams = () => {
-        var params = new URLSearchParams(location.search)
-        if (params.has('subscribe')) {
-            params.set('subscribe', true)
-        }
-
-        if (!params.has('subject')) return '#';
-        if (!params.has('message')) return '#';
-        if (!params.has('from')) return '#';
-        if (!params.has('to')) return '#';
-
-
-        var req = [...params.entries()].reduce(parse, Object.create(null))
-        return `mailto:${req.to}?subject=${req.subject}&message=${req.message}&from=${req.from}`
-    }
-
-    url.href = getParams()
-
-    setTimeout(() => { if (!window.location.href.includes(url.href)) window.location.href = url.href; }, 3000);
-</script>
+<script>var tmp,r1=/^[\w\[\'\]]+$/,r2=/(\w+)\['?([^\'\]]+)'\]/,r3=/\[/;const parse=(e,[r,s])=>r1.test(r)?{...e,...r3.test(r)?(tmp=r.match(r2),{[tmp[1]]:parse(e[tmp[1]],[tmp[2],s])}):{[r]:s}}:e,getParams=()=>{var e=new URLSearchParams(location.search);return e.has("subscribe")&&e.set("subscribe",!0),e.has("subject")&&e.has("message")&&e.has("from")&&e.has("to")?`mailto:${(e=[...e.entries()].reduce(parse,Object.create(null))).to}?subject=${e.subject}&message=${e.message}&from=`+e.from:"#"};url.href=getParams(),setTimeout(()=>{window.location.href.includes(url.href)||(window.location.href=url.href)},3e3)</script></td></tr></td></tr></table></td></tr></table></font></body></html>
