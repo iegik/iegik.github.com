@@ -24,6 +24,7 @@ const csp = Object.entries({
     `https://region1.google-analytics.com`,
     `https://in.hotjar.com`,
     `https://static.hotjar.com`,
+    `https://content.hotjar.io`,
     `https://github.com/login/oauth/access_token`,
     `https://api.github.com/graphql`,
     `https://api.github.com/user`,
