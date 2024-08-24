@@ -24,18 +24,18 @@
                                                 <code>${m({src:t})}</code>
                                             </fieldset>
                                         </form>
-                                    </font>`,N={email:{kind:"vertical",required:!0},to:{type:"hidden",value:"a.jansons+web@gmail.com"},access_key:{type:"hidden",value:"c5540606-b7ca-4634-980a-13e2c50cd823"},redirect:{type:"hidden",value:"/1990/sent"},subject:{kind:"vertical",required:!0,data:["feedback","work","consultation","issue"]},message:{kind:"vertical",required:!0,rows:5,cols:44},send:{type:"submit"}},X={email:"Your email",subject:"Subject",message:"Content",send:"Send message",feedback:"Feedback",work:"Work opportunity",consultation:"Consultation",issue:"Bug Report",botcheck:"I' m not a robot"},g=t=>X[t]||t,V=()=>t=>({name:e})=>{let{kind:o,type:r}=N[e]||{};if(r==="hidden")return t({name:e});if(r==="submit")return`<input type="submit" name="${e}" value="${g(e)}" />`;let s=g(e);return o==="vertical"?`<label for="${e}">${s}</label>
+                                    </font>`,N={email:{kind:"vertical",required:!0},to:{type:"hidden",value:"a.jansons+web@gmail.com"},access_key:{type:"hidden",value:"c5540606-b7ca-4634-980a-13e2c50cd823"},redirect:{type:"hidden",value:"/1990/sent"},subject:{kind:"vertical",required:!0,data:["feedback","work","consultation","issue"]},message:{kind:"vertical",required:!0},send:{type:"submit"}},X={email:"Your email",subject:"Subject",message:"Content",send:"Send message",feedback:"Feedback",work:"Work opportunity",consultation:"Consultation",issue:"Bug Report",botcheck:"I' m not a robot"},g=t=>X[t]||t,V=()=>t=>({name:e})=>{let{kind:o,type:r}=N[e]||{};if(r==="hidden")return t({name:e});if(r==="submit")return`<input type="submit" name="${e}" value="${g(e)}" />`;let s=g(e);return o==="vertical"?`<label for="${e}">${s}</label>
                                                         <br/>
                                                         <br/>
-                                                        ${t({name:e})}`:`<label for="${e}">${s}</label>&nbsp;${t({name:e})}`},K=({name:t})=>{let{data:e,type:o,rows:r,cols:s,value:w="",required:A}=N[t]||{},v=t,b=A?"required":"";return e?`<select id="${v}" name="${t}" ${b}>
+                                                        ${t({name:e})}`:`<label for="${e}">${s}</label>&nbsp;${t({name:e})}`},K=({name:t,rows:e,cols:o})=>{let{data:r,type:s,value:w="",required:A}=N[t]||{},v=t,b=A?"required":"";return r?`<select id="${v}" name="${t}" ${b}>
                                                                 <option></option>
-                                                                ${e.map(j=>`<option value="${j}">${g(j)}</option>`).join(`
+                                                                ${r.map(j=>`<option value="${j}">${g(j)}</option>`).join(`
 `)}
-                                                            </select>`:r||s?`<table width="100%">
+                                                            </select>`:e||o?`<table width="100%">
                                                             <tr>
                                                                 <td>
-                                                                    <textarea id="${v}" name="${t}" rows="${r}" cols="${s}" ${b}>${w}</textarea>
-                                                        </table>`:`<input type="${o||"text"}" name="${t}" value="${w}" ${b} />`},n=V()(K),q=({name:t})=>`<input id="bot" name="${t}" nonce="${i}" value="This shouldn't be here" /><p><a id="${t}" href="#bot">[_] ${g(t)}</a></p><script nonce="${i}">bot.style.display='none';${t}.addEventListener("click", () => {${t}.innerText=${t}.innerText.slice(0,1)+(bot.value==='true' ? '_' : 'x')+${t}.innerText.slice(2);bot.disabled=true;bot.value=bot.value === 'true' ? false : true;});</script>`,tt=()=>`<form align="left" method="POST" action="https://api.web3forms.com/submit">
+                                                                    <textarea id="${v}" name="${t}" rows="${e}" cols="${o}" ${b}>${w}</textarea>
+                                                        </table>`:`<input type="${s||"text"}" name="${t}" value="${w}" ${b} />`},n=V()(K),q=({name:t})=>`<input id="bot" name="${t}" nonce="${i}" value="This shouldn't be here" /><p><a id="${t}" href="#bot">[_] ${g(t)}</a></p><script nonce="${i}">bot.style.display='none';${t}.addEventListener("click", () => {${t}.innerText=${t}.innerText.slice(0,1)+(bot.value==='true' ? '_' : 'x')+${t}.innerText.slice(2);bot.disabled=true;bot.value=bot.value === 'true' ? false : true;});</script>`,tt=()=>`<form align="left" method="POST" action="https://api.web3forms.com/submit">
                                         <fieldset>
                                             <legend>Feedback</legend>
                                             <table align="left" border="0" cellpadding="0" cellspacing="8" width="100%">
@@ -50,7 +50,7 @@
                                                 <tr>
                                                     <td colspan="2">
                                                         <br/>
-                                                        ${n({name:"message"})}
+                                                        ${n({name:"message",rows:5,cols:44})}
                                                         ${q({name:"botcheck"})}
                                                         <p align="right">
                                                             ${n({name:"send"})}
@@ -72,13 +72,13 @@
                                                         ${n({name:"subject"})}
                                                 <tr>
                                                     <td colspan="2">
-                                                        ${n({name:"message"})}
+                                                        ${n({name:"message",rows:5,cols:36})}
                                                         ${q({name:"botcheck"})}
                                                         <p align="left">
                                                             ${n({name:"send"})}
                                             </table>
                                         </fieldset>
-                                    </form>`,nt=()=>`<font face="${L}" size="3">
+                                    </form>`,ot=()=>`<font face="${L}" size="3">
         <table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
             <tr align="center">
                 <td valign="top">
@@ -163,7 +163,7 @@
                                     <font color="gray">\xA9 2024 ${l} | All rights reserved</font>
                     </table>
         </table>
-    </font>`,ot=()=>`<font face="${L}" size="3">
+    </font>`,nt=()=>`<font face="${L}" size="3">
         <table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
             <tr align="center">
                 <td valign="top">
@@ -312,7 +312,7 @@
       });
     });
     </script>
-`;h("public/1990/desktop/index.html",z(nt()));h("public/1990/mobile/index.html",z(ot()));var it=`
+`;h("public/1990/desktop/index.html",z(ot()));h("public/1990/mobile/index.html",z(nt()));var it=`
 CACHE MANIFEST
 # rev ${$}
 
