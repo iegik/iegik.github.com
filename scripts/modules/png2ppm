@@ -1,5 +1,5 @@
 #!/bin/bash
-convert=`which convert` || echo "convert not found"
+convert=`which magick` || echo "magick not found"
 png2ppm() {
   if [ -e "$convert" ] ; then $convert "$2" -resize "$1" -grayscale Rec709luminance -compress none pgm:- > "$3"; return 0; fi;
   throw "Required software is not found

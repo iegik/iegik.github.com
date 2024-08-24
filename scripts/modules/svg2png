@@ -1,7 +1,7 @@
 #!/bin/bash
 rsvg=`which rsvg-convert` || echo "rsvg-convert not found"
 qlmanage=`which qlmanage` || echo "qlmanage not found"
-convert=`which convert` || echo "convert not found"
+convert=`which magick` || echo "magick not found"
 inkscape=`which /Applications/Inkscape.app/Contents/MacOS/inkscape` || echo "inkscape not found"
 svg2png() {
   if [ -e "$rsvg" ] ; then $rsvg -w $1 $2 > $3; return 0; fi;

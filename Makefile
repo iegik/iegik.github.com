@@ -105,22 +105,22 @@ ppm: # not used
 	echo -e "\033[2K\r\033[0;32m✓ Task $@ completed\033[0m\n"
 
 crop:
-	@convert public/images/me.jpg -gravity center -crop 1:1+0+0 +repage -interlace Plane public/images/artursjansons.jpg \
+	@magick public/images/me.jpg -gravity center -crop 1:1+0+0 +repage -interlace Plane public/images/artursjansons.jpg \
 
 icon: crop
-	@convert public/images/artursjansons.jpg -resize 64 -resize 128 -resize 256 public/favicon.ico && \
+	@magick public/images/artursjansons.jpg -resize 64 -resize 128 -resize 256 public/favicon.ico && \
 
 thumb: crop # not used
-	@convert public/images/artursjansons.jpg -resize 32 public/images/artursjansons_32.jpg && \
-	convert public/images/artursjansons.jpg -resize 64 public/images/artursjansons_64.jpg && \
-	convert public/images/artursjansons.jpg -resize 432 public/images/artursjansons_432.jpg && \
-	convert public/images/artursjansons.jpg -resize 128 public/images/artursjansons_128.jpg && \
+	@magick public/images/artursjansons.jpg -resize 32 public/images/artursjansons_32.jpg && \
+	magick public/images/artursjansons.jpg -resize 64 public/images/artursjansons_64.jpg && \
+	magick public/images/artursjansons.jpg -resize 432 public/images/artursjansons_432.jpg && \
+	magick public/images/artursjansons.jpg -resize 128 public/images/artursjansons_128.jpg && \
 	echo -e "\033[2K\r\033[0;32m✓ Task $@ completed\033[0m\n"
 
 ascii: jpg2png # Convert avatar to ASCII
 	@jp2a public/images/artursjansons.jpg --output=public/images/artursjansons.ascii
 # @scripts/braille -l 6 public/images/artursjansons.png > public/images/artursjansons.ascii
-# @convert public/images/artursjansons.jpg -resize 432x432 -grayscale Rec709luminance -compress none brf:- | awk NR\>3 > public/images/artursjansons.ascii
+# @magick public/images/artursjansons.jpg -resize 432x432 -grayscale Rec709luminance -compress none brf:- | awk NR\>3 > public/images/artursjansons.ascii
 
 ttf2woff:
 	@npx ttf2woff public/fonts/AlinaScript.ttf public/fonts/AlinaScript.woff && \
@@ -136,10 +136,10 @@ png2webp: jpg2png
 	echo -e "\033[2K\r\033[0;32m✓ Task $@ completed\033[0m\n"
 #	@$(foreach f,$(wildcard public/images/*.png),cwebp -quiet -q 80 $(f) -o $(patsubst %.png,%.webp,$(f)));
 
-# for f in public/images/*.jpg; do; convert ${f} $(f%%.jpg).png; done;
+# for f in public/images/*.jpg; do; magick ${f} $(f%%.jpg).png; done;
 jpg2png: thumb
 	@scripts/jpg2png
-#	@$(foreach f,$(wildcard public/images/*.jpg),convert $(f) $(patsubst %.jpg,%.png,$(f)));
+#	@$(foreach f,$(wildcard public/images/*.jpg),magick $(f) $(patsubst %.jpg,%.png,$(f)));
 
 braille: ascii # not used
 	@scripts/braille public/images/artursjansons.ascii > public/images/artursjansons.brf
