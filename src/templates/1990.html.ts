@@ -168,8 +168,7 @@ const Code = ({ src, title }: { src: string, title: string }) => `<form align="l
                                                 <legend>${title}</legend>
                                                 <code>${Image({ src })}</code>
                                             </fieldset>
-                                        </form>
-                                    </font>`
+                                        </form>`
 
 type FieldProps = { name: string, rows?: number, cols?: number }
 
@@ -217,8 +216,8 @@ const withLabel = () => (Field: (x: FieldProps) => string) => (props: FieldProps
 
     return kind === 'vertical'
     ? `<label for="${name}">${label}</label>
-                                                        <br/>
-                                                        <br/>
+                                                        <br>
+                                                        <br>
                                                         ${Field(props)}`
     : `<label for="${name}">${label}</label>&nbsp;${Field(props)}`
 }
@@ -257,7 +256,7 @@ const ContactFormDesktop = () => `<form align="left" method="POST" action="https
                                                         ${FormField({ name: 'subject' })}
                                                 <tr>
                                                     <td colspan="2">
-                                                        <br/>
+                                                        <br>
                                                         ${FormField({ name: 'message', rows: 5, cols: 44 })}
                                                         ${Captcha({ name: 'botcheck' })}
                                                         <p align="right">
@@ -296,7 +295,7 @@ const DesktopView = () => `<font face="${fontFamily}" size="3">
             <tr align="center">
                 <td valign="top">
                     ${TopNav()}
-                    <hr/>
+                    <hr>
                     <table border="0" cellpadding="0" cellspacing="8" width="800px">
                         <tr>
                             <td>
@@ -348,7 +347,7 @@ const DesktopView = () => `<font face="${fontFamily}" size="3">
                                     <ul>
                                         ${contacts.map((contact) => `<li><p>${Link(contact.link)}${contact.comment ? ` [${contact.comment}]` : ''}`).join('')}
                                     </ul>
-                                    <br/>
+                                    <br>
                                     ${TimeZone()}
                                     ${WorkTime()}
                                     ${CurrentLocation()}
@@ -366,12 +365,12 @@ const DesktopView = () => `<font face="${fontFamily}" size="3">
                     </table>
             <tr>
                 <td valign="bottom" align="center">
-                    <hr/>
+                    <hr>
                     <table border="0" cellpadding="8" cellspacing="0" width="100%">
                         <tr>
                             <td align="center">
                                 <p>${links.map((link, key) => `${!!key ? ' | ' : ''}${Link(link)}`).join('')}</p>
-                                <br/>
+                                <br>
                                 <marquee>
                                     <font color="gray">© 2024 ${fullName} | All rights reserved</font>
                     </table>
@@ -383,7 +382,7 @@ const MobileView = () => `<font face="${fontFamily}" size="3">
             <tr align="center">
                 <td valign="top">
                     ${TopNav()}
-                    <hr/>
+                    <hr>
                     <table border="0" cellpadding="0" cellspacing="8">
                         <tr>
                             <td align="center">
@@ -391,17 +390,17 @@ const MobileView = () => `<font face="${fontFamily}" size="3">
                                 <p>${fullName}
                                 <h1>
                                     <font size="5"><b>${position}</b></font>
-                                    <br/>
+                                    <br>
                                     <font size="2">[${experience}]</font></h1>
                                 <p><em>${description}</em></p>
                                 <p>
                                     <b>Tech Stack:</b>
-                                        <br/>
+                                        <br>
                                         ${TechStack()}
                                 </p>
                                 <p>
                                     <b>Also use:</b>
-                                        <br/>
+                                        <br>
                                         ${AlsoUse()}
                                 </p>
                     </table>
@@ -439,7 +438,7 @@ const MobileView = () => `<font face="${fontFamily}" size="3">
                                     <ul>
                                         ${contacts.map((contact) => `<li><p>${Link(contact.link)}${contact.comment ? ` [${contact.comment}]` : ''}`).join('')}
                                     </ul>
-                                    <br/>
+                                    <br>
                                     ${TimeZone()}
                                     ${WorkTime()}
                                     ${CurrentLocation()}
@@ -453,7 +452,7 @@ const MobileView = () => `<font face="${fontFamily}" size="3">
                     </table>
             <tr>
                 <td valign="bottom" align="center">
-                    <hr/>
+                    <hr>
                     <table border="0" cellpadding="8" cellspacing="0" width="100%">
                         <tr>
                             <td align="center">
