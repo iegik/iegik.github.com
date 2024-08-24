@@ -171,7 +171,7 @@ const Code = ({ src, title }: { src: string, title: string }) => `<form align="l
                                         </form>
                                     </font>`
 
-type FieldProps = { name: string }
+type FieldProps = { name: string, rows?: number, cols?: number }
 
 type FormFieldProps = {
     kind?: 'horizontal' | 'vertical';
@@ -189,7 +189,7 @@ const fields: Record<string, FormFieldProps> = {
     access_key: { type: 'hidden', value: 'c5540606-b7ca-4634-980a-13e2c50cd823' },
     redirect: { type: 'hidden', value: '/1990/sent' },
     subject: { kind: 'vertical', required: true, data: ['feedback', 'work', 'consultation', 'issue'] },
-    message: { kind: 'vertical', required: true, rows: 5, cols: 44 },
+    message: { kind: 'vertical', required: true, },
     send: { type: 'submit' },
 }
 
@@ -207,10 +207,11 @@ const dict: Record<string, string>= {
 
 const l10n = (slug: string) => dict[slug] || slug;
 
-const withLabel = () => (Field: (x: FieldProps) => string) => ({ name }: { name: string}) => {
+const withLabel = () => (Field: (x: FieldProps) => string) => (props: FieldProps) => {
+    const { name } = props
     const { kind, type: fieldType } = fields[name] || {}
 
-    if (fieldType === 'hidden') return Field({ name })
+    if (fieldType === 'hidden') return Field(props)
     if (fieldType === 'submit') return `<input type="submit" name="${name}" value="${l10n(name)}" />`
     const label = l10n(name)
 
@@ -218,12 +219,12 @@ const withLabel = () => (Field: (x: FieldProps) => string) => ({ name }: { name:
     ? `<label for="${name}">${label}</label>
                                                         <br/>
                                                         <br/>
-                                                        ${Field({ name })}`
-    : `<label for="${name}">${label}</label>&nbsp;${Field({ name })}`
+                                                        ${Field(props)}`
+    : `<label for="${name}">${label}</label>&nbsp;${Field(props)}`
 }
 
-const Field = ({ name }: FieldProps) => {
-    const { data, type: fieldType, rows, cols, value = '', required }: FormFieldProps = fields[name] || {}
+const Field = ({ name, rows, cols, }: FieldProps) => {
+    const { data, type: fieldType, value = '', required }: FormFieldProps = fields[name] || {}
     const id = name;
     const isRequired = required ? `required` : ''
     if (data) return `<select id="${id}" name="${name}" ${isRequired}>
@@ -257,7 +258,7 @@ const ContactFormDesktop = () => `<form align="left" method="POST" action="https
                                                 <tr>
                                                     <td colspan="2">
                                                         <br/>
-                                                        ${FormField({ name: 'message' })}
+                                                        ${FormField({ name: 'message', rows: 5, cols: 44 })}
                                                         ${Captcha({ name: 'botcheck' })}
                                                         <p align="right">
                                                             ${FormField({ name: 'send' })}
@@ -281,7 +282,7 @@ const ContactFormMobile = () => `<form align="left" method="POST" action="https:
                                                         ${FormField({ name: 'subject' })}
                                                 <tr>
                                                     <td colspan="2">
-                                                        ${FormField({ name: 'message' })}
+                                                        ${FormField({ name: 'message', rows: 5, cols: 36 })}
                                                         ${Captcha({ name: 'botcheck' })}
                                                         <p align="left">
                                                             ${FormField({ name: 'send' })}
