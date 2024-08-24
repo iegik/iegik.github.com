@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // @deno-types='@app/types.d'
 import { writeFileSync, readFileSync, release, nonce } from '@app/utils';
+import { escapeHTML } from '../services/web-utils';
 const style = readFileSync('./src/pages/1990/styles.css');
 const csp = Object.entries({
   'script-src': [
@@ -71,7 +72,9 @@ const AlsoUse = () => `<font color="#7277ae">PHP</font>,
                                         <font>Next</font>,
                                         <font color="#DA214C">Nest</font>`
 
-const Image = ({ src }: { src: string; }) => `<pre><font size=1>${readFileSync(src)}</font></pre>`
+const escapeHTML = (unsafe:string) => unsafe.replace(/[&<>"']/g, (c:string) => `&#${c.charCodeAt(0)}`)
+
+const Image = ({ src }: { src: string; }) => `<pre><font size=1>${escapeHTML(readFileSync(src))}</font></pre>`
 
 type LinkProps = { href: string; title: string; }
 
