@@ -72,7 +72,7 @@ const AlsoUse = () => `<font color="#7277ae">PHP</font>,
                                         <font>Next</font>,
                                         <font color="#DA214C">Nest</font>`
 
-const escapeHTML = (unsafe:string) => unsafe.replace(/[&<>"']/g, (c:string) => `&#${c.charCodeAt(0)}`)
+// const escapeHTML = (unsafe:string) => unsafe.replace(/[&<>"']/g, (c:string) => `&#${c.charCodeAt(0)}`)
 
 const Image = ({ src }: { src: string; }) => `<pre><font size=1>${escapeHTML(readFileSync(src))}</font></pre>`
 
@@ -163,12 +163,12 @@ const TimeZone = () => `<p>Time Zone: EEST</p>`
 const WorkTime = () => `<p>Work Time: 10:00 - 20:00</p>`
 const CurrentLocation = () => `<p>Current Location: Earth</p>`
 
-const Code = ({ src, title }: { src: string, title: string }) => `<form align="left" method="get" action="/1990/mailto/">
+const Code = ({ src, title }: { src: string, title: string }) => `<div bgcolor="green">
                                             <fieldset>
                                                 <legend>${title}</legend>
                                                 <code>${Image({ src })}</code>
                                             </fieldset>
-                                        </form>`
+                                        </div>`
 
 type FieldProps = { name: string, rows?: number, cols?: number }
 
@@ -243,26 +243,28 @@ const FormField = withLabel()(Field)
 const Captcha = ({ name }: FieldProps) => `<input id="bot" name="${name}" nonce="${nonce}" value="This shouldn't be here" /><p><a id="${name}" href="#bot">[_] ${l10n(name)}</a></p><script nonce="${nonce}">bot.style.display='none';${name}.addEventListener("click", () => {${name}.innerText=${name}.innerText.slice(0,1)+(bot.value==='true' ? '_' : 'x')+${name}.innerText.slice(2);bot.disabled=true;bot.value=bot.value === 'true' ? false : true;});</script>`
 
 const ContactFormDesktop = () => `<form align="left" method="POST" action="https://api.web3forms.com/submit">
-                                        <fieldset>
-                                            <legend>Feedback</legend>
-                                            <table align="left" border="0" cellpadding="0" cellspacing="8" width="100%">
-                                                <tr>
-                                                    <td>
-                                                        ${FormField({ name: 'email' })}
-                                                        ${FormField({ name: 'to' })}
-                                                        ${FormField({ name: 'access_key' })}
-                                                        ${FormField({ name: 'redirect' })}
-                                                    <td width="100%">
-                                                        ${FormField({ name: 'subject' })}
-                                                <tr>
-                                                    <td colspan="2">
-                                                        <br>
-                                                        ${FormField({ name: 'message', rows: 5, cols: 44 })}
-                                                        ${Captcha({ name: 'botcheck' })}
-                                                        <p align="right">
-                                                            ${FormField({ name: 'send' })}
-                                            </table>
-                                        </fieldset>
+                                        <div bgcolor="gray">
+                                            <fieldset>
+                                                <legend>Feedback</legend>
+                                                <table align="left" border="0" cellpadding="0" cellspacing="8" width="100%">
+                                                    <tr>
+                                                        <td>
+                                                            ${FormField({ name: 'email' })}
+                                                            ${FormField({ name: 'to' })}
+                                                            ${FormField({ name: 'access_key' })}
+                                                            ${FormField({ name: 'redirect' })}
+                                                        <td width="100%">
+                                                            ${FormField({ name: 'subject' })}
+                                                    <tr>
+                                                        <td colspan="2">
+                                                            <br>
+                                                            ${FormField({ name: 'message', rows: 5, cols: 44 })}
+                                                            ${Captcha({ name: 'botcheck' })}
+                                                            <p align="right">
+                                                                ${FormField({ name: 'send' })}
+                                                </table>
+                                            </fieldset>
+                                        </div>
                                     </form>`
 
 const ContactFormMobile = () => `<form align="left" method="POST" action="https://api.web3forms.com/submit">
@@ -303,7 +305,7 @@ const DesktopView = () => `<font face="${fontFamily}" size="3">
                             <td width="80%" valign="bottom">
                                 <p>${fullName}
                                 <h1><font size="5"><b>${position}</b></font><font size="2">[${experience}]</font></h1>
-                                <p><em>${description}</em></p>
+                                <p><em><font color="gray">${description}</font></em></p>
                                 <p>
                                     <b>Tech Stack:</b>
                                         ${TechStack()}
@@ -463,6 +465,7 @@ const MobileView = () => `<font face="${fontFamily}" size="3">
         </table>
     </font>`
 
+// https://www.w3.org/TR/xhtml-basic/
 const Layout = (content: string) => `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
     "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
 <html lang="en">
@@ -475,7 +478,7 @@ const Layout = (content: string) => `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Ba
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="var(--color-window)" />
     ${/*<link rel="stylesheet" nonce="${nonce}" href="/1990/styles.min.css" />*/''}
-    ${/*<style nonce="${nonce}">${style}</style>*/''}
+    <style nonce="${nonce}" id="/1990/styles.min.css">${style}</style>
 </head>
 <body>
     ${content}
@@ -490,22 +493,66 @@ const Layout = (content: string) => `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Ba
     </script>
     <!-- DOS Theme Code for https://iegik.github.io -->
     <script nonce="${nonce}">
-        (function(m,s,D,O,S,_){
-            a();
-            O.onclick=r;
-            function a(){
-                O.innerText=m;
-                O.onclick=r;
-                _=D.createElement('link');_.async=1;
-                _.rel='stylesheet';_.href=S;_.setAttribute('nonce', '${nonce}');
-                D.head.appendChild(_);
+        (function (D, O, S, theme = "", _) {
+        _ = document.getElementById(S);
+        theme = _.innerHTML;
+        O.onclick = remove;
+        function add() {
+            O.innerText = "EXIT";
+            O.onclick = remove;
+            _ = D.createElement("style");
+            _.id = S;
+            _.innerHTML = theme;
+            _.setAttribute("nonce", "${nonce}");
+            D.head.appendChild(_);
+            [].forEach.call(
+                document.getElementsByTagName("img"),
+                toggleAttr("src", "data-src")
+            );
+        }
+        const reDataAttr = /^data-/;
+        [].forEach.call(
+            document.getElementsByTagName("img"),
+            toggleAttr("src", "data-src")
+        );
+        function remove() {
+            O.innerText = "DOS";
+            O.onclick = add;
+            _.remove();
+            [].forEach.call(
+            document.getElementsByTagName("img"),
+            toggleAttr("data-src", "src")
+            );
+        }
+        function toggleAttr(a, b) {
+            return function (el) {
+                setAttribute(el, b, getAttribute(el, a) || "");
+                removeAttribute(el, a);
             };
-            function r(){
-                O.innerText=s;
-                O.onclick=a;
-                _.remove();
-            };
-        })('EXIT', 'DOS', document, toggleDosStyle,'/1990/styles.min.css');
+        }
+        function getAttribute(el, attr) {
+            if (reDataAttr.test(attr)) {
+                return el.dataset[attr.replace("data-", "")];
+            } else {
+                return el.getAttribute(attr);
+            }
+        }
+        function setAttribute(el, attr, value) {
+            if (reDataAttr.test(attr)) {
+                el.dataset[attr.replace("data-", "")] = value;
+            } else {
+                el.setAttribute(attr, value);
+            }
+        }
+        function removeAttribute(el, attr) {
+            if (reDataAttr.test(attr)) {
+                delete el.dataset[attr.replace("data-", "")];
+            } else {
+                el.removeAttribute(attr);
+            }
+        }
+        // @ts-ignore
+        })(document, toggleDosStyle, "/1990/styles.min.css");
     </script>
     <!-- Hotjar Tracking Code for https://iegik.github.io -->
     <script nonce="${nonce}">
