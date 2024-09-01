@@ -163,12 +163,10 @@ const TimeZone = () => `<p>Time Zone: EEST</p>`
 const WorkTime = () => `<p>Work Time: 10:00 - 20:00</p>`
 const CurrentLocation = () => `<p>Current Location: Earth</p>`
 
-const Code = ({ src, title }: { src: string, title: string }) => `<div bgcolor="green">
-                                            <fieldset>
+const Code = ({ src, title }: { src: string, title: string }) => `<fieldset bgcolor="green">
                                                 <legend>${title}</legend>
                                                 <code>${Image({ src })}</code>
-                                            </fieldset>
-                                        </div>`
+                                            </fieldset>`
 
 type FieldProps = { name: string, rows?: number, cols?: number }
 
@@ -243,32 +241,30 @@ const FormField = withLabel()(Field)
 const Captcha = ({ name }: FieldProps) => `<input id="bot" name="${name}" nonce="${nonce}" value="This shouldn't be here" /><p><a id="${name}" href="#bot">[_] ${l10n(name)}</a></p><script nonce="${nonce}">bot.style.display='none';${name}.addEventListener("click", () => {${name}.innerText=${name}.innerText.slice(0,1)+(bot.value==='true' ? '_' : 'x')+${name}.innerText.slice(2);bot.disabled=true;bot.value=bot.value === 'true' ? false : true;});</script>`
 
 const ContactFormDesktop = () => `<form align="left" method="POST" action="https://api.web3forms.com/submit">
-                                        <div bgcolor="gray">
-                                            <fieldset>
-                                                <legend>Feedback</legend>
-                                                <table align="left" border="0" cellpadding="0" cellspacing="8" width="100%">
-                                                    <tr>
-                                                        <td>
-                                                            ${FormField({ name: 'email' })}
-                                                            ${FormField({ name: 'to' })}
-                                                            ${FormField({ name: 'access_key' })}
-                                                            ${FormField({ name: 'redirect' })}
-                                                        <td width="100%">
-                                                            ${FormField({ name: 'subject' })}
-                                                    <tr>
-                                                        <td colspan="2">
-                                                            <br>
-                                                            ${FormField({ name: 'message', rows: 5, cols: 44 })}
-                                                            ${Captcha({ name: 'botcheck' })}
-                                                            <p align="right">
-                                                                ${FormField({ name: 'send' })}
-                                                </table>
-                                            </fieldset>
-                                        </div>
+                                        <fieldset bgcolor="gray">
+                                            <legend>Feedback</legend>
+                                            <table align="left" border="0" cellpadding="0" cellspacing="8" width="100%">
+                                                <tr>
+                                                    <td>
+                                                        ${FormField({ name: 'email' })}
+                                                        ${FormField({ name: 'to' })}
+                                                        ${FormField({ name: 'access_key' })}
+                                                        ${FormField({ name: 'redirect' })}
+                                                    <td width="100%">
+                                                        ${FormField({ name: 'subject' })}
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <br>
+                                                        ${FormField({ name: 'message', rows: 5, cols: 44 })}
+                                                        ${Captcha({ name: 'botcheck' })}
+                                                        <p align="right">
+                                                            ${FormField({ name: 'send' })}
+                                            </table>
+                                        </fieldset>
                                     </form>`
 
 const ContactFormMobile = () => `<form align="left" method="POST" action="https://api.web3forms.com/submit">
-                                        <fieldset>
+                                        <fieldset bgcolor="gray">
                                             <legend>Feedback</legend>
                                             <table align="left" border="0" cellpadding="0" cellspacing="8" width="100%">
                                                 <tr>

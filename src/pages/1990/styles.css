@@ -17,36 +17,12 @@
   border-color: var(--color-text);
   font-style: normal;
 }
-/* h1 {
-  font-variant-caps: petite-caps;
-}
-h2 {
-  font-variant-caps: petite-caps;
-  font-weight: normal;
-}
-h3 {
-  font-variant-caps: petite-caps;
-  font-style: italic;
-}
-h4 {
-  font-variant-caps: petite-caps;
-  font-style: italic;
-  font-weight: normal;
-}
-h5 {
-  font-variant-caps: all-petite-caps;
-}
-h6 {
-  font-variant-caps: all-petite-caps;
-  font-weight: normal;
-} */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  _font-variant-caps: petite-caps;
   text-transform: uppercase;
   font-weight: bold;
 }
@@ -64,7 +40,6 @@ pre {
 }
 img[alt] {
   margin-left: -16px;
-  _text-indent: 16px;
 }
 img {
   image-rendering: pixelated;
@@ -113,7 +88,6 @@ fieldset {
   border-style: double;
   border-width: 5px;
   box-sizing: border-box;
-  _margin: -0.5em 0 0;
 }
 legend {
   background-color: var(--color-window);
@@ -150,12 +124,10 @@ a {
   color: var(--color-button) !important;
 }
 [bgcolor="gray"] {
-  _padding: 0.5em 0.25em 0.5em 0.25em;
   background-color: var(--color-activeWindow) !important;
   color: var(--color-button) !important;
 }
 [bgcolor="green"] {
-  _padding: 0.5em 0.25em 0.5em 0.25em;
   background-color: var(--color-inactiveWindow) !important;
   color: var(--color-button) !important;
 }
