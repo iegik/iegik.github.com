@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-"use strict";var H=Object.create;var x=Object.defineProperty;var R=Object.getOwnPropertyDescriptor;var I=Object.getOwnPropertyNames;var Q=Object.getPrototypeOf,W=Object.prototype.hasOwnProperty;var U=(t,e,n,c)=>{if(e&&typeof e=="object"||typeof e=="function")for(let r of I(e))!W.call(t,r)&&r!==n&&x(t,r,{get:()=>e[r],enumerable:!(c=R(e,r))||c.enumerable});return t};var G=(t,e,n)=>(n=t!=null?H(Q(t)):{},U(e||!t||!t.__esModule?x(n,"default",{value:t,enumerable:!0}):n,t));var g=G(require("fs")),m=(t,e)=>g.writeFileSync(t,e,{encoding:"utf8"}),f=t=>g.readFileSync(t,{encoding:"utf8"});var S=new Date,$=`v3.1.0-${S.toJSON()}`,i=btoa(`${Number(S)}`).slice(10,18);var T=t=>t.replace(/[&<"']/g,e=>{switch(e){case"&":return"&amp;";case"<":return"&lt;";case'"':return"&quot;";default:return"&#039;"}});var J=f("./src/pages/1990/styles.css"),Y=Object.entries({"script-src":[`'nonce-${i}'`,"'strict-dynamic'","https://www.google-analytics.com","https://ssl.google-analytics.com","https://static.hotjar.com","https://js.sentry-cdn.com"],"img-src":["'self'","https://www.google-analytics.com","https://avatars.githubusercontent.com/","https://www.googletagmanager.com/"],"connect-src":["'self'","https://www.google-analytics.com","https://region1.google-analytics.com","https://in.hotjar.com","https://static.hotjar.com","https://content.hotjar.io","https://github.com/login/oauth/access_token","https://api.github.com/graphql","https://api.github.com/user","https://qilg4ch66b3vpgtevzccb5meum0ttfcl.lambda-url.eu-north-1.on.aws/","https://o171820.ingest.sentry.io/"],"style-src":[`'nonce-${i}'`,"https://static.hotjar.com"],"object-src":["'none'"],"base-uri":["'none'"],"frame-src":["https://vars.hotjar.com/"]}).reduce((t,[e,n])=>`${t};${e} ${n.join(" ")}`,"default-src 'self'"),d="Art&#363;rs Jansons",v="Full-stack Developer",y="10+ year exp.",Z=`${d} | ${v} [${y}]`,k="Mobile / Web Developer &amp; JavaScript Consultant",X="HTML, CSS, JavaScript, TypeScript, React, React Native, PHP, MySQL, Bash, Makefile, Docker, GraphQL, Next, Nest",C=()=>`<p>
+"use strict";var H=Object.create;var x=Object.defineProperty;var R=Object.getOwnPropertyDescriptor;var I=Object.getOwnPropertyNames;var Q=Object.getPrototypeOf,W=Object.prototype.hasOwnProperty;var U=(t,e,n,c)=>{if(e&&typeof e=="object"||typeof e=="function")for(let r of I(e))!W.call(t,r)&&r!==n&&x(t,r,{get:()=>e[r],enumerable:!(c=R(e,r))||c.enumerable});return t};var G=(t,e,n)=>(n=t!=null?H(Q(t)):{},U(e||!t||!t.__esModule?x(n,"default",{value:t,enumerable:!0}):n,t));var g=G(require("fs")),m=(t,e)=>g.writeFileSync(t,e,{encoding:"utf8"}),f=t=>g.readFileSync(t,{encoding:"utf8"});var S=new Date,$=`v3.1.0-${S.toJSON()}`,i=btoa(`${Number(S)}`).slice(10,18);var T=t=>t.replace(/[&<"']/g,e=>{switch(e){case"&":return"&amp;";case"<":return"&lt;";case'"':return"&quot;";default:return"&#039;"}});var J=f("./src/pages/1990/styles.css"),Y=Object.entries({"script-src":[`'nonce-${i}'`,"'strict-dynamic'","https://www.google-analytics.com","https://ssl.google-analytics.com","https://static.hotjar.com","https://js.sentry-cdn.com"],"img-src":["'self'","https://www.google-analytics.com","https://avatars.githubusercontent.com/","https://www.googletagmanager.com/"],"connect-src":["'self'","https://www.google-analytics.com","https://region1.google-analytics.com","https://in.hotjar.com","https://static.hotjar.com","https://content.hotjar.io","https://github.com/login/oauth/access_token","https://api.github.com/graphql","https://api.github.com/user","https://qilg4ch66b3vpgtevzccb5meum0ttfcl.lambda-url.eu-north-1.on.aws/","https://o171820.ingest.sentry.io/"],"style-src":[`'nonce-${i}'`,"https://static.hotjar.com"],"object-src":["'none'"],"base-uri":["'none'"],"frame-src":["https://vars.hotjar.com/"]}).reduce((t,[e,n])=>`${t};${e} ${n.join(" ")}`,"default-src 'self'"),p="Art&#363;rs Jansons",y="Full-stack Developer",v="10+ year exp.",Z=`${p} | ${y} [${v}]`,k="Mobile / Web Developer &amp; JavaScript Consultant",X="HTML, CSS, JavaScript, TypeScript, React, React Native, PHP, MySQL, Bash, Makefile, Docker, GraphQL, Next, Nest",C=()=>`<p>
                         1990 |
                         
                         <a href="/next/">BETA</a> |
@@ -14,16 +14,14 @@
                                         <font color="#008DDB">Docker</font>,
                                         <font color="#DD34A6">GraphQL</font>,
                                         <font>Next</font>,
-                                        <font color="#DA214C">Nest</font>`,b=({src:t})=>`<pre><font size=1>${T(f(t))}</font></pre>`,p=t=>`<a ${/^http/.test(t.href)?' rel="noopener noreferrer"':""} href="${t.href}" title="${t.title}">${t.title}</a>`,a=[{image:{ascii:"./src/pages/1990/assets/website.ascii"},description:"Website development, including complex forms with custom field validation, popups and dialogs.",links:[{href:"https://wiam-front-test.vercel.app/",title:"Ex. 1"},{href:"https://mindmap-opal.vercel.app/",title:"Ex. 2"},{href:"https://codepen.io/iegik/full/ObZpqo",title:"Ex. 3"},{href:"https://test-kanvajs.vercel.app/",title:"Ex. 4"}]},{image:{ascii:"./src/pages/1990/assets/mobile.ascii"},description:"Mobile applications - developing, publishing or upgrading existing ones.",links:[{href:"https://github.com/iegik/inventarizacija/",title:"Ex. 1"},{href:"https://github.com/iegik/react_calc/",title:"Ex. 2"}],comment:"Unfortunately apps are not available in Google Play anymore"},{image:{ascii:"./src/pages/1990/assets/extensions.ascii"},description:"Browser extensions, custom scripts and other researches where I'm testing new approaches.",links:[{href:"https://github.com/iegik/clock-extension",title:"Ex. 1"},{href:"https://github.com/iegik/thunar-scripts",title:"Ex. 2"},{href:"https://hub.docker.com/repository/docker/iegik/docker-node/general",title:"Ex. 3"}]},{image:{ascii:"./src/pages/1990/assets/cms.ascii"},description:"CMS (Wordpress, Magento) configuration, plugin creation, RESTFul API on PHP, GraphQL and microservices",links:[{href:"https://github.com/WinLinMac/magento_themes",title:"Ex. 1"}]}],P=[{link:{href:"https://t.me/ajansons",title:"t.me/ajansons"}}],A=[{href:"https://linkedin.com/in/iegik",title:"LinkedIn"},{href:"https://github.com/iegik",title:"GitHub"},{href:"https://profile.codersrank.io/user/iegik",title:"CodersRank"},{href:"https://codepen.io/iegik/",title:"CodePen"},{href:"https://jsfiddle.net/user/iegik",title:"JSFiddle"},{href:"https://stackoverflow.com/users/771471/iegik",title:"StackOverflow"}],D="'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace",s=t=>`<center>${b({src:t.image.ascii})}</center>
+                                        <font color="#DA214C">Nest</font>`,b=({src:t})=>`<pre><font size=1>${T(f(t))}</font></pre>`,d=t=>`<a ${/^http/.test(t.href)?' rel="noopener noreferrer"':""} href="${t.href}" title="${t.title}">${t.title}</a>`,a=[{image:{ascii:"./src/pages/1990/assets/website.ascii"},description:"Website development, including complex forms with custom field validation, popups and dialogs.",links:[{href:"https://wiam-front-test.vercel.app/",title:"Ex. 1"},{href:"https://mindmap-opal.vercel.app/",title:"Ex. 2"},{href:"https://codepen.io/iegik/full/ObZpqo",title:"Ex. 3"},{href:"https://test-kanvajs.vercel.app/",title:"Ex. 4"}]},{image:{ascii:"./src/pages/1990/assets/mobile.ascii"},description:"Mobile applications - developing, publishing or upgrading existing ones.",links:[{href:"https://github.com/iegik/inventarizacija/",title:"Ex. 1"},{href:"https://github.com/iegik/react_calc/",title:"Ex. 2"}],comment:"Unfortunately apps are not available in Google Play anymore"},{image:{ascii:"./src/pages/1990/assets/extensions.ascii"},description:"Browser extensions, custom scripts and other researches where I'm testing new approaches.",links:[{href:"https://github.com/iegik/clock-extension",title:"Ex. 1"},{href:"https://github.com/iegik/thunar-scripts",title:"Ex. 2"},{href:"https://hub.docker.com/repository/docker/iegik/docker-node/general",title:"Ex. 3"}]},{image:{ascii:"./src/pages/1990/assets/cms.ascii"},description:"CMS (Wordpress, Magento) configuration, plugin creation, RESTFul API on PHP, GraphQL and microservices",links:[{href:"https://github.com/WinLinMac/magento_themes",title:"Ex. 1"}]}],P=[{link:{href:"https://t.me/ajansons",title:"t.me/ajansons"}}],A=[{href:"https://linkedin.com/in/iegik",title:"LinkedIn"},{href:"https://github.com/iegik",title:"GitHub"},{href:"https://profile.codersrank.io/user/iegik",title:"CodersRank"},{href:"https://codepen.io/iegik/",title:"CodePen"},{href:"https://jsfiddle.net/user/iegik",title:"JSFiddle"},{href:"https://stackoverflow.com/users/771471/iegik",title:"StackOverflow"}],D="'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace",s=t=>`<center>${b({src:t.image.ascii})}</center>
                                             <p>${t.description}
                                             <p>
-                                                ${t.links.map((e,n)=>`${n?" | ":""}${p(e)}`).join("")}
-                                            ${t.comment?`<p><em><font color="gray">${t.comment}</font></em>`:""}`,L=()=>"<p>Time Zone: EEST</p>",M=()=>"<p>Work Time: 10:00 - 20:00</p>",N=()=>"<p>Current Location: Earth</p>",_=({src:t,title:e})=>`<div bgcolor="green">
-                                            <fieldset>
+                                                ${t.links.map((e,n)=>`${n?" | ":""}${d(e)}`).join("")}
+                                            ${t.comment?`<p><em><font color="gray">${t.comment}</font></em>`:""}`,L=()=>"<p>Time Zone: EEST</p>",M=()=>"<p>Work Time: 10:00 - 20:00</p>",N=()=>"<p>Current Location: Earth</p>",_=({src:t,title:e})=>`<fieldset bgcolor="green">
                                                 <legend>${e}</legend>
                                                 <code>${b({src:t})}</code>
-                                            </fieldset>
-                                        </div>`,O={email:{kind:"vertical",required:!0},to:{type:"hidden",value:"a.jansons+web@gmail.com"},access_key:{type:"hidden",value:"c5540606-b7ca-4634-980a-13e2c50cd823"},redirect:{type:"hidden",value:"/1990/sent"},subject:{kind:"vertical",required:!0,data:["feedback","work","consultation","issue"]},message:{kind:"vertical",required:!0},send:{type:"submit"}},V={email:"Your email",subject:"Subject",message:"Content",send:"Send message",feedback:"Feedback",work:"Work opportunity",consultation:"Consultation",issue:"Bug Report",botcheck:"I' m not a robot"},h=t=>V[t]||t,K=()=>t=>e=>{let{name:n}=e,{kind:c,type:r}=O[n]||{};if(r==="hidden")return t(e);if(r==="submit")return`<input type="submit" name="${n}" value="${h(n)}" />`;let l=h(n);return c==="vertical"?`<label for="${n}">${l}</label>
+                                            </fieldset>`,O={email:{kind:"vertical",required:!0},to:{type:"hidden",value:"a.jansons+web@gmail.com"},access_key:{type:"hidden",value:"c5540606-b7ca-4634-980a-13e2c50cd823"},redirect:{type:"hidden",value:"/1990/sent"},subject:{kind:"vertical",required:!0,data:["feedback","work","consultation","issue"]},message:{kind:"vertical",required:!0},send:{type:"submit"}},V={email:"Your email",subject:"Subject",message:"Content",send:"Send message",feedback:"Feedback",work:"Work opportunity",consultation:"Consultation",issue:"Bug Report",botcheck:"I' m not a robot"},h=t=>V[t]||t,K=()=>t=>e=>{let{name:n}=e,{kind:c,type:r}=O[n]||{};if(r==="hidden")return t(e);if(r==="submit")return`<input type="submit" name="${n}" value="${h(n)}" />`;let l=h(n);return c==="vertical"?`<label for="${n}">${l}</label>
                                                         <br>
                                                         <br>
                                                         ${t(e)}`:`<label for="${n}">${l}</label>&nbsp;${t(e)}`},tt=({name:t,rows:e,cols:n})=>{let{data:c,type:r,value:l="",required:B}=O[t]||{},w=t,u=B?"required":"";return c?`<select id="${w}" name="${t}" ${u}>
@@ -35,30 +33,28 @@
                                                                 <td>
                                                                     <textarea id="${w}" name="${t}" rows="${e}" cols="${n}" ${u}>${l}</textarea>
                                                         </table>`:`<input type="${r||"text"}" name="${t}" value="${l}" ${u} />`},o=K()(tt),q=({name:t})=>`<input id="bot" name="${t}" nonce="${i}" value="This shouldn't be here" /><p><a id="${t}" href="#bot">[_] ${h(t)}</a></p><script nonce="${i}">bot.style.display='none';${t}.addEventListener("click", () => {${t}.innerText=${t}.innerText.slice(0,1)+(bot.value==='true' ? '_' : 'x')+${t}.innerText.slice(2);bot.disabled=true;bot.value=bot.value === 'true' ? false : true;});</script>`,et=()=>`<form align="left" method="POST" action="https://api.web3forms.com/submit">
-                                        <div bgcolor="gray">
-                                            <fieldset>
-                                                <legend>Feedback</legend>
-                                                <table align="left" border="0" cellpadding="0" cellspacing="8" width="100%">
-                                                    <tr>
-                                                        <td>
-                                                            ${o({name:"email"})}
-                                                            ${o({name:"to"})}
-                                                            ${o({name:"access_key"})}
-                                                            ${o({name:"redirect"})}
-                                                        <td width="100%">
-                                                            ${o({name:"subject"})}
-                                                    <tr>
-                                                        <td colspan="2">
-                                                            <br>
-                                                            ${o({name:"message",rows:5,cols:44})}
-                                                            ${q({name:"botcheck"})}
-                                                            <p align="right">
-                                                                ${o({name:"send"})}
-                                                </table>
-                                            </fieldset>
-                                        </div>
+                                        <fieldset bgcolor="gray">
+                                            <legend>Feedback</legend>
+                                            <table align="left" border="0" cellpadding="0" cellspacing="8" width="100%">
+                                                <tr>
+                                                    <td>
+                                                        ${o({name:"email"})}
+                                                        ${o({name:"to"})}
+                                                        ${o({name:"access_key"})}
+                                                        ${o({name:"redirect"})}
+                                                    <td width="100%">
+                                                        ${o({name:"subject"})}
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <br>
+                                                        ${o({name:"message",rows:5,cols:44})}
+                                                        ${q({name:"botcheck"})}
+                                                        <p align="right">
+                                                            ${o({name:"send"})}
+                                            </table>
+                                        </fieldset>
                                     </form>`,nt=()=>`<form align="left" method="POST" action="https://api.web3forms.com/submit">
-                                        <fieldset>
+                                        <fieldset bgcolor="gray">
                                             <legend>Feedback</legend>
                                             <table align="left" border="0" cellpadding="0" cellspacing="8" width="100%">
                                                 <tr>
@@ -90,8 +86,8 @@
                             <td>
                                 ${b({src:"./src/pages/1990/assets/photo.ascii"})}
                             <td width="80%" valign="bottom">
-                                <p>${d}
-                                <h1><font size="5"><b>${v}</b></font><font size="2">[${y}]</font></h1>
+                                <p>${p}
+                                <h1><font size="5"><b>${y}</b></font><font size="2">[${v}]</font></h1>
                                 <p><em><font color="gray">${k}</font></em></p>
                                 <p>
                                     <b>Tech Stack:</b>
@@ -134,7 +130,7 @@
                                 <font size="2">
                                     <h2>Contacts:</h2>
                                     <ul>
-                                        ${P.map(t=>`<li><p>${p(t.link)}${t.comment?` [${t.comment}]`:""}`).join("")}
+                                        ${P.map(t=>`<li><p>${d(t.link)}${t.comment?` [${t.comment}]`:""}`).join("")}
                                     </ul>
                                     <br>
                                     ${L()}
@@ -158,10 +154,10 @@
                     <table border="0" cellpadding="8" cellspacing="0" width="100%">
                         <tr>
                             <td align="center">
-                                <p>${A.map((t,e)=>`${e?" | ":""}${p(t)}`).join("")}</p>
+                                <p>${A.map((t,e)=>`${e?" | ":""}${d(t)}`).join("")}</p>
                                 <br>
                                 <marquee>
-                                    <font color="gray">\xA9 2024 ${d} | All rights reserved</font>
+                                    <font color="gray">\xA9 2024 ${p} | All rights reserved</font>
                     </table>
         </table>
     </font>`,it=()=>`<font face="${D}" size="3">
@@ -174,11 +170,11 @@
                         <tr>
                             <td align="center">
                                 ${b({src:"./src/pages/1990/assets/photo.ascii"})}
-                                <p>${d}
+                                <p>${p}
                                 <h1>
-                                    <font size="5"><b>${v}</b></font>
+                                    <font size="5"><b>${y}</b></font>
                                     <br>
-                                    <font size="2">[${y}]</font></h1>
+                                    <font size="2">[${v}]</font></h1>
                                 <p><em>${k}</em></p>
                                 <p>
                                     <b>Tech Stack:</b>
@@ -223,7 +219,7 @@
                                 <font size="2">
                                     <h2>Contacts:</h2>
                                     <ul>
-                                        ${P.map(t=>`<li><p>${p(t.link)}${t.comment?` [${t.comment}]`:""}`).join("")}
+                                        ${P.map(t=>`<li><p>${d(t.link)}${t.comment?` [${t.comment}]`:""}`).join("")}
                                     </ul>
                                     <br>
                                     ${L()}
@@ -243,9 +239,9 @@
                     <table border="0" cellpadding="8" cellspacing="0" width="100%">
                         <tr>
                             <td align="center">
-                                <p>${A.map((t,e)=>`${e?" | ":""}${p(t)}`).join("")}</p>
+                                <p>${A.map((t,e)=>`${e?" | ":""}${d(t)}`).join("")}</p>
                                 <marquee>
-                                    <font color="gray">\xA9 2024 ${d} | All rights reserved</font>
+                                    <font color="gray">\xA9 2024 ${p} | All rights reserved</font>
                     </table>
         </table>
     </font>`,z=t=>`<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
