@@ -94,6 +94,11 @@ legend {
   color: var(--color-text);
   padding: 0.25em 0.5em;
 }
+code {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  max-width: fit-content;
+}
 input,
 select,
 textarea,
