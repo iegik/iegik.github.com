@@ -357,7 +357,7 @@ const DesktopView = () => `<font face="${fontFamily}" size="3">
                                     <tr>
                                         <td valign="top">
                                             <font size="2">
-                                                ${Code({ src: './src/pages/1990/assets/code_of_a_day/git_du.ascii', title: 'Code of the day' })}
+                                                ${Code({ src: './src/pages/1990/assets/code_of_a_day/git_du.gitconfig', title: 'Code of the day' })}
                                             </font>
                                 </table>
                     </table>
@@ -445,7 +445,7 @@ const MobileView = () => `<font face="${fontFamily}" size="3">
                         <tr>
                             <td width="30%">
                                 <font size="2">
-                                    ${Code({ src: './src/pages/1990/assets/code_of_a_day/git_du.ascii', title: 'Code of the day' })}
+                                    ${Code({ src: './src/pages/1990/assets/code_of_a_day/git_du.gitconfig', title: 'Code of the day' })}
                                 </font>
                     </table>
             <tr>
