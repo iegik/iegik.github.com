@@ -357,7 +357,7 @@ const DesktopView = () => `<font face="${fontFamily}" size="3">
                                     <tr>
                                         <td valign="top">
                                             <font size="2">
-                                                ${Code({ src: './src/pages/1990/assets/slotmachine.ascii', title: 'Code of the day' })}
+                                                ${Code({ src: './src/pages/1990/assets/code_of_a_day/git_du.ascii', title: 'Code of the day' })}
                                             </font>
                                 </table>
                     </table>
@@ -443,9 +443,9 @@ const MobileView = () => `<font face="${fontFamily}" size="3">
                                 </font>
                         <tr>
                         <tr>
-                            <td width="30%" align="right">
+                            <td width="30%">
                                 <font size="2">
-                                    ${Code({ src: './src/pages/1990/assets/slotmachine.ascii', title: 'Code of the day' })}
+                                    ${Code({ src: './src/pages/1990/assets/code_of_a_day/git_du.ascii', title: 'Code of the day' })}
                                 </font>
                     </table>
             <tr>
@@ -462,8 +462,11 @@ const MobileView = () => `<font face="${fontFamily}" size="3">
     </font>`
 
 // https://www.w3.org/TR/xhtml-basic/
-const Layout = (content: string) => `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
-    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+
+const DOCTYPE = process.env.IS_VITE ? `<!DOCTYPE html>` : `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">`
+
+const Layout = (content: string) => `${DOCTYPE}
 <html lang="en">
 <head>
     <meta http-equiv="Content-Security-Policy" content="${csp}">

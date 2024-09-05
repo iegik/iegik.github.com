@@ -169,6 +169,9 @@ check: ##		Check project
 # Entry point to start
 build: ttf2woff ttf2svg thumb jpg2png ascii png2webp sass compile eula privacy ##	Build project
 
+vite:
+	@IS_VITE=true make build
+
 clean: ##		Clean project
 	@grep -v node_modules .gitignore | awk '{print "rm -rf "$1}' | sh
 
