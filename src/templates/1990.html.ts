@@ -576,6 +576,58 @@ const Layout = (content: string) => `${DOCTYPE}
     </script>
 `;
 
+writeFileSync('public/index.html', `${DOCTYPE}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Loading...</title>
+    <meta http-equiv="REFRESH" content="0;URL=1990/">
+    <link rel="stylesheet" href="/1990/style.css">
+</head>
+<body>
+  <font face="'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace" size="3">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
+        <tr align="center">
+            <td valign="top">
+              <table border="0" cellpadding="0" cellspacing="8">
+                <tr>
+                    <td>
+                      <table align="center" cellpadding="0" cellspacing="8">
+                        <tr>
+                          <td width="1px" valign="bottom"><font size="1"><marquee scrollamount="5" behavior="scroll"><pre>▁▁▃▃▅▅▆▆▇▇██</pre></marquee></font>
+                          <td><font size="3" weight="bold">Loading...</font>
+                      </table>
+                      <font size="1" color="lightgray">301 Redirect</font><br>
+                      <font size="1" color="gray">You will be redirected to the new page shortly. If not, click <a id="url" href="1990">here</a>.</font>
+`);
+writeFileSync('public/1990/index.html', `${DOCTYPE}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Loading...</title>
+    <link rel="stylesheet" href="/1990/styles.min.css">
+</head>
+<body onload='setTimeout((e=>window.location.href.includes(e)||(window.location.href=e))(url.href=window.innerWidth<800?"/1990/mobile/":"/1990/desktop/"),1e3)'>
+  <font face="'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace" size="3">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
+        <tr align="center">
+            <td valign="top">
+              <table border="0" cellpadding="0" cellspacing="8">
+                <tr>
+                    <td>
+                      <table align="center" cellpadding="0" cellspacing="8">
+                        <tr>
+                          <td width="1px" valign="bottom"><font size="1"><marquee scrollamount="5" behavior="scroll"><pre>▁▁▃▃▅▅▆▆▇▇██</pre></marquee></font>
+                          <td><font size="3" weight="bold">Loading...</font>
+                      </table>
+                      <font size="1" color="lightgray">301 Redirect</font><br>
+                      <font size="1" color="gray">You will be redirected to the new page shortly. If not, click <a id="url" href="/1990/mobile">here</a>.</font>
+                      <p>
+                        <a href="/1990/desktop">DESKTOP</a> |
+                        <a href="/1990/mobile">MOBILE</a>
+`);
 writeFileSync('public/1990/desktop/index.html', Layout(DesktopView()));
 writeFileSync('public/1990/mobile/index.html', Layout(MobileView()));
 
