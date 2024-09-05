@@ -144,7 +144,7 @@
                                     <tr>
                                         <td valign="top">
                                             <font size="2">
-                                                ${O({src:"./src/pages/1990/assets/code_of_a_day/git_du.ascii",title:"Code of the day"})}
+                                                ${O({src:"./src/pages/1990/assets/code_of_a_day/git_du.gitconfig",title:"Code of the day"})}
                                             </font>
                                 </table>
                     </table>
@@ -230,7 +230,7 @@
                         <tr>
                             <td width="30%">
                                 <font size="2">
-                                    ${O({src:"./src/pages/1990/assets/code_of_a_day/git_du.ascii",title:"Code of the day"})}
+                                    ${O({src:"./src/pages/1990/assets/code_of_a_day/git_du.gitconfig",title:"Code of the day"})}
                                 </font>
                     </table>
             <tr>
