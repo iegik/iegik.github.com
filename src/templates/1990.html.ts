@@ -287,7 +287,7 @@ const DesktopView = () => `<font face="${fontFamily}" size="3">
                 <td valign="top">
                     ${TopNav()}
                     <hr>
-                    <table border="0" cellpadding="0" cellspacing="8" width="800px">
+                    <table border="0" cellpadding="0" cellspacing="8" width="768px">
                         <tr>
                             <td>
                                 ${Image({ src: './src/pages/1990/assets/photo.ascii' })}
@@ -304,7 +304,7 @@ const DesktopView = () => `<font face="${fontFamily}" size="3">
                                         ${AlsoUse()}
                                 </p>
                     </table>
-                    <table border="0" cellpadding="0" cellspacing="8" width="800px">
+                    <table border="0" cellpadding="0" cellspacing="8" width="768px">
                         <tr>
                             <td colspan="2">
                                 <h2>Project Examples:</h2>
@@ -330,7 +330,7 @@ const DesktopView = () => `<font face="${fontFamily}" size="3">
                                     ${ContactFormDesktop()}
                                 </font>
                     </table>
-                    <table border="0" cellpadding="0" cellspacing="8" width="800px">
+                    <table border="0" cellpadding="0" cellspacing="8" width="768px">
                         <tr>
                             <td valign="top">
                                 <font size="2">
@@ -602,7 +602,7 @@ writeFileSync('public/1990/index.html', `${DOCTYPE}
     <title>Loading...</title>
     <link rel="stylesheet" href="/1990/styles.min.css">
 </head>
-<body onload='setTimeout((e=>window.location.href.includes(e)||(window.location.href=e))(url.href=window.innerWidth<800?"/1990/mobile/":"/1990/desktop/"),1e3)'>
+<body onload='setTimeout((e=>window.location.href.includes(e)||(window.location.href=e))(url.href=window.innerWidth<768?"/1990/mobile/":"/1990/desktop/"),1e3)'>
   <font face="'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace" size="3">
     <table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
         <tr align="center">
