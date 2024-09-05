@@ -1,9 +1,9 @@
 #!/usr/bin/env node
-"use strict";var b=Object.create;var n=Object.defineProperty;var V=Object.getOwnPropertyDescriptor;var $=Object.getOwnPropertyNames;var A=Object.getPrototypeOf,z=Object.prototype.hasOwnProperty;var F=(t,e,l,o)=>{if(e&&typeof e=="object"||typeof e=="function")for(let i of $(e))!z.call(t,i)&&i!==l&&n(t,i,{get:()=>e[i],enumerable:!(o=V(e,i))||o.enumerable});return t};var S=(t,e,l)=>(l=t!=null?b(A(t)):{},F(e||!t||!t.__esModule?n(l,"default",{value:t,enumerable:!0}):l,t));var c=S(require("fs")),h=(t,e)=>c.writeFileSync(t,e,{encoding:"utf8"}),s=t=>c.readFileSync(t,{encoding:"utf8"});var C=new Date,p=`v3.1.0-${C.toJSON()}`,r=btoa(`${Number(C)}`).slice(10,18);var L=`<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 14 14" enable-background="new 0 0 240 240" x="0px" y="0px" xml:space="preserve" fill="currentColor">
+"use strict";var b=Object.create;var n=Object.defineProperty;var V=Object.getOwnPropertyDescriptor;var A=Object.getOwnPropertyNames;var F=Object.getPrototypeOf,$=Object.prototype.hasOwnProperty;var z=(t,e,l,o)=>{if(e&&typeof e=="object"||typeof e=="function")for(let i of A(e))!$.call(t,i)&&i!==l&&n(t,i,{get:()=>e[i],enumerable:!(o=V(e,i))||o.enumerable});return t};var S=(t,e,l)=>(l=t!=null?b(F(t)):{},z(e||!t||!t.__esModule?n(l,"default",{value:t,enumerable:!0}):l,t));var c=S(require("fs")),r=(t,e)=>c.writeFileSync(t,e,{encoding:"utf8"}),s=t=>c.readFileSync(t,{encoding:"utf8"});var C=new Date,p=`v3.1.0-${C.toJSON()}`,h=btoa(`${Number(C)}`).slice(10,18);var L=`<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 14 14" enable-background="new 0 0 240 240" x="0px" y="0px" xml:space="preserve" fill="currentColor">
   <title>LinkedIn icon</title>
   <path d="m12.95 0h-11.9c-0.6 0-1 0.4-1 1v12c0 0.6 0.5 1 1 1h11.9c0.6 0 1-0.4 1-1v-12c0-0.6-0.4-1-1-1zm-8.8 11.9h-2.1v-6.7h2.1v6.7zm-1-7.6c-0.7 0-1.2-0.5-1.2-1.2s0.5-1.2 1.2-1.2 1.2 0.5 1.2 1.2-0.6 1.2-1.2 1.2zm8.8 7.6h-2.1v-3.2c0-0.8 0-1.8-1.1-1.8s-1.2 0.8-1.2 1.7v3.3h-2.1v-6.7h2v0.9c0.4-0.7 1.2-1.1 2-1.1 2.1 0 2.5 1.4 2.5 3.2v3.7z"></path>
 </svg>
-`;var v=`<svg xmlns="https://www.w3.org/2000/svg" enable-background="new 0 0 55.2 14" version="1.1" viewBox="0 0 55.2 14" xml:space="preserve"  fill="currentColor">
+`;var d=`<svg xmlns="https://www.w3.org/2000/svg" enable-background="new 0 0 55.2 14" version="1.1" viewBox="0 0 55.2 14" xml:space="preserve"  fill="currentColor">
   <title>LinkedIn logo</title>
   <polygon points="0 2.1 2.2 2.1 2.2 9.9 6.2 9.9 6.2 11.9 0 11.9"></polygon>
   <path d="m7.1 5.2h2.1v6.7h-2.1v-6.7zm1.1-3.3c0.7 0 1.2 0.5 1.2 1.2s-0.6 1.2-1.2 1.2-1.2-0.5-1.2-1.2 0.5-1.2 1.2-1.2"></path>
@@ -13,13 +13,13 @@
   <path d="m35.6 6.9c-1 0-1.7 0.7-1.7 1.7s0.6 1.7 1.7 1.7 1.7-0.7 1.7-1.7-0.7-1.7-1.7-1.7m3.6 5h-1.9v-0.9c-0.5 0.7-1.2 1-2.1 1.1-2 0-3.3-1.4-3.3-3.5 0-1.9 1.1-3.6 3-3.6 0.9 0 1.7 0.2 2.1 0.9v-3.8h2.1l0.1 9.8z"></path>
   <path d="m54.2 0h-11.9c-0.6 0-1 0.4-1 1v12c0 0.6 0.5 1 1 1h11.9c0.6 0 1-0.4 1-1v-12c0-0.6-0.4-1-1-1zm-8.8 11.9h-2.1v-6.7h2.1v6.7zm-1-7.6c-0.7 0-1.2-0.5-1.2-1.2s0.5-1.2 1.2-1.2 1.2 0.5 1.2 1.2-0.6 1.2-1.2 1.2zm8.8 7.6h-2.1v-3.2c0-0.8 0-1.8-1.1-1.8s-1.2 0.8-1.2 1.7v3.3h-2.1v-6.7h2v0.9c0.4-0.7 1.2-1.1 2-1.1 2.1 0 2.5 1.4 2.5 3.2v3.7z"></path>
 </svg>
-`;var d=`<svg xmlns="https://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 16 16" data-view-component="true" fill="currentColor">
+`;var v=`<svg xmlns="https://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 16 16" data-view-component="true" fill="currentColor">
   <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
 </svg>
-`;var m=`<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 63 18">
+`;var w=`<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 63 18">
   <path fill="currentColor" d="M12.848 8H7.703a.243.243 0 0 0-.242.243v2.527c0 .137.11.242.242.242h2.008v3.14s-.453.157-1.7.157c-1.468 0-3.523-.539-3.523-5.078 0-4.54 2.137-5.137 4.145-5.137 1.742 0 2.488.309 2.965.457.152.047.289-.105.289-.238l.573-2.441a.222.222 0 0 0-.09-.188c-.195-.14-1.375-.805-4.36-.805C4.575.88 1.052 2.35 1.052 9.407c-.002 7.062 4.034 8.113 7.436 8.113 2.817 0 4.524-1.207 4.524-1.207.07-.04.078-.14.078-.184V8.243A.243.243 0 0 0 12.848 8m26.53-6.273a.241.241 0 0 0-.237-.246h-2.899a.241.241 0 0 0-.238.246v5.625h-4.52V1.727a.241.241 0 0 0-.238-.246h-2.898a.241.241 0 0 0-.239.246v15.234a.24.24 0 0 0 .239.243h2.898a.24.24 0 0 0 .238-.243v-6.515h4.52l-.008 6.515a.24.24 0 0 0 .238.243h2.907a.24.24 0 0 0 .238-.243V1.727M18.32 3.723c0-1.047-.84-1.894-1.87-1.894-1.032 0-1.868.847-1.868 1.894 0 1.05.836 1.899 1.867 1.899 1.031 0 1.871-.848 1.871-1.899m-.207 10.024V6.715a.243.243 0 0 0-.242-.242h-2.887c-.132 0-.254.137-.254.27v10.074c0 .297.184.383.422.383h2.606c.285 0 .355-.14.355-.387v-3.066m32.282-7.25H47.52a.238.238 0 0 0-.239.242v7.468s-.73.54-1.77.54c-1.034 0-1.312-.473-1.312-1.497V6.74a.238.238 0 0 0-.238-.242h-2.918a.24.24 0 0 0-.242.242v7.008c0 3.027 1.683 3.77 3.996 3.77 1.894 0 3.426-1.052 3.426-1.052s.074.555.105.617a.248.248 0 0 0 .211.133l1.86-.008a.243.243 0 0 0 .238-.242V6.74a.24.24 0 0 0-.242-.242m6.726 8.238c-.996-.031-1.672-.485-1.672-.485V9.426s.668-.41 1.485-.484c1.035-.094 2.035.223 2.035 2.703 0 2.617-.45 3.133-1.848 3.09zm1.137-8.582c-1.633 0-2.746.73-2.746.73V1.727a.241.241 0 0 0-.239-.246h-2.906a.244.244 0 0 0-.242.246v15.234c0 .133.11.243.242.243h2.016c.09 0 .16-.047.21-.13.052-.081.122-.702.122-.702s1.191 1.132 3.441 1.132c2.64 0 4.157-1.347 4.157-6.043 0-4.695-2.422-5.308-4.055-5.308m-31.817.316H24.27l-.004-2.883c0-.109-.059-.164-.184-.164h-2.96c-.118 0-.18.051-.18.16v2.985s-1.485.36-1.583.387a.244.244 0 0 0-.175.234v1.871a.24.24 0 0 0 .242.242h1.515v4.508c0 3.348 2.34 3.68 3.918 3.68.72 0 1.582-.235 1.727-.29.086-.03.133-.12.133-.214l.004-2.063a.245.245 0 0 0-.239-.242c-.129 0-.453.05-.785.05-1.07 0-1.43-.5-1.43-1.144V9.301h2.172a.24.24 0 0 0 .243-.242V6.711a.243.243 0 0 0-.243-.242"/>
 </svg>
-`;var w=`<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 124 124" fill="currentColor" fill-rule="evenodd">
+`;var m=`<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 124 124" fill="currentColor" fill-rule="evenodd">
   <polygon points="88 80 99 80 99 124 0 124 0 80 11 80 11 113 88 113"/>
   <path fill-rule="nonzero" d="M22.9878906,76.73 L77.0128906,88.085 L79.2838906,77.285 L25.2588906,65.925 L22.9878906,76.73 Z M30.1368906,50.861 L80.1828906,74.169 L84.8448906,64.16 L34.7978906,40.852 L30.1368906,50.861 Z M43.9848906,26.308 L86.4128906,61.639 L93.4788906,53.154 L51.0508906,17.824 L43.9848906,26.308 Z M71.3718906,0.192 L62.5118906,6.782 L95.4598906,51.082 L104.319891,44.493 L71.3718906,0.192 Z M22,102 L77,102 L77,91 L22,91 L22,102 Z"/>
 </svg>
@@ -83,7 +83,7 @@
   <rect x="122" y="160" width="36" height="47" fill="#E5E5E5" fill-opacity="0.25"/>
   <rect x="140" y="160" width="18" height="47" fill="#E5E5E5" fill-opacity="0.5"/>
 </svg>
-`;var a={"linkedin-icon":L,"linkedin-logo":v,"github-icon":d,"github-logo":m,"stackoverflow-icon":w,"stackoverflow-logo":f,"jsfiddle-icon":g,"jsfiddle-logo":x,"codersrank-icon":y,"codersrank-logo":u,"slot-machine-icon":Z};var M="https://www.w3.org/2000/svg",R=new Map,q=()=>`
+`;var a={"linkedin-icon":L,"linkedin-logo":d,"github-icon":v,"github-logo":w,"stackoverflow-icon":m,"stackoverflow-logo":f,"jsfiddle-icon":g,"jsfiddle-logo":x,"codersrank-icon":y,"codersrank-logo":u,"slot-machine-icon":Z};var M="https://www.w3.org/2000/svg",R=new Map,q=()=>`
   <svg xmlns="${M}" display="none">
   ${Object.entries(a).map(([t,e])=>(R.set(t,{viewBox:e.match(/viewBox="([^"]+)"/i)?.[1]}),e.replace(`xmlns="${M}"`,`id="sprite-${t}"`).replaceAll(/\bsvg\b/g,"symbol"))).join("")}
   </svg>
@@ -91,13 +91,13 @@
   `,k=G;var K=s("./public/next/styles.min.css"),W=({nonce:t})=>`<meta http-equiv="Content-Security-Policy" content="${Object.entries({"script-src":[`'nonce-${t}'`,"'strict-dynamic'"],"style-src":[`'nonce-${t}'`],"object-src":["'none'"],"base-uri":["'none'"]}).reduce((e,[l,o])=>`${e};${l} ${o.join(" ")}`,"default-src 'self'")}">`,Y="Art\u016Brs Jansons :: UI kit",Q="My UI Kit",X=`<!DOCTYPE html>
 <html lang="en" manifest="manifest.appcache">
   <head>
-    ${W({nonce:r})}
+    ${W({nonce:h})}
     <title>${Y}</title>
     <meta name="description" content="${Q}" />
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="var(--color-primary-light)" />
-    <style nonce="${r}">${K}</style>
+    <style nonce="${h}">${K}</style>
   </head>
   <body>
     <noscript>This page uses JavaScript to proper work.</noscript>
@@ -105,7 +105,7 @@
     <div id="root">${k()}</div>
   </body>
 </html>
-`;h("public/next/ui/index.html",X);var _=`
+`;r("public/next/ui/index.html",X);var _=`
 CACHE MANIFEST
 # rev ${p}
 
@@ -114,4 +114,4 @@ index.html
 
 NETWORK:
 *
-`;h("public/next/ui/manifest.appcache",_);
+`;r("public/next/ui/manifest.appcache",_);
