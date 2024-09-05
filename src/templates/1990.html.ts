@@ -1,7 +1,10 @@
 #!/usr/bin/env node
 // @deno-types='@app/types.d'
 import { writeFileSync, readFileSync, release, nonce } from '@app/utils';
-import { escapeHTML } from '../services/web-utils';
+import { type LinkProps, Link } from '@app/pages/1990/components/ui/link';
+import { Image } from '@app/pages/1990/components/ui/image';
+import { Code } from '@app/pages/1990/components/ui/code';
+
 const style = readFileSync('./src/pages/1990/styles.css');
 const csp = Object.entries({
   'script-src': [
@@ -74,11 +77,6 @@ const AlsoUse = () => `<font color="#7277ae">PHP</font>,
 
 // const escapeHTML = (unsafe:string) => unsafe.replace(/[&<>"']/g, (c:string) => `&#${c.charCodeAt(0)}`)
 
-const Image = ({ src }: { src: string; }) => `<pre><font size=1>${escapeHTML(readFileSync(src))}</font></pre>`
-
-type LinkProps = { href: string; title: string; }
-
-const Link = (props:LinkProps) => `<a ${/^http/.test(props.href) ? ' rel="noopener noreferrer"' : ''} href="${props.href}" title="${props.title}">${props.title}</a>`
 
 type Project = {
     image: { ascii: string; },
@@ -162,11 +160,6 @@ const ProjectView = (data: Project) => `<center>${Image({ src: data.image.ascii 
 const TimeZone = () => `<p>Time Zone: EEST</p>`
 const WorkTime = () => `<p>Work Time: 10:00 - 20:00</p>`
 const CurrentLocation = () => `<p>Current Location: Earth</p>`
-
-const Code = ({ src, title }: { src: string, title: string }) => `<fieldset bgcolor="green">
-                                                <legend>${title}</legend>
-                                                <code>${Image({ src })}</code>
-                                            </fieldset>`
 
 type FieldProps = { name: string, rows?: number, cols?: number }
 
