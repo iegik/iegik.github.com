@@ -195,7 +195,7 @@ const View: FC<ViewProps> = (props = {}) => {
             : `${childProps}`,
         )
         .join?.('')
-    : escapeHTML(children);
+    : escapeHTML(`${children}`);
 
   const restProps = Object.entries(rest)?.reduce?.(
     (acc, [key, value = '']) => `${acc} ${key}="${value}"`,

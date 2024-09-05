@@ -4,7 +4,7 @@ export const getRoute = () => {
   return path
 }
 
-export const escapeHTML = (unsafe) => unsafe.replace(/[&<"']/g, (m) => {
+export const escapeHTML = (unsafe: string) => unsafe.replace(/[&<"']/g, (m) => {
   switch (m) {
     case '&':
       return '&amp;';

@@ -1,9 +1,16 @@
-const https = require('https');
-const request = (body, options) => new Promise((resolve, reject) => {
-  const req = https.request(options, (res) => {
+import { ClientRequest, IncomingMessage } from 'http';
+import https, { RequestOptions } from 'https';
+import { APIGatewayProxyEventV2WithRequestContext } from 'aws-lambda';
+
+// TODO: Determinate what is 'http' here
+type APIGatewayProxyContextUnknown = (ClientRequest | IncomingMessage) & { http: (ClientRequest | IncomingMessage) }
+type APIGatewayProxyEvent = APIGatewayProxyEventV2WithRequestContext<APIGatewayProxyContextUnknown>
+
+const request = (body: string, options: RequestOptions) => new Promise((resolve, reject) => {
+  const req = https.request(options, (res: IncomingMessage) => {
     let rawData = '';
 
-    res.on('data', (chunk) => {
+    res.on('data', (chunk: any) => {
       rawData += chunk;
     });
 
@@ -11,12 +18,12 @@ const request = (body, options) => new Promise((resolve, reject) => {
       try {
         resolve(JSON.parse(rawData));
       } catch (err) {
-        reject(new Error(err));
+        reject(new Error(`${err}`));
       }
     });
   });
 
-  req.on('error', (err) => {
+  req.on('error', (err: string | undefined) => {
     reject(new Error(err));
   });
 
@@ -24,7 +31,7 @@ const request = (body, options) => new Promise((resolve, reject) => {
   req.end();
 })
 
-function getAccessToken(req) {
+function getAccessToken(req: APIGatewayProxyEvent) {
   const code = req.queryStringParameters?.code;
   const client_id = req.queryStringParameters?.client_id;
   const body = {
@@ -47,7 +54,7 @@ function getAccessToken(req) {
   return request(JSON.stringify(body), options);
 }
 
-function postGraphQL(req) {
+function postGraphQL(req: { headers: { authorization: string; }; body: any; }) {
   const options = {
     hostname: 'api.github.com',
     path: 'graphql',
@@ -66,7 +73,7 @@ function postGraphQL(req) {
 const client_secret = process.env.GITHUB_CLIENT_SECRET;
 const redirect_uri = process.env.GITHUB_REDIRECT_URI;
 
-const handleGetRequests = async (req, res) => {
+const handleGetRequests = async (req: APIGatewayProxyEvent, res: object) => {
   const result = await getAccessToken(req);
 
   return {
@@ -76,7 +83,7 @@ const handleGetRequests = async (req, res) => {
   };
 }
 
-const handlePostRequests = async (req, res) => {
+const handlePostRequests = async (req: any, res: { headers: { 'Content-Type': string; Accept: string; }; }) => {
   const result = await postGraphQL(req);
 
   return {
@@ -86,7 +93,7 @@ const handlePostRequests = async (req, res) => {
   };
 }
 
-exports.handler = async (event) => {
+exports.handler = async (event: APIGatewayProxyEvent) => {
   const res = {
     headers: {
       'Content-Type': 'application/json',
@@ -105,7 +112,7 @@ exports.handler = async (event) => {
     return {
       ...res,
       statusCode: 400,
-      body: JSON.stringify({ errors: [error.message] }),
+      body: JSON.stringify({ errors: [`${error}`] }),
     };
   }
 };

@@ -1,8 +1,8 @@
-import type { F } from './Component.d';
+import type { ComponentProps } from './Component.d';
 
 export const displayNameToIs = (displayName: string) => `x-${displayName.toLowerCase()}`
 
-export class Component extends HTMLElement {
+export class Component<F extends ComponentProps = {}> extends HTMLElement {
   tag = 'div';
   root = document.body
   ref: Element | null = null;
@@ -10,7 +10,7 @@ export class Component extends HTMLElement {
   get displayName() { return this.$$displayName || this.constructor.name }
   set displayName(displayName) { this.$$displayName = displayName }
   get is() { return displayNameToIs(this.displayName); }
-  constructor (props:F = {}) {
+  constructor (props:F) {
     super();
     const { tag, ref, children } = props;
     this.tag = tag || this.tag;

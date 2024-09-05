@@ -1,4 +1,6 @@
-export interface ColorProps {
+import { ComponentProps } from "@app/core/Component.d";
+
+export interface ColorProps extends ComponentProps {
   r?: number;
   g?: number;
   b?: number;

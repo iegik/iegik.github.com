@@ -1,3 +1,4 @@
+// @ts-nocheck
 import * as log from '@app/services/log';
 window._hjSettings = {
   hjid: 2660383,

@@ -1,5 +1,8 @@
+
 import { ERROR_NOT_FOUND, ERROR_REQUEST } from '@app/components/core/constants';
+// @ts-ignore
 import repoFile from '@app/graphql/github/repo_file.graphql';
+// @ts-ignore
 import getUserQuery from '@app/graphql/github/get_user.graphql';
 
 const githubResponseMiddleware = async (res: Response) => {
