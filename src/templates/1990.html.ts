@@ -479,7 +479,7 @@ const Layout = (content: string) => `${DOCTYPE}
     ${/* Google Analytics */''}
     ${GTM({ nonce, gtmId: 'G-5ZY8Y6X2C4'})}
     ${/* DOS Theme Code for https://iegik.github.io */''}
-    ${Script({ srcDoc: './src/lib/dosTheme.js.js', nonce, prefix: `const nonce = '${nonce}';\n` })}
+    ${Script({ srcDoc: './src/lib/dosTheme.js', nonce, prefix: `const nonce = '${nonce}';\n` })}
     <!-- Hotjar Tracking Code for https://iegik.github.io -->
     <script nonce="${nonce}">
         (function(h,o,t,j,a,r){

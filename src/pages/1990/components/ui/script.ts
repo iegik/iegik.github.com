@@ -9,4 +9,4 @@ export type ScriptProps = {
   async?: boolean;
 }
 
-export const Script = ({ srcDoc, src, nonce, async }: ScriptProps) => `<script ${async ? 'async' : ''} nonce="${nonce}" ${src ? `src="${src}"` : ''}>${prefix || ''}${srcDoc ? escapeHTML(readFileSync(srcDoc)) : ''}</script>`;
+export const Script = ({ srcDoc, src, nonce, async, prefix }: ScriptProps) => `<script ${async ? 'async' : ''} nonce="${nonce}" ${src ? `src="${src}"` : ''}>${prefix || ''}${srcDoc ? escapeHTML(readFileSync(srcDoc)) : ''}</script>`;

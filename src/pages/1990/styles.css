@@ -53,7 +53,7 @@ html {
 }
 html {
   scrollbar-color: orange var(--color-activeWindow);
-  scrollbar-width: 1ex;
+  scrollbar-gutter: stable;
 }
 body,
 input,
@@ -138,6 +138,11 @@ a {
 }
 [color="gray"] {
   color: var(--color-button);
+}
+[width="768px"] {
+  width: auto;
+  max-width: 160ex;
+  min-width: 768px;
 }
 [style="display:none;"] {
   display: none;
