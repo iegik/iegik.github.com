@@ -9,6 +9,7 @@ import { Script } from '@app/pages/1990/components/ui/script';
 import { GTag } from '@app/pages/1990/components/GTag';
 import { HotJar } from '@app/pages/1990/components/HotJar';
 import { Sentry } from '@app/pages/1990/components/Sentry';
+import { Field, FieldL10nProps, FieldProps, FormFieldProps } from '@app/pages/1990/components/ui/field';
 
 const style = readFileSync('./src/pages/1990/styles.css');
 const csp = Object.entries({
@@ -172,18 +173,6 @@ const TimeZone = () => `<p>Time Zone: EEST</p>`
 const WorkTime = () => `<p>Work Time: 10:00 - 20:00</p>`
 const CurrentLocation = () => `<p>Current Location: Earth</p>`
 
-type FieldProps = { name: string, rows?: number, cols?: number }
-
-type FormFieldProps = {
-    kind?: 'horizontal' | 'vertical';
-    data?: any[];
-    rows?: number;
-    cols?: number;
-    type?: 'hidden' | 'text' | 'memo' | 'checkbox' | 'radio' | 'email' | 'select' | 'submit';
-    value?: string;
-    required?: boolean;
-}
-
 const fields: Record<string, FormFieldProps> = {
     email: { kind: 'vertical', required: true },
     to: { type: 'hidden', value: 'a.jansons+web@gmail.com' },
@@ -208,11 +197,12 @@ const dict: Record<string, string>= {
 
 const l10n = (slug: string) => dict[slug] || slug;
 
-const withLabel = () => (Field: (x: FieldProps) => string) => (props: FieldProps) => {
+const withLabel = () => (Field: (x: FieldProps & FormFieldProps & FieldL10nProps ) => string) => (props: FieldProps) => {
     const { name } = props
-    const { kind, type: fieldType } = fields[name] || {}
+    const { kind, type: fieldType, data, value = '', required } = fields[name] || {}
+    const fieldProps:FieldProps & FormFieldProps & FieldL10nProps = { ...props, data, value, required, l10n }
 
-    if (fieldType === 'hidden') return Field(props)
+    if (fieldType === 'hidden') return Field(fieldProps)
     if (fieldType === 'submit') return `<input type="submit" name="${name}" value="${l10n(name)}" />`
     const label = l10n(name)
 
@@ -220,25 +210,10 @@ const withLabel = () => (Field: (x: FieldProps) => string) => (props: FieldProps
     ? `<label for="${name}">${label}</label>
                                                         <br>
                                                         <br>
-                                                        ${Field(props)}`
-    : `<label for="${name}">${label}</label>&nbsp;${Field(props)}`
+                                                        ${Field(fieldProps)}`
+    : `<label for="${name}">${label}</label>&nbsp;${Field(fieldProps)}`
 }
 
-const Field = ({ name, rows, cols, }: FieldProps) => {
-    const { data, type: fieldType, value = '', required }: FormFieldProps = fields[name] || {}
-    const id = name;
-    const isRequired = required ? `required` : ''
-    if (data) return `<select id="${id}" name="${name}" ${isRequired}>
-                                                                <option></option>
-                                                                ${data.map((key) => `<option value="${key}">${l10n(key)}</option>`).join('\n')}
-                                                            </select>`
-    if (!!rows || !!cols) return `<table width="100%">
-                                                            <tr>
-                                                                <td>
-                                                                    <textarea id="${id}" name="${name}" rows="${rows}" cols="${cols}" ${isRequired}>${value}</textarea>
-                                                        </table>`
-    return `<input type="${fieldType || 'text'}" id="${id}" name="${name}" value="${value}" ${isRequired} />`
-}
 
 const FormField = withLabel()(Field)
 
