@@ -2,7 +2,7 @@
 "use strict";var Y=Object.create;var M=Object.defineProperty;var V=Object.getOwnPropertyDescriptor;var Q=Object.getOwnPropertyNames;var Z=Object.getPrototypeOf,K=Object.prototype.hasOwnProperty;var X=(t,e,o,a)=>{if(e&&typeof e=="object"||typeof e=="function")for(let n of Q(e))!K.call(t,n)&&n!==o&&M(t,n,{get:()=>e[n],enumerable:!(a=V(e,n))||a.enumerable});return t};var tt=(t,e,o)=>(o=t!=null?Y(Z(t)):{},X(e||!t||!t.__esModule?M(o,"default",{value:t,enumerable:!0}):o,t));var y=tt(require("fs")),m=(t,e)=>y.writeFileSync(t,e,{encoding:"utf8"}),c=t=>y.readFileSync(t,{encoding:"utf8"});var C=new Date,x=`v3.1.0-${C.toJSON()}`,i=btoa(`${Number(C)}`).slice(10,18);var h=t=>`<a ${/^http/.test(t.href)?' rel="noopener noreferrer"':""} href="${t.href}" title="${t.title}">${t.title}</a>`;var w=t=>t.replace(/[&<"']/g,e=>{switch(e){case"&":return"&amp;";case"<":return"&lt;";case'"':return"&quot;";default:return"&#039;"}});var v=({src:t})=>`<pre><font size=1>${w(c(t))}</font></pre>`;var S=({src:t,title:e})=>`<fieldset bgcolor="green">
                                                 <legend>${e}</legend>
                                                 <code width="120px">${w(c(t))}</code>
-                                            </fieldset>`;var s=({srcDoc:t,src:e,nonce:o,async:a,prefix:n,postfix:d,iife:$,crossorigin:u="",integrity:g})=>{let f=`${n||""}${t?c(t):""}${d||""}`;return`<script ${a?"async":""} crossorigin="${u}" ${g?`integrity="${g}"`:""} nonce="${o}" ${e?`src="${e}"`:""}>${$?`(${f})(${$})`:f}</script>`};var L=({nonce:t,gtmId:e})=>`
+                                            </fieldset>`;var s=({srcDoc:t,src:e,nonce:o,async:a,prefix:n,postfix:d,iife:u,crossorigin:f="",integrity:g})=>{let b=`${n||""}${t?c(t):""}${d||""}`;return`<script ${a?"async":""} crossorigin="${f}" ${g?`integrity="${g}"`:""} nonce="${o}" ${e?`src="${e}"`:""}>${u?`(${b})(${u})`:b}</script>`};var L=({nonce:t,gtmId:e})=>`
     ${s({nonce:t,srcDoc:"./src/lib/gtm.js",iife:`window,document,'script','dataLayer','${e}','${t}'`})}
 `,E=({nonce:t,gtmId:e})=>`<noscript><iframe nonce="${t}" src="https://www.googletagmanager.com/ns.html?id=${e}"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>`;var D=({nonce:t,gtmId:e})=>`
@@ -22,7 +22,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 `;var q=({nonce:t,integrity:e,projectId:o,...a})=>`
     ${s({async:!0,nonce:t,src:"https://browser.sentry-cdn.com/8.29.0/bundle.tracing.min.js",integrity:e})}
     ${s({srcDoc:"./src/lib/sentry.js",nonce:t,iife:JSON.stringify(a)})}
-`;var et=c("./src/pages/1990/styles.css"),ot=Object.entries({"script-src":[`'nonce-${i}'`,"'strict-dynamic'","https://www.google-analytics.com","https://ssl.google-analytics.com","https://static.hotjar.com","https://js.sentry-cdn.com"],"img-src":["'self'","https://www.google-analytics.com","https://avatars.githubusercontent.com/","https://www.googletagmanager.com/"],"connect-src":["'self'","https://www.google-analytics.com","https://region1.google-analytics.com","https://in.hotjar.com","https://static.hotjar.com","https://content.hotjar.io","https://github.com/login/oauth/access_token","https://api.github.com/graphql","https://api.github.com/user","https://qilg4ch66b3vpgtevzccb5meum0ttfcl.lambda-url.eu-north-1.on.aws/","https://o171820.ingest.sentry.io/"],"style-src":[`'nonce-${i}'`,"https://static.hotjar.com"],"object-src":["'none'"],"base-uri":["'none'"],"frame-src":["https://vars.hotjar.com/"],"script-src-elem":[`'nonce-${i}'`,"'self'","https://script.hotjar.com/modules.8da33a8f469c3b5ffcec.js"]}).reduce((t,[e,o])=>`${t};${e} ${o.join(" ")}`,"default-src 'self'"),b="Art&#363;rs Jansons",j="Full-stack Developer",P="10+ year exp.",it=`${b} | ${j} [${P}]`,T="Mobile / Web Developer &amp; JavaScript Consultant",rt="HTML, CSS, JavaScript, TypeScript, React, React Native, PHP, MySQL, Bash, Makefile, Docker, GraphQL, Next, Nest",I=()=>`<p>
+`;var et=c("./src/pages/1990/styles.css"),ot=Object.entries({"script-src":[`'nonce-${i}'`,"'strict-dynamic'","https://www.google-analytics.com","https://ssl.google-analytics.com","https://static.hotjar.com","https://js.sentry-cdn.com"],"img-src":["'self'","https://www.google-analytics.com","https://avatars.githubusercontent.com/","https://www.googletagmanager.com/"],"connect-src":["'self'","https://www.google-analytics.com","https://region1.google-analytics.com","https://in.hotjar.com","https://static.hotjar.com","https://content.hotjar.io","https://github.com/login/oauth/access_token","https://api.github.com/graphql","https://api.github.com/user","https://qilg4ch66b3vpgtevzccb5meum0ttfcl.lambda-url.eu-north-1.on.aws/","https://o171820.ingest.sentry.io/"],"style-src":[`'nonce-${i}'`,"https://static.hotjar.com"],"object-src":["'none'"],"base-uri":["'none'"],"frame-src":["https://vars.hotjar.com/"],"script-src-elem":[`'nonce-${i}'`,"'self'","https://script.hotjar.com/modules.8da33a8f469c3b5ffcec.js"]}).reduce((t,[e,o])=>`${t};${e} ${o.join(" ")}`,"default-src 'self'"),$="Art&#363;rs Jansons",j="Full-stack Developer",P="10+ year exp.",it=`${$} | ${j} [${P}]`,T="Mobile / Web Developer &amp; JavaScript Consultant",rt="HTML, CSS, JavaScript, TypeScript, React, React Native, PHP, MySQL, Bash, Makefile, Docker, GraphQL, Next, Nest",I=()=>`<p>
                         1990 |
                         
                         <a href="/next/">BETA</a> |
@@ -44,15 +44,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                             ${t.comment?`<p><em><font color="gray">${t.comment}</font></em>`:""}`,B=()=>"<p>Time Zone: EEST</p>",N=()=>"<p>Work Time: 10:00 - 20:00</p>",O=()=>"<p>Current Location: Earth</p>",J={email:{kind:"vertical",required:!0},to:{type:"hidden",value:"a.jansons+web@gmail.com"},access_key:{type:"hidden",value:"c5540606-b7ca-4634-980a-13e2c50cd823"},redirect:{type:"hidden",value:"/1990/sent"},subject:{kind:"vertical",required:!0,data:["feedback","work","consultation","issue"]},message:{kind:"vertical",required:!0},send:{type:"submit"}},nt={email:"Your email",subject:"Subject",message:"Content",send:"Send message",feedback:"Feedback",work:"Work opportunity",consultation:"Consultation",issue:"Bug Report",botcheck:"I' m not a robot"},k=t=>nt[t]||t,st=()=>t=>e=>{let{name:o}=e,{kind:a,type:n}=J[o]||{};if(n==="hidden")return t(e);if(n==="submit")return`<input type="submit" name="${o}" value="${k(o)}" />`;let d=k(o);return a==="vertical"?`<label for="${o}">${d}</label>
                                                         <br>
                                                         <br>
-                                                        ${t(e)}`:`<label for="${o}">${d}</label>&nbsp;${t(e)}`},at=({name:t,rows:e,cols:o})=>{let{data:a,type:n,value:d="",required:$}=J[t]||{},u=t,g=$?"required":"";return a?`<select id="${u}" name="${t}" ${g}>
+                                                        ${t(e)}`:`<label for="${o}">${d}</label>&nbsp;${t(e)}`},at=({name:t,rows:e,cols:o})=>{let{data:a,type:n,value:d="",required:u}=J[t]||{},f=t,g=u?"required":"";return a?`<select id="${f}" name="${t}" ${g}>
                                                                 <option></option>
-                                                                ${a.map(f=>`<option value="${f}">${k(f)}</option>`).join(`
+                                                                ${a.map(b=>`<option value="${b}">${k(b)}</option>`).join(`
 `)}
                                                             </select>`:e||o?`<table width="100%">
                                                             <tr>
                                                                 <td>
-                                                                    <textarea id="${u}" name="${t}" rows="${e}" cols="${o}" ${g}>${d}</textarea>
-                                                        </table>`:`<input type="${n||"text"}" name="${t}" value="${d}" ${g} />`},r=st()(at),U=({name:t})=>`<input id="bot" name="${t}" nonce="${i}" value="This shouldn't be here" /><p><a id="${t}" href="#bot">[_] ${k(t)}</a></p><script nonce="${i}">bot.style.display='none';${t}.addEventListener("click", () => {${t}.innerText=${t}.innerText.slice(0,1)+(bot.value==='true' ? '_' : 'x')+${t}.innerText.slice(2);bot.disabled=true;bot.value=bot.value === 'true' ? false : true;});</script>`,ct=()=>`<form align="left" method="POST" action="https://api.web3forms.com/submit">
+                                                                    <textarea id="${f}" name="${t}" rows="${e}" cols="${o}" ${g}>${d}</textarea>
+                                                        </table>`:`<input type="${n||"text"}" id="${f}" name="${t}" value="${d}" ${g} />`},r=st()(at),U=({name:t})=>`<input id="bot" name="${t}" nonce="${i}" value="This shouldn't be here" /><p><a id="${t}" href="#bot">[_] ${k(t)}</a></p><script nonce="${i}">bot.style.display='none';${t}.addEventListener("click", () => {${t}.innerText=${t}.innerText.slice(0,1)+(bot.value==='true' ? '_' : 'x')+${t}.innerText.slice(2);bot.disabled=true;bot.value=bot.value === 'true' ? false : true;});</script>`,ct=()=>`<form align="left" method="POST" action="https://api.web3forms.com/submit">
                                         <fieldset bgcolor="gray">
                                             <legend>Feedback</legend>
                                             <table align="left" border="0" cellpadding="0" cellspacing="8" width="100%">
@@ -106,7 +106,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <td>
                                 ${v({src:"./src/pages/1990/assets/photo.ascii"})}
                             <td width="80%" valign="bottom">
-                                <p>${b}
+                                <p>${$}
                                 <h1><font size="5"><b>${j}</b></font><font size="2">[${P}]</font></h1>
                                 <p><em><font color="gray">${T}</font></em></p>
                                 <p>
@@ -177,7 +177,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <p>${H.map((t,e)=>`${e?" | ":""}${h(t)}`).join("")}</p>
                                 <br>
                                 <marquee>
-                                    <font color="gray">\xA9 2024 ${b} | All rights reserved</font>
+                                    <font color="gray">\xA9 2024 ${$} | All rights reserved</font>
                     </table>
         </table>
     </font>`,dt=()=>`<font face="${A}" size="3">
@@ -190,7 +190,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <tr>
                             <td align="center">
                                 ${v({src:"./src/pages/1990/assets/photo.ascii"})}
-                                <p>${b}
+                                <p>${$}
                                 <h1>
                                     <font size="5"><b>${j}</b></font>
                                     <br>
@@ -261,7 +261,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <td align="center">
                                 <p>${H.map((t,e)=>`${e?" | ":""}${h(t)}`).join("")}</p>
                                 <marquee>
-                                    <font color="gray">\xA9 2024 ${b} | All rights reserved</font>
+                                    <font color="gray">\xA9 2024 ${$} | All rights reserved</font>
                     </table>
         </table>
     </font>`,F=process.env.IS_VITE==="true"?"<!DOCTYPE html>":`<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
