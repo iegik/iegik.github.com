@@ -51,6 +51,7 @@ const csp = Object.entries({
   'script-src-elem': [
     `'nonce-${nonce}'`,
     `'self'`,
+    'https://script.hotjar.com/modules.8da33a8f469c3b5ffcec.js'
     // `'unsafe-inline'`
   ]
 }).reduce((acc, [key, val]) => `${acc};${key} ${val.join(' ')}`, `default-src 'self'`);
