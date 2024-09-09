@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-"use strict";var Y=Object.create;var M=Object.defineProperty;var V=Object.getOwnPropertyDescriptor;var Q=Object.getOwnPropertyNames;var Z=Object.getPrototypeOf,K=Object.prototype.hasOwnProperty;var X=(t,e,o,a)=>{if(e&&typeof e=="object"||typeof e=="function")for(let r of Q(e))!K.call(t,r)&&r!==o&&M(t,r,{get:()=>e[r],enumerable:!(a=V(e,r))||a.enumerable});return t};var tt=(t,e,o)=>(o=t!=null?Y(Z(t)):{},X(e||!t||!t.__esModule?M(o,"default",{value:t,enumerable:!0}):o,t));var y=tt(require("fs")),m=(t,e)=>y.writeFileSync(t,e,{encoding:"utf8"}),c=t=>y.readFileSync(t,{encoding:"utf8"});var C=new Date,x=`v3.1.0-${C.toJSON()}`,i=btoa(`${Number(C)}`).slice(10,18);var h=t=>`<a ${/^http/.test(t.href)?' rel="noopener noreferrer"':""} href="${t.href}" title="${t.title}">${t.title}</a>`;var w=t=>t.replace(/[&<"']/g,e=>{switch(e){case"&":return"&amp;";case"<":return"&lt;";case'"':return"&quot;";default:return"&#039;"}});var v=({src:t})=>`<pre><font size=1>${w(c(t))}</font></pre>`;var S=({src:t,title:e})=>`<fieldset bgcolor="green">
+"use strict";var Y=Object.create;var M=Object.defineProperty;var V=Object.getOwnPropertyDescriptor;var Q=Object.getOwnPropertyNames;var Z=Object.getPrototypeOf,K=Object.prototype.hasOwnProperty;var X=(t,e,o,a)=>{if(e&&typeof e=="object"||typeof e=="function")for(let n of Q(e))!K.call(t,n)&&n!==o&&M(t,n,{get:()=>e[n],enumerable:!(a=V(e,n))||a.enumerable});return t};var tt=(t,e,o)=>(o=t!=null?Y(Z(t)):{},X(e||!t||!t.__esModule?M(o,"default",{value:t,enumerable:!0}):o,t));var y=tt(require("fs")),m=(t,e)=>y.writeFileSync(t,e,{encoding:"utf8"}),c=t=>y.readFileSync(t,{encoding:"utf8"});var C=new Date,x=`v3.1.0-${C.toJSON()}`,i=btoa(`${Number(C)}`).slice(10,18);var h=t=>`<a ${/^http/.test(t.href)?' rel="noopener noreferrer"':""} href="${t.href}" title="${t.title}">${t.title}</a>`;var w=t=>t.replace(/[&<"']/g,e=>{switch(e){case"&":return"&amp;";case"<":return"&lt;";case'"':return"&quot;";default:return"&#039;"}});var v=({src:t})=>`<pre><font size=1>${w(c(t))}</font></pre>`;var S=({src:t,title:e})=>`<fieldset bgcolor="green">
                                                 <legend>${e}</legend>
                                                 <code width="120px">${w(c(t))}</code>
-                                            </fieldset>`;var s=({srcDoc:t,src:e,nonce:o,async:a,prefix:r,postfix:d,iife:$,crossorigin:u="",integrity:g})=>{let f=`${r||""}${t?c(t):""}${d||""}`;return`<script ${a?"async":""} crossorigin="${u}" ${g?`integrity="${g}"`:""} nonce="${o}" ${e?`src="${e}"`:""}>${$?`(${f})(${$})`:f}</script>`};var L=({nonce:t,gtmId:e})=>`
+                                            </fieldset>`;var s=({srcDoc:t,src:e,nonce:o,async:a,prefix:n,postfix:d,iife:$,crossorigin:u="",integrity:g})=>{let f=`${n||""}${t?c(t):""}${d||""}`;return`<script ${a?"async":""} crossorigin="${u}" ${g?`integrity="${g}"`:""} nonce="${o}" ${e?`src="${e}"`:""}>${$?`(${f})(${$})`:f}</script>`};var L=({nonce:t,gtmId:e})=>`
     ${s({nonce:t,srcDoc:"./src/lib/gtm.js",iife:`window,document,'script','dataLayer','${e}','${t}'`})}
 `,E=({nonce:t,gtmId:e})=>`<noscript><iframe nonce="${t}" src="https://www.googletagmanager.com/ns.html?id=${e}"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>`;var D=({nonce:t,gtmId:e})=>`
@@ -22,7 +22,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 `;var q=({nonce:t,integrity:e,projectId:o,...a})=>`
     ${s({async:!0,nonce:t,src:"https://browser.sentry-cdn.com/8.29.0/bundle.tracing.min.js",integrity:e})}
     ${s({srcDoc:"./src/lib/sentry.js",nonce:t,iife:JSON.stringify(a)})}
-`;var et=c("./src/pages/1990/styles.css"),ot=Object.entries({"script-src":[`'nonce-${i}'`,"'strict-dynamic'","https://www.google-analytics.com","https://ssl.google-analytics.com","https://static.hotjar.com","https://js.sentry-cdn.com"],"img-src":["'self'","https://www.google-analytics.com","https://avatars.githubusercontent.com/","https://www.googletagmanager.com/"],"connect-src":["'self'","https://www.google-analytics.com","https://region1.google-analytics.com","https://in.hotjar.com","https://static.hotjar.com","https://content.hotjar.io","https://github.com/login/oauth/access_token","https://api.github.com/graphql","https://api.github.com/user","https://qilg4ch66b3vpgtevzccb5meum0ttfcl.lambda-url.eu-north-1.on.aws/","https://o171820.ingest.sentry.io/"],"style-src":[`'nonce-${i}'`,"https://static.hotjar.com"],"object-src":["'none'"],"base-uri":["'none'"],"frame-src":["https://vars.hotjar.com/"],"script-src-elem":[`'nonce-${i}'`,"'self'"]}).reduce((t,[e,o])=>`${t};${e} ${o.join(" ")}`,"default-src 'self'"),b="Art&#363;rs Jansons",j="Full-stack Developer",P="10+ year exp.",it=`${b} | ${j} [${P}]`,T="Mobile / Web Developer &amp; JavaScript Consultant",nt="HTML, CSS, JavaScript, TypeScript, React, React Native, PHP, MySQL, Bash, Makefile, Docker, GraphQL, Next, Nest",I=()=>`<p>
+`;var et=c("./src/pages/1990/styles.css"),ot=Object.entries({"script-src":[`'nonce-${i}'`,"'strict-dynamic'","https://www.google-analytics.com","https://ssl.google-analytics.com","https://static.hotjar.com","https://js.sentry-cdn.com"],"img-src":["'self'","https://www.google-analytics.com","https://avatars.githubusercontent.com/","https://www.googletagmanager.com/"],"connect-src":["'self'","https://www.google-analytics.com","https://region1.google-analytics.com","https://in.hotjar.com","https://static.hotjar.com","https://content.hotjar.io","https://github.com/login/oauth/access_token","https://api.github.com/graphql","https://api.github.com/user","https://qilg4ch66b3vpgtevzccb5meum0ttfcl.lambda-url.eu-north-1.on.aws/","https://o171820.ingest.sentry.io/"],"style-src":[`'nonce-${i}'`,"https://static.hotjar.com"],"object-src":["'none'"],"base-uri":["'none'"],"frame-src":["https://vars.hotjar.com/"],"script-src-elem":[`'nonce-${i}'`,"'self'"]}).reduce((t,[e,o])=>`${t};${e} ${o.join(" ")}`,"default-src 'self'"),b="Art&#363;rs Jansons",j="Full-stack Developer",P="10+ year exp.",it=`${b} | ${j} [${P}]`,T="Mobile / Web Developer &amp; JavaScript Consultant",rt="HTML, CSS, JavaScript, TypeScript, React, React Native, PHP, MySQL, Bash, Makefile, Docker, GraphQL, Next, Nest",I=()=>`<p>
                         1990 |
                         
                         <a href="/next/">BETA</a> |
@@ -41,10 +41,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                             <p>${t.description}
                                             <p>
                                                 ${t.links.map((e,o)=>`${o?" | ":""}${h(e)}`).join("")}
-                                            ${t.comment?`<p><em><font color="gray">${t.comment}</font></em>`:""}`,B=()=>"<p>Time Zone: EEST</p>",N=()=>"<p>Work Time: 10:00 - 20:00</p>",O=()=>"<p>Current Location: Earth</p>",J={email:{kind:"vertical",required:!0},to:{type:"hidden",value:"a.jansons+web@gmail.com"},access_key:{type:"hidden",value:"c5540606-b7ca-4634-980a-13e2c50cd823"},redirect:{type:"hidden",value:"/1990/sent"},subject:{kind:"vertical",required:!0,data:["feedback","work","consultation","issue"]},message:{kind:"vertical",required:!0},send:{type:"submit"}},rt={email:"Your email",subject:"Subject",message:"Content",send:"Send message",feedback:"Feedback",work:"Work opportunity",consultation:"Consultation",issue:"Bug Report",botcheck:"I' m not a robot"},k=t=>rt[t]||t,st=()=>t=>e=>{let{name:o}=e,{kind:a,type:r}=J[o]||{};if(r==="hidden")return t(e);if(r==="submit")return`<input type="submit" name="${o}" value="${k(o)}" />`;let d=k(o);return a==="vertical"?`<label for="${o}">${d}</label>
+                                            ${t.comment?`<p><em><font color="gray">${t.comment}</font></em>`:""}`,B=()=>"<p>Time Zone: EEST</p>",N=()=>"<p>Work Time: 10:00 - 20:00</p>",O=()=>"<p>Current Location: Earth</p>",J={email:{kind:"vertical",required:!0},to:{type:"hidden",value:"a.jansons+web@gmail.com"},access_key:{type:"hidden",value:"c5540606-b7ca-4634-980a-13e2c50cd823"},redirect:{type:"hidden",value:"/1990/sent"},subject:{kind:"vertical",required:!0,data:["feedback","work","consultation","issue"]},message:{kind:"vertical",required:!0},send:{type:"submit"}},nt={email:"Your email",subject:"Subject",message:"Content",send:"Send message",feedback:"Feedback",work:"Work opportunity",consultation:"Consultation",issue:"Bug Report",botcheck:"I' m not a robot"},k=t=>nt[t]||t,st=()=>t=>e=>{let{name:o}=e,{kind:a,type:n}=J[o]||{};if(n==="hidden")return t(e);if(n==="submit")return`<input type="submit" name="${o}" value="${k(o)}" />`;let d=k(o);return a==="vertical"?`<label for="${o}">${d}</label>
                                                         <br>
                                                         <br>
-                                                        ${t(e)}`:`<label for="${o}">${d}</label>&nbsp;${t(e)}`},at=({name:t,rows:e,cols:o})=>{let{data:a,type:r,value:d="",required:$}=J[t]||{},u=t,g=$?"required":"";return a?`<select id="${u}" name="${t}" ${g}>
+                                                        ${t(e)}`:`<label for="${o}">${d}</label>&nbsp;${t(e)}`},at=({name:t,rows:e,cols:o})=>{let{data:a,type:n,value:d="",required:$}=J[t]||{},u=t,g=$?"required":"";return a?`<select id="${u}" name="${t}" ${g}>
                                                                 <option></option>
                                                                 ${a.map(f=>`<option value="${f}">${k(f)}</option>`).join(`
 `)}
@@ -52,25 +52,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                                             <tr>
                                                                 <td>
                                                                     <textarea id="${u}" name="${t}" rows="${e}" cols="${o}" ${g}>${d}</textarea>
-                                                        </table>`:`<input type="${r||"text"}" name="${t}" value="${d}" ${g} />`},n=st()(at),U=({name:t})=>`<input id="bot" name="${t}" nonce="${i}" value="This shouldn't be here" /><p><a id="${t}" href="#bot">[_] ${k(t)}</a></p><script nonce="${i}">bot.style.display='none';${t}.addEventListener("click", () => {${t}.innerText=${t}.innerText.slice(0,1)+(bot.value==='true' ? '_' : 'x')+${t}.innerText.slice(2);bot.disabled=true;bot.value=bot.value === 'true' ? false : true;});</script>`,ct=()=>`<form align="left" method="POST" action="https://api.web3forms.com/submit">
+                                                        </table>`:`<input type="${n||"text"}" name="${t}" value="${d}" ${g} />`},r=st()(at),U=({name:t})=>`<input id="bot" name="${t}" nonce="${i}" value="This shouldn't be here" /><p><a id="${t}" href="#bot">[_] ${k(t)}</a></p><script nonce="${i}">bot.style.display='none';${t}.addEventListener("click", () => {${t}.innerText=${t}.innerText.slice(0,1)+(bot.value==='true' ? '_' : 'x')+${t}.innerText.slice(2);bot.disabled=true;bot.value=bot.value === 'true' ? false : true;});</script>`,ct=()=>`<form align="left" method="POST" action="https://api.web3forms.com/submit">
                                         <fieldset bgcolor="gray">
                                             <legend>Feedback</legend>
                                             <table align="left" border="0" cellpadding="0" cellspacing="8" width="100%">
                                                 <tr>
                                                     <td>
-                                                        ${n({name:"email"})}
-                                                        ${n({name:"to"})}
-                                                        ${n({name:"access_key"})}
-                                                        ${n({name:"redirect"})}
+                                                        ${r({name:"email"})}
+                                                        ${r({name:"to"})}
+                                                        ${r({name:"access_key"})}
+                                                        ${r({name:"redirect"})}
                                                     <td width="100%">
-                                                        ${n({name:"subject"})}
+                                                        ${r({name:"subject"})}
                                                 <tr>
                                                     <td colspan="2">
                                                         <br>
-                                                        ${n({name:"message",rows:5,cols:44})}
+                                                        ${r({name:"message",rows:5,cols:44})}
                                                         ${U({name:"botcheck"})}
                                                         <p align="right">
-                                                            ${n({name:"send"})}
+                                                            ${r({name:"send"})}
                                             </table>
                                         </fieldset>
                                     </form>`,lt=()=>`<form align="left" method="POST" action="https://api.web3forms.com/submit">
@@ -79,20 +79,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                             <table align="left" border="0" cellpadding="0" cellspacing="8" width="100%">
                                                 <tr>
                                                     <td>
-                                                        ${n({name:"email"})}
-                                                        ${n({name:"to"})}
-                                                        ${n({name:"access_key"})}
-                                                        ${n({name:"redirect"})}
+                                                        ${r({name:"email"})}
+                                                        ${r({name:"to"})}
+                                                        ${r({name:"access_key"})}
+                                                        ${r({name:"redirect"})}
                                                 </tr>
                                                 <tr>
                                                     <td width="100%">
-                                                        ${n({name:"subject"})}
+                                                        ${r({name:"subject"})}
                                                 <tr>
                                                     <td colspan="2">
-                                                        ${n({name:"message",rows:5,cols:36})}
+                                                        ${r({name:"message",rows:5,cols:36})}
                                                         ${U({name:"botcheck"})}
                                                         <p align="left">
-                                                            ${n({name:"send"})}
+                                                            ${r({name:"send"})}
                                             </table>
                                         </fieldset>
                                     </form>`,pt=()=>`<font face="${A}" size="3">
@@ -264,14 +264,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     <font color="gray">\xA9 2024 ${b} | All rights reserved</font>
                     </table>
         </table>
-    </font>`,F=process.env.IS_VITE?"<!DOCTYPE html>":`<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    </font>`,F=process.env.IS_VITE==="true"?"<!DOCTYPE html>":`<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
     "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">`,W=t=>`${F}
 <html lang="en">
 <head>
     <meta http-equiv="Content-Security-Policy" content="${ot}">
     <title>${it}</title>
     <meta name="description" content="${T}" />
-    <meta name="keywords" content="${nt}" />
+    <meta name="keywords" content="${rt}" />
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="var(--color-window)" />
