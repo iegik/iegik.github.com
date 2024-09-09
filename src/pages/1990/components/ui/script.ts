@@ -9,10 +9,10 @@ export type ScriptProps = {
   async?: boolean;
   iife?: string;
   integrity?: string;
-  crossorigin?: string;
+  crossorigin?: 'use-credentials' | '';
 }
 
-export const Script = ({ srcDoc, src, nonce, async, prefix, postfix, iife, crossorigin, integrity }: ScriptProps) => {
+export const Script = ({ srcDoc, src, nonce, async, prefix, postfix, iife, crossorigin = '', integrity }: ScriptProps) => {
   const body = `${prefix || ''}${srcDoc ? readFileSync(srcDoc) : ''}${postfix || ''}`
-  return `<script ${async ? 'async' : ''} crossorigin="${crossorigin}" integrity="${integrity}" nonce="${nonce}" ${src ? `src="${src}"` : ''}>${iife ? `(${body})(${iife}})` : body}</script>`;
+  return `<script ${async ? 'async' : ''} crossorigin="${crossorigin}" ${integrity ? `integrity="${integrity}"` : ''} nonce="${nonce}" ${src ? `src="${src}"` : ''}>${iife ? `(${body})(${iife}})` : body}</script>`;
 }

@@ -1,6 +1,6 @@
 export async function imageToColorfulASCII(imageUrl: string) {
   const img = new Image();
-  img.crossOrigin = 'Anonymous'; // To avoid CORS issues
+  img.crossOrigin = ''; // To avoid CORS issues
   img.src = imageUrl;
 
   await img.decode();
