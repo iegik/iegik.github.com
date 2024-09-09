@@ -17,9 +17,6 @@ NODE_ENV?=development
 IS_DEV:=$(shell if [ "$(NODE_ENV)" == "development" ]; then echo true; else echo false; fi)
 IS_VITE:=$(or $(IS_DEV),false)
 
-test:
-	@IS_VITE=$(IS_VITE) ./test.sh
-
 JS_CONFIG=\
 --bundle \
 --platform=browser \
