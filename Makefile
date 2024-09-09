@@ -11,7 +11,11 @@ export USAGE
 help: ##		Show this help.
 	@echo "$$USAGE" && fgrep -h "##" $(firstword $(MAKEFILE_LIST)) | sed 's/\([^ ]*\).*##\(.*\)/  \1\t\2/g' | fgrep -v 'fgrep'
 
-PORT:=3000
+PORT?=3000
+NODE_ENV?=development
+# IS_DEV:=$(subst "production",false,$(subst "development",true,"$(NODE_ENV)"))
+IS_DEV:=$(shell if [ "$(NODE_ENV)" == "development" ]; then echo true; else echo false; fi)
+IS_VITE:=$(or $(IS_DEV),false)
 
 JS_CONFIG=\
 --bundle \
@@ -51,7 +55,6 @@ templates_node:
 
 # Depricated due to difficulties with using browser native functions. Use esbuild instead.
 # TODO: Improve asset import in header.ts and icons.ts.
-
 DENO_CONFIG=\
 --import-map=import_map.json \
 --config=deno.json
@@ -161,9 +164,6 @@ check: ##		Check project
 
 # Entry point to start
 build: ttf2woff ttf2svg thumb jpg2png ascii png2webp sass compile eula privacy ##	Build project
-
-vite:
-	@IS_VITE=true make build
 
 clean: ##		Clean project
 	@grep -v node_modules .gitignore | awk '{print "rm -rf "$1}' | sh
