@@ -140,7 +140,7 @@ c:oOXXK0Oxlkk;.,;;;...O0OO;.
       <${r} class="${t} link" href="${i}" title="${n}" ref="${l}" ${/^http/.test(i)?'rel="noopener noreferrer"':""}>
         ${o?.join?.("")}
       </${r}>
-    `},h=X1;var D1=!1;var S=D1?()=>{}:(...e)=>{console.log(...e)};async function o1(e){let t=new Image;t.crossOrigin="Anonymous",t.src=e,await t.decode();let o=t.width,r=t.height,n=new OffscreenCanvas(o,r).getContext("2d");if(!n)return[];n.drawImage(t,0,0,o,r);let s=n.getImageData(0,0,o,r).data,l="\u2802\u2802\u2802\u2802\u2801\u2880\u2881\u2881\u288C\u288C\u2895\u2895\u2897\u2897\u289F\u289F\u28B7\u28B7\u28BF\u28BF",d=[],f=[];for(let c=0;c<r;c++){for(let u=0;u<o;u++){let v=(c*o+u)*4,M=s[v],j=s[v+1],O=s[v+2];if(s[v+3]===0)continue;let s1=(M+j+O)/3,R=Math.floor((1-s1/255)*10);d.push(l[R*2]+l[R*2+1]),f.push(`#${M.toString(16).padStart(2,"0")}${j.toString(16).padStart(2,"0")}${O.toString(16).padStart(2,"0")}`)}d[d.length-1]+=`
+    `},h=X1;var D1=!1;var S=D1?()=>{}:(...e)=>{console.log(...e)};async function o1(e){let t=new Image;t.crossOrigin="",t.src=e,await t.decode();let o=t.width,r=t.height,n=new OffscreenCanvas(o,r).getContext("2d");if(!n)return[];n.drawImage(t,0,0,o,r);let s=n.getImageData(0,0,o,r).data,l="\u2802\u2802\u2802\u2802\u2801\u2880\u2881\u2881\u288C\u288C\u2895\u2895\u2897\u2897\u289F\u289F\u28B7\u28B7\u28BF\u28BF",d=[],f=[];for(let c=0;c<r;c++){for(let u=0;u<o;u++){let v=(c*o+u)*4,M=s[v],j=s[v+1],O=s[v+2];if(s[v+3]===0)continue;let s1=(M+j+O)/3,R=Math.floor((1-s1/255)*10);d.push(l[R*2]+l[R*2+1]),f.push(`#${M.toString(16).padStart(2,"0")}${j.toString(16).padStart(2,"0")}${O.toString(16).padStart(2,"0")}`)}d[d.length-1]+=`
 `}return[d.map(c=>`%c${c}`).join(""),...f.map(c=>`background-color: ${c};`)]}var z1=r1(),V1=()=>(setTimeout(async()=>{if(typeof window>"u"||typeof document>"u")return;let e=await o1("images/artursjansons_32.jpg");S(...e)}),`
     <header class="header">
       <a href="#/home" class="header__avatar" alt="avatar">${B({itemprop:"photo",src:"/images/artursjansons.jpg",ratio:"1:1",sizes:"432,216,64",types:"jpg|png|webp",alt:z1})}</a>
@@ -205,7 +205,7 @@ c:oOXXK0Oxlkk;.,;;;...O0OO;.
             a.appendChild(r);
         })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
     </script>
-    <script nonce="${a}" src="https://browser.sentry-cdn.com/7.54.0/bundle.min.js" integrity="sha384-EmlJLN9Q0yu0/2UUCIYnEM88jpQ7xUhtNI2ZeXb/ci3cwoAoIQl350N4PQPlMbP5" crossorigin="anonymous"></script>
+    <script nonce="${a}" src="https://browser.sentry-cdn.com/7.54.0/bundle.min.js" integrity="sha384-EmlJLN9Q0yu0/2UUCIYnEM88jpQ7xUhtNI2ZeXb/ci3cwoAoIQl350N4PQPlMbP5" crossorigin=""></script>
     <script nonce="${a}">
     document.addEventListener('DOMContentLoaded', () => {
       typeof Sentry !== 'undefined' && Sentry.init({
