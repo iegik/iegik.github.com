@@ -501,7 +501,7 @@ const Layout = (content: string) => `${DOCTYPE}
         dsn: "https://179618f1f04d4d9dac08acc750d5736c@o171820.ingest.sentry.io/1250596",
         release: `1250596@${release}`,
         environment: "production",
-        integrity: "sha384-EmlJLN9Q0yu0/2UUCIYnEM88jpQ7xUhtNI2ZeXb/ci3cwoAoIQl350N4PQPlMbP5",
+        integrity: 'sha384-6yzL+SsRi1vefLAU9+yqKb0YIeAiJ6GsCob5LxN8Af29Ze1Q5iCg0Ur2fwFroEqa'
     })}
 `;
 

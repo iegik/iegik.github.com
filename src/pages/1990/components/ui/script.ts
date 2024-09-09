@@ -14,5 +14,5 @@ export type ScriptProps = {
 
 export const Script = ({ srcDoc, src, nonce, async, prefix, postfix, iife, crossorigin = '', integrity }: ScriptProps) => {
   const body = `${prefix || ''}${srcDoc ? readFileSync(srcDoc) : ''}${postfix || ''}`
-  return `<script ${async ? 'async' : ''} crossorigin="${crossorigin}" ${integrity ? `integrity="${integrity}"` : ''} nonce="${nonce}" ${src ? `src="${src}"` : ''}>${iife ? `(${body})(${iife}})` : body}</script>`;
+  return `<script ${async ? 'async' : ''} crossorigin="${crossorigin}" ${integrity ? `integrity="${integrity}"` : ''} nonce="${nonce}" ${src ? `src="${src}"` : ''}>${iife ? `(${body})(${iife})` : body}</script>`;
 }
