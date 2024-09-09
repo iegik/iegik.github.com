@@ -4,8 +4,11 @@ import { writeFileSync, readFileSync, release, nonce } from '@app/utils';
 import { type LinkProps, Link } from '@app/pages/1990/components/ui/link';
 import { Image } from '@app/pages/1990/components/ui/image';
 import { Code } from '@app/pages/1990/components/ui/code';
-import { GTM } from '@app/pages/1990/components/GTM';
+import { GTMHead, GTMBody } from '@app/pages/1990/components/GTM';
 import { Script } from '@app/pages/1990/components/ui/script';
+import { GTag } from '@app/pages/1990/components/GTag';
+import { HotJar } from '@app/pages/1990/components/HotJar';
+import { Sentry } from '@app/pages/1990/components/Sentry';
 
 const style = readFileSync('./src/pages/1990/styles.css');
 const csp = Object.entries({
@@ -45,6 +48,11 @@ const csp = Object.entries({
   'object-src': [`'none'`],
   'base-uri': [`'none'`],
   'frame-src': [`https://vars.hotjar.com/`],
+  'script-src-elem': [
+    `'nonce-${nonce}'`,
+    `'self'`,
+    // `'unsafe-inline'`
+  ]
 }).reduce((acc, [key, val]) => `${acc};${key} ${val.join(' ')}`, `default-src 'self'`);
 
 const fullName = 'Art&#363;rs Jansons'
@@ -471,36 +479,30 @@ const Layout = (content: string) => `${DOCTYPE}
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="var(--color-window)" />
+    ${/* Toggled DOS Theme */''}
     ${/*<link rel="stylesheet" nonce="${nonce}" href="/1990/styles.min.css" />*/''}
     <style nonce="${nonce}" id="/1990/styles.min.css">${style}</style>
+    ${/* Google Tag Manager */''}
+    ${GTMHead({ nonce, gtmId: 'GTM-MBG56M'})}
+    ${/* Hotjar Tracking Code */''}
+    ${HotJar({ nonce, hjid: 2660383, hjsv: 6 })}
 </head>
 <body>
-    ${content}
     ${/* Google Analytics */''}
-    ${GTM({ nonce, gtmId: 'G-5ZY8Y6X2C4'})}
+    ${GTag({ nonce, gtmId: 'G-5ZY8Y6X2C4'})}
+    ${/* Google Tag Manager */''}
+    ${GTMBody({ nonce, gtmId: 'GTM-MBG56M'})}
+    ${content}
     ${/* DOS Theme Code for https://iegik.github.io */''}
     ${Script({ srcDoc: './src/lib/dosTheme.js', nonce, prefix: `const nonce = '${nonce}';\n` })}
-    <!-- Hotjar Tracking Code for https://iegik.github.io -->
-    <script nonce="${nonce}">
-        (function(h,o,t,j,a,r){
-            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-            h._hjSettings={hjid:2660383,hjsv:6};
-            a=o.getElementsByTagName('head')[0];
-            r=o.createElement('script');r.async=1;
-            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-    </script>
-    <script nonce="${nonce}" src="https://browser.sentry-cdn.com/7.54.0/bundle.min.js" integrity="sha384-EmlJLN9Q0yu0/2UUCIYnEM88jpQ7xUhtNI2ZeXb/ci3cwoAoIQl350N4PQPlMbP5" crossorigin="anonymous"></script>
-    <script nonce="${nonce}">
-    document.addEventListener('DOMContentLoaded', () => {
-      typeof Sentry !== 'undefined' && Sentry.init({
+    ${Sentry({
+        nonce,
+        projectId: "179618f1f04d4d9dac08acc750d5736c",
         dsn: "https://179618f1f04d4d9dac08acc750d5736c@o171820.ingest.sentry.io/1250596",
-        release: "1250596@${release}",
+        release: `1250596@${release}`,
         environment: "production",
-      });
-    });
-    </script>
+        integrity: "sha384-EmlJLN9Q0yu0/2UUCIYnEM88jpQ7xUhtNI2ZeXb/ci3cwoAoIQl350N4PQPlMbP5",
+    })}
 `;
 
 writeFileSync('public/index.html', `${DOCTYPE}
