@@ -466,7 +466,7 @@ const MobileView = () => `<font face="${fontFamily}" size="3">
 
 // https://www.w3.org/TR/xhtml-basic/
 
-const DOCTYPE = process.env.IS_VITE ? `<!DOCTYPE html>` : `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+const DOCTYPE = process.env.IS_VITE === 'true' ? `<!DOCTYPE html>` : `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
     "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">`
 
 const Layout = (content: string) => `${DOCTYPE}

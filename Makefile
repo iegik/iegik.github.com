@@ -47,10 +47,10 @@ HTML_CONFIG=\
 --loader:.graphql=text
 
 templates_node:
-	 @IS_VITE=$(IS_VITE) npx esbuild src/templates/seo.html.ts --outdir=public/next/ ${HTML_CONFIG} && node --inspect public/next/seo.html.js && \
-	 IS_VITE=$(IS_VITE) npx esbuild src/templates/anonymous.html.ts --outdir=public/next/ ${HTML_CONFIG} && node --inspect public/next/anonymous.html.js && \
-	 IS_VITE=$(IS_VITE) npx esbuild src/templates/ui.html.ts --outdir=public/next/ ${HTML_CONFIG} && node --inspect public/next/ui.html.js && \
-	 IS_VITE=$(IS_VITE) npx esbuild src/templates/1990.html.ts --outdir=public/1990/ ${HTML_CONFIG} && node --inspect public/1990/1990.html.js && \
+	 @IS_VITE=$(IS_VITE) npx esbuild src/templates/seo.html.ts --outdir=public/next/ ${HTML_CONFIG} && IS_VITE=$(IS_VITE) node --inspect public/next/seo.html.js && \
+	 IS_VITE=$(IS_VITE) npx esbuild src/templates/anonymous.html.ts --outdir=public/next/ ${HTML_CONFIG} && IS_VITE=$(IS_VITE) node --inspect public/next/anonymous.html.js && \
+	 IS_VITE=$(IS_VITE) npx esbuild src/templates/ui.html.ts --outdir=public/next/ ${HTML_CONFIG} && IS_VITE=$(IS_VITE) node --inspect public/next/ui.html.js && \
+	 IS_VITE=$(IS_VITE) npx esbuild src/templates/1990.html.ts --outdir=public/1990/ ${HTML_CONFIG} && IS_VITE=$(IS_VITE) node --inspect public/1990/1990.html.js && \
 	echo -e "\033[2K\r\033[0;32m✓ Task $@ completed\033[0m\n"
 
 # Depricated due to difficulties with using browser native functions. Use esbuild instead.
@@ -165,8 +165,9 @@ check: ##		Check project
 # Entry point to start
 build: ttf2woff ttf2svg thumb jpg2png ascii png2webp sass compile eula privacy ##	Build project
 
-clean: ##		Clean project
-	@grep -v node_modules .gitignore | awk '{print "rm -rf "$1}' | sh
+# WARN: This may accidently delete some files
+#clean: ##		Clean project
+#	@grep -v node_modules .gitignore | awk '{print "rm -rf "$1}' | sh
 
 # publish:
 # 	@git subtree add --prefix public . \
