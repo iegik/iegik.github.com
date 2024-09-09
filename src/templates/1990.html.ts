@@ -4,6 +4,8 @@ import { writeFileSync, readFileSync, release, nonce } from '@app/utils';
 import { type LinkProps, Link } from '@app/pages/1990/components/ui/link';
 import { Image } from '@app/pages/1990/components/ui/image';
 import { Code } from '@app/pages/1990/components/ui/code';
+import { GTM } from '@app/pages/1990/components/GTM';
+import { Script } from '@app/pages/1990/components/ui/script';
 
 const style = readFileSync('./src/pages/1990/styles.css');
 const csp = Object.entries({
@@ -475,77 +477,9 @@ const Layout = (content: string) => `${DOCTYPE}
 <body>
     ${content}
     ${/* Google Analytics */''}
-    <script async nonce="${nonce}" src="https://www.googletagmanager.com/gtag/js?id=G-5ZY8Y6X2C4"></script>
-    <script nonce="${nonce}">
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-5ZY8Y6X2C4');
-    </script>
-    <!-- DOS Theme Code for https://iegik.github.io -->
-    <script nonce="${nonce}">
-        (function (D, O, S, theme = "", _) {
-        _ = document.getElementById(S);
-        theme = _.innerHTML;
-        O.onclick = remove;
-        function add() {
-            O.innerText = "EXIT";
-            O.onclick = remove;
-            _ = D.createElement("style");
-            _.id = S;
-            _.innerHTML = theme;
-            _.setAttribute("nonce", "${nonce}");
-            D.head.appendChild(_);
-            [].forEach.call(
-                document.getElementsByTagName("img"),
-                toggleAttr("src", "data-src")
-            );
-        }
-        const reDataAttr = /^data-/;
-        [].forEach.call(
-            document.getElementsByTagName("img"),
-            toggleAttr("src", "data-src")
-        );
-        function remove() {
-            O.innerText = "DOS";
-            O.onclick = add;
-            _.remove();
-            [].forEach.call(
-            document.getElementsByTagName("img"),
-            toggleAttr("data-src", "src")
-            );
-        }
-        function toggleAttr(a, b) {
-            return function (el) {
-                setAttribute(el, b, getAttribute(el, a) || "");
-                removeAttribute(el, a);
-            };
-        }
-        function getAttribute(el, attr) {
-            if (reDataAttr.test(attr)) {
-                return el.dataset[attr.replace("data-", "")];
-            } else {
-                return el.getAttribute(attr);
-            }
-        }
-        function setAttribute(el, attr, value) {
-            if (reDataAttr.test(attr)) {
-                el.dataset[attr.replace("data-", "")] = value;
-            } else {
-                el.setAttribute(attr, value);
-            }
-        }
-        function removeAttribute(el, attr) {
-            if (reDataAttr.test(attr)) {
-                delete el.dataset[attr.replace("data-", "")];
-            } else {
-                el.removeAttribute(attr);
-            }
-        }
-        // @ts-ignore
-        })(document, toggleDosStyle, "/1990/styles.min.css");
-    </script>
+    ${GTM({ nonce, gtmId: 'G-5ZY8Y6X2C4'})}
+    ${/* DOS Theme Code for https://iegik.github.io */''}
+    ${Script({ srcDoc: './src/lib/dosTheme.js.js', nonce, prefix: `const nonce = '${nonce}';\n` })}
     <!-- Hotjar Tracking Code for https://iegik.github.io -->
     <script nonce="${nonce}">
         (function(h,o,t,j,a,r){
