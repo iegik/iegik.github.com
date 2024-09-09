@@ -17,6 +17,9 @@ NODE_ENV?=development
 IS_DEV:=$(shell if [ "$(NODE_ENV)" == "development" ]; then echo true; else echo false; fi)
 IS_VITE:=$(or $(IS_DEV),false)
 
+test:
+	@IS_VITE=$(IS_VITE) ./test.sh
+
 JS_CONFIG=\
 --bundle \
 --platform=browser \
@@ -47,10 +50,10 @@ HTML_CONFIG=\
 --loader:.graphql=text
 
 templates_node:
-	@npx esbuild src/templates/seo.html.ts --outdir=public/next/ ${HTML_CONFIG} && IS_VITE=$(IS_VITE) node --inspect public/next/seo.html.js && \
-	npx esbuild src/templates/anonymous.html.ts --outdir=public/next/ ${HTML_CONFIG} && IS_VITE=$(IS_VITE) node --inspect public/next/anonymous.html.js && \
-	npx esbuild src/templates/ui.html.ts --outdir=public/next/ ${HTML_CONFIG} && IS_VITE=$(IS_VITE) node --inspect public/next/ui.html.js && \
-	npx esbuild src/templates/1990.html.ts --outdir=public/1990/ ${HTML_CONFIG} && IS_VITE=$(IS_VITE) node --inspect public/1990/1990.html.js && \
+	 @IS_VITE=$(IS_VITE) npx esbuild src/templates/seo.html.ts --outdir=public/next/ ${HTML_CONFIG} && node --inspect public/next/seo.html.js && \
+	 IS_VITE=$(IS_VITE) npx esbuild src/templates/anonymous.html.ts --outdir=public/next/ ${HTML_CONFIG} && node --inspect public/next/anonymous.html.js && \
+	 IS_VITE=$(IS_VITE) npx esbuild src/templates/ui.html.ts --outdir=public/next/ ${HTML_CONFIG} && node --inspect public/next/ui.html.js && \
+	 IS_VITE=$(IS_VITE) npx esbuild src/templates/1990.html.ts --outdir=public/1990/ ${HTML_CONFIG} && node --inspect public/1990/1990.html.js && \
 	echo -e "\033[2K\r\033[0;32m✓ Task $@ completed\033[0m\n"
 
 # Depricated due to difficulties with using browser native functions. Use esbuild instead.
