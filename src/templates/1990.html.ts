@@ -201,8 +201,8 @@ const l10n = (slug: string) => dict[slug] || slug;
 
 const withLabel = () => (Field: (x: FieldProps & FormFieldProps & FieldL10nProps ) => string) => (props: FieldProps) => {
     const { name } = props
-    const { kind, type: fieldType, data, value = '', required } = fields[name] || {}
-    const fieldProps:FieldProps & FormFieldProps & FieldL10nProps = { ...props, data, value, required, l10n }
+    const { kind, type: fieldType } = fields[name] || {}
+    const fieldProps:FieldProps & FormFieldProps & FieldL10nProps = { ...props, ...(fields[name] || {}), l10n }
 
     if (fieldType === 'hidden') return Field(fieldProps)
     if (fieldType === 'submit') return `<input type="submit" name="${name}" value="${l10n(name)}" />`
