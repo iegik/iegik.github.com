@@ -52,7 +52,9 @@ const csp = Object.entries({
   'script-src-elem': [
     `'nonce-${nonce}'`,
     `'self'`,
-    'https://script.hotjar.com/modules.8da33a8f469c3b5ffcec.js'
+    'https://script.hotjar.com/modules.8da33a8f469c3b5ffcec.js',
+    'https://script.hotjar.com/browser-perf.8417c6bba72228fa2e29.js',
+    'https://script.hotjar.com/sentry.58c81e3e25532810f6fd.js'
     // `'unsafe-inline'`
   ]
 }).reduce((acc, [key, val]) => `${acc};${key} ${val.join(' ')}`, `default-src 'self'`);
