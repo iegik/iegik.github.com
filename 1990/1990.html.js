@@ -34,7 +34,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         1990 |
                         
                         <a href="/next/">BETA</a> |
-                        <a id="toggleDosStyle" href="#" bgcolor="red">DOS</a>
+                        <a id="toggleDosStyle" href="#exit" bgcolor="red">DOS</a>
                     </p>`,H=()=>`<font color="orange">HTML</font>,
                                         <font color="blue">CSS</font>,
                                         <font color="#F0DB4F">JavaScript</font>,
