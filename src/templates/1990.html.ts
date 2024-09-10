@@ -72,7 +72,7 @@ const TopNav = () => `<p>
                         <a href="/2010/">2010</a> |
                         <a href="/2020/">2020</a> |*/''}
                         <a href="/next/">BETA</a> |
-                        <a id="toggleDosStyle" href="#" bgcolor="red">DOS</a>
+                        <a id="toggleDosStyle" href="#exit" bgcolor="red">DOS</a>
                     </p>`
 
 const TechStack = () => `<font color="orange">HTML</font>,

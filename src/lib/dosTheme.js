@@ -4,6 +4,7 @@
   O.onclick = remove;
   function add() {
       O.innerText = "EXIT";
+      O.href = "#exit"
       O.onclick = remove;
       _ = D.createElement("style");
       _.id = S;
@@ -22,6 +23,7 @@
   );
   function remove() {
       O.innerText = "DOS";
+      O.href = "#dos"
       O.onclick = add;
       _.remove();
       [].forEach.call(
