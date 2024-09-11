@@ -20,7 +20,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                                           <tr>
                                                               <td>
                                                                   <textarea id="${m}" name="${t}" rows="${e}" cols="${o}" ${h}>${c}</textarea>
-                                                      </table>`:`<input type="${n||"text"}" id="${m}" name="${t}" value="${c}" ${h} />`};var ot=l("./src/pages/1990/styles.css"),it=Object.entries({"script-src":[`'nonce-${r}'`,"'strict-dynamic'","https://www.google-analytics.com","https://ssl.google-analytics.com","https://static.hotjar.com","https://js.sentry-cdn.com"],"img-src":["'self'","https://www.google-analytics.com","https://avatars.githubusercontent.com/","https://www.googletagmanager.com/"],"connect-src":["'self'","https://www.google-analytics.com","https://region1.google-analytics.com","https://in.hotjar.com","https://static.hotjar.com","https://content.hotjar.io","https://github.com/login/oauth/access_token","https://api.github.com/graphql","https://api.github.com/user","https://qilg4ch66b3vpgtevzccb5meum0ttfcl.lambda-url.eu-north-1.on.aws/","https://o171820.ingest.sentry.io/"],"style-src":[`'nonce-${r}'`,"https://static.hotjar.com"],"object-src":["'none'"],"base-uri":["'none'"],"frame-src":["https://vars.hotjar.com/"],"script-src-elem":[`'nonce-${r}'`,"'self'","https://script.hotjar.com/modules.8da33a8f469c3b5ffcec.js","https://script.hotjar.com/browser-perf.8417c6bba72228fa2e29.js","https://script.hotjar.com/sentry.58c81e3e25532810f6fd.js"]}).reduce((t,[e,o])=>`${t};${e} ${o.join(" ")}`,"default-src 'self'"),$="Art&#363;rs Jansons",S="Full-stack Developer",F="10+ year exp.",rt=`${$} | ${S} [${F}]`,T="Mobile / Web Developer &amp; JavaScript Consultant",nt="HTML, CSS, JavaScript, TypeScript, React, React Native, PHP, MySQL, Bash, Makefile, Docker, GraphQL, Next, Nest",q=()=>`<p>
+                                                      </table>`:`<input type="${n||"text"}" id="${m}" name="${t}" value="${c}" ${h} />`};var ot=l("./src/pages/1990/styles.css"),it=Object.entries({"script-src":[`'nonce-${r}'`,"'strict-dynamic'","https://www.google-analytics.com","https://ssl.google-analytics.com","https://static.hotjar.com","https://js.sentry-cdn.com"],"img-src":["'self'","https://www.google-analytics.com","https://avatars.githubusercontent.com/","https://www.googletagmanager.com/"],"connect-src":["'self'","https://www.google-analytics.com","https://region1.google-analytics.com","https://in.hotjar.com","wss://ws.hotjar.com","https://static.hotjar.com","https://content.hotjar.io","https://github.com/login/oauth/access_token","https://api.github.com/graphql","https://api.github.com/user","https://qilg4ch66b3vpgtevzccb5meum0ttfcl.lambda-url.eu-north-1.on.aws/","https://o171820.ingest.sentry.io/"],"style-src":[`'nonce-${r}'`,"https://static.hotjar.com"],"object-src":["'none'"],"base-uri":["'none'"],"frame-src":["https://vars.hotjar.com/"],"script-src-elem":[`'nonce-${r}'`,"'self'","https://script.hotjar.com/modules.8da33a8f469c3b5ffcec.js","https://script.hotjar.com/browser-perf.8417c6bba72228fa2e29.js","https://script.hotjar.com/sentry.58c81e3e25532810f6fd.js"]}).reduce((t,[e,o])=>`${t};${e} ${o.join(" ")}`,"default-src 'self'"),$="Art&#363;rs Jansons",S="Full-stack Developer",F="10+ year exp.",rt=`${$} | ${S} [${F}]`,j="Mobile / Web Developer &amp; JavaScript Consultant",nt="HTML, CSS, JavaScript, TypeScript, React, React Native, PHP, MySQL, Bash, Makefile, Docker, GraphQL, Next, Nest",q=()=>`<p>
                         1990 |
                         
                         <a href="/next/">BETA</a> |
@@ -98,7 +98,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <td width="80%" valign="bottom">
                                 <p>${$}
                                 <h1><font size="5"><b>${S}</b></font><font size="2">[${F}]</font></h1>
-                                <p><em><font color="gray">${T}</font></em></p>
+                                <p><em><font color="gray">${j}</font></em></p>
                                 <p>
                                     <b>Tech Stack:</b>
                                         ${A()}
@@ -185,7 +185,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     <font size="5"><b>${S}</b></font>
                                     <br>
                                     <font size="2">[${F}]</font></h1>
-                                <p><em>${T}</em></p>
+                                <p><em>${j}</em></p>
                                 <p>
                                     <b>Tech Stack:</b>
                                         <br>
@@ -254,13 +254,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     <font color="gray">\xA9 2024 ${$} | All rights reserved</font>
                     </table>
         </table>
-    </font>`,j=process.env.IS_VITE==="true"?"<!DOCTYPE html>":`<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
-    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">`,Y=t=>`${j}
+    </font>`,T=process.env.IS_VITE==="true"?"<!DOCTYPE html>":`<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">`,Y=t=>`${T}
 <html lang="en">
 <head>
     <meta http-equiv="Content-Security-Policy" content="${it}">
     <title>${rt}</title>
-    <meta name="description" content="${T}" />
+    <meta name="description" content="${j}" />
     <meta name="keywords" content="${nt}" />
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -283,7 +283,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     ${a({srcDoc:"./src/lib/dosTheme.js",nonce:r,prefix:`const nonce = '${r}';
 `})}
     ${I({nonce:r,projectId:"179618f1f04d4d9dac08acc750d5736c",dsn:"https://179618f1f04d4d9dac08acc750d5736c@o171820.ingest.sentry.io/1250596",release:`1250596@${x}`,environment:"production",integrity:"sha384-6yzL+SsRi1vefLAU9+yqKb0YIeAiJ6GsCob5LxN8Af29Ze1Q5iCg0Ur2fwFroEqa"})}
-`;f("public/index.html",`${j}
+`;f("public/index.html",`${T}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -307,7 +307,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                       </table>
                       <font size="1" color="lightgray">301 Redirect</font><br>
                       <font size="1" color="gray">You will be redirected to the new page shortly. If not, click <a id="url" href="1990">here</a>.</font>
-`);f("public/1990/index.html",`${j}
+`);f("public/1990/index.html",`${T}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
