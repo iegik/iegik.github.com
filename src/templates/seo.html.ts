@@ -3,51 +3,18 @@
 import { writeFileSync, readFileSync, release, nonce } from '@app/utils';
 import Sprite from '@app/components/sprite/sprite';
 import Home from '@app/pages/home/home'
+import { CSP } from '@app/pages/1990/components/CSP';
+import { GTag } from '@app/pages/1990/components/GTag';
+import { GTMBody, GTMHead } from '@app/pages/1990/components/GTM';
+import { Sentry } from '@app/pages/1990/components/Sentry';
 const style = readFileSync('./public/next/styles.min.css');
-const csp = Object.entries({
-  'script-src': [
-    `'nonce-${nonce}'`,
-    `'strict-dynamic'`,
-    `https://www.google-analytics.com`,
-    `https://ssl.google-analytics.com`,
-    `https://static.hotjar.com`,
-    `https://js.sentry-cdn.com`,
-    `'unsafe-inline'`, // (ignored by browsers supporting nonces/hashes) to be backward compatible with older browsers.
-  ],
-  'img-src': [
-    `'self'`,
-    `https://www.google-analytics.com`,
-    `https://avatars.githubusercontent.com/`,
-    `https://www.googletagmanager.com/`,
-  ],
-  'connect-src': [
-    `'self'`,
-    `https://www.google-analytics.com`,
-    `https://region1.google-analytics.com`,
-    `https://in.hotjar.com`,
-    `https://static.hotjar.com`,
-    `https://content.hotjar.io`,
-    `https://github.com/login/oauth/access_token`,
-    `https://api.github.com/graphql`,
-    `https://api.github.com/user`,
-    `https://qilg4ch66b3vpgtevzccb5meum0ttfcl.lambda-url.eu-north-1.on.aws/`,
-    `https://o171820.ingest.sentry.io/`,
-  ],
-  'style-src': [
-    `'nonce-${nonce}'`,
-    `https://static.hotjar.com`,
-  ],
-  'object-src': [`'none'`],
-  'base-uri': [`'none'`],
-  'frame-src': [`https://vars.hotjar.com/`],
-}).reduce((acc, [key, val]) => `${acc};${key} ${val.join(' ')}`, `default-src 'self'`);
 
 const title = 'Artūrs Jansons :: Web Developer';
 const description = 'Experienced web developer with a passion for innovation, automation and optimization'
 const html = `<!DOCTYPE html>
 <html lang="en" manifest="manifest.appcache">
   <head>
-    <meta http-equiv="Content-Security-Policy" content="${csp}">
+    ${CSP({ nonce })}
     <link rel="preload" as="font" href="/fonts/AlinaScript.woff" crossorigin>
     <title>${title}</title>
     <meta name="description" content="${description}" />
@@ -55,42 +22,26 @@ const html = `<!DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="var(--color-primary-light)" />
     <style nonce="${nonce}">${style}</style>
+    ${/* Google Tag Manager */''}
+    ${GTMHead({ nonce, gtmId: 'GTM-MBG56M'})}
   </head>
   <body>
     <noscript>This page uses JavaScript to play the slot machine game.</noscript>
+    ${/* Google Analytics */''}
+    ${GTag({ nonce, gtmId: 'G-5ZY8Y6X2C4'})}
+    ${/* Google Tag Manager */''}
+    ${GTMBody({ nonce, gtmId: 'GTM-MBG56M'})}
     ${Sprite()}
     <div id="root">${Home()}</div>
     ${/*<script defer nonce="${nonce}" src="lib/router.min.js"></script>*/''}
-    ${/* Google Analytics */''}
-    <script async nonce="${nonce}" src="https://www.googletagmanager.com/gtag/js?id=G-5ZY8Y6X2C4"></script>
-    <script nonce="${nonce}">
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-5ZY8Y6X2C4');
-    </script>
-    <!-- Hotjar Tracking Code for https://iegik.github.io -->
-    <script nonce="${nonce}">
-        (function(h,o,t,j,a,r){
-            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-            h._hjSettings={hjid:2660383,hjsv:6};
-            a=o.getElementsByTagName('head')[0];
-            r=o.createElement('script');r.async=1;
-            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-    </script>
-    <script nonce="${nonce}" src="https://browser.sentry-cdn.com/7.54.0/bundle.min.js" integrity="sha384-EmlJLN9Q0yu0/2UUCIYnEM88jpQ7xUhtNI2ZeXb/ci3cwoAoIQl350N4PQPlMbP5" crossorigin=""></script>
-    <script nonce="${nonce}">
-    document.addEventListener('DOMContentLoaded', () => {
-      typeof Sentry !== 'undefined' && Sentry.init({
-        dsn: "https://179618f1f04d4d9dac08acc750d5736c@o171820.ingest.sentry.io/1250596",
-        release: "1250596@${release}",
-        environment: "production",
-      });
-    });
-    </script>
+    ${Sentry({
+      nonce,
+      projectId: "179618f1f04d4d9dac08acc750d5736c",
+      dsn: "https://179618f1f04d4d9dac08acc750d5736c@o171820.ingest.sentry.io/1250596",
+      release: `1250596@${release}`,
+      environment: "production",
+      integrity: 'sha384-6yzL+SsRi1vefLAU9+yqKb0YIeAiJ6GsCob5LxN8Af29Ze1Q5iCg0Ur2fwFroEqa'
+    })}
   </body>
 </html>
 `;
