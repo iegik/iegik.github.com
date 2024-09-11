@@ -33,6 +33,7 @@ const csp = Object.entries({
     `https://www.google-analytics.com`,
     `https://region1.google-analytics.com`,
     `https://in.hotjar.com`,
+    `wss://ws.hotjar.com`,
     `https://static.hotjar.com`,
     `https://content.hotjar.io`,
     `https://github.com/login/oauth/access_token`,
