@@ -7,7 +7,7 @@ import { Code } from '@app/pages/1990/components/ui/code';
 import { GTMHead, GTMBody } from '@app/pages/1990/components/GTM';
 import { Script } from '@app/pages/1990/components/ui/script';
 import { GTag } from '@app/pages/1990/components/GTag';
-import { HotJar } from '@app/pages/1990/components/HotJar';
+// import { HotJar } from '@app/pages/1990/components/HotJar';
 import { Sentry } from '@app/pages/1990/components/Sentry';
 import { Field, FieldL10nProps, FieldProps, FormFieldProps } from '@app/pages/1990/components/ui/field';
 
@@ -462,8 +462,8 @@ const Layout = (content: string) => `${DOCTYPE}
     <style nonce="${nonce}" id="/1990/styles.min.css">${style}</style>
     ${/* Google Tag Manager */''}
     ${GTMHead({ nonce, gtmId: 'GTM-MBG56M'})}
-    ${/* Hotjar Tracking Code */''}
-    ${HotJar({ nonce, hjid: 2660383, hjsv: 6 })}
+    ${/* Hotjar Tracking Code (removed due install from GTM) */''}
+    ${/* HotJar({ nonce, hjid: 2660383, hjsv: 6 }) */''}
 </head>
 <body>
     ${/* Google Analytics */''}
