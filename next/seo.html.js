@@ -46,12 +46,12 @@ c:oOXXK0Oxlkk;.,;;;...O0OO;.
   <path d="M23.4888889,20.543316 C21.4404656,18.4187374 19.0750303,15.6666667 16.4832014,15.6666667 C13.8721947,15.6666667 11.7555556,17.6366138 11.7555556,20.0666667 C11.7555556,22.4967196 13.8721947,24.4666667 16.4832014,24.4666667 C18.8347252,24.4666667 19.9845474,23.0125628 20.6429148,22.312473" stroke-linecap="round"></path>
   <path d="M22.5111111,19.5900174 C24.5595344,21.7145959 26.9249697,24.4666667 29.5167986,24.4666667 C32.1278053,24.4666667 34.2444444,22.4967196 34.2444444,20.0666667 C34.2444444,17.6366138 32.1278053,15.6666667 29.5167986,15.6666667 C27.1652748,15.6666667 26.0154526,17.1207706 25.3570852,17.8208603" stroke-linecap="round"></path>
   <path d="M45,22.7331459 C45,19.1499462 42.7950446,16.079593 39.6628004,14.7835315 C39.6774469,14.5246474 39.7003932,14.2674038 39.7003932,14.0035978 C39.7003932,6.82243304 33.8412885,1 26.611593,1 C21.3985635,1 16.9102123,4.03409627 14.8051788,8.41527616 C13.7828502,7.62878013 12.503719,7.15547161 11.1134367,7.15547161 C7.77825654,7.15547161 5.07450503,9.84159999 5.07450503,13.1544315 C5.07450503,13.7760488 5.16938207,14.3779791 5.3477444,14.9418479 C2.74863428,16.4787471 1,19.2867709 1,22.5105187 C1,27.3287502 4.89630545,31.2367856 9.72803666,31.31094 L36.3341301,31.3109406 C41.1201312,31.3406346 45,27.4870665 45,22.7331459 L45,22.7331459 Z" stroke-linejoin="round"></path>
-</svg>`;var K=`<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 174 33" stroke-width="1.8" fill="none" fill-rule="evenodd" stroke="currentColor">
+</svg>`;var _=`<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 174 33" stroke-width="1.8" fill="none" fill-rule="evenodd" stroke="currentColor">
   <path d="M23.4888889,20.543316 C21.4404656,18.4187374 19.0750303,15.6666667 16.4832014,15.6666667 C13.8721947,15.6666667 11.7555556,17.6366138 11.7555556,20.0666667 C11.7555556,22.4967196 13.8721947,24.4666667 16.4832014,24.4666667 C18.8347252,24.4666667 19.9845474,23.0125628 20.6429148,22.312473" stroke-linecap="round"></path>
   <path d="M22.5111111,19.5900174 C24.5595344,21.7145959 26.9249697,24.4666667 29.5167986,24.4666667 C32.1278053,24.4666667 34.2444444,22.4967196 34.2444444,20.0666667 C34.2444444,17.6366138 32.1278053,15.6666667 29.5167986,15.6666667 C27.1652748,15.6666667 26.0154526,17.1207706 25.3570852,17.8208603" stroke-linecap="round"></path>
   <path d="M45,22.7331459 C45,19.1499462 42.7950446,16.079593 39.6628004,14.7835315 C39.6774469,14.5246474 39.7003932,14.2674038 39.7003932,14.0035978 C39.7003932,6.82243304 33.8412885,1 26.611593,1 C21.3985635,1 16.9102123,4.03409627 14.8051788,8.41527616 C13.7828502,7.62878013 12.503719,7.15547161 11.1134367,7.15547161 C7.77825654,7.15547161 5.07450503,9.84159999 5.07450503,13.1544315 C5.07450503,13.7760488 5.16938207,14.3779791 5.3477444,14.9418479 C2.74863428,16.4787471 1,19.2867709 1,22.5105187 C1,27.3287502 4.89630545,31.2367856 9.72803666,31.31094 L36.3341301,31.3109406 C41.1201312,31.3406346 45,27.4870665 45,22.7331459 L45,22.7331459 Z" stroke-linejoin="round"></path>
   <text x="50" y="28" font="bold 30px sans-serif" stroke="none" fill="currentColor">JSFiddle</text>
-</svg>`;var _=`<svg viewBox="0 0 62 39" fill="currentColor" xmlns="https://www.w3.org/2000/svg" class="main-header-logo">
+</svg>`;var K=`<svg viewBox="0 0 62 39" fill="currentColor" xmlns="https://www.w3.org/2000/svg" class="main-header-logo">
   <path d="M33.25.055 2.147 19.635c-1.465.886-2.18 1.878-2.146 2.977v2.98c.035 1.1.768 2.075 2.2 2.926l15.393 8.885a.726.726 0 0 0 1.047-.373l3.456-8.352-7.33-4.15a1.316 1.316 0 0 1-.697-.976 1.345 1.345 0 0 1 .644-1.365l13.457-8.247L33.721.428a.324.324 0 0 0-.104-.36.31.31 0 0 0-.369-.013h.002Z"/>
   <path d="M58.8 10.962 43.618 1.758a.726.726 0 0 0-1.047.32l-3.56 8.352 7.225 4.31c.208.113.381.282.502.488a1.347 1.347 0 0 1 0 1.363c-.12.205-.293.375-.502.49l-13.56 7.98-5.76 13.407a.323.323 0 0 0 .131.515.31.31 0 0 0 .34-.09l9.948-6.011 3.927 5.64a.945.945 0 0 0 .785.425h9.425a.932.932 0 0 0 .832-.506.97.97 0 0 0-.047-.984l-6.388-9.79 12.933-7.82c1.466-.887 2.2-1.88 2.2-2.98V13.94c0-1.1-.734-2.092-2.2-2.98H58.8Z"/>
 </svg>
@@ -97,7 +97,7 @@ c:oOXXK0Oxlkk;.,;;;...O0OO;.
   <rect x="122" y="160" width="36" height="47" fill="#E5E5E5" fill-opacity="0.25"/>
   <rect x="140" y="160" width="18" height="47" fill="#E5E5E5" fill-opacity="0.5"/>
 </svg>
-`;var x={"linkedin-icon":P,"linkedin-logo":A,"github-icon":T,"github-logo":R,"stackoverflow-icon":X,"stackoverflow-logo":I,"jsfiddle-icon":F,"jsfiddle-logo":K,"codersrank-icon":_,"codersrank-logo":D,"slot-machine-icon":V};var H="https://www.w3.org/2000/svg",$=new Map,$1=()=>`
+`;var x={"linkedin-icon":P,"linkedin-logo":A,"github-icon":T,"github-logo":R,"stackoverflow-icon":X,"stackoverflow-logo":I,"jsfiddle-icon":F,"jsfiddle-logo":_,"codersrank-icon":K,"codersrank-logo":D,"slot-machine-icon":V};var H="https://www.w3.org/2000/svg",$=new Map,$1=()=>`
   <svg xmlns="${H}" display="none">
   ${Object.entries(x).map(([e,t])=>($.set(e,{viewBox:t.match(/viewBox="([^"]+)"/i)?.[1]}),t.replace(`xmlns="${H}"`,`id="sprite-${e}"`).replaceAll(/\bsvg\b/g,"symbol"))).join("")}
   </svg>
@@ -108,12 +108,12 @@ c:oOXXK0Oxlkk;.,;;;...O0OO;.
       ${M1({types:i,sizes:o,src:t})}
       <img src="${i.includes("webp")?t.replace(/\..*$/,".webp"):t}" width="${p}" height="${u}" alt="${n}" itemprop="${s}" />
     </picture>
-  `},B=S1;var E1=!1;var b=E1?()=>{}:(...e)=>{console.log(...e)};async function G(e){let t=new Image;t.crossOrigin="",t.src=e,await t.decode();let r=t.width,o=t.height,n=new OffscreenCanvas(r,o).getContext("2d");if(!n)return[];n.drawImage(t,0,0,r,o);let s=n.getImageData(0,0,r,o).data,c="\u2802\u2802\u2802\u2802\u2801\u2880\u2881\u2881\u288C\u288C\u2895\u2895\u2897\u2897\u289F\u289F\u28B7\u28B7\u28BF\u28BF",l=[],h=[];for(let p=0;p<o;p++){for(let u=0;u<r;u++){let w=(p*r+u)*4,S=s[w],E=s[w+1],j=s[w+2];if(s[w+3]===0)continue;let r1=(S+E+j)/3,O=Math.floor((1-r1/255)*10);l.push(c[O*2]+c[O*2+1]),h.push(`#${S.toString(16).padStart(2,"0")}${E.toString(16).padStart(2,"0")}${j.toString(16).padStart(2,"0")}`)}l[l.length-1]+=`
+  `},B=S1;var E1=process.env.NODE_ENV==="production";var b=E1?()=>{}:(...e)=>{console.log(...e)};async function G(e){let t=new Image;t.crossOrigin="",t.src=e,await t.decode();let r=t.width,o=t.height,n=new OffscreenCanvas(r,o).getContext("2d");if(!n)return[];n.drawImage(t,0,0,r,o);let s=n.getImageData(0,0,r,o).data,c="\u2802\u2802\u2802\u2802\u2801\u2880\u2881\u2881\u288C\u288C\u2895\u2895\u2897\u2897\u289F\u289F\u28B7\u28B7\u28BF\u28BF",l=[],h=[];for(let p=0;p<o;p++){for(let u=0;u<r;u++){let w=(p*r+u)*4,S=s[w],E=s[w+1],j=s[w+2];if(s[w+3]===0)continue;let r1=(S+E+j)/3,O=Math.floor((1-r1/255)*10);l.push(c[O*2]+c[O*2+1]),h.push(`#${S.toString(16).padStart(2,"0")}${E.toString(16).padStart(2,"0")}${j.toString(16).padStart(2,"0")}`)}l[l.length-1]+=`
 `}return[l.map(p=>`%c${p}`).join(""),...h.map(p=>`background-color: ${p};`)]}var O1=q(),Z1=()=>(setTimeout(async()=>{if(typeof window>"u"||typeof document>"u")return;let e=await G("images/artursjansons_32.jpg");b(...e)}),`
     <header class="header">
       <a href="#/home" class="header__avatar" alt="avatar">${B({itemprop:"photo",src:"/images/artursjansons.jpg",ratio:"1:1",sizes:"432,216,64",types:"jpg|png|webp",alt:O1})}</a>
     </header>
-  `),J=Z1;var I2="\u{1F34F},\u{1F330},\u{1F34B},\u{1F345},\u{1F346},\u{1F347},\u{1F353},\u{1F349},\u{1F350},\u{1F352},\u{1F351},\u{1F951}".split(","),{floor:F2,random:K2}=Math;var M=class{constructor(){this.id=null}toString(){let t=btoa(`${Math.ceil(Math.random()*1e13)+ +new Date}`).slice(10,18);return this.id=this.id||`ref-${t}`}get current(){return typeof window>"u"||typeof document>"u"?null:document.querySelector(`[ref=${this.id}]`)}},g=()=>new M;var T1=({className:e,name:t}={name:"unknown"})=>{let r=g();return setTimeout(()=>{if(typeof window>"u"||typeof document>"u")return;let o=document.getElementById(`sprite-${t}`)?.getAttribute("viewBox")||"0 0 0 0";r.current?.setAttribute("viewBox",o)}),`
+  `),J=Z1;var I2="\u{1F34F},\u{1F330},\u{1F34B},\u{1F345},\u{1F346},\u{1F347},\u{1F353},\u{1F349},\u{1F350},\u{1F352},\u{1F351},\u{1F951}".split(","),{floor:F2,random:_2}=Math;var M=class{constructor(){this.id=null}toString(){let t=btoa(`${Math.ceil(Math.random()*1e13)+ +new Date}`).slice(10,18);return this.id=this.id||`ref-${t}`}get current(){return typeof window>"u"||typeof document>"u"?null:document.querySelector(`[ref=${this.id}]`)}},g=()=>new M;var T1=({className:e,name:t}={name:"unknown"})=>{let r=g();return setTimeout(()=>{if(typeof window>"u"||typeof document>"u")return;let o=document.getElementById(`sprite-${t}`)?.getAttribute("viewBox")||"0 0 0 0";r.current?.setAttribute("viewBox",o)}),`
     <svg class="${e}" preserveAspectRatio="xMidYMid meet" viewBox="${$.get(t)?.viewBox||"0 0 0 0"}" ref="${r}">
       <use xlink:href="#sprite-${t}" />
     </svg>
@@ -158,17 +158,17 @@ c:oOXXK0Oxlkk;.,;;;...O0OO;.
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>`;var o1=({nonce:e,integrity:t,projectId:r,...o})=>`
     ${a({async:!0,nonce:e,src:"https://browser.sentry-cdn.com/8.29.0/bundle.tracing.min.js",integrity:t})}
     ${a({srcDoc:"./src/lib/sentry.js",nonce:e,iife:JSON.stringify(o)})}
-`;var K1=v("./public/next/styles.min.css"),_1="Art\u016Brs Jansons :: Web Developer",D1="Experienced web developer with a passion for innovation, automation and optimization",V1=`<!DOCTYPE html>
+`;var _1=v("./public/next/styles.min.css"),K1="Art\u016Brs Jansons :: Web Developer",D1="Experienced web developer with a passion for innovation, automation and optimization",V1=`<!DOCTYPE html>
 <html lang="en" manifest="manifest.appcache">
   <head>
     ${W({nonce:d})}
     <link rel="preload" as="font" href="/fonts/AlinaScript.woff" crossorigin>
-    <title>${_1}</title>
+    <title>${K1}</title>
     <meta name="description" content="${D1}" />
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="var(--color-primary-light)" />
-    <style nonce="${d}">${K1}</style>
+    <style nonce="${d}">${_1}</style>
     
     ${t1({nonce:d,gtmId:"GTM-MBG56M"})}
     ${a({srcDoc:"./src/lib/router.min.js",nonce:d})}
