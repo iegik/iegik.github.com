@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-"use strict";var i1=Object.create;var j=Object.defineProperty;var r1=Object.getOwnPropertyDescriptor;var n1=Object.getOwnPropertyNames;var s1=Object.getPrototypeOf,c1=Object.prototype.hasOwnProperty;var a1=(e,t)=>()=>(t||e((t={exports:{}}).exports,t),t.exports);var l1=(e,t,i,o)=>{if(t&&typeof t=="object"||typeof t=="function")for(let r of n1(t))!c1.call(e,r)&&r!==i&&j(e,r,{get:()=>t[r],enumerable:!(o=r1(t,r))||o.enumerable});return e};var p1=(e,t,i)=>(i=e!=null?i1(s1(e)):{},l1(t||!e||!e.__esModule?j(i,"default",{value:e,enumerable:!0}):i,e));var q=a1((E2,E1)=>{E1.exports=`0000OOO00KXXXKKXNNXKKKXXNNNX
+"use strict";var i1=Object.create;var Z=Object.defineProperty;var n1=Object.getOwnPropertyDescriptor;var s1=Object.getOwnPropertyNames;var c1=Object.getPrototypeOf,a1=Object.prototype.hasOwnProperty;var l1=(e,t)=>()=>(t||e((t={exports:{}}).exports,t),t.exports);var p1=(e,t,r,o)=>{if(t&&typeof t=="object"||typeof t=="function")for(let i of s1(t))!a1.call(e,i)&&i!==r&&Z(e,i,{get:()=>t[i],enumerable:!(o=n1(t,i))||o.enumerable});return e};var h1=(e,t,r)=>(r=e!=null?i1(c1(e)):{},p1(t||!e||!e.__esModule?Z(r,"default",{value:e,enumerable:!0}):r,e));var q=l1((j2,j1)=>{j1.exports=`0000OOO00KXXXKKXNNXKKKXXNNNX
 OOOOOOO000KKXKXNNNXKKXNNNNNN
 XXKXKKKKKKKKKKXXNXXXXNNXXXNX
 XKKKKXNXXKK0kodxkOKXXXXXXKXX
@@ -13,7 +13,7 @@ oooddxkkkkdlccodocok00000000
 .'.'':o0O0cxOc;,,,;:'.d0Kk;d
 c:oOXXK0Oxlkk;.,;;;...O0OO;.
 ;kXK0Okxxlxxk:.',,'..,xxkxx 
-`});var C=p1(require("fs")),L=(e,t)=>C.writeFileSync(e,t,{encoding:"utf8"}),v=e=>C.readFileSync(e,{encoding:"utf8"});var Z=new Date,N=`v3.1.0-${Z.toJSON()}`,d=btoa(`${Number(Z)}`).slice(10,18);var P=`<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 14 14" enable-background="new 0 0 240 240" x="0px" y="0px" xml:space="preserve" fill="currentColor">
+`});var C=h1(require("fs")),L=(e,t)=>C.writeFileSync(e,t,{encoding:"utf8"}),v=e=>C.readFileSync(e,{encoding:"utf8"});var N=new Date,y=`v3.1.0-${N.toJSON()}`,d=btoa(`${Number(N)}`).slice(10,18);var P=`<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 14 14" enable-background="new 0 0 240 240" x="0px" y="0px" xml:space="preserve" fill="currentColor">
   <title>LinkedIn icon</title>
   <path d="m12.95 0h-11.9c-0.6 0-1 0.4-1 1v12c0 0.6 0.5 1 1 1h11.9c0.6 0 1-0.4 1-1v-12c0-0.6-0.4-1-1-1zm-8.8 11.9h-2.1v-6.7h2.1v6.7zm-1-7.6c-0.7 0-1.2-0.5-1.2-1.2s0.5-1.2 1.2-1.2 1.2 0.5 1.2 1.2-0.6 1.2-1.2 1.2zm8.8 7.6h-2.1v-3.2c0-0.8 0-1.8-1.1-1.8s-1.2 0.8-1.2 1.7v3.3h-2.1v-6.7h2v0.9c0.4-0.7 1.2-1.1 2-1.1 2.1 0 2.5 1.4 2.5 3.2v3.7z"></path>
 </svg>
@@ -37,12 +37,12 @@ c:oOXXK0Oxlkk;.,;;;...O0OO;.
   <polygon points="88 80 99 80 99 124 0 124 0 80 11 80 11 113 88 113"/>
   <path fill-rule="nonzero" d="M22.9878906,76.73 L77.0128906,88.085 L79.2838906,77.285 L25.2588906,65.925 L22.9878906,76.73 Z M30.1368906,50.861 L80.1828906,74.169 L84.8448906,64.16 L34.7978906,40.852 L30.1368906,50.861 Z M43.9848906,26.308 L86.4128906,61.639 L93.4788906,53.154 L51.0508906,17.824 L43.9848906,26.308 Z M71.3718906,0.192 L62.5118906,6.782 L95.4598906,51.082 L104.319891,44.493 L71.3718906,0.192 Z M22,102 L77,102 L77,91 L22,91 L22,102 Z"/>
 </svg>
-`;var F=`<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 622 124" fill="currentColor" fill-rule="evenodd">
+`;var I=`<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 622 124" fill="currentColor" fill-rule="evenodd">
   <path fill-rule="nonzero" d="M142.7,76.742 L135.526,76.107 C129.895,75.654 127.716,73.383 127.716,69.568 C127.716,65.028 131.167,62.211 137.706,62.211 C142.338,62.211 146.424,63.302 149.606,65.754 L153.875,61.485 C149.875,58.216 144.156,56.673 137.8,56.673 C128.264,56.673 121.361,61.573 121.361,69.75 C121.361,77.106 125.994,81.011 134.712,81.738 L142.068,82.373 C147.244,82.828 149.515,85.007 149.515,88.912 C149.515,94.18 144.974,96.812 137.615,96.812 C132.074,96.812 127.261,95.359 123.715,91.635 L119.355,95.995 C124.26,100.717 130.163,102.443 137.701,102.443 C148.508,102.443 155.865,97.443 155.865,88.821 C155.865,80.463 150.506,77.468 142.695,76.74 L142.7,76.742 Z M198.613,56.671 C191.444,56.671 186.928,58.084 182.971,63.094 C182.917,63.163 187.261,67.386 187.261,67.386 C189.894,63.663 192.8,62.302 198.521,62.302 C206.695,62.302 209.965,65.571 209.965,72.109 L209.965,76.377 L196.527,76.377 C186.537,76.377 181.089,81.464 181.089,89.277 C180.984058,92.6262953 182.189462,95.884474 184.449,98.359 C187.265,101.266 190.897,102.446 197.072,102.446 C203.066,102.446 206.336,101.266 209.972,97.632 L209.972,101.9 L216.511,101.9 L216.511,71.565 C216.511,61.848 210.611,56.673 198.62,56.673 L198.613,56.671 Z M209.969,86.1 C209.969,89.825 209.242,92.368 207.698,93.82 C204.883,96.545 201.523,96.82 197.709,96.82 C190.625,96.82 187.445,94.367 187.445,89.19 C187.445,84.013 190.715,81.29 197.437,81.29 L209.969,81.29 L209.969,86.1 Z M242.118,62.489 C246.386,62.489 249.018,63.76 252.38,67.483 C252.38,67.483 256.758,63.228 256.722,63.19 C252.137,58.285 248.245,56.677 242.122,56.677 C230.86,56.677 222.322,64.305 222.322,79.562 C222.322,94.819 230.858,102.449 242.122,102.449 C248.297,102.449 252.202,100.813 256.834,95.819 L252.384,91.55 C249.024,95.274 246.39,96.636 242.122,96.636 C238.033212,96.7993765 234.138626,94.8861276 231.769,91.55 C229.68,88.644 228.863,85.193 228.863,79.562 C228.863,73.931 229.68,70.48 231.769,67.574 C234.138117,64.2373869 238.033165,62.3242873 242.122,62.489 L242.118,62.489 Z M298.122,57.155 L289.97,57.155 L269.71,76.875 L269.741,37.236 L263.2,37.236 L263.2,101.9 L269.74,101.9 L269.709,85.591 L277.64,77.632 L292.628,101.9 L300.71,101.9 L282.17,73.1 L298.122,57.155 Z M328.335,56.055 C321.635,56.055 317.108,58.666 314.322,61.625 C310.231,65.89 309.187,71.025 309.187,79.207 C309.187,87.475 310.231,92.607 314.322,96.876 C317.108,99.835 321.633,102.447 328.335,102.447 C335.037,102.447 339.651,99.835 342.435,96.876 C346.526,92.611 347.571,87.476 347.571,79.207 C347.571,71.026 346.526,65.89 342.435,61.625 C339.651,58.666 335.035,56.055 328.335,56.055 Z M333.645,90.261 C332.226419,91.6312106 330.305034,92.3548961 328.335,92.261 C326.391065,92.355011 324.496795,91.6295149 323.113,90.261 C320.762,87.911 320.502,83.908 320.502,79.207 C320.502,74.506 320.762,70.591 323.113,68.241 C324.49659,66.8721679 326.391005,66.1466163 328.335,66.241 C330.30511,66.1466229 332.226679,66.8703779 333.645,68.241 C335.994,70.591 336.256,74.507 336.256,79.207 C336.256,83.907 335.994,87.907 333.645,90.261 Z M377.7,56.575 L368.562,84.6 L359.336,56.573 L347.41,56.573 L364.123,101.92 L373,101.92 L389.623,56.573 L377.7,56.575 Z M408.873,56.053 C397.124,56.053 389.116,64.408 389.116,79.205 C389.116,97.571 399.387,102.445 410.092,102.445 C418.274,102.445 422.714,99.92 427.326,95.306 L420.451,88.606 C417.578,91.479 415.14,92.871 410.179,92.871 C403.825,92.871 400.257,88.606 400.257,82.771 L428.631,82.771 L428.631,77.726 C428.631,65.279 421.494,56.053 408.873,56.053 Z M400.257,75.027 C400.273614,73.3485451 400.629053,71.6907352 401.302,70.153 C402.728026,67.2748247 405.662422,65.4538855 408.8745,65.4538855 C412.086578,65.4538855 415.020974,67.2748247 416.447,70.153 C417.117747,71.6914042 417.472764,73.3488292 417.491,75.027 L400.257,75.027 Z M445.322,60.927 L445.322,56.575 L434.267,56.575 L434.267,101.922 L445.582,101.922 L445.582,74.593 C445.582,68.848 449.412,66.236 452.894,66.236 C455.1886,66.1567159 457.391459,67.1404382 458.864,68.902 L467.43,60.318 C464.296,57.184 461.163,56.053 456.724,56.053 C452.407599,56.0018792 448.269295,57.7711856 445.324,60.927 L445.322,60.927 Z M470.941,51.848 L470.941,101.876 L482.255,101.876 L482.255,66.122 L490.611,66.122 L490.611,57.506 L482.255,57.506 L482.255,52.545 C482.255,49.934 483.562,48.454 486.255,48.454 L490.607,48.454 L490.607,38.881 L484.167,38.881 C474.939,38.881 470.937,45.408 470.937,51.848 L470.941,51.848 Z M537.191,56.048 C530.491,56.048 525.963,58.659 523.178,61.618 C519.088,65.883 518.043,71.018 518.043,79.2 C518.043,87.468 519.088,92.6 523.178,96.869 C525.963,99.828 530.489,102.44 537.191,102.44 C543.893,102.44 548.507,99.828 551.291,96.869 C555.381,92.604 556.426,87.469 556.426,79.2 C556.426,71.019 555.381,65.883 551.291,61.618 C548.506,58.659 543.891,56.048 537.191,56.048 Z M542.501,90.254 C541.082419,91.6242106 539.161034,92.3478961 537.191,92.254 C535.247065,92.348011 533.352795,91.6225149 531.969,90.254 C529.619,87.904 529.358,83.901 529.358,79.2 C529.358,74.499 529.619,70.584 531.969,68.234 C533.35259,66.8651679 535.247005,66.1396163 537.191,66.234 C539.16111,66.1396229 541.082679,66.8633779 542.501,68.234 C544.85,70.584 545.112,74.5 545.112,79.2 C545.112,83.9 544.85,87.9 542.501,90.254 Z M609.883,56.57 L602.573,84.6 L593.26,56.575 L584.993,56.575 L575.765,84.6 L568.455,56.573 L556.444,56.573 L570.37,101.92 L579.683,101.92 L589.17,73.46 L598.657,101.92 L607.97,101.92 L621.809,56.573 L609.883,56.57 Z M507.3,88.257 L507.3,38.881 L495.989,38.881 L495.989,88.953 C495.989,95.394 499.907,101.922 509.219,101.922 L515.659,101.922 L515.659,92.347 L511.308,92.347 C508.436,92.347 507.308,90.955 507.308,88.257 L507.3,88.257 Z M174,64.246 L180.046,58.2 L167.666,58.2 L167.666,43.5 L161.127,43.5 L161.127,89.912 C161.127,96.541 164.941,101.9 172.57,101.9 L177.2,101.9 L177.2,96.269 L173.75,96.269 C169.573,96.269 167.666,93.816 167.666,89.73 L167.666,64.246 L174,64.246 Z"/>
   <polygon points="88 80 99 80 99 124 0 124 0 80 11 80 11 113 88 113"/>
   <path fill-rule="nonzero" d="M22.9878906,76.73 L77.0128906,88.085 L79.2838906,77.285 L25.2588906,65.925 L22.9878906,76.73 Z M30.1368906,50.861 L80.1828906,74.169 L84.8448906,64.16 L34.7978906,40.852 L30.1368906,50.861 Z M43.9848906,26.308 L86.4128906,61.639 L93.4788906,53.154 L51.0508906,17.824 L43.9848906,26.308 Z M71.3718906,0.192 L62.5118906,6.782 L95.4598906,51.082 L104.319891,44.493 L71.3718906,0.192 Z M22,102 L77,102 L77,91 L22,91 L22,102 Z"/>
 </svg>
-`;var _=`<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 46 33" stroke-width="1.8" fill="none" fill-rule="evenodd" stroke="currentColor">
+`;var F=`<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 46 33" stroke-width="1.8" fill="none" fill-rule="evenodd" stroke="currentColor">
   <path d="M23.4888889,20.543316 C21.4404656,18.4187374 19.0750303,15.6666667 16.4832014,15.6666667 C13.8721947,15.6666667 11.7555556,17.6366138 11.7555556,20.0666667 C11.7555556,22.4967196 13.8721947,24.4666667 16.4832014,24.4666667 C18.8347252,24.4666667 19.9845474,23.0125628 20.6429148,22.312473" stroke-linecap="round"></path>
   <path d="M22.5111111,19.5900174 C24.5595344,21.7145959 26.9249697,24.4666667 29.5167986,24.4666667 C32.1278053,24.4666667 34.2444444,22.4967196 34.2444444,20.0666667 C34.2444444,17.6366138 32.1278053,15.6666667 29.5167986,15.6666667 C27.1652748,15.6666667 26.0154526,17.1207706 25.3570852,17.8208603" stroke-linecap="round"></path>
   <path d="M45,22.7331459 C45,19.1499462 42.7950446,16.079593 39.6628004,14.7835315 C39.6774469,14.5246474 39.7003932,14.2674038 39.7003932,14.0035978 C39.7003932,6.82243304 33.8412885,1 26.611593,1 C21.3985635,1 16.9102123,4.03409627 14.8051788,8.41527616 C13.7828502,7.62878013 12.503719,7.15547161 11.1134367,7.15547161 C7.77825654,7.15547161 5.07450503,9.84159999 5.07450503,13.1544315 C5.07450503,13.7760488 5.16938207,14.3779791 5.3477444,14.9418479 C2.74863428,16.4787471 1,19.2867709 1,22.5105187 C1,27.3287502 4.89630545,31.2367856 9.72803666,31.31094 L36.3341301,31.3109406 C41.1201312,31.3406346 45,27.4870665 45,22.7331459 L45,22.7331459 Z" stroke-linejoin="round"></path>
@@ -51,7 +51,7 @@ c:oOXXK0Oxlkk;.,;;;...O0OO;.
   <path d="M22.5111111,19.5900174 C24.5595344,21.7145959 26.9249697,24.4666667 29.5167986,24.4666667 C32.1278053,24.4666667 34.2444444,22.4967196 34.2444444,20.0666667 C34.2444444,17.6366138 32.1278053,15.6666667 29.5167986,15.6666667 C27.1652748,15.6666667 26.0154526,17.1207706 25.3570852,17.8208603" stroke-linecap="round"></path>
   <path d="M45,22.7331459 C45,19.1499462 42.7950446,16.079593 39.6628004,14.7835315 C39.6774469,14.5246474 39.7003932,14.2674038 39.7003932,14.0035978 C39.7003932,6.82243304 33.8412885,1 26.611593,1 C21.3985635,1 16.9102123,4.03409627 14.8051788,8.41527616 C13.7828502,7.62878013 12.503719,7.15547161 11.1134367,7.15547161 C7.77825654,7.15547161 5.07450503,9.84159999 5.07450503,13.1544315 C5.07450503,13.7760488 5.16938207,14.3779791 5.3477444,14.9418479 C2.74863428,16.4787471 1,19.2867709 1,22.5105187 C1,27.3287502 4.89630545,31.2367856 9.72803666,31.31094 L36.3341301,31.3109406 C41.1201312,31.3406346 45,27.4870665 45,22.7331459 L45,22.7331459 Z" stroke-linejoin="round"></path>
   <text x="50" y="28" font="bold 30px sans-serif" stroke="none" fill="currentColor">JSFiddle</text>
-</svg>`;var I=`<svg viewBox="0 0 62 39" fill="currentColor" xmlns="https://www.w3.org/2000/svg" class="main-header-logo">
+</svg>`;var _=`<svg viewBox="0 0 62 39" fill="currentColor" xmlns="https://www.w3.org/2000/svg" class="main-header-logo">
   <path d="M33.25.055 2.147 19.635c-1.465.886-2.18 1.878-2.146 2.977v2.98c.035 1.1.768 2.075 2.2 2.926l15.393 8.885a.726.726 0 0 0 1.047-.373l3.456-8.352-7.33-4.15a1.316 1.316 0 0 1-.697-.976 1.345 1.345 0 0 1 .644-1.365l13.457-8.247L33.721.428a.324.324 0 0 0-.104-.36.31.31 0 0 0-.369-.013h.002Z"/>
   <path d="M58.8 10.962 43.618 1.758a.726.726 0 0 0-1.047.32l-3.56 8.352 7.225 4.31c.208.113.381.282.502.488a1.347 1.347 0 0 1 0 1.363c-.12.205-.293.375-.502.49l-13.56 7.98-5.76 13.407a.323.323 0 0 0 .131.515.31.31 0 0 0 .34-.09l9.948-6.011 3.927 5.64a.945.945 0 0 0 .785.425h9.425a.932.932 0 0 0 .832-.506.97.97 0 0 0-.047-.984l-6.388-9.79 12.933-7.82c1.466-.887 2.2-1.88 2.2-2.98V13.94c0-1.1-.734-2.092-2.2-2.98H58.8Z"/>
 </svg>
@@ -97,35 +97,35 @@ c:oOXXK0Oxlkk;.,;;;...O0OO;.
   <rect x="122" y="160" width="36" height="47" fill="#E5E5E5" fill-opacity="0.25"/>
   <rect x="140" y="160" width="18" height="47" fill="#E5E5E5" fill-opacity="0.5"/>
 </svg>
-`;var y={"linkedin-icon":P,"linkedin-logo":A,"github-icon":T,"github-logo":R,"stackoverflow-icon":X,"stackoverflow-logo":F,"jsfiddle-icon":_,"jsfiddle-logo":K,"codersrank-icon":I,"codersrank-logo":D,"slot-machine-icon":V};var H="https://www.w3.org/2000/svg",x=new Map,x1=()=>`
+`;var x={"linkedin-icon":P,"linkedin-logo":A,"github-icon":T,"github-logo":R,"stackoverflow-icon":X,"stackoverflow-logo":I,"jsfiddle-icon":F,"jsfiddle-logo":K,"codersrank-icon":_,"codersrank-logo":D,"slot-machine-icon":V};var H="https://www.w3.org/2000/svg",$=new Map,$1=()=>`
   <svg xmlns="${H}" display="none">
-  ${Object.entries(y).map(([e,t])=>(x.set(e,{viewBox:t.match(/viewBox="([^"]+)"/i)?.[1]}),t.replace(`xmlns="${H}"`,`id="sprite-${e}"`).replaceAll(/\bsvg\b/g,"symbol"))).join("")}
+  ${Object.entries(x).map(([e,t])=>($.set(e,{viewBox:t.match(/viewBox="([^"]+)"/i)?.[1]}),t.replace(`xmlns="${H}"`,`id="sprite-${e}"`).replaceAll(/\bsvg\b/g,"symbol"))).join("")}
   </svg>
-`,z=x1;(()=>{if(typeof window>"u")return;document.write=window.write=()=>{},((t,i=[])=>Object.getOwnPropertyNames(t).forEach(o=>{let r=Object.prototype[o];i.includes(o)||Object.getOwnPropertyDescriptor(Object.prototype,o)?.configurable&&Object.defineProperty(Object.prototype,o,{configurable:!1,set:()=>{o!=="trace"&&console.trace(`Property "${o}" was changed in:`)},get:()=>r})}))(Object.prototype,["__proto__"]),window.satismeter=()=>{},window.requestAnimationFrame=window.requestAnimationFrame??(t=>{setTimeout(t)})})();var $1={"image/webp":"webp","image/jpeg":"jpg","image/png":"png"},b1={types:"",sizes:"",src:""},k1=({types:e,sizes:t,src:i}=b1)=>Object.entries($1).filter(([o,r])=>e.includes(r)).flatMap(([o,r])=>`
-    <source type="${o}" srcset="${t.split(",").map(n=>i.replace(new RegExp(`.(${e})$`),`_${n}.${r} ${n}w`))}" />
-  `).join(""),M1=e=>{if(!e)return"";let{src:t,ratio:i,sizes:o,types:r="png|webp",alt:n="",itemprop:s=""}=e,[c,a]=i.split(":"),p=+o.split(",")[0],l=p*+c,u=p*+a;return`
+`,z=$1;(()=>{if(typeof window>"u")return;document.write=window.write=()=>{},((t,r=[])=>Object.getOwnPropertyNames(t).forEach(o=>{let i=Object.prototype[o];r.includes(o)||Object.getOwnPropertyDescriptor(Object.prototype,o)?.configurable&&Object.defineProperty(Object.prototype,o,{configurable:!1,set:()=>{o!=="trace"&&console.trace(`Property "${o}" was changed in:`)},get:()=>i})}))(Object.prototype,["__proto__"]),window.satismeter=()=>{},window.requestAnimationFrame=window.requestAnimationFrame??(t=>{setTimeout(t)})})();var b1={"image/webp":"webp","image/jpeg":"jpg","image/png":"png"},k1={types:"",sizes:"",src:""},M1=({types:e,sizes:t,src:r}=k1)=>Object.entries(b1).filter(([o,i])=>e.includes(i)).flatMap(([o,i])=>`
+    <source type="${o}" srcset="${t.split(",").map(n=>r.replace(new RegExp(`.(${e})$`),`_${n}.${i} ${n}w`))}" />
+  `).join(""),S1=e=>{if(!e)return"";let{src:t,ratio:r,sizes:o,types:i="png|webp",alt:n="",itemprop:s=""}=e,[c,l]=r.split(":"),h=+o.split(",")[0],p=h*+c,u=h*+l;return`
     <picture>
-      ${k1({types:r,sizes:o,src:t})}
-      <img src="${r.includes("webp")?t.replace(/\..*$/,".webp"):t}" width="${l}" height="${u}" alt="${n}" itemprop="${s}" />
+      ${M1({types:i,sizes:o,src:t})}
+      <img src="${i.includes("webp")?t.replace(/\..*$/,".webp"):t}" width="${p}" height="${u}" alt="${n}" itemprop="${s}" />
     </picture>
-  `},B=M1;var S1=!1;var $=S1?()=>{}:(...e)=>{console.log(...e)};async function G(e){let t=new Image;t.crossOrigin="",t.src=e,await t.decode();let i=t.width,o=t.height,n=new OffscreenCanvas(i,o).getContext("2d");if(!n)return[];n.drawImage(t,0,0,i,o);let s=n.getImageData(0,0,i,o).data,c="\u2802\u2802\u2802\u2802\u2801\u2880\u2881\u2881\u288C\u288C\u2895\u2895\u2897\u2897\u289F\u289F\u28B7\u28B7\u28BF\u28BF",a=[],p=[];for(let l=0;l<o;l++){for(let u=0;u<i;u++){let w=(l*i+u)*4,M=s[w],S=s[w+1],E=s[w+2];if(s[w+3]===0)continue;let o1=(M+S+E)/3,O=Math.floor((1-o1/255)*10);a.push(c[O*2]+c[O*2+1]),p.push(`#${M.toString(16).padStart(2,"0")}${S.toString(16).padStart(2,"0")}${E.toString(16).padStart(2,"0")}`)}a[a.length-1]+=`
-`}return[a.map(l=>`%c${l}`).join(""),...p.map(l=>`background-color: ${l};`)]}var O1=q(),j1=()=>(setTimeout(async()=>{if(typeof window>"u"||typeof document>"u")return;let e=await G("images/artursjansons_32.jpg");$(...e)}),`
+  `},B=S1;var E1=!1;var b=E1?()=>{}:(...e)=>{console.log(...e)};async function G(e){let t=new Image;t.crossOrigin="",t.src=e,await t.decode();let r=t.width,o=t.height,n=new OffscreenCanvas(r,o).getContext("2d");if(!n)return[];n.drawImage(t,0,0,r,o);let s=n.getImageData(0,0,r,o).data,c="\u2802\u2802\u2802\u2802\u2801\u2880\u2881\u2881\u288C\u288C\u2895\u2895\u2897\u2897\u289F\u289F\u28B7\u28B7\u28BF\u28BF",l=[],h=[];for(let p=0;p<o;p++){for(let u=0;u<r;u++){let w=(p*r+u)*4,S=s[w],E=s[w+1],j=s[w+2];if(s[w+3]===0)continue;let r1=(S+E+j)/3,O=Math.floor((1-r1/255)*10);l.push(c[O*2]+c[O*2+1]),h.push(`#${S.toString(16).padStart(2,"0")}${E.toString(16).padStart(2,"0")}${j.toString(16).padStart(2,"0")}`)}l[l.length-1]+=`
+`}return[l.map(p=>`%c${p}`).join(""),...h.map(p=>`background-color: ${p};`)]}var O1=q(),Z1=()=>(setTimeout(async()=>{if(typeof window>"u"||typeof document>"u")return;let e=await G("images/artursjansons_32.jpg");b(...e)}),`
     <header class="header">
       <a href="#/home" class="header__avatar" alt="avatar">${B({itemprop:"photo",src:"/images/artursjansons.jpg",ratio:"1:1",sizes:"432,216,64",types:"jpg|png|webp",alt:O1})}</a>
     </header>
-  `),J=j1;var X2="\u{1F34F},\u{1F330},\u{1F34B},\u{1F345},\u{1F346},\u{1F347},\u{1F353},\u{1F349},\u{1F350},\u{1F352},\u{1F351},\u{1F951}".split(","),{floor:F2,random:_2}=Math;var k=class{constructor(){this.id=null}toString(){let t=btoa(`${Math.ceil(Math.random()*1e13)+ +new Date}`).slice(10,18);return this.id=this.id||`ref-${t}`}get current(){return typeof window>"u"||typeof document>"u"?null:document.querySelector(`[ref=${this.id}]`)}},g=()=>new k;var A1=({className:e,name:t}={name:"unknown"})=>{let i=g();return setTimeout(()=>{if(typeof window>"u"||typeof document>"u")return;let o=document.getElementById(`sprite-${t}`)?.getAttribute("viewBox")||"0 0 0 0";i.current?.setAttribute("viewBox",o)}),`
-    <svg class="${e}" preserveAspectRatio="xMidYMid meet" viewBox="${x.get(t)?.viewBox||"0 0 0 0"}" ref="${i}">
+  `),J=Z1;var I2="\u{1F34F},\u{1F330},\u{1F34B},\u{1F345},\u{1F346},\u{1F347},\u{1F353},\u{1F349},\u{1F350},\u{1F352},\u{1F351},\u{1F951}".split(","),{floor:F2,random:K2}=Math;var M=class{constructor(){this.id=null}toString(){let t=btoa(`${Math.ceil(Math.random()*1e13)+ +new Date}`).slice(10,18);return this.id=this.id||`ref-${t}`}get current(){return typeof window>"u"||typeof document>"u"?null:document.querySelector(`[ref=${this.id}]`)}},g=()=>new M;var T1=({className:e,name:t}={name:"unknown"})=>{let r=g();return setTimeout(()=>{if(typeof window>"u"||typeof document>"u")return;let o=document.getElementById(`sprite-${t}`)?.getAttribute("viewBox")||"0 0 0 0";r.current?.setAttribute("viewBox",o)}),`
+    <svg class="${e}" preserveAspectRatio="xMidYMid meet" viewBox="${$.get(t)?.viewBox||"0 0 0 0"}" ref="${r}">
       <use xlink:href="#sprite-${t}" />
     </svg>
-  `},h=A1;var T1=(e={})=>{let{className:t="link",children:i,tag:o="a",to:r="#",title:n="",onClick:s}=e,c=g();return setTimeout(()=>{s&&c.current&&c.current.addEventListener("click",s)}),`
-      <${o} class="${t} link" href="${r}" title="${n}" ref="${c}" ${/^http/.test(r)?'rel="noopener noreferrer"':""}>
-        ${i?.join?.("")}
+  `},m=T1;var R1=(e={})=>{let{className:t="link",children:r,tag:o="a",to:i="#",title:n="",onClick:s}=e,c=g();return setTimeout(()=>{s&&c.current&&c.current.addEventListener("click",s)}),`
+      <${o} class="${t} link" href="${i}" title="${n}" ref="${c}" ${/^http/.test(i)?'rel="noopener noreferrer"':""}>
+        ${r?.join?.("")}
       </${o}>
-    `},f=T1;var R1=(e={})=>{let{className:t="",children:i,squire:o,tag:r="div"}=e,n="link-list";return t&&(n+=` ${t}`),o&&(n+=" link-list--squire"),`
-      <${r} class="${n}">
-        ${i?.map(s=>`<div class="link-list__item">${s}</div>`).join("")}
-      </${r}>
-    `},U=R1;var X1=()=>`
+    `},f=R1;var X1=(e={})=>{let{className:t="",children:r,squire:o,tag:i="div"}=e,n="link-list";return t&&(n+=` ${t}`),o&&(n+=" link-list--squire"),`
+      <${i} class="${n}">
+        ${r?.map(s=>`<div class="link-list__item">${s}</div>`).join("")}
+      </${i}>
+    `},U=X1;var I1=()=>`
     
     ${J()}
     <article lang="en">
@@ -140,7 +140,7 @@ c:oOXXK0Oxlkk;.,;;;...O0OO;.
             <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="addressLocality">\u{1F1F1}\u{1F1FB} Riga, Latvia</span></span>
             <a href="callto:+37126262109"><i class="fa fa-whatsapp"></i><span itemprop="telephone">+371 26262109</span></a>
             <a href="mailto:a.jansons+github@gmail.com?title=iegik.github.io:contact" itemprop="email">a.jansons@gmail.com</a>
-          ${U({squire:!0,children:[f({to:"https://linkedin.com/in/iegik",title:"LinkedIn",children:[h({name:"linkedin-icon",className:"link-list__icon"})]}),f({to:"https://github.com/iegik",title:"GitHub",children:[h({name:"github-icon",className:"link-list__icon"})]}),f({to:"https://profile.codersrank.io/user/iegik",title:"Coders Rank",children:[h({name:"codersrank-icon",className:"link-list__icon"})]}),f({to:"https://jsfiddle.net/user/iegik",title:"JSFiddle",children:[h({name:"jsfiddle-icon",className:"link-list__icon"})]}),f({to:"https://stackoverflow.com/users/771471/iegik",title:"Stack Overflow",children:[h({name:"stackoverflow-icon",className:"link-list__icon"})]})]})}
+          ${U({squire:!0,children:[f({to:"https://linkedin.com/in/iegik",title:"LinkedIn",children:[m({name:"linkedin-icon",className:"link-list__icon"})]}),f({to:"https://github.com/iegik",title:"GitHub",children:[m({name:"github-icon",className:"link-list__icon"})]}),f({to:"https://profile.codersrank.io/user/iegik",title:"Coders Rank",children:[m({name:"codersrank-icon",className:"link-list__icon"})]}),f({to:"https://jsfiddle.net/user/iegik",title:"JSFiddle",children:[m({name:"jsfiddle-icon",className:"link-list__icon"})]}),f({to:"https://stackoverflow.com/users/771471/iegik",title:"Stack Overflow",children:[m({name:"stackoverflow-icon",className:"link-list__icon"})]})]})}
           
         </header>
       </section>
@@ -148,27 +148,30 @@ c:oOXXK0Oxlkk;.,;;;...O0OO;.
     <footer>
       
     </footer>
-  `,Y=X1;var F1=({nonce:e})=>Object.entries({"script-src":[`'nonce-${e}'`,"'strict-dynamic'","https://www.google-analytics.com","https://ssl.google-analytics.com","https://static.hotjar.com","https://script.hotjar.com","https://js.sentry-cdn.com","'unsafe-inline'"],"img-src":["'self'","https://www.google-analytics.com","https://avatars.githubusercontent.com/","https://www.googletagmanager.com/","https://static.hotjar.com","https://survey-images.hotjar.com"],"connect-src":["'self'","https://www.google-analytics.com","https://region1.google-analytics.com","https://in.hotjar.com","wss://ws.hotjar.com","https://static.hotjar.com","https://content.hotjar.io","https://github.com/login/oauth/access_token","https://api.github.com/graphql","https://api.github.com/user","https://o171820.ingest.sentry.io/"],"style-src":["'self'",`'nonce-${e}'`,"https://static.hotjar.com"],"object-src":["'none'"],"base-uri":["'none'"],"frame-src":["https://vars.hotjar.com/"],"script-src-elem":["'self'",`'nonce-${e}'`,"https://script.hotjar.com"]}).reduce((t,[i,o])=>`${t};${i} ${o.join(" ")}`,"default-src 'self'"),W=({nonce:e})=>`<meta http-equiv="Content-Security-Policy" content="${F1({nonce:e})}">`;var m=({srcDoc:e,src:t,nonce:i,async:o,prefix:r,postfix:n,iife:s,crossorigin:c="",integrity:a})=>{let p=`${r||""}${e?v(e):""}${n||""}`;return`<script ${o?"async":""} crossorigin="${c}" ${a?`integrity="${a}"`:""} nonce="${i}" ${t?`src="${t}"`:""}>${s?`(${p})(${s})`:p}</script>`};var Q=({nonce:e,gtmId:t})=>`
-    ${m({async:!0,nonce:e,src:`https://www.googletagmanager.com/gtag/js?id=${t}`})}
-    ${m({srcDoc:"./src/lib/gtag.js",nonce:e,postfix:`gtag('config', '${t}');
+  `,Y=I1;var F1=({nonce:e})=>Object.entries({"script-src":[`'nonce-${e}'`,"'strict-dynamic'","https://www.google-analytics.com","https://ssl.google-analytics.com","https://static.hotjar.com","https://script.hotjar.com","https://js.sentry-cdn.com","'unsafe-inline'"],"img-src":["'self'","https://www.google-analytics.com","https://avatars.githubusercontent.com/","https://www.googletagmanager.com/","https://static.hotjar.com","https://survey-images.hotjar.com"],"connect-src":["'self'","https://www.google-analytics.com","https://region1.google-analytics.com","https://in.hotjar.com","wss://ws.hotjar.com","https://static.hotjar.com","https://content.hotjar.io","https://github.com/login/oauth/access_token","https://api.github.com/graphql","https://api.github.com/user","https://o171820.ingest.sentry.io/"],"style-src":["'self'",`'nonce-${e}'`,"https://static.hotjar.com"],"object-src":["'none'"],"base-uri":["'none'"],"frame-src":["https://vars.hotjar.com/"],"script-src-elem":["'self'",`'nonce-${e}'`,"https://script.hotjar.com"]}).reduce((t,[r,o])=>`${t};${r} ${o.join(" ")}`,"default-src 'self'"),W=({nonce:e})=>`<meta http-equiv="Content-Security-Policy" content="${F1({nonce:e})}">`;var a=({srcDoc:e,src:t,nonce:r,async:o,prefix:i,postfix:n,iife:s,crossorigin:c="",integrity:l})=>{let h=e?v(e):"";return`<script ${o?"async":""} crossorigin="${c}" ${l?`integrity="${l}"`:""} nonce="${r}" ${t?`src="${t}"`:""}>${i||""}${s?`(${h})(${s});`:h}${n||""}</script>`};var Q=({nonce:e,gtmId:t})=>`
+    ${a({async:!0,nonce:e,src:`https://www.googletagmanager.com/gtag/js?id=${t}`})}
+    ${a({srcDoc:"./src/lib/gtag.js",nonce:e,postfix:`gtag('config', '${t}');
 `})}
 `;var t1=({nonce:e,gtmId:t})=>`
-    ${m({nonce:e,srcDoc:"./src/lib/gtm.js",iife:`window,document,'script','dataLayer','${t}','${e}'`})}
+    ${a({nonce:e,srcDoc:"./src/lib/gtm.js",iife:`window,document,'script','dataLayer','${t}','${e}'`})}
 `,e1=({nonce:e,gtmId:t})=>`<noscript><iframe nonce="${e}" src="https://www.googletagmanager.com/ns.html?id=${t}"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>`;var _1=v("./public/next/styles.min.css"),K1="Art\u016Brs Jansons :: Web Developer",I1="Experienced web developer with a passion for innovation, automation and optimization",D1=`<!DOCTYPE html>
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>`;var o1=({nonce:e,integrity:t,projectId:r,...o})=>`
+    ${a({async:!0,nonce:e,src:"https://browser.sentry-cdn.com/8.29.0/bundle.tracing.min.js",integrity:t})}
+    ${a({srcDoc:"./src/lib/sentry.js",nonce:e,iife:JSON.stringify(o)})}
+`;var K1=v("./public/next/styles.min.css"),_1="Art\u016Brs Jansons :: Web Developer",D1="Experienced web developer with a passion for innovation, automation and optimization",V1=`<!DOCTYPE html>
 <html lang="en" manifest="manifest.appcache">
   <head>
     ${W({nonce:d})}
     <link rel="preload" as="font" href="/fonts/AlinaScript.woff" crossorigin>
-    <title>${K1}</title>
-    <meta name="description" content="${I1}" />
+    <title>${_1}</title>
+    <meta name="description" content="${D1}" />
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="var(--color-primary-light)" />
-    <style nonce="${d}">${_1}</style>
+    <style nonce="${d}">${K1}</style>
     
     ${t1({nonce:d,gtmId:"GTM-MBG56M"})}
-    ${m({srcDoc:"./src/lib/router.min.js",nonce:d})}
+    ${a({srcDoc:"./src/lib/router.min.js",nonce:d})}
   </head>
   <body>
     <noscript>This page uses JavaScript to play the slot machine game.</noscript>
@@ -179,12 +182,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     ${z()}
     <div id="root">${Y()}</div>
     
-    
+    ${o1({nonce:d,projectId:"179618f1f04d4d9dac08acc750d5736c",dsn:"https://179618f1f04d4d9dac08acc750d5736c@o171820.ingest.sentry.io/1250596",release:`1250596@${y}`,environment:"production",integrity:"sha384-6yzL+SsRi1vefLAU9+yqKb0YIeAiJ6GsCob5LxN8Af29Ze1Q5iCg0Ur2fwFroEqa"})}
   </body>
 </html>
-`;L("public/next/index.html",D1);var V1=`
+`;L("public/next/index.html",V1);var H1=`
 CACHE MANIFEST
-# rev ${N}
+# rev ${y}
 
 CACHE:
 index.html
@@ -203,4 +206,4 @@ EULA.md
 
 NETWORK:
 *
-`;L("public/next/manifest.appcache",V1);
+`;L("public/next/manifest.appcache",H1);
