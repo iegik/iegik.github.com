@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-"use strict";var d1=Object.create;var I=Object.defineProperty;var g1=Object.getOwnPropertyDescriptor;var f1=Object.getOwnPropertyNames;var u1=Object.getPrototypeOf,w1=Object.prototype.hasOwnProperty;var C1=(e,t)=>()=>(t||e((t={exports:{}}).exports,t),t.exports);var v1=(e,t,o,r)=>{if(t&&typeof t=="object"||typeof t=="function")for(let i of f1(t))!w1.call(e,i)&&i!==o&&I(e,i,{get:()=>t[i],enumerable:!(r=g1(t,i))||r.enumerable});return e};var y1=(e,t,o)=>(o=e!=null?d1(u1(e)):{},v1(t||!e||!e.__esModule?I(o,"default",{value:e,enumerable:!0}):o,e));var i1=C1((c0,U1)=>{U1.exports=`0000OOO00KXXXKKXNNXKKKXXNNNX
+"use strict";var d1=Object.create;var I=Object.defineProperty;var g1=Object.getOwnPropertyDescriptor;var f1=Object.getOwnPropertyNames;var u1=Object.getPrototypeOf,w1=Object.prototype.hasOwnProperty;var C1=(e,t)=>()=>(t||e((t={exports:{}}).exports,t),t.exports);var v1=(e,t,o,r)=>{if(t&&typeof t=="object"||typeof t=="function")for(let i of f1(t))!w1.call(e,i)&&i!==o&&I(e,i,{get:()=>t[i],enumerable:!(r=g1(t,i))||r.enumerable});return e};var y1=(e,t,o)=>(o=e!=null?d1(u1(e)):{},v1(t||!e||!e.__esModule?I(o,"default",{value:e,enumerable:!0}):o,e));var i1=C1((c0,q1)=>{q1.exports=`0000OOO00KXXXKKXNNXKKKXXNNNX
 OOOOOOO000KKXKXNNNXKKXNNNNNN
 XXKXKKKKKKKKKKXXNXXXXNNXXXNX
 XKKKKXNXXKK0kodxkOKXXXXXXKXX
@@ -97,18 +97,18 @@ c:oOXXK0Oxlkk;.,;;;...O0OO;.
   <rect x="122" y="160" width="36" height="47" fill="#E5E5E5" fill-opacity="0.25"/>
   <rect x="140" y="160" width="18" height="47" fill="#E5E5E5" fill-opacity="0.5"/>
 </svg>
-`;var b={"linkedin-icon":T,"linkedin-logo":Z,"github-icon":A,"github-logo":F,"stackoverflow-icon":X,"stackoverflow-logo":K,"jsfiddle-icon":D,"jsfiddle-logo":H,"codersrank-icon":z,"codersrank-logo":B,"slot-machine-icon":V};var q="https://www.w3.org/2000/svg",k=new Map,P1=()=>`
-  <svg xmlns="${q}" display="none">
-  ${Object.entries(b).map(([e,t])=>(k.set(e,{viewBox:t.match(/viewBox="([^"]+)"/i)?.[1]}),t.replace(`xmlns="${q}"`,`id="sprite-${e}"`).replaceAll(/\bsvg\b/g,"symbol"))).join("")}
+`;var b={"linkedin-icon":T,"linkedin-logo":Z,"github-icon":A,"github-logo":F,"stackoverflow-icon":X,"stackoverflow-logo":K,"jsfiddle-icon":D,"jsfiddle-logo":H,"codersrank-icon":z,"codersrank-logo":B,"slot-machine-icon":V};var G="https://www.w3.org/2000/svg",k=new Map,P1=()=>`
+  <svg xmlns="${G}" display="none">
+  ${Object.entries(b).map(([e,t])=>(k.set(e,{viewBox:t.match(/viewBox="([^"]+)"/i)?.[1]}),t.replace(`xmlns="${G}"`,`id="sprite-${e}"`).replaceAll(/\bsvg\b/g,"symbol"))).join("")}
   </svg>
-`,G=P1;(()=>{if(typeof window>"u")return;document.write=window.write=()=>{},((t,o=[])=>Object.getOwnPropertyNames(t).forEach(r=>{let i=Object.prototype[r];o.includes(r)||Object.getOwnPropertyDescriptor(Object.prototype,r)?.configurable&&Object.defineProperty(Object.prototype,r,{configurable:!1,set:()=>{r!=="trace"&&console.trace(`Property "${r}" was changed in:`)},get:()=>i})}))(Object.prototype,["__proto__"]),window.satismeter=()=>{},window.requestAnimationFrame=window.requestAnimationFrame??(t=>{setTimeout(t)})})();var _1={"image/webp":"webp","image/jpeg":"jpg","image/png":"png"},I1={types:"",sizes:"",src:""},N1=({types:e,sizes:t,src:o}=I1)=>Object.entries(_1).filter(([r,i])=>e.includes(i)).flatMap(([r,i])=>`
+`,U=P1;(()=>{if(typeof window>"u")return;document.write=window.write=()=>{},((t,o=[])=>Object.getOwnPropertyNames(t).forEach(r=>{let i=Object.prototype[r];o.includes(r)||Object.getOwnPropertyDescriptor(Object.prototype,r)?.configurable&&Object.defineProperty(Object.prototype,r,{configurable:!1,set:()=>{r!=="trace"&&console.trace(`Property "${r}" was changed in:`)},get:()=>i})}))(Object.prototype,["__proto__"]),window.satismeter=()=>{},window.requestAnimationFrame=window.requestAnimationFrame??(t=>{setTimeout(t)})})();var _1={"image/webp":"webp","image/jpeg":"jpg","image/png":"png"},I1={types:"",sizes:"",src:""},N1=({types:e,sizes:t,src:o}=I1)=>Object.entries(_1).filter(([r,i])=>e.includes(i)).flatMap(([r,i])=>`
     <source type="${r}" srcset="${t.split(",").map(n=>o.replace(new RegExp(`.(${e})$`),`_${n}.${i} ${n}w`))}" />
   `).join(""),T1=e=>{if(!e)return"";let{src:t,ratio:o,sizes:r,types:i="png|webp",alt:n="",itemprop:s=""}=e,[c,a]=o.split(":"),p=+r.split(",")[0],l=p*+c,w=p*+a;return`
     <picture>
       ${N1({types:i,sizes:r,src:t})}
       <img src="${i.includes("webp")?t.replace(/\..*$/,".webp"):t}" width="${l}" height="${w}" alt="${n}" itemprop="${s}" />
     </picture>
-  `},U=T1;var Z1=(e={})=>{let{className:t="",children:o,squire:r,tag:i="div"}=e,n="link-list";return t&&(n+=` ${t}`),r&&(n+=" link-list--squire"),`
+  `},q=T1;var Z1=(e={})=>{let{className:t="",children:o,squire:r,tag:i="div"}=e,n="link-list";return t&&(n+=` ${t}`),r&&(n+=" link-list--squire"),`
       <${i} class="${n}">
         ${o?.map(s=>`<div class="link-list__item">${s}</div>`).join("")}
       </${i}>
@@ -136,14 +136,14 @@ c:oOXXK0Oxlkk;.,;;;...O0OO;.
     <svg class="${e}" preserveAspectRatio="xMidYMid meet" viewBox="${k.get(t)?.viewBox||"0 0 0 0"}" ref="${o}">
       <use xlink:href="#sprite-${t}" />
     </svg>
-  `},m=z1;var Mt="\u{1F34F},\u{1F330},\u{1F34B},\u{1F345},\u{1F346},\u{1F347},\u{1F353},\u{1F349},\u{1F350},\u{1F352},\u{1F351},\u{1F951}".split(","),{floor:jt,random:Ot}=Math;var M=class{constructor(){this.id=null}toString(){let t=btoa(`${Math.ceil(Math.random()*1e13)+ +new Date}`).slice(10,18);return this.id=this.id||`ref-${t}`}get current(){return typeof window>"u"||typeof document>"u"?null:document.querySelector(`[ref=${this.id}]`)}},u=()=>new M;var V1=(e={})=>{let{className:t="link",children:o,tag:r="a",to:i="#",title:n="",onClick:s}=e,c=u();return setTimeout(()=>{s&&c.current&&c.current.addEventListener("click",s)}),`
+  `},h=z1;var Mt="\u{1F34F},\u{1F330},\u{1F34B},\u{1F345},\u{1F346},\u{1F347},\u{1F353},\u{1F349},\u{1F350},\u{1F352},\u{1F351},\u{1F951}".split(","),{floor:Ot,random:jt}=Math;var M=class{constructor(){this.id=null}toString(){let t=btoa(`${Math.ceil(Math.random()*1e13)+ +new Date}`).slice(10,18);return this.id=this.id||`ref-${t}`}get current(){return typeof window>"u"||typeof document>"u"?null:document.querySelector(`[ref=${this.id}]`)}},u=()=>new M;var V1=(e={})=>{let{className:t="link",children:o,tag:r="a",to:i="#",title:n="",onClick:s}=e,c=u();return setTimeout(()=>{s&&c.current&&c.current.addEventListener("click",s)}),`
       <${r} class="${t} link" href="${i}" title="${n}" ref="${c}" ${/^http/.test(i)?'rel="noopener noreferrer"':""}>
         ${o?.join?.("")}
       </${r}>
-    `},h=V1;var G1=!1;var j=G1?()=>{}:(...e)=>{console.log(...e)};async function r1(e){let t=new Image;t.crossOrigin="",t.src=e,await t.decode();let o=t.width,r=t.height,n=new OffscreenCanvas(o,r).getContext("2d");if(!n)return[];n.drawImage(t,0,0,o,r);let s=n.getImageData(0,0,o,r).data,c="\u2802\u2802\u2802\u2802\u2801\u2880\u2881\u2881\u288C\u288C\u2895\u2895\u2897\u2897\u289F\u289F\u28B7\u28B7\u28BF\u28BF",a=[],p=[];for(let l=0;l<r;l++){for(let w=0;w<o;w++){let v=(l*o+w)*4,O=s[v],R=s[v+1],P=s[v+2];if(s[v+3]===0)continue;let h1=(O+R+P)/3,_=Math.floor((1-h1/255)*10);a.push(c[_*2]+c[_*2+1]),p.push(`#${O.toString(16).padStart(2,"0")}${R.toString(16).padStart(2,"0")}${P.toString(16).padStart(2,"0")}`)}a[a.length-1]+=`
-`}return[a.map(l=>`%c${l}`).join(""),...p.map(l=>`background-color: ${l};`)]}var J1=i1(),Y1=()=>(setTimeout(async()=>{if(typeof window>"u"||typeof document>"u")return;let e=await r1("images/artursjansons_32.jpg");j(...e)}),`
+    `},m=V1;var U1=!1;var O=U1?()=>{}:(...e)=>{console.log(...e)};async function r1(e){let t=new Image;t.crossOrigin="",t.src=e,await t.decode();let o=t.width,r=t.height,n=new OffscreenCanvas(o,r).getContext("2d");if(!n)return[];n.drawImage(t,0,0,o,r);let s=n.getImageData(0,0,o,r).data,c="\u2802\u2802\u2802\u2802\u2801\u2880\u2881\u2881\u288C\u288C\u2895\u2895\u2897\u2897\u289F\u289F\u28B7\u28B7\u28BF\u28BF",a=[],p=[];for(let l=0;l<r;l++){for(let w=0;w<o;w++){let v=(l*o+w)*4,j=s[v],R=s[v+1],P=s[v+2];if(s[v+3]===0)continue;let m1=(j+R+P)/3,_=Math.floor((1-m1/255)*10);a.push(c[_*2]+c[_*2+1]),p.push(`#${j.toString(16).padStart(2,"0")}${R.toString(16).padStart(2,"0")}${P.toString(16).padStart(2,"0")}`)}a[a.length-1]+=`
+`}return[a.map(l=>`%c${l}`).join(""),...p.map(l=>`background-color: ${l};`)]}var J1=i1(),Y1=()=>(setTimeout(async()=>{if(typeof window>"u"||typeof document>"u")return;let e=await r1("images/artursjansons_32.jpg");O(...e)}),`
     <header class="header">
-      <a href="#/home" class="header__avatar" alt="avatar">${U({itemprop:"photo",src:"/images/artursjansons.jpg",ratio:"1:1",sizes:"432,216,64",types:"jpg|png|webp",alt:J1})}</a>
+      <a href="#/home" class="header__avatar" alt="avatar">${q({itemprop:"photo",src:"/images/artursjansons.jpg",ratio:"1:1",sizes:"432,216,64",types:"jpg|png|webp",alt:J1})}</a>
     </header>
   `),n1=Y1;var Q1=()=>`
     
@@ -160,7 +160,7 @@ c:oOXXK0Oxlkk;.,;;;...O0OO;.
             <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="addressLocality">\u{1F1F1}\u{1F1FB} Riga, Latvia</span></span>
             <a href="callto:+37126262109"><i class="fa fa-whatsapp"></i><span itemprop="telephone">+371 26262109</span></a>
             <a href="mailto:a.jansons+github@gmail.com?title=iegik.github.io:contact" itemprop="email">a.jansons@gmail.com</a>
-          ${S({squire:!0,children:[h({to:"https://linkedin.com/in/iegik",title:"LinkedIn",children:[m({name:"linkedin-icon",className:"link-list__icon"})]}),h({to:"https://github.com/iegik",title:"GitHub",children:[m({name:"github-icon",className:"link-list__icon"})]}),h({to:"https://profile.codersrank.io/user/iegik",title:"Coders Rank",children:[m({name:"codersrank-icon",className:"link-list__icon"})]}),h({to:"https://jsfiddle.net/user/iegik",title:"JSFiddle",children:[m({name:"jsfiddle-icon",className:"link-list__icon"})]}),h({to:"https://stackoverflow.com/users/771471/iegik",title:"Stack Overflow",children:[m({name:"stackoverflow-icon",className:"link-list__icon"})]})]})}
+          ${S({squire:!0,children:[m({to:"https://linkedin.com/in/iegik",title:"LinkedIn",children:[h({name:"linkedin-icon",className:"link-list__icon"})]}),m({to:"https://github.com/iegik",title:"GitHub",children:[h({name:"github-icon",className:"link-list__icon"})]}),m({to:"https://profile.codersrank.io/user/iegik",title:"Coders Rank",children:[h({name:"codersrank-icon",className:"link-list__icon"})]}),m({to:"https://jsfiddle.net/user/iegik",title:"JSFiddle",children:[h({name:"jsfiddle-icon",className:"link-list__icon"})]}),m({to:"https://stackoverflow.com/users/771471/iegik",title:"Stack Overflow",children:[h({name:"stackoverflow-icon",className:"link-list__icon"})]})]})}
           
         </header>
       </section>
@@ -168,14 +168,14 @@ c:oOXXK0Oxlkk;.,;;;...O0OO;.
     <footer>
       
     </footer>
-  `,s1=Q1;var W1=({nonce:e})=>Object.entries({"script-src":[`'nonce-${e}'`,"'strict-dynamic'","https://www.google-analytics.com","https://ssl.google-analytics.com","https://static.hotjar.com","https://js.sentry-cdn.com"],"img-src":["'self'","https://www.google-analytics.com","https://avatars.githubusercontent.com/","https://www.googletagmanager.com/"],"connect-src":["'self'","https://www.google-analytics.com","https://region1.google-analytics.com","https://in.hotjar.com","wss://ws.hotjar.com","https://static.hotjar.com","https://content.hotjar.io","https://github.com/login/oauth/access_token","https://api.github.com/graphql","https://api.github.com/user","https://qilg4ch66b3vpgtevzccb5meum0ttfcl.lambda-url.eu-north-1.on.aws/","https://o171820.ingest.sentry.io/"],"style-src":[`'nonce-${e}'`,"https://static.hotjar.com"],"object-src":["'none'"],"base-uri":["'none'"],"frame-src":["https://vars.hotjar.com/"],"script-src-elem":[`'nonce-${e}'`,"'self'","https://script.hotjar.com/modules.8da33a8f469c3b5ffcec.js","https://script.hotjar.com/browser-perf.8417c6bba72228fa2e29.js","https://script.hotjar.com/sentry.58c81e3e25532810f6fd.js"]}).reduce((t,[o,r])=>`${t};${o} ${r.join(" ")}`,"default-src 'self'"),c1=({nonce:e})=>`<meta http-equiv="Content-Security-Policy" content="${W1({nonce:e})}">`;var d=({srcDoc:e,src:t,nonce:o,async:r,prefix:i,postfix:n,iife:s,crossorigin:c="",integrity:a})=>{let p=`${i||""}${e?L(e):""}${n||""}`;return`<script ${r?"async":""} crossorigin="${c}" ${a?`integrity="${a}"`:""} nonce="${o}" ${t?`src="${t}"`:""}>${s?`(${p})(${s})`:p}</script>`};var a1=({nonce:e,gtmId:t})=>`
+  `,s1=Q1;var W1=({nonce:e})=>Object.entries({"script-src":[`'nonce-${e}'`,"'strict-dynamic'","https://www.google-analytics.com","https://ssl.google-analytics.com","https://static.hotjar.com","https://script.hotjar.com","https://js.sentry-cdn.com","'unsafe-inline'"],"img-src":["'self'","https://www.google-analytics.com","https://avatars.githubusercontent.com/","https://www.googletagmanager.com/","https://static.hotjar.com","https://survey-images.hotjar.com"],"connect-src":["'self'","https://www.google-analytics.com","https://region1.google-analytics.com","https://in.hotjar.com","wss://ws.hotjar.com","https://static.hotjar.com","https://content.hotjar.io","https://github.com/login/oauth/access_token","https://api.github.com/graphql","https://api.github.com/user","https://o171820.ingest.sentry.io/"],"style-src":[`'nonce-${e}'`,"https://static.hotjar.com"],"object-src":["'none'"],"base-uri":["'none'"],"frame-src":["https://vars.hotjar.com/"],"script-src-elem":[`'nonce-${e}'`,"'self'","https://script.hotjar.com"]}).reduce((t,[o,r])=>`${t};${o} ${r.join(" ")}`,"default-src 'self'"),c1=({nonce:e})=>`<meta http-equiv="Content-Security-Policy" content="${W1({nonce:e})}">`;var d=({srcDoc:e,src:t,nonce:o,async:r,prefix:i,postfix:n,iife:s,crossorigin:c="",integrity:a})=>{let p=`${i||""}${e?L(e):""}${n||""}`;return`<script ${r?"async":""} crossorigin="${c}" ${a?`integrity="${a}"`:""} nonce="${o}" ${t?`src="${t}"`:""}>${s?`(${p})(${s})`:p}</script>`};var a1=({nonce:e,gtmId:t})=>`
     ${d({async:!0,nonce:e,src:`https://www.googletagmanager.com/gtag/js?id=${t}`})}
     ${d({srcDoc:"./src/lib/gtag.js",nonce:e,postfix:`gtag('config', '${t}');
 `})}
 `;var l1=({nonce:e,gtmId:t})=>`
     ${d({nonce:e,srcDoc:"./src/lib/gtm.js",iife:`window,document,'script','dataLayer','${t}','${e}'`})}
 `,p1=({nonce:e,gtmId:t})=>`<noscript><iframe nonce="${e}" src="https://www.googletagmanager.com/ns.html?id=${t}"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>`;var m1=({nonce:e,integrity:t,projectId:o,...r})=>`
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>`;var h1=({nonce:e,integrity:t,projectId:o,...r})=>`
     ${d({async:!0,nonce:e,src:"https://browser.sentry-cdn.com/8.29.0/bundle.tracing.min.js",integrity:t})}
     ${d({srcDoc:"./src/lib/sentry.js",nonce:e,iife:JSON.stringify(r)})}
 `;var t2=L("./public/next/styles.min.css"),e2="Art\u016Brs Jansons :: Web Developer",o2="Experienced web developer with a passion for innovation, automation and optimization",r2=`<!DOCTYPE html>
@@ -198,10 +198,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     ${a1({nonce:g,gtmId:"G-5ZY8Y6X2C4"})}
     
     ${p1({nonce:g,gtmId:"GTM-MBG56M"})}
-    ${G()}
+    ${U()}
     <div id="root">${s1()}</div>
     
-    ${m1({nonce:g,projectId:"179618f1f04d4d9dac08acc750d5736c",dsn:"https://179618f1f04d4d9dac08acc750d5736c@o171820.ingest.sentry.io/1250596",release:`1250596@${$}`,environment:"production",integrity:"sha384-6yzL+SsRi1vefLAU9+yqKb0YIeAiJ6GsCob5LxN8Af29Ze1Q5iCg0Ur2fwFroEqa"})}
+    ${h1({nonce:g,projectId:"179618f1f04d4d9dac08acc750d5736c",dsn:"https://179618f1f04d4d9dac08acc750d5736c@o171820.ingest.sentry.io/1250596",release:`1250596@${$}`,environment:"production",integrity:"sha384-6yzL+SsRi1vefLAU9+yqKb0YIeAiJ6GsCob5LxN8Af29Ze1Q5iCg0Ur2fwFroEqa"})}
   </body>
 </html>
 `;x("public/next/index.html",r2);var i2=`

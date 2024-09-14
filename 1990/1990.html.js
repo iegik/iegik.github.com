@@ -14,13 +14,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     ${a({srcDoc:"./src/lib/sentry.js",nonce:t,iife:JSON.stringify(r)})}
 `;var G=({name:t,rows:e,cols:o,data:r,type:n,value:c="",required:g,l10n:v})=>{let m=t,h=g?"required":"";return r?`<select id="${m}" name="${t}" ${h}>
                                                               <option></option>
-                                                              ${r.map(T=>`<option value="${T}">${v(T)}</option>`).join(`
+                                                              ${r.map(j=>`<option value="${j}">${v(j)}</option>`).join(`
 `)}
                                                           </select>`:e||o?`<table width="100%">
                                                           <tr>
                                                               <td>
                                                                   <textarea id="${m}" name="${t}" rows="${e}" cols="${o}" ${h}>${c}</textarea>
-                                                      </table>`:`<input type="${n||"text"}" id="${m}" name="${t}" value="${c}" ${h} />`};var it=({nonce:t})=>Object.entries({"script-src":[`'nonce-${t}'`,"'strict-dynamic'","https://www.google-analytics.com","https://ssl.google-analytics.com","https://static.hotjar.com","https://js.sentry-cdn.com"],"img-src":["'self'","https://www.google-analytics.com","https://avatars.githubusercontent.com/","https://www.googletagmanager.com/"],"connect-src":["'self'","https://www.google-analytics.com","https://region1.google-analytics.com","https://in.hotjar.com","wss://ws.hotjar.com","https://static.hotjar.com","https://content.hotjar.io","https://github.com/login/oauth/access_token","https://api.github.com/graphql","https://api.github.com/user","https://qilg4ch66b3vpgtevzccb5meum0ttfcl.lambda-url.eu-north-1.on.aws/","https://o171820.ingest.sentry.io/"],"style-src":[`'nonce-${t}'`,"https://static.hotjar.com"],"object-src":["'none'"],"base-uri":["'none'"],"frame-src":["https://vars.hotjar.com/"],"script-src-elem":[`'nonce-${t}'`,"'self'","https://script.hotjar.com/modules.8da33a8f469c3b5ffcec.js","https://script.hotjar.com/browser-perf.8417c6bba72228fa2e29.js","https://script.hotjar.com/sentry.58c81e3e25532810f6fd.js"]}).reduce((e,[o,r])=>`${e};${o} ${r.join(" ")}`,"default-src 'self'"),R=({nonce:t})=>`<meta http-equiv="Content-Security-Policy" content="${it({nonce:t})}">`;var rt=l("./src/pages/1990/styles.css"),$="Art&#363;rs Jansons",S="Full-stack Developer",F="10+ year exp.",nt=`${$} | ${S} [${F}]`,j="Mobile / Web Developer &amp; JavaScript Consultant",st="HTML, CSS, JavaScript, TypeScript, React, React Native, PHP, MySQL, Bash, Makefile, Docker, GraphQL, Next, Nest",A=()=>`<p>
+                                                      </table>`:`<input type="${n||"text"}" id="${m}" name="${t}" value="${c}" ${h} />`};var it=({nonce:t})=>Object.entries({"script-src":[`'nonce-${t}'`,"'strict-dynamic'","https://www.google-analytics.com","https://ssl.google-analytics.com","https://static.hotjar.com","https://script.hotjar.com","https://js.sentry-cdn.com","'unsafe-inline'"],"img-src":["'self'","https://www.google-analytics.com","https://avatars.githubusercontent.com/","https://www.googletagmanager.com/","https://static.hotjar.com","https://survey-images.hotjar.com"],"connect-src":["'self'","https://www.google-analytics.com","https://region1.google-analytics.com","https://in.hotjar.com","wss://ws.hotjar.com","https://static.hotjar.com","https://content.hotjar.io","https://github.com/login/oauth/access_token","https://api.github.com/graphql","https://api.github.com/user","https://o171820.ingest.sentry.io/"],"style-src":[`'nonce-${t}'`,"https://static.hotjar.com"],"object-src":["'none'"],"base-uri":["'none'"],"frame-src":["https://vars.hotjar.com/"],"script-src-elem":[`'nonce-${t}'`,"'self'","https://script.hotjar.com"]}).reduce((e,[o,r])=>`${e};${o} ${r.join(" ")}`,"default-src 'self'"),R=({nonce:t})=>`<meta http-equiv="Content-Security-Policy" content="${it({nonce:t})}">`;var rt=l("./src/pages/1990/styles.css"),$="Art&#363;rs Jansons",S="Full-stack Developer",F="10+ year exp.",nt=`${$} | ${S} [${F}]`,C="Mobile / Web Developer &amp; JavaScript Consultant",st="HTML, CSS, JavaScript, TypeScript, React, React Native, PHP, MySQL, Bash, Makefile, Docker, GraphQL, Next, Nest",A=()=>`<p>
                         1990 |
                         
                         <a href="/next/">BETA</a> |
@@ -98,7 +98,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <td width="80%" valign="bottom">
                                 <p>${$}
                                 <h1><font size="5"><b>${S}</b></font><font size="2">[${F}]</font></h1>
-                                <p><em><font color="gray">${j}</font></em></p>
+                                <p><em><font color="gray">${C}</font></em></p>
                                 <p>
                                     <b>Tech Stack:</b>
                                         ${_()}
@@ -185,7 +185,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     <font size="5"><b>${S}</b></font>
                                     <br>
                                     <font size="2">[${F}]</font></h1>
-                                <p><em>${j}</em></p>
+                                <p><em>${C}</em></p>
                                 <p>
                                     <b>Tech Stack:</b>
                                         <br>
@@ -254,13 +254,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     <font color="gray">\xA9 2024 ${$} | All rights reserved</font>
                     </table>
         </table>
-    </font>`,C=process.env.IS_VITE==="true"?"<!DOCTYPE html>":`<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
-    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">`,V=t=>`${C}
+    </font>`,T=process.env.IS_VITE==="true"?"<!DOCTYPE html>":`<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">`,V=t=>`${T}
 <html lang="en">
 <head>
     ${R({nonce:s})}
     <title>${nt}</title>
-    <meta name="description" content="${j}" />
+    <meta name="description" content="${C}" />
     <meta name="keywords" content="${st}" />
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -283,7 +283,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     ${a({srcDoc:"./src/lib/dosTheme.js",nonce:s,prefix:`const nonce = '${s}';
 `})}
     ${I({nonce:s,projectId:"179618f1f04d4d9dac08acc750d5736c",dsn:"https://179618f1f04d4d9dac08acc750d5736c@o171820.ingest.sentry.io/1250596",release:`1250596@${x}`,environment:"production",integrity:"sha384-6yzL+SsRi1vefLAU9+yqKb0YIeAiJ6GsCob5LxN8Af29Ze1Q5iCg0Ur2fwFroEqa"})}
-`;f("public/index.html",`${C}
+`;f("public/index.html",`${T}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -307,7 +307,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                       </table>
                       <font size="1" color="lightgray">301 Redirect</font><br>
                       <font size="1" color="gray">You will be redirected to the new page shortly. If not, click <a id="url" href="1990">here</a>.</font>
-`);f("public/1990/index.html",`${C}
+`);f("public/1990/index.html",`${T}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
