@@ -1,6 +1,3 @@
-import Error403Page from '@app/pages/error/error-403'
-import Error404Page from '@app/pages/error/error-404'
-import Error500Page from '@app/pages/error/error-500'
 import { ERROR_ACCESS_TOKEN, ERROR_NOT_FOUND } from '@app/components/core/constants';
 
 const isProd = false
@@ -21,15 +18,23 @@ export const error = (error: Error) => {
 
   // Send logs to Sentry
   if (isProd && typeof Sentry !== 'undefined') Sentry.captureException(error);
+  // @ts-ignore
+  if (isProd && typeof window.dataLayer !== 'undefined') window.dataLayer.push({
+    'event': 'issue',
+    message: error.message,
+    // @ts-ignore
+    row: error.lineNumber || null,
+    // @ts-ignore
+    source: error.fileName || null,
+    stack: error.stack,
+  });
 
-  const root = document.getElementById('root')
-  if (root == null) return;
   if (error.message === ERROR_NOT_FOUND) {
-    root.innerHTML = Error404Page(error)
+    window.location.href = "/404";
     return;
   }
   if (error.message === ERROR_ACCESS_TOKEN) {
-    root.innerHTML = Error403Page(error)
+    window.location.href = "/403";
     return;
   }
   // root.innerHTML = Error500Page(error)

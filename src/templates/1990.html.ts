@@ -414,7 +414,8 @@ const Layout = (content: string) => `${DOCTYPE}
     <meta name="theme-color" content="var(--color-window)" />
     ${/* Toggled DOS Theme */''}
     ${/*<link rel="stylesheet" nonce="${nonce}" href="/1990/styles.min.css" />*/''}
-    <style nonce="${nonce}" id="/1990/styles.min.css">${style}</style>
+    ${/* <style nonce="${nonce}" id="/1990/styles.min.css">${style}</style> */''}
+    <link rel="stylesheet" id="/1990/styles.min.css" href="/1990/style.css">
     ${/* Google Tag Manager */''}
     ${GTMHead({ nonce, gtmId: 'GTM-MBG56M'})}
     ${/* Hotjar Tracking Code (removed due install from GTM) */''}
@@ -428,14 +429,14 @@ const Layout = (content: string) => `${DOCTYPE}
     ${content}
     ${/* DOS Theme Code for https://iegik.github.io */''}
     ${Script({ srcDoc: './src/lib/dosTheme.js', nonce, prefix: `const nonce = '${nonce}';\n` })}
-    ${Sentry({
+    ${/*Sentry({
         nonce,
         projectId: "179618f1f04d4d9dac08acc750d5736c",
         dsn: "https://179618f1f04d4d9dac08acc750d5736c@o171820.ingest.sentry.io/1250596",
         release: `1250596@${release}`,
         environment: "production",
         integrity: 'sha384-6yzL+SsRi1vefLAU9+yqKb0YIeAiJ6GsCob5LxN8Af29Ze1Q5iCg0Ur2fwFroEqa'
-    })}
+    })*/''}
 `;
 
 writeFileSync('public/index.html', `${DOCTYPE}
@@ -444,10 +445,11 @@ writeFileSync('public/index.html', `${DOCTYPE}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Loading...</title>
-    <meta http-equiv="REFRESH" content="0;URL=1990/">
-    <link rel="stylesheet" href="/1990/style.css">
+    <!--meta http-equiv="REFRESH" content="0;URL=1990/"-->
+    <link rel="stylesheet" id="/1990/styles.min.css" href="/1990/style.css">
+    ${Script({ srcDoc: './src/lib/router-1990.min.js', nonce })}
 </head>
-<body>
+<body id="root">
   <font face="'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace" size="3">
     <table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
         <tr align="center">

@@ -2,7 +2,6 @@
 // global document, navigation
 import * as log from '@app/services/log';
 import { escapeHTML } from '@app/services/web-utils';
-import servicesMap from '@app/services/index';
 import * as componentsMap from '@app/components/index';
 
 export class Ref {
@@ -158,7 +157,8 @@ const runServices = async (ref: Ref, props: State) => {
 
   if (!services) return;
   for (const serviceName of services) {
-    const service = servicesMap[serviceName];
+    // @ts-ignore
+    const service = window.servicesMap?.[serviceName];
     if (!service) throw Error(`Service ${serviceName} not found`);
     await service(ref);
   }

@@ -1,9 +1,9 @@
 import ErrorPage from './error';
 import Link from '@app/components/link/link';
 
-export default (error: Error) =>
+export default () =>
   ErrorPage({
-    message: error.message,
+    message: '403 Forbidden',
     children: [
       Link({
         to: '#/login',

@@ -20,7 +20,11 @@ const OauthService = async (ref: Ref) => {
   const code = window.sessionStorage?.getItem('code')
   log.debug('Checking GET params', { protocol, hash, search, state })
   const uri = new URLSearchParams(search)
-  if (uri.get('state') !== state) return window.history?.go(-2);
+  if (uri.get('state') !== state) {
+    window.sessionStorage?.removeItem('state')
+    window.history?.go(-2);
+    return;
+  }
 
   getAccessToken(uri.get('code') || undefined);
 }

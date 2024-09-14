@@ -7,6 +7,7 @@ import { CSP } from '@app/pages/1990/components/CSP';
 import { GTag } from '@app/pages/1990/components/GTag';
 import { GTMBody, GTMHead } from '@app/pages/1990/components/GTM';
 import { Sentry } from '@app/pages/1990/components/Sentry';
+import { Script } from '@app/pages/1990/components/ui/script';
 const style = readFileSync('./public/next/styles.min.css');
 
 const title = 'Artūrs Jansons :: Web Developer';
@@ -24,6 +25,7 @@ const html = `<!DOCTYPE html>
     <style nonce="${nonce}">${style}</style>
     ${/* Google Tag Manager */''}
     ${GTMHead({ nonce, gtmId: 'GTM-MBG56M'})}
+    ${Script({ srcDoc: './src/lib/router.min.js', nonce })}
   </head>
   <body>
     <noscript>This page uses JavaScript to play the slot machine game.</noscript>
@@ -34,14 +36,14 @@ const html = `<!DOCTYPE html>
     ${Sprite()}
     <div id="root">${Home()}</div>
     ${/*<script defer nonce="${nonce}" src="lib/router.min.js"></script>*/''}
-    ${Sentry({
+    ${/*Sentry({
       nonce,
       projectId: "179618f1f04d4d9dac08acc750d5736c",
       dsn: "https://179618f1f04d4d9dac08acc750d5736c@o171820.ingest.sentry.io/1250596",
       release: `1250596@${release}`,
       environment: "production",
       integrity: 'sha384-6yzL+SsRi1vefLAU9+yqKb0YIeAiJ6GsCob5LxN8Af29Ze1Q5iCg0Ur2fwFroEqa'
-    })}
+    })*/''}
   </body>
 </html>
 `;

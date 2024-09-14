@@ -34,6 +34,11 @@ lib_node:
 	@npx esbuild src/services/*.ts --outdir=public/next/lib ${JS_CONFIG} && \
 	echo -e "\033[2K\r\033[0;32m✓ Task $@ completed\033[0m\n"
 
+copy_files:
+	@cp public/next/lib/router-1990.min.js src/lib/ && \
+	cp public/next/lib/router.min.js src/lib/ && \
+	echo -e "\033[2K\r\033[0;32m✓ Task $@ completed\033[0m\n"
+
 HTML_CONFIG=\
 --bundle \
 --platform=node \
@@ -68,7 +73,7 @@ templates_deno:
 	echo -e "\033[2K\r\033[0;32m✓ Task $@ completed\033[0m\n"
 
 MIN_CONFIG=--remove-comments --remove-redundant-attributes --remove-script-type-attributes --minify-css true --minify-js true --no-include-auto-generated-tags
-templates: lib_node templates_node
+templates: lib_node copy_files templates_node
 	@npx html-minifier ${MIN_CONFIG} --file-ext html --input-dir public --output-dir public/ && \
 	echo -e "\033[2K\r\033[0;32m✓ Task $@ completed\033[0m\n"
 

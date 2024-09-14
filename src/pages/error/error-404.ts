@@ -1,12 +1,11 @@
 import ErrorPage from './error';
 import Link from '@app/components/link/link';
-import { ERROR_NOT_FOUND } from '@app/components/core/constants';
 
-export default (error = { message: ERROR_NOT_FOUND }) =>
+export default () =>
   ErrorPage({
-    message: error.message,
+    message: '404 Page not found',
     children: [
-      Link({ to: '#', title: 'Go to home page', children: ['Home'] }),
+      Link({ to: '/', title: 'Go to home page', children: ['Home'] }),
       Link({
         onClick: () => {
           history.go(-1);
