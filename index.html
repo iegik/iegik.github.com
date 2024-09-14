@@ -4,10 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Loading...</title>
-    <meta http-equiv="REFRESH" content="0;URL=1990/">
-    <link rel="stylesheet" href="/1990/style.css">
+    
+    <link rel="stylesheet" id="/1990/styles.min.css" href="/1990/style.css">
+    <script crossorigin="" nonce="IwODg5NA">"use strict";(()=>{var r=(e={})=>{let{className:t="",children:r,squire:n,tag:o="div"}=e,i="link-list";return t&&(i+=" "+t),n&&(i+=" link-list--squire"),`
+      <${o} class="${i}">
+        ${r?.map(e=>`<div class="link-list__item">${e}</div>`).join("")}
+      </${o}>
+    `},t=({message:e,children:t}={message:"Unknown error"})=>`
+  <div class="error">
+    <div class="card error__card">
+      <p>${e}</p>
+      ${r({children:t})}
+    </div>
+  </div>
+`,n=e=>{"u"<typeof window||("Page not found"!==e.message?"Access token not provided"===e.message&&(window.location.href="/403"):window.location.href="/404")},e=(...e)=>{console.info(...e)},{}=("🍏,🌰,🍋,🍅,🍆,🍇,🍓,🍉,🍐,🍒,🍑,🥑".split(","),Math),a=class{constructor(){this.id=null}toString(){var e=btoa(""+(Math.ceil(1e13*Math.random())+ +new Date)).slice(10,18);return this.id=this.id||"ref-"+e}get current(){return"u"<typeof window||"u"<typeof document?null:document.querySelector(`[ref=${this.id}]`)}},o=(e={})=>{let{className:t="link",children:r,tag:n="a",to:o="#",title:i="",onClick:s}=e,l=new a;return setTimeout(()=>{s&&l.current&&l.current.addEventListener("click",s)}),`
+      <${n} class="${t} link" href="${o}" title="${i}" ref="${l}" ${/^http/.test(o)?'rel="noopener noreferrer"':""}>
+        ${r?.join?.("")}
+      </${n}>
+    `},i=()=>t({message:"403 Forbidden",children:[o({to:"#/login",title:"Go to login page",children:["Log in"]})]}),s=()=>t({message:"404 Page not found",children:[o({to:"/",title:"Go to home page",children:["Home"]}),o({onClick:()=>{history.go(-1)},title:"Go back",children:["Back"]})]}),l=e=>t({message:e.message,children:[o({onClick:()=>{location.reload()},title:"Reload",children:["Reload"]}),o({onClick:()=>{history.go(-1)},title:"Go back",children:["Back"]})]}),d=()=>(setTimeout(()=>{n(new Error("Some error test"))}),"Some error test"),h=()=>{setTimeout(()=>{let e=window.innerWidth<768?"/1990/mobile/":"/1990/desktop/",t=document.getElementById("url");t&&(t.href=e),window.location.href.includes(e)||(window.location.href=e)},1e3)},u=e=>{e=e.error;n(e)},c=()=>{var t=(()=>{let{hash:e,pathname:t}=document.location;return""+t.replace("index.html","")+e.slice(2)})();if(t){t=((t="/")=>{e("Loading "+t);try{switch(!0){case/^\/test\/?$/.test(t):return d();case/^\/1990\/?$/.test(t):case/^\/$/.test(t):return h();case"/403/"===t||"/403"===t:return i();default:return s()}}catch(e){t=e instanceof Error?e:{message:e?.message||e};return l(t)}})(t);if(t&&!("u"<typeof window)&&window?.document){addEventListener("error",u);let e=document.getElementById("root");null!=e&&(e.innerHTML=t)}}};addEventListener("DOMContentLoaded",c),addEventListener("hashchange",c)})()</script>
 </head>
-<body>
+<body id="root">
   <font face="'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace" size="3">
     <table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
         <tr align="center">
