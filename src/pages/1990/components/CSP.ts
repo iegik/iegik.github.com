@@ -1,19 +1,26 @@
+/**
+ * You can validate the result of CSP here: https://csp-evaluator.withgoogle.com/
+ */
 type CSPContentProps = { nonce: string; }
 const CSPContent = ({ nonce }: CSPContentProps) => Object.entries({
+  // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/script-src
   'script-src': [
     `'nonce-${nonce}'`,
     `'strict-dynamic'`,
     `https://www.google-analytics.com`,
     `https://ssl.google-analytics.com`,
-    `https://static.hotjar.com`,
+    'https://static.hotjar.com',
+    'https://script.hotjar.com',
     `https://js.sentry-cdn.com`,
-    // `'unsafe-inline'`, // (ignored by browsers supporting nonces/hashes) to be backward compatible with older browsers.
+    `'unsafe-inline'`, // (ignored by browsers supporting nonces/hashes) to be backward compatible with older browsers.
   ],
   'img-src': [
     `'self'`,
     `https://www.google-analytics.com`,
     `https://avatars.githubusercontent.com/`,
     `https://www.googletagmanager.com/`,
+    'https://static.hotjar.com',
+    'https://survey-images.hotjar.com',
   ],
   'connect-src': [
     `'self'`,
@@ -26,7 +33,6 @@ const CSPContent = ({ nonce }: CSPContentProps) => Object.entries({
     `https://github.com/login/oauth/access_token`,
     `https://api.github.com/graphql`,
     `https://api.github.com/user`,
-    `https://qilg4ch66b3vpgtevzccb5meum0ttfcl.lambda-url.eu-north-1.on.aws/`,
     `https://o171820.ingest.sentry.io/`,
   ],
   'style-src': [
@@ -40,9 +46,7 @@ const CSPContent = ({ nonce }: CSPContentProps) => Object.entries({
   'script-src-elem': [
     `'nonce-${nonce}'`,
     `'self'`,
-    'https://script.hotjar.com/modules.8da33a8f469c3b5ffcec.js',
-    'https://script.hotjar.com/browser-perf.8417c6bba72228fa2e29.js',
-    'https://script.hotjar.com/sentry.58c81e3e25532810f6fd.js'
+    'https://script.hotjar.com'
     // `'unsafe-inline'`
   ]
 }).reduce((acc, [key, val]) => `${acc};${key} ${val.join(' ')}`, `default-src 'self'`);
