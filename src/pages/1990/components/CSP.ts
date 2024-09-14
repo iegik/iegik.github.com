@@ -36,6 +36,7 @@ const CSPContent = ({ nonce }: CSPContentProps) => Object.entries({
     `https://o171820.ingest.sentry.io/`,
   ],
   'style-src': [
+    `'self'`,
     `'nonce-${nonce}'`,
     `https://static.hotjar.com`,
     // `'unsafe-inline'`,
@@ -44,8 +45,8 @@ const CSPContent = ({ nonce }: CSPContentProps) => Object.entries({
   'base-uri': [`'none'`],
   'frame-src': [`https://vars.hotjar.com/`],
   'script-src-elem': [
-    `'nonce-${nonce}'`,
     `'self'`,
+    `'nonce-${nonce}'`,
     'https://script.hotjar.com'
     // `'unsafe-inline'`
   ]

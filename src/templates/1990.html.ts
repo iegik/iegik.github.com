@@ -414,9 +414,9 @@ const Layout = (content: string) => `${DOCTYPE}
     <meta name="theme-color" content="var(--color-window)" />
     ${/* Toggled DOS Theme */''}
     ${/*<link rel="stylesheet" nonce="${nonce}" href="/1990/styles.min.css" />*/''}
-    ${/* <style nonce="${nonce}" id="/1990/styles.min.css">${style}</style> */''}
-    <link rel="stylesheet" id="/1990/styles.min.css" href="/1990/style.css">
+    <style nonce="${nonce}" id="/1990/styles.min.css">${style}</style>
     ${/* Google Tag Manager */''}
+    ${Script({ srcDoc: './src/lib/guard.js', nonce })}
     ${GTMHead({ nonce, gtmId: 'GTM-MBG56M'})}
     ${/* Hotjar Tracking Code (removed due install from GTM) */''}
     ${/* HotJar({ nonce, hjid: 2660383, hjsv: 6 }) */''}
@@ -428,15 +428,15 @@ const Layout = (content: string) => `${DOCTYPE}
     ${GTMBody({ nonce, gtmId: 'GTM-MBG56M'})}
     ${content}
     ${/* DOS Theme Code for https://iegik.github.io */''}
-    ${Script({ srcDoc: './src/lib/dosTheme.js', nonce, prefix: `const nonce = '${nonce}';\n` })}
-    ${/*Sentry({
+    ${Script({ srcDoc: './src/lib/dosTheme.js', iife: 'document, toggleDosStyle, "/1990/styles.min.css"', nonce, prefix: `const nonce = '${nonce}';\n` })}
+    ${Sentry({
         nonce,
         projectId: "179618f1f04d4d9dac08acc750d5736c",
         dsn: "https://179618f1f04d4d9dac08acc750d5736c@o171820.ingest.sentry.io/1250596",
         release: `1250596@${release}`,
         environment: "production",
         integrity: 'sha384-6yzL+SsRi1vefLAU9+yqKb0YIeAiJ6GsCob5LxN8Af29Ze1Q5iCg0Ur2fwFroEqa'
-    })*/''}
+    })}
 `;
 
 writeFileSync('public/index.html', `${DOCTYPE}
@@ -446,10 +446,17 @@ writeFileSync('public/index.html', `${DOCTYPE}
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Loading...</title>
     <!--meta http-equiv="REFRESH" content="0;URL=1990/"-->
-    <link rel="stylesheet" id="/1990/styles.min.css" href="/1990/style.css">
+    ${/*<link rel="stylesheet" id="/1990/styles.min.css" href="/1990/styles.min.css">*/''}
+    <style nonce="${nonce}" id="/1990/styles.min.css">${style}</style>
     ${Script({ srcDoc: './src/lib/router-1990.min.js', nonce })}
+    ${/* Google Tag Manager */''}
+    ${GTMHead({ nonce, gtmId: 'GTM-MBG56M'})}
 </head>
 <body id="root">
+    ${/* Google Analytics */''}
+    ${GTag({ nonce, gtmId: 'G-5ZY8Y6X2C4'})}
+    ${/* Google Tag Manager */''}
+    ${GTMBody({ nonce, gtmId: 'GTM-MBG56M'})}
   <font face="'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace" size="3">
     <table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
         <tr align="center">
@@ -471,7 +478,8 @@ writeFileSync('public/1990/index.html', `${DOCTYPE}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Loading...</title>
-    <link rel="stylesheet" href="/1990/styles.min.css">
+    ${/*<link rel="stylesheet" id="/1990/styles.min.css" href="/1990/styles.min.css">*/''}
+    <style nonce="${nonce}" id="/1990/styles.min.css">${style}</style>
 </head>
 <body onload='setTimeout((e=>window.location.href.includes(e)||(window.location.href=e))(url.href=window.innerWidth<768?"/1990/mobile/":"/1990/desktop/"),1e3)'>
   <font face="'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace" size="3">

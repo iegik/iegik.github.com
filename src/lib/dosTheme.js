@@ -1,4 +1,4 @@
-(function (D, O, S, theme = "", _) {
+function (D, O, S, theme = "", _) {
   _ = document.getElementById(S);
   theme = _.innerHTML;
   O.onclick = remove;
@@ -59,4 +59,4 @@
       }
   }
   // @ts-ignore
-  })(document, toggleDosStyle, "/1990/styles.min.css");
+}

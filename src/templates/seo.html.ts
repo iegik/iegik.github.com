@@ -36,14 +36,14 @@ const html = `<!DOCTYPE html>
     ${Sprite()}
     <div id="root">${Home()}</div>
     ${/*<script defer nonce="${nonce}" src="lib/router.min.js"></script>*/''}
-    ${/*Sentry({
+    ${Sentry({
       nonce,
       projectId: "179618f1f04d4d9dac08acc750d5736c",
       dsn: "https://179618f1f04d4d9dac08acc750d5736c@o171820.ingest.sentry.io/1250596",
       release: `1250596@${release}`,
       environment: "production",
       integrity: 'sha384-6yzL+SsRi1vefLAU9+yqKb0YIeAiJ6GsCob5LxN8Af29Ze1Q5iCg0Ur2fwFroEqa'
-    })*/''}
+    })}
   </body>
 </html>
 `;

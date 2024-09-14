@@ -1,3 +1,4 @@
+'use strict'
 /* global window, process, navigation */
 // @deno-types='@app/types.d'
 import Error403Page from '@app/pages/error/error-403'
@@ -7,9 +8,14 @@ import * as log from '@app/services/log';
 import { getRoute } from '@app/services/web-utils';
 
 const Test = () => {
-  setTimeout(() => {
+  addEventListener('DOMContentLoaded', () => {
     log.error(new Error('Some error test'))
+  })
+  setTimeout(() => {
+    log.error(new Error('Throw error on setTimeout'))
   });
+  Promise.reject(new Error('Throw error on promise')).catch((e) => {console.error(e)})
+  log.error(new Error('Throw error immediately'))
   return `Some error test`
 }
 
@@ -30,7 +36,7 @@ const route = (uri = '/') => {
   log.info(`Loading ${uri}`)
   try {
     switch (true) {
-      case /^\/test\/?$/.test(uri): return Test()
+      case /\/test\/?$/.test(uri): return Test()
       // Default redirect
       case /^\/1990\/?$/.test(uri):
       case /^\/$/.test(uri): return Default()
