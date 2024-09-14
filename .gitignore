@@ -21,5 +21,6 @@ public/PRIVACY.md
 public/**/manifest.appcache
 public/data/
 scripts/index.js
+src/lib/router*.js
 .env
 archive/
