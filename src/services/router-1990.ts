@@ -14,7 +14,7 @@ const Test = () => {
   setTimeout(() => {
     log.error(new Error('Throw error on setTimeout'))
   });
-  Promise.reject(new Error('Throw error on promise')).catch((e) => {console.error(e)})
+  Promise.reject(new Error('Throw error on promise')).catch((e) => {log.error(e)})
   log.error(new Error('Throw error immediately'))
   return `Some error test`
 }
