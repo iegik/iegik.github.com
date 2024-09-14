@@ -1,6 +1,6 @@
 import { ERROR_ACCESS_TOKEN, ERROR_NOT_FOUND } from '@app/components/core/constants';
 
-const isProd = false
+const isProd = process.env.NODE_ENV === 'production';
 
 // const message = (...args: any[]): void => {
 //   const { component } = args[0] || {}
@@ -13,7 +13,7 @@ const isProd = false
 // }
 
 export const error = (error: Error) => {
-  // console.error(error)
+  console.error(error)
   if (typeof window === 'undefined') return;
 
   // Send logs to Sentry

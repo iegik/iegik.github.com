@@ -16,7 +16,7 @@ const Test = () => {
   });
   Promise.reject(new Error('Throw error on promise')).catch((e) => {log.error(e)})
   log.error(new Error('Throw error immediately'))
-  return `Some error test`
+  return `<center><font color="red">Some error test</font></center>`
 }
 
 const Default = () => {
