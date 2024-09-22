@@ -82,13 +82,15 @@ a {
   box-shadow: 1em 1ex var(--color-shadow);
   margin-right: 1ex;
   margin-bottom: 1ex;
-  display: inline-block;
 }
 input,
 select,
 textarea,
-a:not([href*=".jpg"]) {
+a:not([href^="/images"]) {
   line-height: 2;
+}
+a[href^="/images"] {
+  display: inline-block;
 }
 li {
   list-style-type: square;
@@ -112,7 +114,7 @@ code {
 input,
 select,
 textarea,
-a:not([href*=".jpg"]) {
+a:not([href^="/images"]) {
   text-decoration: none;
   color: initial;
   padding: 0 0.5em;
