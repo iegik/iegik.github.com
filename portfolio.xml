@@ -13,7 +13,9 @@
         <description lang="ru">JGF - это социальный фонд - вклад, направленный на духовное и культурное развитие Израиля. Сайт построен на CodeIgniter, стилизован используя Blueprint и SASS. На jQuery я впервые реализовал "one-touch AJAX", когда при перелистывании страницы информация не заменяется, а добавляется, тем самым избавляя сервер от лишних запросов. И возврат к уже просмотренной странице происходит моментально.</description>
 		<description lang="en">The JGF is a social foundation as investment, which is directed to the spiritual and cultural contribution in Israel development. The site is build with CodeIgniter Framework, styled with Blueprint CSS and SASS generator. This is a first time, when I use jQuery "one-touch AJAX" technics for page`s navigation. It make available return to the prewieus pages without sanding requests.</description>
 		<category>PHP HTML CSS JavaScript</category>
+        <year>2008</year>
 	</project>
+
     <project>
         <name>dedukcija</name>
         <client>SIA "Dedukcija"</client>
@@ -25,6 +27,7 @@
         </images>
         <description lang="lv">Uzņēmums ir sapulcējis kompetentu, enerģisku un pieredzējušu speciālistu kolektīvu, lai piedāvātu jums ne tikai juridisko palīdzību, apsardzes un detektīvu pakalpojumus, bet arī konsultētu Jūs kompleksi par personiskās un biznesa drošības jautājumiem. Garantējam Jums individuālu pieeju, iesakot piemērotāko risinājumu atkarībā no Jūsu vēlmēm un iespējām. Kaut arī esam jauns uzņēmums, bet varam lepoties ar labiem panākumiem mūsu darbā un lieliskām atsauksmēm par mūsu līdzšinējo darbību. Uzņēmuma mērķis ir sniegt profesionālus un kvalitatīvus pakalpojumus drošības jomā, kā arī attīstīt veiksmīgu un konkurētspējīgu uzņēmumu. Uzņēmuma darbības pamatprincipi, ir kvalitāte un augsti profesionālu speciālistu iesaistīšana.</description>
 		<category>PHP HTML CSS CodeIgniter Blueprint</category>
+        <year>2008</year>
 	</project>
     <project>
         <name>janiskuzins</name>
@@ -37,6 +40,7 @@
         </images>
         <description lang="lv">Jānisa Kuzina - Jūrmalas deputāta mājaslapai vajadzēja sakopt tēmu un uztaisīt dāžas moduļus. Kā arī bija ideja savienot ar daudzām valodām katru rakstu.</description>
 		<category>PHP XHTML CSS</category>
+        <year>2008</year>
 	</project>
     <project>
         <name>autonoma</name>
@@ -49,6 +53,7 @@
         </images>
         <description lang="lv">Vieglas automašīnu nomas katalogs. Galvenā lapā var apskartīties populārakas auto, viegla navigācija un skaidrs saturs - viss pa plauktam.</description>
 		<category>PHP XHTML CSS</category>
+        <year>2008</year>
 	</project>
     <project>
         <name>autokrava</name>
@@ -59,6 +64,7 @@
         </images>
         <description lang="lv">Autokravas automašīnu nomas mājaslapa ar tīmekļa noformējumu.</description>
 		<category>XHTML CSS</category>
+        <year>2008</year>
     </project>
     <project>
         <name>raba</name>
@@ -70,6 +76,7 @@
         </images>
         <description lang="lv">Labs piemērs kāvar izstrādat saite visādam veidam monitoriem - gan parastiem, gan Widescreen.</description>
 		<category>XHTML CSS</category>
+        <year>2008</year>
     </project>
     <project>
         <name>terrawinda</name>
@@ -83,6 +90,7 @@
         <description lang="lv">3 nedēļas laika pirms irādes jau bija gatava HTML lapa, kur uzreiz ielikta visa informāsija par koncertu. Izmantoju efektus un viltīgas trikus lai ievietot mazā laukumā vairāk informācijas.</description>
         <description lang="en">The Terra Winda Ventspils festival (12.7.2008). It was best times for me. My first big project for my friends. New innovations - <strong>Flash video</strong> on main page, some <strong>CSS</strong> tricks. But only one thing, that stay annoying - all this was on <em>one <strong>HTML</strong> page</em>. Too slow connection to the site, and so many peoples don`t want waist their time.<br/>I`m sorry, but real address do not exist now and I lost latest design for that site. it was like banner painted by two colors: yellow, red and black.</description>
 		<category>XHTML CSS Flash</category>
+        <year>2008</year>
     </project>
     <project>
         <name>eremonts</name>
@@ -99,6 +107,149 @@
 			All fields are tab-ordered. The calculations performs, when <u>at least one of data fields are changed</u>. The script checks data in fields and <u>removes unnecessary zeros</u>
 		</description>
 		<category>XHTML CSS ActionScript</category>
+        <year>2008</year>
+    </project>
+
+    <project>
+        <name>order-form</name>
+        <client>pet-project</client>
+        <url>https://wiam-front-test.vercel.app/</url>
+        <repository>https://github.com/iegik/wiam-front-test</repository>
+        <images>
+            <picture src="order-form" />
+        </images>
+        <description lang="lv"></description>
+		<description lang="en">Simple credit order form on React. Simple masked input used. For this project was created an universal template for such projects</description>
+		<category>HTML CSS JS TypeScript React Vite</category>
+        <year>2024</year>
+    </project>
+
+    <project>
+        <name>angular-bookshelf</name>
+        <client>pet-project</client>
+        <url>https://test-domprog.vercel.app/</url>
+        <repository>https://github.com/iegik/test-domprog</repository>
+        <images>
+            <picture src="angular-bookshelf" />
+        </images>
+        <description lang="lv"></description>
+		<description lang="en">The Bookshelf app on Angular. Search books by title/author, sync with localStorage</description>
+		<category>HTML CSS JS TypeScript Angular</category>
+        <year>2024</year>
+    </project>
+
+    <project>
+        <name>homepage-update</name>
+        <client>pet-project</client>
+        <url>https://iegik.github.io</url>
+        <repository>https://github.com/iegik/iegik.github.com</repository>
+        <images>
+            <picture src="homepage-update" />
+        </images>
+        <description lang="lv"></description>
+		<description lang="en">Idea was to create simple XHTML page, with DOS theme and not using CSS, like it was in 1990'</description>
+		<category>HTML CSS JS TypeScript SVG ASCII ImageMagic</category>
+        <year>2024</year>
+    </project>
+
+    <project>
+        <name>test-kanvajs</name>
+        <client>pet-project</client>
+        <url>https://test-kanvajs.vercel.app/</url>
+        <repository>https://github.com/iegik/test-kanvajs</repository>
+        <images>
+            <picture src="test-kanvajs1" />
+            <picture src="test-kanvajs2" />
+            <picture src="test-kanvajs3" />
+        </images>
+        <description lang="lv"></description>
+		<description lang="en">Goal is to make simple 2D vector graphic editor using KanvaJS. Add shapes like circle, line, star and rectangle. Added also clean canvas.</description>
+		<category>HTML CSS JS TypeScript KanvaJS SVG React</category>
+        <year>2024</year>
+    </project>
+
+    <project>
+        <name>spaceinviders3d1</name>
+        <client>pet-project</client>
+        <url></url>
+        <images>
+            <picture src="spaceinviders3d1" />
+        </images>
+        <description lang="lv"></description>
+		<description lang="en">Goal is to make simple 3D game on Unity 3D and embed into the web page</description>
+		<category>HTML CSS JS TypeScript Unity3D C#</category>
+        <year>2023</year>
+    </project>
+
+    <project>
+        <name>serverless-plugin</name>
+        <client>NDA project</client>
+        <url></url>
+        <images>
+            <picture src="serverless-plugin" />
+            <picture src="serverless-plugin2" />
+            <picture src="serverless-plugin3" />
+        </images>
+        <description lang="lv"></description>
+		<description lang="en">Goal is to make custom plugin which replaces native component to adopt behavior to customer needs</description>
+		<category>CSS JS TypeScript Vue2 Vue3</category>
+        <year>2023</year>
+    </project>
+
+    <project>
+        <name>card-zoom1</name>
+        <client>pet-project</client>
+        <url></url>
+        <images>
+            <picture src="card-zoom1" />
+        </images>
+        <description lang="lv"></description>
+		<description lang="en">Goal is to make template for credit cards. Also added zoom effect</description>
+		<category>CSS SVG</category>
+        <year>2023</year>
+    </project>
+
+    <project>
+        <name>blockbanch</name>
+        <client>pet-project</client>
+        <url></url>
+        <images>
+            <picture src="blockbench1" />
+            <picture src="blockbench2" />
+        </images>
+        <description lang="lv"></description>
+		<description lang="en">Goal is to make texture for a 3D object for Unity 3D. Also made optimized texture pack which uses same part of texture for different parts of model</description>
+		<category>Unity3D Blockbench</category>
+        <year>2023</year>
+    </project>
+
+    <project>
+        <name>tree</name>
+        <client>pet-project</client>
+        <url>https://mindmap-opal.vercel.app/</url>
+        <images>
+            <picture src="tree" />
+        </images>
+        <description lang="lv"></description>
+		<description lang="en">Goal is to make "nested set" tree implementation on JS. Also implemented nested-set to csv convertor to sync data with localStorage</description>
+		<category>HTML CSS JavaScript</category>
+        <year>2022</year>
+    </project>
+
+    <project>
+        <name>sendsay</name>
+        <client>Sendsay</client>
+        <url>https://sendsay.ru/</url>
+        <repository></repository>
+        <images>
+            <picture src="sendsay" />
+            <picture src="sendsay1" />
+            <picture src="sendsay2" />
+        </images>
+        <description lang="lv"></description>
+		<description lang="en">Developed different types of custom components such as fast preview of the mail templates in a table</description>
+		<category>HTML CSS SASS JS React</category>
+        <year>2020</year>
     </project>
 
 </portfolio>
