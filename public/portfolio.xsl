@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
 <xsl:stylesheet version="2.0"
-   xmlns:xsl="https://www.w3.org/1999/XSL/Transform"
-   xmlns:xdt="https://www.w3.org/2005/02/xpath-datatypes"
-   xmlns:xs="https://www.w3.org/2001/XMLSchema"
-   xmlns:ex="https://exslt.org/dates-and-times" extension-element-prefixes="ex">
+   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+   xmlns:xdt="http://www.w3.org/2005/02/xpath-datatypes"
+   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+   xmlns:ex="http://exslt.org/dates-and-times" extension-element-prefixes="ex">
    <xsl:output method="html" encoding="utf-8" doctype-public="-//W3C//DTD XHTML 1.1//EN" doctype-system="https://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd" />
    <xsl:template match="/">
       <html lang="en" manifest="manifest.appcache">
@@ -23,6 +23,7 @@
                </xsl:attribute>
             </meta>
             <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+            <link rel="stylesheet" href="/1990/styles.min.css" id="/1990/styles.min.css" />
          </head>
          <body>
             <xsl:apply-templates select="portfolio" />
@@ -48,7 +49,7 @@
 										<xsl:value-of select="@src" />
 									</xsl:attribute>
 									<xsl:attribute name="href">
-										<xsl:value-of select="concat('images/', @src, '.jpg')" />
+										<xsl:value-of select="concat('/images/portfolio/', @src, '.jpg')" />
 									</xsl:attribute>
 									<img>
 										<xsl:attribute name="alt">
@@ -58,7 +59,7 @@
 												<xsl:value-of select="@src" />
 										</xsl:attribute>
 										<xsl:attribute name="src">
-												<xsl:value-of select="concat('images/', @src, '-thumb.jpg')" />
+												<xsl:value-of select="concat('/images/portfolio/', @src, '-thumb.jpg')" />
 										</xsl:attribute>
 									</img>
 								</picture>
