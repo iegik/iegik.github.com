@@ -141,7 +141,8 @@
     <project>
         <name>homepage-update</name>
         <client>pet-project</client>
-        <url></url>
+        <url>https://iegik.github.io</url>
+        <repository>https://github.com/iegik/iegik.github.com</repository>
         <images>
             <picture src="homepage-update" />
         </images>
