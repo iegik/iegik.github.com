@@ -1,0 +1,18 @@
+#!/bin/bash
+source $(dirname $0)/modules/png2ppm
+
+rm -f public/images/portfolio/**/*-thumb*
+
+for f in public/images/portfolio/**/*.png public/images/me.jpg;do
+  # 1. Make progressive JPEG `-interlace plane`
+  # 2. Add lossless compression `-compress lossless`
+  # 3. Make grayscale image to reduce size `-grayscale Rec709Luma`
+  # 4. Make ASCII art for alt
+  size=128x128
+  magick "$f" -format jpg -resize $size -gravity center -crop 1:1+0+0 +repage -interlace Plane -compress lossless "${f%%.png}-thumb.jpg";
+  magick "$f" -format png -resize $size -gravity center -crop 1:1+0+0 +repage -interlace Plane "${f%%.png}-thumb.png";
+  jp2a "${f%%.png}-thumb.jpg" --output="${f%%.png}-thumb.ascii"
+  cwebp -quiet -q 80 "${f%%.png}-thumb.png" -o "${f%%.png}-thumb.webp"
+  png2ppm 16x16 "${f%%.png}-thumb.png" "${f%%.png}-thumb.ppm";
+  $(dirname $0)/braille -l "8" "${f%%.png}-thumb.ppm" > "${f%%.png}-thumb.ascii";
+done;

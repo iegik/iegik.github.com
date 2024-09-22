@@ -265,6 +265,9 @@ const DesktopView = () => `<font face="${fontFamily}" size="3">
                                             ${ProjectView(projects[3])}
                                     </tr>
                                 </table>
+                        <tr>
+                            <td colspan="2" align="center">
+                                ${Link({ href: '/portfolio.xml', title: 'Other projects' })}
                     </table>
                     <table border="0" cellpadding="0" cellspacing="8">
                         <tr>
@@ -360,6 +363,9 @@ const MobileView = () => `<font face="${fontFamily}" size="3">
                                             ${ProjectView(projects[3])}
                                     </tr>
                                 </table>
+                        <tr>
+                            <td align="center">
+                                ${Link({ href: '/portfolio.xml', title: 'Other projects' })}
                         <tr>
                             <td width="40%" align="right">
                                 <font size="2">

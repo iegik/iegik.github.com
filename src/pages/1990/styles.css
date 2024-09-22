@@ -38,11 +38,14 @@ p {
 pre {
   overflow: hidden;
 }
-img[alt] {
-  margin-left: -16px;
+picture {
+  display: grid;
 }
 img {
   image-rendering: pixelated;
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
 }
 body,
 html {
@@ -78,6 +81,13 @@ textarea,
 a {
   box-shadow: 1em 1ex var(--color-shadow);
   margin-right: 1ex;
+  margin-bottom: 1ex;
+  display: inline-block;
+}
+input,
+select,
+textarea,
+a:not([href*=".jpg"]) {
   line-height: 2;
 }
 li {
@@ -102,10 +112,10 @@ code {
 input,
 select,
 textarea,
-a {
+a:not([href*=".jpg"]) {
   text-decoration: none;
   color: initial;
-  padding: 0.25em 0.5em;
+  padding: 0 0.5em;
 }
 [bgcolor] input,
 [bgcolor] select,
