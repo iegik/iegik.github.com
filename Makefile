@@ -73,9 +73,11 @@ templates_deno:
 	echo -e "\033[2K\r\033[0;32m✓ Task $@ completed\033[0m\n"
 
 MIN_CONFIG=--remove-comments --remove-redundant-attributes --remove-script-type-attributes --minify-css true --minify-js true --no-include-auto-generated-tags
+# minifier disabled due REDoS vulnerability, when fixed place following line above "templates:" task:
+# @npx html-minifier ${MIN_CONFIG} --file-ext html --input-dir public --output-dir public/ && \
+
 templates: lib_node copy_files templates_node
-	@npx html-minifier ${MIN_CONFIG} --file-ext html --input-dir public --output-dir public/ && \
-	echo -e "\033[2K\r\033[0;32m✓ Task $@ completed\033[0m\n"
+	@echo -e "\033[2K\r\033[0;32m✓ Task $@ completed\033[0m\n"
 
 templates\:watch:
 	@fswatch -o src/*.ts src/**/*.ts | xargs -n1 -I{} make templates
@@ -149,7 +151,7 @@ xml2json:
 	@cat public/portfolio.xml | xq .
 
 deno:
-	@deno run --allow-write --allow-read --allow-env ${DENO_CONFIG} src/server.ts
+	@deno run --allow-write --allow-read --allow-env --unstable-sloppy-imports ${DENO_CONFIG} src/server.deno.ts
 
 serverless:
 	@npx serverless dev

@@ -61,7 +61,7 @@
         "rule": "cli",
         "binary": "deno",
         "version": "--version",
-        "semver": "^1.8.2",
+        "semver": "^2.0.0",
         "error": "You have deno@{{installedVersion}}, and need deno@{{wantedVersion}}. Fix with `brew install -g deno@{{wantedVersion}}` https://deno.land/#installation"
       }
     ],

@@ -1,10 +1,10 @@
 import { ClientRequest, IncomingMessage } from 'http';
-import https, { RequestOptions } from 'https';
-import { APIGatewayProxyEventV2WithRequestContext } from 'aws-lambda';
+import https, { type RequestOptions } from 'https';
+import { type APIGatewayProxyEventV2WithRequestContext } from 'aws-lambda';
 
 // TODO: Determinate what is 'http' here
-type APIGatewayProxyContextUnknown = (ClientRequest | IncomingMessage) & { http: (ClientRequest | IncomingMessage) }
-type APIGatewayProxyEvent = APIGatewayProxyEventV2WithRequestContext<APIGatewayProxyContextUnknown>
+export type APIGatewayProxyContextUnknown = { http: (ClientRequest | IncomingMessage) }
+export type APIGatewayProxyEvent = APIGatewayProxyEventV2WithRequestContext<APIGatewayProxyContextUnknown>
 
 const request = (body: string, options: RequestOptions) => new Promise((resolve, reject) => {
   const req = https.request(options, (res: IncomingMessage) => {
@@ -93,7 +93,7 @@ const handlePostRequests = async (req: any, res: { headers: { 'Content-Type': st
   };
 }
 
-exports.handler = async (event: APIGatewayProxyEvent) => {
+export const handler = async (event: APIGatewayProxyEvent) => {
   const res = {
     headers: {
       'Content-Type': 'application/json',
@@ -106,7 +106,7 @@ exports.handler = async (event: APIGatewayProxyEvent) => {
         return await handleGetRequests(event, res);
       case 'POST':
         return await handlePostRequests(event, res);
-      default: throw new Error(`Unsupported method "${event.requestContext.method}"\n${event?.requestContext && JSON.stringify(event.requestContext)}`);
+      default: throw new Error(`Unsupported method "${event.requestContext.http.method}"\n${event?.requestContext && JSON.stringify(event.requestContext)}`);
     }
   } catch (error) {
     return {
