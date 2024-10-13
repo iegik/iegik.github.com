@@ -145,6 +145,15 @@ jpg2png: thumb
 braille: ascii # not used
 	@scripts/braille public/images/artursjansons.ascii > public/images/artursjansons.brf
 
+xml2json:
+	@cat public/portfolio.xml | xq .
+
+deno:
+	@deno run --allow-write --allow-read --allow-env ${DENO_CONFIG} src/server.ts
+
+serverless:
+	@npx serverless dev
+
 # OS X requires the extension to be explicitly specified
 eula:
 	@cp EULA.md public/EULA.md && \
