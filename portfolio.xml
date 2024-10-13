@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="portfolio.xsl"?>
 <portfolio>
-    <project>
+    <!--project>
         <name>jgf</name>
         <client>"Jerusalem - Gate to the Future" (JGF)</client>
         <url>https://jgf.co.il</url>
@@ -108,7 +108,7 @@
 		</description>
 		<category>XHTML CSS ActionScript</category>
         <year>2008</year>
-    </project>
+    </project-->
 
     <project>
         <name>order-form</name>
@@ -171,7 +171,7 @@
     <project>
         <name>spaceinviders3d1</name>
         <client>pet-project</client>
-        <url></url>
+        <url>#Not available</url>
         <images>
             <picture src="spaceinviders3d1" />
         </images>
@@ -184,7 +184,7 @@
     <project>
         <name>serverless-plugin</name>
         <client>NDA project</client>
-        <url></url>
+        <url>#NDA</url>
         <images>
             <picture src="serverless-plugin" />
             <picture src="serverless-plugin2" />
@@ -199,7 +199,7 @@
     <project>
         <name>card-zoom1</name>
         <client>pet-project</client>
-        <url></url>
+        <url>https://codepen.io/iegik/full/zYQGBPj</url>
         <images>
             <picture src="card-zoom1" />
         </images>
@@ -212,7 +212,7 @@
     <project>
         <name>blockbanch</name>
         <client>pet-project</client>
-        <url></url>
+        <url>#Not available</url>
         <images>
             <picture src="blockbench1" />
             <picture src="blockbench2" />
@@ -250,6 +250,21 @@
 		<description lang="en">Developed different types of custom components such as fast preview of the mail templates in a table</description>
 		<category>HTML CSS SASS JS React</category>
         <year>2020</year>
+    </project>
+
+    <project>
+        <name>responsive-canvas</name>
+        <client>pet-project</client>
+        <url>https://codepen.io/iegik/full/LYwYBLB/</url>
+        <repository></repository>
+        <images>
+            <picture src="responsive-canvas" />
+        </images>
+        <description lang="lv"></description>
+		<description lang="en">Develop responsive aria where placed a canvas with fixed size, that can be resized to test how it changes on different sizes of the screen keeping its fixed aspect ration and fill all available of free space</description>
+		<description lang="ru"></description>
+		<category>HTML CSS JS React</category>
+        <year>2024</year>
     </project>
 
 </portfolio>

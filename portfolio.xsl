@@ -27,9 +27,39 @@
             <link rel="stylesheet" href="/1990/styles.min.css" id="/1990/styles.min.css" />
          </head>
          <body>
-            <xsl:apply-templates select="portfolio/project">
-               <xsl:sort select="year" order="descending" />
-            </xsl:apply-templates>
+            <font face="'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace" size="3">
+               <table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
+                  <tr align="center">
+                     <td valign="top">
+                        1990 |
+                        <a href="/next/">BETA</a> |
+                        <a id="toggleDosStyle" href="#exit" bgcolor="red">DOS</a>
+                        <hr/>
+                        <main>
+                           <xsl:apply-templates select="portfolio/project">
+                              <xsl:sort select="year" order="descending" />
+                           </xsl:apply-templates>
+                        </main>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td valign="bottom" align="center">
+                        <hr/>
+                        <table border="0" cellpadding="8" cellspacing="0" width="100%">
+                           <tr>
+                              <td align="center">
+                                 <a rel="noopener noreferrer" href="https://linkedin.com/in/iegik" title="LinkedIn">LinkedIn</a> | <a  rel="noopener noreferrer" href="https://github.com/iegik" title="GitHub">GitHub</a> | <a  rel="noopener noreferrer" href="https://profile.codersrank.io/user/iegik" title="CodersRank">CodersRank</a> | <a  rel="noopener noreferrer" href="https://codepen.io/iegik/" title="CodePen">CodePen</a> | <a  rel="noopener noreferrer" href="https://jsfiddle.net/user/iegik" title="JSFiddle">JSFiddle</a> | <a  rel="noopener noreferrer" href="https://stackoverflow.com/users/771471/iegik" title="StackOverflow">StackOverflow</a>
+                                 <br/>
+                                 <marquee>
+                                    <font color="gray">© 2024 Art&#363;rs Jansons | All rights reserved</font>
+                                 </marquee>
+                              </td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+              </table>
+            </font>
          </body>
       </html>
    </xsl:template>
