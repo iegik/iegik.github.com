@@ -34,7 +34,7 @@
          <xsl:variable name="client" select="client"/>
          <xsl:variable name="name" select="name"/>
          <tr>
-            <td width="50%" align="right">
+            <td width="256" align="right">
                <xsl:for-each select="images/picture">
                   <a rel="type:jpg" class="zoom">
                      <xsl:attribute name="href">
@@ -77,7 +77,7 @@
                   </a>
                </xsl:for-each>
             </td>
-            <td width="50%">
+            <td valign="top">
                <center>
                   <xsl:value-of select="client" />
                </center>

@@ -118,6 +118,7 @@ thumb: crop # not used
 	magick public/images/artursjansons.jpg -resize 64 public/images/artursjansons_64.jpg && \
 	magick public/images/artursjansons.jpg -resize 432 public/images/artursjansons_432.jpg && \
 	magick public/images/artursjansons.jpg -resize 128 public/images/artursjansons_128.jpg && \
+	./scripts/portfolio-images && \
 	echo -e "\033[2K\r\033[0;32m✓ Task $@ completed\033[0m\n"
 
 ascii: jpg2png # Convert avatar to ASCII
