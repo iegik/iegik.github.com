@@ -224,12 +224,7 @@ const ContactFormMobile = () => `<form align="left" method="POST" action="https:
                                     </form>`
 
 
-const DesktopView = () => `<font face="${fontFamily}" size="3">
-        <table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
-            <tr align="center">
-                <td valign="top">
-                    ${TopNav()}
-                    <hr>
+const DesktopView = () => `
                     <table border="0" cellpadding="0" cellspacing="8" width="768px">
                         <tr>
                             <td>
@@ -266,8 +261,11 @@ const DesktopView = () => `<font face="${fontFamily}" size="3">
                                     </tr>
                                 </table>
                         <tr>
+                            <td colspan="2">
+                                <my-portfolio theme="1990/desktop" />
+                        <tr>
                             <td colspan="2" align="center">
-                                ${Link({ href: '/portfolio.xml', title: 'Other projects' })}
+                                <noscript>${Link({ href: '/portfolio.xml', title: 'Other projects' })}</noscript>
                     </table>
                     <table border="0" cellpadding="0" cellspacing="8">
                         <tr>
@@ -300,26 +298,9 @@ const DesktopView = () => `<font face="${fontFamily}" size="3">
                                             </font>
                                 </table>
                     </table>
-            <tr>
-                <td valign="bottom" align="center">
-                    <hr>
-                    <table border="0" cellpadding="8" cellspacing="0" width="100%">
-                        <tr>
-                            <td align="center">
-                                <p>${links.map((link, key) => `${!!key ? ' | ' : ''}${Link(link)}`).join('')}</p>
-                                <br>
-                                <marquee>
-                                    <font color="gray">© 2024 ${fullName} | All rights reserved</font>
-                    </table>
-        </table>
-    </font>`
+                    `
 
-const MobileView = () => `<font face="${fontFamily}" size="3">
-        <table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
-            <tr align="center">
-                <td valign="top">
-                    ${TopNav()}
-                    <hr>
+const MobileView = () => `
                     <table border="0" cellpadding="0" cellspacing="8">
                         <tr>
                             <td align="center">
@@ -364,8 +345,11 @@ const MobileView = () => `<font face="${fontFamily}" size="3">
                                     </tr>
                                 </table>
                         <tr>
+                            <td>
+                                <my-portfolio theme="1990/mobile" />
+                        <tr>
                             <td align="center">
-                                ${Link({ href: '/portfolio.xml', title: 'Other projects' })}
+                                <noscript>${Link({ href: '/portfolio.xml', title: 'Other projects' })}</noscript>
                         <tr>
                             <td width="40%" align="right">
                                 <font size="2">
@@ -390,6 +374,20 @@ const MobileView = () => `<font face="${fontFamily}" size="3">
                                     ${Code({ src: './src/pages/1990/assets/code_of_a_day/git_du.gitconfig', title: 'Code of the day' })}
                                 </font>
                     </table>
+                    `
+
+// https://www.w3.org/TR/xhtml-basic/
+
+const DOCTYPE = process.env.IS_VITE === 'true' ? `<!DOCTYPE html>` : `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">`
+
+const Layout = (content: string) => `<font face="${fontFamily}" size="3">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
+            <tr align="center">
+                <td valign="top">
+                    ${TopNav()}
+                    <hr>
+                    ${content}
             <tr>
                 <td valign="bottom" align="center">
                     <hr>
@@ -397,18 +395,14 @@ const MobileView = () => `<font face="${fontFamily}" size="3">
                         <tr>
                             <td align="center">
                                 <p>${links.map((link, key) => `${!!key ? ' | ' : ''}${Link(link)}`).join('')}</p>
+                                <br>
                                 <marquee>
                                     <font color="gray">© 2024 ${fullName} | All rights reserved</font>
                     </table>
         </table>
     </font>`
 
-// https://www.w3.org/TR/xhtml-basic/
-
-const DOCTYPE = process.env.IS_VITE === 'true' ? `<!DOCTYPE html>` : `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
-    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">`
-
-const Layout = (content: string) => `${DOCTYPE}
+const Page = (content: string) => `${DOCTYPE}
 <html lang="en">
 <head>
     ${CSP({ nonce })}
@@ -434,7 +428,8 @@ const Layout = (content: string) => `${DOCTYPE}
     ${GTMBody({ nonce, gtmId: 'GTM-MBG56M'})}
     ${content}
     ${/* DOS Theme Code for https://iegik.github.io */''}
-    ${Script({ srcDoc: './src/lib/dosTheme.js', iife: 'document, toggleDosStyle, "/1990/styles.min.css"', nonce, prefix: `const nonce = '${nonce}';\n` })}
+    ${Script({ srcDoc: './src/lib/dos-theme.js', iife: 'document, toggleDosStyle, "/1990/styles.min.css"', nonce, prefix: `const nonce = '${nonce}';\n` })}
+    ${Script({ srcDoc: './src/lib/my-portfolio.js', nonce, })}
     ${Sentry({
         nonce,
         projectId: "179618f1f04d4d9dac08acc750d5736c",
@@ -506,8 +501,12 @@ writeFileSync('public/1990/index.html', `${DOCTYPE}
                         <a href="/1990/desktop">DESKTOP</a> |
                         <a href="/1990/mobile">MOBILE</a>
 `);
-writeFileSync('public/1990/desktop/index.html', Layout(DesktopView()));
-writeFileSync('public/1990/mobile/index.html', Layout(MobileView()));
+
+const Portfolio = () => `<my-portfolio></my-portfolio>`
+
+writeFileSync('public/1990/desktop/index.html', Page(Layout(DesktopView())));
+writeFileSync('public/1990/mobile/index.html', Page(Layout(MobileView())));
+writeFileSync('public/portfolio/index.html', Page(Portfolio()));
 
 const manifest = `
 CACHE MANIFEST
