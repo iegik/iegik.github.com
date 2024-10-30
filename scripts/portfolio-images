@@ -1,7 +1,7 @@
 #!/bin/bash
 source $(dirname $0)/modules/png2ppm
 
-rm -f public/images/portfolio/**/*-thumb* public/images/me*-thumb* public/images/categories/**/*-thumb*
+rm -f public/images/portfolio/**/*-thumb* public/images/me*-thumb* public/images/categories/*-thumb*
 
 for f in public/images/portfolio/**/*.png public/images/me.png public/images/categories/*.png;do
   # 1. Make progressive JPEG `-interlace plane`
@@ -16,3 +16,5 @@ for f in public/images/portfolio/**/*.png public/images/me.png public/images/cat
   png2ppm 16x16 "${f%%.png}-thumb.png" "${f%%.png}-thumb.ppm";
   # $(dirname $0)/braille -l "8" "${f%%.png}-thumb.ppm" > "${f%%.png}-thumb.ascii";
 done;
+
+cp public/images/me-thumb.ascii src/pages/1990/assets/me.ascii

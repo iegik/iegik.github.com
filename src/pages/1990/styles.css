@@ -47,6 +47,24 @@ img {
   height: auto;
   display: inline-block;
   zoom: 2;
+  font-size: 0;
+  position: relative;
+}
+img[alt]:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  font-family: monospace;
+  font-stretch: condensed;
+  font-size: 4px;
+  font-weight: 300;
+  line-height: 2;
+  text-align: left;
+  content: attr(alt);
 }
 body,
 html {

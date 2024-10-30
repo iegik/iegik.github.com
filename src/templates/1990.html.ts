@@ -232,7 +232,7 @@ const DesktopView = () => `
                     <table border="0" cellpadding="0" cellspacing="8" width="768px">
                         <tr>
                             <td>
-                                ${Image({ src: '/images/me-thumb.png', ascii: './src/pages/1990/assets/photo.ascii' })}
+                                ${Image({ src: '/images/me-thumb.png', ascii: './src/pages/1990/assets/me.ascii' })}
                             <td width="80%" valign="bottom">
                                 <p>${fullName}
                                 <h1><font size="5"><b>${position}</b></font><font size="2">[${experience}]</font></h1>
