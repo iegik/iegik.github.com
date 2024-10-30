@@ -22,7 +22,7 @@ const description = 'Mobile / Web Developer &amp; JavaScript Consultant'
 const keywords = 'HTML, CSS, JavaScript, TypeScript, React, React Native, PHP, MySQL, Bash, Makefile, Docker, GraphQL, Next, Nest'
 
 const TopNav = () => `<p>
-                        1990 |
+                        /|\ ^._.^ /|\ | 1990 |
                         ${/*<a href="/2000/">2000</a> |
                         <a href="/2010/">2010</a> |
                         <a href="/2020/">2020</a> |*/''}
