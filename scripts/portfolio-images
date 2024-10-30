@@ -14,5 +14,5 @@ for f in public/images/portfolio/**/*.png public/images/me.jpg;do
   jp2a "${f%%.png}-thumb.jpg" --output="${f%%.png}-thumb.ascii"
   cwebp -quiet -q 80 "${f%%.png}-thumb.png" -o "${f%%.png}-thumb.webp"
   png2ppm 16x16 "${f%%.png}-thumb.png" "${f%%.png}-thumb.ppm";
-  $(dirname $0)/braille -l "8" "${f%%.png}-thumb.ppm" > "${f%%.png}-thumb.ascii";
+  # $(dirname $0)/braille -l "8" "${f%%.png}-thumb.ppm" > "${f%%.png}-thumb.ascii";
 done;
