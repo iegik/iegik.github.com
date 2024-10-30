@@ -2,7 +2,7 @@
 // @deno-types='@app/types.d'
 import { writeFileSync, readFileSync, release, nonce } from '@app/utils';
 import { type LinkProps, Link } from '@app/pages/1990/components/ui/link';
-import { Image } from '@app/pages/1990/components/ui/image';
+import { Image, type ImageProps } from '@app/pages/1990/components/ui/image';
 import { Code } from '@app/pages/1990/components/ui/code';
 import { GTMHead, GTMBody } from '@app/pages/1990/components/GTM';
 import { Script } from '@app/pages/1990/components/ui/script';
@@ -48,7 +48,7 @@ const AlsoUse = () => `<font color="#7277ae">PHP</font>,
 
 
 type Project = {
-    image: { ascii: string; },
+    image: ImageProps,
     description: string;
     links: LinkProps[];
     comment?: string;
@@ -57,6 +57,7 @@ type Project = {
 const projects:Project[] = [
     {
         image: {
+            src: '/images/categories/website-thumb.png',
             ascii: './src/pages/1990/assets/website.ascii'
         },
         description: 'Website development, including complex forms with custom field validation, popups and dialogs.',
@@ -69,6 +70,7 @@ const projects:Project[] = [
     },
     {
         image: {
+            src: '/images/categories/mobile-thumb.png',
             ascii: './src/pages/1990/assets/mobile.ascii'
         },
         description: 'Mobile applications - developing, publishing or upgrading existing ones.',
@@ -80,6 +82,7 @@ const projects:Project[] = [
     },
     {
         image: {
+            src: '/images/categories/clock-thumb.png',
             ascii: './src/pages/1990/assets/extensions.ascii'
         },
         description: 'Browser extensions, custom scripts and other researches where I\'m testing new approaches.',
@@ -91,6 +94,7 @@ const projects:Project[] = [
     },
     {
         image: {
+            src: '/images/categories/wordpress-thumb.png',
             ascii: './src/pages/1990/assets/cms.ascii'
         },
         description: 'CMS (Wordpress, Magento) configuration, plugin creation, RESTFul API on PHP, GraphQL and microservices',
@@ -120,7 +124,7 @@ const links:LinkProps[] = [
 
 const fontFamily = "'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace"
 
-const ProjectView = (data: Project) => `<center>${Image({ src: data.image.ascii })}</center>
+const ProjectView = (data: Project) => `<center>${Image(data.image)}</center>
                                             <p>${data.description}
                                             <p>
                                                 ${data.links.map((link, key) => `${!!key ? ' | ' : ''}${Link(link)}`).join('')}
@@ -174,7 +178,7 @@ const withLabel = () => (Field: (x: FieldProps & FormFieldProps & FieldL10nProps
 
 const FormField = withLabel()(Field)
 
-const Captcha = ({ name }: FieldProps) => `<input id="bot" name="${name}" nonce="${nonce}" value="This shouldn't be here" /><p><a id="${name}" href="#bot">[_] ${l10n(name)}</a></p><script nonce="${nonce}">bot.style.display='none';${name}.addEventListener("click", () => {${name}.innerText=${name}.innerText.slice(0,1)+(bot.value==='true' ? '_' : 'x')+${name}.innerText.slice(2);bot.disabled=true;bot.value=bot.value === 'true' ? false : true;});</script>`
+const Captcha = ({ name }: FieldProps) => `<input id="bot" name="${name}" nonce="${nonce}" value="Type 'true' here" /><p><a id="${name}" href="#bot" style="display:none;">[_] ${l10n(name)}</a></p><script nonce="${nonce}">bot.style.display='none';${name}.style.display='static';${name}.addEventListener("click", () => {${name}.innerText=${name}.innerText.slice(0,1)+(bot.value==='true' ? '_' : 'x')+${name}.innerText.slice(2);bot.disabled=true;bot.value=bot.value === 'true' ? false : true;});</script>`
 
 const ContactFormDesktop = () => `<form align="left" method="POST" action="https://api.web3forms.com/submit">
                                         <fieldset bgcolor="gray">
@@ -228,7 +232,7 @@ const DesktopView = () => `
                     <table border="0" cellpadding="0" cellspacing="8" width="768px">
                         <tr>
                             <td>
-                                ${Image({ src: './src/pages/1990/assets/photo.ascii' })}
+                                ${Image({ src: '/images/me-thumb.png', ascii: './src/pages/1990/assets/photo.ascii' })}
                             <td width="80%" valign="bottom">
                                 <p>${fullName}
                                 <h1><font size="5"><b>${position}</b></font><font size="2">[${experience}]</font></h1>
@@ -304,7 +308,7 @@ const MobileView = () => `
                     <table border="0" cellpadding="0" cellspacing="8">
                         <tr>
                             <td align="center">
-                                ${Image({ src: './src/pages/1990/assets/photo.ascii' })}
+                                ${Image({ src: '/images/me-thumb.png', ascii: './src/pages/1990/assets/photo.ascii' })}
                                 <p>${fullName}
                                 <h1>
                                     <font size="5"><b>${position}</b></font>

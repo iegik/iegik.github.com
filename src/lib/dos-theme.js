@@ -13,13 +13,13 @@ function (D, O, S, theme = "", _) {
       D.head.appendChild(_);
       [].forEach.call(
           document.getElementsByTagName("img"),
-          toggleAttr("src", "data-src")
+        //   toggleAttr("src", "data-src")
       );
   }
   const reDataAttr = /^data-/;
   [].forEach.call(
       document.getElementsByTagName("img"),
-      toggleAttr("src", "data-src")
+    //   toggleAttr("src", "data-src")
   );
   function remove() {
       O.innerText = "DOS";
@@ -28,7 +28,7 @@ function (D, O, S, theme = "", _) {
       _.remove();
       [].forEach.call(
       document.getElementsByTagName("img"),
-      toggleAttr("data-src", "src")
+    //   toggleAttr("data-src", "src")
       );
   }
   function toggleAttr(a, b) {
