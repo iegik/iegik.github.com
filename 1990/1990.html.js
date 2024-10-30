@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-"use strict";var V=Object.create;var I=Object.defineProperty;var Q=Object.getOwnPropertyDescriptor;var Z=Object.getOwnPropertyNames;var K=Object.getPrototypeOf,X=Object.prototype.hasOwnProperty;var tt=(t,e,o,n)=>{if(e&&typeof e=="object"||typeof e=="function")for(let c of Z(e))!X.call(t,c)&&c!==o&&I(t,c,{get:()=>e[c],enumerable:!(n=Q(e,c))||n.enumerable});return t};var et=(t,e,o)=>(o=t!=null?V(K(t)):{},tt(e||!t||!t.__esModule?I(o,"default",{value:t,enumerable:!0}):o,t));var $=et(require("fs")),g=(t,e)=>$.writeFileSync(t,e,{encoding:"utf8"}),l=t=>$.readFileSync(t,{encoding:"utf8"});var z=new Date,v=`v3.1.0-${z.toJSON()}`,i=btoa(`${Number(z)}`).slice(10,18);var h=t=>`<a ${/^http/.test(t.href)?' rel="noopener noreferrer"':""} href="${t.href}" title="${t.title}">${t.title}</a>`;var u=t=>t.replace(/[&<"']/g,e=>{switch(e){case"&":return"&amp;";case"<":return"&lt;";case'"':return"&quot;";default:return"&#039;"}});var y=({src:t})=>`<pre><font size=1>${u(l(t))}</font></pre>`;var P=({src:t,title:e})=>`<fieldset bgcolor="green">
+"use strict";var V=Object.create;var G=Object.defineProperty;var Q=Object.getOwnPropertyDescriptor;var Z=Object.getOwnPropertyNames;var K=Object.getPrototypeOf,X=Object.prototype.hasOwnProperty;var tt=(t,e,o,n)=>{if(e&&typeof e=="object"||typeof e=="function")for(let c of Z(e))!X.call(t,c)&&c!==o&&G(t,c,{get:()=>e[c],enumerable:!(n=Q(e,c))||n.enumerable});return t};var et=(t,e,o)=>(o=t!=null?V(K(t)):{},tt(e||!t||!t.__esModule?G(o,"default",{value:t,enumerable:!0}):o,t));var $=et(require("fs")),g=(t,e)=>$.writeFileSync(t,e,{encoding:"utf8"}),l=t=>$.readFileSync(t,{encoding:"utf8"});var z=new Date,P=`v3.1.0-${z.toJSON()}`,i=btoa(`${Number(z)}`).slice(10,18);var h=t=>`<a ${/^http/.test(t.href)?' rel="noopener noreferrer"':""} href="${t.href}" title="${t.title}">${t.title}</a>`;var u=t=>t.replace(/[&<"']/g,e=>{switch(e){case"&":return"&amp;";case"<":return"&lt;";case'"':return"&quot;";default:return"&#039;"}});var y=({src:t,ascii:e})=>`<pre><font size=1><img width="128" height="128" src="${t}" alt="${u(l(e))}" /></font></pre>`;var v=({src:t,title:e})=>`<fieldset bgcolor="green">
                                                 <legend>${e}</legend>
                                                 <code width="120px">${u(l(t))}</code>
                                             </fieldset>`;var s=({srcDoc:t,src:e,nonce:o,async:n,prefix:c,postfix:a,iife:m,crossorigin:k="",integrity:f})=>{let b=t?l(t):"";return`<script ${n?"async":""} crossorigin="${k}" ${f?`integrity="${f}"`:""} nonce="${o}" ${e?`src="${e}"`:""}>${c||""}${m?`(${b})(${m});`:b}${a||""}</script>`};var S=({nonce:t,gtmId:e})=>`
@@ -14,7 +14,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     ${s({srcDoc:"./src/lib/sentry.js",nonce:t,iife:JSON.stringify(n)})}
 `;var q=({name:t,rows:e,cols:o,data:n,type:c,value:a="",required:m,l10n:k})=>{let f=t,b=m?"required":"";return n?`<select id="${f}" name="${t}" ${b}>
                                                               <option></option>
-                                                              ${n.map(G=>`<option value="${G}">${k(G)}</option>`).join(`
+                                                              ${n.map(I=>`<option value="${I}">${k(I)}</option>`).join(`
 `)}
                                                           </select>`:e||o?`<table width="100%">
                                                           <tr>
@@ -35,14 +35,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                         <font color="#008DDB">Docker</font>,
                                         <font color="#DD34A6">GraphQL</font>,
                                         <font>Next</font>,
-                                        <font color="#DA214C">Nest</font>`,p=[{image:{ascii:"./src/pages/1990/assets/website.ascii"},description:"Website development, including complex forms with custom field validation, popups and dialogs.",links:[{href:"https://wiam-front-test.vercel.app/",title:"Ex. 1"},{href:"https://mindmap-opal.vercel.app/",title:"Ex. 2"},{href:"https://codepen.io/iegik/full/ObZpqo",title:"Ex. 3"},{href:"https://test-kanvajs.vercel.app/",title:"Ex. 4"}]},{image:{ascii:"./src/pages/1990/assets/mobile.ascii"},description:"Mobile applications - developing, publishing or upgrading existing ones.",links:[{href:"https://github.com/iegik/inventarizacija/",title:"Ex. 1"},{href:"https://github.com/iegik/react_calc/",title:"Ex. 2"}],comment:"Unfortunately apps are not available in Google Play anymore"},{image:{ascii:"./src/pages/1990/assets/extensions.ascii"},description:"Browser extensions, custom scripts and other researches where I'm testing new approaches.",links:[{href:"https://github.com/iegik/clock-extension",title:"Ex. 1"},{href:"https://github.com/iegik/thunar-scripts",title:"Ex. 2"},{href:"https://hub.docker.com/repository/docker/iegik/docker-node/general",title:"Ex. 3"}]},{image:{ascii:"./src/pages/1990/assets/cms.ascii"},description:"CMS (Wordpress, Magento) configuration, plugin creation, RESTFul API on PHP, GraphQL and microservices",links:[{href:"https://github.com/WinLinMac/magento_themes",title:"Ex. 1"}]}],N=[{link:{href:"https://t.me/ajansons",title:"t.me/ajansons"}}],st=[{href:"https://linkedin.com/in/iegik",title:"LinkedIn"},{href:"https://github.com/iegik",title:"GitHub"},{href:"https://profile.codersrank.io/user/iegik",title:"CodersRank"},{href:"https://codepen.io/iegik/",title:"CodePen"},{href:"https://jsfiddle.net/user/iegik",title:"JSFiddle"},{href:"https://stackoverflow.com/users/771471/iegik",title:"StackOverflow"}],ct="'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace",d=t=>`<center>${y({src:t.image.ascii})}</center>
+                                        <font color="#DA214C">Nest</font>`,p=[{image:{src:"/images/categories/website-thumb.png",ascii:"./src/pages/1990/assets/website.ascii"},description:"Website development, including complex forms with custom field validation, popups and dialogs.",links:[{href:"https://wiam-front-test.vercel.app/",title:"Ex. 1"},{href:"https://mindmap-opal.vercel.app/",title:"Ex. 2"},{href:"https://codepen.io/iegik/full/ObZpqo",title:"Ex. 3"},{href:"https://test-kanvajs.vercel.app/",title:"Ex. 4"}]},{image:{src:"/images/categories/mobile-thumb.png",ascii:"./src/pages/1990/assets/mobile.ascii"},description:"Mobile applications - developing, publishing or upgrading existing ones.",links:[{href:"https://github.com/iegik/inventarizacija/",title:"Ex. 1"},{href:"https://github.com/iegik/react_calc/",title:"Ex. 2"}],comment:"Unfortunately apps are not available in Google Play anymore"},{image:{src:"/images/categories/clock-thumb.png",ascii:"./src/pages/1990/assets/extensions.ascii"},description:"Browser extensions, custom scripts and other researches where I'm testing new approaches.",links:[{href:"https://github.com/iegik/clock-extension",title:"Ex. 1"},{href:"https://github.com/iegik/thunar-scripts",title:"Ex. 2"},{href:"https://hub.docker.com/repository/docker/iegik/docker-node/general",title:"Ex. 3"}]},{image:{src:"/images/categories/wordpress-thumb.png",ascii:"./src/pages/1990/assets/cms.ascii"},description:"CMS (Wordpress, Magento) configuration, plugin creation, RESTFul API on PHP, GraphQL and microservices",links:[{href:"https://github.com/WinLinMac/magento_themes",title:"Ex. 1"}]}],N=[{link:{href:"https://t.me/ajansons",title:"t.me/ajansons"}}],st=[{href:"https://linkedin.com/in/iegik",title:"LinkedIn"},{href:"https://github.com/iegik",title:"GitHub"},{href:"https://profile.codersrank.io/user/iegik",title:"CodersRank"},{href:"https://codepen.io/iegik/",title:"CodePen"},{href:"https://jsfiddle.net/user/iegik",title:"JSFiddle"},{href:"https://stackoverflow.com/users/771471/iegik",title:"StackOverflow"}],ct="'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace",d=t=>`<center>${y(t.image)}</center>
                                             <p>${t.description}
                                             <p>
                                                 ${t.links.map((e,o)=>`${o?" | ":""}${h(e)}`).join("")}
                                             ${t.comment?`<p><em><font color="gray">${t.comment}</font></em>`:""}`,H=()=>"<p>Time Zone: EEST</p>",U=()=>"<p>Work Time: 10:00 - 20:00</p>",Y=()=>"<p>Current Location: Earth</p>",O={email:{kind:"vertical",required:!0},to:{type:"hidden",value:"a.jansons+web@gmail.com"},access_key:{type:"hidden",value:"c5540606-b7ca-4634-980a-13e2c50cd823"},redirect:{type:"hidden",value:"/1990/sent"},subject:{kind:"vertical",required:!0,data:["feedback","work","consultation","issue"]},message:{kind:"vertical",required:!0},send:{type:"submit"}},at={email:"Your email",subject:"Subject",message:"Content",send:"Send message",feedback:"Feedback",work:"Work opportunity",consultation:"Consultation",issue:"Bug Report",botcheck:"I' m not a robot"},w=t=>at[t]||t,lt=()=>t=>e=>{let{name:o}=e,{kind:n,type:c}=O[o]||{},a={...e,...O[o]||{},l10n:w};if(c==="hidden")return t(a);if(c==="submit")return`<input type="submit" name="${o}" value="${w(o)}" />`;let m=w(o);return n==="vertical"?`<label for="${o}">${m}</label>
                                                         <br>
                                                         <br>
-                                                        ${t(a)}`:`<label for="${o}">${m}</label>&nbsp;${t(a)}`},r=lt()(q),W=({name:t})=>`<input id="bot" name="${t}" nonce="${i}" value="This shouldn't be here" /><p><a id="${t}" href="#bot">[_] ${w(t)}</a></p><script nonce="${i}">bot.style.display='none';${t}.addEventListener("click", () => {${t}.innerText=${t}.innerText.slice(0,1)+(bot.value==='true' ? '_' : 'x')+${t}.innerText.slice(2);bot.disabled=true;bot.value=bot.value === 'true' ? false : true;});</script>`,pt=()=>`<form align="left" method="POST" action="https://api.web3forms.com/submit">
+                                                        ${t(a)}`:`<label for="${o}">${m}</label>&nbsp;${t(a)}`},r=lt()(q),W=({name:t})=>`<input id="bot" name="${t}" nonce="${i}" value="Type 'true' here" /><p><a id="${t}" href="#bot" style="display:none;">[_] ${w(t)}</a></p><script nonce="${i}">bot.style.display='none';${t}.style.display='inline';${t}.addEventListener("click", () => {${t}.innerText=${t}.innerText.slice(0,1)+(bot.value==='true' ? '_' : 'x')+${t}.innerText.slice(2);bot.disabled=true;bot.value=bot.value === 'true' ? false : true;});</script>`,pt=()=>`<form align="left" method="POST" action="https://api.web3forms.com/submit">
                                         <fieldset bgcolor="gray">
                                             <legend>Feedback</legend>
                                             <table align="left" border="0" cellpadding="0" cellspacing="8" width="100%">
@@ -89,7 +89,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <table border="0" cellpadding="0" cellspacing="8" width="768px">
                         <tr>
                             <td>
-                                ${y({src:"./src/pages/1990/assets/photo.ascii"})}
+                                ${y({src:"/images/me-thumb.png",ascii:"./src/pages/1990/assets/me.ascii"})}
                             <td width="80%" valign="bottom">
                                 <p>${x}
                                 <h1><font size="5"><b>${T}</b></font><font size="2">[${M}]</font></h1>
@@ -155,7 +155,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     <tr>
                                         <td valign="top">
                                             <font size="2">
-                                                ${P({src:"./src/pages/1990/assets/code_of_a_day/git_du.gitconfig",title:"Code of the day"})}
+                                                ${v({src:"./src/pages/1990/assets/code_of_a_day/git_du.gitconfig",title:"Code of the day"})}
                                             </font>
                                 </table>
                     </table>
@@ -163,7 +163,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <table border="0" cellpadding="0" cellspacing="8">
                         <tr>
                             <td align="center">
-                                ${y({src:"./src/pages/1990/assets/photo.ascii"})}
+                                ${y({src:"/images/me-thumb.png",ascii:"./src/pages/1990/assets/photo.ascii"})}
                                 <p>${x}
                                 <h1>
                                     <font size="5"><b>${T}</b></font>
@@ -230,7 +230,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <tr>
                             <td width="30%">
                                 <font size="2">
-                                    ${P({src:"./src/pages/1990/assets/code_of_a_day/git_du.gitconfig",title:"Code of the day"})}
+                                    ${v({src:"./src/pages/1990/assets/code_of_a_day/git_du.gitconfig",title:"Code of the day"})}
                                 </font>
                     </table>
                     `,D=process.env.IS_VITE==="true"?"<!DOCTYPE html>":`<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
@@ -282,7 +282,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     ${s({srcDoc:"./src/lib/dos-theme.js",iife:'document, toggleDosStyle, "/1990/styles.min.css"',nonce:i,prefix:`const nonce = '${i}';
 `})}
     ${s({srcDoc:"./src/lib/my-portfolio.js",nonce:i})}
-    ${R({nonce:i,projectId:"179618f1f04d4d9dac08acc750d5736c",dsn:"https://179618f1f04d4d9dac08acc750d5736c@o171820.ingest.sentry.io/1250596",release:`1250596@${v}`,environment:"production",integrity:"sha384-6yzL+SsRi1vefLAU9+yqKb0YIeAiJ6GsCob5LxN8Af29Ze1Q5iCg0Ur2fwFroEqa"})}
+    ${R({nonce:i,projectId:"179618f1f04d4d9dac08acc750d5736c",dsn:"https://179618f1f04d4d9dac08acc750d5736c@o171820.ingest.sentry.io/1250596",release:`1250596@${P}`,environment:"production",integrity:"sha384-6yzL+SsRi1vefLAU9+yqKb0YIeAiJ6GsCob5LxN8Af29Ze1Q5iCg0Ur2fwFroEqa"})}
 `;g("public/index.html",`${D}
 <html lang="en">
 <head>
@@ -344,7 +344,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <a href="/1990/mobile">MOBILE</a>
 `);var ht=()=>"<my-portfolio></my-portfolio>";g("public/1990/desktop/index.html",E(J(mt())));g("public/1990/mobile/index.html",E(J(gt())));g("public/portfolio/index.html",E(ht()));var ft=`
 CACHE MANIFEST
-# rev ${v}
+# rev ${P}
 
 CACHE:
 index.html
