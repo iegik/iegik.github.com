@@ -420,6 +420,7 @@ const Page = (content: string) => `${DOCTYPE}
     ${/*<link rel="stylesheet" nonce="${nonce}" href="/1990/styles.min.css" />*/''}
     <style nonce="${nonce}" id="/1990/styles.min.css">${style}</style>
     ${/* Google Tag Manager */''}
+    ${Script({ srcDoc: './src/lib/console-game.js', nonce })}
     ${Script({ srcDoc: './src/lib/guard.js', nonce })}
     ${GTMHead({ nonce, gtmId: 'GTM-MBG56M'})}
     ${/* Hotjar Tracking Code (removed due install from GTM) */''}
