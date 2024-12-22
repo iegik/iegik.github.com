@@ -2,6 +2,9 @@ function (D, O, S, theme = "", _) {
   _ = document.getElementById(S);
   theme = _.innerHTML;
   O.onclick = remove;
+  function toggleAllImages() {
+    // [...document.getElementsByTagName("img")].forEach(toggleAttr("src", "data-src"));
+  }
   function add() {
       O.innerText = "EXIT";
       O.href = "#exit"
@@ -11,16 +14,10 @@ function (D, O, S, theme = "", _) {
       _.innerHTML = theme;
       _.setAttribute("nonce", nonce);
       D.head.appendChild(_);
-      [].forEach.call(
-          document.getElementsByTagName("img"),
-        //   toggleAttr("src", "data-src")
-      );
+      toggleAllImages();
   }
   const reDataAttr = /^data-/;
-  [].forEach.call(
-      document.getElementsByTagName("img"),
-    //   toggleAttr("src", "data-src")
-  );
+  toggleAllImages();
   function remove() {
       O.innerText = "DOS";
       O.href = "#dos"
