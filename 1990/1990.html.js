@@ -281,6 +281,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     ${r({srcDoc:"./src/lib/dos-theme.js",iife:'document, toggleDosStyle, "/1990/styles.min.css"',nonce:i,prefix:`const nonce = '${i}';
 `})}
+    ${r({srcDoc:"./src/lib/snow.js",nonce:i})}
     ${r({srcDoc:"./src/lib/my-portfolio.js",nonce:i})}
     ${_({nonce:i,projectId:"179618f1f04d4d9dac08acc750d5736c",dsn:"https://179618f1f04d4d9dac08acc750d5736c@o171820.ingest.sentry.io/1250596",release:`1250596@${x}`,environment:"production",integrity:"sha384-6yzL+SsRi1vefLAU9+yqKb0YIeAiJ6GsCob5LxN8Af29Ze1Q5iCg0Ur2fwFroEqa"})}
 `;g("public/index.html",`${I}
