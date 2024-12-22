@@ -153,7 +153,7 @@ const dict: Record<string, string>= {
     work: 'Work opportunity',
     consultation: 'Consultation',
     issue: 'Bug Report',
-    botcheck: "I' m not a robot",
+    botcheck: "I'm not a robot",
 }
 
 const l10n = (slug: string) => dict[slug] || slug;
@@ -170,7 +170,6 @@ const withLabel = () => (Field: (x: FieldProps & FormFieldProps & FieldL10nProps
     return kind === 'vertical'
     ? `<label for="${name}">${label}</label>
                                                         <br>
-                                                        <br>
                                                         ${Field(fieldProps)}`
     : `<label for="${name}">${label}</label>&nbsp;${Field(fieldProps)}`
 }
@@ -178,7 +177,7 @@ const withLabel = () => (Field: (x: FieldProps & FormFieldProps & FieldL10nProps
 
 const FormField = withLabel()(Field)
 
-const Captcha = ({ name }: FieldProps) => `<input id="bot" name="${name}" nonce="${nonce}" value="Type 'true' here" /><p><a id="${name}" href="#bot" style="display:none;">[_] ${l10n(name)}</a></p><script nonce="${nonce}">bot.style.display='none';${name}.style.display='inline';${name}.addEventListener("click", () => {${name}.innerText=${name}.innerText.slice(0,1)+(bot.value==='true' ? '_' : 'x')+${name}.innerText.slice(2);bot.disabled=true;bot.value=bot.value === 'true' ? false : true;});</script>`
+const Captcha = ({ name }: FieldProps) => `<input id="bot" name="${name}" nonce="${nonce}" value="Type 'true' here" /><a id="${name}" href="#bot" style="display:none;">[_] ${l10n(name)}</a><script nonce="${nonce}">bot.style.display='none';${name}.style.display='inline-block';${name}.addEventListener("click", () => {${name}.innerText=${name}.innerText.slice(0,1)+(bot.value==='true' ? '_' : 'x')+${name}.innerText.slice(2);bot.disabled=true;bot.value=bot.value === 'true' ? false : true;});</script>`
 
 const ContactFormDesktop = () => `<form align="left" method="POST" action="https://api.web3forms.com/submit">
                                         <fieldset bgcolor="gray">
@@ -422,15 +421,15 @@ const Page = (content: string) => `${DOCTYPE}
     ${/* Google Tag Manager */''}
     ${Script({ srcDoc: './src/lib/console-game.js', nonce })}
     ${Script({ srcDoc: './src/lib/guard.js', nonce })}
-    ${GTMHead({ nonce, gtmId: 'GTM-MBG56M'})}
+    ${process.env.IS_VITE === 'true' ? '' : GTMHead({ nonce, gtmId: 'GTM-MBG56M'})}
     ${/* Hotjar Tracking Code (removed due install from GTM) */''}
     ${/* HotJar({ nonce, hjid: 2660383, hjsv: 6 }) */''}
 </head>
 <body>
     ${/* Google Analytics */''}
-    ${GTag({ nonce, gtmId: 'G-5ZY8Y6X2C4'})}
+    ${process.env.IS_VITE === 'true' ? '' : GTag({ nonce, gtmId: 'G-5ZY8Y6X2C4'})}
     ${/* Google Tag Manager */''}
-    ${GTMBody({ nonce, gtmId: 'GTM-MBG56M'})}
+    ${process.env.IS_VITE === 'true' ? '' : GTMBody({ nonce, gtmId: 'GTM-MBG56M'})}
     ${content}
     ${/* DOS Theme Code for https://iegik.github.io */''}
     ${Script({ srcDoc: './src/lib/dos-theme.js', iife: 'document, toggleDosStyle, "/1990/styles.min.css"', nonce, prefix: `const nonce = '${nonce}';\n` })}
@@ -456,13 +455,13 @@ writeFileSync('public/index.html', `${DOCTYPE}
     <style nonce="${nonce}" id="/1990/styles.min.css">${style}</style>
     ${Script({ srcDoc: './src/lib/router-1990.min.js', nonce })}
     ${/* Google Tag Manager */''}
-    ${GTMHead({ nonce, gtmId: 'GTM-MBG56M'})}
+    ${process.env.IS_VITE === 'true' ? '' : GTMHead({ nonce, gtmId: 'GTM-MBG56M'})}
 </head>
 <body id="root">
     ${/* Google Analytics */''}
-    ${GTag({ nonce, gtmId: 'G-5ZY8Y6X2C4'})}
+    ${process.env.IS_VITE === 'true' ? '' : GTag({ nonce, gtmId: 'G-5ZY8Y6X2C4'})}
     ${/* Google Tag Manager */''}
-    ${GTMBody({ nonce, gtmId: 'GTM-MBG56M'})}
+    ${process.env.IS_VITE === 'true' ? '' : GTMBody({ nonce, gtmId: 'GTM-MBG56M'})}
   <font face="'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace" size="3">
     <table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
         <tr align="center">
