@@ -1,27 +1,25 @@
 #!/usr/bin/env node
-"use strict";var i1=Object.create;var X=Object.defineProperty;var n1=Object.getOwnPropertyDescriptor;var s1=Object.getOwnPropertyNames;var c1=Object.getPrototypeOf,a1=Object.prototype.hasOwnProperty;var l1=(e,t)=>()=>(t||e((t={exports:{}}).exports,t),t.exports);var p1=(e,t,r,o)=>{if(t&&typeof t=="object"||typeof t=="function")for(let i of s1(t))!a1.call(e,i)&&i!==r&&X(e,i,{get:()=>t[i],enumerable:!(o=n1(t,i))||o.enumerable});return e};var h1=(e,t,r)=>(r=e!=null?i1(c1(e)):{},p1(t||!e||!e.__esModule?X(r,"default",{value:e,enumerable:!0}):r,e));var q=l1((E2,E1)=>{E1.exports=`00000OOO0000KXXXKKKXXNNNXKKKXXXNNNXX
-OOOOOOOOOO00KKKXXKXNNNXXXKKKXNNNNNNN
-0OO0000000KKKKKKKXNNNNNNXKKXNNNNNNNN
-NNXXNXKXXXXXXXXXKKXXXXKXXXXNNXXXXXXX
-XKKKK0XNNXXKKKKOdldokkOKXXXXXXXKKXXX
-ddxdxxkO00OOOxoc:clooccok00000000000
-ccccclllllooo:llllodddo::oxxxxkOOOOO
-:::;;;;;;;:::llccllllllocloccclodxkk
-,,,,,,,,;,,,;lcccccccclodco:::ccldxx
-,,,,,,,,,,,,,l:'';c;..';ldlc:ccclodl
-'''''''''''''c;;,:lc::cllll:;;;;;;;;
-''''''''''''',l:;:cc:,';:c;,,,,,,,,;
-..............::,,,,,;;,;c;;;,,,,',,
-...............cl::;,;;,;clcdol:;;,,
-........,oodxdlXO:;,,,,,::,.:KKXO:cl
-;c:':okXXXKKx,xkk,;;;,;::'..;00O0c.o
-::cOXXXK0OOOldkkO'.',,,;'...d0OOOk..
-coXXK00kxdxdlxxkO;..',,'. ..xxxkxxc 
-`});var C=h1(require("fs")),L=(e,t)=>C.writeFileSync(e,t,{encoding:"utf8"}),v=e=>C.readFileSync(e,{encoding:"utf8"});var j=new Date,y=`v3.1.0-${j.toJSON()}`,d=btoa(`${Number(j)}`).slice(10,18);var Z=`<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 14 14" enable-background="new 0 0 240 240" x="0px" y="0px" xml:space="preserve" fill="currentColor">
+"use strict";var i1=Object.create;var j=Object.defineProperty;var n1=Object.getOwnPropertyDescriptor;var s1=Object.getOwnPropertyNames;var c1=Object.getPrototypeOf,a1=Object.prototype.hasOwnProperty;var l1=(e,t)=>()=>(t||e((t={exports:{}}).exports,t),t.exports);var p1=(e,t,r,o)=>{if(t&&typeof t=="object"||typeof t=="function")for(let i of s1(t))!a1.call(e,i)&&i!==r&&j(e,i,{get:()=>t[i],enumerable:!(o=n1(t,i))||o.enumerable});return e};var h1=(e,t,r)=>(r=e!=null?i1(c1(e)):{},p1(t||!e||!e.__esModule?j(r,"default",{value:e,enumerable:!0}):r,e));var q=l1((E2,E1)=>{E1.exports=`0000OOOO000KXXXKKXNNNXKKKXXNNNNX
+OOOOOOOOO00KKXXKXNNXXXKKKXNNNNNN
+K00000KKKKKKKKKKNNNNNXXXXNNNNNNN
+XXKNXKXNXXXXXXKO00KKKXXXNXXXXXXX
+0OOOOKXXK000kd::lclox0KKKKKKKKKK
+cccclloodddocllloxxo:cdkOOOO0OO0
+::::::;;;:c:llcllllloclolclodxkO
+,,,,,,,;,,;cccccccclldcl:::ccdxx
+,,,,,,,,,,,:c,';c,.';cdlc:cccodl
+''''''''''',c:;:ll::clll;;,,;,;;
+''''''''.''.:c,;;;;,';c;;,,,,,,,
+.............:;:;;;:;,cc::,,,,,;
+........,,;l:dO:;,,;,;::,xK0x:;,
+,;,';cx0XXXl;Ok;;,,,;:;..c0O0d'x
+::lOXXKK0OO:kkO,.',,;;...x00OO'.
+:dXKK0Oxxxdoxxk;.',,,. .'xxkkxo 
+`});var C=h1(require("fs")),L=(e,t)=>C.writeFileSync(e,t,{encoding:"utf8"}),v=e=>C.readFileSync(e,{encoding:"utf8"});var Z=new Date,y=`v3.1.0-${Z.toJSON()}`,d=btoa(`${Number(Z)}`).slice(10,18);var P=`<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 14 14" enable-background="new 0 0 240 240" x="0px" y="0px" xml:space="preserve" fill="currentColor">
   <title>LinkedIn icon</title>
   <path d="m12.95 0h-11.9c-0.6 0-1 0.4-1 1v12c0 0.6 0.5 1 1 1h11.9c0.6 0 1-0.4 1-1v-12c0-0.6-0.4-1-1-1zm-8.8 11.9h-2.1v-6.7h2.1v6.7zm-1-7.6c-0.7 0-1.2-0.5-1.2-1.2s0.5-1.2 1.2-1.2 1.2 0.5 1.2 1.2-0.6 1.2-1.2 1.2zm8.8 7.6h-2.1v-3.2c0-0.8 0-1.8-1.1-1.8s-1.2 0.8-1.2 1.7v3.3h-2.1v-6.7h2v0.9c0.4-0.7 1.2-1.1 2-1.1 2.1 0 2.5 1.4 2.5 3.2v3.7z"></path>
 </svg>
-`;var P=`<svg xmlns="https://www.w3.org/2000/svg" enable-background="new 0 0 55.2 14" version="1.1" viewBox="0 0 55.2 14" xml:space="preserve"  fill="currentColor">
+`;var K=`<svg xmlns="https://www.w3.org/2000/svg" enable-background="new 0 0 55.2 14" version="1.1" viewBox="0 0 55.2 14" xml:space="preserve"  fill="currentColor">
   <title>LinkedIn logo</title>
   <polygon points="0 2.1 2.2 2.1 2.2 9.9 6.2 9.9 6.2 11.9 0 11.9"></polygon>
   <path d="m7.1 5.2h2.1v6.7h-2.1v-6.7zm1.1-3.3c0.7 0 1.2 0.5 1.2 1.2s-0.6 1.2-1.2 1.2-1.2-0.5-1.2-1.2 0.5-1.2 1.2-1.2"></path>
@@ -34,7 +32,7 @@ coXXK00kxdxdlxxkO;..',,'. ..xxxkxxc
 `;var A=`<svg xmlns="https://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 16 16" data-view-component="true" fill="currentColor">
   <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
 </svg>
-`;var K=`<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 63 18">
+`;var X=`<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 63 18">
   <path fill="currentColor" d="M12.848 8H7.703a.243.243 0 0 0-.242.243v2.527c0 .137.11.242.242.242h2.008v3.14s-.453.157-1.7.157c-1.468 0-3.523-.539-3.523-5.078 0-4.54 2.137-5.137 4.145-5.137 1.742 0 2.488.309 2.965.457.152.047.289-.105.289-.238l.573-2.441a.222.222 0 0 0-.09-.188c-.195-.14-1.375-.805-4.36-.805C4.575.88 1.052 2.35 1.052 9.407c-.002 7.062 4.034 8.113 7.436 8.113 2.817 0 4.524-1.207 4.524-1.207.07-.04.078-.14.078-.184V8.243A.243.243 0 0 0 12.848 8m26.53-6.273a.241.241 0 0 0-.237-.246h-2.899a.241.241 0 0 0-.238.246v5.625h-4.52V1.727a.241.241 0 0 0-.238-.246h-2.898a.241.241 0 0 0-.239.246v15.234a.24.24 0 0 0 .239.243h2.898a.24.24 0 0 0 .238-.243v-6.515h4.52l-.008 6.515a.24.24 0 0 0 .238.243h2.907a.24.24 0 0 0 .238-.243V1.727M18.32 3.723c0-1.047-.84-1.894-1.87-1.894-1.032 0-1.868.847-1.868 1.894 0 1.05.836 1.899 1.867 1.899 1.031 0 1.871-.848 1.871-1.899m-.207 10.024V6.715a.243.243 0 0 0-.242-.242h-2.887c-.132 0-.254.137-.254.27v10.074c0 .297.184.383.422.383h2.606c.285 0 .355-.14.355-.387v-3.066m32.282-7.25H47.52a.238.238 0 0 0-.239.242v7.468s-.73.54-1.77.54c-1.034 0-1.312-.473-1.312-1.497V6.74a.238.238 0 0 0-.238-.242h-2.918a.24.24 0 0 0-.242.242v7.008c0 3.027 1.683 3.77 3.996 3.77 1.894 0 3.426-1.052 3.426-1.052s.074.555.105.617a.248.248 0 0 0 .211.133l1.86-.008a.243.243 0 0 0 .238-.242V6.74a.24.24 0 0 0-.242-.242m6.726 8.238c-.996-.031-1.672-.485-1.672-.485V9.426s.668-.41 1.485-.484c1.035-.094 2.035.223 2.035 2.703 0 2.617-.45 3.133-1.848 3.09zm1.137-8.582c-1.633 0-2.746.73-2.746.73V1.727a.241.241 0 0 0-.239-.246h-2.906a.244.244 0 0 0-.242.246v15.234c0 .133.11.243.242.243h2.016c.09 0 .16-.047.21-.13.052-.081.122-.702.122-.702s1.191 1.132 3.441 1.132c2.64 0 4.157-1.347 4.157-6.043 0-4.695-2.422-5.308-4.055-5.308m-31.817.316H24.27l-.004-2.883c0-.109-.059-.164-.184-.164h-2.96c-.118 0-.18.051-.18.16v2.985s-1.485.36-1.583.387a.244.244 0 0 0-.175.234v1.871a.24.24 0 0 0 .242.242h1.515v4.508c0 3.348 2.34 3.68 3.918 3.68.72 0 1.582-.235 1.727-.29.086-.03.133-.12.133-.214l.004-2.063a.245.245 0 0 0-.239-.242c-.129 0-.453.05-.785.05-1.07 0-1.43-.5-1.43-1.144V9.301h2.172a.24.24 0 0 0 .243-.242V6.711a.243.243 0 0 0-.243-.242"/>
 </svg>
 `;var T=`<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 124 124" fill="currentColor" fill-rule="evenodd">
@@ -101,7 +99,7 @@ coXXK00kxdxdlxxkO;..',,'. ..xxxkxxc
   <rect x="122" y="160" width="36" height="47" fill="#E5E5E5" fill-opacity="0.25"/>
   <rect x="140" y="160" width="18" height="47" fill="#E5E5E5" fill-opacity="0.5"/>
 </svg>
-`;var x={"linkedin-icon":Z,"linkedin-logo":P,"github-icon":A,"github-logo":K,"stackoverflow-icon":T,"stackoverflow-logo":R,"jsfiddle-icon":I,"jsfiddle-logo":F,"codersrank-icon":_,"codersrank-logo":D,"slot-machine-icon":V};var H="https://www.w3.org/2000/svg",$=new Map,$1=()=>`
+`;var x={"linkedin-icon":P,"linkedin-logo":K,"github-icon":A,"github-logo":X,"stackoverflow-icon":T,"stackoverflow-logo":R,"jsfiddle-icon":I,"jsfiddle-logo":F,"codersrank-icon":_,"codersrank-logo":D,"slot-machine-icon":V};var H="https://www.w3.org/2000/svg",$=new Map,$1=()=>`
   <svg xmlns="${H}" display="none">
   ${Object.entries(x).map(([e,t])=>($.set(e,{viewBox:t.match(/viewBox="([^"]+)"/i)?.[1]}),t.replace(`xmlns="${H}"`,`id="sprite-${e}"`).replaceAll(/\bsvg\b/g,"symbol"))).join("")}
   </svg>
@@ -113,19 +111,19 @@ coXXK00kxdxdlxxkO;..',,'. ..xxxkxxc
       <img src="${i.includes("webp")?t.replace(/\..*$/,".webp"):t}" width="${p}" height="${u}" alt="${n}" itemprop="${s}" />
     </picture>
   `},B=S1;var O1=process.env.NODE_ENV==="production";var b=O1?()=>{}:(...e)=>{console.log(...e)};async function G(e){let t=new Image;t.crossOrigin="",t.src=e,await t.decode();let r=t.width,o=t.height,n=new OffscreenCanvas(r,o).getContext("2d");if(!n)return[];n.drawImage(t,0,0,r,o);let s=n.getImageData(0,0,r,o).data,c="\u2802\u2802\u2802\u2802\u2801\u2880\u2881\u2881\u288C\u288C\u2895\u2895\u2897\u2897\u289F\u289F\u28B7\u28B7\u28BF\u28BF",l=[],h=[];for(let p=0;p<o;p++){for(let u=0;u<r;u++){let w=(p*r+u)*4,S=s[w],O=s[w+1],E=s[w+2];if(s[w+3]===0)continue;let r1=(S+O+E)/3,N=Math.floor((1-r1/255)*10);l.push(c[N*2]+c[N*2+1]),h.push(`#${S.toString(16).padStart(2,"0")}${O.toString(16).padStart(2,"0")}${E.toString(16).padStart(2,"0")}`)}l[l.length-1]+=`
-`}return[l.map(p=>`%c${p}`).join(""),...h.map(p=>`background-color: ${p};`)]}var N1=q(),X1=()=>(setTimeout(async()=>{if(typeof window>"u"||typeof document>"u")return;let e=await G("images/artursjansons_32.jpg");b(...e)}),`
+`}return[l.map(p=>`%c${p}`).join(""),...h.map(p=>`background-color: ${p};`)]}var N1=q(),j1=()=>(setTimeout(async()=>{if(typeof window>"u"||typeof document>"u")return;let e=await G("images/artursjansons_32.jpg");b(...e)}),`
     <header class="header">
       <a href="#/home" class="header__avatar" alt="avatar">${B({itemprop:"photo",src:"/images/artursjansons.jpg",ratio:"1:1",sizes:"432,216,64",types:"jpg|png|webp",alt:N1})}</a>
     </header>
-  `),J=X1;var R2="\u{1F34F},\u{1F330},\u{1F34B},\u{1F345},\u{1F346},\u{1F347},\u{1F353},\u{1F349},\u{1F350},\u{1F352},\u{1F351},\u{1F951}".split(","),{floor:I2,random:F2}=Math;var M=class{constructor(){this.id=null}toString(){let t=btoa(`${Math.ceil(Math.random()*1e13)+ +new Date}`).slice(10,18);return this.id=this.id||`ref-${t}`}get current(){return typeof window>"u"||typeof document>"u"?null:document.querySelector(`[ref=${this.id}]`)}},g=()=>new M;var A1=({className:e,name:t}={name:"unknown"})=>{let r=g();return setTimeout(()=>{if(typeof window>"u"||typeof document>"u")return;let o=document.getElementById(`sprite-${t}`)?.getAttribute("viewBox")||"0 0 0 0";r.current?.setAttribute("viewBox",o)}),`
+  `),J=j1;var R2="\u{1F34F},\u{1F330},\u{1F34B},\u{1F345},\u{1F346},\u{1F347},\u{1F353},\u{1F349},\u{1F350},\u{1F352},\u{1F351},\u{1F951}".split(","),{floor:I2,random:F2}=Math;var M=class{constructor(){this.id=null}toString(){let t=btoa(`${Math.ceil(Math.random()*1e13)+ +new Date}`).slice(10,18);return this.id=this.id||`ref-${t}`}get current(){return typeof window>"u"||typeof document>"u"?null:document.querySelector(`[ref=${this.id}]`)}},g=()=>new M;var A1=({className:e,name:t}={name:"unknown"})=>{let r=g();return setTimeout(()=>{if(typeof window>"u"||typeof document>"u")return;let o=document.getElementById(`sprite-${t}`)?.getAttribute("viewBox")||"0 0 0 0";r.current?.setAttribute("viewBox",o)}),`
     <svg class="${e}" preserveAspectRatio="xMidYMid meet" viewBox="${$.get(t)?.viewBox||"0 0 0 0"}" ref="${r}">
       <use xlink:href="#sprite-${t}" />
     </svg>
-  `},m=A1;var K1=(e={})=>{let{className:t="link",children:r,tag:o="a",to:i="#",title:n="",onClick:s}=e,c=g();return setTimeout(()=>{s&&c.current&&c.current.addEventListener("click",s)}),`
+  `},m=A1;var X1=(e={})=>{let{className:t="link",children:r,tag:o="a",to:i="#",title:n="",onClick:s}=e,c=g();return setTimeout(()=>{s&&c.current&&c.current.addEventListener("click",s)}),`
       <${o} class="${t} link" href="${i}" title="${n}" ref="${c}" ${/^http/.test(i)?'rel="noopener noreferrer"':""}>
         ${r?.join?.("")}
       </${o}>
-    `},f=K1;var T1=(e={})=>{let{className:t="",children:r,squire:o,tag:i="div"}=e,n="link-list";return t&&(n+=` ${t}`),o&&(n+=" link-list--squire"),`
+    `},f=X1;var T1=(e={})=>{let{className:t="",children:r,squire:o,tag:i="div"}=e,n="link-list";return t&&(n+=` ${t}`),o&&(n+=" link-list--squire"),`
       <${i} class="${n}">
         ${r?.map(s=>`<div class="link-list__item">${s}</div>`).join("")}
       </${i}>

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Loading...</title>
     
-    <style nonce="UxODA5Nw" id="/1990/styles.min.css">/* Styles used only for interpriate old interface */
+    <style nonce="gxMDgxNg" id="/1990/styles.min.css">/* Styles used only for interpriate old interface */
 :root {
   --color-window: #0000a8;
   --color-text: #56ffff;
@@ -19,11 +19,13 @@
   --color-inactiveWindow: #05a8a8;
   --color-menu: #05a8a8;
   --color-shadow: black;
+  --font-size: 12px;
 }
 * {
-  font-size: 8pt;
+  font-size: var(--font-size);
   border-color: var(--color-text);
   font-style: normal;
+  line-height: 2;
 }
 h1,
 h2,
@@ -33,6 +35,7 @@ h5,
 h6 {
   text-transform: uppercase;
   font-weight: bold;
+  color: var(--color-accent);
 }
 h1,
 h2,
@@ -40,8 +43,20 @@ h3,
 h4,
 h5,
 h6,
-p {
+p, ul, ol, hr {
   margin: 0.5em 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p, li, hr, a {
+  max-width: 80em;
+}
+hr {
+  clear: both;
 }
 pre {
   overflow: hidden;
@@ -76,6 +91,7 @@ img[alt]:after {
 }
 body,
 html {
+  background-color: var(--color-window);
   min-height: 100vh;
   margin: 0;
   padding: 0;
@@ -91,22 +107,22 @@ select,
 textarea {
   font-family: "SFMono-Regular", "SF Mono", "Ubuntu Mono", Consolas,
     "DejaVu Sans Mono", Menlo, monospace;
-  font-size: 100%;
+  font-size: var(--font-size);
   letter-spacing: 1.5px;
-  border: 0;
-  background-color: var(--color-window);
   color: var(--color-text);
-  margin: -0.25em;
-  padding: 0.25em;
 }
 select {
-  height: 2.5em;
+  height: 2em;
 }
 input,
 select,
 textarea,
 a {
+  display: inline-block;
+  border: 0;
   box-shadow: 1em 1ex var(--color-shadow);
+  margin: -0.25em;
+  padding: 0.25em;
   margin-right: 1ex;
   margin-bottom: 1ex;
 }
