@@ -433,6 +433,7 @@ const Page = (content: string) => `${DOCTYPE}
     ${content}
     ${/* DOS Theme Code for https://iegik.github.io */''}
     ${Script({ srcDoc: './src/lib/dos-theme.js', iife: 'document, toggleDosStyle, "/1990/styles.min.css"', nonce, prefix: `const nonce = '${nonce}';\n` })}
+    ${Script({ srcDoc: './src/lib/snow.js', nonce, })}
     ${Script({ srcDoc: './src/lib/my-portfolio.js', nonce, })}
     ${Sentry({
         nonce,
