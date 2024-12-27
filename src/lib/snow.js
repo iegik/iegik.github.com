@@ -37,12 +37,6 @@
       window.snowflakes = [];
       let windDirection = 0;
 
-      // Get background color from computed styles
-      // const backgroundColor = '#0000';
-      const backgroundColor =
-        window.getComputedStyle(b).backgroundColor;
-      const bgColorArray = backgroundColor.match(/\d+/g).map(Number); // Parse RGB values
-
       function autoCrop(array) {
         let top = null, bottom = null, left = null, right = null;
 
@@ -119,7 +113,14 @@
         c.stroke(); // Render the path
         c.closePath();
       }
+
       function drawBackground() {
+        // Get background color from computed styles
+        // const backgroundColor = '#0000';
+        const backgroundColor =
+          window.getComputedStyle(b).backgroundColor;
+        const bgColorArray = backgroundColor.match(/\d+/g).map(Number); // Parse RGB values
+
         // Draw underlying content snapshot to detect color changes
         c.save();
 
