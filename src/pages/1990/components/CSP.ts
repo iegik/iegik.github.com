@@ -43,7 +43,10 @@ const CSPContent = ({ nonce }: CSPContentProps) => Object.entries({
   ],
   'object-src': [`'none'`],
   'base-uri': [`'none'`],
-  'frame-src': [`https://vars.hotjar.com/`],
+  'frame-src': [
+    `https://vars.hotjar.com/`,
+    `https://www.googletagmanager.com/`,
+  ],
   'script-src-elem': [
     `'self'`,
     `'nonce-${nonce}'`,

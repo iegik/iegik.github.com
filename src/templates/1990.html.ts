@@ -12,6 +12,7 @@ import { Sentry } from '@app/pages/1990/components/Sentry';
 import { Field, FieldL10nProps, FieldProps, FormFieldProps } from '@app/pages/1990/components/ui/field';
 import { CSP } from '@app/pages/1990/components/CSP';
 import { Snow } from '@app/pages/1990/components/Snow';
+import { escapeHTML } from '@app/services/web-utils';
 
 const style = readFileSync('./src/pages/1990/styles.css');
 
@@ -154,10 +155,10 @@ const dict: Record<string, string>= {
     work: 'Work opportunity',
     consultation: 'Consultation',
     issue: 'Bug Report',
-    botcheck: "I'm not a robot",
+    botcheck: "I\`m not a robot",
 }
 
-const l10n = (slug: string) => dict[slug] || slug;
+const l10n = (slug: string) => escapeHTML(dict[slug] || slug);
 
 const withLabel = () => (Field: (x: FieldProps & FormFieldProps & FieldL10nProps ) => string) => (props: FieldProps) => {
     const { name } = props
@@ -178,7 +179,7 @@ const withLabel = () => (Field: (x: FieldProps & FormFieldProps & FieldL10nProps
 
 const FormField = withLabel()(Field)
 
-const Captcha = ({ name }: FieldProps) => `<input id="bot" name="${name}" nonce="${nonce}" value="Type 'true' here" /><a id="${name}" href="#bot" style="display:none;">[_] ${l10n(name)}</a><script nonce="${nonce}">bot.style.display='none';${name}.style.display='inline-block';${name}.addEventListener("click", () => {${name}.innerText=${name}.innerText.slice(0,1)+(bot.value==='true' ? '_' : 'x')+${name}.innerText.slice(2);bot.disabled=true;bot.value=bot.value === 'true' ? false : true;});</script>`
+const Captcha = ({ name }: FieldProps) => `<input id="bot" name="${name}" nonce="${nonce}" value="Type 'true' here" /><a id="${name}" href="#bot"></a><script nonce="${nonce}">bot.style.display='none';${name}.innerText='[_] ${l10n(name)}';${name}.addEventListener("click", () => {${name}.innerText=${name}.innerText.slice(0,1)+(bot.value==='true' ? '_' : 'x')+${name}.innerText.slice(2);bot.disabled=true;bot.value=bot.value === 'true' ? false : true;});</script>`
 
 const ContactFormDesktop = () => `<form align="left" method="POST" action="https://api.web3forms.com/submit">
                                         <fieldset bgcolor="gray">
@@ -440,7 +441,7 @@ const Page = (content: string) => `${DOCTYPE}
     ${/* Hotjar Tracking Code (removed due install from GTM) */''}
     ${/* HotJar({ nonce, hjid: 2660383, hjsv: 6 }) */''}
 </head>
-<body style="position: relative;">
+<body>
     ${/* Google Analytics */''}
     ${process.env.IS_VITE === 'true' ? '' : GTag({ nonce, gtmId: 'G-5ZY8Y6X2C4'})}
     ${/* Google Tag Manager */''}
