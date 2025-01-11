@@ -6,10 +6,8 @@ import Header from '@app/components/header/header.ts';
 import Icon from '@app/components/icon/icon.ts';
 import Link from '@app/components/link/link.ts';
 import LinkList from '@app/components/link-list/link-list.ts';
-import Clouds from '@app/components/clouds/clouds.ts';
 
 const Home = () => `
-    ${/*Clouds()*/''}
     ${Header()}
     <article lang="en">
       <section id="home" itemscope itemtype="https://schema.org/Person">
@@ -87,7 +85,7 @@ const Home = () => `
       </section>
     </article>
     <footer>
-      ${/*SlotMachine()*/''}
+      ${SlotMachine()}
     </footer>
   `;
 

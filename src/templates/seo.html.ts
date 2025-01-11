@@ -8,6 +8,7 @@ import { GTag } from '@app/pages/1990/components/GTag';
 import { GTMBody, GTMHead } from '@app/pages/1990/components/GTM';
 import { Sentry } from '@app/pages/1990/components/Sentry';
 import { Script } from '@app/pages/1990/components/ui/script';
+import Clouds from '@app/components/clouds';
 const style = readFileSync('./public/next/styles.min.css');
 
 const title = 'Artūrs Jansons :: Web Developer';
@@ -34,6 +35,7 @@ const html = `<!DOCTYPE html>
     ${/* Google Tag Manager */''}
     ${GTMBody({ nonce, gtmId: 'GTM-MBG56M'})}
     ${Sprite()}
+    ${Clouds()}
     <div id="root">${Home()}</div>
     ${/*<script defer nonce="${nonce}" src="lib/router.min.js"></script>*/''}
     ${Sentry({
