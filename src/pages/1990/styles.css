@@ -83,11 +83,17 @@ img[alt]:after {
 }
 body,
 html {
-  background-color: var(--color-window);
   min-height: 100vh;
   margin: 0;
   padding: 0;
   font-size: 0;
+}
+body {
+  background-color: var(--color-window);
+  animation: color-fade 2s ease-in-out alternate;
+  /* animation-delay: 2s; */
+  transition: background-color 2s, color 2s;
+  /* transition-delay: 2s; */
 }
 html {
   scrollbar-color: orange var(--color-activeWindow);
@@ -270,9 +276,29 @@ a:checked::selection,
   color: var(--color-accent);
   background-color: var(--color-window);
 }
+@keyframes color-fade {
+  0% {
+    /* color: CanvasText;
+    background-color: Canvas; */
+  }
+  100% {
+    background-color: var(--color-window);
+    color: var(--color-text);
+  }
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --color-window: black;
     --color-shadow: gray;
+  }
+  @keyframes color-fade {
+    0% {
+      /* color: CanvasText;
+      background-color: Canvas; */
+    }
+    100% {
+      background-color: var(--color-window);
+      color: var(--color-text);
+    }
   }
 }
