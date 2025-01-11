@@ -164,7 +164,8 @@ a:not([href^="/images"]) {
 [bgcolor] input,
 [bgcolor] select,
 [bgcolor] textarea {
-  color: var(--color-accent);
+  /* issue with nested styles, see #bot */
+  /* color: var(--color-accent); */
 }
 [bgcolor] input[type="submit"],
 [bgcolor] a {

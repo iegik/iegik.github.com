@@ -306,7 +306,7 @@ const DesktopView = () => `
                     <table border="0" cellpadding="0" cellspacing="8" width="768px">
                         <tr>
                             <td align="center">
-                                ${Snow({ width: 768, height: 1024, snowFlake: '*', nonce })}
+                                ${Snow({ width: 768, height: 600, snowFlake: '*', nonce })}
                     </table>
                     `
 
