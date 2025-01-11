@@ -11,7 +11,7 @@ const SnowCanvas = ({ children, speed = 1 }: SnowCanvasProps) =>
       scrolldelay="${60 * speed}"
       class="snowCanvas"
     >
-      <pre>${children}</pre>
+      <noscript><pre>${children}</pre></noscript>
     </marquee>
   `;
 
@@ -89,9 +89,22 @@ export const Snow = ({
   );
 
   return html`
-  <noscript>${flow}</noscript>
+  ${flow}
   ${Script({ srcDoc: './src/lib/snow.js', nonce, })}
-  <style nonce="${nonce}">.snowCanvas { position: absolute;top: 0;color:rgba(200,200,200,0.8);user-select: none;pointer-events: none;}</style>`;
+  <style nonce="${nonce}">
+    .snowCanvas {
+      position: absolute;top: 0;
+      color:rgba(200,200,200,0.8);
+      user-select: none;
+      pointer-events: none;
+      width: 424px;
+      margin-left: -212px;
+    }
+    [width="768px"] .snowCanvas {
+      width: 768px;
+      margin-left: -384px;
+    }
+  </style>`;
 };
 
 // document.addEventListener("DOMContentLoaded", () => {

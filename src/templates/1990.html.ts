@@ -304,7 +304,7 @@ const DesktopView = () => `
                     </table>
                     <table border="0" cellpadding="0" cellspacing="8" width="768px">
                         <tr>
-                            <td>
+                            <td align="center">
                                 ${Snow({ width: 768, height: 1024, snowFlake: '*', nonce })}
                     </table>
                     `
@@ -386,7 +386,7 @@ const MobileView = () => `
                     <table border="0" cellpadding="0" cellspacing="8">
                         <tr>
                             <td align="center">
-                                ${Snow({ width: 200, height: 600, snowFlake: '.', nonce })}
+                                ${Snow({ width: 424, height: 600, snowFlake: '.', nonce })}
                     </table>
                     `
 
@@ -490,7 +490,7 @@ writeFileSync('public/index.html', `${DOCTYPE}
                           <td><font size="3" weight="bold">Loading...</font>
                       </table>
                       <font size="1" color="lightgray">301 Redirect</font><br>
-                      <font size="1" color="gray">You will be redirected to the new page shortly. If not, click <a id="url" href="1990">here</a>.</font>
+                      <font size="1" color="gray">You will be redirected to the new page shortly. If not, click <a id="url" href="1990/">here</a>.</font>
 `);
 writeFileSync('public/1990/index.html', `${DOCTYPE}
 <html lang="en">
@@ -515,10 +515,10 @@ writeFileSync('public/1990/index.html', `${DOCTYPE}
                           <td><font size="3" weight="bold">Loading...</font>
                       </table>
                       <font size="1" color="lightgray">301 Redirect</font><br>
-                      <font size="1" color="gray">You will be redirected to the new page shortly. If not, click <a id="url" href="/1990/mobile">here</a>.</font>
+                      <font size="1" color="gray">You will be redirected to the new page shortly. If not, click <a id="url" href="/1990/mobile/">here</a>.</font>
                       <p>
-                        <a href="/1990/desktop">DESKTOP</a> |
-                        <a href="/1990/mobile">MOBILE</a>
+                        <a href="/1990/desktop/">DESKTOP</a> |
+                        <a href="/1990/mobile/">MOBILE</a>
 `);
 
 const Portfolio = () => `<my-portfolio></my-portfolio>`
