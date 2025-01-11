@@ -5,7 +5,7 @@
                                             </fieldset>`;var a=({srcDoc:t,src:e,nonce:o,async:r,prefix:i,postfix:s,iife:l,crossorigin:m="",integrity:p})=>{let d=t?g(t):"";return`<script ${r?"async":""} crossorigin="${m}" ${p?`integrity="${p}"`:""} nonce="${o}" ${e?`src="${e}"`:""}>${i||""}${l?`(${d})(${l});`:d}${s||""}</script>`};var F=({nonce:t,gtmId:e})=>`
     ${a({nonce:t,srcDoc:"./src/lib/gtm.js",iife:`window,document,'script','dataLayer','${e}','${t}'`})}
 `,C=({nonce:t,gtmId:e})=>`<noscript><iframe nonce="${t}" src="https://www.googletagmanager.com/ns.html?id=${e}"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>`;var T=({nonce:t,gtmId:e})=>`
+height="0" width="0" style="display:none;visibility:hidden;position: absolute;"></iframe></noscript>`;var T=({nonce:t,gtmId:e})=>`
     ${a({async:!0,nonce:t,src:`https://www.googletagmanager.com/gtag/js?id=${e}`})}
     ${a({srcDoc:"./src/lib/gtag.js",nonce:t,postfix:`gtag('config', '${e}');
 `})}

@@ -162,7 +162,7 @@ c:oOXXKKOOlxkO,.,;;;,..;00OO,.
 `;var h1=({nonce:t,gtmId:e})=>`
     ${c({nonce:t,srcDoc:"./src/lib/gtm.js",iife:`window,document,'script','dataLayer','${e}','${t}'`})}
 `,d1=({nonce:t,gtmId:e})=>`<noscript><iframe nonce="${t}" src="https://www.googletagmanager.com/ns.html?id=${e}"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>`;var m1=({nonce:t,integrity:e,projectId:o,...r})=>`
+height="0" width="0" style="display:none;visibility:hidden;position: absolute;"></iframe></noscript>`;var m1=({nonce:t,integrity:e,projectId:o,...r})=>`
     ${c({async:!0,nonce:t,src:"https://browser.sentry-cdn.com/8.29.0/bundle.tracing.min.js",integrity:e})}
     ${c({srcDoc:"./src/lib/sentry.js",nonce:t,iife:JSON.stringify(r)})}
 `;var W1=()=>`
