@@ -1,11 +1,11 @@
 #!/usr/bin/env node
-"use strict";var et=Object.create;var _=Object.defineProperty;var ot=Object.getOwnPropertyDescriptor;var rt=Object.getOwnPropertyNames;var nt=Object.getPrototypeOf,it=Object.prototype.hasOwnProperty;var st=(t,e,o,r)=>{if(e&&typeof e=="object"||typeof e=="function")for(let i of rt(e))!it.call(t,i)&&i!==o&&_(t,i,{get:()=>e[i],enumerable:!(r=ot(e,i))||r.enumerable});return t};var at=(t,e,o)=>(o=t!=null?et(nt(t)):{},st(e||!t||!t.__esModule?_(o,"default",{value:t,enumerable:!0}):o,t));var y=at(require("fs")),b=(t,e)=>y.writeFileSync(t,e,{encoding:"utf8"}),g=t=>y.readFileSync(t,{encoding:"utf8"});var A=new Date,S=`v3.1.0-${A.toJSON()}`,n=btoa(`${Number(A)}`).slice(10,18);var u=t=>`<a ${/^http/.test(t.href)?' rel="noopener noreferrer"':""} href="${t.href}" title="${t.title}">${t.title}</a>`;var w=t=>t.replace(/[&<"']/g,e=>{switch(e){case"&":return"&amp;";case"<":return"&lt;";case'"':return"&quot;";default:return"&#039;"}});var x=({src:t,ascii:e})=>`<pre><font size=1><img width="128" height="128" src="${t}" alt="${w(g(e))}" /></font></pre>`;var P=({src:t,title:e})=>`<fieldset bgcolor="green">
+"use strict";var et=Object.create;var _=Object.defineProperty;var ot=Object.getOwnPropertyDescriptor;var rt=Object.getOwnPropertyNames;var nt=Object.getPrototypeOf,it=Object.prototype.hasOwnProperty;var st=(t,e,o,r)=>{if(e&&typeof e=="object"||typeof e=="function")for(let i of rt(e))!it.call(t,i)&&i!==o&&_(t,i,{get:()=>e[i],enumerable:!(r=ot(e,i))||r.enumerable});return t};var at=(t,e,o)=>(o=t!=null?et(nt(t)):{},st(e||!t||!t.__esModule?_(o,"default",{value:t,enumerable:!0}):o,t));var w=at(require("fs")),b=(t,e)=>w.writeFileSync(t,e,{encoding:"utf8"}),g=t=>w.readFileSync(t,{encoding:"utf8"});var A=new Date,S=`v3.1.0-${A.toJSON()}`,n=btoa(`${Number(A)}`).slice(10,18);var u=t=>`<a ${/^http/.test(t.href)?' rel="noopener noreferrer"':""} href="${t.href}" title="${t.title}">${t.title}</a>`;var $=t=>t.replace(/[&<"']/g,e=>{switch(e){case"&":return"&amp;";case"<":return"&lt;";case'"':return"&quot;";default:return"&#039;"}});var x=({src:t,ascii:e})=>`<pre><font size=1><img width="128" height="128" src="${t}" alt="${$(g(e))}" /></font></pre>`;var P=({src:t,title:e})=>`<fieldset bgcolor="green">
                                                 <legend>${e}</legend>
-                                                <code width="120px">${w(g(t))}</code>
+                                                <code width="120px">${$(g(t))}</code>
                                             </fieldset>`;var a=({srcDoc:t,src:e,nonce:o,async:r,prefix:i,postfix:s,iife:l,crossorigin:m="",integrity:p})=>{let d=t?g(t):"";return`<script ${r?"async":""} crossorigin="${m}" ${p?`integrity="${p}"`:""} nonce="${o}" ${e?`src="${e}"`:""}>${i||""}${l?`(${d})(${l});`:d}${s||""}</script>`};var F=({nonce:t,gtmId:e})=>`
     ${a({nonce:t,srcDoc:"./src/lib/gtm.js",iife:`window,document,'script','dataLayer','${e}','${t}'`})}
-`,C=({nonce:t,gtmId:e})=>`<noscript><iframe nonce="${t}" src="https://www.googletagmanager.com/ns.html?id=${e}"
-height="0" width="0" style="display:none;visibility:hidden;position: absolute;"></iframe></noscript>`;var T=({nonce:t,gtmId:e})=>`
+`,T=({nonce:t,gtmId:e})=>`<noscript><iframe nonce="${t}" src="https://www.googletagmanager.com/ns.html?id=${e}"
+height="0" width="0"></iframe></noscript>`;var C=({nonce:t,gtmId:e})=>`
     ${a({async:!0,nonce:t,src:`https://www.googletagmanager.com/gtag/js?id=${e}`})}
     ${a({srcDoc:"./src/lib/gtag.js",nonce:t,postfix:`gtag('config', '${e}');
 `})}
@@ -14,13 +14,13 @@ height="0" width="0" style="display:none;visibility:hidden;position: absolute;">
     ${a({srcDoc:"./src/lib/sentry.js",nonce:t,iife:JSON.stringify(r)})}
 `;var q=({name:t,rows:e,cols:o,data:r,type:i,value:s="",required:l,l10n:m})=>{let p=t,d=l?"required":"";return r?`<select id="${p}" name="${t}" ${d}>
                                                               <option></option>
-                                                              ${r.map($=>`<option value="${$}">${m($)}</option>`).join(`
+                                                              ${r.map(y=>`<option value="${y}">${m(y)}</option>`).join(`
 `)}
                                                           </select>`:e||o?`<table width="100%">
                                                           <tr>
                                                               <td>
                                                                   <textarea id="${p}" name="${t}" rows="${e}" cols="${o}" ${d}>${s}</textarea>
-                                                      </table>`:`<input type="${i||"text"}" id="${p}" name="${t}" value="${s}" ${d} />`};var ct=({nonce:t})=>Object.entries({"script-src":[`'nonce-${t}'`,"'strict-dynamic'","https://www.google-analytics.com","https://ssl.google-analytics.com","https://static.hotjar.com","https://script.hotjar.com","https://js.sentry-cdn.com","'unsafe-inline'"],"img-src":["'self'","https://www.google-analytics.com","https://avatars.githubusercontent.com/","https://www.googletagmanager.com/","https://static.hotjar.com","https://survey-images.hotjar.com"],"connect-src":["'self'","https://www.google-analytics.com","https://region1.google-analytics.com","https://in.hotjar.com","wss://ws.hotjar.com","https://static.hotjar.com","https://content.hotjar.io","https://github.com/login/oauth/access_token","https://api.github.com/graphql","https://api.github.com/user","https://o171820.ingest.sentry.io/"],"style-src":["'self'",`'nonce-${t}'`,"https://static.hotjar.com"],"object-src":["'none'"],"base-uri":["'none'"],"frame-src":["https://vars.hotjar.com/"],"script-src-elem":["'self'",`'nonce-${t}'`,"https://script.hotjar.com"]}).reduce((e,[o,r])=>`${e};${o} ${r.join(" ")}`,"default-src 'self'"),N=({nonce:t})=>`<meta http-equiv="Content-Security-Policy" content="${ct({nonce:t})}">`;var B=({children:t})=>{if(typeof document>"u")return Array.isArray(t)?t.join(""):t;let e=document.createDocumentFragment();return Array.isArray(t)?[].forEach.call(t,o=>{e.appendChild(o)}):t!=null&&e.appendChild(t),e};var j=(t,...e)=>{let o=String.raw({raw:t},...e);if(typeof document>"u")return o;let r=document.createElement("div");return r.innerHTML=o,r.firstElementChild||""};var lt=({children:t,speed:e=1})=>j`
+                                                      </table>`:`<input type="${i||"text"}" id="${p}" name="${t}" value="${s}" ${d} />`};var ct=({nonce:t})=>Object.entries({"script-src":[`'nonce-${t}'`,"'strict-dynamic'","https://www.google-analytics.com","https://ssl.google-analytics.com","https://static.hotjar.com","https://script.hotjar.com","https://js.sentry-cdn.com","'unsafe-inline'"],"img-src":["'self'","https://www.google-analytics.com","https://avatars.githubusercontent.com/","https://www.googletagmanager.com/","https://static.hotjar.com","https://survey-images.hotjar.com"],"connect-src":["'self'","https://www.google-analytics.com","https://region1.google-analytics.com","https://in.hotjar.com","wss://ws.hotjar.com","https://static.hotjar.com","https://content.hotjar.io","https://github.com/login/oauth/access_token","https://api.github.com/graphql","https://api.github.com/user","https://o171820.ingest.sentry.io/"],"style-src":["'self'",`'nonce-${t}'`,"https://static.hotjar.com"],"object-src":["'none'"],"base-uri":["'none'"],"frame-src":["https://vars.hotjar.com/","https://www.googletagmanager.com/"],"script-src-elem":["'self'",`'nonce-${t}'`,"https://script.hotjar.com"]}).reduce((e,[o,r])=>`${e};${o} ${r.join(" ")}`,"default-src 'self'"),N=({nonce:t})=>`<meta http-equiv="Content-Security-Policy" content="${ct({nonce:t})}">`;var B=({children:t})=>{if(typeof document>"u")return Array.isArray(t)?t.join(""):t;let e=document.createDocumentFragment();return Array.isArray(t)?[].forEach.call(t,o=>{e.appendChild(o)}):t!=null&&e.appendChild(t),e};var j=(t,...e)=>{let o=String.raw({raw:t},...e);if(typeof document>"u")return o;let r=document.createElement("div");return r.innerHTML=o,r.firstElementChild||""};var lt=({children:t,speed:e=1})=>j`
     <marquee
       direction="down"
       scrollamount="5"
@@ -29,7 +29,7 @@ height="0" width="0" style="display:none;visibility:hidden;position: absolute;">
     >
       <noscript><pre>${t}</pre></noscript>
     </marquee>
-  `,pt=({width:t=1,height:e=1,avg:o=1,snowFlake:r="."}={})=>{let i=~~(t/6),s=~~(e/8),l=~~(i*s*o),m="";for(let p=0;p<s;p++){let d="";for(let $=0;$<i;$++)d+=Math.random()<l/(s*i)?r:"&nbsp;";m+=d+`
+  `,pt=({width:t=1,height:e=1,avg:o=1,snowFlake:r="."}={})=>{let i=~~(t/6),s=~~(e/8),l=~~(i*s*o),m="";for(let p=0;p<s;p++){let d="";for(let y=0;y<i;y++)d+=Math.random()<l/(s*i)?r:"&nbsp;";m+=d+`
 `}return m},O=({speed:t=1,count:e=1,step:o=.25,...r})=>[...new Array(e)].map((i,s)=>lt({children:pt(r),speed:t+(s+1)*o})),M=({width:t=800,height:e=600,avg:o=.01,snowFlake:r="*",nonce:i=""}={})=>{let s=~~(e/8*1e3*.5),l=B({children:O({width:t,height:e,avg:o,snowFlake:r,speed:1,count:3,step:.25})});return typeof window<"u"&&setTimeout((m=>()=>{O({width:t,height:e,avg:o,snowFlake:r,speed:1,count:3,step:.5}).forEach(p=>{p!=null&&m.append?.(p)})})(l),s),j`
   ${l}
   ${a({srcDoc:"./src/lib/snow.js",nonce:i})}
@@ -65,9 +65,9 @@ height="0" width="0" style="display:none;visibility:hidden;position: absolute;">
                                             <p>${t.description}
                                             <p>
                                                 ${t.links.map((e,o)=>`${o?" | ":""}${u(e)}`).join("")}
-                                            ${t.comment?`<p><em><font color="gray">${t.comment}</font></em>`:""}`,J=()=>"<p>Time Zone: EEST</p>",Q=()=>"<p>Work Time: 10:00 - 20:00</p>",Z=()=>"<p>Current Location: Earth</p>",H={email:{kind:"vertical",required:!0},to:{type:"hidden",value:"a.jansons+web@gmail.com"},access_key:{type:"hidden",value:"c5540606-b7ca-4634-980a-13e2c50cd823"},redirect:{type:"hidden",value:"/1990/sent"},subject:{kind:"vertical",required:!0,data:["feedback","work","consultation","issue"]},message:{kind:"vertical",required:!0},send:{type:"submit"}},ft={email:"Your email",subject:"Subject",message:"Content",send:"Send message",feedback:"Feedback",work:"Work opportunity",consultation:"Consultation",issue:"Bug Report",botcheck:"I'm not a robot"},v=t=>ft[t]||t,bt=()=>t=>e=>{let{name:o}=e,{kind:r,type:i}=H[o]||{},s={...e,...H[o]||{},l10n:v};if(i==="hidden")return t(s);if(i==="submit")return`<input type="submit" name="${o}" value="${v(o)}" />`;let l=v(o);return r==="vertical"?`<label for="${o}">${l}</label>
+                                            ${t.comment?`<p><em><font color="gray">${t.comment}</font></em>`:""}`,J=()=>"<p>Time Zone: EEST</p>",Q=()=>"<p>Work Time: 10:00 - 20:00</p>",Z=()=>"<p>Current Location: Earth</p>",H={email:{kind:"vertical",required:!0},to:{type:"hidden",value:"a.jansons+web@gmail.com"},access_key:{type:"hidden",value:"c5540606-b7ca-4634-980a-13e2c50cd823"},redirect:{type:"hidden",value:"/1990/sent"},subject:{kind:"vertical",required:!0,data:["feedback","work","consultation","issue"]},message:{kind:"vertical",required:!0},send:{type:"submit"}},ft={email:"Your email",subject:"Subject",message:"Content",send:"Send message",feedback:"Feedback",work:"Work opportunity",consultation:"Consultation",issue:"Bug Report",botcheck:"I`m not a robot"},v=t=>$(ft[t]||t),bt=()=>t=>e=>{let{name:o}=e,{kind:r,type:i}=H[o]||{},s={...e,...H[o]||{},l10n:v};if(i==="hidden")return t(s);if(i==="submit")return`<input type="submit" name="${o}" value="${v(o)}" />`;let l=v(o);return r==="vertical"?`<label for="${o}">${l}</label>
                                                         <br>
-                                                        ${t(s)}`:`<label for="${o}">${l}</label>&nbsp;${t(s)}`},c=bt()(q),K=({name:t})=>`<input id="bot" name="${t}" nonce="${n}" value="Type 'true' here" /><a id="${t}" href="#bot" style="display:none;">[_] ${v(t)}</a><script nonce="${n}">bot.style.display='none';${t}.style.display='inline-block';${t}.addEventListener("click", () => {${t}.innerText=${t}.innerText.slice(0,1)+(bot.value==='true' ? '_' : 'x')+${t}.innerText.slice(2);bot.disabled=true;bot.value=bot.value === 'true' ? false : true;});</script>`,ut=()=>`<form align="left" method="POST" action="https://api.web3forms.com/submit">
+                                                        ${t(s)}`:`<label for="${o}">${l}</label>&nbsp;${t(s)}`},c=bt()(q),K=({name:t})=>`<input id="bot" name="${t}" nonce="${n}" value="Type 'true' here" /><a id="${t}" href="#bot"></a><script nonce="${n}">bot.style.display='none';${t}.innerText='[_] ${v(t)}';${t}.addEventListener("click", () => {${t}.innerText=${t}.innerText.slice(0,1)+(bot.value==='true' ? '_' : 'x')+${t}.innerText.slice(2);bot.disabled=true;bot.value=bot.value === 'true' ? false : true;});</script>`,ut=()=>`<form align="left" method="POST" action="https://api.web3forms.com/submit">
                                         <fieldset bgcolor="gray">
                                             <legend>Feedback</legend>
                                             <table align="left" border="0" cellpadding="0" cellspacing="8" width="100%">
@@ -310,11 +310,11 @@ height="0" width="0" style="display:none;visibility:hidden;position: absolute;">
     
     
 </head>
-<body style="position: relative;">
+<body>
     
-    ${process.env.IS_VITE==="true"?"":T({nonce:n,gtmId:"G-5ZY8Y6X2C4"})}
+    ${process.env.IS_VITE==="true"?"":C({nonce:n,gtmId:"G-5ZY8Y6X2C4"})}
     
-    ${process.env.IS_VITE==="true"?"":C({nonce:n,gtmId:"GTM-MBG56M"})}
+    ${process.env.IS_VITE==="true"?"":T({nonce:n,gtmId:"GTM-MBG56M"})}
     ${t}
     
     ${a({srcDoc:"./src/lib/dos-theme.js",iife:'document, toggleDosStyle, "/1990/styles.min.css"',nonce:n,prefix:`const nonce = '${n}';
@@ -336,9 +336,9 @@ height="0" width="0" style="display:none;visibility:hidden;position: absolute;">
 </head>
 <body id="root">
     
-    ${process.env.IS_VITE==="true"?"":T({nonce:n,gtmId:"G-5ZY8Y6X2C4"})}
+    ${process.env.IS_VITE==="true"?"":C({nonce:n,gtmId:"G-5ZY8Y6X2C4"})}
     
-    ${process.env.IS_VITE==="true"?"":C({nonce:n,gtmId:"GTM-MBG56M"})}
+    ${process.env.IS_VITE==="true"?"":T({nonce:n,gtmId:"GTM-MBG56M"})}
   <font face="'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace" size="3">
     <table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
         <tr align="center">

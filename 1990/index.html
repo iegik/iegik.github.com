@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Loading...</title>
     
-    <style nonce="cwNjI2Mw" id="/1990/styles.min.css">/* Styles used only for interpriate old interface */
+    <style nonce="c1MzgwOQ" id="/1990/styles.min.css">/* Styles used only for interpriate old interface */
 :root {
   --color-window: #0000a8;
   --color-text: #56ffff;
@@ -97,6 +97,7 @@ html {
   font-size: 0;
 }
 body {
+  position: relative;
   background-color: var(--color-window);
   animation: color-fade 2s ease-in-out alternate;
   /* animation-delay: 2s; */
@@ -283,6 +284,10 @@ a:checked::selection,
 [bgcolor] a:active::selection {
   color: var(--color-accent);
   background-color: var(--color-window);
+}
+/* hide noscript gtm */
+noscript iframe[src^="https://www.googletagmanager.com"] {
+  display:none;visibility:hidden;position:absolute;
 }
 @keyframes color-fade {
   0% {
