@@ -11,6 +11,7 @@ import { GTag } from '@app/pages/1990/components/GTag';
 import { Sentry } from '@app/pages/1990/components/Sentry';
 import { Field, FieldL10nProps, FieldProps, FormFieldProps } from '@app/pages/1990/components/ui/field';
 import { CSP } from '@app/pages/1990/components/CSP';
+import { Snow } from '@app/pages/1990/components/Snow';
 
 const style = readFileSync('./src/pages/1990/styles.css');
 
@@ -301,6 +302,11 @@ const DesktopView = () => `
                                             </font>
                                 </table>
                     </table>
+                    <table border="0" cellpadding="0" cellspacing="8" width="768px">
+                        <tr>
+                            <td>
+                                ${Snow({ width: 768, height: 1024, snowFlake: '*', nonce })}
+                    </table>
                     `
 
 const MobileView = () => `
@@ -377,33 +383,42 @@ const MobileView = () => `
                                     ${Code({ src: './src/pages/1990/assets/code_of_a_day/git_du.gitconfig', title: 'Code of the day' })}
                                 </font>
                     </table>
+                    <table border="0" cellpadding="0" cellspacing="8">
+                        <tr>
+                            <td align="center">
+                                ${Snow({ width: 200, height: 600, snowFlake: '.', nonce })}
+                    </table>
                     `
+
+const Footer = () => `<p>${links.map((link, key) => `${!!key ? ' | ' : ''}${Link(link)}`).join('')}</p>
+                                <br>
+                                <marquee>
+                                    <font color="gray">© 2024 ${fullName} | All rights reserved</font>
+                                    `
 
 // https://www.w3.org/TR/xhtml-basic/
 
 const DOCTYPE = process.env.IS_VITE === 'true' ? `<!DOCTYPE html>` : `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
     "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">`
 
-const Layout = (content: string) => `<font face="${fontFamily}" size="3">
+const Layout = (content: (Node | Element | string)[]) => `<font face="${fontFamily}" size="3">
         <table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
             <tr align="center">
                 <td valign="top">
-                    ${TopNav()}
+                    ${content[0]}
                     <hr>
-                    ${content}
+                    ${content[1]}
             <tr>
                 <td valign="bottom" align="center">
                     <hr>
                     <table border="0" cellpadding="8" cellspacing="0" width="100%">
                         <tr>
                             <td align="center">
-                                <p>${links.map((link, key) => `${!!key ? ' | ' : ''}${Link(link)}`).join('')}</p>
-                                <br>
-                                <marquee>
-                                    <font color="gray">© 2024 ${fullName} | All rights reserved</font>
+                                ${content[2]}
                     </table>
         </table>
-    </font>`
+    </font>
+`
 
 const Page = (content: string) => `${DOCTYPE}
 <html lang="en">
@@ -425,7 +440,7 @@ const Page = (content: string) => `${DOCTYPE}
     ${/* Hotjar Tracking Code (removed due install from GTM) */''}
     ${/* HotJar({ nonce, hjid: 2660383, hjsv: 6 }) */''}
 </head>
-<body>
+<body style="position: relative;">
     ${/* Google Analytics */''}
     ${process.env.IS_VITE === 'true' ? '' : GTag({ nonce, gtmId: 'G-5ZY8Y6X2C4'})}
     ${/* Google Tag Manager */''}
@@ -433,7 +448,6 @@ const Page = (content: string) => `${DOCTYPE}
     ${content}
     ${/* DOS Theme Code for https://iegik.github.io */''}
     ${Script({ srcDoc: './src/lib/dos-theme.js', iife: 'document, toggleDosStyle, "/1990/styles.min.css"', nonce, prefix: `const nonce = '${nonce}';\n` })}
-    ${Script({ srcDoc: './src/lib/snow.js', nonce, })}
     ${Script({ srcDoc: './src/lib/my-portfolio.js', nonce, })}
     ${Sentry({
         nonce,
@@ -509,8 +523,17 @@ writeFileSync('public/1990/index.html', `${DOCTYPE}
 
 const Portfolio = () => `<my-portfolio></my-portfolio>`
 
-writeFileSync('public/1990/desktop/index.html', Page(Layout(DesktopView())));
-writeFileSync('public/1990/mobile/index.html', Page(Layout(MobileView())));
+writeFileSync('public/1990/desktop/index.html', Page(Layout([
+    TopNav(),
+    DesktopView(),
+    Footer(),
+])));
+
+writeFileSync('public/1990/mobile/index.html', Page(Layout([
+    TopNav(),
+    MobileView(),
+    Footer(),
+])));
 writeFileSync('public/portfolio/index.html', Page(Portfolio()));
 
 const manifest = `
