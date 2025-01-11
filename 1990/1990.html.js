@@ -187,7 +187,7 @@ height="0" width="0"></iframe></noscript>`;var C=({nonce:t,gtmId:e})=>`
                     <table border="0" cellpadding="0" cellspacing="8" width="768px">
                         <tr>
                             <td align="center">
-                                ${M({width:768,height:1024,snowFlake:"*",nonce:n})}
+                                ${M({width:768,height:600,snowFlake:"*",nonce:n})}
                     </table>
                     `,wt=()=>`
                     <table border="0" cellpadding="0" cellspacing="8">
