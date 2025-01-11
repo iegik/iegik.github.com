@@ -6,4 +6,4 @@ export const GTMHead = ({ nonce, gtmId }: GTMProps) => `
 `;
 
 export const GTMBody = ({ nonce, gtmId }: GTMProps) => `<noscript><iframe nonce="${nonce}" src="https://www.googletagmanager.com/ns.html?id=${gtmId}"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>`;
+height="0" width="0" style="display:none;visibility:hidden;position: absolute;"></iframe></noscript>`;
