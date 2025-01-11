@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Loading...</title>
     
-    <style nonce="A0NzQ5NQ" id="/1990/styles.min.css">/* Styles used only for interpriate old interface */
+    <style nonce="k0ODQ1NQ" id="/1990/styles.min.css">/* Styles used only for interpriate old interface */
 :root {
   --color-window: #0000a8;
   --color-text: #56ffff;
@@ -91,11 +91,17 @@ img[alt]:after {
 }
 body,
 html {
-  background-color: var(--color-window);
   min-height: 100vh;
   margin: 0;
   padding: 0;
   font-size: 0;
+}
+body {
+  background-color: var(--color-window);
+  animation: color-fade 2s ease-in-out alternate;
+  /* animation-delay: 2s; */
+  transition: background-color 2s, color 2s;
+  /* transition-delay: 2s; */
 }
 html {
   scrollbar-color: orange var(--color-activeWindow);
@@ -278,10 +284,30 @@ a:checked::selection,
   color: var(--color-accent);
   background-color: var(--color-window);
 }
+@keyframes color-fade {
+  0% {
+    /* color: CanvasText;
+    background-color: Canvas; */
+  }
+  100% {
+    background-color: var(--color-window);
+    color: var(--color-text);
+  }
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --color-window: black;
     --color-shadow: gray;
+  }
+  @keyframes color-fade {
+    0% {
+      /* color: CanvasText;
+      background-color: Canvas; */
+    }
+    100% {
+      background-color: var(--color-window);
+      color: var(--color-text);
+    }
   }
 }
 </style>
@@ -300,7 +326,7 @@ a:checked::selection,
                           <td><font size="3" weight="bold">Loading...</font>
                       </table>
                       <font size="1" color="lightgray">301 Redirect</font><br>
-                      <font size="1" color="gray">You will be redirected to the new page shortly. If not, click <a id="url" href="/1990/mobile">here</a>.</font>
+                      <font size="1" color="gray">You will be redirected to the new page shortly. If not, click <a id="url" href="/1990/mobile/">here</a>.</font>
                       <p>
-                        <a href="/1990/desktop">DESKTOP</a> |
-                        <a href="/1990/mobile">MOBILE</a>
+                        <a href="/1990/desktop/">DESKTOP</a> |
+                        <a href="/1990/mobile/">MOBILE</a>

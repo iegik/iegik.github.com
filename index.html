@@ -7,7 +7,7 @@
     <title>Loading...</title>
     <!--meta http-equiv="REFRESH" content="0;URL=1990/"-->
     
-    <style nonce="A0NzQ5NQ" id="/1990/styles.min.css">/* Styles used only for interpriate old interface */
+    <style nonce="k0ODQ1NQ" id="/1990/styles.min.css">/* Styles used only for interpriate old interface */
 :root {
   --color-window: #0000a8;
   --color-text: #56ffff;
@@ -92,11 +92,17 @@ img[alt]:after {
 }
 body,
 html {
-  background-color: var(--color-window);
   min-height: 100vh;
   margin: 0;
   padding: 0;
   font-size: 0;
+}
+body {
+  background-color: var(--color-window);
+  animation: color-fade 2s ease-in-out alternate;
+  /* animation-delay: 2s; */
+  transition: background-color 2s, color 2s;
+  /* transition-delay: 2s; */
 }
 html {
   scrollbar-color: orange var(--color-activeWindow);
@@ -279,14 +285,34 @@ a:checked::selection,
   color: var(--color-accent);
   background-color: var(--color-window);
 }
+@keyframes color-fade {
+  0% {
+    /* color: CanvasText;
+    background-color: Canvas; */
+  }
+  100% {
+    background-color: var(--color-window);
+    color: var(--color-text);
+  }
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --color-window: black;
     --color-shadow: gray;
   }
+  @keyframes color-fade {
+    0% {
+      /* color: CanvasText;
+      background-color: Canvas; */
+    }
+    100% {
+      background-color: var(--color-window);
+      color: var(--color-text);
+    }
+  }
 }
 </style>
-    <script  crossorigin=""  nonce="A0NzQ5NQ" >"use strict";(()=>{var y=(e={})=>{let{className:t="",children:r,squire:s,tag:c="div"}=e,a="link-list";return t&&(a+=` ${t}`),s&&(a+=" link-list--squire"),`
+    <script  crossorigin=""  nonce="k0ODQ1NQ" >"use strict";(()=>{var y=(e={})=>{let{className:t="",children:r,squire:s,tag:c="div"}=e,a="link-list";return t&&(a+=` ${t}`),s&&(a+=" link-list--squire"),`
       <${c} class="${a}">
         ${r?.map(d=>`<div class="link-list__item">${d}</div>`).join("")}
       </${c}>
@@ -306,24 +332,24 @@ a:checked::selection,
 </script>
     
     
-    <script  crossorigin=""  nonce="A0NzQ5NQ" >(function(w,d,s,l,i,n){w[l]=w[l]||[];w[l].push({'gtm.start':
+    <script  crossorigin=""  nonce="k0ODQ1NQ" >(function(w,d,s,l,i,n){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;j.setAttribute('nonce', n);f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MBG56M','A0NzQ5NQ');</script>
+})(window,document,'script','dataLayer','GTM-MBG56M','k0ODQ1NQ');</script>
 
 </head>
 <body id="root">
     
     
-    <script async crossorigin=""  nonce="A0NzQ5NQ" src="https://www.googletagmanager.com/gtag/js?id=G-5ZY8Y6X2C4"></script>
-    <script  crossorigin=""  nonce="A0NzQ5NQ" >window.dataLayer = window.dataLayer || [];
+    <script async crossorigin=""  nonce="k0ODQ1NQ" src="https://www.googletagmanager.com/gtag/js?id=G-5ZY8Y6X2C4"></script>
+    <script  crossorigin=""  nonce="k0ODQ1NQ" >window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());gtag('config', 'G-5ZY8Y6X2C4');
 </script>
 
     
-    <noscript><iframe nonce="A0NzQ5NQ" src="https://www.googletagmanager.com/ns.html?id=GTM-MBG56M"
+    <noscript><iframe nonce="k0ODQ1NQ" src="https://www.googletagmanager.com/ns.html?id=GTM-MBG56M"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <font face="'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace" size="3">
     <table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
@@ -338,4 +364,4 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                           <td><font size="3" weight="bold">Loading...</font>
                       </table>
                       <font size="1" color="lightgray">301 Redirect</font><br>
-                      <font size="1" color="gray">You will be redirected to the new page shortly. If not, click <a id="url" href="1990">here</a>.</font>
+                      <font size="1" color="gray">You will be redirected to the new page shortly. If not, click <a id="url" href="1990/">here</a>.</font>
