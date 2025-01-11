@@ -26,6 +26,15 @@
   document.body.insertBefore(canvas, document.body.firstChild);
 
   ((a, b, c, d, r) => {
+
+    var observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutationRecord) {
+          console.log('style changed!', b.style.backgroundColor, mutationRecord);
+      });
+    });
+
+    observer.observe(b, { attributes : true, attributeFilter : ['style'] });
+
     // Create and append a full-screen canvas
     d.addEventListener('DOMContentLoaded', () => {
       let width = (a.width = window.innerWidth);
@@ -115,11 +124,11 @@
       }
 
       function drawBackground() {
+        console.log('style init', b.style.backgroundColor, window.getComputedStyle(b).backgroundColor);
         // Get background color from computed styles
         // const backgroundColor = '#0000';
         const backgroundColor =
           window.getComputedStyle(b).backgroundColor;
-        const bgColorArray = backgroundColor.match(/\d+/g).map(Number); // Parse RGB values
 
         // Draw underlying content snapshot to detect color changes
         c.save();
@@ -200,6 +209,7 @@
         }
 
         clear() {
+          // drawBackground();
           if (!this.isBackground) return;
           // console.log('clearRect', this.x,
           //   this.y,
@@ -239,23 +249,27 @@
         }
 
         get isBackground() {
+          const backgroundColor =
+            window.getComputedStyle(b).backgroundColor;
+          const bgColorArray = backgroundColor.match(/\d+/g).map(Number); // Parse RGB values
+
           let pixelData;
-          let isBackground = true;
           for (let i = 0; i < this.pixelPattern.length; i++) {
             for (let j = 0; j < this.pixelPattern[i]?.length; j++) {
               if (this.pixelPattern[i]?.[j] === 1) {
                 pixelData = [...c.getImageData(Math.floor(this.x + j), Math.floor(this.y + i), 1, 1).data];
 
-                isBackground = isBackground &&
-                  pixelData[0] === bgColorArray[0] &&
-                  pixelData[1] === bgColorArray[1] &&
-                  pixelData[2] === bgColorArray[2] // &&
+                if (
+                  pixelData[0] !== 0 ||// bgColorArray[0] &&
+                  pixelData[1] !== 0 ||// bgColorArray[1] &&
+                  pixelData[2] !== 0 // bgColorArray[2] // &&
                   // pixelData[3] === bgColorArray[3];
                 // console.log([this.x + j, this.y + i,isBackground, '#' + pixelData.map(i => i.toString(16)).join(''), '#' + bgColorArray.map(i => i.toString(16)).join('')])
+                ) return false // && Math.random() > 0.5;
               }
             }
           }
-          return isBackground// || Math.random() > 0.5;
+          return true
         }
         get withinCanvas() {
           const withinCanvas = //this.y >= 0 &&

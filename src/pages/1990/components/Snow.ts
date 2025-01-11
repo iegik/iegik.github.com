@@ -90,7 +90,7 @@ export const Snow = ({
 
   return html`
   <noscript>${flow}</noscript>
-  ${/*Script({ srcDoc: './src/lib/snow.js', nonce, })*/''}
+  ${Script({ srcDoc: './src/lib/snow.js', nonce, })}
   <style nonce="${nonce}">.snowCanvas { position: absolute;top: 0;color:rgba(200,200,200,0.8);user-select: none;pointer-events: none;}</style>`;
 };
 
