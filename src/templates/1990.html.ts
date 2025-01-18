@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // @deno-types='@app/types.d'
 import { writeFileSync, readFileSync, release, nonce } from '@app/utils';
-import { type LinkProps, Link } from '@app/pages/1990/components/ui/link';
+import { Link } from '@app/pages/1990/components/ui/link';
 import { Image, type ImageProps } from '@app/pages/1990/components/ui/image';
 import { Code } from '@app/pages/1990/components/ui/code';
 import { GTMHead, GTMBody } from '@app/pages/1990/components/GTM';
@@ -12,7 +12,7 @@ import { Sentry } from '@app/pages/1990/components/Sentry';
 import { Field, FieldL10nProps, FieldProps, FormFieldProps } from '@app/pages/1990/components/ui/field';
 import { CSP } from '@app/pages/1990/components/CSP';
 import { Snow } from '@app/pages/1990/components/Snow';
-import { escapeHTML } from '@app/services/web-utils';
+import { l10n } from '@app/l10n';
 
 const style = readFileSync('./src/pages/1990/styles.css');
 
@@ -145,20 +145,6 @@ const fields: Record<string, FormFieldProps> = {
     message: { kind: 'vertical', required: true, },
     send: { type: 'submit' },
 }
-
-const dict: Record<string, string>= {
-    email: 'Your email',
-    subject: 'Subject',
-    message: 'Content',
-    send: 'Send message',
-    feedback: 'Feedback',
-    work: 'Work opportunity',
-    consultation: 'Consultation',
-    issue: 'Bug Report',
-    botcheck: "I\`m not a robot",
-}
-
-const l10n = (slug: string) => escapeHTML(dict[slug] || slug);
 
 const withLabel = () => (Field: (x: FieldProps & FormFieldProps & FieldL10nProps ) => string) => (props: FieldProps) => {
     const { name } = props

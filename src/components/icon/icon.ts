@@ -1,11 +1,6 @@
 import { createRef } from '@app/components/core/view';
 import { spriteMap } from '@app/components/sprite/sprite';
 
-interface IconProps {
-  className?: string;
-  name: string;
-}
-
 const Icon: FC<IconProps> = (
   { className, name } = { name: 'unknown' },
 ) => {

@@ -79,6 +79,7 @@ const render =
         (component || 'View') as keyof typeof componentsMap
       ];
     if (Array.isArray(event)) {
+      // FIXME: ???
       for (const mutation of event)
         render(ref, eventType, props)(mutation);
       return;
@@ -167,6 +168,16 @@ const runServices = async (ref: Ref, props: State) => {
   setState({ services: null });
 };
 
+export const Fragment = ({ children }: FragmentProps) => Array.isArray(children)
+? children
+    .map((childProps: ReactNode) =>
+      childProps instanceof Object
+        ? View(<ViewProps>childProps ?? {})
+        : `${childProps}`,
+    )
+    .join?.('')
+: escapeHTML(`${children}`)
+
 const View: FC<ViewProps> = (props = {}) => {
   log.debug({ props });
   const {
@@ -186,16 +197,7 @@ const View: FC<ViewProps> = (props = {}) => {
     if (services?.length) runServices(ref, props);
   });
 
-  // TODO: Replace with imperative
-  const content = Array.isArray(children)
-    ? children
-        .map((childProps: ReactNode) =>
-          childProps instanceof Object
-            ? View(<ViewProps>childProps ?? {})
-            : `${childProps}`,
-        )
-        .join?.('')
-    : escapeHTML(`${children}`);
+  const content = Fragment({ children });
 
   const restProps = Object.entries(rest)?.reduce?.(
     (acc, [key, value = '']) => `${acc} ${key}="${value}"`,

@@ -1,0 +1,10 @@
+// export { default as View } from '@app/pages/1990/components/core/view';
+export { Action } from '@app/pages/1990/components/ui/action';
+export { Code } from '@app/pages/1990/components/ui/code';
+export { Dialog } from '@app/pages/1990/components/ui/dialog';
+export { Field } from '@app/pages/1990/components/ui/field';
+export { Image } from '@app/pages/1990/components/ui/image';
+export { Link } from '@app/pages/1990/components/ui/link';
+export { Script } from '@app/pages/1990/components/ui/script';
+// export { default as SlotMachine } from '@app/pages/1990/components/core/slot-machine';
+// export { default as Icon } from '@app/pages/1990/components/icon/icon';

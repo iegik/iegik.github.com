@@ -2,7 +2,7 @@ import { Fragment } from "@app/core/Fragment";
 import { html } from "@app/core/html";
 import { Script } from "./ui/script";
 
-type SnowCanvasProps = { children: string, speed: number, }
+type SnowCanvasProps = { children: ReactNode, speed: number, }
 const SnowCanvas = ({ children, speed = 1 }: SnowCanvasProps) =>
   html`
     <marquee

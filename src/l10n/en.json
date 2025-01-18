@@ -1,0 +1,11 @@
+{
+    "email": "Your email",
+    "subject": "Subject",
+    "message": "Content",
+    "send": "Send message",
+    "feedback": "Feedback",
+    "work": "Work opportunity",
+    "consultation": "Consultation",
+    "issue": "Bug Report",
+    "botcheck": "I`m not a robot"
+}

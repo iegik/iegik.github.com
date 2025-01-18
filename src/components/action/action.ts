@@ -1,10 +1,7 @@
 import { createRef } from '@app/components/core/view';
+import { Fragment } from '@app/core/fragment';
 
-interface Props {
-  className?: string;
-  children?: string[];
-  tag?: string;
-  type?: string;
+type Props = ActionProps & {
   onClick?: (event: Event) => void;
 }
 
@@ -24,7 +21,7 @@ const Action: FC<Props> = (props = {}) => {
 
   return `
       <${tag} class="${className}" ref="${ref}" type="${type}">
-        ${children?.join('')}
+        ${Fragment({ children })}
       </${tag}>
     `;
 };
