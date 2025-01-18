@@ -50,6 +50,7 @@
       }
     ],
     "unit-allowed-list": [
+      "ex",
       "em",
       "rem",
       "s",
