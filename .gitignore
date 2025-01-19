@@ -16,6 +16,7 @@ public/**/*.jpg
 public/favicon.ico
 public/**/index.html
 !public/1990/**/styles.css
+!public/sw.js
 public/EULA.md
 public/PRIVACY.md
 public/**/manifest.appcache
