@@ -1,39 +1,58 @@
 #!/usr/bin/env node
-"use strict";var et=Object.create;var _=Object.defineProperty;var ot=Object.getOwnPropertyDescriptor;var rt=Object.getOwnPropertyNames;var nt=Object.getPrototypeOf,it=Object.prototype.hasOwnProperty;var st=(t,e,o,r)=>{if(e&&typeof e=="object"||typeof e=="function")for(let i of rt(e))!it.call(t,i)&&i!==o&&_(t,i,{get:()=>e[i],enumerable:!(r=ot(e,i))||r.enumerable});return t};var at=(t,e,o)=>(o=t!=null?et(nt(t)):{},st(e||!t||!t.__esModule?_(o,"default",{value:t,enumerable:!0}):o,t));var w=at(require("fs")),b=(t,e)=>w.writeFileSync(t,e,{encoding:"utf8"}),g=t=>w.readFileSync(t,{encoding:"utf8"});var A=new Date,S=`v3.1.0-${A.toJSON()}`,n=btoa(`${Number(A)}`).slice(10,18);var u=t=>`<a ${/^http/.test(t.href)?' rel="noopener noreferrer"':""} href="${t.href}" title="${t.title}">${t.title}</a>`;var $=t=>t.replace(/[&<"']/g,e=>{switch(e){case"&":return"&amp;";case"<":return"&lt;";case'"':return"&quot;";default:return"&#039;"}});var x=({src:t,ascii:e})=>`<pre><font size=1><img width="128" height="128" src="${t}" alt="${$(g(e))}" /></font></pre>`;var P=({src:t,title:e})=>`<fieldset bgcolor="green">
-                                                <legend>${e}</legend>
-                                                <code width="120px">${$(g(t))}</code>
-                                            </fieldset>`;var a=({srcDoc:t,src:e,nonce:o,async:r,prefix:i,postfix:s,iife:l,crossorigin:m="",integrity:p})=>{let d=t?g(t):"";return`<script ${r?"async":""} crossorigin="${m}" ${p?`integrity="${p}"`:""} nonce="${o}" ${e?`src="${e}"`:""}>${i||""}${l?`(${d})(${l});`:d}${s||""}</script>`};var F=({nonce:t,gtmId:e})=>`
-    ${a({nonce:t,srcDoc:"./src/lib/gtm.js",iife:`window,document,'script','dataLayer','${e}','${t}'`})}
-`,T=({nonce:t,gtmId:e})=>`<noscript><iframe nonce="${t}" src="https://www.googletagmanager.com/ns.html?id=${e}"
-height="0" width="0"></iframe></noscript>`;var C=({nonce:t,gtmId:e})=>`
-    ${a({async:!0,nonce:t,src:`https://www.googletagmanager.com/gtag/js?id=${e}`})}
-    ${a({srcDoc:"./src/lib/gtag.js",nonce:t,postfix:`gtag('config', '${e}');
+"use strict";var Re=Object.create;var I=Object.defineProperty;var Ie=Object.getOwnPropertyDescriptor;var De=Object.getOwnPropertyNames;var Oe=Object.getPrototypeOf,Ae=Object.prototype.hasOwnProperty;var _e=(e,t)=>{for(var o in t)I(e,o,{get:t[o],enumerable:!0})},Ne=(e,t,o,r)=>{if(t&&typeof t=="object"||typeof t=="function")for(let n of De(t))!Ae.call(e,n)&&n!==o&&I(e,n,{get:()=>t[n],enumerable:!(r=Ie(t,n))||r.enumerable});return e};var Ge=(e,t,o)=>(o=e!=null?Re(Oe(e)):{},Ne(t||!e||!e.__esModule?I(o,"default",{value:e,enumerable:!0}):o,e));var F=Ge(require("fs")),y=(e,t)=>F.writeFileSync(e,t,{encoding:"utf8"}),u=e=>F.readFileSync(e,{encoding:"utf8"});var te=new Date,D=`v3.1.0-${te.toJSON()}`,s=btoa(`${Number(te)}`).slice(10,18);var g=e=>`<a ${/^http/.test(e.href)?' rel="noopener noreferrer"':""} href="${e.href}" title="${e.title}">${e.title}</a>`;var h=e=>e.replace(/[&<"']/g,t=>{switch(t){case"&":return"&amp;";case"<":return"&lt;";case'"':return"&quot;";default:return"&#039;"}});var M=({src:e,ascii:t})=>`<pre><font size=1><img width="128" height="128" src="${e}" alt="${h(u(t))}" /></font></pre>`;var O=({src:e,title:t})=>`<fieldset bgcolor="green">
+                                                <legend>${t}</legend>
+                                                <code width="120px">${h(u(e))}</code>
+                                            </fieldset>`;var a=({srcDoc:e,src:t,nonce:o,async:r,prefix:n,postfix:i,iife:c,crossorigin:l="",integrity:p})=>{let m=e?u(e):"";return`<script ${r?"async":""} crossorigin="${l}" ${p?`integrity="${p}"`:""} nonce="${o}" ${t?`src="${t}"`:""}>${n||""}${c?`(${m})(${c});`:m}${i||""}</script>`};var A=({nonce:e,gtmId:t})=>`
+    ${a({nonce:e,srcDoc:"./src/lib/gtm.js",iife:`window,document,'script','dataLayer','${t}','${e}'`})}
+`,_=({nonce:e,gtmId:t})=>`<noscript><iframe nonce="${e}" src="https://www.googletagmanager.com/ns.html?id=${t}"
+height="0" width="0"></iframe></noscript>`;var N=({nonce:e,gtmId:t})=>`
+    ${a({async:!0,nonce:e,src:`https://www.googletagmanager.com/gtag/js?id=${t}`})}
+    ${a({srcDoc:"./src/lib/gtag.js",nonce:e,postfix:`gtag('config', '${t}');
 `})}
-`;var R=({nonce:t,integrity:e,projectId:o,...r})=>`
-    ${a({async:!0,nonce:t,src:"https://browser.sentry-cdn.com/8.29.0/bundle.tracing.min.js",integrity:e})}
-    ${a({srcDoc:"./src/lib/sentry.js",nonce:t,iife:JSON.stringify(r)})}
-`;var q=({name:t,rows:e,cols:o,data:r,type:i,value:s="",required:l,l10n:m})=>{let p=t,d=l?"required":"";return r?`<select id="${p}" name="${t}" ${d}>
+`;var oe=({nonce:e,integrity:t,projectId:o,...r})=>`
+    ${a({async:!0,nonce:e,src:"https://browser.sentry-cdn.com/8.29.0/bundle.tracing.min.js",integrity:t})}
+    ${a({srcDoc:"./src/lib/sentry.js",nonce:e,iife:JSON.stringify(r)})}
+`;var re=({name:e,rows:t,cols:o,data:r,type:n,value:i="",required:c,l10n:l})=>{let p=e,m=c?"required":"";return r?`<select id="${p}" name="${e}" ${m}>
                                                               <option></option>
-                                                              ${r.map(y=>`<option value="${y}">${m(y)}</option>`).join(`
+                                                              ${r.map(f=>`<option value="${f}">${l(f)}</option>`).join(`
 `)}
-                                                          </select>`:e||o?`<table width="100%">
+                                                          </select>`:t||o?`<table width="100%">
                                                           <tr>
                                                               <td>
-                                                                  <textarea id="${p}" name="${t}" rows="${e}" cols="${o}" ${d}>${s}</textarea>
-                                                      </table>`:`<input type="${i||"text"}" id="${p}" name="${t}" value="${s}" ${d} />`};var ct=({nonce:t})=>Object.entries({"script-src":[`'nonce-${t}'`,"'strict-dynamic'","https://www.google-analytics.com","https://ssl.google-analytics.com","https://static.hotjar.com","https://script.hotjar.com","https://js.sentry-cdn.com","'unsafe-inline'"],"img-src":["'self'","https://www.google-analytics.com","https://avatars.githubusercontent.com/","https://www.googletagmanager.com/","https://static.hotjar.com","https://survey-images.hotjar.com"],"connect-src":["'self'","https://www.google-analytics.com","https://region1.google-analytics.com","https://in.hotjar.com","wss://ws.hotjar.com","https://static.hotjar.com","https://content.hotjar.io","https://github.com/login/oauth/access_token","https://api.github.com/graphql","https://api.github.com/user","https://o171820.ingest.sentry.io/"],"style-src":["'self'",`'nonce-${t}'`,"https://static.hotjar.com"],"object-src":["'none'"],"base-uri":["'none'"],"frame-src":["https://vars.hotjar.com/","https://www.googletagmanager.com/"],"script-src-elem":["'self'",`'nonce-${t}'`,"https://script.hotjar.com"]}).reduce((e,[o,r])=>`${e};${o} ${r.join(" ")}`,"default-src 'self'"),N=({nonce:t})=>`<meta http-equiv="Content-Security-Policy" content="${ct({nonce:t})}">`;var B=({children:t})=>{if(typeof document>"u")return Array.isArray(t)?t.join(""):t;let e=document.createDocumentFragment();return Array.isArray(t)?[].forEach.call(t,o=>{e.appendChild(o)}):t!=null&&e.appendChild(t),e};var j=(t,...e)=>{let o=String.raw({raw:t},...e);if(typeof document>"u")return o;let r=document.createElement("div");return r.innerHTML=o,r.firstElementChild||""};var lt=({children:t,speed:e=1})=>j`
+                                                                  <textarea id="${p}" name="${e}" rows="${t}" cols="${o}" ${m}>${i}</textarea>
+                                                      </table>`:`<input type="${n||"text"}" id="${p}" name="${e}" value="${i}" ${m} />`};var Be=({nonce:e})=>Object.entries({"script-src":[`'nonce-${e}'`,"'strict-dynamic'","https://www.google-analytics.com","https://ssl.google-analytics.com","https://static.hotjar.com","https://script.hotjar.com","https://js.sentry-cdn.com","'unsafe-inline'"],"img-src":["'self'","https://www.google-analytics.com","https://avatars.githubusercontent.com/","https://www.googletagmanager.com/","https://static.hotjar.com","https://survey-images.hotjar.com"],"connect-src":["'self'","https://www.google-analytics.com","https://region1.google-analytics.com","https://in.hotjar.com","wss://ws.hotjar.com","https://static.hotjar.com","https://content.hotjar.io","https://github.com/login/oauth/access_token","https://api.github.com/graphql","https://api.github.com/user","https://o171820.ingest.sentry.io/"],"style-src":["'self'",`'nonce-${e}'`,"https://static.hotjar.com"],"object-src":["'none'"],"base-uri":["'none'"],"frame-src":["https://vars.hotjar.com/","https://www.googletagmanager.com/"],"script-src-elem":["'self'",`'nonce-${e}'`,"https://script.hotjar.com"]}).reduce((t,[o,r])=>`${t};${o} ${r.join(" ")}`,"default-src 'self'"),ne=({nonce:e})=>`<meta http-equiv="Content-Security-Policy" content="${Be({nonce:e})}">`;var k={};_e(k,{Action:()=>de,Icon:()=>j,SlotMachine:()=>fe,View:()=>pe});var ie="Access token not provided",se="Page not found";var x=process.env.NODE_ENV==="production",ce=e=>{if(console.error(e),!(typeof window>"u")){if(x&&typeof Sentry<"u"&&Sentry.captureException(e),x&&typeof window.dataLayer<"u"&&window.dataLayer.push({event:"issue",message:e.message,row:e.lineNumber||null,source:e.fileName||null,stack:e.stack}),e.message===se){window.location.href="/404";return}if(e.message===ie){window.location.href="/403";return}}},b=x?()=>{}:(...e)=>{console.debug(...e)};var T=x?()=>{}:(...e)=>{console.info(...e)},G=x?()=>{}:(...e)=>{console.log(...e)};var B=class{constructor(){this.id=null}toString(){let t=btoa(`${Math.ceil(Math.random()*1e13)+ +new Date}`).slice(10,18);return this.id=this.id||`ref-${t}`}get current(){return typeof window>"u"||typeof document>"u"?null:document.querySelector(`[ref=${this.id}]`)}},v=()=>new B,H=(e=void 0)=>typeof history>"u"?[]:[e||history.state||{},(t,o,r)=>history.pushState({...history.state,...t},o||"",r||location.href)],He={attributes:!0,childList:!0,subtree:!0},C=(e,t,o={component:"View"})=>r=>{let[n,i]=H(),{component:c="View"}=o;if(b("render",{eventType:t,component:c,state:n,props:o,event:r,typeof:typeof r,isArray:Array.isArray(r)}),r instanceof Error){ce(r);return}let l=k[c||"View"];if(Array.isArray(r)){for(let p of r)C(e,t,o)(p);return}if(r instanceof MutationRecord&&r.type==="childList"){let p=[];G("A child node has been added or removed.",{target:r.target});return}if(r instanceof MutationRecord&&r.type==="attributes"){G(`The ${r.attributeName} attribute was modified.`,{event:r}),e.current&&(e.current.innerHTML=l(n));return}if(!l)throw Error(`Component ${c} not found`);e?.current&&(e.current.innerHTML=l(n))},ze=async(e,t)=>{b("attachEvents",{ref:e,props:t});let o=new MutationObserver(C(e,"render",t));e.current&&o.observe(e.current,He),navigation?.addEventListener("navigate",C(e,"navigate",t)),e?.current?.addEventListener("DOMRemoved",()=>{globalThis.hasOwnProperty("navigation")&&(T("DOMRemoved"),navigation?.removeEventListener("navigate",C(e,"navigate",t)),o.disconnect())})},Ve=async(e,t)=>{b("runServices",{ref:e,props:t});let{services:o}=t,[r,n]=H();if(o){for(let i of o){let c=window.servicesMap?.[i];if(!c)throw Error(`Service ${i} not found`);await c(e)}n({services:null})}},qe=({children:e})=>Array.isArray(e)?e.map(t=>t instanceof Object?le(t??{}):`${t}`).join?.(""):h(`${e}`),le=(e={})=>{b({props:e});let{tag:t="div",className:o="",children:r=[],services:n=[],component:i="View",...c}=e,l=v(),[p,m]=H();setTimeout(async()=>{l.current&&(n?.length&&ze(l,e),n?.length&&Ve(l,e))});let f=qe({children:r}),ee=Object.entries(c)?.reduce?.((Ee,[je,Le=""])=>`${Ee} ${je}="${Le}"`,"");return b("Rendering",{content:f,restProps:ee}),`
+    <${t} class="${o}" ref="${l}" ${ee}>
+      ${f}
+    </${t}>
+  `},pe=le;var Ue=(e={})=>{let{className:t="",children:o,tag:r="button",onClick:n,type:i}=e,c=v();return setTimeout(()=>{n&&c.current?.addEventListener("click",n)}),`
+      <${r} class="${t}" ref="${c}" type="${i}">
+        ${E({children:o})}
+      </${r}>
+    `},de=Ue;var me=new Map;var Je=({className:e,name:t}={name:"unknown"})=>{let o=v();return setTimeout(()=>{if(typeof window>"u"||typeof document>"u")return;let r=document.getElementById(`sprite-${t}`)?.getAttribute("viewBox")||"0 0 0 0";o.current?.setAttribute("viewBox",r)}),`
+    <svg class="${e}" preserveAspectRatio="xMidYMid meet" viewBox="${me.get(t)?.viewBox||"0 0 0 0"}" ref="${o}">
+      <use xlink:href="#sprite-${t}" />
+    </svg>
+  `},j=Je;var L=0,z=!1,S="",ge=[],V="\u{1F34F},\u{1F330},\u{1F34B},\u{1F345},\u{1F346},\u{1F347},\u{1F353},\u{1F349},\u{1F350},\u{1F352},\u{1F351},\u{1F951}".split(","),{floor:We,random:Qe}=Math,Ke=e=>e[We(Qe()*e.length)],q=()=>{if(z)return S;let[e,t,o]=[V,V,V].flatMap(Ke);if(S=`${e} ${t} ${o}`,b(`${L} ${S}`),e==t&&t==o){let r=`
+            ${S}
+    You won in ${L} tries`;z=!0,ge.push(()=>{setTimeout(()=>{T(r),alert(r),z=!1})}),L=0}else L++;return S},Ze=()=>{let e=v();return setTimeout(()=>{if(typeof window>"u")return;let t=new MutationObserver((o,r)=>{for(let n of o)if(n.type==="childList"){let i=ge.pop();i&&i()}});e.current&&t.observe(e.current,{childList:!0}),e.current?.addEventListener("click",()=>{e.current&&(e.current.innerHTML=q())}),document.addEventListener("keydown",o=>{o.isComposing||o.keyCode===229||o.which!==13&&o.which!==32||e.current&&(e.current.innerHTML=q())})}),`
+    <div class="slot-machine">
+      ${j({name:"slot-machine-icon",className:"slot-machine__icon"})}
+      <span class="slot-machine__reels" ref="${e}">${q()}</span>
+    </div>
+  `},fe=Ze;var ue=(e,t)=>{let o=t instanceof Object?k[t.component||"View"](t??{}):t;e.appendChild(o)},E=({children:e})=>{if(typeof document>"u")return Array.isArray(e)?e.join(""):e;let t=document.createDocumentFragment();return Array.isArray(e)?[].forEach.call(e,o=>{e!==null&&ue(t,o)}):e!=null&&ue(t,e),t};var U=(e,...t)=>{let o=String.raw({raw:e},...t);if(typeof document>"u")return o;let r=document.createElement("div");return r.innerHTML=o,r.firstElementChild||""};var Xe=({children:e,speed:t=1})=>U`
     <marquee
       direction="down"
       scrollamount="5"
-      scrolldelay="${60*e}"
+      scrolldelay="${60*t}"
       class="snowCanvas"
     >
-      <noscript><pre>${t}</pre></noscript>
+      <noscript><pre>${e}</pre></noscript>
     </marquee>
-  `,pt=({width:t=1,height:e=1,avg:o=1,snowFlake:r="."}={})=>{let i=~~(t/6),s=~~(e/8),l=~~(i*s*o),m="";for(let p=0;p<s;p++){let d="";for(let y=0;y<i;y++)d+=Math.random()<l/(s*i)?r:"&nbsp;";m+=d+`
-`}return m},O=({speed:t=1,count:e=1,step:o=.25,...r})=>[...new Array(e)].map((i,s)=>lt({children:pt(r),speed:t+(s+1)*o})),M=({width:t=800,height:e=600,avg:o=.01,snowFlake:r="*",nonce:i=""}={})=>{let s=~~(e/8*1e3*.5),l=B({children:O({width:t,height:e,avg:o,snowFlake:r,speed:1,count:3,step:.25})});return typeof window<"u"&&setTimeout((m=>()=>{O({width:t,height:e,avg:o,snowFlake:r,speed:1,count:3,step:.5}).forEach(p=>{p!=null&&m.append?.(p)})})(l),s),j`
-  ${l}
-  ${a({srcDoc:"./src/lib/snow.js",nonce:i})}
-  <style nonce="${i}">
+  `,et=({width:e=1,height:t=1,avg:o=1,snowFlake:r="."}={})=>{let n=~~(e/6),i=~~(t/8),c=~~(n*i*o),l="";for(let p=0;p<i;p++){let m="";for(let f=0;f<n;f++)m+=Math.random()<c/(i*n)?r:"&nbsp;";l+=m+`
+`}return l},he=({speed:e=1,count:t=1,step:o=.25,...r})=>[...new Array(t)].map((n,i)=>Xe({children:et(r),speed:e+(i+1)*o})),Y=({width:e=800,height:t=600,avg:o=.01,snowFlake:r="*",nonce:n=""}={})=>{let i=~~(t/8*1e3*.5),c=E({children:he({width:e,height:t,avg:o,snowFlake:r,speed:1,count:3,step:.25})});return typeof window<"u"&&setTimeout((l=>()=>{he({width:e,height:t,avg:o,snowFlake:r,speed:1,count:3,step:.5}).forEach(p=>{p!=null&&l.append?.(p)})})(c),i),U`
+  ${c}
+  ${a({srcDoc:"./src/lib/snow.js",nonce:n})}
+  <style nonce="${n}">
     .snowCanvas {
       position: absolute;top: 0;
       color:rgba(200,200,200,0.8);
@@ -46,87 +65,93 @@ height="0" width="0"></iframe></noscript>`;var C=({nonce:t,gtmId:e})=>`
       width: 768px;
       margin-left: -384px;
     }
-  </style>`};var E=g("./src/pages/1990/styles.css"),k="Art&#363;rs Jansons",L="Full-stack Developer",I="10+ year exp.",dt=`${k} | ${L} [${I}]`,D="Mobile / Web Developer &amp; JavaScript Consultant",mt="HTML, CSS, JavaScript, TypeScript, React, React Native, PHP, MySQL, Bash, Makefile, Docker, GraphQL, Next, Nest",V=()=>`<p>
-                        1990 |
+  </style>`};var be={email:"Your email",subject:"Subject",message:"Content",send:"Send message",feedback:"Feedback",work:"Work opportunity",consultation:"Consultation",issue:"Bug Report",botcheck:"I`m not a robot"};var P=e=>h(be[e]||e);var J=u("./src/pages/1990/styles.css"),R="Art&#363;rs Jansons",W="Full-stack Developer",Q="10+ year exp.",ot=`${R} | ${W} [${Q}]`,K="Mobile / Web Developer &amp; JavaScript Consultant",rt="HTML, CSS, JavaScript, TypeScript, React, React Native, PHP, MySQL, Bash, Makefile, Docker, GraphQL, Next, Nest",we=()=>`<p>
+                        ${nt.map((e,t)=>`${t?" | ":""}${g(e)}`).join("")}
+                        | 1990 |
                         
                         <a href="/next/">BETA</a> |
                         <a id="toggleDosStyle" href="#exit" bgcolor="red">DOS</a>
-                    </p>`,U=()=>`<font color="orange">HTML</font>,
+                    </p>`,ye=()=>`<font color="orange">HTML</font>,
                                         <font color="blue">CSS</font>,
                                         <font color="#F0DB4F">JavaScript</font>,
                                         <font color="#2F74C0">TypeScript</font>,
-                                        <font color="#5FD3F3">React / React Native</font>`,Y=()=>`<font color="#7277ae">PHP</font>,
+                                        <font color="#5FD3F3">React / React Native</font>`,ve=()=>`<font color="#7277ae">PHP</font>,
                                         <font color="#2683CB">MySQL</font>,
                                         <font>Bash/Makefile</font>,
                                         <font color="#008DDB">Docker</font>,
                                         <font color="#DD34A6">GraphQL</font>,
                                         <font>Next</font>,
-                                        <font color="#DA214C">Nest</font>`,h=[{image:{src:"/images/categories/website-thumb.png",ascii:"./src/pages/1990/assets/website.ascii"},description:"Website development, including complex forms with custom field validation, popups and dialogs.",links:[{href:"https://wiam-front-test.vercel.app/",title:"Ex. 1"},{href:"https://mindmap-opal.vercel.app/",title:"Ex. 2"},{href:"https://codepen.io/iegik/full/ObZpqo",title:"Ex. 3"},{href:"https://test-kanvajs.vercel.app/",title:"Ex. 4"}]},{image:{src:"/images/categories/mobile-thumb.png",ascii:"./src/pages/1990/assets/mobile.ascii"},description:"Mobile applications - developing, publishing or upgrading existing ones.",links:[{href:"https://github.com/iegik/inventarizacija/",title:"Ex. 1"},{href:"https://github.com/iegik/react_calc/",title:"Ex. 2"}],comment:"Unfortunately apps are not available in Google Play anymore"},{image:{src:"/images/categories/clock-thumb.png",ascii:"./src/pages/1990/assets/extensions.ascii"},description:"Browser extensions, custom scripts and other researches where I'm testing new approaches.",links:[{href:"https://github.com/iegik/clock-extension",title:"Ex. 1"},{href:"https://github.com/iegik/thunar-scripts",title:"Ex. 2"},{href:"https://hub.docker.com/repository/docker/iegik/docker-node/general",title:"Ex. 3"}]},{image:{src:"/images/categories/wordpress-thumb.png",ascii:"./src/pages/1990/assets/cms.ascii"},description:"CMS (Wordpress, Magento) configuration, plugin creation, RESTFul API on PHP, GraphQL and microservices",links:[{href:"https://github.com/WinLinMac/magento_themes",title:"Ex. 1"}]}],W=[{link:{href:"https://t.me/ajansons",title:"t.me/ajansons"}}],gt=[{href:"https://linkedin.com/in/iegik",title:"LinkedIn"},{href:"https://github.com/iegik",title:"GitHub"},{href:"https://profile.codersrank.io/user/iegik",title:"CodersRank"},{href:"https://codepen.io/iegik/",title:"CodePen"},{href:"https://jsfiddle.net/user/iegik",title:"JSFiddle"},{href:"https://stackoverflow.com/users/771471/iegik",title:"StackOverflow"}],ht="'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace",f=t=>`<center>${x(t.image)}</center>
-                                            <p>${t.description}
+                                        <font color="#DA214C">Nest</font>`,$=[{image:{src:"/images/categories/website-thumb.png",ascii:"./src/pages/1990/assets/website.ascii"},description:"Website development, including complex forms with custom field validation, popups and dialogs.",links:[{href:"https://wiam-front-test.vercel.app/",title:"Ex. 1"},{href:"https://mindmap-opal.vercel.app/",title:"Ex. 2"},{href:"https://codepen.io/iegik/full/ObZpqo",title:"Ex. 3"},{href:"https://test-kanvajs.vercel.app/",title:"Ex. 4"}]},{image:{src:"/images/categories/mobile-thumb.png",ascii:"./src/pages/1990/assets/mobile.ascii"},description:"Mobile applications - developing, publishing or upgrading existing ones.",links:[{href:"https://github.com/iegik/inventarizacija/",title:"Ex. 1"},{href:"https://github.com/iegik/react_calc/",title:"Ex. 2"}],comment:"Unfortunately apps are not available in Google Play anymore"},{image:{src:"/images/categories/clock-thumb.png",ascii:"./src/pages/1990/assets/extensions.ascii"},description:"Browser extensions, custom scripts and other researches where I'm testing new approaches.",links:[{href:"https://github.com/iegik/clock-extension",title:"Ex. 1"},{href:"https://github.com/iegik/thunar-scripts",title:"Ex. 2"},{href:"https://hub.docker.com/repository/docker/iegik/docker-node/general",title:"Ex. 3"}]},{image:{src:"/images/categories/wordpress-thumb.png",ascii:"./src/pages/1990/assets/cms.ascii"},description:"CMS (Wordpress, Magento) configuration, plugin creation, RESTFul API on PHP, GraphQL and microservices",links:[{href:"https://github.com/WinLinMac/magento_themes",title:"Ex. 1"}]}],xe=[{link:{href:"https://t.me/ajansons",title:"t.me/ajansons"}}],nt=[{href:"#gdpr",title:"\u{1F36A}"},{href:"#clean",title:"\u{1F5D1}\uFE0F"}],ke=[{href:"https://linkedin.com/in/iegik",title:"LinkedIn"},{href:"https://github.com/iegik",title:"GitHub"},{href:"https://profile.codersrank.io/user/iegik",title:"CodersRank"},{href:"https://codepen.io/iegik/",title:"CodePen"},{href:"https://jsfiddle.net/user/iegik",title:"JSFiddle"},{href:"https://stackoverflow.com/users/771471/iegik",title:"StackOverflow"}],it="'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace",w=e=>`<center>${M(e.image)}</center>
+                                            <p>${e.description}
                                             <p>
-                                                ${t.links.map((e,o)=>`${o?" | ":""}${u(e)}`).join("")}
-                                            ${t.comment?`<p><em><font color="gray">${t.comment}</font></em>`:""}`,J=()=>"<p>Time Zone: EEST</p>",Q=()=>"<p>Work Time: 10:00 - 20:00</p>",Z=()=>"<p>Current Location: Earth</p>",H={email:{kind:"vertical",required:!0},to:{type:"hidden",value:"a.jansons+web@gmail.com"},access_key:{type:"hidden",value:"c5540606-b7ca-4634-980a-13e2c50cd823"},redirect:{type:"hidden",value:"/1990/sent"},subject:{kind:"vertical",required:!0,data:["feedback","work","consultation","issue"]},message:{kind:"vertical",required:!0},send:{type:"submit"}},ft={email:"Your email",subject:"Subject",message:"Content",send:"Send message",feedback:"Feedback",work:"Work opportunity",consultation:"Consultation",issue:"Bug Report",botcheck:"I`m not a robot"},v=t=>$(ft[t]||t),bt=()=>t=>e=>{let{name:o}=e,{kind:r,type:i}=H[o]||{},s={...e,...H[o]||{},l10n:v};if(i==="hidden")return t(s);if(i==="submit")return`<input type="submit" name="${o}" value="${v(o)}" />`;let l=v(o);return r==="vertical"?`<label for="${o}">${l}</label>
+                                                ${e.links.map((t,o)=>`${o?" | ":""}${g(t)}`).join("")}
+                                            ${e.comment?`<p><em><font color="gray">${e.comment}</font></em>`:""}`,Se=()=>"<p>Time Zone: EEST</p>",Pe=()=>"<p>Work Time: 10:00 - 20:00</p>",Fe=()=>"<p>Current Location: Earth</p>",$e={email:{kind:"vertical",required:!0},to:{type:"hidden",value:"a.jansons+web@gmail.com"},access_key:{type:"hidden",value:"c5540606-b7ca-4634-980a-13e2c50cd823"},redirect:{type:"hidden",value:"/1990/sent"},subject:{kind:"vertical",required:!0,data:["feedback","work","consultation","issue"]},message:{kind:"vertical",required:!0},send:{type:"submit"}},st=()=>e=>t=>{let{name:o}=t,{kind:r,type:n}=$e[o]||{},i={...t,...$e[o]||{},l10n:P};if(n==="hidden")return e(i);if(n==="submit")return`<input type="submit" name="${o}" value="${P(o)}" />`;let c=P(o);return r==="vertical"?`<label for="${o}">${c}</label>
                                                         <br>
-                                                        ${t(s)}`:`<label for="${o}">${l}</label>&nbsp;${t(s)}`},c=bt()(q),K=({name:t})=>`<input id="bot" name="${t}" nonce="${n}" value="Type 'true' here" /><a id="${t}" href="#bot"></a><script nonce="${n}">bot.style.display='none';${t}.innerText='[_] ${v(t)}';${t}.addEventListener("click", () => {${t}.innerText=${t}.innerText.slice(0,1)+(bot.value==='true' ? '_' : 'x')+${t}.innerText.slice(2);bot.disabled=true;bot.value=bot.value === 'true' ? false : true;});</script>`,ut=()=>`<form align="left" method="POST" action="https://api.web3forms.com/submit">
+                                                        ${e(i)}`:`<label for="${o}">${c}</label>&nbsp;${e(i)}`},d=st()(re),Me=({name:e})=>`<input id="bot" name="${e}" nonce="${s}" value="Type 'true' here" /><a id="${e}" href="#bot"></a><script nonce="${s}">bot.style.display='none';${e}.innerText='[_] ${P(e)}';${e}.addEventListener("click", () => {${e}.innerText=${e}.innerText.slice(0,1)+(bot.value==='true' ? '_' : 'x')+${e}.innerText.slice(2);bot.disabled=true;bot.value=bot.value === 'true' ? false : true;});</script>`,ct=()=>`<form align="left" method="POST" action="https://api.web3forms.com/submit">
                                         <fieldset bgcolor="gray">
                                             <legend>Feedback</legend>
                                             <table align="left" border="0" cellpadding="0" cellspacing="8" width="100%">
                                                 <tr>
                                                     <td>
-                                                        ${c({name:"email"})}
-                                                        ${c({name:"to"})}
-                                                        ${c({name:"access_key"})}
-                                                        ${c({name:"redirect"})}
+                                                        ${d({name:"email"})}
+                                                        ${d({name:"to"})}
+                                                        ${d({name:"access_key"})}
+                                                        ${d({name:"redirect"})}
                                                     <td width="100%">
-                                                        ${c({name:"subject"})}
+                                                        ${d({name:"subject"})}
                                                 <tr>
                                                     <td colspan="2">
                                                         <br>
-                                                        ${c({name:"message",rows:5,cols:44})}
-                                                        ${K({name:"botcheck"})}
+                                                        ${d({name:"message",rows:5,cols:44})}
+                                                        ${Me({name:"botcheck"})}
                                                         <p align="right">
-                                                            ${c({name:"send"})}
+                                                            ${d({name:"send"})}
                                             </table>
                                         </fieldset>
-                                    </form>`,$t=()=>`<form align="left" method="POST" action="https://api.web3forms.com/submit">
+                                    </form>`,at=()=>`<form align="left" method="POST" action="https://api.web3forms.com/submit">
                                         <fieldset bgcolor="gray">
                                             <legend>Feedback</legend>
                                             <table align="left" border="0" cellpadding="0" cellspacing="8" width="100%">
                                                 <tr>
                                                     <td>
-                                                        ${c({name:"email"})}
-                                                        ${c({name:"to"})}
-                                                        ${c({name:"access_key"})}
-                                                        ${c({name:"redirect"})}
+                                                        ${d({name:"email"})}
+                                                        ${d({name:"to"})}
+                                                        ${d({name:"access_key"})}
+                                                        ${d({name:"redirect"})}
                                                 </tr>
                                                 <tr>
                                                     <td width="100%">
-                                                        ${c({name:"subject"})}
+                                                        ${d({name:"subject"})}
                                                 <tr>
                                                     <td colspan="2">
-                                                        ${c({name:"message",rows:5,cols:36})}
-                                                        ${K({name:"botcheck"})}
+                                                        ${d({name:"message",rows:5,cols:36})}
+                                                        ${Me({name:"botcheck"})}
                                                         <p align="left">
-                                                            ${c({name:"send"})}
+                                                            ${d({name:"send"})}
                                             </table>
                                         </fieldset>
-                                    </form>`,yt=()=>`
+                                    </form>`,lt=()=>`
                     <table border="0" cellpadding="0" cellspacing="8" width="768px">
                         <tr>
                             <td>
-                                ${x({src:"/images/me-thumb.png",ascii:"./src/pages/1990/assets/me.ascii"})}
+                                ${M({src:"/images/me-thumb.png",ascii:"./src/pages/1990/assets/me.ascii"})}
                             <td width="80%" valign="bottom">
-                                <p>${k}
-                                <h1><font size="5"><b>${L}</b></font><font size="2">[${I}]</font></h1>
-                                <p><em><font color="gray">${D}</font></em></p>
+                                <p>${R}
+                                <h1><font size="5"><b>${W}</b></font><font size="2">[${Q}]</font></h1>
+                                <p><em><font color="gray">${K}</font></em></p>
                                 <p>
                                     <b>Tech Stack:</b>
-                                        ${U()}
+                                        ${ye()}
                                 </p>
                                 <p>
                                     <b>Also use:</b>
-                                        ${Y()}
+                                        ${ve()}
                                 </p>
+                    </table>
+                    <table border="0" cellpadding="0" cellspacing="8" width="768px">
+                        <tr>
+                            <td>
+                                <p>${ke.map((e,t)=>`${t?" | ":""}${g(e)}`).join("")}</p>
                     </table>
                     <table border="0" cellpadding="0" cellspacing="8" width="768px">
                         <tr>
@@ -135,15 +160,15 @@ height="0" width="0"></iframe></noscript>`;var C=({nonce:t,gtmId:e})=>`
                                 <table border="0" cellpadding="0" cellspacing="8" width="100%">
                                     <tr>
                                         <td valign="top">
-                                            ${f(h[0])}
+                                            ${w($[0])}
                                         <td valign="top">
-                                            ${f(h[1])}
+                                            ${w($[1])}
                                     </tr>
                                     <tr>
                                         <td valign="top">
-                                            ${f(h[2])}
+                                            ${w($[2])}
                                         <td valign="top">
-                                            ${f(h[3])}
+                                            ${w($[3])}
                                     </tr>
                                 </table>
                         <tr>
@@ -151,13 +176,13 @@ height="0" width="0"></iframe></noscript>`;var C=({nonce:t,gtmId:e})=>`
                                 <my-portfolio theme="1990/desktop" />
                         <tr>
                             <td colspan="2" align="center">
-                                <noscript>${u({href:"/portfolio.xml",title:"Other projects"})}</noscript>
+                                <noscript>${g({href:"/portfolio.xml",title:"Other projects"})}</noscript>
                     </table>
                     <table border="0" cellpadding="0" cellspacing="8">
                         <tr>
                             <td align="center" valign="top" width="100%">
                                 <font size="2">
-                                    ${ut()}
+                                    ${ct()}
                                 </font>
                     </table>
                     <table border="0" cellpadding="0" cellspacing="8" width="768px">
@@ -166,12 +191,12 @@ height="0" width="0"></iframe></noscript>`;var C=({nonce:t,gtmId:e})=>`
                                 <font size="2">
                                     <h2>Contacts:</h2>
                                     <ul>
-                                        ${W.map(t=>`<li><p>${u(t.link)}${t.comment?` [${t.comment}]`:""}`).join("")}
+                                        ${xe.map(e=>`<li><p>${g(e.link)}${e.comment?` [${e.comment}]`:""}`).join("")}
                                     </ul>
                                     <br>
-                                    ${J()}
-                                    ${Q()}
-                                    ${Z()}
+                                    ${Se()}
+                                    ${Pe()}
+                                    ${Fe()}
                                 </font>
                             <td valign="bottom" align="right">
                                 
@@ -180,35 +205,35 @@ height="0" width="0"></iframe></noscript>`;var C=({nonce:t,gtmId:e})=>`
                                     <tr>
                                         <td valign="top">
                                             <font size="2">
-                                                ${P({src:"./src/pages/1990/assets/code_of_a_day/git_du.gitconfig",title:"Code of the day"})}
+                                                ${O({src:"./src/pages/1990/assets/code_of_a_day/git_du.gitconfig",title:"Code of the day"})}
                                             </font>
                                 </table>
                     </table>
                     <table border="0" cellpadding="0" cellspacing="8" width="768px">
                         <tr>
                             <td align="center">
-                                ${M({width:768,height:600,snowFlake:"*",nonce:n})}
+                                ${Y({width:768,height:600,snowFlake:"*",nonce:s})}
                     </table>
-                    `,wt=()=>`
+                    `,pt=()=>`
                     <table border="0" cellpadding="0" cellspacing="8">
                         <tr>
                             <td align="center">
-                                ${x({src:"/images/me-thumb.png",ascii:"./src/pages/1990/assets/photo.ascii"})}
-                                <p>${k}
+                                ${M({src:"/images/me-thumb.png",ascii:"./src/pages/1990/assets/photo.ascii"})}
+                                <p>${R}
                                 <h1>
-                                    <font size="5"><b>${L}</b></font>
+                                    <font size="5"><b>${W}</b></font>
                                     <br>
-                                    <font size="2">[${I}]</font></h1>
-                                <p><em>${D}</em></p>
+                                    <font size="2">[${Q}]</font></h1>
+                                <p><em>${K}</em></p>
                                 <p>
                                     <b>Tech Stack:</b>
                                         <br>
-                                        ${U()}
+                                        ${ye()}
                                 </p>
                                 <p>
                                     <b>Also use:</b>
                                         <br>
-                                        ${Y()}
+                                        ${ve()}
                                 </p>
                     </table>
                     <table border="0" cellpadding="0" cellspacing="8">
@@ -218,19 +243,19 @@ height="0" width="0"></iframe></noscript>`;var C=({nonce:t,gtmId:e})=>`
                                 <table border="0" cellpadding="0" cellspacing="8" width="100%">
                                     <tr>
                                         <td valign="top">
-                                            ${f(h[0])}
+                                            ${w($[0])}
                                     </tr>
                                     <tr>
                                         <td valign="top">
-                                            ${f(h[1])}
+                                            ${w($[1])}
                                     </tr>
                                     <tr>
                                         <td valign="top">
-                                            ${f(h[2])}
+                                            ${w($[2])}
                                     </tr>
                                     <tr>
                                         <td valign="top">
-                                            ${f(h[3])}
+                                            ${w($[3])}
                                     </tr>
                                 </table>
                         <tr>
@@ -238,90 +263,93 @@ height="0" width="0"></iframe></noscript>`;var C=({nonce:t,gtmId:e})=>`
                                 <my-portfolio theme="1990/mobile" />
                         <tr>
                             <td align="center">
-                                <noscript>${u({href:"/portfolio.xml",title:"Other projects"})}</noscript>
+                                <noscript>${g({href:"/portfolio.xml",title:"Other projects"})}</noscript>
                         <tr>
                             <td width="40%" align="right">
                                 <font size="2">
-                                    ${$t()}
+                                    ${at()}
                                 </font>
                         <tr>
                             <td valign="top">
                                 <font size="2">
                                     <h2>Contacts:</h2>
                                     <ul>
-                                        ${W.map(t=>`<li><p>${u(t.link)}${t.comment?` [${t.comment}]`:""}`).join("")}
+                                        ${xe.map(e=>`<li><p>${g(e.link)}${e.comment?` [${e.comment}]`:""}`).join("")}
                                     </ul>
                                     <br>
-                                    ${J()}
-                                    ${Q()}
-                                    ${Z()}
+                                    ${Se()}
+                                    ${Pe()}
+                                    ${Fe()}
                                 </font>
                         <tr>
                         <tr>
                             <td width="30%">
                                 <font size="2">
-                                    ${P({src:"./src/pages/1990/assets/code_of_a_day/git_du.gitconfig",title:"Code of the day"})}
+                                    ${O({src:"./src/pages/1990/assets/code_of_a_day/git_du.gitconfig",title:"Code of the day"})}
                                 </font>
                     </table>
                     <table border="0" cellpadding="0" cellspacing="8">
                         <tr>
                             <td align="center">
-                                ${M({width:424,height:600,snowFlake:".",nonce:n})}
+                                ${Y({width:424,height:600,snowFlake:".",nonce:s})}
                     </table>
-                    `,X=()=>`<p>${gt.map((t,e)=>`${e?" | ":""}${u(t)}`).join("")}</p>
+                    `,Te=()=>`<p>${ke.map((e,t)=>`${t?" | ":""}${g(e)}`).join("")}</p>
                                 <br>
                                 <marquee>
-                                    <font color="gray">\xA9 2024 ${k} | All rights reserved</font>
-                                    `,G=process.env.IS_VITE==="true"?"<!DOCTYPE html>":`<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
-    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">`,tt=t=>`<font face="${ht}" size="3">
+                                    <font color="gray">\xA9 2024 ${R} | All rights reserved</font>
+                                    `,Z=process.env.IS_VITE==="true"?"<!DOCTYPE html>":`<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">`,Ce=e=>`<font face="${it}" size="3">
         <table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
             <tr align="center">
                 <td valign="top">
-                    ${t[0]}
+                    ${e[0]}
                     <hr>
-                    ${t[1]}
+                    ${e[1]}
             <tr>
                 <td valign="bottom" align="center">
                     <hr>
                     <table border="0" cellpadding="8" cellspacing="0" width="100%">
                         <tr>
                             <td align="center">
-                                ${t[2]}
+                                ${e[2]}
                     </table>
         </table>
     </font>
-`,z=t=>`${G}
+`,X=e=>`${Z}
 <html lang="en">
 <head>
-    ${N({nonce:n})}
-    <title>${dt}</title>
-    <meta name="description" content="${D}" />
-    <meta name="keywords" content="${mt}" />
+    ${ne({nonce:s})}
+    <title>${ot}</title>
+    <meta name="description" content="${K}" />
+    <meta name="keywords" content="${rt}" />
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="var(--color-window)" />
     
     
-    <style nonce="${n}" id="/1990/styles.min.css">${E}</style>
+    <style nonce="${s}" id="/1990/styles.min.css">${J}</style>
     
-    ${a({srcDoc:"./src/lib/console-game.js",nonce:n})}
-    ${a({srcDoc:"./src/lib/guard.js",nonce:n})}
-    ${process.env.IS_VITE==="true"?"":F({nonce:n,gtmId:"GTM-MBG56M"})}
+    ${a({srcDoc:"./src/lib/dialogs.dos.js",nonce:s})}
+    ${a({srcDoc:"./src/lib/gdpr.js",nonce:s})}
+    ${a({srcDoc:"./src/lib/sw.js",nonce:s})}
+    ${a({srcDoc:"./src/lib/console-game.js",nonce:s})}
+    ${a({srcDoc:"./src/lib/guard.js",nonce:s})}
+    ${process.env.IS_VITE==="true"?"":A({nonce:s,gtmId:"GTM-MBG56M"})}
     
     
 </head>
 <body>
     
-    ${process.env.IS_VITE==="true"?"":C({nonce:n,gtmId:"G-5ZY8Y6X2C4"})}
+    ${process.env.IS_VITE==="true"?"":N({nonce:s,gtmId:"G-5ZY8Y6X2C4"})}
     
-    ${process.env.IS_VITE==="true"?"":T({nonce:n,gtmId:"GTM-MBG56M"})}
-    ${t}
+    ${process.env.IS_VITE==="true"?"":_({nonce:s,gtmId:"GTM-MBG56M"})}
+    ${e}
     
-    ${a({srcDoc:"./src/lib/dos-theme.js",iife:'document, toggleDosStyle, "/1990/styles.min.css"',nonce:n,prefix:`const nonce = '${n}';
+    ${a({srcDoc:"./src/lib/dos-theme.js",iife:'document, toggleDosStyle, "/1990/styles.min.css"',nonce:s,prefix:`const nonce = '${s}';
 `})}
-    ${a({srcDoc:"./src/lib/my-portfolio.js",nonce:n})}
-    ${R({nonce:n,projectId:"179618f1f04d4d9dac08acc750d5736c",dsn:"https://179618f1f04d4d9dac08acc750d5736c@o171820.ingest.sentry.io/1250596",release:`1250596@${S}`,environment:"production",integrity:"sha384-6yzL+SsRi1vefLAU9+yqKb0YIeAiJ6GsCob5LxN8Af29Ze1Q5iCg0Ur2fwFroEqa"})}
-`;b("public/index.html",`${G}
+    ${a({srcDoc:"./src/lib/my-portfolio.js",nonce:s})}
+    ${oe({nonce:s,projectId:"179618f1f04d4d9dac08acc750d5736c",dsn:"https://179618f1f04d4d9dac08acc750d5736c@o171820.ingest.sentry.io/1250596",release:`1250596@${D}`,environment:"production",integrity:"sha384-6yzL+SsRi1vefLAU9+yqKb0YIeAiJ6GsCob5LxN8Af29Ze1Q5iCg0Ur2fwFroEqa"})}
+`;y("public/index.html",`${Z}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -329,16 +357,16 @@ height="0" width="0"></iframe></noscript>`;var C=({nonce:t,gtmId:e})=>`
     <title>Loading...</title>
     <!--meta http-equiv="REFRESH" content="0;URL=1990/"-->
     
-    <style nonce="${n}" id="/1990/styles.min.css">${E}</style>
-    ${a({srcDoc:"./src/lib/router-1990.min.js",nonce:n})}
+    <style nonce="${s}" id="/1990/styles.min.css">${J}</style>
+    ${a({srcDoc:"./src/lib/router-1990.min.js",nonce:s})}
     
-    ${process.env.IS_VITE==="true"?"":F({nonce:n,gtmId:"GTM-MBG56M"})}
+    ${process.env.IS_VITE==="true"?"":A({nonce:s,gtmId:"GTM-MBG56M"})}
 </head>
 <body id="root">
     
-    ${process.env.IS_VITE==="true"?"":C({nonce:n,gtmId:"G-5ZY8Y6X2C4"})}
+    ${process.env.IS_VITE==="true"?"":N({nonce:s,gtmId:"G-5ZY8Y6X2C4"})}
     
-    ${process.env.IS_VITE==="true"?"":T({nonce:n,gtmId:"GTM-MBG56M"})}
+    ${process.env.IS_VITE==="true"?"":_({nonce:s,gtmId:"GTM-MBG56M"})}
   <font face="'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace" size="3">
     <table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
         <tr align="center">
@@ -353,14 +381,14 @@ height="0" width="0"></iframe></noscript>`;var C=({nonce:t,gtmId:e})=>`
                       </table>
                       <font size="1" color="lightgray">301 Redirect</font><br>
                       <font size="1" color="gray">You will be redirected to the new page shortly. If not, click <a id="url" href="1990/">here</a>.</font>
-`);b("public/1990/index.html",`${G}
+`);y("public/1990/index.html",`${Z}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Loading...</title>
     
-    <style nonce="${n}" id="/1990/styles.min.css">${E}</style>
+    <style nonce="${s}" id="/1990/styles.min.css">${J}</style>
 </head>
 <body onload='setTimeout((e=>window.location.href.includes(e)||(window.location.href=e))(url.href=window.innerWidth<768?"/1990/mobile/":"/1990/desktop/"),1e3)'>
   <font face="'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace" size="3">
@@ -380,9 +408,9 @@ height="0" width="0"></iframe></noscript>`;var C=({nonce:t,gtmId:e})=>`
                       <p>
                         <a href="/1990/desktop/">DESKTOP</a> |
                         <a href="/1990/mobile/">MOBILE</a>
-`);var xt=()=>"<my-portfolio></my-portfolio>";b("public/1990/desktop/index.html",z(tt([V(),yt(),X()])));b("public/1990/mobile/index.html",z(tt([V(),wt(),X()])));b("public/portfolio/index.html",z(xt()));var vt=`
+`);var dt=()=>"<my-portfolio></my-portfolio>";y("public/1990/desktop/index.html",X(Ce([we(),lt(),Te()])));y("public/1990/mobile/index.html",X(Ce([we(),pt(),Te()])));y("public/portfolio/index.html",X(dt()));var mt=`
 CACHE MANIFEST
-# rev ${S}
+# rev ${D}
 
 CACHE:
 index.html
@@ -393,4 +421,4 @@ index.html
 
 NETWORK:
 *
-`;b("public/manifest.appcache",vt);
+`;y("public/manifest.appcache",mt);

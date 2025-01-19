@@ -7,7 +7,7 @@
     <title>Loading...</title>
     <!--meta http-equiv="REFRESH" content="0;URL=1990/"-->
     
-    <style nonce="k1MDI0Nw" id="/1990/styles.min.css">/* Styles used only for interpriate old interface */
+    <style nonce="UwOTgzNA" id="/1990/styles.min.css">/* Styles used only for interpriate old interface */
 :root {
   --color-window: #0000a8;
   --color-text: #56ffff;
@@ -173,16 +173,20 @@ a:not([href^="/images"]) {
 [bgcolor] input,
 [bgcolor] select,
 [bgcolor] textarea {
-  color: var(--color-accent);
+  /* issue with nested styles, see #bot */
+  /* color: var(--color-accent); */
 }
+[bgcolor] input[type="button"],
 [bgcolor] input[type="submit"],
 [bgcolor] a {
   color: var(--color-buttonText);
 }
+input[type="button"],
 input[type="submit"],
 a {
   background-color: var(--color-inactiveWindow);
 }
+[bgcolor] input[type="button"],
 [bgcolor] input[type="submit"],
 [bgcolor] a {
   background-color: var(--color-button);
@@ -286,6 +290,20 @@ a:checked::selection,
   color: var(--color-accent);
   background-color: var(--color-window);
 }
+/* emulate dialogs */
+.dialog {
+  box-shadow: 1em 1ex var(--color-shadow);
+  margin: auto;
+  min-width: 50ex;
+  width: fit-content;
+  max-width: 80ex;
+  height: fit-content;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 /* hide noscript gtm */
 noscript iframe[src^="https://www.googletagmanager.com"] {
   display:none;visibility:hidden;position:absolute;
@@ -317,44 +335,44 @@ noscript iframe[src^="https://www.googletagmanager.com"] {
   }
 }
 </style>
-    <script  crossorigin=""  nonce="k1MDI0Nw" >"use strict";(()=>{var y=(e={})=>{let{className:t="",children:r,squire:s,tag:c="div"}=e,a="link-list";return t&&(a+=` ${t}`),s&&(a+=" link-list--squire"),`
+    <script  crossorigin=""  nonce="UwOTgzNA" >"use strict";(()=>{var b=(e={})=>{let{className:t="",children:o,squire:s,tag:c="div"}=e,a="link-list";return t&&(a+=` ${t}`),s&&(a+=" link-list--squire"),`
       <${c} class="${a}">
-        ${r?.map(d=>`<div class="link-list__item">${d}</div>`).join("")}
+        ${o?.map(d=>`<div class="link-list__item">${d}</div>`).join("")}
       </${c}>
-    `},h=y;var b=({message:e,children:t}={message:"Unknown error"})=>`
+    `},w=b;var R=({message:e,children:t}={message:"Unknown error"})=>`
   <div class="error">
     <div class="card error__card">
       <p>${e}</p>
-      ${h({children:t})}
+      ${w({children:t})}
     </div>
   </div>
-`,i=b;var w="Access token not provided",v="Page not found";var m=!0,n=e=>{if(console.error(e),!(typeof window>"u")){if(m&&typeof Sentry<"u"&&Sentry.captureException(e),m&&typeof window.dataLayer<"u"&&window.dataLayer.push({event:"issue",message:e.message,row:e.lineNumber||null,source:e.fileName||null,stack:e.stack}),e.message===v){window.location.href="/404";return}if(e.message===w){window.location.href="/403";return}}};var u=m?()=>{}:(...e)=>{console.info(...e)};var $=()=>{let{protocol:e,hash:t,pathname:r}=document.location;return`${r.replace("index.html","")}${t.slice(2)}`};var ee="\u{1F34F},\u{1F330},\u{1F34B},\u{1F345},\u{1F346},\u{1F347},\u{1F353},\u{1F349},\u{1F350},\u{1F352},\u{1F351},\u{1F951}".split(","),{floor:te,random:re}=Math;var g=class{constructor(){this.id=null}toString(){let t=btoa(`${Math.ceil(Math.random()*1e13)+ +new Date}`).slice(10,18);return this.id=this.id||`ref-${t}`}get current(){return typeof window>"u"||typeof document>"u"?null:document.querySelector(`[ref=${this.id}]`)}},l=()=>new g;var T=(e={})=>{let{className:t="link",children:r,tag:s="a",to:c="#",title:a="",onClick:d}=e,f=l();return setTimeout(()=>{d&&f.current&&f.current.addEventListener("click",d)}),`
+`,i=R;var h="Access token not provided",v="Page not found";var m=!0,n=e=>{if(console.error(e),!(typeof window>"u")){if(m&&typeof Sentry<"u"&&Sentry.captureException(e),m&&typeof window.dataLayer<"u"&&window.dataLayer.push({event:"issue",message:e.message,row:e.lineNumber||null,source:e.fileName||null,stack:e.stack}),e.message===v){window.location.href="/404";return}if(e.message===h){window.location.href="/403";return}}};var u=m?()=>{}:(...e)=>{console.info(...e)};var E=()=>{let{protocol:e,hash:t,pathname:o}=document.location;return`${o.replace("index.html","")}${t.slice(2)}`};var re="\u{1F34F},\u{1F330},\u{1F34B},\u{1F345},\u{1F346},\u{1F347},\u{1F353},\u{1F349},\u{1F350},\u{1F352},\u{1F351},\u{1F951}".split(","),{floor:ne,random:ie}=Math;var g=class{constructor(){this.id=null}toString(){let t=btoa(`${Math.ceil(Math.random()*1e13)+ +new Date}`).slice(10,18);return this.id=this.id||`ref-${t}`}get current(){return typeof window>"u"||typeof document>"u"?null:document.querySelector(`[ref=${this.id}]`)}},l=()=>new g;var P=(e={})=>{let{className:t="link",children:o,tag:s="a",to:c="#",title:a="",onClick:d}=e,f=l();return setTimeout(()=>{d&&f.current&&f.current.addEventListener("click",d)}),`
       <${s} class="${t} link" href="${c}" title="${a}" ref="${f}" ${/^http/.test(c)?'rel="noopener noreferrer"':""}>
-        ${r?.join?.("")}
+        ${o?.join?.("")}
       </${s}>
-    `},o=T;var E=()=>i({message:"403 Forbidden",children:[o({to:"#/login",title:"Go to login page",children:["Log in"]})]});var k=()=>i({message:"404 Page not found",children:[o({to:"/",title:"Go to home page",children:["Home"]}),o({onClick:()=>{history.go(-1)},title:"Go back",children:["Back"]})]});var L=e=>i({message:e.message,children:[o({onClick:()=>{location.reload()},title:"Reload",children:["Reload"]}),o({onClick:()=>{history.go(-1)},title:"Go back",children:["Back"]})]});var P=()=>(addEventListener("DOMContentLoaded",()=>{n(new Error("Some error test"))}),setTimeout(()=>{n(new Error("Throw error on setTimeout"))}),Promise.reject(new Error("Throw error on promise")).catch(e=>{n(e)}),n(new Error("Throw error immediately")),'<center><font color="red">Some error test</font></center>'),O=()=>{setTimeout(()=>{let e=window.innerWidth<768?"/1990/mobile/":"/1990/desktop/",t=document.getElementById("url");t&&(t.href=e),window.location.href.includes(e)||(window.location.href=e)},1e3)},N=(e="/")=>{u(`Loading ${e}`);try{switch(!0){case/\/test\/?$/.test(e):return P();case/^\/1990\/?$/.test(e):case/^\/$/.test(e):return O();case(e==="/403/"||e==="/403"):return E();default:return k()}}catch(t){let r=t instanceof Error?t:{message:t?.message||t};return L(r)}},_=e=>{let{error:t}=e;n(t)},x=()=>{let e=$();if(!e)return;let t=N(e);if(t&&!(typeof window>"u")&&window?.document){addEventListener("error",_);let r=document.getElementById("root");if(r==null)return;r.innerHTML=t}};addEventListener("DOMContentLoaded",x);addEventListener("hashchange",x);})();
+    `},r=P;var k=()=>i({message:"403 Forbidden",children:[r({to:"#/login",title:"Go to login page",children:["Log in"]})]});var y=()=>i({message:"404 Page not found",children:[r({to:"/",title:"Go to home page",children:["Home"]}),r({onClick:()=>{history.go(-1)},title:"Go back",children:["Back"]})]});var x=e=>i({message:e.message,children:[r({onClick:()=>{location.reload()},title:"Reload",children:["Reload"]}),r({onClick:()=>{history.go(-1)},title:"Go back",children:["Back"]})]});var T=()=>(addEventListener("DOMContentLoaded",()=>{n(new Error("Some error test"))}),setTimeout(()=>{n(new Error("Throw error on setTimeout"))}),Promise.reject(new Error("Throw error on promise")).catch(e=>{n(e)}),n(new Error("Throw error immediately")),'<center><font color="red">Some error test</font></center>'),O=()=>{setTimeout(()=>{let e=window.innerWidth<768?"/1990/mobile/":"/1990/desktop/",t=document.getElementById("url");t&&(t.href=e),window.location.href.includes(e)||(window.location.href=e)},1e3)},A=(e="/")=>{u(`Loading ${e}`);try{switch(!0){case/\/test\/?$/.test(e):return T();case/^\/1990\/?$/.test(e):case/^\/$/.test(e):return O();case(e==="/403/"||e==="/403"):return k();default:return y()}}catch(t){let o=t instanceof Error?t:{message:t?.message||t};return x(o)}},N=e=>{let{error:t}=e;n(t)},L=()=>{let e=E();if(!e)return;let t=A(e);if(t&&!(typeof window>"u")&&window?.document){addEventListener("error",N);let o=document.getElementById("root");if(o==null)return;o.innerHTML=t}};addEventListener("DOMContentLoaded",L);addEventListener("hashchange",L);})();
 //# sourceMappingURL=router-1990.min.js.map
 </script>
     
     
-    <script  crossorigin=""  nonce="k1MDI0Nw" >(function(w,d,s,l,i,n){w[l]=w[l]||[];w[l].push({'gtm.start':
+    <script  crossorigin=""  nonce="UwOTgzNA" >(function(w,d,s,l,i,n){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;j.setAttribute('nonce', n);f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MBG56M','k1MDI0Nw');</script>
+})(window,document,'script','dataLayer','GTM-MBG56M','UwOTgzNA');</script>
 
 </head>
 <body id="root">
     
     
-    <script async crossorigin=""  nonce="k1MDI0Nw" src="https://www.googletagmanager.com/gtag/js?id=G-5ZY8Y6X2C4"></script>
-    <script  crossorigin=""  nonce="k1MDI0Nw" >window.dataLayer = window.dataLayer || [];
+    <script async crossorigin=""  nonce="UwOTgzNA" src="https://www.googletagmanager.com/gtag/js?id=G-5ZY8Y6X2C4"></script>
+    <script  crossorigin=""  nonce="UwOTgzNA" >window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());gtag('config', 'G-5ZY8Y6X2C4');
 </script>
 
     
-    <noscript><iframe nonce="k1MDI0Nw" src="https://www.googletagmanager.com/ns.html?id=GTM-MBG56M"
+    <noscript><iframe nonce="UwOTgzNA" src="https://www.googletagmanager.com/ns.html?id=GTM-MBG56M"
 height="0" width="0"></iframe></noscript>
   <font face="'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace" size="3">
     <table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">

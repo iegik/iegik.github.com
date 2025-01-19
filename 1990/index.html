@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Loading...</title>
     
-    <style nonce="k1MDI0Nw" id="/1990/styles.min.css">/* Styles used only for interpriate old interface */
+    <style nonce="UwOTgzNA" id="/1990/styles.min.css">/* Styles used only for interpriate old interface */
 :root {
   --color-window: #0000a8;
   --color-text: #56ffff;
@@ -172,16 +172,20 @@ a:not([href^="/images"]) {
 [bgcolor] input,
 [bgcolor] select,
 [bgcolor] textarea {
-  color: var(--color-accent);
+  /* issue with nested styles, see #bot */
+  /* color: var(--color-accent); */
 }
+[bgcolor] input[type="button"],
 [bgcolor] input[type="submit"],
 [bgcolor] a {
   color: var(--color-buttonText);
 }
+input[type="button"],
 input[type="submit"],
 a {
   background-color: var(--color-inactiveWindow);
 }
+[bgcolor] input[type="button"],
 [bgcolor] input[type="submit"],
 [bgcolor] a {
   background-color: var(--color-button);
@@ -284,6 +288,20 @@ a:checked::selection,
 [bgcolor] a:active::selection {
   color: var(--color-accent);
   background-color: var(--color-window);
+}
+/* emulate dialogs */
+.dialog {
+  box-shadow: 1em 1ex var(--color-shadow);
+  margin: auto;
+  min-width: 50ex;
+  width: fit-content;
+  max-width: 80ex;
+  height: fit-content;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 /* hide noscript gtm */
 noscript iframe[src^="https://www.googletagmanager.com"] {

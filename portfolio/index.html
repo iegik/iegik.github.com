@@ -2,7 +2,7 @@
     "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self';script-src 'nonce-k1MDI0Nw' 'strict-dynamic' https://www.google-analytics.com https://ssl.google-analytics.com https://static.hotjar.com https://script.hotjar.com https://js.sentry-cdn.com 'unsafe-inline';img-src 'self' https://www.google-analytics.com https://avatars.githubusercontent.com/ https://www.googletagmanager.com/ https://static.hotjar.com https://survey-images.hotjar.com;connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://in.hotjar.com wss://ws.hotjar.com https://static.hotjar.com https://content.hotjar.io https://github.com/login/oauth/access_token https://api.github.com/graphql https://api.github.com/user https://o171820.ingest.sentry.io/;style-src 'self' 'nonce-k1MDI0Nw' https://static.hotjar.com;object-src 'none';base-uri 'none';frame-src https://vars.hotjar.com/ https://www.googletagmanager.com/;script-src-elem 'self' 'nonce-k1MDI0Nw' https://script.hotjar.com">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self';script-src 'nonce-UwOTgzNA' 'strict-dynamic' https://www.google-analytics.com https://ssl.google-analytics.com https://static.hotjar.com https://script.hotjar.com https://js.sentry-cdn.com 'unsafe-inline';img-src 'self' https://www.google-analytics.com https://avatars.githubusercontent.com/ https://www.googletagmanager.com/ https://static.hotjar.com https://survey-images.hotjar.com;connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://in.hotjar.com wss://ws.hotjar.com https://static.hotjar.com https://content.hotjar.io https://github.com/login/oauth/access_token https://api.github.com/graphql https://api.github.com/user https://o171820.ingest.sentry.io/;style-src 'self' 'nonce-UwOTgzNA' https://static.hotjar.com;object-src 'none';base-uri 'none';frame-src https://vars.hotjar.com/ https://www.googletagmanager.com/;script-src-elem 'self' 'nonce-UwOTgzNA' https://script.hotjar.com">
     <title>Art&#363;rs Jansons | Full-stack Developer [10+ year exp.]</title>
     <meta name="description" content="Mobile / Web Developer &amp; JavaScript Consultant" />
     <meta name="keywords" content="HTML, CSS, JavaScript, TypeScript, React, React Native, PHP, MySQL, Bash, Makefile, Docker, GraphQL, Next, Nest" />
@@ -11,7 +11,7 @@
     <meta name="theme-color" content="var(--color-window)" />
     
     
-    <style nonce="k1MDI0Nw" id="/1990/styles.min.css">/* Styles used only for interpriate old interface */
+    <style nonce="UwOTgzNA" id="/1990/styles.min.css">/* Styles used only for interpriate old interface */
 :root {
   --color-window: #0000a8;
   --color-text: #56ffff;
@@ -177,16 +177,20 @@ a:not([href^="/images"]) {
 [bgcolor] input,
 [bgcolor] select,
 [bgcolor] textarea {
-  color: var(--color-accent);
+  /* issue with nested styles, see #bot */
+  /* color: var(--color-accent); */
 }
+[bgcolor] input[type="button"],
 [bgcolor] input[type="submit"],
 [bgcolor] a {
   color: var(--color-buttonText);
 }
+input[type="button"],
 input[type="submit"],
 a {
   background-color: var(--color-inactiveWindow);
 }
+[bgcolor] input[type="button"],
 [bgcolor] input[type="submit"],
 [bgcolor] a {
   background-color: var(--color-button);
@@ -290,6 +294,20 @@ a:checked::selection,
   color: var(--color-accent);
   background-color: var(--color-window);
 }
+/* emulate dialogs */
+.dialog {
+  box-shadow: 1em 1ex var(--color-shadow);
+  margin: auto;
+  min-width: 50ex;
+  width: fit-content;
+  max-width: 80ex;
+  height: fit-content;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 /* hide noscript gtm */
 noscript iframe[src^="https://www.googletagmanager.com"] {
   display:none;visibility:hidden;position:absolute;
@@ -322,7 +340,153 @@ noscript iframe[src^="https://www.googletagmanager.com"] {
 }
 </style>
     
-    <script  crossorigin=""  nonce="k1MDI0Nw" >console.log = ((log) => {
+    <script  crossorigin=""  nonce="UwOTgzNA" >
+
+window.alert = function (message) {
+  showDialog(message, 0);
+};
+window.confirm = function (message) {
+  showDialog(message, 1);
+};
+
+window.prompt = function (message, defaultValue) {
+  return showDialog(message, 2, defaultValue);
+};
+
+function showDialog(message, type, defaultValue = '') {
+  window.dialog && document.body.removeChild(window.dialog);
+  window.dialog = document.createElement('fieldset');
+  dialog.className = 'dialog';
+  dialog.setAttribute('bgcolor', 'green');
+
+  var header = document.createElement('legend');
+  header.textContent = document.title;
+  dialog.appendChild(header);
+
+  const form = document.createElement('form');
+  dialog.appendChild(form);
+
+  var msg = document.createElement('p');
+  msg.textContent = message;
+  form.appendChild(msg);
+
+  var input;
+  if (type === 2) {
+    input = document.createElement('input');
+    input.type = 'text';
+    input.value = defaultValue;
+    form.appendChild(input);
+  }
+
+  var br = document.createElement('br');
+  form.appendChild(br);
+
+  var okButton = document.createElement('input');
+  okButton.setAttribute('type', 'submit');
+  okButton.value = 'OK';
+  form.appendChild(okButton);
+
+  if (type > 0) {
+    var cancelButton = document.createElement('input');
+    cancelButton.setAttribute('type', 'cancel');
+    cancelButton.value = 'Cancel';
+    form.appendChild(cancelButton);
+  }
+
+  document.body.appendChild(dialog);
+  input?.focus();
+
+  let value;
+  okButton.onclick = function () {
+    document.body.removeChild(dialog);
+    dialog = null
+    if (type === 1) value = input.value;
+    if (type === 2) value = true;
+  };
+
+  if (type > 0) {
+    cancelButton.onclick = function () {
+      document.body.removeChild(dialog);
+      dialog = null
+      value = type === 1 ? null : false;
+    };
+  }
+
+  return {
+    toString(){
+      return value
+    },
+    then(fn) {
+      fn(value)
+    }
+  }
+}
+</script>
+    <script  crossorigin=""  nonce="UwOTgzNA" >const isCached = performance.getEntriesByType("navigation")[0].transferSize === 0;
+
+Object.defineProperty(this, 'isConsent', {
+    get() {
+        return localStorage.getItem('GDPR') || false;
+    }
+});
+
+window.gdpr = {
+  async showPopover(){
+    const isConsent = await confirm(`We use cookies to enhance your experience on our website. By clicking "Ok", you agree to the use of cookies as outlined in our Privacy Policy.`);
+    isConsent && localStorage.setItem('GDPR', isConsent);
+  }
+}
+
+function checkConsent() {
+  document.querySelector('[href="#gdpr"]').addEventListener('click', gdpr.showPopover)
+  if (!isConsent && !isCached) {
+    gdpr.showPopover()
+  }
+}
+
+addEventListener('DOMContentLoaded', checkConsent)
+</script>
+    <script  crossorigin=""  nonce="UwOTgzNA" >
+function registerServiceWorker(){
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js').then((registration) => {
+      console.debug('[sw]: registered with scope:', registration.scope);
+    }).catch((error) => {
+      console.error('[sw]: registration failed:', error);
+    });
+  } else {
+    console.warn('[sw]: not supported in this browser.');
+  }
+}
+
+function unregisterServiceWorker () {
+  navigator.serviceWorker.getRegistrations().then(registrations => {
+      for (const registration of registrations) {
+          registration.unregister();
+      }
+  });
+}
+
+function clearCache (){
+  if ('caches' in window) {
+    caches.keys().then((cacheNames) => {
+        cacheNames.forEach((cacheName) => {
+            console.debug(`Deleting cache: ${cacheName}`);
+            caches.delete(cacheName); // Delete each cache
+        });
+    });
+  }
+}
+
+registerServiceWorker()
+addEventListener('DOMContentLoaded', () => {
+  document.querySelector('[href="#clean"]').addEventListener('click', () => {
+    clearCache()
+    unregisterServiceWorker()
+  })
+})
+</script>
+    <script  crossorigin=""  nonce="UwOTgzNA" >console.log = ((log) => {
   let number = null;
   return (command) => {
       switch (command) {
@@ -373,7 +537,7 @@ noscript iframe[src^="https://www.googletagmanager.com"] {
 })(console.log);
 console.log("help");
 </script>
-    <script  crossorigin=""  nonce="k1MDI0Nw" >'use strict';
+    <script  crossorigin=""  nonce="UwOTgzNA" >'use strict';
 const userScript = () => {
   console.debug(`💩`);
 
@@ -440,11 +604,11 @@ try {
 }
 </script>
     
-    <script  crossorigin=""  nonce="k1MDI0Nw" >(function(w,d,s,l,i,n){w[l]=w[l]||[];w[l].push({'gtm.start':
+    <script  crossorigin=""  nonce="UwOTgzNA" >(function(w,d,s,l,i,n){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;j.setAttribute('nonce', n);f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MBG56M','k1MDI0Nw');</script>
+})(window,document,'script','dataLayer','GTM-MBG56M','UwOTgzNA');</script>
 
     
     
@@ -452,18 +616,18 @@ try {
 <body>
     
     
-    <script async crossorigin=""  nonce="k1MDI0Nw" src="https://www.googletagmanager.com/gtag/js?id=G-5ZY8Y6X2C4"></script>
-    <script  crossorigin=""  nonce="k1MDI0Nw" >window.dataLayer = window.dataLayer || [];
+    <script async crossorigin=""  nonce="UwOTgzNA" src="https://www.googletagmanager.com/gtag/js?id=G-5ZY8Y6X2C4"></script>
+    <script  crossorigin=""  nonce="UwOTgzNA" >window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());gtag('config', 'G-5ZY8Y6X2C4');
 </script>
 
     
-    <noscript><iframe nonce="k1MDI0Nw" src="https://www.googletagmanager.com/ns.html?id=GTM-MBG56M"
+    <noscript><iframe nonce="UwOTgzNA" src="https://www.googletagmanager.com/ns.html?id=GTM-MBG56M"
 height="0" width="0"></iframe></noscript>
     <my-portfolio></my-portfolio>
     
-    <script  crossorigin=""  nonce="k1MDI0Nw" >const nonce = 'k1MDI0Nw';
+    <script  crossorigin=""  nonce="UwOTgzNA" >const nonce = 'UwOTgzNA';
 (function (D, O, S, theme = "", _) {
   _ = document.getElementById(S);
   theme = _.innerHTML;
@@ -523,7 +687,7 @@ height="0" width="0"></iframe></noscript>
   }
   // @ts-ignore
 })(document, toggleDosStyle, "/1990/styles.min.css");</script>
-    <script  crossorigin=""  nonce="k1MDI0Nw" >function transformXML(xml, xsl) {
+    <script  crossorigin=""  nonce="UwOTgzNA" >function transformXML(xml, xsl) {
   const xsltProcessor = new XSLTProcessor();
   xsltProcessor.importStylesheet(xsl);
 
@@ -561,8 +725,8 @@ class MyPortfolio extends HTMLElement {
 
 customElements.define('my-portfolio', MyPortfolio);</script>
     
-    <script async crossorigin="" integrity="sha384-6yzL+SsRi1vefLAU9+yqKb0YIeAiJ6GsCob5LxN8Af29Ze1Q5iCg0Ur2fwFroEqa" nonce="k1MDI0Nw" src="https://browser.sentry-cdn.com/8.29.0/bundle.tracing.min.js"></script>
-    <script  crossorigin=""  nonce="k1MDI0Nw" >((options) => {window.sentryOnLoad = () => {
+    <script async crossorigin="" integrity="sha384-6yzL+SsRi1vefLAU9+yqKb0YIeAiJ6GsCob5LxN8Af29Ze1Q5iCg0Ur2fwFroEqa" nonce="UwOTgzNA" src="https://browser.sentry-cdn.com/8.29.0/bundle.tracing.min.js"></script>
+    <script  crossorigin=""  nonce="UwOTgzNA" >((options) => {window.sentryOnLoad = () => {
   typeof Sentry !== 'undefined' && Sentry.init(options);
-}})({"dsn":"https://179618f1f04d4d9dac08acc750d5736c@o171820.ingest.sentry.io/1250596","release":"1250596@v3.1.0-2025-01-11T12:19:10.247Z","environment":"production"});</script>
+}})({"dsn":"https://179618f1f04d4d9dac08acc750d5736c@o171820.ingest.sentry.io/1250596","release":"1250596@v3.1.0-2025-01-19T00:28:29.834Z","environment":"production"});</script>
 
