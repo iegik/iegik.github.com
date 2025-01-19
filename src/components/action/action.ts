@@ -1,5 +1,5 @@
 import { createRef } from '@app/components/core/view';
-import { Fragment } from '@app/core/fragment';
+import { Fragment } from '@app/core/Fragment';
 
 type Props = ActionProps & {
   onClick?: (event: Event) => void;

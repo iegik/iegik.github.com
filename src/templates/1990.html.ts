@@ -24,7 +24,8 @@ const description = 'Mobile / Web Developer &amp; JavaScript Consultant'
 const keywords = 'HTML, CSS, JavaScript, TypeScript, React, React Native, PHP, MySQL, Bash, Makefile, Docker, GraphQL, Next, Nest'
 
 const TopNav = () => `<p>
-                        1990 |
+                        ${actions.map((link, key) => `${!!key ? ' | ' : ''}${Link(link)}`).join('')}
+                        | 1990 |
                         ${/*<a href="/2000/">2000</a> |
                         <a href="/2010/">2010</a> |
                         <a href="/2020/">2020</a> |*/''}
@@ -114,7 +115,10 @@ const contacts:Contact[] = [
     { link: { href: "https://t.me/ajansons", title: "t.me/ajansons", } },
     // { link: { href: "https://discord.gg/iegik", title: "discord.gg/iegik", } },
 ]
-
+const actions:LinkProps[] = [
+    { href: "#gdpr", title: "🍪" },
+    { href: "#clean", title: "🗑️" },
+]
 const links:LinkProps[] = [
     { href: "https://linkedin.com/in/iegik", title: "LinkedIn", },
     { href: "https://github.com/iegik", title: "GitHub", },
@@ -232,6 +236,11 @@ const DesktopView = () => `
                                     <b>Also use:</b>
                                         ${AlsoUse()}
                                 </p>
+                    </table>
+                    <table border="0" cellpadding="0" cellspacing="8" width="768px">
+                        <tr>
+                            <td>
+                                <p>${links.map((link, key) => `${!!key ? ' | ' : ''}${Link(link)}`).join('')}</p>
                     </table>
                     <table border="0" cellpadding="0" cellspacing="8" width="768px">
                         <tr>
@@ -421,6 +430,9 @@ const Page = (content: string) => `${DOCTYPE}
     ${/*<link rel="stylesheet" nonce="${nonce}" href="/1990/styles.min.css" />*/''}
     <style nonce="${nonce}" id="/1990/styles.min.css">${style}</style>
     ${/* Google Tag Manager */''}
+    ${Script({ srcDoc: './src/lib/dialogs.dos.js', nonce })}
+    ${Script({ srcDoc: './src/lib/gdpr.js', nonce })}
+    ${Script({ srcDoc: './src/lib/sw.js', nonce })}
     ${Script({ srcDoc: './src/lib/console-game.js', nonce })}
     ${Script({ srcDoc: './src/lib/guard.js', nonce })}
     ${process.env.IS_VITE === 'true' ? '' : GTMHead({ nonce, gtmId: 'GTM-MBG56M'})}
