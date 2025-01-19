@@ -4,6 +4,7 @@ const contentToCache = [
   '/1990/index.html',
   '/1990/desktop/index.html',
   '/1990/mobile/index.html',
+  '/next/index.html',
 ];
 
 oninstall = (event) => {
