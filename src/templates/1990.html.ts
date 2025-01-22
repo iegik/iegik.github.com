@@ -457,7 +457,7 @@ const Page = (content: string) => `${DOCTYPE}
         replaysOnErrorSampleRate:1,
         release: `1250596@${release}`,
         environment: "production",
-        integrity: 'sha384-6yzL+SsRi1vefLAU9+yqKb0YIeAiJ6GsCob5LxN8Af29Ze1Q5iCg0Ur2fwFroEqa'
+        integrity: 'sha384-qnTptFNLKIQmPtZ6hk6eVXm1vZjnCzyt/KrWLwvzn4wI+ehVnDRWPgkfwHu9fc6o'
     })}
 `;
 
