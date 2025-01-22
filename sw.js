@@ -1,4 +1,4 @@
-const cacheName = 'iegik-0.1';
+const cacheName = 'iegik-v3.1.1';
 const contentToCache = [
   '/index.html',
   '/1990/index.html',
@@ -49,16 +49,19 @@ onfetch = (event) => {
           if (etag) {
             requestHeaders.set('If-None-Match', etag);
           }
-          self.clients.matchAll().then((clients) => {
-            clients.forEach(client => {
-              client.postMessage({
-                  type: 'PAGE_CACHED',
-                  url: event.request.url
+
+          if ((lastModified && lastModified === requestHeaders.get('Last-Modified')) || (etag && etag === requestHeaders.get('ETag'))) {
+            self.clients.matchAll().then((clients) => {
+              clients.forEach(client => {
+                client.postMessage({
+                    type: 'PAGE_CACHED',
+                    url: event.request.url
+                });
               });
             });
-          });
 
-          return cachedResponse;
+            return cachedResponse;
+          }
         }
       }
 
