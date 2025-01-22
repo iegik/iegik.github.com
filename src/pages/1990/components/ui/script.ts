@@ -9,7 +9,7 @@ export type ScriptProps = {
   async?: boolean;
   iife?: string;
   integrity?: string;
-  crossorigin?: 'use-credentials' | '';
+  crossorigin?: 'anonymous' | 'use-credentials' | '';
 }
 
 export const Script = ({ srcDoc, src, nonce, async, prefix, postfix, iife, crossorigin = '', integrity }: ScriptProps) => {

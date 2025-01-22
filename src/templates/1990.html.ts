@@ -451,7 +451,10 @@ const Page = (content: string) => `${DOCTYPE}
     ${Sentry({
         nonce,
         projectId: "179618f1f04d4d9dac08acc750d5736c",
-        dsn: "https://179618f1f04d4d9dac08acc750d5736c@o171820.ingest.sentry.io/1250596",
+        dsn: "https://179618f1f04d4d9dac08acc750d5736c@o171820.ingest.us.sentry.io/1250596",
+        tracesSampleRate:1,
+        replaysSessionSampleRate:0.1,
+        replaysOnErrorSampleRate:1,
         release: `1250596@${release}`,
         environment: "production",
         integrity: 'sha384-6yzL+SsRi1vefLAU9+yqKb0YIeAiJ6GsCob5LxN8Af29Ze1Q5iCg0Ur2fwFroEqa'
