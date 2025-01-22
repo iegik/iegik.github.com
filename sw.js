@@ -1,4 +1,5 @@
-const cacheName = 'iegik-v3.1.1';
+const cacheName = 'v3.1.2';
+const cacheAllowlist = ["v3.1.2"];
 const contentToCache = [
   '/index.html',
   '/1990/index.html',
@@ -30,6 +31,21 @@ onconnect = (event) => {
     })(),
   );
 };
+
+onactivate = () => {
+  event.waitUntil(
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.map((cacheName) => {
+          if (!cacheAllowlist.includes(cacheName)) {
+            return caches.delete(cacheName);
+          }
+        }),
+      );
+    }),
+  );
+};
+
 onfetch = (event) => {
   event.respondWith(
     (async function () {

@@ -14,7 +14,7 @@ cccccccllll:olloddoc:dxxxxOOOO
 ','',cd0XXk;kO:;,,,;:,..0OKx;d
 c:oOXXKKOOlxkO,.,;;;,..;00OO,.
 :xXK00kxxxoxxk:.',,,...oxxkxd 
-`});var v=$1(require("fs")),x=(t,e)=>v.writeFileSync(t,e,{encoding:"utf8"}),y=t=>v.readFileSync(t,{encoding:"utf8"});var D=new Date,$=`v3.1.1-${D.toJSON()}`,l=btoa(`${Number(D)}`).slice(10,18);var V=`<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 14 14" enable-background="new 0 0 240 240" x="0px" y="0px" xml:space="preserve" fill="currentColor">
+`});var v=$1(require("fs")),x=(t,e)=>v.writeFileSync(t,e,{encoding:"utf8"}),y=t=>v.readFileSync(t,{encoding:"utf8"});var D=new Date,$=`v3.1.2-${D.toJSON()}`,l=btoa(`${Number(D)}`).slice(10,18);var V=`<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 14 14" enable-background="new 0 0 240 240" x="0px" y="0px" xml:space="preserve" fill="currentColor">
   <title>LinkedIn icon</title>
   <path d="m12.95 0h-11.9c-0.6 0-1 0.4-1 1v12c0 0.6 0.5 1 1 1h11.9c0.6 0 1-0.4 1-1v-12c0-0.6-0.4-1-1-1zm-8.8 11.9h-2.1v-6.7h2.1v6.7zm-1-7.6c-0.7 0-1.2-0.5-1.2-1.2s0.5-1.2 1.2-1.2 1.2 0.5 1.2 1.2-0.6 1.2-1.2 1.2zm8.8 7.6h-2.1v-3.2c0-0.8 0-1.8-1.1-1.8s-1.2 0.8-1.2 1.7v3.3h-2.1v-6.7h2v0.9c0.4-0.7 1.2-1.1 2-1.1 2.1 0 2.5 1.4 2.5 3.2v3.7z"></path>
 </svg>
