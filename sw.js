@@ -32,7 +32,7 @@ onconnect = (event) => {
   );
 };
 
-onactivate = () => {
+onactivate = (event) => {
   event.waitUntil(
     caches.keys().then((cacheNames) => {
       return Promise.all(
