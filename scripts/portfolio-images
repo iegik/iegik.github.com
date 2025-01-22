@@ -9,8 +9,8 @@ for f in public/images/portfolio/**/*.png public/images/me.png public/images/cat
   # 3. Make grayscale image to reduce size `-grayscale Rec709Luma`
   # 4. Make ASCII art for alt
   size=128x128
-  magick "$f" -format jpg -brightness-contrast +0.5 -normalize -resize $size -dither none -colors 8 -gravity center -crop 1:1+0+0 +repage -interlace Plane -compress lossless "${f%%.png}-thumb.jpg";
-  magick "$f" -format png -brightness-contrast +0.5 -normalize -resize $size -dither none -colors 8 -gravity center -crop 1:1+0+0 +repage -interlace Plane "${f%%.png}-thumb.png";
+  magick "$f" -format jpg -brightness-contrast +0.5 -normalize -resize $size -dither Riemersma -colors 8 -gravity center -crop 1:1+0+0 +repage -interlace Plane -compress lossless "${f%%.png}-thumb.jpg";
+  magick "$f" -format png -brightness-contrast +0.5 -normalize -resize $size -dither Riemersma -colors 8 -gravity center -crop 1:1+0+0 +repage -interlace Plane PNG8:"${f%%.png}-thumb.png";
   jp2a "${f%%.png}-thumb.jpg" --size=36x18 --chars="..::;;++==xxXX88\$\$&&" --output="${f%%.png}-thumb.ascii"
   cwebp -quiet -q 80 "${f%%.png}-thumb.png" -o "${f%%.png}-thumb.webp"
   png2ppm 16x16 "${f%%.png}-thumb.png" "${f%%.png}-thumb.ppm";
