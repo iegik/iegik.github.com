@@ -50,8 +50,8 @@ onfetch = (event) => {
             requestHeaders.set('If-None-Match', etag);
           }
 
-          isCacheValid = (lastModified && lastModified === requestHeaders.get('Last-Modified')) || (etag && etag === requestHeaders.get('ETag'))
-          if (isCacheValid) {
+          // isCacheValid = (lastModified && lastModified === requestHeaders.get('Last-Modified')) || (etag && etag === requestHeaders.get('ETag'))
+          // if (isCacheValid) {
             self.clients.matchAll().then((clients) => {
               clients.forEach(client => {
                 client.postMessage({
@@ -62,19 +62,19 @@ onfetch = (event) => {
             });
 
             return cachedResponse;
-          }
+          // }
         }
       }
 
-      if (!isCacheValid) {
-        await caches.keys().then((cacheNames) => {
-          cacheNames.forEach((cacheName) => {
-              console.debug(`Deleting cache: ${cacheName}`);
-              caches.delete(cacheName); // Delete each cache
-          });
-        });
-        requestHeaders.cache = 'no-store'
-      }
+      // if (!isCacheValid) {
+      //   await caches.keys().then((cacheNames) => {
+      //     cacheNames.forEach((cacheName) => {
+      //         console.debug(`Deleting cache: ${cacheName}`);
+      //         caches.delete(cacheName); // Delete each cache
+      //     });
+      //   });
+      //   requestHeaders.set('cache', 'no-store');
+      // }
 
       let networkResponse = await fetch(event.request, { headers: requestHeaders });
 
