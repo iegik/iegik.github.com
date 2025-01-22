@@ -67,6 +67,12 @@ onfetch = (event) => {
       }
 
       if (!isCacheValid) {
+        await caches.keys().then((cacheNames) => {
+          cacheNames.forEach((cacheName) => {
+              console.debug(`Deleting cache: ${cacheName}`);
+              caches.delete(cacheName); // Delete each cache
+          });
+        });
         requestHeaders.cache = 'no-store'
       }
 
