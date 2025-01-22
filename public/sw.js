@@ -35,7 +35,7 @@ onfetch = (event) => {
     (async function () {
       const isCacheable = /^http/.test(event.request.url)
       const requestHeaders = new Headers(event.request.headers);
-      let cachedResponse
+      let cachedResponse,isCacheValid = true;
       if (isCacheable) {
         console.debug(`[sw]: Getting "${event.request.url}" from cache`);
         cachedResponse = await caches.match(event.request, { ignoreSearch: true });
@@ -50,7 +50,8 @@ onfetch = (event) => {
             requestHeaders.set('If-None-Match', etag);
           }
 
-          if ((lastModified && lastModified === requestHeaders.get('Last-Modified')) || (etag && etag === requestHeaders.get('ETag'))) {
+          isCacheValid = (lastModified && lastModified === requestHeaders.get('Last-Modified')) || (etag && etag === requestHeaders.get('ETag'))
+          if (isCacheValid) {
             self.clients.matchAll().then((clients) => {
               clients.forEach(client => {
                 client.postMessage({
@@ -63,6 +64,10 @@ onfetch = (event) => {
             return cachedResponse;
           }
         }
+      }
+
+      if (!isCacheValid) {
+        requestHeaders.cache = 'no-store'
       }
 
       let networkResponse = await fetch(event.request, { headers: requestHeaders });
