@@ -1,50 +1,50 @@
-console.log = ((log) => {
-  let number = null;
-  return (command) => {
-      switch (command) {
-          case "h":
-          case "?":
-          case "help": {
-              log(`
-                  Welcome!
-                  Usage:
+let x;
+class Game {
+  get play() {
+    x = ~~(Math.random() * 100);
+    return 'guess the number 0..100 with maybe`N`. game started';
+  }
+  maybe(n) {
+    console.log(
+      +n === x
+        ? ((x = undefined), 'you won')
+        : `try ${+n > x ? 'less' : 'more'}`,
+    );
+    return +n;
+  }
+}
+for (let i = 0; i < 101; i++)
+  Object.defineProperty(Game.prototype, `maybe_${i}`, {
+    set() {},
+    get() {
+      if (x) Game.prototype.maybe(i);
+      return i;
+    },
+  });
 
-                      console.log('your command here');
+Object.entries(
+  Object.getOwnPropertyDescriptors(Game.prototype),
+).forEach(([key, val]) => {
+  if (key === 'constructor') return;
+  Object.defineProperty(window, key, {
+    configurable: false,
+    ...(val.writable
+      ? {
+          value: val.value,
+        }
+      : {
+          set: () => {},
+          get: val.get,
+        }),
+  });
+});
 
-                  There is some commands I have:
-
-                      play -    Play with me :)
-                      exit -    Exit :(
-
-                  Type 'help' for more information
-              `);
-              return;
-          }
-          case "play": {
-              number = Math.ceil(Math.random() * 100);
-              log("Guess the namber:");
-              return;
-          }
-          case "exit": {
-              number = null;
-              console.log = log;
-              return;
-          }
-          default: {
-              if (number == null) return log(command);
-              if (typeof command !== "number") return;
-              if (command < number) {
-                  log(`Try more`);
-                  return;
-              } else if (command > number) {
-                  log(`Try less`);
-                  return;
-              }
-              number = null;
-              log(`You won!`);
-              return;
-          }
-      }
-  };
-})(console.log);
-console.log("help");
+addEventListener(
+  'keydown',
+  (event) => {
+    // Bind to both command (for Mac) and control (for Win/Linux)
+    if (event.keyCode == 17) console.clear(), console.log(play);
+  },
+  false,
+);
+console.log(`type 'play' to start`);
