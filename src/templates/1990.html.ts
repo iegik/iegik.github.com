@@ -11,7 +11,7 @@ import { GTag } from '@app/pages/1990/components/GTag';
 import { Sentry } from '@app/pages/1990/components/Sentry';
 import { Field, FieldL10nProps, FieldProps, FormFieldProps } from '@app/pages/1990/components/ui/field';
 import { CSP } from '@app/pages/1990/components/CSP';
-import { Snow } from '@app/pages/1990/components/Snow';
+// import { Snow } from '@app/pages/1990/components/Snow';
 import { l10n } from '@app/l10n';
 
 const style = readFileSync('./src/pages/1990/styles.css');
@@ -301,7 +301,7 @@ const DesktopView = () => `
                     <table border="0" cellpadding="0" cellspacing="8" width="768px">
                         <tr>
                             <td align="center">
-                                ${Snow({ width: 768, height: 600, snowFlake: '*', nonce })}
+                                ${/*Snow({ width: 768, height: 600, snowFlake: '*', nonce })*/}
                     </table>
                     `
 
@@ -382,7 +382,7 @@ const MobileView = () => `
                     <table border="0" cellpadding="0" cellspacing="8">
                         <tr>
                             <td align="center">
-                                ${Snow({ width: 424, height: 600, snowFlake: '.', nonce })}
+                                ${/*Snow({ width: 424, height: 600, snowFlake: '.', nonce })*/}
                     </table>
                     `
 
@@ -459,6 +459,7 @@ const Page = (content: string) => `${DOCTYPE}
         environment: "production",
         integrity: 'sha384-qnTptFNLKIQmPtZ6hk6eVXm1vZjnCzyt/KrWLwvzn4wI+ehVnDRWPgkfwHu9fc6o'
     })}
+    ${Script({ srcDoc: './src/lib/highlighter.js', nonce, })}
 `;
 
 writeFileSync('public/index.html', `${DOCTYPE}

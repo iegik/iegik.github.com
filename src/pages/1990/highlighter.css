@@ -1,0 +1,8 @@
+code .c-type {font-weight:700}
+code .c-variable, .c-type {color: #228}
+code .c-keyword {color: #708}
+code .c-string {color:#a22}
+code .c-punctuation {color:#666}
+code .c-atom {color:#281}
+code .c-comment, .c-comment * {color: #A70!important}
+code *:target{background-color:#ff6}
