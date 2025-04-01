@@ -85,6 +85,7 @@ templates\:watch:
 sass:
 	@npx sass src/styles.scss public/next/styles.min.css --style compressed && \
 	npx sass src/pages/1990/styles.css public/1990/styles.min.css --style compressed && \
+	npx sass src/pages/1990/highlighter.css public/1990/highlighter.min.css --style compressed && \
 	echo -e "\033[2K\r\033[0;32m✓ Task $@ completed\033[0m\n"
 
 sass\:watch:
