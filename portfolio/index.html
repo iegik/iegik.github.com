@@ -2,7 +2,7 @@
     "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self';script-src 'nonce-c4NjgwOA' 'strict-dynamic' https://www.google-analytics.com https://ssl.google-analytics.com https://static.hotjar.com https://script.hotjar.com https://js.sentry-cdn.com 'unsafe-inline';img-src 'self' https://www.google-analytics.com https://avatars.githubusercontent.com/ https://www.googletagmanager.com/ https://static.hotjar.com https://survey-images.hotjar.com;connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://in.hotjar.com wss://ws.hotjar.com https://static.hotjar.com https://content.hotjar.io https://github.com/login/oauth/access_token https://api.github.com/graphql https://api.github.com/user https://o171820.ingest.sentry.io/;style-src 'self' 'nonce-c4NjgwOA' https://static.hotjar.com;object-src 'none';base-uri 'none';frame-src https://vars.hotjar.com/ https://www.googletagmanager.com/;script-src-elem 'self' 'nonce-c4NjgwOA' https://script.hotjar.com">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self';script-src 'nonce-kwMjQxMA' 'strict-dynamic' https://www.google-analytics.com https://ssl.google-analytics.com https://static.hotjar.com https://script.hotjar.com https://js.sentry-cdn.com 'unsafe-inline';img-src 'self' https://www.google-analytics.com https://avatars.githubusercontent.com/ https://www.googletagmanager.com/ https://static.hotjar.com https://survey-images.hotjar.com;connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://in.hotjar.com wss://ws.hotjar.com https://static.hotjar.com https://content.hotjar.io https://github.com/login/oauth/access_token https://api.github.com/graphql https://api.github.com/user https://o171820.ingest.sentry.io/;style-src 'self' 'nonce-kwMjQxMA' https://static.hotjar.com;object-src 'none';base-uri 'none';frame-src https://vars.hotjar.com/ https://www.googletagmanager.com/;script-src-elem 'self' 'nonce-kwMjQxMA' https://script.hotjar.com">
     <title>Art&#363;rs Jansons | Full-stack Developer [10+ year exp.]</title>
     <meta name="description" content="Mobile / Web Developer &amp; JavaScript Consultant" />
     <meta name="keywords" content="HTML, CSS, JavaScript, TypeScript, React, React Native, PHP, MySQL, Bash, Makefile, Docker, GraphQL, Next, Nest" />
@@ -11,7 +11,9 @@
     <meta name="theme-color" content="var(--color-window)" />
     
     
-    <style nonce="c4NjgwOA" id="/1990/styles.min.css">/* Styles used only for interpriate old interface */
+    <style nonce="kwMjQxMA" id="/1990/styles.min.css">@import "hightlighter.css";
+
+/* Styles used only for interpriate old interface */
 :root {
   --color-window: #0000a8;
   --color-text: #56ffff;
@@ -340,7 +342,7 @@ noscript iframe[src^="https://www.googletagmanager.com"] {
 }
 </style>
     
-    <script  crossorigin=""  nonce="c4NjgwOA" >
+    <script  crossorigin=""  nonce="kwMjQxMA" >
 
 window.alert = function (message) {
   showDialog(message, 0);
@@ -422,7 +424,7 @@ function showDialog(message, type, defaultValue = '') {
   }
 }
 </script>
-    <script  crossorigin=""  nonce="c4NjgwOA" >const isCached = performance.getEntriesByType("navigation")[0].transferSize === 0;
+    <script  crossorigin=""  nonce="kwMjQxMA" >const isCached = performance.getEntriesByType("navigation")[0].transferSize === 0;
 
 Object.defineProperty(this, 'isConsent', {
     get() {
@@ -446,7 +448,7 @@ function checkConsent() {
 
 addEventListener('DOMContentLoaded', checkConsent)
 </script>
-    <script  crossorigin=""  nonce="c4NjgwOA" >
+    <script  crossorigin=""  nonce="kwMjQxMA" >
 function registerServiceWorker(){
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js').then((registration) => {
@@ -486,58 +488,58 @@ addEventListener('DOMContentLoaded', () => {
   })
 })
 </script>
-    <script  crossorigin=""  nonce="c4NjgwOA" >console.log = ((log) => {
-  let number = null;
-  return (command) => {
-      switch (command) {
-          case "h":
-          case "?":
-          case "help": {
-              log(`
-                  Welcome!
-                  Usage:
+    <script  crossorigin=""  nonce="kwMjQxMA" >let x;
+class Game {
+  get play() {
+    x = ~~(Math.random() * 100);
+    return 'guess the number 0..100 with maybe`N`. game started';
+  }
+  maybe(n) {
+    console.log(
+      +n === x
+        ? ((x = undefined), 'you won')
+        : `try ${+n > x ? 'less' : 'more'}`,
+    );
+    return +n;
+  }
+}
+for (let i = 0; i < 101; i++)
+  Object.defineProperty(Game.prototype, `maybe_${i}`, {
+    set() {},
+    get() {
+      if (x) Game.prototype.maybe(i);
+      return i;
+    },
+  });
 
-                      console.log('your command here');
+Object.entries(
+  Object.getOwnPropertyDescriptors(Game.prototype),
+).forEach(([key, val]) => {
+  if (key === 'constructor') return;
+  Object.defineProperty(window, key, {
+    configurable: false,
+    ...(val.writable
+      ? {
+          value: val.value,
+        }
+      : {
+          set: () => {},
+          get: val.get,
+        }),
+  });
+});
 
-                  There is some commands I have:
-
-                      play -    Play with me :)
-                      exit -    Exit :(
-
-                  Type 'help' for more information
-              `);
-              return;
-          }
-          case "play": {
-              number = Math.ceil(Math.random() * 100);
-              log("Guess the namber:");
-              return;
-          }
-          case "exit": {
-              number = null;
-              console.log = log;
-              return;
-          }
-          default: {
-              if (number == null) return log(command);
-              if (typeof command !== "number") return;
-              if (command < number) {
-                  log(`Try more`);
-                  return;
-              } else if (command > number) {
-                  log(`Try less`);
-                  return;
-              }
-              number = null;
-              log(`You won!`);
-              return;
-          }
-      }
-  };
-})(console.log);
-console.log("help");
+addEventListener(
+  'keydown',
+  (event) => {
+    // Bind to both command (for Mac) and control (for Win/Linux)
+    if (event.keyCode == 17) console.clear(), console.log(play);
+  },
+  false,
+);
+console.log(`type 'play' to start`);
 </script>
-    <script  crossorigin=""  nonce="c4NjgwOA" >'use strict';
+    <script  crossorigin=""  nonce="kwMjQxMA" >'use strict';
 const userScript = () => {
   console.debug(`💩`);
 
@@ -604,11 +606,11 @@ try {
 }
 </script>
     
-    <script  crossorigin=""  nonce="c4NjgwOA" >(function(w,d,s,l,i,n){w[l]=w[l]||[];w[l].push({'gtm.start':
+    <script  crossorigin=""  nonce="kwMjQxMA" >(function(w,d,s,l,i,n){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;j.setAttribute('nonce', n);f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MBG56M','c4NjgwOA');</script>
+})(window,document,'script','dataLayer','GTM-MBG56M','kwMjQxMA');</script>
 
     
     
@@ -616,18 +618,18 @@ try {
 <body>
     
     
-    <script async crossorigin=""  nonce="c4NjgwOA" src="https://www.googletagmanager.com/gtag/js?id=G-5ZY8Y6X2C4"></script>
-    <script  crossorigin=""  nonce="c4NjgwOA" >window.dataLayer = window.dataLayer || [];
+    <script async crossorigin=""  nonce="kwMjQxMA" src="https://www.googletagmanager.com/gtag/js?id=G-5ZY8Y6X2C4"></script>
+    <script  crossorigin=""  nonce="kwMjQxMA" >window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());gtag('config', 'G-5ZY8Y6X2C4');
 </script>
 
     
-    <noscript><iframe nonce="c4NjgwOA" src="https://www.googletagmanager.com/ns.html?id=GTM-MBG56M"
+    <noscript><iframe nonce="kwMjQxMA" src="https://www.googletagmanager.com/ns.html?id=GTM-MBG56M"
 height="0" width="0"></iframe></noscript>
     <my-portfolio></my-portfolio>
     
-    <script  crossorigin=""  nonce="c4NjgwOA" >const nonce = 'c4NjgwOA';
+    <script  crossorigin=""  nonce="kwMjQxMA" >const nonce = 'kwMjQxMA';
 (function (D, O, S, theme = "", _) {
   _ = document.getElementById(S);
   theme = _.innerHTML;
@@ -687,7 +689,7 @@ height="0" width="0"></iframe></noscript>
   }
   // @ts-ignore
 })(document, toggleDosStyle, "/1990/styles.min.css");</script>
-    <script  crossorigin=""  nonce="c4NjgwOA" >function transformXML(xml, xsl) {
+    <script  crossorigin=""  nonce="kwMjQxMA" >function transformXML(xml, xsl) {
   const xsltProcessor = new XSLTProcessor();
   xsltProcessor.importStylesheet(xsl);
 
@@ -725,8 +727,33 @@ class MyPortfolio extends HTMLElement {
 
 customElements.define('my-portfolio', MyPortfolio);</script>
     
-    <script async crossorigin="anonymous" integrity="sha384-qnTptFNLKIQmPtZ6hk6eVXm1vZjnCzyt/KrWLwvzn4wI+ehVnDRWPgkfwHu9fc6o" nonce="c4NjgwOA" src="https://browser.sentry-cdn.com/8.51.0/bundle.tracing.replay.debug.min.js"></script>
-    <script  crossorigin=""  nonce="c4NjgwOA" >((options) => {window.sentryOnLoad = () => {
+    <script async crossorigin="anonymous" integrity="sha384-qnTptFNLKIQmPtZ6hk6eVXm1vZjnCzyt/KrWLwvzn4wI+ehVnDRWPgkfwHu9fc6o" nonce="kwMjQxMA" src="https://browser.sentry-cdn.com/8.51.0/bundle.tracing.replay.debug.min.js"></script>
+    <script  crossorigin=""  nonce="kwMjQxMA" >((options) => {window.sentryOnLoad = () => {
   typeof Sentry !== 'undefined' && Sentry.init(options);
-}})({"dsn":"https://179618f1f04d4d9dac08acc750d5736c@o171820.ingest.us.sentry.io/1250596","tracesSampleRate":1,"replaysSessionSampleRate":0.1,"replaysOnErrorSampleRate":1,"release":"1250596@v3.1.4-2025-01-22T22:09:46.808Z","environment":"production"});</script>
+}})({"dsn":"https://179618f1f04d4d9dac08acc750d5736c@o171820.ingest.us.sentry.io/1250596","tracesSampleRate":1,"replaysSessionSampleRate":0.1,"replaysOnErrorSampleRate":1,"release":"1250596@v3.1.4-2025-04-01T07:51:42.410Z","environment":"production"});</script>
 
+    <script  crossorigin=""  nonce="kwMjQxMA" >const highlight = (code) => code
+  // операторы
+.replaceAll(/\b(echo|var|let|const|func|function|typeof|new|return|if|for|in|while|break|do|continue|switch|case|try|catch)([^a-z0-9\$_])/g,
+  '<span class="c-keyword">$1</span>$2')
+  // типы данных, объекты
+  .replaceAll(/\b(RegExp|Boolean|Number|String|Array|Object|Function|this|true|false|NaN|undefined|null|Infinity)([^a-z0-9\$_])/g,
+  '<span class="c-type">$1</span>$2')
+  // комментарии
+  .replaceAll(/(\/\*[^]*?\*\/|(\/\/)[^\n\r]+)/gim,'<span class="c-comment">$1</span>')
+  // строки
+  .replaceAll(/('.*?')/g,'<span class="c-string">$1</span>')
+  // имена функций, переменные
+  .replaceAll(/( |\(|\[)([a-z\_\$][a-z0-9_]*)(\s?([\(\)\[\];]|[=+\-\*,<]\s)|\s>)/gi,'$1<a id="var-$2" href="#var-$2" class="c-variable">$2</a>$3')
+  // скобки
+  .replaceAll(/(\{|\}|\]|\[|\|)/gi,'<span class="c-punctuation">$1</span>')
+  // числа
+  .replaceAll(/(0x[0-9a-f]*|\b(\d*\.)?([\d]+(e-?[0-9]*)?)\b)/gi,'<span class="c-atom">$1</span>')//|(0x[0-9abcdefx]*)
+  // табуляция (2 пробела)
+  //.replace(/\t/g,'  ')
+
+document.querySelectorAll('code')
+    .forEach((code) => {
+        code.innerHTML=highlight(code.innerText)
+    });
+</script>
