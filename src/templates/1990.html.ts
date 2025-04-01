@@ -194,6 +194,7 @@ const ContactFormDesktop = () => `<form align="left" method="POST" action="https
                                         </fieldset>
                                     </form>`
 
+const CodeOfADay = () => Code({ src: './src/pages/1990/assets/code_of_a_day/whitelist.sh', title: 'Code of the day' })
 const ContactFormMobile = () => `<form align="left" method="POST" action="https://api.web3forms.com/submit">
                                         <fieldset bgcolor="gray">
                                             <legend>Feedback</legend>
@@ -294,7 +295,7 @@ const DesktopView = () => `
                                     <tr>
                                         <td valign="top">
                                             <font size="2">
-                                                ${Code({ src: './src/pages/1990/assets/code_of_a_day/git_du.gitconfig', title: 'Code of the day' })}
+                                                ${CodeOfADay()}
                                             </font>
                                 </table>
                     </table>
@@ -376,7 +377,7 @@ const MobileView = () => `
                         <tr>
                             <td width="30%">
                                 <font size="2">
-                                    ${Code({ src: './src/pages/1990/assets/code_of_a_day/git_du.gitconfig', title: 'Code of the day' })}
+                                    ${CodeOfADay()}
                                 </font>
                     </table>
                     <table border="0" cellpadding="0" cellspacing="8">
