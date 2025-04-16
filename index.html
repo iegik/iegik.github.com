@@ -1,343 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
-    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Loading...</title>
-    <!--meta http-equiv="REFRESH" content="0;URL=1990/"-->
-    
-    <style nonce="k1NDIyOA" id="/1990/styles.min.css">@import "/1990/highlighter.min.css";
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Loading...</title>
+<meta http-equiv="REFRESH" content="0;URL=1980/">
 
-/* Styles used only for interpriate old interface */
-:root {
-  --color-window: #0000a8;
-  --color-text: #56ffff;
-  --color-danger: #a80000;
-  /* --color-danger: #FF5750; */
-  --color-buttonText: black;
-  --color-button: white;
-  --color-accent: #ffff58;
-  --color-activeWindow: #ababab;
-  --color-inactiveWindow: #05a8a8;
-  --color-menu: #05a8a8;
-  --color-shadow: black;
-  --font-size: 12px;
-}
-* {
-  font-size: var(--font-size);
-  border-color: var(--color-text);
-  font-style: normal;
-  line-height: 2;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  text-transform: uppercase;
-  font-weight: bold;
-  color: var(--color-accent);
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p, ul, ol, hr {
-  margin: 0.5em 0;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p, li, hr, a {
-  max-width: 80em;
-}
-hr {
-  clear: both;
-}
-pre {
-  overflow: hidden;
-}
-picture {
-  display: grid;
-}
-img {
-  image-rendering: pixelated;
-  max-width: 100%;
-  height: auto;
-  display: inline-block;
-  zoom: 2;
-  font-size: 0;
-  position: relative;
-}
-img[alt]:after {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: inherit;
-  font-family: monospace;
-  font-stretch: condensed;
-  font-size: 4px;
-  font-weight: 300;
-  line-height: 2;
-  text-align: left;
-  content: attr(alt);
-}
-body,
-html {
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  font-size: 0;
-}
-body {
-  position: relative;
-  background-color: var(--color-window);
-  animation: color-fade 2s ease-in-out alternate;
-  /* animation-delay: 2s; */
-  transition: background-color 2s, color 2s;
-  /* transition-delay: 2s; */
-}
-html {
-  scrollbar-color: orange var(--color-activeWindow);
-  scrollbar-gutter: stable;
-}
-body,
-input,
-select,
-textarea {
-  font-family: "SFMono-Regular", "SF Mono", "Ubuntu Mono", Consolas,
-    "DejaVu Sans Mono", Menlo, monospace;
-  font-size: var(--font-size);
-  letter-spacing: 1.5px;
-  color: var(--color-text);
-}
-select {
-  height: 2em;
-}
-input,
-select,
-textarea,
-a {
-  display: inline-block;
-  border: 0;
-  box-shadow: 1em 1ex var(--color-shadow);
-  margin: -0.25em;
-  padding: 0.25em;
-  margin-right: 1ex;
-  margin-bottom: 1ex;
-}
-input,
-select,
-textarea,
-a:not([href^="/images"]) {
-  line-height: 2;
-}
-a[href^="/images"] {
-  display: inline-block;
-}
-li {
-  list-style-type: square;
-}
-fieldset {
-  border-color: var(--color-window);
-  border-style: double;
-  border-width: 5px;
-  box-sizing: border-box;
-}
-legend {
-  background-color: var(--color-window);
-  color: var(--color-text);
-  padding: 0.25em 0.5em;
-}
-code {
-  word-wrap: break-word;
-  white-space: pre-wrap;
-  max-width: fit-content;
-}
-input,
-select,
-textarea,
-a:not([href^="/images"]) {
-  text-decoration: none;
-  color: initial;
-  padding: 0 0.5em;
-}
-[bgcolor] input,
-[bgcolor] select,
-[bgcolor] textarea {
-  /* issue with nested styles, see #bot */
-  /* color: var(--color-accent); */
-}
-[bgcolor] input[type="button"],
-[bgcolor] input[type="submit"],
-[bgcolor] a {
-  color: var(--color-buttonText);
-}
-input[type="button"],
-input[type="submit"],
-a {
-  background-color: var(--color-inactiveWindow);
-}
-[bgcolor] input[type="button"],
-[bgcolor] input[type="submit"],
-[bgcolor] a {
-  background-color: var(--color-button);
-}
-[bgcolor="red"] {
-  background-color: var(--color-danger) !important;
-  color: var(--color-button) !important;
-}
-[bgcolor="gray"] {
-  background-color: var(--color-activeWindow) !important;
-  color: var(--color-button) !important;
-}
-[bgcolor="green"] {
-  background-color: var(--color-inactiveWindow) !important;
-  color: var(--color-button) !important;
-}
-[color="gray"] {
-  color: var(--color-button);
-}
-[width="768px"] {
-  width: auto;
-  max-width: 160ex;
-  min-width: 768px;
-}
-[style="display:none;"] {
-  display: none;
-  visibility: hidden;
-}
-input:hover,
-select:hover,
-textarea:hover,
-a:hover,
-input:focus,
-select:focus,
-textarea:focus,
-a:focus,
-input:active,
-select:active,
-textarea:active,
-a:active,
-input:checked,
-select:checked,
-textarea:checked,
-a:checked,
-[bgcolor] input:hover,
-[bgcolor] select:hover,
-[bgcolor] textarea:hover,
-[bgcolor] a:hover,
-[bgcolor] input:focus,
-[bgcolor] select:focus,
-[bgcolor] textarea:focus,
-[bgcolor] a:focus,
-[bgcolor] input:checked,
-[bgcolor] select:checked,
-[bgcolor] textarea:checked,
-[bgcolor] a:checked,
-[bgcolor] input:active,
-[bgcolor] select:active,
-[bgcolor] textarea:active,
-[bgcolor] a:active {
-  background-color: var(--color-accent);
-  color: var(--color-buttonText);
-  outline: none !important;
-}
-::selection {
-  color: var(--color-buttonText);
-  background-color: var(--color-accent);
-}
-input:hover::selection,
-select:hover::selection,
-textarea:hover::selection,
-a:hover::selection,
-input:focus::selection,
-select:focus::selection,
-textarea:focus::selection,
-a:focus::selection,
-input:active::selection,
-select:active::selection,
-textarea:active::selection,
-a:active::selection,
-input:checked::selection,
-select:checked::selection,
-textarea:checked::selection,
-a:checked::selection,
-[bgcolor] input:hover::selection,
-[bgcolor] select:hover::selection,
-[bgcolor] textarea:hover::selection,
-[bgcolor] a:hover::selection,
-[bgcolor] input:focus::selection,
-[bgcolor] select:focus::selection,
-[bgcolor] textarea:focus::selection,
-[bgcolor] a:focus::selection,
-[bgcolor] input:checked::selection,
-[bgcolor] select:checked::selection,
-[bgcolor] textarea:checked::selection,
-[bgcolor] a:checked::selection,
-[bgcolor] input:active::selection,
-[bgcolor] select:active::selection,
-[bgcolor] textarea:active::selection,
-[bgcolor] a:active::selection {
-  color: var(--color-accent);
-  background-color: var(--color-window);
-}
-/* emulate dialogs */
-.dialog {
-  box-shadow: 1em 1ex var(--color-shadow);
-  margin: auto;
-  min-width: 50ex;
-  width: fit-content;
-  max-width: 80ex;
-  height: fit-content;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-/* hide noscript gtm */
-noscript iframe[src^="https://www.googletagmanager.com"] {
-  display:none;visibility:hidden;position:absolute;
-}
-@keyframes color-fade {
-  0% {
-    /* color: CanvasText;
-    background-color: Canvas; */
-  }
-  100% {
-    background-color: var(--color-window);
-    color: var(--color-text);
-  }
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-window: black;
-    --color-shadow: gray;
-  }
-  @keyframes color-fade {
-    0% {
-      /* color: CanvasText;
-      background-color: Canvas; */
-    }
-    100% {
-      background-color: var(--color-window);
-      color: var(--color-text);
-    }
-  }
-}
-</style>
-    <script  crossorigin=""  nonce="k1NDIyOA" >"use strict";(()=>{var b=(e={})=>{let{className:t="",children:o,squire:s,tag:c="div"}=e,a="link-list";return t&&(a+=` ${t}`),s&&(a+=" link-list--squire"),`
+    <script  crossorigin=""  nonce="U0NDY5MQ" >(function(w,d,s,l,i,n){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;j.setAttribute('nonce', n);f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MBG56M','U0NDY5MQ');</script>
+<script  crossorigin=""  nonce="U0NDY5MQ" >"use strict";(()=>{var b=(e={})=>{let{className:t="",children:o,squire:s,tag:c="div"}=e,a="link-list";return t&&(a+=` ${t}`),s&&(a+=" link-list--squire"),`
       <${c} class="${a}">
         ${o?.map(d=>`<div class="link-list__item">${d}</div>`).join("")}
       </${c}>
@@ -348,45 +22,23 @@ noscript iframe[src^="https://www.googletagmanager.com"] {
       ${w({children:t})}
     </div>
   </div>
-`,i=R;var h="Access token not provided",v="Page not found";var m=!0,n=e=>{if(console.error(e),!(typeof window>"u")){if(m&&typeof Sentry<"u"&&Sentry.captureException(e),m&&typeof window.dataLayer<"u"&&window.dataLayer.push({event:"issue",message:e.message,row:e.lineNumber||null,source:e.fileName||null,stack:e.stack}),e.message===v){window.location.href="/404";return}if(e.message===h){window.location.href="/403";return}}};var u=m?()=>{}:(...e)=>{console.info(...e)};var E=()=>{let{protocol:e,hash:t,pathname:o}=document.location;return`${o.replace("index.html","")}${t.slice(2)}`};var re="\u{1F34F},\u{1F330},\u{1F34B},\u{1F345},\u{1F346},\u{1F347},\u{1F353},\u{1F349},\u{1F350},\u{1F352},\u{1F351},\u{1F951}".split(","),{floor:ne,random:ie}=Math;var g=class{constructor(){this.id=null}toString(){let t=btoa(`${Math.ceil(Math.random()*1e13)+ +new Date}`).slice(10,18);return this.id=this.id||`ref-${t}`}get current(){return typeof window>"u"||typeof document>"u"?null:document.querySelector(`[ref=${this.id}]`)}},l=()=>new g;var P=(e={})=>{let{className:t="link",children:o,tag:s="a",to:c="#",title:a="",onClick:d}=e,f=l();return setTimeout(()=>{d&&f.current&&f.current.addEventListener("click",d)}),`
+`,i=R;var h="Access token not provided",E="Page not found";var m=!0,n=e=>{if(console.error(e),!(typeof window>"u")){if(m&&typeof Sentry<"u"&&Sentry.captureException(e),m&&typeof window.dataLayer<"u"&&window.dataLayer.push({event:"issue",message:e.message,row:e.lineNumber||null,source:e.fileName||null,stack:e.stack}),e.message===E){window.location.href="/404";return}if(e.message===h){window.location.href="/403";return}}};var u=m?()=>{}:(...e)=>{console.info(...e)};var $=()=>{let{protocol:e,hash:t,pathname:o}=document.location;return`${o.replace("index.html","")}${t.slice(2)}`};var ne="\u{1F34F},\u{1F330},\u{1F34B},\u{1F345},\u{1F346},\u{1F347},\u{1F353},\u{1F349},\u{1F350},\u{1F352},\u{1F351},\u{1F951}".split(","),{floor:ie,random:se}=Math;var g=class{constructor(){this.id=null}toString(){let t=btoa(`${Math.ceil(Math.random()*1e13)+ +new Date}`).slice(10,18);return this.id=this.id||`ref-${t}`}get current(){return typeof window>"u"||typeof document>"u"?null:document.querySelector(`[ref=${this.id}]`)}},l=()=>new g;var T=(e={})=>{let{className:t="link",children:o,tag:s="a",to:c="#",title:a="",onClick:d}=e,f=l();return setTimeout(()=>{d&&f.current&&f.current.addEventListener("click",d)}),`
       <${s} class="${t} link" href="${c}" title="${a}" ref="${f}" ${/^http/.test(c)?'rel="noopener noreferrer"':""}>
         ${o?.join?.("")}
       </${s}>
-    `},r=P;var k=()=>i({message:"403 Forbidden",children:[r({to:"#/login",title:"Go to login page",children:["Log in"]})]});var y=()=>i({message:"404 Page not found",children:[r({to:"/",title:"Go to home page",children:["Home"]}),r({onClick:()=>{history.go(-1)},title:"Go back",children:["Back"]})]});var x=e=>i({message:e.message,children:[r({onClick:()=>{location.reload()},title:"Reload",children:["Reload"]}),r({onClick:()=>{history.go(-1)},title:"Go back",children:["Back"]})]});var T=()=>(addEventListener("DOMContentLoaded",()=>{n(new Error("Some error test"))}),setTimeout(()=>{n(new Error("Throw error on setTimeout"))}),Promise.reject(new Error("Throw error on promise")).catch(e=>{n(e)}),n(new Error("Throw error immediately")),'<center><font color="red">Some error test</font></center>'),O=()=>{setTimeout(()=>{let e=window.innerWidth<768?"/1990/mobile/":"/1990/desktop/",t=document.getElementById("url");t&&(t.href=e),window.location.href.includes(e)||(window.location.href=e)},1e3)},A=(e="/")=>{u(`Loading ${e}`);try{switch(!0){case/\/test\/?$/.test(e):return T();case/^\/1990\/?$/.test(e):case/^\/$/.test(e):return O();case(e==="/403/"||e==="/403"):return k();default:return y()}}catch(t){let o=t instanceof Error?t:{message:t?.message||t};return x(o)}},N=e=>{let{error:t}=e;n(t)},L=()=>{let e=E();if(!e)return;let t=A(e);if(t&&!(typeof window>"u")&&window?.document){addEventListener("error",N);let o=document.getElementById("root");if(o==null)return;o.innerHTML=t}};addEventListener("DOMContentLoaded",L);addEventListener("hashchange",L);})();
+    `},r=T;var y=()=>i({message:"403 Forbidden",children:[r({to:"#/login",title:"Go to login page",children:["Log in"]})]});var k=()=>i({message:"404 Page not found",children:[r({to:"/",title:"Go to home page",children:["Home"]}),r({onClick:()=>{history.go(-1)},title:"Go back",children:["Back"]})]});var x=e=>i({message:e.message,children:[r({onClick:()=>{location.reload()},title:"Reload",children:["Reload"]}),r({onClick:()=>{history.go(-1)},title:"Go back",children:["Back"]})]});var S=()=>(addEventListener("DOMContentLoaded",()=>{n(new Error("Some error test"))}),setTimeout(()=>{n(new Error("Throw error on setTimeout"))}),Promise.reject(new Error("Throw error on promise")).catch(e=>{n(e)}),n(new Error("Throw error immediately")),'<center><font color="red">Some error test</font></center>'),O=()=>{setTimeout(()=>{let e=window.innerWidth<768?"/1990/mobile/":"/1990/desktop/",t=document.getElementById("url");t&&(t.href=e),window.location.href.includes(e)||(window.location.href=e)},1e3)},A=()=>{setTimeout(()=>{let e="/1980/",t=document.getElementById("url");t&&(t.href=e),window.location.href.includes(e)||(window.location.href=e)},1e3)},N=(e="/")=>{u(`Loading ${e}`);try{switch(!0){case/\/test\/?$/.test(e):return S();case/^\/1990\/?$/.test(e):return O();case/^\/1980\/?$/.test(e):case/^\/$/.test(e):return A();case(e==="/403/"||e==="/403"):return y();default:return k()}}catch(t){let o=t instanceof Error?t:{message:t?.message||t};return x(o)}},F=e=>{let{error:t}=e;n(t)},L=()=>{let e=$();if(!e)return;let t=N(e);if(t&&!(typeof window>"u")&&window?.document){addEventListener("error",F);let o=document.getElementById("root");if(o==null)return;o.innerHTML=t}};addEventListener("DOMContentLoaded",L);addEventListener("hashchange",L);})();
 //# sourceMappingURL=router-1990.min.js.map
 </script>
-    
-    
-    <script  crossorigin=""  nonce="k1NDIyOA" >(function(w,d,s,l,i,n){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;j.setAttribute('nonce', n);f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MBG56M','k1NDIyOA');</script>
-
 </head>
 <body id="root">
-    
-    
-    <script async crossorigin=""  nonce="k1NDIyOA" src="https://www.googletagmanager.com/gtag/js?id=G-5ZY8Y6X2C4"></script>
-    <script  crossorigin=""  nonce="k1NDIyOA" >window.dataLayer = window.dataLayer || [];
+    <script async crossorigin=""  nonce="U0NDY5MQ" src="https://www.googletagmanager.com/gtag/js?id=G-5ZY8Y6X2C4"></script>
+    <script  crossorigin=""  nonce="U0NDY5MQ" >window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());gtag('config', 'G-5ZY8Y6X2C4');
 </script>
-
-    
-    <noscript><iframe nonce="k1NDIyOA" src="https://www.googletagmanager.com/ns.html?id=GTM-MBG56M"
-height="0" width="0"></iframe></noscript>
-  <font face="'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace" size="3">
-    <table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
-        <tr align="center">
-            <td valign="top">
-              <table border="0" cellpadding="0" cellspacing="8">
-                <tr>
-                    <td>
-                      <table align="center" cellpadding="0" cellspacing="8">
-                        <tr>
-                          <td width="1px" valign="bottom"><font size="1"><marquee scrollamount="5" behavior="scroll"><pre>▁▁▃▃▅▅▆▆▇▇██</pre></marquee></font>
-                          <td><font size="3" weight="bold">Loading...</font>
-                      </table>
-                      <font size="1" color="lightgray">301 Redirect</font><br>
-                      <font size="1" color="gray">You will be redirected to the new page shortly. If not, click <a id="url" href="1990/">here</a>.</font>
+<noscript><iframe nonce="U0NDY5MQ" src="https://www.googletagmanager.com/ns.html?id=GTM-MBG56M"
+height="0" width="0"></iframe></noscript><font face="'SFMono-Regular', 'SF Mono', 'Ubuntu Mono', Consolas, 'DejaVu Sans Mono', Menlo, monospace" size="3">
+<table align="center" cellpadding="0" cellspacing="8"><tr><td width="1px" valign="bottom"><font size="1"><marquee scrollamount="5" behavior="scroll"><pre>▁▁▃▃▅▅▆▆▇▇██</pre></marquee></font><td><font size="3" weight="bold">Loading...</font></table>
+<font size="1" color="lightgray">301 Redirect</font><br/>
+<font size="1" color="gray">You will be redirected to the new page shortly. If not, click <a id="url" href="/1980/">here</a>.</font>
+</body>
