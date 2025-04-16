@@ -5,11 +5,8 @@
                                             </fieldset>`;var i=({srcDoc:e,src:t,nonce:o,async:s,prefix:c,postfix:l,iife:g,crossorigin:S="",integrity:h})=>{let f=e?p(e):"";return`<script ${s?"async":""} crossorigin="${S}" ${h?`integrity="${h}"`:""} nonce="${o}" ${t?`src="${t}"`:""}>${c||""}${g?`(${f})(${g});`:f}${l||""}</script>`};var E=({nonce:e,gtmId:t})=>`
     ${i({nonce:e,srcDoc:"./src/lib/gtm.js",iife:`window,document,'script','dataLayer','${t}','${e}'`})}
 `,L=({nonce:e,gtmId:t})=>`<noscript><iframe nonce="${e}" src="https://www.googletagmanager.com/ns.html?id=${t}"
-height="0" width="0"></iframe></noscript>`;var I=({nonce:e,gtmId:t})=>`
-    ${i({async:!0,nonce:e,src:`https://www.googletagmanager.com/gtag/js?id=${t}`})}
-    ${i({srcDoc:"./src/lib/gtag.js",nonce:e,postfix:`gtag('config', '${t}');
-`})}
-`;var R=({nonce:e,integrity:t,projectId:o,...s})=>`
+height="0" width="0"></iframe></noscript>`;var I=({nonce:e,gtmId:t})=>`${i({async:!0,nonce:e,src:`https://www.googletagmanager.com/gtag/js?id=${t}`})}${i({srcDoc:"./src/lib/gtag.js",nonce:e,postfix:`gtag('config', '${t}');
+`})}`;var R=({nonce:e,integrity:t,projectId:o,...s})=>`
     ${i({async:!0,nonce:e,src:"https://browser.sentry-cdn.com/8.51.0/bundle.tracing.replay.debug.min.js",integrity:t,crossorigin:"anonymous"})}
     ${i({srcDoc:"./src/lib/sentry.js",nonce:e,iife:JSON.stringify(s)})}
 `;var z=({name:e,rows:t,cols:o,data:s,type:c,value:l="",required:g,l10n:S})=>{let h=e,f=g?"required":"";return s?`<select id="${h}" name="${e}" ${f}>
