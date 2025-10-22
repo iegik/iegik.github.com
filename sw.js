@@ -1,5 +1,5 @@
-const cacheName = 'v3.2.4';
-const cacheAllowlist = ["v3.1.4", "v3.1.6", "v3.2.3", "v3.2.4"];
+const cacheName = 'v3.2.5';
+const cacheAllowlist = ["v3.1.6", "v3.2.5"];
 const contentToCache = [
   '/index.html',
   '/1990/index.html',
