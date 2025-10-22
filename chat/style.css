@@ -1,0 +1,33 @@
+body {
+  font-family: sans-serif;
+  background: #f8f9fa;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding-top: 40px;
+}
+main {
+  width: 400px;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.hidden { display: none; }
+#messages {
+  height: 250px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 10px 0;
+  padding: 6px;
+  background: #fafafa;
+}
+#messages div {
+  margin-bottom: 4px;
+  padding: 4px 6px;
+  border-radius: 6px;
+}
+.me { background: #d1e7dd; text-align: right; }
+.them { background: #e9ecef; text-align: left; }

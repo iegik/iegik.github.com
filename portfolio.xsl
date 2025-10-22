@@ -48,7 +48,7 @@
                         <table border="0" cellpadding="8" cellspacing="0" width="100%">
                            <tr>
                               <td align="center">
-                                 <a rel="noopener noreferrer" href="https://linkedin.com/in/iegik" title="LinkedIn">LinkedIn</a> | <a  rel="noopener noreferrer" href="https://github.com/iegik" title="GitHub">GitHub</a> | <a  rel="noopener noreferrer" href="https://profile.codersrank.io/user/iegik" title="CodersRank">CodersRank</a> | <a  rel="noopener noreferrer" href="https://codepen.io/iegik/" title="CodePen">CodePen</a> | <a  rel="noopener noreferrer" href="https://jsfiddle.net/user/iegik" title="JSFiddle">JSFiddle</a> | <a  rel="noopener noreferrer" href="https://stackoverflow.com/users/771471/iegik" title="StackOverflow">StackOverflow</a>
+                                 <a rel="noopener noreferrer" href="https://linkedin.com/in/iegik" title="LinkedIn">LinkedIn</a> | <a  rel="noopener noreferrer" href="https://github.com/iegik" title="GitHub">GitHub</a> | <a  rel="noopener noreferrer" href="https://profile.codersrank.io/user/iegik" title="CodersRank">CodersRank</a> | <a  rel="noopener noreferrer" href="https://codepen.io/iegik/" title="CodePen">CodePen</a> | <a  rel="noopener noreferrer" href="https://jsfiddle.net/u/iegik/fiddles/" title="JSFiddle">JSFiddle</a> | <a  rel="noopener noreferrer" href="https://stackoverflow.com/users/771471/iegik" title="StackOverflow">StackOverflow</a>
                                  <br/>
                                  <marquee>
                                     <font color="gray">© 2024 Art&#363;rs Jansons | All rights reserved</font>

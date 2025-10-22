@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Decentralized Chat MVP</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <h2>🔐 Decentralized IRC-like Chat</h2>
+
+    <div id="auth">
+      <input id="username" placeholder="Enter your username" />
+      <button id="login">Login</button>
+    </div>
+
+    <div id="chat" class="hidden">
+      <div>
+        <input id="channel" placeholder="#channel-name" />
+        <button id="createChannel">Create / Join</button>
+      </div>
+      <div id="status"></div>
+      <div id="messages"></div>
+      <input id="messageInput" placeholder="Type message..." />
+      <button id="send">Send</button>
+    </div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
