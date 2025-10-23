@@ -111,8 +111,34 @@
     </project-->
 
     <project>
+        <name>import >20000 files</name>
+        <client>NDA project</client>
+        <images>
+            <picture src="powershel-import" />
+        </images>
+        <description lang="lv"></description>
+		<description lang="en">Perform import of large amount of small files in custom order, faced with I/O issues, PowerShell bottleneck and multithreading</description>
+		<category>PowerShell Python Bash PHP C#</category>
+        <year>2024</year>
+    </project>
+
+    <project>
+        <name>tab suspender</name>
+        <client>Experiment</client>
+        <url>https://chromewebstore.google.com/detail/tab-suspender/fenpepaljppoigggmadmgmjgadhbkbah</url>
+        <images>
+            <picture src="tab-suspender1" />
+            <picture src="tab-suspender2" />
+        </images>
+        <description lang="lv"></description>
+		<description lang="en">Chrome/Firefox extension that suspends inactive tabs to save memory and CPU usage</description>
+		<category>HTML CSS JS Extension</category>
+        <year>2024</year>
+    </project>
+
+    <project>
         <name>order-form</name>
-        <client>pet-project</client>
+        <client>Experiment</client>
         <url>https://wiam-front-test.vercel.app/</url>
         <repository>https://github.com/iegik/wiam-front-test</repository>
         <images>
@@ -126,7 +152,7 @@
 
     <project>
         <name>angular-bookshelf</name>
-        <client>pet-project</client>
+        <client>Experiment</client>
         <url>https://test-domprog.vercel.app/</url>
         <repository>https://github.com/iegik/test-domprog</repository>
         <images>
@@ -140,7 +166,7 @@
 
     <project>
         <name>homepage-update</name>
-        <client>pet-project</client>
+        <client>Experiment</client>
         <url>https://iegik.github.io</url>
         <repository>https://github.com/iegik/iegik.github.com</repository>
         <images>
@@ -154,7 +180,7 @@
 
     <project>
         <name>test-kanvajs</name>
-        <client>pet-project</client>
+        <client>Experiment</client>
         <url>https://test-kanvajs.vercel.app/</url>
         <repository>https://github.com/iegik/test-kanvajs</repository>
         <images>
@@ -170,7 +196,7 @@
 
     <project>
         <name>spaceinviders3d1</name>
-        <client>pet-project</client>
+        <client>Experiment</client>
         <url>#Not available</url>
         <images>
             <picture src="spaceinviders3d1" />
@@ -198,7 +224,7 @@
 
     <project>
         <name>card-zoom1</name>
-        <client>pet-project</client>
+        <client>Experiment</client>
         <url>https://codepen.io/iegik/full/zYQGBPj</url>
         <images>
             <picture src="card-zoom1" />
@@ -211,7 +237,7 @@
 
     <project>
         <name>blockbanch</name>
-        <client>pet-project</client>
+        <client>Experiment</client>
         <url>#Not available</url>
         <images>
             <picture src="blockbench1" />
@@ -225,7 +251,7 @@
 
     <project>
         <name>tree</name>
-        <client>pet-project</client>
+        <client>Experiment</client>
         <url>https://mindmap-opal.vercel.app/</url>
         <images>
             <picture src="tree" />
@@ -254,7 +280,7 @@
 
     <project>
         <name>responsive-canvas</name>
-        <client>pet-project</client>
+        <client>Experiment</client>
         <url>https://codepen.io/iegik/full/LYwYBLB/</url>
         <repository></repository>
         <images>
