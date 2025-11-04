@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Cascadia+Code:wght@300&display=swap');
+:root {
+  --max-width: 30ex;
+}
+body,select,option,pre {
+  font-family:'Cascadia Code','SFMono-Regular','SF Mono','Ubuntu Mono',Consolas,'DejaVu Sans Mono',Menlo,monospace;
+  font-stretch:condensed;
+  font-weight:300;
+  white-space:pre;
+  font-optical-sizing: auto;
+  place-items: center;
+}
+nav {
+  white-space:initial;
+}
+body, pre {
+  outline:none;width:100vw;
+}
+a, button, select, option, input, textarea {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: inherit;
+}
+select,textarea,button,input {
+  margin: 0 -0.5ex;
+  max-width: var(--max-width);
+}
+select {
+  width: var(--max-width);
+}
+textarea {
+  padding: 0 0.5ex;
+  width: var(--max-width);
+}
+button {
+  padding: 0 1.4ex;
+}
+header, footer {
+  display: inline;
+}
+img {
+  width: 100%;
+  height: auto;
+  max-width:var(--max-width);
+  image-rendering:pixelated;
+}
+@media only screen and (min-width: 480px) {
+  nav { display: none; }
+  pre {
+    font-size: clamp(10px, 1.2vw + 0.5rem, 18px);
+  }
+  pre {
+    columns: 33ex;
+    column-gap: 2ex;
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+}

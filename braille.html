@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<body>
+<pre id="out"></pre>
+<script>
+async function imageToBrailleAscii(dataURI) {
+  const img = await loadImage(dataURI);
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width = img.width;
+  canvas.height = img.height;
+  ctx.drawImage(img, 0, 0);
+
+  const { data } = ctx.getImageData(0, 0, img.width, img.height);
+  const gray = [];
+  for (let i = 0; i < data.length; i += 4)
+    gray.push((data[i] + data[i + 1] + data[i + 2]) / 3);
+
+  const blockSize = 9;
+  const cols = Math.floor(img.width / blockSize);
+  const rows = Math.floor(img.height / blockSize);
+
+  // Store braille rows separately
+  const upperRows = [];
+  const lowerRows = [];
+
+  for (let y = 0; y < rows; y++) {
+    let upperLine = "";
+    let lowerLine = "";
+    for (let x = 0; x < cols; x++) {
+      const block = getBlock(gray, img.width, x * blockSize, y * blockSize, blockSize);
+      const [upper, lower] = blockToBraille(block);
+      upperLine += upper;
+      lowerLine += lower;
+    }
+    upperRows.push(upperLine);
+    lowerRows.push(lowerLine);
+  }
+
+  // Glue even/odd rows (upper + lower)
+  let output = "";
+  for (let i = 0; i < upperRows.length; i += 2) {
+    const top = upperRows[i] || "";
+    const bottom = lowerRows[i] || "";
+    output += top + bottom + "\n";
+  }
+  return output;
+}
+
+function loadImage(uri) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => resolve(img);
+    img.onerror = reject;
+    img.src = uri;
+  });
+}
+
+function getBlock(gray, width, startX, startY, size) {
+  const block = [];
+  for (let y = 0; y < size; y++)
+    for (let x = 0; x < size; x++)
+      block.push(gray[(startY + y) * width + (startX + x)]);
+  return block;
+}
+
+// Return [upperRow, lowerRow] Braille characters
+function blockToBraille(block) {
+  const avg = block.reduce((a, b) => a + b, 0) / block.length;
+  const dots = block.map(v => v < avg ? 1 : 0);
+
+  let upper = "", lower = "";
+  for (let by = 0; by < 2; by++) {
+    let line = "";
+    for (let bx = 0; bx < 3; bx++) {
+      const sub = getSubDots(dots, bx, by);
+      line += dotsToBraille(sub);
+    }
+    if (by === 0) upper = line;
+    else lower = line;
+  }
+  return [upper, lower];
+}
+
+function getSubDots(dots, bx, by) {
+  const sub = [];
+  for (let y = 0; y < 3; y++) {
+    for (let x = 0; x < 3; x++) {
+      const px = bx * 3 + x;
+      const py = by * 3 + y;
+      const pos = y * 3 + x;
+      const skip = [2, 5, 3, 4, 8];
+      if (!skip.includes(pos))
+        sub.push(dots[py * 9 + px]);
+    }
+  }
+  return sub;
+}
+
+function dotsToBraille(bits) {
+  const code = 0x2800 + bits.reduce((a, b, i) => a + (b ? 1 << i : 0), 0);
+  return String.fromCharCode(code);
+}
+
+// --- Test image ---
+const imgURI = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAMAUExURbe8tru/vry+yru9ybi9w8XQ0szm58HZ2dPZ1ebo59vf6s7U4MvP0uXn5O3t6+Hi3bK3sbG1tLm8xcLG0cDFycLNz8ne38XY1t/h3O3s6tXY4dTY4+js7+np5+fo49Ta1tnf3cnO1MnN1tff4tHb3MrZ1tfg2+vm4vLo59/d4tLS2uTo69/j5ODi3+Dg3uLt6dHb2tTb4d7l69bg4tjh4NTZ07KvqLKln7+wreXb3Obk59zg49je3tnb2t3d256tqpyqqrXAxM7Z3cbR07i+up2ZjmhaT5J5cpF4c6qYlNLKx8/T0sfQz8nLysvKyGd3d3CAgGl3enKAg4eVloaLh4h6bZF3aK6Og6mIf4NrYaCWja6zray3s77Avby7t11udVZobFdma1ppblVkZ2dpZop0ZpFuW5huYqR8cI5xYYh4aXd9c3R/d5uel66rpkNVX0hZYUtaYUhXXkZVXGZoZ5R6bZtwX5trXY1iUqaDb458aGJoWl9rYYWIf6uon0NTYD5OW0ZUX0JQWT5MVWBgYnRYTHRHNIdWR1ssHIdhSqWReWtvXmdzZYOHeZGRhThGU0NRXkFPWj1LVjZDTFdXWXpfVH1SQaZ1ZpBhT5NtVpB6YmNmU1hjU1FVRmBiVENQWThFTjVBTTdDTz1HUUNESHtnXoBcTotdTm9BMXVRO4BqU1BPPUpTQltfUVBURi43PDI7QjhASzhATTQ8Ry8wNV5RS2tPQ3RKPHtQQHVSP3tmU2RhUElPQUhOQlBWSiowLDE3NycuNigvOSwzPURHTG9qZ5SDe25MQHtVSG9PRHZiV5ONgbCzqGluZ0xTTDk9Ly80LTo+QWpud8rO16essJOVlKyjnGVJPWdFOXdaVFhFP1tSS93e2K2zr3B5dnN2YXV5asfLyubp7uHk6Y6Tlp2lp4KBfVhANHhYTXtfXjgkJV5SUtHNzJ2ipT1HSXB0W8vPvuLk4be6v56ipZOYm6axs4WHhEAqH3BSSFxCQxkGCoN0d8K+v6+ytz9ITf///6DkPzUAAAABYktHRP+lB/LFAAAAB3RJTUUH6AceDzgFWIzAugAAARtJREFUGNMBEAHv/gAAAQIDBAUGBwgJCgsMDQ4PABAREhMUFRYXGBkaGxwJHR4AHyAhIiMkJSYnKCkqKywtLgAvMDEyMzQ1Njc4OTo7PD0+AD9AQUJDREVGR0hJSktMTU4AT1BRUlNUVVZXWFlaW1xdXgBfYGFiY2RlZmdoaWprbG1uAG9wcXJzdHV2d3h5ent8fX4Af4CBgoOEhYaHiImKi4yNjgCPkJGSk5SVlpeYmZqbnJ2eAJ+goaKjpKWmp6ipqqusra4Ar7CxsrO0tba3uLm6u7y9vgC/wMHCw8TFxsfIycrLzM3OAM/Q0dLT1NXW19jZ2tvc3d4A3+Dh4uPk5ebn6Onq6+zt7gDv8PHy8/T19vf4+fr7/P3+mZF+izoY3PoAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjQtMDctMzBUMTU6NTA6NTYrMDA6MDCT3uBEAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDI0LTA3LTMwVDE1OjUwOjU2KzAwOjAw4oNY+AAAACh0RVh0ZGF0ZTp0aW1lc3RhbXAAMjAyNC0wNy0zMFQxNTo1NjowNSswMDowMMGAHZkAAAAASUVORK5CYII=';
+
+imageToBrailleAscii(imgURI).then(result => {
+  console.log({result});
+  document.getElementById('out').textContent = result;
+});
+</script>
+</body>
+</html>
