@@ -1,6 +1,6 @@
 
 CACHE MANIFEST
-# rev v3.1.4-2025-11-06T12:31:06.886Z
+# rev v3.1.4-2025-11-06T12:42:48.797Z
 
 CACHE:
 index.html
@@ -8,6 +8,10 @@ index.html
 1990/mobile/index.html
 1990/desktop/index.html
 1990/mailto/index.html
+text/index.html
+text/minimal.css
+text/monochrome.css
+text/dos.css
 
 NETWORK:
 *

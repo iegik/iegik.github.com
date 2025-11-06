@@ -1,11 +1,16 @@
-const cacheName = 'v3.3.1';
-const cacheAllowlist = ["v3.1.6", "v3.2.8", "v3.3.0", "v3.3.1"];
+const cacheName = 'v3.3.2';
+const cacheAllowlist = ["v3.1.6", "v3.2.8", "v3.3.0", "v3.3.1", "v3.3.2"];
 const contentToCache = [
   '/index.html',
   '/1990/index.html',
   '/1990/desktop/index.html',
   '/1990/mobile/index.html',
   '/next/index.html',
+  '/text/index.html',
+  '/text/minimal.css',
+  '/text/monochrome.css',
+  '/text/dos.css',
+  '/text/showcase.css',
 ];
 
 oninstall = (event) => {
