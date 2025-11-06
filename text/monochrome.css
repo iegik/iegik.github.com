@@ -11,10 +11,10 @@
   --bg3: #99a19b;
   --color: #141b19;
   --light: #363b39;
-  // --font: "SFMono-Regular", "SF Mono", "Ubuntu Mono", Consolas, "DejaVu Sans Mono", Menlo, monospace;
+  /* // --font: "SFMono-Regular", "SF Mono", "Ubuntu Mono", Consolas, "DejaVu Sans Mono", Menlo, monospace; */
   --font: "Oxanium", sans-serif;
-  // --font: "Handjet", sans-serif;
-  // --font: "Doto", sans-serif;
+  /* // --font: "Handjet", sans-serif; */
+  /* // --font: "Doto", sans-serif; */
 
   --shadow-color: #141b19;
   --shadow-shift-top: 0.15em;
@@ -133,8 +133,8 @@ body {
   border-color: var(--color);
   font-family: var(--font);
 
-  _font-optical-sizing: auto;
-  _font-weight: <weight>;
+  /* _font-optical-sizing: auto;
+  _font-weight: <weight>; */
   font-style: normal;
   font-variation-settings: "ELGR" 1, "ELSH" 2;
 

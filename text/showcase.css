@@ -279,14 +279,15 @@ button {
   background: var(--dark);
   color: light-dark(var(--light), var(--dark));
   padding: 0.5em 2ex;
-  font-size: 16pt;
+  font-size: 1rem;
   text-transform: uppercase;
   font-weight: 700;
   cursor: pointer;
 
   &:hover {
     background: light-dark(var(--light), var(--dark));
-    color: var(--dark);light }
+    color: var(--dark);
+  }
 
   &:active,
   &:focus {
